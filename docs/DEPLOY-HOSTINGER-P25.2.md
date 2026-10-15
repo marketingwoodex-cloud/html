@@ -164,7 +164,7 @@ Run here on 15 October, on this repository's tree, with the real pack:
 
 | Proved | Detail |
 |---|---|
-| The pack builds and is deploy-shaped | **725 files · 45,067,434 B uncompressed (43.0 MB) · zip 29,198,565 B · sha256 `4bdf8625…`** · `gitDirty:false` · manifest `gitSha 8a3fdd8`, console base `/admin-next/` |
+| The pack builds and is deploy-shaped | **725 files · 43.0 MB uncompressed · `gitDirty:false` · console base `/admin-next/`**. A zip's own size and SHA-256 are facts about one build, so they are recorded *inside* the pack: read `woodex-master-P25/MANIFEST.json` (`payload.zipBytes`, `payload.zipSha256`, `gitSha`) and check them with `sha256sum woodex-master-P25.zip`. Do not compare them against a number written in this document — a rebuild changes it |
 | The payload contains no setup or demo scripts | `/wx-install.php`, `/wx-check.php`, `/wx-demo.php` all answer **404** from the payload — absent, not merely denied |
 | The whole product runs on PHP 8.2 + SQLite | `/api/v2/health` → `{"ok":true,…,"php":"8.2.33","db":{"reachable":true,"migrated":true}}`; the 150-page site serves at `/`; the console at `/admin-next/`; the v2.1 admin at `/admin/` |
 | Migrations | v2.1 schema loaded from the dump + 15 migrations applied; a second run reports **0 applied, 15 already applied** |
