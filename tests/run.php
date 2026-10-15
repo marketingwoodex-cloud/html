@@ -3894,6 +3894,52 @@ eq(wx_login_pick_user(null, []), null, 'nothing matches nothing');
 eq(wx_login_pick_user(null, [$admin, $owner]), null, 'a name two people share is not a sign-in');
 eq(wx_login_pick_user($owner, [$admin]), $owner, 'and the address wins when both could match');
 
+group('The approval queue shows shape, never keys (defect A-02)');
+
+require_once dirname(__DIR__) . '/api/v2/lib/approvals.php';
+
+/* A queued request body is stored verbatim so the replay runs the identical call — and read back with
+   its secrets blanked. Keys stay (the screen shows what the change sets); values do not. */
+$queued = [
+    'file' => 'connectors', 'fn' => 'wx_route_connectors_save', 'method' => 'POST',
+    'params' => [], 'summary' => 'Change a connection',
+    'body' => [
+        'id' => 4, 'name' => 'Company SMTP', 'smtpHost' => 'smtp.hostinger.com', 'smtpPort' => 465,
+        'smtpUser' => 'alerts@woodex.com.pk', 'smtpPass' => 'hunter2-not-a-real-secret',
+        'waToken' => 'EAAG-fake-token', 'tsSecret' => '0x4AAAA-fake', 'password' => 'admin123',
+        'note' => 'switching mailboxes', 'nested' => ['apiKey' => 'sk-fake', 'label' => 'ok'],
+    ],
+];
+$shown = wx_appr_redact($queued['body']);
+eq($shown['smtpPass'], '(hidden)', 'the SMTP password is blanked');
+eq($shown['waToken'], '(hidden)', 'so is the WhatsApp token');
+eq($shown['tsSecret'], '(hidden)', 'and the Turnstile secret');
+eq($shown['password'], '(hidden)', 'and anything named like a password');
+eq($shown['nested']['apiKey'], '(hidden)', 'at any depth');
+eq($shown['name'], 'Company SMTP', 'the name stays');
+eq($shown['smtpHost'], 'smtp.hostinger.com', 'so does the host — it is not a secret');
+eq($shown['smtpPort'], 465, 'and the port keeps its type');
+eq($shown['note'], 'switching mailboxes', 'and the note a person wrote');
+eq($shown['nested']['label'], 'ok', 'with non-secrets at any depth untouched');
+foreach ($shown as $k => $v) {
+    if (is_string($v)) {
+        ok(!str_contains($v, 'hunter2') && !str_contains($v, 'EAAG-') && !str_contains($v, 'sk-fake'), 'no secret value survives under ' . $k);
+    }
+}
+eq(wx_appr_redact(['empty' => '', 'token' => ''])['token'], '', 'an already-empty secret stays empty rather than turning into a claim');
+
+/* The stored body is dropped when the decision is final, so a queued secret lives only as long as the
+   request is actionable. Pinned in the source because the drop happens in an UPDATE the pure suite
+   cannot run; the live queue proves it end to end. */
+$apprSrc = (string) file_get_contents(dirname(__DIR__) . '/api/v2/lib/approvals.php');
+$decisionAt = strpos($apprSrc, 'function wx_appr_set_decision');
+$dropAt = strpos($apprSrc, "\$patch['payload_json'] = null");
+$expireAt = strpos($apprSrc, "SET status = 'expired', payload_json = NULL");
+ok($decisionAt !== false && $dropAt !== false && $dropAt > $decisionAt, 'a final decision drops the stored body');
+ok($expireAt !== false, 'and expiring one drops it too');
+$apprRoute = (string) file_get_contents(dirname(__DIR__) . '/api/v2/routes/approvals.php');
+ok(substr_count($apprRoute, 'wx_appr_redact(') >= 2, 'the read path redacts both the body and the raw shape');
+
 /* ============================================================== report */
 echo "\n";
 if ($failures) {

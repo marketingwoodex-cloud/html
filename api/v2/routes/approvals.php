@@ -63,9 +63,12 @@ function wx_route_approvals_get(array $ctx): array
         'params' => $item['payload']['params'] ?? [],
         'summary' => $item['payload']['summary'] ?? $item['summary'],
     ];
-    $item['body'] = $item['payload']['body'] ?? [];
+    /* A-02: what the screen reads is the body with its secrets blanked — keys kept, values not. The
+       replay still reads the stored body itself; this is the read path, and it is the only one a person
+       sees. A decided request arrives with no body at all (it is dropped when the decision is final). */
+    $item['body'] = wx_appr_redact(is_array($item['payload']['body'] ?? null) ? $item['payload']['body'] : []);
     if (wx_is_master($u)) {
-        $item['raw'] = $item['payload'];
+        $item['raw'] = wx_appr_redact(is_array($item['payload'] ?? null) ? $item['payload'] : []);
     }
     unset($item['payload']);
     return ['data' => ['approval' => $item, 'canDecide' => wx_is_master($u)]];

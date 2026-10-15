@@ -201,6 +201,29 @@ function wx_appr_pending_count(): int
 
 
 /**
+ * A request body with its secrets blanked — defect A-02.
+ *
+ * The queue stores bodies verbatim so the replay can run the identical call, and that is right for the
+ * *replay*. It is wrong for every other reader: a Manager's queued connector save carries `smtpPass`, and
+ * "show its shape, not its internals" must mean what it says. Anything named like a credential loses its
+ * value here — keys are kept (the screen shows which fields the change sets), values are not.
+ */
+function wx_appr_redact(array $body): array
+{
+    foreach ($body as $k => $v) {
+        if (is_array($v)) {
+            $body[$k] = wx_appr_redact($v);
+            continue;
+        }
+        $name = strtolower((string) $k);
+        if (preg_match('~(pass|pwd|secret|token|api[_-]?key|private[_-]?key|credential)~', $name)) {
+            $body[$k] = is_string($v) && $v !== '' ? '(hidden)' : $v;
+        }
+    }
+    return $body;
+}
+
+/**
  * File a request. Only the parts needed to replay it are stored: the route, the function, the params
  * and the body — never a rendered page.
  *
@@ -237,6 +260,12 @@ function wx_appr_set_decision(int $id, array $patch, array $master): void
     $patch['decided_by'] = mb_substr((string) ($master['name'] ?? 'Master'), 0, 120);
     $patch['decided_by_id'] = isset($master['id']) ? (int) $master['id'] : null;
     $patch['decided_at'] = wx_now();
+    /* A decided request is never replayed again, so its body has no job left. Dropping it here means a
+       queued secret lives only as long as the request is actionable (A-02). A replay that fails puts the
+       item back to `pending` — a non-terminal status — and the body is still there for the next attempt. */
+    if (in_array((string) ($patch['status'] ?? ''), ['approved', 'rejected', 'cancelled', 'expired'], true)) {
+        $patch['payload_json'] = null;
+    }
     wx_update('wx_approvals', $patch, ['id' => $id]);
 }
 
@@ -250,7 +279,7 @@ function wx_appr_list(string $status = 'pending', int $limit = 100): array
 {
     $days = wx_appr_cfg()['expire_days'];
     wx_q(
-        "UPDATE wx_approvals SET status = 'expired'
+        "UPDATE wx_approvals SET status = 'expired', payload_json = NULL
          WHERE status = 'pending' AND requested_at < DATE_SUB(NOW(), INTERVAL ? DAY)",
         [$days]
     );
