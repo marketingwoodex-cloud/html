@@ -220,12 +220,35 @@ What is missing is everything after the lead arrives.
 | 0 | Decide the default branch of `html` | owner | ⬜ open |
 | 1 | Migrations on real MySQL (staging) | agent | ⬜ open — runbook ready |
 | 1 | Host run: publish → 150 pages → rollback | owner + agent | ⬜ open — runbook ready |
-| 2 | One identity, enforced by `--check` | agent | ⬜ open (bulk replacement **not** needed — see §1) |
+| 2 | One identity, enforced by `--check` | agent | ✅ done: `tools/entity.json` is the one file; the tool writes **both generations** and `--check` gates CI (`ci/verify.yml:92`) |
+| 2 | NAP, hours, founding year settled by the owner | owner | ✅ **2016** · **Mon–Sat 10:00–19:30, Sunday closed** · two published numbers · all applied (`telephone` array, `openingHoursSpecification`, `foundingDate`, legacy `openingHours` shorthand) |
+| 2 | The console and the site cannot disagree — defect **N17** | agent | ✅ fixed: a Business info save writes the footer row **and** the schema's `sameAs` in one pass; proved end-to-end (apply → both halves → rollback → byte-identical) |
+| 2 | One console address, in development and in production | agent | ✅ done (`e65dbd4`): dev serves `/admin-next/`, `/` 302s there, the release bundle routes off its own base, `/admin/` answers a pointer page |
 | 3 | Intake hardening (dedupe, Turnstile decision, visible failures) | agent | ⬜ open |
 | 3 | Pipeline board | agent | ⬜ open |
 | 3 | Quotation builder | agent | ⬜ open |
 | 3 | Invoice / payment recording + reconciliation | agent | ⬜ open |
 | 4 | Build, stage, deploy P25.2 | both | ⬜ **runbook ready: `docs/DEPLOY-HOSTINGER-P25.2.md`** |
+
+### One identity, enforced (15 October, night) — what "done" means here
+
+`tools/entity.json` is the only place the studio's identity is written down: NAP, the two published numbers, the
+opening hours, the founding year, the Google listing and its pin, the profiles that are the studio's own, and the
+lines it must never print. `tools/apply-entity.py` puts it on every page — schema (`@id`, `url`, `telephone` as two
+numbers, `email`, `PostalAddress`, `geo`, `openingHoursSpecification`, the legacy `openingHours` shorthand,
+`hasMap`, `sameAs`, `foundingDate`), the footer's social row in the exact markup v2.1's console writes, the map
+links, the score panel, and `llms.txt` — and `--check` fails when any page disagrees, on both generations:
+`frontend-v1/` (146 pages) and the older v26 tree at the repository root (87 pages).
+
+Two rules keep it from drifting back. **The console cannot introduce a fact the file does not know**: a Business
+info save rewrites the footer row and the schema's `sameAs` together, so a profile added in the console reaches
+both the visitor and the search engine — and the run prints `schema on 102 (103 node(s))`, which is how a person
+sees that half happened. **A page that links a number the file does not publish stops the run** (`PHONE_RX`,
+exit 1), which is the check that would have caught the sweep that silently dropped the second line.
+
+Evidence, all on this branch: suite 1319/0/14 · conformance 86/0 · php-lint 164 · `--check` 146/0 and 87/0 · a
+deliberate drift in one page fails `--check` naming that page · a console save moved a profile into 145 pages'
+footer **and** 102 pages' schema, and `POST /pages/rollback` put every file back byte for byte.
 
 ### The fold, and the local run (15 October, evening)
 

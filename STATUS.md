@@ -4,7 +4,8 @@ The one tracker for the project (decision of 15 October 2026: no Linear). The pl
 `MASTER-PLAN-2026-10-15.md`; this file says where each part of it stands. Every PR ticks what it finished and
 adds what it found. `WORK-SANDBOX-MEMORY.md` stays as the v2.5 engineering log.
 
-**Last updated:** 15 Oct 2026 (G4 added in the evening), by the session on `arena/9e181806-marketingwoodex`.
+**Last updated:** 15 Oct 2026 (night: one identity applied to both page generations, `e65dbd4`+ the console fix),
+by the session on `arena/89662743-html`. The plan for this repository is `MASTER-PLAN-P25.2.md`.
 **Owner:** O = business owner (hPanel, GitHub admin, Google, Meta) · D = developer or agent session.
 
 ## Now: the owner's queue
@@ -28,7 +29,13 @@ adds what it found. `WORK-SANDBOX-MEMORY.md` stays as the v2.5 engineering log.
       listing, fix the overnight hours (10:30 to 07:30).
 - [ ] **O · Confirm or reject** Instagram `woodexinterior`, Pinterest `woodex_interior`, TikTok `@woodexinterior`.
       Also confirm that the three home page reviews are on the Woodex Interior listing.
-- [ ] **O · One founding year** everywhere: the site says 2016, Facebook says "since 2015".
+- [x] **D · One founding year** everywhere — **decided 15 Oct: 2016**. The site keeps "since 2016"; the Facebook
+      page's "since 2015" is the outlier. Written into `tools/entity.json` and both page generations, and gated
+      by `python3 tools/apply-entity.py --check`.
+- [x] **D · Opening hours** — **decided 15 Oct: Mon–Sat 10:00 am–7:30 pm, Sunday closed**. The seven
+      `frontend-v1/projects/*` pages (10:00–7:30) were right; the footers, the 102 JSON-LD blocks that said
+      09:30–18:30 and the older pages' legacy `openingHours` shorthand now say 10:00–19:30. *Owner:* the Google
+      listing still shows 09:30–18:30 — correcting the listing is the owner's, not the site's.
 
 ## Phase 0: containment (target 17 Oct)
 
