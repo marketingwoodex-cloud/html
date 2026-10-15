@@ -18,7 +18,7 @@
 | 2 | hPanel → Advanced → PHP Configuration set to **PHP 8.2** (7.4 is the floor; 8.2 is what the pack is tested on) | extensions: `pdo_mysql`, `mbstring`, `curl`, `json`, `zip`, `openssl`, `fileinfo` |
 | 3 | `_private/db.json` exists on the host (the v2.1 install wrote it) | **never delete or upload over it** |
 | 4 | The two files you will upload are at hand | `woodex-hotfix-P22.2/woodex-hotfix-P22.2.zip` (144 KB, in this repo) · `woodex-master-P25/woodex-master-P25.zip` (27.8 MB, built by `node tools/make-release.mjs`) |
-| 5 | The manifest hash, so the bytes on the host are the bytes built here | `sha256sum woodex-master-P25.zip` must equal `payload.zipSha256` in `woodex-master-P25/MANIFEST.json` (= `06421d9d…` for the pack committed with this document) |
+| 5 | The manifest hash, so the bytes on the host are the bytes built here | `sha256sum woodex-master-P25.zip` must equal `payload.zipSha256` in `woodex-master-P25/MANIFEST.json` (read the value from there — a rebuild changes it, and a number written in this document would be stale the moment the pack is remade) |
 
 **Use File Manager's Extract, not Hostinger's "Import website" tool.** The import tool has previously
 flattened this project's structure; the README says so and it is worth repeating.
@@ -198,7 +198,7 @@ reason written down); a probe finds all 44 tables.
 | `/admin/` shows a blank page, a 403 from `wx-install.php`, or a "the dashboard is at /admin-next/" page | that is the v2.1 console failing to reach **MySQL**, then asking for its own installer. On this host MySQL exists, so it means `_private/db.json` is wrong or missing — and the file that would "fix" it is deliberately not shipped. Do not upload an installer to a live host; use the v2.5 console at `/admin-next/` and repair `db.json` from the backup |
 | Migrations stop halfway | they are re-runnable; fix the reported statement's cause and run `php db/migrate.php` again |
 | The public site misbehaves | the pack did not replace a single page — purge LiteSpeed cache and re-check. If it persists, restore the previous release zip over `public_html` |
-| One file needs to go back | `git show <sha>:<path>` using the SHA in the manifest (`8a3fdd8…` for this pack; the release commit is `3d974fa`) |
+| One file needs to go back | `git show <sha>:<path>` using the `gitSha` recorded in `woodex-master-P25/MANIFEST.json` (the release commit is the one that committed that manifest — `git log -1 --format=%H -- woodex-master-P25/MANIFEST.json` finds it) |
 | The whole release must go back | restore the pre-deploy backup (§0.1). `/admin/` is untouched and keeps working throughout |
 | An installer page answers 200 | the pack does not contain one — if this happens, the host still has an old file: delete it and rotate the credentials that file could read |
 
