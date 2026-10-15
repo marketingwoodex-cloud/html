@@ -266,17 +266,29 @@ run there.
      converting the three raw `<a href="/…">` links in screens to `<Link>`, and by giving `serve.cjs` the
      same `/admin-next/*` → `index.html` fallback the payload's `.htaccess` writes. Asserted in `smoke.tsx`
      by rendering the app with `basename="/admin-next"` and failing on any `href` outside the mount point
-     (`/api/…` and `/assets/…` excepted, both being genuinely at the domain root).
+     (`/api/…` and `/assets/…` excepted, both being genuinely at the domain root). **`npm run dev` now serves
+     the console at `/admin-next/` too** (`base` lives in `vite.config.ts`, with a dev-only 302 from `/`),
+     because a dev server at a different address than the release is what produced the defect: the same source
+     answered at two paths, and only one of them was ever opened.
   2. *The v2.1 console has no database here.* `/admin/` boots, calls `/api/admin.php`, gets
      `{"dbError":true,"driver":"mysql"}` (there is no MySQL; P25.1 is SQLite behind `/api/v2`), and its own
      code does `location.replace("/wx-install.php")`. That file is **deliberately not in the pack** and
      `.htaccess` blocks `wx-*.php` → a 403 with a 9-byte body → blank. `serve.cjs` now answers
      `/wx-install.php|wx-demo.php|wx-check.php` with the same 403 **and a page explaining which console does
-     work here**. `/admin/` cannot run in this sandbox at all; on the host, where MySQL exists, it still does.
+     work here**, and it intercepts `/admin/` itself — asking `/api/admin.php` for its status first, and, when
+     that reports `dbError`, answering with a pointer to `/admin-next/` instead of letting the old console send
+     the browser to an installer that is not there. `/admin/` cannot run in this sandbox at all; on the host,
+     where MySQL exists, it still does and none of this is reached.
 - `MemoryRouter` with a `basename` **renders nothing at all** for an `initialEntry` that does not start with
   that basename (react-router prints "won't render anything"). Any smoke assertion that mounts under
   `/admin-next` must therefore use `initialEntries={[MOUNT + path]}` — otherwise the audit passes because
   there is no markup to audit, which is how the first version of the link audit silently proved nothing.
+- jsdom with `runScripts: "outside-only"` **does not execute inline `<script>` blocks** — only what the
+  harness itself evals. The boot guard in `index.html` is inline, so a probe that does not eval it (or, if the
+  document already finished loading, does not dispatch `load` afterwards) will report a page that "rendered
+  nothing" while the guard was never given the chance to speak. `timeout 150 node /tmp/domprobe/boot2.mjs`
+  does both, and `WX_HTML_FROM` lets it load the HTML from the real address while pretending the browser is at
+  another one — which is the only way to exercise the wrong-address branch.
 - `renderToString` does **not** route a throw to an error boundary (it rethrows: "SSR boundary threw"), so
   `ErrorBoundary` can only be exercised in a browser or in the jsdom harness — do not expect a smoke
   assertion to cover it. The boot guard in `index.html` covers the other half (the entry module never
