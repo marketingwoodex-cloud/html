@@ -32,11 +32,20 @@ npm run db:owner -- --email owner@woodex.local --name "Woodex Owner"   # prints 
 npm run dev:api                 # api/v2 on 127.0.0.1:8080
 npm run db:seed                 # 5 clients, 12 leads, 3 quotations (one invoiced, one part-paid), 3 bookings
 npm run dashboard:verify        # every /dashboard figure against the SQLite file, plus the stale-lead rule
+node ../tools/verify-admin-live.mjs   # every screen's endpoint, through the dev server: 45 of 45
 ```
 
 `db:seed` writes only through the API, so it also exercises the write routes. It refuses to run on a database
 that already has leads, and it refuses any host but 127.0.0.1. `dashboard:verify` reads the database itself and
 never trusts the PHP's own arithmetic; it exits 1 if any figure disagrees.
+
+`verify-admin-live.mjs` is the read-path counterpart and the quickest way to answer "is the console actually
+working?" — it signs in the way the door does and asks every path the screens pass to `useLive`, printing a
+state and a shape for each. It defaults to the **dev server** (`:5173/api/v2`), so what it reports is what the
+browser gets, proxy included; `--base http://127.0.0.1:8080/api/v2` asks `api/v2` directly and should give the
+same answer. It exits 1 if any screen fails, and it is deliberately not a CI gate: a gate must not need a
+server. Read the numbers it prints as *rows the screen will show*, not as a health score — an empty database
+answers with zero rows on purpose, and a screen reading the site tree needs a site root to read.
 
 ```bash
 npm install
