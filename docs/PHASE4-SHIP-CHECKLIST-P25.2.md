@@ -10,12 +10,14 @@ where the proof is written down.*
 
 | # | Step | Evidence |
 |---|---|---|
-| A1 | Every document committed **before** `node tools/make-release.mjs` — the console's build stamp carries the minute, so a doc written after the build makes both the pack and its manifest stale | |
-| A2 | `MANIFEST.json` reads `gitDirty:false`, the `gitSha` is the commit built, ~726 files, `consoleBase /admin-next/` | |
-| A3 | The payload contains no `wx-install.php`, no `wx-demo.php`, no `wx-check.php`, no credential — and `sha256sum woodex-master-P25.zip` matches `payload.zipSha256` | |
-| A4 | The five gate commands on this tree: suite · conformance · php-lint · `--check` · console smoke | |
+| A1 | Every document committed **before** `node tools/make-release.mjs` — the console's build stamp carries the minute, so a doc written after the build makes both the pack and its manifest stale | ✅ 15 Oct: built at `44ff72d`, tree clean (the untracked analysis scratch is excluded from the stamp by design) |
+| A2 | `MANIFEST.json` reads `gitDirty:false`, the `gitSha` is the commit built, ~726 files, `consoleBase /admin-next/` | ✅ 15 Oct: `gitDirty:false` · `gitSha 44ff72dd…` · **726 files · 45,130,375 B · zip 29,216,939 B** · `consoleBase /admin-next/` |
+| A3 | The payload contains no `wx-install.php`, no `wx-demo.php`, no `wx-check.php`, no credential — and `sha256sum woodex-master-P25.zip` matches `payload.zipSha256` | ✅ 15 Oct: the three scripts are the manifest's `refused` list and **0 payload entries** name them; no `woodex-dev-p25`, no private key, and every secret-shaped key (`tsSecret`, `waToken`, `smtpPass`…) carries an empty default; `sha256sum` = `payload.zipSha256` = **`c886870dc0ea1c5d…`** |
+| A4 | The five gate commands on this tree: suite · conformance · php-lint · `--check` · console smoke | ✅ 15 Oct: suite **1436/0/14** · conformance **86/0** · php-lint **166 clean** · `gen-aliases --check` 365 actions/11 families · `gen-caps --check` 5 roles/27 rows · identity `--check` **146/0** and **87/0** · console smoke **169/0/65** · live API **45/45** |
 
 ## B. The owner's queue (O) — the items only you can do
+
+*Status 15 Oct 2026: every row is open and waiting on the owner — no sandbox can reach hPanel, GitHub admin or Google.*
 
 | # | Step | Evidence |
 |---|---|---|
@@ -31,6 +33,8 @@ where the proof is written down.*
 
 ## C. Staging (O + D) — the Phase 1 host gate, on a subdomain
 
+*Status 15 Oct 2026: blocked on B1–B2 and on a staging subdomain existing. The D rows of this sheet are ready to execute the moment the host is reachable.*
+
 Upload the pack to a **staging subdomain** with a copy of the database, then:
 
 | # | Step | Evidence |
@@ -45,24 +49,26 @@ Upload the pack to a **staging subdomain** with a copy of the database, then:
 
 ## D. Production (O + D) — the same gate, again
 
+*Status 15 Oct 2026: blocked on C passing. D5's local half is already evidenced below.*
+
 | # | Step | Evidence |
 |---|---|---|
 | D1 | Maintenance window announced; the rollback zip at hand; the pre-deploy backup of `public_html` **and** database stored off the host | |
 | D2 | Migrations applied on production; row counts recorded (same table as C2) | |
 | D3 | The pack uploaded; the five containment URLs answer **403/404**; `/api/v2/health` answers | |
 | D4 | The **host gate a second time** on production: publish → 150 pages → rollback (C4's steps, here) | |
-| D5 | `/admin/` (v2.1) is the rollback path and still works; the console is additive at `/admin-next/` | |
+| D5 | `/admin/` (v2.1) is the rollback path and still works; the console is additive at `/admin-next/` | 🟡 *local half* ✅ 15 Oct: the payload carries **71** v2.1 admin/API files (`admin/index.html`, `api/admin.php`, `api/forms.php`…); `/admin/`, `/api/forms.php` and `/admin-next/` all answer. *On the host it must be seen to sign in and print one invoice.* |
 | D6 | At mobile width: the board, the quotations screen and the payment form each usable (one screenshot each) | |
 
 ## E. The release record
 
 | Field | Value |
 |---|---|
-| Pack bytes / SHA-256 | |
-| `MANIFEST.json` `gitSha` | |
-| Gates (suite · conformance · php-lint · `--check` · smoke · live) | |
+| Pack bytes / SHA-256 | 29,216,939 bytes · `c886870dc0ea1c5ddcee7b521b67c9b2639fe7465faade8961251851de1d6ce3` |
+| `MANIFEST.json` `gitSha` | `44ff72dd326fa18fa6a78e5340cebb09ccd5ce5b` (`gitDirty:false`) |
+| Gates (suite · conformance · php-lint · `--check` · smoke · live) | 1436/0/14 · 86/0 · 166 clean · 146/0 + 87/0 + generators current · 169/0/65 · 45/45 |
 | What changed since P25.1 | identity (NAP, hours, 2016) · intake (one enquiry one lead) · the Pipeline board · the quotation builder · the payment rules · request-isolation fixes · one plan family |
-| What is still open | |
+| What is still open | Every table B, C and D — all owner/host work. Nothing is open on the dev side; this record is the last commit before the pack that ships |
 
 **Exit gate (plan §6):** the record above is complete, C and D each have their evidence or an explicit dated
 list of what failed, and `/admin/` is confirmed working as the rollback path.
