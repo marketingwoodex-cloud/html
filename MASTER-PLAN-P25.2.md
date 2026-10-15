@@ -210,19 +210,39 @@ What is missing is everything after the lead arrives.
 |---|---|---|---|
 | — | Import P25.1 into `html`, byte-identical minus the build artifact | agent | ✅ done (`79b4636`, branch pushed; `main` untouched) |
 | — | Release payload rebuild proven | agent | ✅ 727 files · zip 29,158,456 B · `gitDirty:false` |
+| — | **Fold PR #8** (SQLite runtime, `.htaccess` wall, hotfix P22.2, G4 identity, SQLite gates) | agent | ✅ done (`d936ac0`, 253 files, hand-merged in the two files both sides had edited) |
+| — | **The product runs locally on PHP 8.2 + SQLite** — site, `api/v2`, console at `/admin-next/`, v2.1 admin at `/admin/` | agent | ✅ done: health `ok:true` · migrations 15 then 0 · roundtrip 47/0 · money-path 89/0 · suite 1336/4/7 · seeded through the API (13 leads, 3 quotations, 1 invoice, 474,100 PKR receivable) |
+| — | Fix found by running it: the SQLite shim did not translate the literal `SHOW TABLES LIKE 'wx\_%'` | agent | ✅ fixed, probe finds all 44 tables |
 | 0 | Back up; delete the five files; rotate keys | owner | ⬜ open |
 | 0 | Repo private · CI on · Search Console | owner | ⬜ open |
-| 0 | Merge PR #8 and port it onto this line | owner + agent | ⬜ open |
-| 0 | Payload stops shipping installer/demo/check scripts | agent | ⬜ open |
+| 0 | Merge PR #8 | owner | ✅ no longer needed — folded here (§0 note below); the PR can be closed with a pointer to this commit |
+| 0 | Payload stops shipping installer/demo/check scripts | agent | ✅ done (`0e8afc7`): 3 refused, listed in `payload.excluded`, a 4th fails the build |
 | 0 | Decide the default branch of `html` | owner | ⬜ open |
-| 1 | Migrations on real MySQL (staging) | agent | ⬜ open |
-| 1 | Host run: publish → 150 pages → rollback | owner + agent | ⬜ open |
+| 1 | Migrations on real MySQL (staging) | agent | ⬜ open — runbook ready |
+| 1 | Host run: publish → 150 pages → rollback | owner + agent | ⬜ open — runbook ready |
 | 2 | One identity, enforced by `--check` | agent | ⬜ open (bulk replacement **not** needed — see §1) |
 | 3 | Intake hardening (dedupe, Turnstile decision, visible failures) | agent | ⬜ open |
 | 3 | Pipeline board | agent | ⬜ open |
 | 3 | Quotation builder | agent | ⬜ open |
 | 3 | Invoice / payment recording + reconciliation | agent | ⬜ open |
-| 4 | Build, stage, deploy P25.2 | both | ⬜ open |
+| 4 | Build, stage, deploy P25.2 | both | ⬜ **runbook ready: `docs/DEPLOY-HOSTINGER-P25.2.md`** |
+
+### The fold, and the local run (15 October, evening)
+
+Folding PR #8 rather than rebuilding its contents was the plan's Phase 0 task 8, and it also removed the
+blocker the deployment phase had: the deployment runbook can now quote gates that actually ran, and the
+pack that will be uploaded is the pack that was exercised. Three facts worth keeping:
+
+1. **PR #8's own reading of plan S-02 was right**: the `.htaccess` wall belongs in the tree, and the pack
+   must additionally *not contain* the scripts. Both are now true, and the manifest records which files
+   were refused and why.
+2. **The local run is not a MySQL rehearsal.** Foreign keys are dropped on SQLite by design and four suite
+   tests (N13) only pass with seeded redirect rules and the real page tree. The migration step in
+   `docs/DEPLOY-HOSTINGER-P25.2.md` §4 exists precisely because of this.
+3. **Running it found a bug the tests had not**: `api/v2/lib/sqlite.php` translated the parameterised
+   `SHOW TABLES LIKE ?` but not the literal form `connectors.php` uses. That is the argument for the local
+   run being part of the gate rather than a convenience.
+
 
 ---
 
