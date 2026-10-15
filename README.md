@@ -4,6 +4,15 @@ This repository holds the studio's website **and** the admin that runs it. The a
 (React + TypeScript) on top of the existing PHP/MySQL backend — what the plan calls the strangler: v2.1
 keeps working while v2.5 takes over one screen at a time.
 
+> **Where this copy came from — 15 October 2026.** This is the **P25.1** project, imported whole: the same
+> 1,778 files as `marketingwoodex-cloud/-marketingwoodex` at `aa96524` (tag `p25`), verified file for file,
+> so that the gate runs and the release rebuilds from here. One file is deliberately absent —
+> `woodex-master-P25/woodex-master-P25.zip` — because `node tools/make-release.mjs` rebuilds it (proved in a
+> scratch clone of this content: 727 files, 42.8 MB uncompressed, zip 29,158,456 bytes, `gitDirty:false`).
+> The links further down still point at the project's original home. The repository's previous content (two
+> archives and a one-page README) and the 15 October analysis report were removed at the owner's direction
+> before the import; the plan for what happens next is **`MASTER-PLAN-P25.2.md`**.
+
 **Read these two first:**
 
 - **`ADMIN-V2.5-MASTER-PLAN-2026-10-13.md`** — the design authority: the audit, the API specification,
