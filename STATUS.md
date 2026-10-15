@@ -86,7 +86,11 @@ by the session on `arena/89662743-html`. The plan for this repository is `MASTER
       once and recorded as a named credit when confirmed, zero/negative refused, bank/cheque/online need
       their reference, reversal keeps the row and drops it from every sum, status derived from the rows.
       Reconciliation fixtures (partial, over-, zero, reversed) run in the gate (1431/0/14)
-- [ ] Phase 3: v2.5 beside v2.0 on production, host gate twice, fix A-02 (target 13 Nov)
+- [x] D · Phase 3 (P25.2 §5) complete on the local engine: intake, Pipeline board, quotation builder,
+      payments — and the exit-gate journey run on one lead end to end (page → board → quote → approval →
+      invoice → payment). The staging half of the exit gate is host work, in `docs/PHASE4-SHIP-CHECKLIST-P25.2.md`
+- [ ] Phase 4 — ship: the checklist and evidence tables are `docs/PHASE4-SHIP-CHECKLIST-P25.2.md`; the
+      hPanel steps are the owner's (target 13 Nov)
 - [ ] Phase 4: pipeline and quotation builder first, then daily operations, website control, automation,
       operations, cut-over (target 22 Jan 2027)
 - [ ] Phase 5: migrations 003 / 004 / 010 on production, CSP, off-site backups, monitoring (target 29 Jan 2027)
