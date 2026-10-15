@@ -57,6 +57,23 @@ const API_FRONT = "/api/v2/index.php";
 
 let handler = null;
 
+/* The request's own cookie header, per request. @php-wasm's request handler replaces it with the
+   runtime's own cookie jar — one jar for every client of the process — so a second user's login would
+   answer the first user's requests as the second user (and fail their CSRF check with a valid token).
+   Real PHP builds $_COOKIE from the request it is handling; this store makes the engine do the same:
+   remember nothing, and hand the runtime exactly the cookie header that arrived. */
+let currentCookie = "";
+const perRequestCookieStore = {
+  rememberCookiesFromResponseHeaders() {
+    /* Set-Cookie belongs to the client's jar, not ours. */
+  },
+  getCookieRequestHeader() {
+    /* A space, not empty: the runtime only calls wasm_set_cookies for a truthy value, so an empty
+       string would leave the previous request's cookies in place. */
+    return currentCookie === "" ? " " : currentCookie;
+  },
+};
+
 async function boot() {
   const loader = await node.getPHPLoaderModule("8.2");
   loader.processId = process.pid % 100000;
@@ -67,6 +84,7 @@ async function boot() {
     php,
     documentRoot: "/wx",
     absoluteUrl: `http://${HOST === "0.0.0.0" ? "127.0.0.1" : HOST}:${PORT}`,
+    cookieStore: perRequestCookieStore,
     getFileNotFoundAction: (pathname) => {
       // Anything under /api/v2/ that is not a real file is the front controller's business.
       if (pathname === "/api/v2" || pathname.startsWith("/api/v2/")) {
@@ -223,9 +241,11 @@ const server = http.createServer(async (req, res) => {
       if (k === "connection" || k === "keep-alive" || k === "transfer-encoding") continue;
       headers[k] = Array.isArray(v) ? v.join(", ") : v;
     }
-    const response = await enqueue(() =>
-      handler.request({ url: consoleRoute(req.url || "/"), method: req.method || "GET", headers, body }),
-    );
+    const response = await enqueue(() => {
+      /* Inside the queue, so the cookie the runtime sees is always this request's own. */
+      currentCookie = String(headers.cookie ?? headers.Cookie ?? "");
+      return handler.request({ url: consoleRoute(req.url || "/"), method: req.method || "GET", headers, body });
+    });
     const out = {};
     for (const [k, v] of Object.entries(response.headers || {})) {
       if (k.toLowerCase() === "transfer-encoding") continue;

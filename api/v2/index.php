@@ -26,6 +26,13 @@ if (PHP_VERSION_ID < 70400) {
 
 require_once __DIR__ . '/lib/bootstrap.php';
 
+/* One request, one generation. In ordinary PHP a request is a process and the per-request caches are
+   born empty; this engine (tools/phpwasm) and any long-lived SAPI run many requests in one process, where
+   a cached `current_user` from the last request would skip setting WX_SESSION and every later write would
+   fail its CSRF check with a perfectly valid token — the failure tests/roundtrip.php was written around.
+   The reset is one counter bump per request; the correctness is worth it in every SAPI. */
+wx_reset_request_cache();
+
 ini_set('display_errors', '0');
 error_reporting(E_ALL);
 ob_start();
