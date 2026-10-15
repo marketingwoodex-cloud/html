@@ -150,6 +150,7 @@ export function LiveBusiness() {
       const files = r.assets.filter((a) => a.changed).map((a) => a.rel);
       setDone(
         `${r.pages} page${r.pages === 1 ? "" : "s"} changed out of ${r.scanned} read, ${r.places} place${r.places === 1 ? "" : "s"} in all` +
+        (r.schema ? `, and the JSON-LD sameAs rewritten on ${r.schema} of them so the schema carries the same links as the footer` : "") +
         (files.length ? ` — plus ${files.join(", ")}` : ", and neither site script matched anything") +
         (r.batch ? `. Batch ${r.batch.slice(0, 8)} in page history: one call rolls all of it back.` : "."),
       );
@@ -300,7 +301,7 @@ export function LiveBusiness() {
               </Card>
             </div>
 
-            <Card title="Social profiles" sub={`Filled profiles appear in the footer's social row. ${data.site.socialRow} of ${data.site.pages} pages carry that row today.`}>
+            <Card title="Social profiles" sub={`A filled profile is written twice by one save: into the footer's social row, which the visitor sees, and into the page's JSON-LD sameAs, which a search engine reads. ${data.site.socialRow} of ${data.site.pages} pages carry that row today, and a profile the pages link in schema but you leave blank here is kept rather than deleted.`}>
               {data.site.socialRow === 0 ? (
                 <Note tone="warn" title="The footer has no social row yet">
                   Applying these keeps the links in the database but cannot put them on a page — the footer's markup is the Header &amp; footer screen's job. Setting a profile here is still worth it: it is what a page's row will be filled from once there is one.
@@ -509,6 +510,11 @@ function CheckReport({ result, pairs }: { result: BizCheckResult; pairs: BizPair
         <Pill>{scan.scanned} pages read</Pill>
         <Pill>{visible.length} strings looked for</Pill>
         {scan.social.pages > 0 && <Pill tone="info">{scan.social.pages} social rows</Pill>}
+        {scan.schema.pages > 0 && (
+          <Pill tone="info" title="The JSON-LD sameAs in the page's own schema carries the same links — one save writes both">
+            {scan.schema.pages} schema nodes
+          </Pill>
+        )}
         {result.moves > 0 && (
           <Pill tone="info" title="The digits-only phone pairs cannot be allowed to rewrite a wa.me link, so the WhatsApp number is swapped through a temporary value first">
             WhatsApp link rewritten
@@ -530,13 +536,14 @@ function CheckReport({ result, pairs }: { result: BizCheckResult; pairs: BizPair
       ) : (
         <div className="table-wrap">
           <table className="table">
-            <thead><tr><th>Page</th><th>Places</th><th>Social row</th></tr></thead>
+            <thead><tr><th>Page</th><th>Places</th><th>Social row</th><th>Schema</th></tr></thead>
             <tbody>
               {scan.changed.slice(0, 25).map((p) => (
                 <tr key={p.rel}>
                   <td><a href={p.url} target="_blank" rel="noreferrer">{p.rel}</a></td>
                   <td>{p.places}</td>
                   <td>{p.social ? "fills in" : "—"}</td>
+                  <td>{p.schema ? "sameAs" : "—"}</td>
                 </tr>
               ))}
             </tbody>

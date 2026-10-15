@@ -36,6 +36,9 @@
 declare(strict_types=1);
 
 /** The contact fields, in v2.1's order — the same keys, so a v2.1 `content.json` could be imported. */
+/** The @id the site's own schema gives the studio, so a save can recognise its node. */
+const WX_BIZ_ORG_ID = 'https://woodex.com.pk/#org';
+
 const WX_BIZ_CONTACT = ['email', 'phone1', 'phone2', 'wa', 'addr1', 'addr2', 'city', 'country'];
 
 /** The opening-hours fields. `open`/`close` are stored 24-hour (`19:30`); the site spells them in 12-hour. */
@@ -662,6 +665,119 @@ function wx_biz_social_block(string $html, array $biz, ?bool &$touched = null): 
  *
  * @return array{html:string, places:int, hits:int[], social:bool, changed:bool}
  */
+/**
+ * The JSON-LD `sameAs`, written in the same pass as the footer row — defect N17.
+ *
+ * Until now a save rewrote the footer's social row and left the schema alone, so the two halves of the same
+ * fact drifted the moment somebody added a profile: the page *showed* the new link and *told Google* the old
+ * set. The site's own identity file (tools/entity.json, written by tools/apply-entity.py) writes `sameAs`
+ * from the dev side, and nothing kept the console's write and that file equal. This closes the loop:
+ *
+ *   · a managed network (the seven in WX_BIZ_SOCIAL) takes the record's URL when the record has one, and
+ *     **keeps** the page's own URL when the record is empty for it — a profile the site links in schema but
+ *     not in the footer is a deliberate state on this site (X is dormant, so it is out of the footer and kept
+ *     in `sameAs`), and a save must not silently delete it;
+ *   · an entry that is not one of those networks — the Google Maps listing link — is left exactly as it is;
+ *   · only a node that is the studio's own (its `@id`, its name) is touched, and only when the result would
+ *     differ, so a page that is already right is not rewritten and the batch shows only real changes.
+ *
+ * A save therefore makes the site's schema mirror the site's own links. tools/entity.json must then be updated
+ * to match — `python3 tools/apply-entity.py --check` fails until it is, which is the intended way for the two
+ * files to stay honest about one identity.
+ */
+function wx_biz_schema_sameas(string $html, array $biz, ?bool &$touched = null, ?int &$nodes = null): string
+{
+    $biz = wx_biz_record($biz);
+    $hosts = [
+        'facebook' => 'facebook.com',
+        'instagram' => 'instagram.com',
+        'linkedin' => 'linkedin.com',
+        'youtube' => 'youtube.com',
+        'tiktok' => 'tiktok.com',
+        'pinterest' => 'pinterest.com',
+        'x' => 'x.com',
+    ];
+    $touched = false;
+    $nodes = 0;
+    $out = preg_replace_callback(
+        '~(<script[^>]*type="application/ld\+json"[^>]*>)(.*?)(</script>)~is',
+        static function (array $m) use ($biz, $hosts, &$touched, &$nodes): string {
+            $data = json_decode(trim($m[2]), true);
+            if (!is_array($data)) {
+                return $m[0];
+            }
+            $changed = false;
+            $fix = static function (&$node) use ($biz, $hosts, &$changed, &$nodes): void {
+                if (!is_array($node) || array_is_list($node)) {
+                    return;
+                }
+                $type = $node['@type'] ?? '';
+                $types = is_array($type) ? $type : [$type];
+                $mine = (($node['@id'] ?? '') === WX_BIZ_ORG_ID)
+                    || (in_array('LocalBusiness', $types, true) && ($node['name'] ?? '') === 'Woodex Interior')
+                    || (in_array('Organization', $types, true) && ($node['name'] ?? '') === 'Woodex Interior');
+                if (!$mine || !array_key_exists('sameAs', $node) || !is_array($node['sameAs'])) {
+                    return;
+                }
+                $nodes++;
+                $current = array_values(array_filter($node['sameAs'], 'is_string'));
+                $kept = [];      // entries the console does not manage, in their own order (the maps link)
+                $orphans = [];   // a managed network's URL the record has nothing to say about (dormant X)
+                foreach ($current as $url) {
+                    $host = strtolower((string) parse_url($url, PHP_URL_HOST));
+                    $key = '';
+                    foreach ($hosts as $k => $h) {
+                        if ($host === $h || str_ends_with($host, '.' . $h)) {
+                            $key = $k;
+                            break;
+                        }
+                    }
+                    if ($key === '') {
+                        $kept[] = $url;
+                    } elseif ((string) $biz[$key] === '' || (string) $biz[$key] !== $url) {
+                        $orphans[$key][] = $url;
+                    }
+                }
+                $next = $kept;
+                foreach (array_keys(WX_BIZ_SOCIAL) as $key) {
+                    $url = (string) $biz[$key];
+                    if ($url !== '') {
+                        $next[] = $url;
+                        continue;
+                    }
+                    /* Empty in the record: keep whatever the page already links for this network. */
+                    foreach ($orphans[$key] ?? [] as $url) {
+                        $next[] = $url;
+                    }
+                }
+                $next = array_values(array_unique($next));
+                if ($next !== $current) {
+                    $node['sameAs'] = $next;
+                    $changed = true;
+                }
+            };
+            $walk = static function (&$x) use (&$walk, $fix): void {
+                if (is_array($x)) {
+                    if (!array_is_list($x)) {
+                        $fix($x);
+                    }
+                    foreach ($x as &$v) {
+                        $walk($v);
+                    }
+                }
+            };
+            $walk($data);
+            if (!$changed) {
+                return $m[0];
+            }
+            $touched = true;
+            return $m[1] . json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . $m[3];
+        },
+        $html
+    );
+    return $out ?? $html;
+}
+
 function wx_biz_change(string $html, array $pairs, array $biz): array
 {
     $original = $html;
@@ -686,11 +802,22 @@ function wx_biz_change(string $html, array $pairs, array $biz): array
     if ($social) {
         $places += 1;
     }
+    /* And the same links in the page's JSON-LD, in the same pass (N17): the footer row is what a visitor
+       sees, sameAs is what a search engine reads, and a save that wrote one and not the other is how the two
+       came apart. Counted like the row, for the same reason. */
+    $schema = false;
+    $schemaNodes = 0;
+    $html = wx_biz_schema_sameas($html, $biz, $schema, $schemaNodes);
+    if ($schema) {
+        $places += 1;
+    }
     return [
         'html' => $html,
         'places' => $places,
         'hits' => $hits,
         'social' => $social,
+        'schema' => $schema,
+        'schemaNodes' => $schemaNodes,
         'changed' => $html !== $original,
     ];
 }
@@ -712,6 +839,8 @@ function wx_biz_scan(array $pairs, array $biz, array $opt = []): array
     $skipped = 0;
     $socialRows = 0;
     $socialPages = 0;
+    $schemaPages = 0;
+    $schemaNodes = 0;
 
     foreach ($only as $rel) {
         if (!is_file(WX_SITE_ROOT . '/' . $rel)) {
@@ -729,6 +858,10 @@ function wx_biz_scan(array $pairs, array $biz, array $opt = []): array
         if ($change['social']) {
             $socialPages++;
         }
+        if (!empty($change['schema'])) {
+            $schemaPages++;
+        }
+        $schemaNodes += (int) ($change['schemaNodes'] ?? 0);
         if (!$change['changed']) {
             $skipped++;
             continue;
@@ -739,6 +872,7 @@ function wx_biz_scan(array $pairs, array $biz, array $opt = []): array
                 'url' => wx_page_url($rel),
                 'places' => $change['places'],
                 'social' => $change['social'],
+                'schema' => !empty($change['schema']),
             ];
         }
     }
@@ -759,6 +893,7 @@ function wx_biz_scan(array $pairs, array $biz, array $opt = []): array
         'places' => array_sum($hits),
         'none' => $none,
         'social' => ['rows' => $socialRows, 'pages' => $socialPages],
+        'schema' => ['pages' => $schemaPages, 'nodes' => $schemaNodes],
         'truncated' => count($changed) >= $limit,
     ];
 }
@@ -781,6 +916,8 @@ function wx_biz_apply(array $biz, array $me, string $note = ''): array
     $changed = [];
     $places = 0;
     $socialPages = 0;
+    $schemaPages = 0;
+    $schemaNodes = 0;
     $scanned = 0;
     foreach (wx_page_walk(WX_SITE_ROOT) as $rel) {
         if (!is_file(WX_SITE_ROOT . '/' . $rel)) {
@@ -794,6 +931,8 @@ function wx_biz_apply(array $biz, array $me, string $note = ''): array
         $changed[] = $rel;
         $places += $change['places'];
         $socialPages += $change['social'] ? 1 : 0;
+        $schemaPages += !empty($change['schema']) ? 1 : 0;
+        $schemaNodes += (int) ($change['schemaNodes'] ?? 0);
     }
 
     $batch = '';
@@ -839,9 +978,13 @@ function wx_biz_apply(array $biz, array $me, string $note = ''): array
         'places' => $places,
         'scanned' => $scanned,
         'social' => $socialPages,
+        'schema' => $schemaPages,
+        'schemaNodes' => $schemaNodes,
         'assets' => $assets,
         'pairs' => count($pairs),
-        'undo' => $batch !== '' ? 'POST /pages/history/' . $batch . '/rollback' : '',
+        /* The route a person actually posts to, with the batch in the body — the string used to name a
+           path that does not exist, which is worse than no string at all. */
+        'undo' => $batch !== '' ? 'POST /pages/rollback {"batch":"' . $batch . '"}' : '',
     ];
 }
 

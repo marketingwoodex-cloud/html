@@ -2776,6 +2776,127 @@ if (is_file($home) && preg_match('~<div class="footer-social"[^>]*>(.*?)</div>~s
 ok(str_contains(wx_biz_social_html(['facebook' => "https://facebook.com/a?b=1&c='x'"]), 'href="https://facebook.com/a?b=1&amp;c=&#39;x&#39;"'),
    'a link is escaped as v2.1 escapes it: &#39; for an apostrophe, as its esc() writes');
 
+group('One save writes the footer row and the schema, so the two halves cannot disagree (N17)');
+/* `sameAs` beside the footer row: the row is what the visitor sees, the schema is what a search engine
+   reads, and until this slice a save wrote one and left the other. The rules under test are the ones that
+   make the write safe on *this* site: the maps listing link is somebody else's, and X is dormant in the
+   footer while it stays in the schema. */
+$soc_biz = ['facebook' => 'https://www.facebook.com/woodexinterior', 'linkedin' => 'https://www.linkedin.com/company/woodexinterior'];
+$row_html = '<div class="footer-social"><a data-soc="facebook" href="https://old">x</a></div>';
+$node_of = static function (array $sameAs, string $type = 'LocalBusiness', string $id = 'https://woodex.com.pk/#org', string $name = 'Woodex Interior'): string {
+    return '<script type="application/ld+json">' . json_encode(
+        ['@context' => 'https://schema.org', '@type' => $type, '@id' => $id, 'name' => $name, 'sameAs' => $sameAs],
+        JSON_UNESCAPED_SLASHES
+    ) . '</script>';
+};
+/* The two generations write their schema differently — frontend-v1 gives each node its own block, the root
+   v26 pages put several nodes in one block as a JSON array, and a single file mixes the two — so the reader
+   walks whatever it finds rather than assuming one shape. */
+$same_as_of = static function (string $html): array {
+    $out = [];
+    if (!preg_match_all('~<script[^>]*application/ld\+json[^>]*>(.*?)</script>~s', $html, $m)) {
+        return $out;
+    }
+    $walk = static function ($x) use (&$walk, &$out): void {
+        if (!is_array($x)) {
+            return;
+        }
+        if (!array_is_list($x) && array_key_exists('sameAs', $x) && is_array($x['sameAs'])) {
+            $out[] = $x['sameAs'];
+        }
+        foreach ($x as $v) {
+            $walk($v);
+        }
+    };
+    foreach ($m[1] as $json) {
+        $walk(json_decode($json, true));
+    }
+    return $out;
+};
+$maps = 'https://maps.google.com/?cid=301798693140782080';
+$page = $row_html . $node_of([$maps, 'https://www.facebook.com/woodexinterior', 'https://x.com/woodexinterior']);
+$one = wx_biz_change($page, [], $soc_biz);
+ok($one['changed'], 'a page whose schema is behind the console changes');
+ok($one['schema'], 'and the change is reported as a schema change rather than only a row change');
+$sa = $same_as_of($one['html']);
+eq(count($sa), 1, 'one node carries the list');
+ok(in_array('https://www.linkedin.com/company/woodexinterior', $sa[0], true),
+   'a profile set in the console reaches the schema, not only the footer row');
+ok(str_contains($one['html'], 'href="https://www.linkedin.com/company/woodexinterior"'),
+   'and it reaches the row in the same pass');
+eq($sa[0][0], $maps, 'the Google Maps listing link is kept, and keeps its place — the console does not manage it');
+ok(in_array('https://x.com/woodexinterior', $sa[0], true),
+   'a network the record says nothing about keeps the URL the page already linked (X is dormant in this footer)');
+$twice = wx_biz_change($one['html'], [], $soc_biz);
+ok(!$twice['changed'], 'and the save is idempotent: running it again writes nothing');
+eq($one['places'], 2, 'the row and the schema each count as a place, so neither change can read as "nothing happened"');
+/* The schema-only case, which is the one this slice exists for: the row is already right and the schema is
+   behind. Without the count it would report 0 places, which a person reads as "nothing happened". */
+$row_only = '<div class="footer-social">' . wx_biz_social_html($soc_biz) . '</div>'
+    . $node_of([$maps, 'https://www.facebook.com/woodexinterior']);
+$schema_only = wx_biz_change($row_only, [], $soc_biz);
+ok($schema_only['changed'] && !$schema_only['social'] && $schema_only['schema'],
+   'a save that only the schema needed is still a save, and is not reported as a row change');
+eq($schema_only['places'], 1, 'and it counts as one place');
+
+$two_nodes = $row_html
+    . $node_of([$maps, 'https://www.facebook.com/woodexinterior'], 'LocalBusiness')
+    . $node_of([$maps, 'https://www.facebook.com/woodexinterior'], 'Organization');
+$both = $same_as_of(wx_biz_change($two_nodes, [], $soc_biz)['html']);
+eq(count($both), 2, 'both nodes of the studio are seen');
+eq($both[0], $both[1], 'and end up saying the same thing — no page tells two stories about one identity');
+
+$other = $row_html . $node_of(['https://example.com/else'], 'Service', 'https://woodex.com.pk/#svc', 'Interior Design and Build in Lahore');
+$kept = wx_biz_change($other, [], $soc_biz);
+eq($same_as_of($kept['html'])[0], ['https://example.com/else'], 'a node that is not the studio\'s own is left alone');
+ok(!$kept['schema'], 'and it is not reported as a schema change');
+
+$foreign = $row_html . $node_of(['https://example.com/other'], 'Organization', 'https://other.example/#org', 'Somebody Else');
+ok(!wx_biz_change($foreign, [], $soc_biz)['schema'], 'a name and @id that are not ours are not touched either');
+
+group('The live page is the one that has to agree');
+/* WX_SITE_ROOT in this harness is the checkout, and the page that goes to the site root on the host is
+   frontend-v1/index.html — the 150-page generation the deploy publishes. It is read here by path so the
+   assertion is about the page a visitor actually gets. */
+$live_file = dirname(__DIR__) . '/frontend-v1/index.html';
+if (is_file($live_file)) {
+    $live_html = (string) file_get_contents($live_file);
+    $live_sa = $same_as_of($live_html);
+    ok(count($live_sa) >= 1, 'the live home page carries a sameAs to hold to (' . count($live_sa) . ' node(s))');
+    ok(preg_match('~<a data-soc="facebook" href="([^"]+)"~', $live_html, $fb_m) === 1, 'and a Facebook profile in its footer row');
+    $fb_row = (string) ($fb_m[1] ?? '');
+    ok(in_array($fb_row, $live_sa[0], true), 'which its schema already names — row and schema agree today');
+
+    $moved_biz = wx_biz_record(['facebook' => 'https://www.facebook.com/woodex.new']);
+    $moved_page = wx_biz_change($live_html, [], $moved_biz);
+    $moved_sa = $same_as_of($moved_page['html']);
+    ok($moved_page['schema'], 'a profile changed in the console is reported as a schema change on the real page');
+    eq(count($moved_sa), count($live_sa), 'and it changes no node it should not: the same nodes, rewritten');
+    $all_moved = true;
+    $old_left = false;
+    foreach ($moved_sa as $list) {
+        if ($fb_row !== '' && !in_array('https://www.facebook.com/woodex.new', $list, true)) {
+            $all_moved = false;
+        }
+        if ($fb_row !== '' && in_array($fb_row, $list, true)) {
+            $old_left = true;
+        }
+    }
+    ok($all_moved, 'every node that named the old profile names the new one — no page tells two stories');
+    ok(!$old_left, 'and the old URL is gone from the schema');
+    ok(in_array('https://maps.google.com/?cid=301798693140782080', $moved_sa[0], true), 'the maps listing link survives');
+    ok(in_array('https://x.com/woodexinterior', $moved_sa[0], true),
+       'and so does the profile the record is silent about (X, dormant in the footer, still in the schema)');
+    ok(str_contains($moved_page['html'], 'href="https://www.facebook.com/woodex.new"'), 'the footer row moved with it');
+
+    $scan = wx_biz_scan(wx_biz_pairs(wx_biz_defaults(), $moved_biz), $moved_biz, ['rel' => WX_BIZ_SAMPLE]);
+    eq($scan['schema']['pages'], 1, 'the dry run says the schema will change, before anything is written');
+    ok($scan['schema']['nodes'] >= 1, 'and how many nodes it looked at (' . $scan['schema']['nodes'] . ')');
+    eq($scan['changed'][0]['schema'] ?? null, true, 'the page it lists carries the schema flag rather than a bare place count');
+} else {
+    skip('frontend-v1/index.html is not in this checkout, so the live-page schema leg is skipped');
+}
+
 group('The live site says what the console reads from it');
 if (is_file(WX_SITE_ROOT . '/' . WX_BIZ_SAMPLE)) {
     $page = (string) file_get_contents(WX_SITE_ROOT . '/' . WX_BIZ_SAMPLE);

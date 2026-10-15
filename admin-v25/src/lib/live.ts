@@ -1296,12 +1296,15 @@ export interface BizScan {
   pairs: number;
   scanned: number;
   skipped: number;
-  changed: { rel: string; url: string; places: number; social: boolean }[];
+  changed: { rel: string; url: string; places: number; social: boolean; schema: boolean }[];
   pages: number;
   places: number;
   /** Search strings that matched nowhere — the honest half of v2.1's "1,500 places". */
   none: string[];
   social: { rows: number; pages: number };
+  /** The JSON-LD `sameAs` half of the same save — defect N17. A save writes the footer row *and* the
+      schema, so a profile added here reaches both the visitor and the search engine. */
+  schema: { pages: number; nodes: number };
   truncated: boolean;
 }
 
@@ -1322,6 +1325,8 @@ export interface BizApplyResult {
   places: number;
   scanned: number;
   social: number;
+  schema: number;
+  schemaNodes: number;
   assets: { rel: string; changed: boolean; reason: string }[];
   pairs: number;
   undo: string;
