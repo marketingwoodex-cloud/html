@@ -3575,6 +3575,141 @@ eq(wx_legacy_params(['id' => 'id'], ['id' => 'c1a2b3c4d5'], []), ['id' => 'c1a2b
     'a bridged connector id stays a string — `[\'id\']` would cast it to an int and address connector 0');
 @unlink(WX_CONN_TEST_FILE);
 
+group('The intake rules — one enquiry, one lead, no silent loss (plan §5.1)');
+
+require_once dirname(__DIR__) . '/frontend-v1/api/intake-lib.php';
+
+/* ---- the duplicate rule: what counts as the same enquiry ---- */
+$keys_a = intake_dedupe_keys('+92 322 4000768', 'Ali@Example.com ', 'contact', '/contact/');
+$keys_b = intake_dedupe_keys('0322 4000768', 'ali@example.com', 'contact', '/contact/');
+ok($keys_a === $keys_b, 'the same person is recognised whatever way the phone and email are typed');
+ok(count($keys_a) === 2, 'a phone and an email are two identities to claim');
+ok(intake_dedupe_keys('+92 322 4000768', '', 'contact', '/contact/')[0] === $keys_a[0], 'the phone claim is the same when no email was given');
+ok(count(intake_dedupe_keys('+92 322 4000768', '', 'contact', '/contact/')) === 1, 'and then there is only one identity');
+ok(intake_dedupe_keys('+92 322 4000768', '', 'contact', '/estimator/')[0] !== $keys_a[0], 'the same person on another page is a different enquiry');
+ok(intake_dedupe_keys('+92 322 4000768', '', 'estimator', '/contact/')[0] !== $keys_a[0], 'and so is the same person on another form');
+ok(intake_digits('+92 322 4000768') === intake_digits('0322 4000768'), 'a country code in front of the number changes nothing');
+ok(intake_digits('') === '', 'a submission with no phone has no phone identity');
+ok(intake_dedupe_keys('', 'not-an-email', 'contact', '/x/') === [], 'a submission with no recognisable identity claims nothing');
+ok(intake_verdict(new IntakeMemoryStore(), [], 1000)['duplicate'] === false, 'and so it can never be called a duplicate — it passes through');
+
+/* ---- the claim: the same submission twice is one lead ---- */
+$store = new IntakeMemoryStore();
+$first = intake_verdict($store, $keys_a, 1000);
+ok($first['duplicate'] === false, 'a first submission is a lead');
+ok(count($first['claimed']) === 2, 'and it claims both of its identities');
+$second = intake_verdict($store, $keys_a, 1100);
+ok($second['duplicate'] === true, 'the same submission inside the window is a duplicate');
+ok($second['since'] === 1000, 'and the log can say when the first one arrived');
+$again = intake_verdict($store, $keys_a, 1000 + INTAKE_DEDUPE_SECONDS);
+ok($again['duplicate'] === false, 'a genuinely new enquiry after the window is a lead again');
+ok(intake_claim_decision(1000, 1000 + INTAKE_DEDUPE_SECONDS - 1) === 'duplicate', 'one second before the window ends is still a duplicate');
+ok(intake_claim_decision(null, 1000) === 'free', 'a key never claimed is free');
+
+/* ---- a duplicate gives back the claims it took, so the store remembers only real leads ---- */
+$store2 = new IntakeMemoryStore();
+intake_verdict($store2, [$keys_a[0]], 1000);                 // an earlier lead holds the phone identity
+$dup = intake_verdict($store2, $keys_a, 1100);               // this one matches on it and must not keep the email claim
+ok($dup['duplicate'] === true && $dup['claimed'] === [], 'a duplicate walks away with nothing');
+ok($store2->keys() === [$keys_a[0]], 'and the store still holds only the first lead\'s claim');
+
+/* ---- the SQL store, against a fake connection that behaves like wx_throttle ---- */
+$rows = [];
+$exec = static function (string $sql, array $bind) use (&$rows): array {
+    if (str_starts_with($sql, 'SELECT')) {
+        return isset($rows[$bind[0]]) ? [['t' => $rows[$bind[0]]]] : [];
+    }
+    if (str_starts_with($sql, 'INSERT')) {
+        if (isset($rows[$bind[0]])) {
+            throw new RuntimeException('UNIQUE constraint failed');
+        }
+        $rows[$bind[0]] = $bind[1];
+        return [];
+    }
+    if (str_starts_with($sql, 'DELETE')) {
+        unset($rows[$bind[0]]);
+    }
+    return [];
+};
+$store3 = new IntakeThrottleStore($exec);
+ok($store3->claim($keys_a[0], 1000) === true, 'a claim is a row in the table this site already has');
+ok($store3->seen($keys_a[0]) === 1000, 'and the row says when it was taken');
+$store3->release($keys_a[0]);
+ok($store3->seen($keys_a[0]) === null, 'a released claim leaves nothing behind');
+
+/* ---- two requests racing for the same key: one lead, one told it is a duplicate ----
+   Both saw no row (a stale read at the same instant); the INSERT is the atomic step, exactly as on MySQL. */
+$raceRows = [];
+$raceExec = static function (string $sql, array $bind) use (&$raceRows): array {
+    if (str_starts_with($sql, 'SELECT')) {
+        return [];
+    }
+    if (str_starts_with($sql, 'INSERT')) {
+        if (isset($raceRows[$bind[0]])) {
+            throw new RuntimeException('UNIQUE constraint failed');
+        }
+        $raceRows[$bind[0]] = $bind[1];
+    }
+    return [];
+};
+$racer = new IntakeThrottleStore($raceExec);
+ok($racer->claim($keys_a[0], 1000) === true, 'the claim is taken by whoever inserts first');
+ok($racer->claim($keys_a[0], 1001) === false, 'and the other request is told the row is already theirs');
+
+/* ---- a duplicate answer points at the lead it is a duplicate of ---- */
+$rows = [['id' => 9, 'phone' => '+92 322 4000768', 'email' => 'ayesha@example.com'], ['id' => 11, 'phone' => '0300 1234567', 'email' => '']];
+ok(intake_first_id($rows, '0322 4000768', 'other@example.com') === 9, 'a differently formatted phone still finds the lead it duplicates');
+ok(intake_first_id($rows, '', 'AYESHA@example.com ') === 9, 'and so does the same email typed differently');
+ok(intake_first_id($rows, '0300 1234567', '') === 11, 'each identity finds its own lead');
+ok(intake_first_id($rows, '0311 9999999', 'x@y.zz') === 9, 'and a submission that matches none still points at the earliest real lead rather than at nothing');
+ok(intake_first_id([], '0322 4000768', '') === 0, 'except when there is no lead to point at');
+
+/* ---- Turnstile: unreachable accepts and is recorded; a delivered "no" refuses ---- */
+ok(intake_turnstile(false, null) === ['accept' => true, 'verdict' => 'unverified', 'detail' => 'Cloudflare was unreachable'],
+    'an unreachable Cloudflare accepts the enquiry (the written decision in docs/INTAKE-RULES-P25.2.md)');
+ok(intake_turnstile(true, ['success' => true])['verdict'] === 'ok', 'a delivered pass is recorded as ok');
+$refused = intake_turnstile(true, ['success' => false, 'error-codes' => ['invalid-input-response']]);
+ok($refused['accept'] === false && $refused['verdict'] === 'fail' && str_contains($refused['detail'], 'invalid-input-response'), 'a delivered "no" refuses, and says why');
+ok(intake_turnstile(true, ['success' => false])['detail'] === 'the check was not successful', 'and a refusal with no code still says something a person can read');
+
+/* ---- one reader for every sender's answer ---- */
+ok(intake_channel_outcome(['email' => 'sent'])['ok'] === true, 'a sent email is a delivery');
+ok(intake_channel_outcome(['email' => 'sent', 'whatsapp' => 'failed: no token'])['ok'] === false, 'and a channel that failed makes the delivery a failure');
+ok(str_contains(intake_channel_outcome(['email' => 'failed: SMTP down'])['detail'], 'SMTP down'), 'with the reason kept');
+ok(intake_channel_outcome(['skipped' => 'off'])['skipped'] === true, 'nothing to do is not a failure');
+ok(intake_channel_outcome([])['skipped'] === true, 'and neither is an empty answer');
+ok(intake_channel_outcome(['error' => 'boom'])['ok'] === false, 'a thrown sender is a failure with its message');
+
+/* ---- the log a person reads: counters survive trimming ---- */
+$log = [];
+for ($i = 1; $i <= 5; $i++) {
+    $log = intake_delivery_merge($log, ['at' => "2026-10-15 18:0$i:00", 'id' => $i, 'source' => 'contact', 'page' => '/contact/',
+        'verdict' => $i === 2 ? 'duplicate' : ($i === 3 ? 'bot' : 'new'), 'turnstile' => $i === 4 ? 'unverified' : 'off',
+        'channels' => $i === 1 ? ['alert' => ['ok' => false, 'detail' => 'failed: SMTP down'], 'reply' => ['ok' => true, 'detail' => 'sent: whatsapp']] : []], 3, 2);
+}
+ok(count($log['recent']) === 3, 'the recent list is trimmed to what a screen shows');
+ok($log['counts']['total'] === 5 && $log['counts']['duplicates'] === 1 && $log['counts']['bots'] === 1 && $log['counts']['unverified'] === 1,
+    'but the counters are counts, never the length of a trimmed list');
+ok($log['counts']['failed'] === 1 && count($log['fails']) === 1 && $log['fails'][0]['detail'] === 'failed: SMTP down',
+    'a failed alert is kept with its channel and its reason');
+ok($log['last']['alert']['ok'] === false && $log['last']['reply']['ok'] === true, 'and each channel keeps its last outcome');
+ok($log['recent'][0]['id'] === 5 && $log['recent'][0]['verdict'] === 'new', 'newest first');
+ok($log['today']['date'] === '2026-10-15' && $log['today']['total'] === 5 && $log['today']['duplicates'] === 1 && $log['today']['bots'] === 1, 'with a per-day count beside them');
+$log2 = intake_delivery_merge($log, ['at' => '2026-10-16 09:00:00', 'id' => 6, 'verdict' => 'new', 'channels' => []], 3, 2);
+ok($log2['today']['date'] === '2026-10-16' && $log2['today']['total'] === 1, 'the day rolls over without touching the running totals');
+ok($log2['counts']['total'] === 6, 'which keep counting');
+
+/* ---- writer and reader agree on the file's shape (the console reads what forms.php wrote) ---- */
+$round = sys_get_temp_dir() . '/wx-intake-' . getmypid() . '.json';
+file_put_contents($round, json_encode($log2, JSON_UNESCAPED_UNICODE));
+define('WX_INTAKE_LOG_FILE', $round);
+$read = wx_intake_log();
+ok($read['counts']['total'] === 6 && $read['recent'][0]['id'] === 6, 'the console\'s reader sees the same log the website writes');
+ok($read['empty'] === false, 'and knows it is not looking at an empty one');
+ok($read['today']['date'] === '2026-10-16', 'with today\'s date beside today\'s numbers');
+@unlink($round);
+ok(wx_intake_log()['counts']['total'] === 0 && wx_intake_log()['empty'] === true, 'a site that has recorded nothing yet reports an empty log, not an error');
+
 /* ============================================================== report */
 echo "\n";
 if ($failures) {

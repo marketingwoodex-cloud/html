@@ -30,7 +30,7 @@ import { LiveLibrary } from "./screens/LiveLibrary";
 import { LiveSiteTheme } from "./screens/LiveSiteTheme";
 import { LivePlacements } from "./screens/LivePlacements";
 import { LiveHeroes } from "./screens/LiveHeroes";
-import { LiveForms } from "./screens/LiveForms";
+import { FormCard, IntakeCard, LiveForms } from "./screens/LiveForms";
 import { LiveEstimator } from "./screens/LiveEstimator";
 import { LiveTemplates } from "./screens/LiveTemplates";
 import { LiveBusiness } from "./screens/LiveBusiness";
@@ -401,6 +401,59 @@ try {
   );
 } catch (err) {
   failures.push(`the forms screen → ${(err as Error).message}`);
+}
+
+/* The intake card is plan §5.1's "no silent loss" on a screen: a failed alert is a fact with its reason, the
+   counters are the server's counts rather than the length of a trimmed list, and a site that has recorded
+   nothing yet shows an empty log — not a wall of zeros drawn as failures. */ 
+let htmlIntake = "";
+let htmlIntakeEmpty = "";
+let htmlFormCard = "";
+try {
+  htmlIntake = renderToString(
+    <IntakeCard
+      intake={{
+        recent: [],
+        last: { alert: { ok: false, detail: "failed: SMTP down", at: "2026-10-15 18:04:11", id: 41 } },
+        fails: [{ at: "2026-10-15 18:04:11", id: 41, kind: "alert", detail: "failed: SMTP down" }],
+        counts: { total: 12, duplicates: 3, bots: 1, unverified: 2, failed: 1 },
+        today: { date: "2026-10-15", total: 4, duplicates: 1, bots: 0 },
+        empty: false,
+      }}
+    />,
+  );
+  htmlIntakeEmpty = renderToString(
+    <IntakeCard
+      intake={{
+        recent: [],
+        last: {},
+        fails: [],
+        counts: { total: 0, duplicates: 0, bots: 0, unverified: 0, failed: 0 },
+        today: { date: "", total: 0, duplicates: 0, bots: 0 },
+        empty: true,
+      }}
+    />,
+  );
+  htmlFormCard = renderToString(
+    <FormCard
+      form={{
+        id: "contact",
+        label: "Contact form",
+        pages: ["/contact/"],
+        pageCount: 1,
+        total: 40,
+        month: 7,
+        last: "2026-10-15 18:04:11",
+        leadPages: [{ page: "/contact/", n: 4 }, { page: "/fit-out/", n: 2 }],
+        fields: ["name", "phone"],
+        cfg: { alertTo: "info@woodex.com.pk", waTo: "", waAlert: true, reply: true, replyText: "" },
+        note: "",
+      }}
+      onSaved={() => {}}
+    />,
+  );
+} catch (err) {
+  failures.push(`the intake card → ${(err as Error).message}`);
 }
 
 try {
@@ -1147,6 +1200,18 @@ for (const [name, ok] of [
       !htmlFormsRoute.includes("Build plan for this screen"),
   ],
   ["and the forms screen offers no save with no API behind it", !htmlFormsOffline.includes("Save contact form")],
+  [
+    "a failed alert is on the screen with its reason, not only in a log nobody opens",
+    htmlIntake.includes("Enquiry delivery") && htmlIntake.includes("SMTP down") && htmlIntake.includes("failed"),
+  ],
+  [
+    "the delivery counters are the server's counts, and an empty log is an empty log",
+    htmlIntake.includes("12 recorded") && htmlIntakeEmpty.includes("Nothing recorded yet") && !htmlIntakeEmpty.includes("0 recorded"),
+  ],
+  [
+    "and a form card says where its enquiries actually arrived from",
+    htmlFormCard.includes("Enquiries arrived from") && htmlFormCard.includes("/contact/ · 4") && htmlFormCard.includes("/fit-out/ · 2"),
+  ],
   /* The Estimator. The rate book is a file: the offline state must not draw an empty table as though the
      figures had been read and found to be zero. */
   [

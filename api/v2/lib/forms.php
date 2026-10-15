@@ -321,6 +321,35 @@ function wx_form_save(array $in, array $me): array
 }
 
 /** What the screen leads with: the settings, where each form appears, and how many leads arrived. */
+/**
+ * The delivery log `frontend-v1/api/forms.php` writes as enquiries arrive (plan §5.1, "no silent loss").
+ *
+ * The two scripts sit in different code bases — the public endpoint is v2.1's, this console is v2's — so the
+ * file is the contract: one small JSON state, the same `_private` directory both already share, with the
+ * shape owned by `intake_delivery_merge()` and asserted in `tests/run.php`. The path is overridable so that
+ * test can run it against a fixture instead of the live site's log.
+ */
+function wx_intake_log(): array
+{
+    $file = defined('WX_INTAKE_LOG_FILE') ? WX_INTAKE_LOG_FILE : WX_PRIVATE_DIR . '/intake-log.json';
+    $read = static function (string $f): array {
+        clearstatcache(true, $f);
+        $raw = is_file($f) ? @file_get_contents($f) : false;
+        return $raw ? (json_decode($raw, true) ?: []) : [];
+    };
+    $state = array_replace(['recent' => [], 'last' => [], 'fails' => [], 'counts' => [], 'today' => []], $read($file));
+    /* Counters are read, never recomputed from the lists: the lists trim, the numbers must not. */
+    foreach (['total', 'duplicates', 'bots', 'unverified', 'failed'] as $k) {
+        $state['counts'][$k] = (int) ($state['counts'][$k] ?? 0);
+    }
+    $state['today']['date'] = (string) ($state['today']['date'] ?? '');
+    foreach (['total', 'duplicates', 'bots'] as $k) {
+        $state['today'][$k] = (int) ($state['today'][$k] ?? 0);
+    }
+    $state['empty'] = ($state['counts']['total'] === 0 && $state['recent'] === []);
+    return $state;
+}
+
 function wx_form_report(): array
 {
     $scan = wx_form_scan();
@@ -331,6 +360,12 @@ function wx_form_report(): array
         $total = (int) wx_val('SELECT COUNT(*) FROM wx_leads WHERE source = ?', [$id]);
         $month = (int) wx_val('SELECT COUNT(*) FROM wx_leads WHERE source = ? AND created_at >= ?', [$id, gmdate('Y-m-d H:i:s', time() - 30 * 86400)]);
         $last = wx_val('SELECT created_at FROM wx_leads WHERE source = ? ORDER BY id DESC LIMIT 1', [$id]);
+        /* Attribution (plan §5.1): where the enquiries for this form actually came from, counted here on the
+           server from the rows themselves. The screen prints these numbers; it never re-counts a list. */
+        $leadPages = [];
+        foreach (wx_all('SELECT page, COUNT(*) AS n FROM wx_leads WHERE source = ? GROUP BY page ORDER BY n DESC, page ASC LIMIT 8', [$id]) as $row) {
+            $leadPages[] = ['page' => (string) ($row['page'] ?? ''), 'n' => (int) ($row['n'] ?? 0)];
+        }
         $fields = ['name', 'phone', 'email', 'service', 'message'];
         foreach (wx_all('SELECT fields FROM wx_leads WHERE source = ? ORDER BY id DESC LIMIT 40', [$id]) as $row) {
             $decoded = json_decode((string) ($row['fields'] ?? ''), true);
@@ -348,6 +383,7 @@ function wx_form_report(): array
             'total' => $total,
             'month' => $month,
             'last' => $last === null ? null : (string) $last,
+            'leadPages' => $leadPages,
             'fields' => $fields,
             'cfg' => $cfg[$id],
             /* The WhatsApp widget is not markup in any page: `assets/site.js` loads it on every public page,
@@ -358,7 +394,7 @@ function wx_form_report(): array
                 : '',
         ];
     }
-    return ['forms' => $rows, 'web' => WX_FORMS_WEB, 'scan' => ['pages' => $scan['pages']]];
+    return ['forms' => $rows, 'web' => WX_FORMS_WEB, 'scan' => ['pages' => $scan['pages']], 'intake' => wx_intake_log()];
 }
 
 /* ============================================================ the estimator */

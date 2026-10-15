@@ -16,6 +16,15 @@ const CRM_SECRETS = ['smtpPass', 'waToken', 'tsSecret'];
 
 function crm_migrate(): void {
     static $done = false; if ($done) return; $done = true;
+    if ((jread(defined('DB_FILE') ? DB_FILE : PRIVATE_DIR . '/db.json')['driver'] ?? '') === 'sqlite') {
+        /* On SQLite the schema is the v2 platform's to own (db/migrations) and these tables already exist;
+           these CREATEs only fill the gaps on a bare file, written in SQLite's dialect. */
+        q("CREATE TABLE IF NOT EXISTS wx_leads (id INTEGER PRIMARY KEY AUTOINCREMENT, created_at TEXT NOT NULL, source TEXT NOT NULL, page TEXT, name TEXT NOT NULL, phone TEXT, email TEXT, service TEXT, message TEXT, fields TEXT, stage TEXT NOT NULL DEFAULT 'new', assigned_to INTEGER, followup TEXT, value INTEGER NOT NULL DEFAULT 0, lost_reason TEXT, client_id INTEGER, tags TEXT, is_read INTEGER NOT NULL DEFAULT 0, ip TEXT, company TEXT, designation TEXT, location TEXT, line TEXT, lead_type TEXT, project_type TEXT, budget TEXT, area TEXT, priority TEXT, quote_status TEXT, last_contact TEXT, next_at TEXT, next_type TEXT)");
+        q("CREATE TABLE IF NOT EXISTS wx_lead_notes (id INTEGER PRIMARY KEY AUTOINCREMENT, lead_id INTEGER NOT NULL, t TEXT NOT NULL, user_name TEXT, text TEXT NOT NULL, sys INTEGER NOT NULL DEFAULT 0, kind TEXT, outcome TEXT)");
+        q("CREATE TABLE IF NOT EXISTS wx_clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, phone TEXT, email TEXT, company TEXT, city TEXT, address TEXT, notes TEXT, created_at TEXT NOT NULL)");
+        q("CREATE TABLE IF NOT EXISTS wx_throttle (ip TEXT PRIMARY KEY, n INTEGER NOT NULL, t INTEGER NOT NULL)");
+        return;
+    }
     q("CREATE TABLE IF NOT EXISTS wx_leads (id INT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME NOT NULL, source VARCHAR(30) NOT NULL, page VARCHAR(200) NULL,
         name VARCHAR(120) NOT NULL, phone VARCHAR(40) NULL, email VARCHAR(190) NULL, service VARCHAR(190) NULL, message TEXT NULL, fields TEXT NULL,
         stage VARCHAR(20) NOT NULL DEFAULT 'new', assigned_to INT NULL, followup DATE NULL, value BIGINT NOT NULL DEFAULT 0, lost_reason VARCHAR(190) NULL,

@@ -21,9 +21,12 @@ function sheets_post(string $url, array $rows): array {
     $j = json_decode((string)$r, true); $ok = $code >= 200 && $code < 300 && is_array($j) && !empty($j['ok']);
     return ['ok' => $ok, 'error' => $ok ? '' : ($err ?: (is_array($j) && !empty($j['error']) ? (string)$j['error'] : 'The sheet did not answer correctly (HTTP ' . $code . '). Check the web app URL and that access is "Anyone".')), 'added' => is_array($j) ? (int)($j['added'] ?? 0) : 0];
 }
-function sheets_push(array $lead): void {
-    $c = sheets_cfg(); if (!$c['on'] || $c['url'] === '') return;
+function sheets_push(array $lead): array {
+    /* Returns what happened rather than nothing, so the intake log can record it (P25.2 §5.1, "no silent
+       loss"). Callers that never asked still work: the answer is simply ignored. */
+    $c = sheets_cfg(); if (!$c['on'] || $c['url'] === '') return ['skipped' => 'Sheets is not set up'];
     $r = sheets_post($c['url'], [sheets_row($lead)]); $c['last'] = now(); $c['lastErr'] = $r['ok'] ? '' : $r['error']; jwrite(SHEETS_FILE, $c);
+    return $r['ok'] ? ['sheets' => 'sent'] : ['sheets' => 'failed: ' . $r['error']];
 }
 function sheets_actions(string $action, array $in): bool {
     if (strpos($action, 'sheets_') !== 0) return false;

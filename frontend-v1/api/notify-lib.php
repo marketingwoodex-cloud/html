@@ -33,6 +33,12 @@ function notify_cfg(): array {
 }
 function notify_migrate(): void {
     static $d = false; if ($d) return; $d = true;
+    /* SQLite (the local engine) and MySQL (the host) each get their own dialect — the table is the same,
+       and on SQLite it is the v2 platform's wx_notify_log already that fills the gap. */
+    if ((jread(defined('DB_FILE') ? DB_FILE : PRIVATE_DIR . '/db.json')['driver'] ?? '') === 'sqlite') {
+        q('CREATE TABLE IF NOT EXISTS wx_notify_log (id INTEGER PRIMARY KEY AUTOINCREMENT, t TEXT NOT NULL, event TEXT NOT NULL, ref TEXT, name TEXT, channel TEXT NOT NULL, dest TEXT NOT NULL, result TEXT NOT NULL)');
+        return;
+    }
     q('CREATE TABLE IF NOT EXISTS wx_notify_log (id INT AUTO_INCREMENT PRIMARY KEY, t DATETIME NOT NULL, event VARCHAR(12) NOT NULL, ref VARCHAR(120) NULL, name VARCHAR(160) NULL, channel VARCHAR(8) NOT NULL, dest VARCHAR(190) NOT NULL, result VARCHAR(255) NOT NULL, INDEX(t)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4');
 }
 function notify_fill(string $t, array $v): string { return strtr($t, array_combine(array_map(fn($k) => '{' . $k . '}', array_keys($v)), array_map('strval', array_values($v)))); }

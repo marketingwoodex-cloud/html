@@ -21,7 +21,7 @@ import { RefreshCw, Save } from "lucide-react";
 import { Btn, Card, Empty, Note, PageHead, Pill, Switch } from "../components/primitives";
 import { api, ApiFailure } from "../lib/api";
 import { useSession } from "../lib/session";
-import { isPending, useLive, type FormCfg, type FormRow, type FormSaveResult, type FormsData, type PendingResult } from "../lib/live";
+import { isPending, useLive, type FormCfg, type FormRow, type FormSaveResult, type FormsData, type IntakeState, type PendingResult } from "../lib/live";
 
 /** One form's settings. A copy is kept so the fields are editable and the saved answer is what is shown. */
 interface Draft extends Record<string, unknown> {
@@ -99,6 +99,8 @@ function FormsBody({ live }: { live: ReturnType<typeof useLive<FormsData>> }) {
         )}
       </Note>
 
+      {data.intake ? <IntakeCard intake={data.intake} /> : null}
+
       <div className="grid-2">
         {data.forms.map((f) => (
           <FormCard key={f.id} form={f} onSaved={live.reload} />
@@ -154,7 +156,96 @@ function FormsBody({ live }: { live: ReturnType<typeof useLive<FormsData>> }) {
   );
 }
 
-function FormCard({ form, onSaved }: { form: FormRow; onSaved: () => void }) {
+/**
+ * Enquiry delivery — plan §5.1's "no silent loss", on a screen.
+ *
+ * The website records what happened after each enquiry was saved: did the team alert go out, did the
+ * visitor get their reply, did the Sheets row arrive — and the failures with their reasons. This card reads
+ * that log. A failed alert is a red fact here instead of a line in an error log nobody opens.
+ */
+export function IntakeCard({ intake }: { intake: IntakeState }) {
+  const channels: Array<[string, string]> = [
+    ["alert", "Team alert (email / WhatsApp / Telegram)"],
+    ["reply", "Visitor auto-reply"],
+    ["sheets", "Google Sheets push"],
+  ];
+  return (
+    <Card>
+      <h2 className="cell-main">Enquiry delivery</h2>
+      <p className="cell-sub">
+        What happened after each enquiry was saved — written by the website as the enquiries arrive, read here
+        as it is. Last 30 days are the counts on each form below; these are the deliveries.
+      </p>
+      {intake.empty ? (
+        <Empty title="Nothing recorded yet" sub="The log starts when the first enquiry arrives through a form on the site." />
+      ) : (
+        <>
+          <div className="chip-row">
+            <Pill tone="neutral">{`${intake.counts.total} recorded`}</Pill>
+            <Pill tone="neutral">{`${intake.counts.duplicates} duplicate${intake.counts.duplicates === 1 ? "" : "s"} stopped`}</Pill>
+            <Pill tone="neutral">{`${intake.counts.bots} honeypot${intake.counts.bots === 1 ? "" : "s"}`}</Pill>
+            {intake.counts.unverified ? (
+              <Pill tone="warn">{`${intake.counts.unverified} accepted without the spam check`}</Pill>
+            ) : null}
+            {intake.today.date ? (
+              <Pill tone="neutral">
+                {`today: ${intake.today.total} · ${intake.today.duplicates} duplicate${intake.today.duplicates === 1 ? "" : "s"}`}
+              </Pill>
+            ) : null}
+          </div>
+          <div className="table-wrap">
+            <table className="data">
+              <thead>
+                <tr>
+                  <th>Channel</th>
+                  <th>Last outcome</th>
+                </tr>
+              </thead>
+              <tbody>
+                {channels.map(([key, label]) => {
+                  const last = intake.last[key];
+                  return (
+                    <tr key={key}>
+                      <td className="cell-main">{label}</td>
+                      <td>
+                        {last ? (
+                          <div className="row">
+                            <Pill tone={last.ok ? "ok" : "danger"}>{last.ok ? "delivered" : "failed"}</Pill>
+                            <span className="cell-sub mono">
+                              {last.at}
+                              {last.detail ? ` · ${last.detail}` : ""}
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="muted">nothing sent yet through this channel</span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          {intake.fails.length ? (
+            <Note tone="danger" title={`Delivery failure${intake.fails.length === 1 ? "" : "s"} on record`}>
+              {intake.fails.slice(0, 5).map((f) => (
+                <div key={`${f.at}-${f.kind}-${f.id}`} className="mono">
+                  {f.at} · {f.kind}: {f.detail}
+                </div>
+              ))}
+            </Note>
+          ) : (
+            <Note tone="ok" title="No delivery failures on record">
+              Every alert, reply and Sheets push that was attempted has arrived.
+            </Note>
+          )}
+        </>
+      )}
+    </Card>
+  );
+}
+
+export function FormCard({ form, onSaved }: { form: FormRow; onSaved: () => void }) {
   const [draft, setDraft] = useState<Draft>(() => toDraft(form.cfg));
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
@@ -211,6 +302,15 @@ function FormCard({ form, onSaved }: { form: FormRow; onSaved: () => void }) {
           </p>
         )}
       </div>
+
+      {form.leadPages?.length ? (
+        <div className="stack-tight">
+          <span className="field-label">Enquiries arrived from</span>
+          <p className="cell-sub mono">
+            {form.leadPages.map((p) => `${p.page || "(no page recorded)"} · ${p.n}`).join("  ·  ")}
+          </p>
+        </div>
+      ) : null}
 
       <div className="stack-tight">
         <span className="field-label">Fields seen on this form</span>

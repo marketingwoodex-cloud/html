@@ -918,15 +918,45 @@ export interface FormRow {
   total: number;
   month: number;
   last: string | null;
+  /** Where the enquiries for this form actually arrived from — counted on the server from the lead rows. */
+  leadPages?: { page: string; n: number }[];
   fields: string[];
   cfg: FormCfg;
   note: string;
+}
+
+/** One channel's last outcome, from the intake log the website writes as enquiries arrive. */
+export interface IntakeChannel {
+  ok: boolean;
+  detail: string;
+}
+
+export interface IntakeEntry {
+  at: string;
+  id: number;
+  source: string;
+  page: string;
+  verdict: "new" | "duplicate" | "bot";
+  turnstile: "ok" | "fail" | "unverified" | "off";
+  channels: Record<string, IntakeChannel>;
+}
+
+export interface IntakeState {
+  recent: IntakeEntry[];
+  last: Record<string, IntakeChannel & { at: string; id: number }>;
+  fails: { at: string; id: number; kind: string; detail: string }[];
+  counts: { total: number; duplicates: number; bots: number; unverified: number; failed: number };
+  today: { date: string; total: number; duplicates: number; bots: number };
+  /** True when nothing has been recorded yet — an empty log is not an error. */
+  empty?: boolean;
 }
 
 export interface FormsData {
   forms: FormRow[];
   web: Record<string, string>;
   scan: { pages: FormPage[] };
+  /** What happened after each enquiry was saved: delivery per channel, duplicates, bots, Turnstile. */
+  intake?: IntakeState;
 }
 
 export interface FormSaveResult {
