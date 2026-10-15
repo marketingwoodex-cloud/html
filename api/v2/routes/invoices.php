@@ -254,10 +254,10 @@ function wx_route_invoices_pay(array $ctx): array
 /**
  * Record a payment.
  *
- * The two rules v2.1 enforced are kept, because they are the difference between a ledger and a guess:
- * an amount of zero is not a payment, and an amount above the balance is a typo — so the message names
- * the balance ("Amount is more than the balance (PKR 45,000)") rather than accepting it and letting the
- * invoice go negative on screen.
+ * The entry rules are docs/PAYMENT-RULES-P25.2.md, in one check (`wx_payment_entry_error`): an amount of
+ * zero is not a payment; an amount above the balance is refused once — the typo guard, the message naming
+ * the balance — and recorded when the person confirms the extra is meant as a credit (§3 of the rules).
+ * A bank, cheque or online payment without a reference is not evidence yet (§6).
  *
  * The receipt number continues the invoice's sequence. It is computed inside the transaction while the
  * invoice row is locked, so two clerks taking two payments at once cannot both write `-R1`.
@@ -275,9 +275,12 @@ function wx_route_invoices_pay_do(array $ctx): array
             }
             $b = $ctx['body'];
             $amount = wx_v_pkr($b['amount'] ?? 0, 'amount', null, null);
-            if ($amount === 0) {
-                throw ApiError::validation('Enter the amount you received', 'amount');
-            }
+            $method = wx_v_enum($b['method'] ?? 'bank', WX_PAY_METHODS, 'method');
+            $paidOn = array_key_exists('date', $b) ? wx_v_date($b['date'], 'date') : date('Y-m-d');
+            $ref = wx_v_opt_string($b['ref'] ?? null, 'ref', 80) ?? '';
+            $note = wx_v_opt_string($b['note'] ?? null, 'note', 300) ?? '';
+            $creditConfirmed = !empty($b['credit']);
+
             $payments = wx_invoice_payments($id);
             $legacy = !$payments;
             if ($legacy) {
@@ -285,18 +288,17 @@ function wx_route_invoices_pay_do(array $ctx): array
             }
             $paid = 0;
             foreach ($payments as $p) {
+                if (!empty($p['reversed_at'])) {
+                    continue;
+                }
                 $paid += (int) $p['amount'];
             }
             $total = (int) ($inv['total'] ?? 0);
-            $balance = max(0, $total - $paid);
-            if ($amount > $balance) {
-                throw ApiError::validation('Amount is more than the balance (PKR ' . wx_pkr_out($balance) . ')', 'amount');
+            $owed = max(0, $total - $paid);
+            $entryError = wx_payment_entry_error($amount, $owed, $creditConfirmed, $method, $ref);
+            if ($entryError !== null) {
+                throw ApiError::validation($entryError['message'], $entryError['field']);
             }
-
-            $method = wx_v_enum($b['method'] ?? 'bank', WX_PAY_METHODS, 'method');
-            $paidOn = array_key_exists('date', $b) ? wx_v_date($b['date'], 'date') : date('Y-m-d');
-            $ref = wx_v_opt_string($b['ref'] ?? null, 'ref', 80) ?? '';
-            $note = wx_v_opt_string($b['note'] ?? null, 'note', 300) ?? '';
 
             /* Next receipt number, chosen while this invoice row is locked.
                v2.1 numbered receipts by `count($payments) + 1`, which **reissues a number after a

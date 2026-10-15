@@ -3801,6 +3801,70 @@ $statusAt = strpos($invSrc, 'Approve the quotation before converting');
 ok($dupAt !== false && $statusAt !== false && $dupAt < $statusAt,
     'the second conversion is refused as a duplicate before it is refused as a status — the message names the real reason');
 
+group('The payment rules — the ledger reconciles against its rows (plan §5.4)');
+
+/* The balance identity from docs/PAYMENT-RULES-P25.2.md, asserted on a fixture set that includes the
+   four cases the plan names: partial, over-, zero and reversed payments. Every figure must come from the
+   rows — and the identity total = paid + balance must hold in every one. */
+$payRow = static function (int $id, int $amount, ?string $reversedAt = null): array {
+    return ['id' => $id, 'rcpt' => 'WI-R' . $id, 'date' => '2026-10-15', 'amount' => $amount,
+        'method' => 'bank', 'ref' => 'SLIP-' . $id, 'note' => '', 'by' => 'Tester', 't' => '2026-10-15 10:00:00',
+        'reversed_at' => $reversedAt];
+};
+$doc = static fn(array $rows): array => wx_inv_public(['id' => 1, 'no' => 'WI-1', 'total' => 100000, 'due_date' => '2026-12-01'], $rows);
+
+$none = $doc([]);
+eq($none['payStatus'], 'unpaid', 'an invoice with no payments is unpaid');
+eq($none['paid'], 0, 'and has paid nothing');
+eq($none['balance'], 100000, 'with the whole total outstanding');
+eq($none['paid'] + $none['balance'], 100000, 'the identity holds with no payments at all');
+
+$partial = $doc([$payRow(1, 40000)]);
+eq($partial['payStatus'], 'partial', 'a partial payment reads partial');
+eq($partial['paid'], 40000, 'with exactly the rows’ sum as paid');
+eq($partial['balance'], 60000, 'and the rest outstanding');
+eq($partial['paid'] + $partial['balance'], 100000, 'the identity holds for a partial payment');
+
+$exact = $doc([$payRow(1, 40000), $payRow(2, 60000)]);
+eq($exact['payStatus'], 'paid', 'payments that reach the total read paid');
+eq($exact['balance'], 0, 'and nothing is outstanding');
+eq($exact['paid'] + $exact['balance'], 100000, 'the identity holds when the invoice is settled');
+
+$over = $doc([$payRow(1, 40000), $payRow(2, 90000)]);
+eq($over['payStatus'], 'overpaid', 'an overpayment is named, not clamped away');
+eq($over['paid'], 130000, 'the paid figure is the money that arrived');
+eq($over['balance'], -30000, 'the balance is signed — the identity must reconcile exactly');
+eq($over['credit'], 30000, 'and the credit is the excess, shown as a figure');
+eq($over['paid'] + $over['balance'], 100000, 'the identity holds for an overpayment');
+eq($over['credit'], $over['paid'] - 100000, 'and credit = paid − total');
+
+$reversed = $doc([$payRow(1, 40000), $payRow(2, 60000, '2026-10-16 09:00:00')]);
+eq($reversed['payStatus'], 'partial', 'a reversed payment drops out of every sum');
+eq($reversed['paid'], 40000, 'and the balance is the rows that stand');
+eq($reversed['balance'], 60000, 'so the balance is restored by the reversal');
+eq($reversed['paid'] + $reversed['balance'], 100000, 'the identity holds with a reversal in the set');
+
+$all = $doc([$payRow(1, 40000), $payRow(2, 90000, '2026-10-16 09:00:00'), $payRow(3, 25000)]);
+eq($all['paid'], 65000, 'partial + reversed + partial reconciles to the standing rows');
+eq($all['payStatus'], 'partial', 'with the status the rows support');
+eq($all['paid'] + $all['balance'], 100000, 'and the identity still holds');
+
+/* The entry rules: zero and negative are not payments; an overpayment is refused until it is confirmed
+   as a credit; a bank/cheque/online payment without a reference is not evidence yet. */
+$err = wx_payment_entry_error(0, 100000, false, 'cash', '');
+ok($err !== null && $err['field'] === 'amount', 'a payment of zero is refused');
+$err = wx_payment_entry_error(-500, 100000, false, 'cash', '');
+ok($err !== null && $err['field'] === 'amount', 'and so is a negative one — corrections are reversals, never negative rows');
+$err = wx_payment_entry_error(150000, 100000, false, 'bank', 'SLIP-9');
+ok($err !== null && $err['field'] === 'amount' && str_contains($err['message'], 'credit'), 'an overpayment is refused once, naming the credit path');
+ok(wx_payment_entry_error(150000, 100000, true, 'bank', 'SLIP-9') === null, 'and recorded when the person confirms it is meant as a credit');
+$err = wx_payment_entry_error(50000, 100000, false, 'bank', '');
+ok($err !== null && $err['field'] === 'ref', 'a bank payment without its slip number is refused');
+ok(wx_payment_entry_error(50000, 100000, false, 'cash', '') === null, 'cash without a slip is fine — its evidence is the note and the verifier');
+ok(wx_payment_entry_error(50000, 100000, false, 'cheque', 'CHQ-441') === null, 'and a cheque with its number is evidence');
+$err = wx_payment_entry_error(50000, 100000, false, 'online', '');
+ok($err !== null && $err['field'] === 'ref', 'an online transfer without its reference is refused too — no gateway fills this in, and none is claimed');
+
 /* ============================================================== report */
 echo "\n";
 if ($failures) {

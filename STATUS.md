@@ -4,7 +4,7 @@ The one tracker for the project (decision of 15 October 2026: no Linear). The pl
 `MASTER-PLAN-2026-10-15.md`; this file says where each part of it stands. Every PR ticks what it finished and
 adds what it found. `WORK-SANDBOX-MEMORY.md` stays as the v2.5 engineering log.
 
-**Last updated:** 15 Oct 2026 (night, later: §5.3 the quotation builder, draft to invoice — and two request-isolation defects found on the way),
+**Last updated:** 15 Oct 2026 (night, later: §5.4 payments and reconciliation — the allocation rule written down first, then proved),
 by the session on `arena/89662743-html`. The plan for this repository is `MASTER-PLAN-P25.2.md`.
 **Owner:** O = business owner (hPanel, GitHub admin, Google, Meta) · D = developer or agent session.
 
@@ -80,6 +80,11 @@ by the session on `arena/89662743-html`. The plan for this repository is `MASTER
 - [x] D · Two request-isolation defects the walk exposed: the API's per-request caches now reset per request
       (`api/v2/index.php`), and the local engine's cookie jar is per-request (`tools/phpwasm/serve.cjs`) —
       a second user's login no longer answers the first user's requests
+- [x] D · P25.2 §5.4 payments: the allocation rule written down first (`docs/PAYMENT-RULES-P25.2.md`), then
+      enforced — one payment one invoice, balance identity `total = paid + balance`, overpayment refused
+      once and recorded as a named credit when confirmed, zero/negative refused, bank/cheque/online need
+      their reference, reversal keeps the row and drops it from every sum, status derived from the rows.
+      Reconciliation fixtures (partial, over-, zero, reversed) run in the gate (1431/0/14)
 - [ ] Phase 3: v2.5 beside v2.0 on production, host gate twice, fix A-02 (target 13 Nov)
 - [ ] Phase 4: pipeline and quotation builder first, then daily operations, website control, automation,
       operations, cut-over (target 22 Jan 2027)

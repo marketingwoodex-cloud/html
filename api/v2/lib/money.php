@@ -175,6 +175,28 @@ function wx_quote_public(array $x): array
  * @param array $invoice  the invoice payload
  * @param array $payments rows from wx_invoice_payments, amount in whole rupees
  */
+/**
+ * The entry rules from docs/PAYMENT-RULES-P25.2.md, as one check a test can table-drive and the route
+ * can call: zero and negative amounts are not payments; an overpayment is refused until the person
+ * confirms the extra is meant as a credit; a bank, cheque or online payment without a reference is not
+ * evidence yet. Cash may carry its evidence in the note.
+ *
+ * @return array{field:string,message:string}|null the refusal, or null when the payment may be recorded
+ */
+function wx_payment_entry_error(int $amount, int $owed, bool $creditConfirmed, string $method, string $ref): ?array
+{
+    if ($amount <= 0) {
+        return ['field' => 'amount', 'message' => 'Enter the amount you received'];
+    }
+    if ($amount > $owed && !$creditConfirmed) {
+        return ['field' => 'amount', 'message' => 'Amount is more than the balance (PKR ' . wx_pkr_out($owed) . '). If the extra is meant as a credit, confirm it.'];
+    }
+    if (in_array($method, ['bank', 'cheque', 'online'], true) && trim($ref) === '') {
+        return ['field' => 'ref', 'message' => 'A ' . $method . ' payment needs its reference (the slip, cheque or transfer number)'];
+    }
+    return null;
+}
+
 function wx_inv_public(array $invoice, array $payments = []): array
 {
     /* The stored total is used as it is, as v2.1's inv_pub() did. Recomputing it here would be
@@ -186,15 +208,28 @@ function wx_inv_public(array $invoice, array $payments = []): array
         $invoice = wx_doc_totals($invoice);
     }
     $paid = 0;
+    $kept = [];
     foreach ($payments as $p) {
+        /* A reversed payment is a row that stays for the audit and never counts (P25.2 §5.5 of the
+           payment rules: the only correction is a reversal, and a reversed row drops out of every sum).
+           The SQL reader filters these too; filtering again here means the identity below cannot be
+           broken by a caller who passes rows straight in — which is exactly what the gate fixtures do. */
+        if (!empty($p['reversed_at'])) {
+            continue;
+        }
         $paid += (int) $p['amount'];
+        $kept[] = $p;
     }
     $total = (int) $invoice['total'];
     $invoice['id'] = (int) $invoice['id'];
-    $invoice['payments'] = array_values($payments);
+    $invoice['payments'] = array_values($kept);
+    /* The balance identity (docs/PAYMENT-RULES-P25.2.md §1): total = paid + balance, signed — and the
+       credit is named rather than hidden by clamping. v2.1 clamped the balance at zero, which made an
+       overpayment invisible: the invoice said "paid" and the extra rupees vanished from every figure. */
     $invoice['paid'] = $paid;
-    $invoice['balance'] = max(0, $total - $paid);
-    $invoice['payStatus'] = $paid <= 0 ? 'unpaid' : ($paid >= $total ? 'paid' : 'partial');
+    $invoice['balance'] = $total - $paid;
+    $invoice['credit'] = max(0, $paid - $total);
+    $invoice['payStatus'] = $paid <= 0 ? 'unpaid' : ($paid > $total ? 'overpaid' : ($paid === $total ? 'paid' : 'partial'));
     $due = (string) ($invoice['due_date'] ?? '');
     $invoice['overdue'] = $paid < $total && $due !== '' && $due < date('Y-m-d');
     /* The tracker's own vocabulary, kept because the v2.1 tracker screen and the client link read it:
@@ -211,6 +246,7 @@ function wx_inv_public(array $invoice, array $payments = []): array
     $invoice['totalDisplay'] = wx_pkr_out($total);
     $invoice['paidDisplay'] = wx_pkr_out($paid);
     $invoice['balanceDisplay'] = wx_pkr_out((int) $invoice['balance']);
+    $invoice['creditDisplay'] = wx_pkr_out((int) $invoice['credit']);
     return $invoice;
 }
 
