@@ -1,0 +1,103 @@
+{
+ "summary": {
+  "health_score": 98,
+  "pages": 142,
+  "business_type": "Local service (interior design & build, Lahore HQ)"
+ },
+ "categories": [
+  {
+   "name": "AI search / GEO",
+   "score": 98,
+   "findings": [
+    {
+     "severity": "Medium",
+     "issue": "Service pages without FAQ block/FAQPage schema (answer-engine extractability)",
+     "count": 0,
+     "pages": []
+    }
+   ]
+  },
+  {
+   "name": "Content & E-E-A-T",
+   "score": 94,
+   "findings": [
+    {
+     "severity": "High",
+     "issue": "Articles credited to Organization, not a named designer (Person)",
+     "count": 48,
+     "pages": [
+      "/insights/1-kanal-house-interior-cost-lahore/",
+      "/insights/10-marla-house-interior-lahore/",
+      "/insights/3d-interior-design-cost-pakistan/",
+      "/insights/3d-visualization-guide/",
+      "/insights/5-marla-house-renovation-cost-lahore/",
+      "/insights/apartment-interior-ideas-lahore/",
+      "/insights/apartment-small-space-planning-lahore/",
+      "/insights/architect-fee-lahore-2026/",
+      "/insights/bathroom-renovation-lahore/",
+      "/insights/clinic-interior-design-lahore/",
+      "/insights/design-process-explained/",
+      "/insights/dha-lahore-house-interior-guide/",
+      "/insights/dha-vs-bahria-town-interior-cost-lahore/",
+      "/insights/false-ceiling-cost-lahore-2026/",
+      "/insights/false-ceiling-ideas-living-room/"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Internal links",
+   "score": 98,
+   "findings": [
+    {
+     "severity": "Medium",
+     "issue": "Service/location pages that link to no insights article (topic-cluster gap)",
+     "count": 0,
+     "pages": []
+    }
+   ]
+  },
+  {
+   "name": "Local SEO",
+   "score": 100,
+   "findings": [
+    {
+     "severity": "Info",
+     "issue": "No review markup (only add with real, on-site reviews)",
+     "count": 0,
+     "pages": []
+    },
+    {
+     "severity": "Info",
+     "issue": "Off-site (needs owner access): GBP categories/photos/posts, citations (Yelp PK, Brownbook, Bing Places, Apple Business Connect), review velocity, geo-grid rank tracking (needs DataForSEO/Local Falcon key)",
+     "count": 0,
+     "pages": []
+    }
+   ]
+  },
+  {
+   "name": "Schema",
+   "score": 100,
+   "findings": [
+    {
+     "severity": "Info",
+     "issue": "Schema types found: Question\u00d7775, Answer\u00d7775, ListItem\u00d7545, Service\u00d7187, Organization\u00d7183, LocalBusiness\u00d7173, BreadcrumbList\u00d7157, FAQPage\u00d7154, PostalAddress\u00d7102, OpeningHoursSpecification\u00d7102, City\u00d788, BlogPosting\u00d788, Offer\u00d782, WebPage\u00d780, SpeakableSpecification\u00d780, ImageObject\u00d740, OfferCatalog\u00d715, Country\u00d78, Place\u00d78, CreativeWork\u00d76, WebSite\u00d73, CollectionPage\u00d73, ItemList\u00d73, AdministrativeArea\u00d72, Person\u00d71, AboutPage\u00d71, ContactPage\u00d71",
+     "count": 0,
+     "pages": []
+    }
+   ]
+  },
+  {
+   "name": "Sitemap",
+   "score": 99,
+   "findings": [
+    {
+     "severity": "Low",
+     "issue": "No image sitemap entries",
+     "count": 0,
+     "pages": []
+    }
+   ]
+  }
+ ]
+}

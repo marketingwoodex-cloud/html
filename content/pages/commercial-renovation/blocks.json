@@ -1,0 +1,94 @@
+[
+ {
+  "id": "164abe8d45",
+  "type": "hero",
+  "html": "\n<section class=\"rv-hero\"><div class=\"rv-wrap rv-hero-grid\"><div class=\"rv-hero-copy rv-reveal\"><nav class=\"rv-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/renovation/\">Renovation</a><span>&gt;</span><span>Commercial Renovation</span></nav><h1>Commercial Renovation in Lahore</h1><p class=\"rv-copy\">Upgrade an existing commercial property without treating every area the same. Woodex separates landlord, tenant and shared-space needs, then plans the work around access, trading and building services.</p><div class=\"rv-hero-actions\"><a class=\"rv-btn rv-btn-light\" href=\"#renovation-sector-contact\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div><div class=\"rv-proof\"><span><strong>Itemized BOQ</strong>Trade-by-trade clarity</span><span><strong>Phased delivery</strong>Lower disruption</span><span><strong>Existing spaces</strong>Upgrade, not first build</span></div></div><figure class=\"rv-hero-media rv-reveal\"><img src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Contemporary commercial interior representing property renovation in Lahore\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>Tenant improvements and shared spaces coordinated as one programme</figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Commercial Renovation in Lahore",
+   "copy": "Upgrade an existing commercial property without treating every area the same. Woodex separates landlord, tenant and shared-space needs, then plans the work around access, trading and building services.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#renovation-sector-contact",
+   "img_src": "/assets/img/img-81b231a6c390.webp",
+   "img_alt": "Contemporary commercial interior representing property renovation in Lahore"
+  }
+ },
+ {
+  "id": "6e548f00e5",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-scope\"><div class=\"rv-wrap rv-intro-grid\"><div class=\"rv-intro-aside rv-reveal\"><h2>What the scope can include</h2><p class=\"rv-copy\">A condition survey decides what should be retained, repaired or replaced.</p><div class=\"rv-intro-note\"><strong>Property-wide coordination</strong><span>One surveyed scope connects common areas, tenant zones, services and use-conversion work.</span></div></div><div class=\"rv-service-list rv-reveal\"><div class=\"rv-service\"><b>01</b><strong>Tenant improvement works</strong><span>Adapt existing units for new occupants, layouts, finishes and technical needs.</span></div><div class=\"rv-service\"><b>02</b><strong>Common-area upgrades</strong><span>Refresh lobbies, corridors, washrooms and shared circulation.</span></div><div class=\"rv-service\"><b>03</b><strong>Business space remodeling</strong><span>Replan active commercial interiors around new operations or capacity.</span></div><div class=\"rv-service\"><b>04</b><strong>Use conversion</strong><span>Coordinate the interior changes needed when a property takes on a new purpose.</span></div><div class=\"rv-service\"><b>05</b><strong>Services upgrades</strong><span>Improve electrical, lighting, plumbing, HVAC and data systems.</span></div><div class=\"rv-service\"><b>06</b><strong>Exterior touchpoints</strong><span>Coordinate entrances, frontage, signage zones and arrival areas where included.</span></div></div></div></section>"
+ },
+ {
+  "id": "577548febd",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-process\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>A process shaped for commercial renovation</h2><p class=\"rv-copy\">Survey, scope, BOQ and phasing are agreed before disruptive work starts.</p></header><div class=\"rv-steps rv-reveal\"><article class=\"rv-step\"><b>01</b><h3>Property survey</h3><p>Audit condition, access, active tenants and building services.</p></article><article class=\"rv-step\"><b>02</b><h3>Stakeholder scope</h3><p>Separate landlord, tenant and common-area responsibilities.</p></article><article class=\"rv-step\"><b>03</b><h3>Phasing strategy</h3><p>Plan zone closures, temporary routes and service shutdowns.</p></article><article class=\"rv-step\"><b>04</b><h3>BOQ and programme</h3><p>Issue itemized quantities, materials, milestones and sequencing.</p></article><article class=\"rv-step\"><b>05</b><h3>Coordinated delivery</h3><p>Execute, inspect and hand over one controlled area at a time.</p></article></div></div></section>"
+ },
+ {
+  "id": "dd050f46f5",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-pricing\"><div class=\"rv-wrap rv-pricing-grid\"><div class=\"rv-reveal\"><h2>Indicative renovation pricing</h2><p class=\"rv-copy\">These planning ranges come from comparable Woodex renovation scopes. The exact quote follows a site survey.</p><p class=\"rv-price-note\">Price varies with condition, materials, services, size and the number of delivery phases.</p><a class=\"rv-btn\" href=\"#renovation-sector-contact\">Request a survey + BOQ</a></div><div class=\"rv-price-panel rv-reveal\"><div class=\"rv-price-row\"><strong>1,000 sq. ft. office benchmark</strong><span>PKR 1.5M–3.5M</span></div><div class=\"rv-price-row\"><strong>500–1,000 sq. ft. retail benchmark</strong><span>PKR 1M–2.5M</span></div></div></div></section>"
+ },
+ {
+  "id": "945824946e",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Choose the right starting point</h2><p class=\"rv-copy\">Renovation improves an existing space. Fit-out creates a finished space from a shell, while interior design resolves the plan and 3D direction.</p></header><div class=\"rv-choice-grid rv-reveal\"><article class=\"rv-choice is-current\"><small>This page</small><h3>Renovation</h3><p>Survey, repair, upgrade and phased delivery for a space that already exists.</p></article><article class=\"rv-choice\"><small>Design + build</small><h3>Fit-Out</h3><p>Complete a shell or unfinished space for first occupation.</p><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rv-choice\"><small>Design + 3D</small><h3>Interior Design</h3><p>Resolve layouts, materials, lighting and visualization before build.</p><a href=\"/interior-design/\" data-page-route=\"interior\">Explore Interior Design</a></article></div></div></section>"
+ },
+ {
+  "id": "29f9e4bc94",
+  "type": "faq",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-faq\"><div class=\"rv-wrap rv-faq-grid\"><div class=\"rv-faq-intro rv-reveal\"><h2>Commercial Renovation FAQs</h2><p class=\"rv-copy\">Six practical answers before survey, costing and site work.</p></div><div class=\"rv-faq-list rv-reveal\"><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What commercial properties do you renovate?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>We work on offices, business premises, mixed-use interiors, shared areas and tenant improvement scopes.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you separate landlord and tenant work?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. The survey and BOQ can split base-building, common-area and tenant-specific responsibilities.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can the property remain partly operational?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Often, yes. We phase work by unit, floor or access zone and plan shutdowns in advance.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you handle service upgrades?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. Electrical, lighting, plumbing, HVAC and data changes can be coordinated within the agreed scope.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you convert a space to a new use?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes, where the existing building condition and approvals allow it. We define the interior scope after a survey.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How is commercial pricing confirmed?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>An exact quote follows the condition survey, approved scope, materials and phasing plan.</p></div></div></div></div></div></section>",
+  "fields": {
+   "heading": "Commercial Renovation FAQs",
+   "copy": "Six practical answers before survey, costing and site work.",
+   "items": [
+    {
+     "q": "What commercial properties do you renovate?",
+     "a": "<p>We work on offices, business premises, mixed-use interiors, shared areas and tenant improvement scopes.</p>"
+    },
+    {
+     "q": "Can you separate landlord and tenant work?",
+     "a": "<p>Yes. The survey and BOQ can split base-building, common-area and tenant-specific responsibilities.</p>"
+    },
+    {
+     "q": "Can the property remain partly operational?",
+     "a": "<p>Often, yes. We phase work by unit, floor or access zone and plan shutdowns in advance.</p>"
+    },
+    {
+     "q": "Do you handle service upgrades?",
+     "a": "<p>Yes. Electrical, lighting, plumbing, HVAC and data changes can be coordinated within the agreed scope.</p>"
+    },
+    {
+     "q": "Can you convert a space to a new use?",
+     "a": "<p>Yes, where the existing building condition and approvals allow it. We define the interior scope after a survey.</p>"
+    },
+    {
+     "q": "How is commercial pricing confirmed?",
+     "a": "<p>An exact quote follows the condition survey, approved scope, materials and phasing plan.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "51bd84767c",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Explore related renovation sectors</h2><p class=\"rv-copy\">Every sector follows the same standard: condition-led scope, itemized pricing and a practical delivery plan.</p></header><nav class=\"rv-related-grid rv-reveal\" aria-label=\"Related renovation sectors\"><a class=\"rv-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>Renovation hub</small><strong>All Renovation Services</strong></a><a class=\"rv-related-link\" href=\"/office-renovation/\" data-renovation-sector=\"office\"><small>Related sector</small><strong>Office Renovation</strong></a><a class=\"rv-related-link\" href=\"/retail-showroom-renovation/\" data-renovation-sector=\"retail\"><small>Related sector</small><strong>Retail &amp; Showroom Renovation</strong></a><a class=\"rv-related-link\" href=\"/healthcare-renovation/\" data-renovation-sector=\"healthcare\"><small>Related sector</small><strong>Healthcare Renovation</strong></a><a class=\"rv-related-link\" href=\"/restaurant-cafe-renovation/\" data-renovation-sector=\"restaurant\"><small>Related sector</small><strong>Restaurant &amp; Café Renovation</strong></a><a class=\"rv-related-link\" href=\"/residential-renovation/\" data-renovation-sector=\"residential\"><small>Related sector</small><strong>Residential Renovation</strong></a><a class=\"rv-related-link\" href=\"/specialized-renovation-services/\" data-renovation-sector=\"specialized\"><small>Related sector</small><strong>Specialized Services</strong></a></nav></div></section>"
+ },
+ {
+  "id": "fd15c00328",
+  "type": "cta",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-contact\"><div class=\"rv-wrap rv-contact-grid\"><div class=\"rv-reveal\"><h2>Talk to Woodex</h2><p class=\"rv-copy\">Share the property type, occupied areas, tenant responsibilities and the upgrade you need.</p><div class=\"rv-contact-actions\"><a class=\"rv-btn rv-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Commercial%20Renovation%20Consultation\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"rv-contact-list rv-reveal\"><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rv-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rv-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"rv-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"rv-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Share the property type, occupied areas, tenant responsibilities and the upgrade you need.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Commercial%20Renovation%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

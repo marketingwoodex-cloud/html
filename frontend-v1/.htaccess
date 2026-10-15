@@ -1,0 +1,94 @@
+<IfModule mod_setenvif.c>
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+</IfModule>
+# Woodex frontend-v1 — Hostinger (Apache/LiteSpeed)
+Options -Indexes
+ErrorDocument 404 /404.html
+
+# Force HTTPS
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Pass the Bearer token to PHP (AI Agent / MCP endpoint)
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+# one hop to the official address: https + no www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Block private data and dotfiles
+RewriteRule ^_private(/|$) - [F,L]
+RewriteRule (^|/)\.(?!well-known) - [F,L]
+</IfModule>
+
+# Block internal PHP libraries, logs and dev files from direct web access
+<FilesMatch "(-lib\.php|^router\.php|^error_log|\.log|\.sql|\.bak|\.md|^chat-rules\.json|^redirect-plan\.json)$">
+Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Strict-Transport-Security "max-age=31536000"
+Header always set Permissions-Policy "camera=(), microphone=(self), geolocation=()"
+<FilesMatch "\.(css|js|webp|jpg|jpeg|png|gif|svg|woff2)$">
+Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# BEGIN WOODEX-ADMIN (managed by /admin — do not edit by hand)
+ErrorDocument 500 /500.html
+ErrorDocument 503 /503.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# one official address: no www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+# hacked-spam cleanup: tell Google these are gone for good
+RewriteCond %{REQUEST_URI} (casino|gokkasten|gokautomat|blackjack|roulette|free-spins|itm-[0-9]{4,}) [NC]
+RewriteRule ^ - [G,L]
+RewriteCond %{QUERY_STRING} (^|&)(p|page_id|attachment_id|cat)=[0-9]+ [NC]
+RewriteRule ^$ /? [R=301,L]
+RewriteRule ^contact\-us\-2/?$ /contact/ [R=301,L]
+RewriteRule ^design\-planning/?$ /interior-design/ [R=301,L]
+RewriteRule ^page(/.*)?$ / [R=301,L]
+RewriteRule ^services/?$ /interior-design/ [R=301,L]
+RewriteRule ^service/?$ /interior-design/ [R=301,L]
+RewriteRule ^studio/?$ /about/ [R=301,L]
+RewriteRule ^portfolio/?$ /projects/ [R=301,L]
+RewriteRule ^journal/?$ /insights/ [R=301,L]
+RewriteRule ^free\-consultation/?$ /contact/ [R=301,L]
+RewriteRule ^interior\-design\/bedroom/?$ /residential-bedroom-design/ [R=301,L]
+RewriteRule ^interior\-design\/home\-office/?$ /residential-home-office-design/ [R=301,L]
+RewriteRule ^interior\-design\/kitchen/?$ /kitchen-design/ [R=301,L]
+RewriteRule ^architecture\/educational/?$ /educational-buildings-design/ [R=301,L]
+RewriteRule ^architecture\/master\-planning/?$ /master-planning/ [R=301,L]
+RewriteRule ^renovation\/residential/?$ /residential-renovation/ [R=301,L]
+RewriteRule ^renovation\/office/?$ /office-renovation/ [R=301,L]
+RewriteRule ^renovation\/commercial/?$ /commercial-renovation/ [R=301,L]
+RewriteRule ^renovation\/retail/?$ /retail-showroom-renovation/ [R=301,L]
+RewriteRule ^commercial\/restaurant/?$ /restaurant-interior-design/ [R=301,L]
+RewriteRule ^commercial\/beauty\-salon/?$ /beauty-salon-design/ [R=301,L]
+RewriteRule ^3d\-studio/?$ /3d-visualization/ [R=301,L]
+RewriteRule ^project\-the\-open\-house/?$ /projects/ [R=301,L]
+RewriteRule ^insight\-layering\-light/?$ /insights/ [R=301,L]
+RewriteRule ^insights\/small\-rooms/?$ /insights/small-space-ideas/ [R=301,L]
+RewriteRule ^insights\/costs\-in\-pakistan/?$ /insights/interior-design-cost-pakistan/ [R=301,L]
+RewriteRule ^gratis\-gokkasten\-spelen\-netent/?$ - [G,L]
+RewriteRule ^777\-nl\-casino\-nl\-2025\-review/?$ - [G,L]
+RewriteRule ^He&/?$ - [G,L]
+RewriteRule ^cgi\-sys\/suspendedpage\.cgi/?$ - [G,L]
+RewriteRule ^Figuren\-itm\-60842(/.*)?$ - [G,L]
+RewriteRule ^wp\-admin(/.*)?$ - [G,L]
+RewriteRule ^wp\-content(/.*)?$ - [G,L]
+RewriteRule ^wp\-includes(/.*)?$ - [G,L]
+RewriteRule ^feed(/.*)?$ - [G,L]
+RewriteRule ^wp\-login\.php/?$ - [G,L]
+RewriteRule ^xmlrpc\.php/?$ - [G,L]
+</IfModule>
+# END WOODEX-ADMIN

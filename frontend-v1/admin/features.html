@@ -1,0 +1,489 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Woodex — Feature Guide</title><style>
+:root{--n:#0c1628;--g:#b8956a;--c:#f4efe7;--l:#e4e7ec;--m:#667085}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:15px/1.65 "Plus Jakarta Sans",system-ui,Segoe UI,sans-serif;color:#101828;background:#f6f7f9}
+nav{position:fixed;inset:0 auto 0 0;width:280px;background:var(--n);color:#cfd6e4;overflow:auto;padding:16px 12px}nav b{display:block;color:#fff;font-size:16px;padding:4px 8px 12px}nav input{width:100%;padding:9px 11px;border-radius:9px;border:1px solid #24324f;background:#16233d;color:#fff;margin-bottom:10px}
+nav a{display:block;text-decoration:none;color:inherit;border-radius:7px;padding:5px 9px;font-size:13px}nav a.l2{color:#fff;font-weight:700;margin-top:8px}nav a.l3{padding-left:20px}nav a:hover,nav a.on{background:#16233d}nav a.on{box-shadow:inset 3px 0 0 var(--g)}
+main{margin-left:280px;padding:24px 44px 80px;max-width:1100px}h1{font-size:28px}h2{margin-top:44px;padding-top:12px;border-top:2px solid var(--g);font-size:22px}h3{margin-top:26px;font-size:17px;background:#fff;border:1px solid var(--l);border-left:4px solid var(--g);padding:8px 12px;border-radius:8px}
+h2,h3{scroll-margin-top:14px}code{background:var(--c);padding:1px 6px;border-radius:5px;font-size:13px}table{border-collapse:collapse;width:100%;background:#fff;font-size:14px;margin:10px 0}th,td{border:1px solid var(--l);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--n);color:#fff}
+blockquote{margin:0;border-left:4px solid var(--g);background:var(--c);padding:8px 14px;border-radius:0 8px 8px 0}a{color:#8a6a40}mark{background:#f8e2b8}.hide{display:none}
+@media(max-width:900px){nav{position:static;width:auto}main{margin:0;padding:16px}}@media print{nav{display:none}main{margin:0}}
+</style></head><body><nav><b>Woodex Feature Guide</b><input id="q" placeholder="Search features…"><a class="l2" href="#1-sign-in-amp-account">1. Sign-in &amp; account</a><a class="l3" href="#11-login">1.1 Login</a><a class="l3" href="#12-google-sign-in">1.2 Google sign-in</a><a class="l3" href="#13-forgot--reset-password">1.3 Forgot / reset password</a><a class="l3" href="#14-my-profile-amp-avatar">1.4 My profile &amp; avatar</a><a class="l3" href="#15-my-security-2fa-sessions-alerts">1.5 My security (2FA, sessions, alerts)</a><a class="l3" href="#16-admin-layout">1.6 Admin layout</a><a class="l2" href="#2-dashboard">2. Dashboard</a><a class="l3" href="#21-role-based-dashboard">2.1 Role-based dashboard</a><a class="l3" href="#22-google-analytics-amp-search-console-cards">2.2 Google Analytics &amp; Search Console cards</a><a class="l2" href="#3-sales">3. Sales</a><a class="l3" href="#31-enquiries-amp-leads">3.1 Enquiries &amp; leads</a><a class="l3" href="#32-lead-import-csv--google-sheet">3.2 Lead import (CSV / Google Sheet)</a><a class="l3" href="#33-pipeline">3.3 Pipeline</a><a class="l3" href="#34-bookings-site-visits--meetings">3.4 Bookings (site visits / meetings)</a><a class="l3" href="#35-clients-central-client-database">3.5 Clients (central client database)</a><a class="l2" href="#4-quotes-amp-invoices">4. Quotes &amp; invoices</a><a class="l3" href="#41-quotations">4.1 Quotations</a><a class="l3" href="#42-quote-templates">4.2 Quote templates</a><a class="l3" href="#43-invoices">4.3 Invoices</a><a class="l3" href="#44-transactions">4.4 Transactions</a><a class="l3" href="#45-company-details">4.5 Company details</a><a class="l2" href="#5-projects">5. Projects</a><a class="l2" href="#6-whatsapp">6. WhatsApp</a><a class="l3" href="#61-whatsapp-hub-offers--automation-on-one-page">6.1 WhatsApp hub (offers + automation on one page)</a><a class="l3" href="#62-whatsapp-automation-amp-campaigns">6.2 WhatsApp automation &amp; campaigns</a><a class="l3" href="#63-whatsapp-webhook-ai-agent">6.3 WhatsApp webhook (AI agent)</a><a class="l2" href="#7-support">7. Support</a><a class="l3" href="#71-inbox--live-chat">7.1 Inbox / live chat</a><a class="l3" href="#72-train-ai">7.2 Train AI</a><a class="l3" href="#73-client-updates">7.3 Client updates</a><a class="l2" href="#8-website-pages-amp-builder">8. Website (pages &amp; builder)</a><a class="l3" href="#81-all-pages">8.1 All pages</a><a class="l3" href="#82-page-builder-builder-v3">8.2 Page builder (Builder v3)</a><a class="l3" href="#83-section-library">8.3 Section library</a><a class="l3" href="#84-header-amp-footer">8.4 Header &amp; footer</a><a class="l3" href="#85-redirects-amp-404-monitor">8.5 Redirects &amp; 404 monitor</a><a class="l2" href="#9-content">9. Content</a><a class="l3" href="#91-blog-amp-insights">9.1 Blog &amp; insights</a><a class="l3" href="#92-page-templates">9.2 Page templates</a><a class="l3" href="#93-estimator">9.3 Estimator</a><a class="l3" href="#94-forms">9.4 Forms</a><a class="l3" href="#95-portfolio">9.5 Portfolio</a><a class="l3" href="#96-service-pages">9.6 Service pages</a><a class="l3" href="#97-city-pages">9.7 City pages</a><a class="l3" href="#98-faq-groups">9.8 FAQ groups</a><a class="l3" href="#99-testimonials">9.9 Testimonials</a><a class="l3" href="#910-team-on-website">9.10 Team (on website)</a><a class="l2" href="#10-media-library">10. Media library</a><a class="l2" href="#11-marketing">11. Marketing</a><a class="l3" href="#111-seo-manager">11.1 SEO manager</a><a class="l3" href="#112-speed">11.2 Speed</a><a class="l3" href="#113-site-health">11.3 Site health</a><a class="l2" href="#12-settings">12. Settings</a><a class="l2" href="#13-public-website">13. Public website</a><a class="l2" href="#14-automations-cron-amp-integrations">14. Automations, cron &amp; integrations</a><a class="l2" href="#15-security-features">15. Security features</a><a class="l2" href="#16-developer-reference">16. Developer reference</a></nav><main id="m"><h1 id="woodex--complete-feature-guide-p19">Woodex — Complete Feature Guide (P19)</h1><blockquote>
+<p>Every feature, from the admin dashboard to the public website, automations and APIs.
+Each feature lists <strong>What</strong> it does, <strong>Where</strong> to find it (admin link), <strong>Who</strong> can use it, <strong>How</strong> to use it, and a <strong>Tech</strong> line for developers (files and API actions).
+Version: P19 + security build (Oct 2026). Admin: <code>https://woodex.com.pk/admin/</code></p>
+</blockquote>
+<p><strong>Roles:</strong> Owner (everything) · Admin (all except owner-only items) · Sales (Sales + Support) · Editor (Website + Content). Owner-only items are marked 🔒.</p>
+<hr>
+<h2 id="contents">Contents</h2><ol>
+<li><a href="#1-sign-in--account">Sign-in &amp; account</a></li>
+<li><a href="#2-dashboard">Dashboard</a></li>
+<li><a href="#3-sales">Sales</a></li>
+<li><a href="#4-quotes--invoices">Quotes &amp; invoices</a></li>
+<li><a href="#5-projects">Projects</a></li>
+<li><a href="#6-whatsapp">WhatsApp</a></li>
+<li><a href="#7-support">Support (chat, updates, AI)</a></li>
+<li><a href="#8-website-pages--builder">Website (pages &amp; builder)</a></li>
+<li><a href="#9-content">Content</a></li>
+<li><a href="#10-media-library">Media library</a></li>
+<li><a href="#11-marketing">Marketing (SEO, speed, health)</a></li>
+<li><a href="#12-settings">Settings</a></li>
+<li><a href="#13-public-website">Public website</a></li>
+<li><a href="#14-automations-cron--integrations">Automations, cron &amp; integrations</a></li>
+<li><a href="#15-security-features">Security features</a></li>
+<li><a href="#16-developer-reference">Developer reference</a></li>
+</ol>
+<hr>
+<h2 id="1-sign-in-amp-account">1. Sign-in &amp; account</h2><h3 id="11-login">1.1 Login</h3><ul>
+<li><strong>What:</strong> Split-screen sign-in with email + password. Sessions can be revoked.</li>
+<li><strong>Where:</strong> <code>/admin/</code> · <strong>Who:</strong> all users</li>
+<li><strong>How:</strong> Enter email and password, then press Sign in. If 2FA is on, enter the 6-digit code.</li>
+<li><strong>Tech:</strong> <code>admin.js</code> · <code>admin.php</code> → <code>login</code>, <code>login_2fa</code>, <code>logout</code>, <code>me</code>. HMAC token in <code>X-WX-ADM</code>, rate-limited (<code>wx_throttle</code>).</li>
+</ul>
+<h3 id="12-google-sign-in">1.2 Google sign-in</h3><ul>
+<li><strong>What:</strong> Sign in with a linked Google account (no password).</li>
+<li><strong>Where:</strong> Login screen → <em>Continue with Google</em>. Link it in <em>My security</em>. · <strong>Who:</strong> all (once linked)</li>
+<li><strong>Tech:</strong> <code>phase8-lib.php</code> → <code>google_cfg</code>, <code>google_login</code>, <code>google_link</code>, <code>google_unlink</code>.</li>
+</ul>
+<h3 id="13-forgot--reset-password">1.3 Forgot / reset password</h3><ul>
+<li><strong>What:</strong> An emailed single-use reset link.</li>
+<li><strong>How:</strong> Login → <em>Forgot password</em> → enter email → open the link → set a new password.</li>
+<li><strong>Tech:</strong> <code>pw_forgot</code>, <code>pw_reset</code> (HMAC token, expires).</li>
+</ul>
+<h3 id="14-my-profile-amp-avatar">1.4 My profile &amp; avatar</h3><ul>
+<li><strong>What:</strong> Name, photo, designation and phone (also used on the website Team section).</li>
+<li><strong>Where:</strong> Top-right avatar → Profile (<code>#/profile</code>) · <strong>Who:</strong> all</li>
+<li><strong>Tech:</strong> <code>admin-p18j.js</code> · <code>me_get</code>, <code>me_save</code>, <code>me_avatar</code>, <code>me_avatars</code>.</li>
+</ul>
+<h3 id="15-my-security-2fa-sessions-alerts">1.5 My security (2FA, sessions, alerts)</h3><ul>
+<li><strong>What:</strong> Turn on authenticator 2FA with recovery codes, see recent logins, sign out other devices, get login alerts.</li>
+<li><strong>Where:</strong> <code>#/security</code> · <strong>Who:</strong> all</li>
+<li><strong>How:</strong> <em>Enable 2FA</em> → scan the QR code → enter the code → save the recovery codes.</li>
+<li><strong>Tech:</strong> <code>security-lib.php</code> → <code>sec_get</code>, <code>sec_2fa_begin/enable/disable/reset</code>, <code>sec_recovery_new</code>, <code>sec_revoke</code>, <code>sec_alerts</code>.</li>
+</ul>
+<h3 id="16-admin-layout">1.6 Admin layout</h3><ul>
+<li><strong>What:</strong> Navy icon rail that opens on hover (with a pin), grouped menu (Sales / Support / Website / Content / Marketing / Settings), live count badges, global search (Ctrl+K), notification bell with sound and push, dark-friendly TailAdmin look.</li>
+<li><strong>Tech:</strong> <code>admin.js</code> (NAV, <code>navBadges</code>), <code>admin-inbox.js</code>, <code>admin-chrome.js</code>; <code>notif_poll</code>.</li>
+</ul>
+<hr>
+<h2 id="2-dashboard">2. Dashboard</h2><h3 id="21-role-based-dashboard">2.1 Role-based dashboard</h3><ul>
+<li><strong>What:</strong> Live KPIs: new enquiries, pipeline value, quotes, invoices due, payments, projects, chats waiting and sales target progress. Charts plus &quot;today&quot; lists. Sales staff see their own numbers.</li>
+<li><strong>Where:</strong> <code>#/dashboard</code> · <strong>Who:</strong> all (content depends on role)</li>
+<li><strong>How:</strong> Set a monthly target with <em>Edit target</em>. Click any card to open its list.</li>
+<li><strong>Tech:</strong> <code>admin-dash.js</code> · <code>dash-lib.php</code> → <code>dash_data</code>, <code>dash_target_save</code>; <code>sales17-lib.php</code> → <code>leads_stats</code>, <code>leads_followups</code>.</li>
+</ul>
+<h3 id="22-google-analytics-amp-search-console-cards">2.2 Google Analytics &amp; Search Console cards</h3><ul>
+<li><strong>What:</strong> Visitors, top pages, search clicks and queries (free, through a service account).</li>
+<li><strong>Where:</strong> Dashboard cards; set up in Settings → Integrations · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-google.js</code> · <code>google-data-lib.php</code> → <code>gdata_status</code>, <code>gdata_save</code>, <code>gdata_report</code>, <code>gdata_clear</code>.</li>
+</ul>
+<hr>
+<h2 id="3-sales">3. Sales</h2><h3 id="31-enquiries-amp-leads">3.1 Enquiries &amp; leads</h3><ul>
+<li><strong>What:</strong> Every website form, chat, WhatsApp and manual lead in one list. Filters (stage, source, unread), search and a lead drawer with notes, activity, follow-up date and one-click WhatsApp.</li>
+<li><strong>Where:</strong> <code>#/enquiries</code> (alias <code>#/leads</code>) · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>How:</strong> <em>Add lead</em> (<code>#s17-add</code>) → fill in the fields → Save → offer WhatsApp. The draft is kept if you close the box. Change the stage in the drawer.</li>
+<li><strong>Tech:</strong> <code>admin-crm.js</code>, <code>admin-sales17.js</code> · <code>crm-lib.php</code> → <code>leads_list</code>, <code>lead_save</code>, <code>lead_note</code>, <code>lead_delete</code>, <code>lead_convert</code>, <code>leads_count</code>; <code>sales17-lib.php</code> → <code>lead_activity</code>, <code>leads_followups</code>.</li>
+</ul>
+<h3 id="32-lead-import-csv--google-sheet">3.2 Lead import (CSV / Google Sheet)</h3><ul>
+<li><strong>What:</strong> Import leads from CSV (for example <em>Jan 2025 Lead Management</em>) with automatic column mapping, duplicate check and a link to existing clients.</li>
+<li><strong>Where:</strong> Enquiries → <em>Import</em> · <strong>Who:</strong> owner, admin</li>
+<li><strong>How:</strong> Upload the CSV → check the column mapping → Preview → Import.</li>
+<li><strong>Tech:</strong> <code>importSheet</code> in <code>admin-sales17.js</code> · <code>leads_import2</code> (<code>sales17-lib.php</code>), old <code>leads_import</code>.</li>
+</ul>
+<h3 id="33-pipeline">3.3 Pipeline</h3><ul>
+<li><strong>What:</strong> Kanban board: New → Contacted → Site visit → Quote sent → Hold → Won / Lost. Drag cards, see column values, view overdue follow-ups.</li>
+<li><strong>Where:</strong> <code>#/pipeline</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>Tech:</strong> <code>CRM_STAGES</code> = new, contacted, visit, quote, hold, won, lost · <code>lead_save</code> (stage).</li>
+</ul>
+<h3 id="34-bookings-site-visits--meetings">3.4 Bookings (site visits / meetings)</h3><ul>
+<li><strong>What:</strong> Public &quot;Book a visit&quot; calendar with open hours, slot length, clash prevention, status (confirmed / done / cancelled) and alerts.</li>
+<li><strong>Where:</strong> <code>#/bookings</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>How:</strong> Settings tab → set the hours and days → bookings appear in the list → change their status.</li>
+<li><strong>Tech:</strong> <code>admin-booking.js</code> · <code>booking-lib.php</code> → <code>bk_cfg</code>, <code>bk_cfg_save</code>, <code>bk_list</code>, <code>bk_save</code>, <code>bk_status</code>; public <code>bk_slots</code>, <code>bk_book</code>.</li>
+</ul>
+<h3 id="35-clients-central-client-database">3.5 Clients (central client database)</h3><ul>
+<li><strong>What:</strong> One master record per client, linked across leads, quotes, invoices, projects and chats. Client 360 view, merge duplicates, type, source, tags and designation.</li>
+<li><strong>Where:</strong> <code>#/clients</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>How:</strong> Open a client → <em>360</em> tab shows everything. Use <em>Merge</em> to join duplicates. <em>Link all</em> auto-links leads by phone or email.</li>
+<li><strong>Tech:</strong> <code>admin-p19c.js</code> · <code>crm-lib.php</code> → <code>clients_list</code>, <code>client_save</code>, <code>client_delete</code>; <code>sales17-lib.php</code> → <code>client_360</code>, <code>clients_master</code>, <code>clients_merge</code>; <code>p19c-lib.php</code> → <code>clients_link</code>, <code>client_comms</code>. Table <code>wx_clients</code>, <code>wx_leads.client_id</code>.</li>
+</ul>
+<hr>
+<h2 id="4-quotes-amp-invoices">4. Quotes &amp; invoices</h2><h3 id="41-quotations">4.1 Quotations</h3><ul>
+<li><strong>What:</strong> Multi-page A4 quotes with WI-10100 numbering (Woodex Interior) and WF- numbering (Furniture). Blocks you can drag to reorder, Summary show/hide, live preview, PDF, client share link and status tracking.</li>
+<li><strong>Where:</strong> <code>#/quotes</code>, editor <code>#/quote/&lt;id&gt;</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>How:</strong> <em>New quote</em> → pick a client and template → add items and blocks → Preview → <em>Send</em> (email / WhatsApp link) → mark Accepted → <em>Make invoice</em>.</li>
+<li><strong>Tech:</strong> <code>admin-sales.js</code>, <code>admin-sales17.js</code>, <code>admin-print.js</code>, <code>admin-print17.js</code> · <code>sales-lib.php</code> → <code>quotes_list</code>, <code>quote_get/save/copy/delete/status/send/link/invoice</code>; public <code>quote-view.php</code> (HMAC link).</li>
+</ul>
+<h3 id="42-quote-templates">4.2 Quote templates</h3><ul>
+<li><strong>What:</strong> Reusable layouts (single page, project, classic) with header, footer and signature.</li>
+<li><strong>Where:</strong> <code>#/templates</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>Tech:</strong> <code>admin-templates.js</code> · <code>tpl_list</code>, <code>tpl_save</code>, <code>tpl_delete</code>, <code>tpl_import</code>.</li>
+</ul>
+<h3 id="43-invoices">4.3 Invoices</h3><ul>
+<li><strong>What:</strong> An invoice keeps the quote&#39;s number. Balance = total − paid. Payments, due dates, PDF and a tracker.</li>
+<li><strong>Where:</strong> <code>#/invoices</code>, <code>#/invoice/&lt;id&gt;</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>Tech:</strong> <code>invs_list</code>, <code>inv_get</code>, <code>inv_save</code>, <code>pay_add</code>, <code>pay_delete</code>; <code>sales17-lib.php</code> → <code>inv_new</code>, <code>inv_track</code>, <code>invs_tracker</code>, <code>invs_import</code>.</li>
+</ul>
+<h3 id="44-transactions">4.4 Transactions</h3><ul>
+<li><strong>What:</strong> Every payment received across invoices, with filters and totals.</li>
+<li><strong>Where:</strong> <code>#/transactions</code> · <strong>Who:</strong> owner, admin, sales</li>
+</ul>
+<h3 id="45-company-details">4.5 Company details</h3><ul>
+<li><strong>What:</strong> Business name, logo, bank details, terms and signature, all used on quotes and invoices.</li>
+<li><strong>Tech:</strong> <code>company_get</code>, <code>company_save</code>.</li>
+</ul>
+<hr>
+<h2 id="5-projects">5. Projects</h2><ul>
+<li><strong>What:</strong> Projects table with milestones, progress, photos, billing (linked invoices), updates and handover.</li>
+<li><strong>Where:</strong> <code>#/projects</code> · <strong>Who:</strong> all staff (editing depends on role)</li>
+<li><strong>How:</strong> Create one from a won quote or with <em>New project</em> → add milestones → upload photos → post updates (these can notify the client).</li>
+<li><strong>Tech:</strong> <code>sales-lib.php</code> → <code>projs_list</code>, <code>proj_save/delete/update/photo/photo_delete</code>; <code>sales17-lib.php</code> → <code>projs_table</code>, <code>proj_meta</code>, <code>proj_milestones</code>, <code>proj_bill</code>.</li>
+</ul>
+<hr>
+<h2 id="6-whatsapp">6. WhatsApp</h2><h3 id="61-whatsapp-hub-offers--automation-on-one-page">6.1 WhatsApp hub (offers + automation on one page)</h3><ul>
+<li><strong>What:</strong> Connect or reconnect the number (Cloud API), send discount offers to leads, use templates, see stats.</li>
+<li><strong>Where:</strong> <code>#/offers</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>How:</strong> <em>Connect</em> → paste the Phone ID and Token → test → create an offer → pick leads → Send.</li>
+<li><strong>Tech:</strong> <code>admin-offers.js</code> · <code>crm_wa_connect</code>, <code>crm_wa_status</code>, <code>crm_wa_disconnect</code>, <code>crm_offers</code>, <code>crm_offer_save/send/delete</code>, <code>wa_stats</code>.</li>
+</ul>
+<h3 id="62-whatsapp-automation-amp-campaigns">6.2 WhatsApp automation &amp; campaigns</h3><ul>
+<li><strong>What:</strong> Segments, message templates, campaigns (schedule / pause), auto flows (welcome, follow-up), STOP/START opt-out list, delivery and read receipts.</li>
+<li><strong>Where:</strong> <code>#/offers</code> → Automation tab (old <code>#/wauto</code>) · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>Tech:</strong> <code>admin-p18g.js</code> · <code>p18g-lib.php</code> → <code>wag_get</code>, <code>wag_seg_save/delete</code>, <code>wag_tpl_save/delete</code>, <code>wag_camp_save/get/action</code>, <code>wag_flows_save</code>, <code>wag_audience</code>, <code>wag_optout(_list)</code>, <code>wag_test</code>, <code>wag_tick</code>; cron <code>wa-cron.php</code>.</li>
+</ul>
+<h3 id="63-whatsapp-webhook-ai-agent">6.3 WhatsApp webhook (AI agent)</h3><ul>
+<li><strong>What:</strong> Incoming WhatsApp messages become chats and leads. The AI replies in the customer&#39;s language and the team can take over.</li>
+<li><strong>Setup:</strong> Meta → Callback URL <code>https://woodex.com.pk/api/whatsapp.php</code>. The Verify token and <strong>App secret (required)</strong> go in Train AI → WhatsApp.</li>
+<li><strong>Tech:</strong> <code>whatsapp.php</code> (signature fail-closed), <code>chat-lib.php</code>.</li>
+</ul>
+<hr>
+<h2 id="7-support">7. Support</h2><h3 id="71-inbox--live-chat">7.1 Inbox / live chat</h3><ul>
+<li><strong>What:</strong> Website chat and WhatsApp threads in one inbox. AI first, then <em>Take over</em>. Typing indicator, files and voice notes, convert to lead, close. A floating chat dock on every admin page (minimise hides it).</li>
+<li><strong>Where:</strong> <code>#/chat</code> · <strong>Who:</strong> owner, admin, sales</li>
+<li><strong>Tech:</strong> <code>admin-chat.js</code>, <code>admin-chat2.js</code> · <code>chat_list</code>, <code>chat_get</code>, <code>chat_reply</code>, <code>chat_mode</code>, <code>chat_close</code>, <code>chat_lead</code>, <code>chat_file</code>, <code>chat_typing</code>.</li>
+</ul>
+<h3 id="72-train-ai">7.2 Train AI</h3><ul>
+<li><strong>What:</strong> Q&amp;A, tone (professional designer, no prices), topics to avoid, office hours (10:00 am – 7:30 pm), a test chat and AI provider settings (including a local AI endpoint via tunnel). Daily cap of 400 AI replies; after that it answers from the Q&amp;A list.</li>
+<li><strong>Where:</strong> <code>#/train</code> · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-train.js</code> · <code>chat_cfg_get</code>, <code>chat_cfg_save</code>, <code>chat_test</code>; content-lib <code>cms_ai_get/save/models</code>, <code>ai_test</code>.</li>
+</ul>
+<h3 id="73-client-updates">7.3 Client updates</h3><ul>
+<li><strong>What:</strong> Automatic messages at key steps (enquiry received, quote sent, work started, handover) by WhatsApp and email, in English and Urdu.</li>
+<li><strong>Where:</strong> <code>#/updates</code> · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-notify.js</code> · <code>notify-lib.php</code> → <code>notify_get</code>, <code>notify_save</code>, <code>notify_test</code>.</li>
+</ul>
+<hr>
+<h2 id="8-website-pages-amp-builder">8. Website (pages &amp; builder)</h2><h3 id="81-all-pages">8.1 All pages</h3><ul>
+<li><strong>What:</strong> Every page with type, status, SEO score, size and last edit. Edit, duplicate, edit meta, new page. Pages cannot be deleted or renamed.</li>
+<li><strong>Where:</strong> <code>#/pages</code> · <strong>Who:</strong> owner, admin, editor</li>
+<li><strong>Tech:</strong> <code>admin-pages.js</code> · <code>pages_list</code>, <code>page_meta_save</code>; builder <code>page_new</code>.</li>
+</ul>
+<h3 id="82-page-builder-builder-v3">8.2 Page builder (Builder v3)</h3><ul>
+<li><strong>What:</strong> Visual drag-and-drop editor: section library, inline text, image replace or upload, import an image from a URL, Openverse images, theme colours and fonts, mobile/tablet preview, page history (restore) and global sections that sync to all pages.</li>
+<li><strong>Where:</strong> <code>#/builder</code> or <code>/builder/</code> · <strong>Who:</strong> owner, admin, editor</li>
+<li><strong>Rules:</strong> Header and footer edits update every page. Only the <strong>Owner</strong> can add new scripts or embeds 🔒.</li>
+<li><strong>Tech:</strong> <code>builder/builder.js</code> · <code>builder.php</code> → <code>load</code>, <code>save</code>, <code>page_new</code>, <code>backups</code>, <code>restore</code>, <code>upload</code>, <code>import_url</code>, <code>media*</code>, <code>theme(_get)</code>, <code>blocks_*</code>.</li>
+</ul>
+<h3 id="83-section-library">8.3 Section library</h3><ul>
+<li><strong>What:</strong> About 40 Woodex blocks plus your saved blocks. Global blocks sync across pages.</li>
+<li><strong>Where:</strong> <code>#/library</code> · <strong>Tech:</strong> <code>admin-library.js</code> · <code>blocks_list/save/delete/import/sync/usage</code>.</li>
+</ul>
+<h3 id="84-header-amp-footer">8.4 Header &amp; footer</h3><ul>
+<li><strong>What:</strong> Logo, menu (desktop and mobile), button text, header phone, footer contacts and design style, with version history. One save updates every page.</li>
+<li><strong>Where:</strong> <code>#/global</code> · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-chrome.js</code> · <code>global_menu</code>, <code>global_chrome</code>, <code>global_replace</code>, <code>chrome_save</code>, <code>chrome_versions</code>.</li>
+</ul>
+<h3 id="85-redirects-amp-404-monitor">8.5 Redirects &amp; 404 monitor</h3><ul>
+<li><strong>What:</strong> 301/302/410 rules written to <code>.htaccess</code>, a list of addresses visitors missed (404s) with one-click redirect, and a plan/test tool.</li>
+<li><strong>Where:</strong> <code>#/redirects</code> · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-redirects.js</code> · <code>redirects</code>, <code>redirects_save</code>, <code>redirects_plan</code>, <code>r404_list</code>, <code>r404_clear</code>; public <code>r404.php</code>.</li>
+</ul>
+<hr>
+<h2 id="9-content">9. Content</h2><h3 id="91-blog-amp-insights">9.1 Blog &amp; insights</h3><ul>
+<li><strong>What:</strong> 5 article templates. AI writes the full article and auto-fixes it to an SEO score of 70+. Images are added manually. Publish adds the article to the sitemap.</li>
+<li><strong>Where:</strong> <code>#/blog</code>, <code>#/post/new</code> · <strong>Who:</strong> owner, admin, editor</li>
+<li><strong>Tech:</strong> <code>admin-content.js</code> · <code>cms_list/get/save/delete/status</code>, <code>ai_run</code> (<code>outline</code>, <code>article</code>, <code>improve</code>, <code>fix</code>, <code>meta</code>, <code>excerpt</code>, <code>alt</code>), <code>cms_sitemap_add</code>.</li>
+</ul>
+<h3 id="92-page-templates">9.2 Page templates</h3><ul>
+<li><strong>What:</strong> Ready page layouts built from finished projects. Use one to create a new page, or import/create your own.</li>
+<li><strong>Where:</strong> <code>#/pagetpl</code> · <strong>Tech:</strong> <code>admin-templates.js</code> · <code>cms_tpl_list/save/delete</code>.</li>
+</ul>
+<h3 id="93-estimator">9.3 Estimator</h3><ul>
+<li><strong>What:</strong> Public cost estimator with rates per service and size, and a template system (several rate sets). Results become leads.</li>
+<li><strong>Where:</strong> <code>#/estimator</code> · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-p18e.js</code> · <code>est_save</code>, <code>est_tpls</code>, <code>est_tpl_save</code> → <code>assets/js/estimator-rates.js</code>.</li>
+</ul>
+<h3 id="94-forms">9.4 Forms</h3><ul>
+<li><strong>What:</strong> Settings per form (contact, quote, WhatsApp, estimator, booking): alert email, alert WhatsApp number, auto-reply on/off and text. Spam protection: Turnstile, honeypot, rate limit, and auto-reply caps (1 per person per day, 60 per day).</li>
+<li><strong>Where:</strong> <code>#/forms</code> · <strong>Who:</strong> owner, admin</li>
+<li><strong>Tech:</strong> <code>admin-p18e.js</code> · <code>forms_get</code>, <code>forms_save</code>; public <code>forms.php</code>.</li>
+</ul>
+<h3 id="95-portfolio">9.5 Portfolio</h3><ul>
+<li><strong>What:</strong> Project case studies (photos, location, scope) shown on the Projects pages.</li>
+<li><strong>Where:</strong> <code>#/portfolio</code> · <strong>Who:</strong> owner, admin, editor</li>
+</ul>
+<h3 id="96-service-pages">9.6 Service pages</h3><ul>
+<li><strong>What:</strong> Edit service page content (hero, sections, FAQ), create one from a template, duplicate.</li>
+<li><strong>Where:</strong> <code>#/services</code> · <strong>Tech:</strong> <code>admin-fields.js</code> · <code>cms_page_kinds</code>; builder <code>page_new</code>.</li>
+</ul>
+<h3 id="97-city-pages">9.7 City pages</h3><ul>
+<li><strong>What:</strong> Local SEO pages (Lahore, Karachi, Islamabad, …). The AI writes local text.</li>
+<li><strong>Where:</strong> <code>#/cities</code>, <code>#/citydraft</code> · <strong>Tech:</strong> <code>ai_run</code> → <code>city</code>.</li>
+</ul>
+<h3 id="98-faq-groups">9.8 FAQ groups</h3><ul>
+<li><strong>What:</strong> FAQ groups for each website page. The group shows on the pages it&#39;s placed on, with FAQ schema.</li>
+<li><strong>Where:</strong> <code>#/faqs</code> · <strong>Tech:</strong> <code>cms_placements</code>, <code>cms_placements_save</code>, <code>cms_reorder</code>.</li>
+</ul>
+<h3 id="99-testimonials">9.9 Testimonials</h3><ul>
+<li><strong>What:</strong> Client reviews with rating, photo and project. Pick a design (default for all pages or per page) and choose which pages show them.</li>
+<li><strong>Where:</strong> <code>#/testimonials</code> · <strong>How it shows:</strong> published testimonials appear in the testimonial section of the selected pages.</li>
+</ul>
+<h3 id="910-team-on-website">9.10 Team (on website)</h3><ul>
+<li><strong>What:</strong> Real team profiles (name, role, photo, bio) shown in the website Team section.</li>
+<li><strong>Where:</strong> <code>#/team</code> · <strong>Tech:</strong> <code>.wx-team*</code> CSS in <code>assets/v1.css</code>.</li>
+</ul>
+<hr>
+<h2 id="10-media-library">10. Media library</h2><ul>
+<li><strong>What:</strong> All images and files in folders: upload, alt text, find where a file is used, replace (keeps the address and refreshes the cache), move, trash/restore, WebP conversion plus 480/960 sizes (originals kept).</li>
+<li><strong>Where:</strong> <code>#/media</code> · <strong>Who:</strong> owner, admin, editor</li>
+<li><strong>Tech:</strong> <code>admin-media.js</code> · <code>media-lib.php</code> → <code>media_list/upload/alt/folder/move/replace/sizes/trash/trash_list/restore/purge</code>; builder <code>media_usage</code>.</li>
+</ul>
+<hr>
+<h2 id="11-marketing">11. Marketing</h2><h3 id="111-seo-manager">11.1 SEO manager</h3><ul>
+<li><strong>What:</strong> SEO score per page, focus keyword plus 4 related keywords, title/description editor with AI suggestions, sitemap, robots.txt, schema, broken links. SEO panels also appear inside the editors.</li>
+<li><strong>Where:</strong> <code>#/seo</code> · <strong>Who:</strong> owner, admin, editor</li>
+<li><strong>Tech:</strong> <code>admin-seo.js</code>, <code>seo-analyzer.js</code> · <code>seo-lib.php</code> → <code>seo_list/page/save/scores/ai/sitemap/robots_save</code>.</li>
+</ul>
+<h3 id="112-speed">11.2 Speed</h3><ul>
+<li><strong>What:</strong> PageSpeed (mobile and desktop) per page with history: LCP, CLS, scores.</li>
+<li><strong>Where:</strong> <code>#/speed</code> · <strong>Tech:</strong> <code>admin-speed.js</code> · <code>health_psi</code>, <code>health_speed</code>, <code>health_settings</code>.</li>
+</ul>
+<h3 id="113-site-health">11.3 Site health</h3><ul>
+<li><strong>What:</strong> Scan for missing alt text, broken links, missing meta, large images and other issues, with a score out of 100 and fix links.</li>
+<li><strong>Where:</strong> <code>#/health</code> · <strong>Tech:</strong> <code>health_get</code>, <code>health_scan</code>.</li>
+</ul>
+<hr>
+<h2 id="12-settings">12. Settings</h2><p>All settings are on <strong>one Settings page</strong> (<code>#/settings</code>) with tabs. <strong>Who:</strong> owner, admin.</p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>What it does</th>
+<th>Tech</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Integrations &amp; APIs</strong></td>
+<td>Email (SMTP), WhatsApp Cloud API, Turnstile keys (with test), Google (sign-in, Analytics, Search Console service account), AI keys, tracking codes, MCP tokens</td>
+<td><code>admin-integ.js</code>, <code>admin-settings.js</code> · <code>crm_settings(_save)</code>, <code>crm_test</code>, <code>set_get</code>, <code>set_general_save</code>, <code>set_tracking_save</code>, <code>set_ts_test</code>, <code>google_save</code>, <code>mcp_token_*</code></td>
+</tr>
+<tr>
+<td><strong>Business info</strong></td>
+<td>Name, address, phones, hours, socials, logo (used on site, schema, quotes, AI)</td>
+<td><code>cms_biz_get</code>, <code>cms_biz_save</code>, <code>cms_biz_assets</code></td>
+</tr>
+<tr>
+<td><strong>Users &amp; roles</strong></td>
+<td>Add, edit and disable team members; roles Owner / Admin / Sales / Editor. Only the Owner can edit the Owner</td>
+<td><code>admin-users.js</code> · <code>users</code>, <code>user_save</code></td>
+</tr>
+<tr>
+<td><strong>Activity log</strong></td>
+<td>Who did what and when (filterable)</td>
+<td><code>activity</code></td>
+</tr>
+<tr>
+<td><strong>Backups</strong> 🔒</td>
+<td>Daily, weekly and manual full backups (pages, data, images, DB). Download, upload, restore (safety copy first). Owner-only</td>
+<td><code>backup_list/run/delete/restore</code>, <code>backup_up</code>, <code>backup_dl</code></td>
+</tr>
+<tr>
+<td><strong>Maintenance &amp; error pages</strong></td>
+<td>Maintenance or coming-soon mode (countdown page) with a bypass link; edit 404/500/503 pages</td>
+<td><code>admin-p18h.js</code> · <code>mt_get</code>, <code>mt_set</code></td>
+</tr>
+<tr>
+<td><strong>File manager</strong></td>
+<td>Browse <code>assets/</code> (upload, folders, rename, trash, zip download). Code folders are read-only</td>
+<td><code>fm_list/upload/mkdir/rename/delete/trash/restore/zip</code></td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>Browse tables (secrets masked), CSV export; SQL export is Owner-only 🔒</td>
+<td><code>dbx_tables/browse/row/export</code></td>
+</tr>
+<tr>
+<td><strong>System check</strong></td>
+<td>PHP version, extensions, write permissions, DB, cron, mail checks</td>
+<td><code>admin-system.js</code> · <code>sys_check</code></td>
+</tr>
+<tr>
+<td><strong>AI agents (MCP)</strong></td>
+<td>Tokens so external AI tools can read leads and quotes or create drafts</td>
+<td><code>phase8-lib.php</code> · <code>mcp_tokens</code>, <code>mcp_log</code>; <code>mcp.php</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="13-public-website">13. Public website</h2><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What</th>
+<th>Where / tech</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Home page</td>
+<td>Hero slider (mobile slider kept), services, projects, testimonials, contact</td>
+<td><code>index.html</code></td>
+</tr>
+<tr>
+<td>Service pages</td>
+<td>Interior, renovation, fit-out, commercial, residential room pages, house-size pages (5/10 marla, 1/2 kanal)</td>
+<td><code>/interior-design/</code>, <code>/renovation/</code> …</td>
+</tr>
+<tr>
+<td>City pages</td>
+<td>12+ cities for local SEO</td>
+<td><code>/lahore/</code>, <code>/karachi/</code> …</td>
+</tr>
+<tr>
+<td>Projects / portfolio</td>
+<td>Case studies</td>
+<td><code>/projects/</code></td>
+</tr>
+<tr>
+<td>Insights blog</td>
+<td>Articles from the admin</td>
+<td><code>/insights/</code></td>
+</tr>
+<tr>
+<td>Estimator</td>
+<td>Instant cost estimate → lead</td>
+<td><code>/estimator/</code></td>
+</tr>
+<tr>
+<td>Book a visit</td>
+<td>Booking calendar</td>
+<td><code>/book-a-visit/</code></td>
+</tr>
+<tr>
+<td>Contact &amp; forms</td>
+<td>Turnstile + honeypot + rate limit → lead + alerts</td>
+<td><code>api/forms.php</code></td>
+</tr>
+<tr>
+<td>Chat / WhatsApp button</td>
+<td>One button: Chat (AI + team) or WhatsApp</td>
+<td><code>assets/js/whatsapp-widget.js</code>, <code>api/chat.php</code></td>
+</tr>
+<tr>
+<td>Client quote link</td>
+<td>Secure online quote view and accept</td>
+<td><code>api/quote-view.php</code></td>
+</tr>
+<tr>
+<td>Coming-soon / maintenance</td>
+<td>Countdown page, noindex, 503 status</td>
+<td><code>coming-soon.html</code>, <code>503.html</code></td>
+</tr>
+<tr>
+<td>Error pages</td>
+<td>404 (logs missed URLs), 500</td>
+<td><code>404.html</code>, <code>500.html</code>, <code>api/r404.php</code></td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>Sitemap, robots, schema, meta, canonical</td>
+<td><code>sitemap.xml</code>, <code>robots.txt</code></td>
+</tr>
+<tr>
+<td>Design</td>
+<td>v26 look: navy/cream/wood, Plus Jakarta Sans, white/cream alternating sections</td>
+<td><code>assets/v1.css</code></td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>WebP, responsive sizes, lazy loading, local libraries</td>
+<td>P15</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="14-automations-cron-amp-integrations">14. Automations, cron &amp; integrations</h2><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What</th>
+<th>Tech</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cron job</td>
+<td>Every 5–15 min: WhatsApp campaigns, auto flows, daily/weekly backups</td>
+<td><code>api/wa-cron.php?key=…</code> (cPanel cron)</td>
+</tr>
+<tr>
+<td>Lead alerts</td>
+<td>Email + WhatsApp to the team on each new lead (recipients per form)</td>
+<td><code>send_alerts()</code> in <code>crm-lib.php</code></td>
+</tr>
+<tr>
+<td>Client auto-reply</td>
+<td>Thank-you message (capped)</td>
+<td><code>notify_client()</code> in <code>notify-lib.php</code></td>
+</tr>
+<tr>
+<td>WhatsApp Cloud API</td>
+<td>Send, receive, templates, receipts</td>
+<td><code>whatsapp.php</code>, <code>p18g-lib.php</code></td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Sign-in, Analytics 4, Search Console</td>
+<td><code>phase8-lib.php</code>, <code>google-data-lib.php</code></td>
+</tr>
+<tr>
+<td>AI</td>
+<td>Chat agent, blog writer, SEO suggestions, city text (OpenAI-compatible and local endpoints)</td>
+<td><code>content-lib.php</code>, <code>chat-lib.php</code></td>
+</tr>
+<tr>
+<td>MCP server</td>
+<td>Tools for AI agents: list_leads, get_quote, create_quote_draft, monthly_report, …</td>
+<td><code>api/mcp.php</code> (Bearer token)</td>
+</tr>
+<tr>
+<td>Cloudflare Turnstile</td>
+<td>Spam check on forms</td>
+<td><code>forms.php</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="15-security-features">15. Security features</h2><ul>
+<li>Signed session tokens, revocable sessions, password version check, 2FA and recovery codes, login rate limit, login alerts.</li>
+<li>Role checks on every API action (sweep-tested). The Owner account is protected.</li>
+<li>Owner-only: backups, restore, SQL export, adding scripts or embeds to pages.</li>
+<li>Restores never write secrets, <code>.htaccess</code>, code or the users table.</li>
+<li>The WhatsApp webhook needs Meta&#39;s signature (fails closed). Quote links are signed.</li>
+<li>Uploads: type sniffing, random names, PHP disabled in upload folders.</li>
+<li>URL import: https only, public addresses only, each redirect re-checked.</li>
+<li>Spam: Turnstile, honeypot, per-IP limits, auto-reply caps, AI daily cap.</li>
+<li>Reports: <code>deploy/p19/security-audit/</code> (audit, fixes, final test). Test suite: <code>tools/sectest/</code>.</li>
+</ul>
+<hr>
+<h2 id="16-developer-reference">16. Developer reference</h2><ul>
+<li><strong>Stack:</strong> Hostinger PHP 8 + MySQL, vanilla JS admin (TailAdmin-style), no build step.</li>
+<li><strong>Folders:</strong> <code>frontend-v1/</code> (site root) · <code>admin/</code> (admin SPA) · <code>builder/</code> · <code>api/</code> · <code>_private/</code> (JSON config, never public) · <code>assets/</code>.</li>
+<li><strong>Admin API:</strong> <code>POST /api/admin.php</code> <code>{action, …}</code> with header <code>X-WX-ADM: &lt;token&gt;</code>. Chain: p19c → p18j → sales17 → booking → crm → sales → content → media → security → gdata → dash → p8 → chat → notify → seo → redirects → p18e → p18g → p18h.</li>
+<li><strong>Builder API:</strong> <code>POST /api/builder.php</code> with <code>X-WX-CSRF</code> (builder token) or <code>X-WX-ADM</code>.</li>
+<li><strong>Public endpoints:</strong> <code>forms.php</code>, <code>chat.php</code> (<code>send</code>, <code>poll</code>, <code>typing</code>, <code>file</code>), <code>whatsapp.php</code>, <code>quote-view.php</code>, <code>r404.php</code>, <code>wa-cron.php</code>, <code>mcp.php</code>.</li>
+<li><strong>DB tables:</strong> <code>wx_users</code>, <code>wx_leads</code>, <code>wx_lead_notes</code>, <code>wx_clients</code>, <code>wx_quotes</code>, <code>wx_invoices</code>, <code>wx_projects</code>, <code>wx_templates</code>, <code>wx_bookings</code>, <code>wx_chats</code>, <code>wx_chat_msgs</code>, <code>wx_activity</code>, <code>wx_notify_log</code>, <code>wx_settings</code>, <code>wx_throttle</code>, <code>wx_wa_seen</code>.</li>
+<li><strong>Admin JS globals:</strong> <code>WXA</code> = api, bapi, modal, closeModal, toast, esc, ic, fillIcons, head, VIEWS, S, can, formDraft. NAV format <code>[view, label, icon, roles, pill, badge|&quot;hide&quot;]</code>.</li>
+<li><strong>UI kit:</strong> <code>admin/master-components.html</code> + <code>MASTER-COMPONENTS.md</code>.</li>
+<li><strong>Deploy:</strong> upload <code>deploy/p19/woodex-live-p19-full.zip</code> to <code>public_html</code> → Extract (Overwrite) → Ctrl+F5.</li>
+<li><strong>Local preview:</strong> <code>node tools/frontend-v1-server.mjs</code> (port 8080); tests in <code>tools/phplint/</code> and <code>tools/sectest/</code>.</li>
+</ul>
+</main><script>
+var q=document.getElementById("q"),links=[].slice.call(document.querySelectorAll("nav a"));
+q.oninput=function(){var v=q.value.toLowerCase();links.forEach(function(a){var id=a.getAttribute("href").slice(1),h=document.getElementById(id),t=a.textContent.toLowerCase(),n=h,txt=t;while(n&&(n=n.nextElementSibling)&&!/^H[23]$/.test(n.tagName))txt+=" "+n.textContent.toLowerCase();a.classList.toggle("hide",!!v&&txt.indexOf(v)<0)});};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})})},{rootMargin:"-10% 0px -80% 0px"});
+document.querySelectorAll("h2[id],h3[id]").forEach(function(h){io.observe(h)});
+</script></body></html>

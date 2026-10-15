@@ -1,0 +1,94 @@
+[
+ {
+  "id": "d3f0b86081",
+  "type": "hero",
+  "html": "\n\n    <section class=\"cw-hero\" aria-labelledby=\"coworking-title\"><div class=\"cw-wrap cw-hero-grid\">\n      <div class=\"cw-hero-copy cw-reveal\">\n        <nav class=\"cw-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Coworking Space Design</span></nav>\n        <h1 id=\"coworking-title\">Coworking Space Design in Lahore — Flexible Workspaces</h1>\n        <p class=\"cw-copy\">We plan coworking spaces around the people and membership model they need to support. Hot desks, dedicated desks, private cabins, meeting rooms, phone booths and breakout lounges are balanced in one flexible plan.</p>\n        <div class=\"cw-hero-actions\"><a class=\"cw-btn cw-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"cw-btn cw-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"cw-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"cw-hero-media cw-reveal\"><img src=\"/assets/img/img-197da8ddab9b.webp\" width=\"1920\" height=\"1280\" alt=\"Bright coworking floor with hot desks, private phone booths and a lounge\" loading=\"lazy\" decoding=\"async\"><figcaption>Flexible zones for focus and connection</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Coworking Space Design in Lahore — Flexible Workspaces",
+   "copy": "We plan coworking spaces around the people and membership model they need to support. Hot desks, dedicated desks, private cabins, meeting rooms, phone booths and breakout lounges are balanced in one flexible plan.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-197da8ddab9b.webp",
+   "img_alt": "Bright coworking floor with hot desks, private phone booths and a lounge"
+  }
+ },
+ {
+  "id": "cf501486a7",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cw-section cw-scope\" id=\"coworking-scope\"><div class=\"cw-wrap\">\n      <header class=\"cw-section-head cw-reveal\"><h2>What We Design</h2><p class=\"cw-copy\">Eight connected layers shape a coworking floor that can stay productive as the community grows.</p></header>\n      <div class=\"cw-scope-viewport cw-reveal\" id=\"cw-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight coworking design services. Scroll horizontally to review all items.\"><div class=\"cw-scope-track\" id=\"cw-scope-track\">\n        <article class=\"cw-scope-card\"><span>01</span><h3>Space Planning &amp; Zoning</h3><p>Desks, cabins, rooms and circulation balanced around capacity and daily flow.</p></article>\n        <article class=\"cw-scope-card\"><span>02</span><h3>Acoustic Design</h3><p>Quiet focus areas, sound control and private call spaces planned together.</p></article>\n        <article class=\"cw-scope-card\"><span>03</span><h3>Furniture &amp; Ergonomics</h3><p>Comfortable workstations and flexible pieces selected for long working days.</p></article>\n        <article class=\"cw-scope-card\"><span>04</span><h3>Lighting Design</h3><p>Task, ambient and feature lighting support focus without flattening the mood.</p></article>\n        <article class=\"cw-scope-card\"><span>05</span><h3>Branding &amp; Graphics</h3><p>Colour, signage and wall graphics give the workspace a clear identity.</p></article>\n        <article class=\"cw-scope-card\"><span>06</span><h3>Technology Integration</h3><p>Power, data, screens and access points are placed around real work patterns.</p></article>\n        <article class=\"cw-scope-card\"><span>07</span><h3>Breakout &amp; Café Zones</h3><p>Relaxed settings make room for breaks, casual meetings and shared meals.</p></article>\n        <article class=\"cw-scope-card\"><span>08</span><h3>Community &amp; Event Space</h3><p>Adaptable zones support talks, workshops and member gatherings.</p></article>\n      </div></div>\n      <div class=\"cw-controls\"><span class=\"cw-status\" id=\"cw-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"cw-control\" id=\"cw-scope-prev\" type=\"button\" aria-label=\"Previous coworking design service\" disabled=\"\">←</button><button class=\"cw-control\" id=\"cw-scope-next\" type=\"button\" aria-label=\"Next coworking design service\">→</button></div>\n    </div></section>"
+ },
+ {
+  "id": "bb6100311b",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cw-section cw-process\" id=\"coworking-process\"><div class=\"cw-wrap\">\n      <header class=\"cw-section-head cw-reveal\"><h2>Our Design Process</h2><p class=\"cw-copy\">Five clear stages turn the membership brief into an approved workplace plan.</p></header>\n      <div class=\"cw-steps cw-reveal\"><article class=\"cw-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We define the member profile, capacity, room mix, budget and target opening.</p></article><article class=\"cw-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the floor, services, access and landlord conditions accurately.</p></article><article class=\"cw-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Zoning, circulation and the visual direction are tested together.</p></article><article class=\"cw-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes and ergonomic furniture are coordinated for daily use.</p></article><article class=\"cw-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved 3D views and drawings prepare the space for pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "d10825b5ca",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cw-section cw-pricing\" id=\"coworking-pricing\"><div class=\"cw-wrap cw-pricing-grid\">\n      <div class=\"cw-pricing-copy cw-reveal\"><h2>Pricing</h2><p class=\"cw-copy\">The initial consultation and site survey are free. We provide an exact fixed quote once the floor, capacity and design package are clear.</p><a class=\"cw-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"cw-reveal\"><div class=\"cw-price-list\"><article class=\"cw-price-row\"><h3>Initial consultation &amp; site survey</h3><strong>Free</strong></article><article class=\"cw-price-row\"><h3>Small spaces</h3><strong>From PKR 100,000</strong></article><article class=\"cw-price-row\"><h3>Typical projects</h3><strong>PKR 200,000-600,000</strong></article><article class=\"cw-price-row\"><h3>Large multi-floor</h3><strong>PKR 600,000-1,500,000+</strong></article></div><p class=\"cw-price-note\">Pricing varies with floor area, membership capacity and the depth of the 3D package. Your site survey sets the exact fixed quote.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "aa103df81a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cw-section cw-compare\" id=\"coworking-compare\"><div class=\"cw-wrap\">\n      <header class=\"cw-section-head cw-reveal\"><h2>Design vs Fit-Out vs Renovation</h2><p class=\"cw-copy\">Choose the scope that matches the condition of your space and how much is already decided.</p></header>\n      <div class=\"cw-compare-grid cw-reveal\"><article class=\"cw-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization for a clear coworking concept.</p></article><article class=\"cw-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>The complete design and construction package under one team.</p><a class=\"cw-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"cw-compare-card\"><small>Upgrade what exists</small><h3>Renovation</h3><p>Improve an existing coworking space through targeted changes.</p><a class=\"cw-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "c4f0cd5a0b",
+  "type": "faq",
+  "html": "\n\n    <section class=\"cw-section cw-faq\" id=\"coworking-faq\"><div class=\"cw-wrap cw-faq-grid\">\n      <div class=\"cw-faq-intro cw-reveal\"><h2>Coworking Design FAQs</h2><p class=\"cw-copy\">Straight answers on zoning, acoustics, capacity, rented spaces, timing and 3D visuals.</p></div>\n      <div class=\"cw-faq-list cw-reveal\">\n        <div class=\"cw-faq-item\"><button class=\"cw-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What zones does a coworking space need?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cw-faq-a\"><div><p>Most spaces need hot desks, dedicated desks, private cabins, meeting rooms, phone booths and breakout areas. The mix depends on membership and floor size.</p></div></div></div>\n        <div class=\"cw-faq-item\"><button class=\"cw-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do you handle noise in a coworking space?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cw-faq-a\"><div><p>We separate focused and social zones, then use acoustic ceilings, wall treatments, screens and phone booths where needed.</p></div></div></div>\n        <div class=\"cw-faq-item\"><button class=\"cw-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How many members can fit on one floor?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cw-faq-a\"><div><p>Capacity depends on floor area, circulation, room mix and local requirements. We test options before fixing the final seat count.</p></div></div></div>\n        <div class=\"cw-faq-item\"><button class=\"cw-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you design a rented coworking space?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cw-faq-a\"><div><p>Yes. We can prioritize reversible partitions, modular furniture and landlord conditions for a leased property.</p></div></div></div>\n        <div class=\"cw-faq-item\"><button class=\"cw-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does coworking space design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cw-faq-a\"><div><p>A focused project usually takes two to four weeks. Large or multi-floor workplaces need a longer programme.</p></div></div></div>\n        <div class=\"cw-faq-item\"><button class=\"cw-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you supply 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cw-faq-a\"><div><p>Yes. Key areas are shown in 3D so you can approve layouts, finishes and furniture before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Coworking Design FAQs",
+   "copy": "Straight answers on zoning, acoustics, capacity, rented spaces, timing and 3D visuals.",
+   "items": [
+    {
+     "q": "What zones does a coworking space need?",
+     "a": "<p>Most spaces need hot desks, dedicated desks, private cabins, meeting rooms, phone booths and breakout areas. The mix depends on membership and floor size.</p>"
+    },
+    {
+     "q": "How do you handle noise in a coworking space?",
+     "a": "<p>We separate focused and social zones, then use acoustic ceilings, wall treatments, screens and phone booths where needed.</p>"
+    },
+    {
+     "q": "How many members can fit on one floor?",
+     "a": "<p>Capacity depends on floor area, circulation, room mix and local requirements. We test options before fixing the final seat count.</p>"
+    },
+    {
+     "q": "Can you design a rented coworking space?",
+     "a": "<p>Yes. We can prioritize reversible partitions, modular furniture and landlord conditions for a leased property.</p>"
+    },
+    {
+     "q": "How long does coworking space design take?",
+     "a": "<p>A focused project usually takes two to four weeks. Large or multi-floor workplaces need a longer programme.</p>"
+    },
+    {
+     "q": "Do you supply 3D visuals before execution?",
+     "a": "<p>Yes. Key areas are shown in 3D so you can approve layouts, finishes and furniture before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "5d3f10f312",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cw-section cw-related\" id=\"coworking-related\"><div class=\"cw-wrap\">\n      <header class=\"cw-section-head cw-reveal\"><h2>Related Spaces</h2><p class=\"cw-copy\">Explore the wider commercial portfolio or compare a dedicated office brief.</p></header>\n      <nav class=\"cw-related-grid cw-reveal\" aria-label=\"Related spaces\"><a class=\"cw-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"cw-related-link\" href=\"/office-interior-design/\" data-page-route=\"officeInterior\"><small>02</small><strong>Office Interior Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "6e9a06e578",
+  "type": "cta",
+  "html": "\n\n    <section class=\"cw-section cw-contact\" id=\"coworking-contact\"><div class=\"cw-wrap cw-contact-grid\">\n      <div class=\"cw-reveal\"><h2>Talk to Woodex</h2><p class=\"cw-copy\">Tell us about the floor, your membership target and when you want to open.</p><div class=\"cw-contact-actions\"><a class=\"cw-btn cw-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"cw-btn cw-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"cw-contact-list cw-reveal\"><div class=\"cw-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"cw-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"cw-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"cw-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"cw-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"cw-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"cw-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the floor, your membership target and when you want to open.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

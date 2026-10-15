@@ -1,0 +1,6 @@
+{
+  "host": "localhost",
+  "name": "PUT_DATABASE_NAME_HERE",
+  "user": "PUT_DATABASE_USER_HERE",
+  "pass": "PUT_DATABASE_PASSWORD_HERE"
+}

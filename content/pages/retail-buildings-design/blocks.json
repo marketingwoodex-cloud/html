@@ -1,0 +1,136 @@
+[
+ {
+  "id": "5cd786d9b4",
+  "type": "hero",
+  "html": "\n<section class=\"as-section as-hero\" aria-labelledby=\"architecture-service-title\"><div class=\"as-wrap as-hero-grid\"><div class=\"as-hero-copy as-reveal\"><nav class=\"as-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/architecture/\" data-page-route=\"architecture\">Architecture</a><span>&gt;</span><span>Retail Buildings Design</span></nav><p class=\"as-label\">Woodex Architecture · Lahore</p><h1 id=\"architecture-service-title\">Retail Buildings Design in Lahore</h1><p class=\"as-copy\">Plan a retail building that is easy to see, enter, browse and operate. Shop frontage, anchors, circulation, parking and loading work together from the start.</p><div class=\"as-actions\"><a class=\"as-btn\" href=\"#architecture-service-contact\">Get a Free Consultation</a></div><div class=\"as-facts\"><div class=\"as-fact\"><strong>PKR 1M–3M</strong><span>Indicative design fee</span></div><div class=\"as-fact\"><strong>8 clear stages</strong><span>Brief to final handover</span></div><div class=\"as-fact\"><strong>Architecture first</strong><span>Interiors and fit-out follow separately</span></div></div></div><figure class=\"as-image as-hero-media as-reveal\"><img src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Retail environment used as a placeholder for retail building architecture\" fetchpriority=\"high\" width=\"1920\" height=\"1280\"><figcaption><strong>Retail Buildings Design</strong><span>Customer movement and operations planned together</span></figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Retail Buildings Design in Lahore",
+   "label": "Woodex Architecture · Lahore",
+   "copy": "Plan a retail building that is easy to see, enter, browse and operate. Shop frontage, anchors, circulation, parking and loading work together from the start.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#architecture-service-contact",
+   "img_src": "/assets/img/img-f655d51401e8.webp",
+   "img_alt": "Retail environment used as a placeholder for retail building architecture"
+  }
+ },
+ {
+  "id": "c88d1d1b5c",
+  "type": "raw",
+  "html": "<section class=\"as-section as-soft\" id=\"architecture-service-scope\"><div class=\"as-wrap as-scope-grid\"><header class=\"as-sticky as-reveal\"><p class=\"as-label\">Design scope</p><h2>What the architecture covers</h2><p class=\"as-copy\">Plan a retail building that is easy to see, enter, browse and operate. Shop frontage, anchors, circulation, parking and loading work together from the start.</p></header><div class=\"as-scope-list as-reveal\"><article class=\"as-scope-item\"><b>01</b><strong>Tenant and anchor layout</strong><span>Organize unit sizes, anchor positions and shared spaces around the commercial brief.</span></article><article class=\"as-scope-item\"><b>02</b><strong>Shop frontage</strong><span>Give retailers clear visibility, workable widths and consistent signage zones.</span></article><article class=\"as-scope-item\"><b>03</b><strong>Customer circulation</strong><span>Plan entrances, corridors, stairs and lifts around intuitive movement.</span></article><article class=\"as-scope-item\"><b>04</b><strong>Parking and drop-off</strong><span>Coordinate vehicles, pedestrians and arrival points around peak use.</span></article><article class=\"as-scope-item\"><b>05</b><strong>Loading and service routes</strong><span>Keep deliveries, waste and back-of-house movement away from customers.</span></article><article class=\"as-scope-item\"><b>06</b><strong>Services coordination</strong><span>Allow for power, cooling, fire systems, drainage and vertical risers.</span></article></div></div></section>"
+ },
+ {
+  "id": "572594d4d0",
+  "type": "process",
+  "html": "<section class=\"as-section as-dark\" id=\"architecture-service-process\"><div class=\"as-wrap as-process-grid\"><div class=\"as-sticky as-reveal\"><p class=\"as-label\">Eight-step process</p><h2>From brief to buildable drawings</h2><p class=\"as-copy\">Each stage closes the important decisions before the next one begins.</p><figure class=\"as-image as-process-media\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Architectural study accompanying the retail buildings design process\" width=\"1920\" height=\"1280\"></figure></div><div class=\"as-process-list as-reveal\" tabindex=\"0\" aria-label=\"Eight-step architecture process\"><article class=\"as-step\"><b>01</b><div><h3>Brief and site analysis</h3><p>Confirm the project brief, review the site and record the constraints that shape the design.</p></div></article><article class=\"as-step\"><b>02</b><div><h3>Concept planning</h3><p>Test layout, zoning, access and movement before the architectural form is fixed.</p></div></article><article class=\"as-step\"><b>03</b><div><h3>Form and 3D studies</h3><p>Develop the exterior character and review key views, proportions and materials.</p></div></article><article class=\"as-step\"><b>04</b><div><h3>Design development</h3><p>Resolve dimensions, openings, levels, materials and the key technical decisions.</p></div></article><article class=\"as-step\"><b>05</b><div><h3>Working drawings</h3><p>Prepare coordinated plans, sections, elevations and the agreed construction details.</p></div></article><article class=\"as-step\"><b>06</b><div><h3>Authority submission</h3><p>Develop the required architectural set around the relevant approval process.</p></div></article><article class=\"as-step\"><b>07</b><div><h3>Operations and specialist systems</h3><p>Coordinate structure, MEP, fire strategy, signage zones and loading requirements.</p></div></article><article class=\"as-step\"><b>08</b><div><h3>Final handover</h3><p>Issue the agreed drawing package for pricing, coordination and construction.</p></div></article></div></div></section>",
+  "fields": {
+   "steps": [
+    {
+     "title": "Brief and site analysis",
+     "copy": "Confirm the project brief, review the site and record the constraints that shape the design."
+    },
+    {
+     "title": "Concept planning",
+     "copy": "Test layout, zoning, access and movement before the architectural form is fixed."
+    },
+    {
+     "title": "Form and 3D studies",
+     "copy": "Develop the exterior character and review key views, proportions and materials."
+    },
+    {
+     "title": "Design development",
+     "copy": "Resolve dimensions, openings, levels, materials and the key technical decisions."
+    },
+    {
+     "title": "Working drawings",
+     "copy": "Prepare coordinated plans, sections, elevations and the agreed construction details."
+    },
+    {
+     "title": "Authority submission",
+     "copy": "Develop the required architectural set around the relevant approval process."
+    },
+    {
+     "title": "Operations and specialist systems",
+     "copy": "Coordinate structure, MEP, fire strategy, signage zones and loading requirements."
+    },
+    {
+     "title": "Final handover",
+     "copy": "Issue the agreed drawing package for pricing, coordination and construction."
+    }
+   ],
+   "label": "Eight-step process",
+   "heading": "From brief to buildable drawings",
+   "copy": "Each stage closes the important decisions before the next one begins."
+  }
+ },
+ {
+  "id": "a7345eb0e4",
+  "type": "raw",
+  "html": "<section class=\"as-section\" id=\"architecture-service-fees\"><div class=\"as-wrap as-fee-grid\"><div class=\"as-reveal\"><p class=\"as-label\">Architecture fees</p><h2>A clear range before the proposal</h2><p class=\"as-copy\">The fee covers architectural design and drawings. Construction, interior design and fit-out are separate unless they are added to the brief.</p><div class=\"as-fee-notes\"><div class=\"as-fee-note\"><strong>Included</strong><span>Concept planning, tenant layout, facade studies, working drawings and coordination.</span></div><div class=\"as-fee-note\"><strong>Final fee</strong><span>The final proposal reflects built area, store mix, parking, loading, approvals and specialist input.</span></div><div class=\"as-fee-note\"><strong>Separate costs</strong><span>Government charges, surveys and third-party specialist fees are confirmed separately where needed.</span></div></div></div><div class=\"as-fee-card as-reveal\"><small>Indicative design fee</small><strong>PKR 1M–3M</strong><p>The final proposal reflects built area, store mix, parking, loading, approvals and specialist input.</p><div class=\"as-actions\" style=\"margin-top:28px\"><a class=\"as-btn as-btn-light\" href=\"#architecture-service-contact\">Request a proposal</a></div></div></div></section>"
+ },
+ {
+  "id": "bb6417fbc2",
+  "type": "raw",
+  "html": "<section class=\"as-section as-soft\"><div class=\"as-wrap as-connections\"><figure class=\"as-image as-connection-media as-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-c349a92a4ae0.webp\" alt=\"Woodex interior visualization showing how architecture can continue into interior design\" width=\"2240\" height=\"1120\"></figure><div class=\"as-connection-copy as-reveal\"><p class=\"as-label\">After architecture</p><h2>Carry the idea into the interior</h2><p class=\"as-copy\">Retail interior design can resolve each tenant experience, while fit-out delivers the approved store or shared-area package.</p><nav class=\"as-service-links\" aria-label=\"Related Woodex services\"><a class=\"as-service-link\" href=\"/interior-design/\" data-page-route=\"interior\"><strong>Interior Design</strong><span>Explore →</span></a><a class=\"as-service-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\"><strong>Fit-Out</strong><span>Explore →</span></a></nav></div></div></section>"
+ },
+ {
+  "id": "bfb12a73de",
+  "type": "faq",
+  "html": "<section class=\"as-section\" id=\"architecture-service-faq\"><div class=\"as-wrap as-faq-grid\"><header class=\"as-sticky as-reveal\"><p class=\"as-label\">Practical answers</p><h2>Retail Buildings Design FAQs</h2><p class=\"as-copy\">Six quick answers about scope, drawings and fees.</p></header><div class=\"as-faq-list as-reveal\"><div class=\"as-faq-item\"><button class=\"as-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What retail building types do you design?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"as-faq-a\"><div><p>The service can cover shops, showrooms, shopping plazas and multi-tenant retail buildings.</p></div></div></div><div class=\"as-faq-item\"><button class=\"as-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How are anchor tenants planned?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"as-faq-a\"><div><p>Their size, entrances, servicing and customer pull are considered with the full circulation plan.</p></div></div></div><div class=\"as-faq-item\"><button class=\"as-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you plan loading and waste routes?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"as-faq-a\"><div><p>Yes. Back-of-house access, deliveries and waste movement are kept separate from customer paths where possible.</p></div></div></div><div class=\"as-faq-item\"><button class=\"as-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is shop frontage part of the architecture?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"as-faq-a\"><div><p>Yes. Frontage widths, entrances, glazing and signage zones are coordinated with the building facade.</p></div></div></div><div class=\"as-faq-item\"><button class=\"as-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you coordinate fire and building services?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"as-faq-a\"><div><p>Yes. Full packages coordinate service routes and life-safety requirements with the architectural plan.</p></div></div></div><div class=\"as-faq-item\"><button class=\"as-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What does retail building design cost?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"as-faq-a\"><div><p>The indicative architecture fee is PKR 1M–3M, depending on area, tenant mix and approval scope.</p></div></div></div></div></div></section>",
+  "fields": {
+   "label": "Practical answers",
+   "heading": "Retail Buildings Design FAQs",
+   "copy": "Six quick answers about scope, drawings and fees.",
+   "items": [
+    {
+     "q": "What retail building types do you design?",
+     "a": "<p>The service can cover shops, showrooms, shopping plazas and multi-tenant retail buildings.</p>"
+    },
+    {
+     "q": "How are anchor tenants planned?",
+     "a": "<p>Their size, entrances, servicing and customer pull are considered with the full circulation plan.</p>"
+    },
+    {
+     "q": "Do you plan loading and waste routes?",
+     "a": "<p>Yes. Back-of-house access, deliveries and waste movement are kept separate from customer paths where possible.</p>"
+    },
+    {
+     "q": "Is shop frontage part of the architecture?",
+     "a": "<p>Yes. Frontage widths, entrances, glazing and signage zones are coordinated with the building facade.</p>"
+    },
+    {
+     "q": "Do you coordinate fire and building services?",
+     "a": "<p>Yes. Full packages coordinate service routes and life-safety requirements with the architectural plan.</p>"
+    },
+    {
+     "q": "What does retail building design cost?",
+     "a": "<p>The indicative architecture fee is PKR 1M–3M, depending on area, tenant mix and approval scope.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "762241150e",
+  "type": "raw",
+  "html": "<section class=\"as-section as-related\"><div class=\"as-wrap\"><header class=\"as-related-head as-reveal\"><div><p class=\"as-label\">Keep exploring</p><h2>Related Architecture Pages</h2></div><a href=\"/architecture/\" data-page-route=\"architecture\">View architecture hub →</a></header><nav class=\"as-related-grid as-reveal\" aria-label=\"Related architecture pages\"><a class=\"as-related-link\" href=\"/architecture/\" data-page-route=\"architecture\"><small>Architecture hub</small><strong>Architecture Services</strong><span aria-hidden=\"true\">↗</span></a><a class=\"as-related-link\" href=\"/restaurant-cafe-building-design/\" data-page-route=\"architectureService\" aria-current=\"\"><small>Related service</small><strong>Restaurant &amp; Cafe Building Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"as-related-link\" href=\"/healthcare-facilities-design/\" data-page-route=\"architectureService\" aria-current=\"\"><small>Related service</small><strong>Healthcare Facilities Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"as-related-link\" href=\"/educational-buildings-design/\" data-page-route=\"architectureService\" aria-current=\"\"><small>Related service</small><strong>Educational Buildings Design</strong><span aria-hidden=\"true\">↗</span></a></nav></div></section>"
+ },
+ {
+  "id": "018017072a",
+  "type": "cta",
+  "html": "<section class=\"as-section as-contact\" id=\"architecture-service-contact\"><div class=\"as-wrap as-contact-grid\"><div class=\"as-reveal\"><p class=\"as-label\">Talk to Woodex</p><h2>Start with the site and your brief</h2><p class=\"as-copy\">Share the location, plot or building size and what you need. We will help define the right architecture scope.</p><div class=\"as-contact-actions\"><a class=\"as-btn as-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Retail%20Buildings%20Design%20Consultation\">Get a Free Consultation</a><a class=\"as-btn as-btn-light\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"as-contact-details as-reveal\"><div class=\"as-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"as-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"as-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"as-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"as-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"as-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Start with the site and your brief",
+   "label": "Talk to Woodex",
+   "copy": "Share the location, plot or building size and what you need. We will help define the right architecture scope.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Retail%20Buildings%20Design%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

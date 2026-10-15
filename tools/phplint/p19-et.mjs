@@ -1,0 +1,27 @@
+import puppeteer from "puppeteer-core";
+const B="http://localhost:8080",OUT="/home/user/-marketingwoodex/tools/";
+const b=await puppeteer.launch({executablePath:process.cwd()+"/al/chromium",headless:"shell",args:["--no-sandbox"]});
+const a=await b.newPage(); await a.setViewport({width:1440,height:950}); const errs=[]; a.on("pageerror",e=>errs.push(e.message)); a.on("dialog",d=>d.accept());
+const ok=(c,m)=>console.log((c?"PASS ":"FAIL ")+m); const w=t=>new Promise(r=>setTimeout(r,t));
+await a.goto(B+"/admin/",{waitUntil:"load"}); await a.waitForSelector("#l-email",{visible:true}); await a.type("#l-email","o@woodex.pk"); await a.type("#l-pass","Woodex@2026x"); await a.click("#l-btn"); await a.waitForSelector("#app:not([hidden])"); await w(1200);
+const api=(ac,d)=>a.evaluate((ac,d)=>WXA.api(ac,d),ac,d); const clk=s=>a.evaluate(s=>document.querySelector(s).click(),s);
+await a.evaluate(()=>location.hash="#/estimator"); await w(2500);
+const n0=await a.$$eval(".es-svc",x=>x.length);
+await clk('[data-lib="0"]'); await w(500); ok(await a.$$eval(".es-svc",x=>x.length)===n0+1,"estimator: library service added");
+const r0=await a.$eval(".es-svc [data-r=standard]",x=>+x.value);
+await a.evaluate(()=>{document.querySelector("#es-pct").value="10";}); await clk("#es-padj"); await w(400);
+const r1=await a.$eval(".es-svc [data-r=standard]",x=>+x.value); ok(r1===Math.round(r0*1.1/10)*10,"estimator: +10% "+r0+"→"+r1);
+await a.type("#es-tn","2026 standard"); await clk("#es-tsave"); await w(1200);
+ok((await api("est_tpls",{})).templates[0]?.name==="2026 standard","estimator: template saved");
+await a.screenshot({path:OUT+"p19et-est.png"});
+await a.evaluate(()=>location.hash="#/estimator"); await a.evaluate(()=>location.reload()); await a.waitForSelector("#app:not([hidden])"); await w(2500);
+ok(await a.$$eval(".es-svc",x=>x.length)===n0,"estimator: nothing live until Save & publish");
+await clk('[data-tap="2026 standard"]'); await w(600); ok(await a.$$eval(".es-svc",x=>x.length)===n0+1,"estimator: template loads");
+// page templates
+await a.evaluate(()=>location.hash="#/pagetpl"); await w(2000);
+const t0=(await api("cms_tpl_list",{})).tpls.length;
+await clk("#tp-lib"); await w(600); const nb=(await a.$$("[data-li]")).length; ok(nb>=4,"templates: library shows "+nb);
+await a.screenshot({path:OUT+"p19et-tpl.png"});
+for(let i=0;i<nb;i++){ await a.evaluate(i=>document.querySelector('[data-li="'+i+'"]')?.click(),i); await w(500);} await w(800);
+const t1=(await api("cms_tpl_list",{})).tpls.length; ok(t1>=t0+nb-1,"templates: added "+(t1-t0));
+ok(errs.length===0,"no JS errors "+errs.join("|")); await b.close();

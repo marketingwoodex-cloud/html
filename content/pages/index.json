@@ -1,0 +1,435 @@
+{
+ "generated": "phase2",
+ "pages": [
+  {
+   "slug": "/",
+   "title": "Woodex Interior | Design, Fit-Out &amp; Architecture Lahore",
+   "path": "index.html"
+  },
+  {
+   "slug": "/1-kanal-house-design/",
+   "title": "1 Kanal House Design Lahore | Woodex Architecture",
+   "path": "1-kanal-house-design/index.html"
+  },
+  {
+   "slug": "/10-marla-house-design/",
+   "title": "10 Marla House Design Lahore | Woodex Architecture",
+   "path": "10-marla-house-design/index.html"
+  },
+  {
+   "slug": "/2-kanal-house-design/",
+   "title": "2 Kanal House Design Lahore | Woodex Architecture",
+   "path": "2-kanal-house-design/index.html"
+  },
+  {
+   "slug": "/3d-visualization/",
+   "title": "3D Interior Rendering Pakistan | 3D Studio | Woodex",
+   "path": "3d-visualization/index.html"
+  },
+  {
+   "slug": "/5-marla-house-design/",
+   "title": "5 Marla House Design Lahore | Woodex Architecture",
+   "path": "5-marla-house-design/index.html"
+  },
+  {
+   "slug": "/about/",
+   "title": "About Woodex Interior | Design &amp; Build Lahore",
+   "path": "about/index.html"
+  },
+  {
+   "slug": "/architecture/",
+   "title": "Architecture Services Lahore | House &amp; Building Design | Woodex",
+   "path": "architecture/index.html"
+  },
+  {
+   "slug": "/bahawalpur/",
+   "title": "Interior Design in Bahawalpur | Woodex Interior",
+   "path": "bahawalpur/index.html"
+  },
+  {
+   "slug": "/beauty-salon-design/",
+   "title": "Beauty Salon Design in Lahore | Woodex",
+   "path": "beauty-salon-design/index.html"
+  },
+  {
+   "slug": "/cafe-interior-design/",
+   "title": "Café Interior Design in Lahore | Woodex",
+   "path": "cafe-interior-design/index.html"
+  },
+  {
+   "slug": "/commercial-fit-out/",
+   "title": "Commercial Fit-Out Lahore | Woodex Interior",
+   "path": "commercial-fit-out/index.html"
+  },
+  {
+   "slug": "/commercial-interior/",
+   "title": "Commercial Interior Design in Lahore | Woodex",
+   "path": "commercial-interior/index.html"
+  },
+  {
+   "slug": "/commercial-renovation/",
+   "title": "Commercial Renovation Lahore | Property Upgrades | Woodex",
+   "path": "commercial-renovation/index.html"
+  },
+  {
+   "slug": "/complete-home-redesign/",
+   "title": "Complete Home Redesign in Lahore | Woodex",
+   "path": "complete-home-redesign/index.html"
+  },
+  {
+   "slug": "/contact/",
+   "title": "Contact Woodex Interior | Lahore Design &amp; Build Studio",
+   "path": "contact/index.html"
+  },
+  {
+   "slug": "/coworking-space-design/",
+   "title": "Coworking Space Design in Lahore | Woodex",
+   "path": "coworking-space-design/index.html"
+  },
+  {
+   "slug": "/educational-buildings-design/",
+   "title": "Educational Building Design Lahore | Woodex Architecture",
+   "path": "educational-buildings-design/index.html"
+  },
+  {
+   "slug": "/estimator/",
+   "title": "Project Cost Estimator | Woodex Interior",
+   "path": "estimator/index.html"
+  },
+  {
+   "slug": "/faisalabad/",
+   "title": "Interior Design in Faisalabad | Woodex Interior",
+   "path": "faisalabad/index.html"
+  },
+  {
+   "slug": "/farmhouse-design/",
+   "title": "Farmhouse Design Lahore | Woodex Architecture",
+   "path": "farmhouse-design/index.html"
+  },
+  {
+   "slug": "/fit-out/",
+   "title": "Fit-Out &amp; Build Lahore | Office, Commercial, Restaurant | Woodex",
+   "path": "fit-out/index.html"
+  },
+  {
+   "slug": "/front-elevation-design/",
+   "title": "Front Elevation Design Lahore | Woodex Architecture",
+   "path": "front-elevation-design/index.html"
+  },
+  {
+   "slug": "/gujranwala/",
+   "title": "Interior Design in Gujranwala | Woodex Interior",
+   "path": "gujranwala/index.html"
+  },
+  {
+   "slug": "/gym-design/",
+   "title": "Gym Design in Lahore | Woodex Interior",
+   "path": "gym-design/index.html"
+  },
+  {
+   "slug": "/healthcare-design/",
+   "title": "Healthcare Design in Lahore | Woodex",
+   "path": "healthcare-design/index.html"
+  },
+  {
+   "slug": "/healthcare-facilities-design/",
+   "title": "Healthcare Facility Design Lahore | Woodex Architecture",
+   "path": "healthcare-facilities-design/index.html"
+  },
+  {
+   "slug": "/healthcare-fit-out/",
+   "title": "Healthcare Fit-Out Lahore | Clinics &amp; Labs | Woodex",
+   "path": "healthcare-fit-out/index.html"
+  },
+  {
+   "slug": "/healthcare-renovation/",
+   "title": "Healthcare Renovation Lahore | Clinics, Labs &amp; Pharmacies | Woodex",
+   "path": "healthcare-renovation/index.html"
+  },
+  {
+   "slug": "/hotel-interior-design/",
+   "title": "Hotel Interior Design in Lahore | Woodex",
+   "path": "hotel-interior-design/index.html"
+  },
+  {
+   "slug": "/hyderabad/",
+   "title": "Interior Design in Hyderabad | Woodex Interior",
+   "path": "hyderabad/index.html"
+  },
+  {
+   "slug": "/insights/",
+   "title": "Insights | Woodex Interior",
+   "path": "insights/index.html"
+  },
+  {
+   "slug": "/insights/3d-visualization-guide/",
+   "title": "See the room before it exists | Woodex Interior",
+   "path": "insights/3d-visualization-guide/index.html"
+  },
+  {
+   "slug": "/insights/design-process-explained/",
+   "title": "How a Woodex project runs | Woodex Interior",
+   "path": "insights/design-process-explained/index.html"
+  },
+  {
+   "slug": "/insights/home-renovation-checklist/",
+   "title": "A calm home renovation checklist | Woodex Interior",
+   "path": "insights/home-renovation-checklist/index.html"
+  },
+  {
+   "slug": "/insights/interior-design-cost-pakistan/",
+   "title": "What interior design costs in Pakistan | Woodex Interior",
+   "path": "insights/interior-design-cost-pakistan/index.html"
+  },
+  {
+   "slug": "/insights/office-interior-guide/",
+   "title": "An office that works as hard as you do | Woodex Interior",
+   "path": "insights/office-interior-guide/index.html"
+  },
+  {
+   "slug": "/insights/restaurant-planning-guide/",
+   "title": "Planning a restaurant interior | Woodex Interior",
+   "path": "insights/restaurant-planning-guide/index.html"
+  },
+  {
+   "slug": "/insights/retail-shop-interior-guide/",
+   "title": "A shop interior that sells | Woodex Interior",
+   "path": "insights/retail-shop-interior-guide/index.html"
+  },
+  {
+   "slug": "/insights/small-space-ideas/",
+   "title": "Small rooms that live large | Woodex Interior",
+   "path": "insights/small-space-ideas/index.html"
+  },
+  {
+   "slug": "/interior-design/",
+   "title": "Interior Design Lahore | Rooms, Kitchens, Offices | Woodex",
+   "path": "interior-design/index.html"
+  },
+  {
+   "slug": "/interior-home-refurbishment/",
+   "title": "Home Refurbishment in Lahore | Woodex",
+   "path": "interior-home-refurbishment/index.html"
+  },
+  {
+   "slug": "/islamabad/",
+   "title": "Interior Design in Islamabad | Woodex Interior",
+   "path": "islamabad/index.html"
+  },
+  {
+   "slug": "/karachi/",
+   "title": "Interior Design in Karachi | Woodex Interior",
+   "path": "karachi/index.html"
+  },
+  {
+   "slug": "/kitchen-design/",
+   "title": "Kitchen Design in Lahore | Woodex Interior",
+   "path": "kitchen-design/index.html"
+  },
+  {
+   "slug": "/lahore/",
+   "title": "Interior Design in Lahore | Woodex Interior",
+   "path": "lahore/index.html"
+  },
+  {
+   "slug": "/master-planning/",
+   "title": "Master Planning Lahore | Woodex Architecture",
+   "path": "master-planning/index.html"
+  },
+  {
+   "slug": "/multan/",
+   "title": "Interior Design in Multan | Woodex Interior",
+   "path": "multan/index.html"
+  },
+  {
+   "slug": "/office-buildings-design/",
+   "title": "Office Building Design Lahore | Woodex Architecture",
+   "path": "office-buildings-design/index.html"
+  },
+  {
+   "slug": "/office-fit-out/",
+   "title": "Office Fit-Out Lahore | Complete Office Fit-Out | Woodex",
+   "path": "office-fit-out/index.html"
+  },
+  {
+   "slug": "/office-interior-design/",
+   "title": "Office Interior Design in Lahore | Woodex",
+   "path": "office-interior-design/index.html"
+  },
+  {
+   "slug": "/office-renovation/",
+   "title": "Office Renovation Lahore | Occupied Workplace Upgrades | Woodex",
+   "path": "office-renovation/index.html"
+  },
+  {
+   "slug": "/peshawar/",
+   "title": "Interior Design in Peshawar | Woodex Interior",
+   "path": "peshawar/index.html"
+  },
+  {
+   "slug": "/pharmacy-fit-out/",
+   "title": "Pharmacy Fit-Out Lahore | Counters &amp; Storage | Woodex",
+   "path": "pharmacy-fit-out/index.html"
+  },
+  {
+   "slug": "/privacy/",
+   "title": "Privacy Policy | Woodex Interior",
+   "path": "privacy/index.html"
+  },
+  {
+   "slug": "/projects/",
+   "title": "Projects | Woodex Interior",
+   "path": "projects/index.html"
+  },
+  {
+   "slug": "/projects/cafe-corner/",
+   "title": "A café that holds a crowd | Woodex Interior",
+   "path": "projects/cafe-corner/index.html"
+  },
+  {
+   "slug": "/projects/clinic-fit-out/",
+   "title": "A clinic that calms | Woodex Interior",
+   "path": "projects/clinic-fit-out/index.html"
+  },
+  {
+   "slug": "/projects/courtyard-house/",
+   "title": "A house around a courtyard | Woodex Interior",
+   "path": "projects/courtyard-house/index.html"
+  },
+  {
+   "slug": "/projects/office-floor/",
+   "title": "One floor, three ways of working | Woodex Interior",
+   "path": "projects/office-floor/index.html"
+  },
+  {
+   "slug": "/projects/retail-corner/",
+   "title": "A corner shop that stops footfall | Woodex Interior",
+   "path": "projects/retail-corner/index.html"
+  },
+  {
+   "slug": "/projects/small-apartment/",
+   "title": "Sixty square metres, fully used | Woodex Interior",
+   "path": "projects/small-apartment/index.html"
+  },
+  {
+   "slug": "/quetta/",
+   "title": "Interior Design in Quetta | Woodex Interior",
+   "path": "quetta/index.html"
+  },
+  {
+   "slug": "/rawalpindi/",
+   "title": "Interior Design in Rawalpindi | Woodex Interior",
+   "path": "rawalpindi/index.html"
+  },
+  {
+   "slug": "/renovation/",
+   "title": "Renovation Company Lahore | Offices, Homes &amp; Retail | Woodex",
+   "path": "renovation/index.html"
+  },
+  {
+   "slug": "/residential-basement-design/",
+   "title": "Basement Design in Lahore | Woodex Interior",
+   "path": "residential-basement-design/index.html"
+  },
+  {
+   "slug": "/residential-bedroom-design/",
+   "title": "Bedroom Design in Lahore | Woodex Interior",
+   "path": "residential-bedroom-design/index.html"
+  },
+  {
+   "slug": "/residential-dining-room-design/",
+   "title": "Dining Room Design in Lahore | Woodex",
+   "path": "residential-dining-room-design/index.html"
+  },
+  {
+   "slug": "/residential-home-office-design/",
+   "title": "Home Office Design in Lahore | Woodex",
+   "path": "residential-home-office-design/index.html"
+  },
+  {
+   "slug": "/residential-kids-room-design/",
+   "title": "Kids Room Design in Lahore | Woodex",
+   "path": "residential-kids-room-design/index.html"
+  },
+  {
+   "slug": "/residential-living-room-design/",
+   "title": "Living Room Design in Lahore | Woodex",
+   "path": "residential-living-room-design/index.html"
+  },
+  {
+   "slug": "/residential-renovation/",
+   "title": "Residential Renovation Lahore | Homes &amp; Apartments | Woodex",
+   "path": "residential-renovation/index.html"
+  },
+  {
+   "slug": "/restaurant-cafe-building-design/",
+   "title": "Restaurant &amp; Cafe Building Design Lahore | Woodex",
+   "path": "restaurant-cafe-building-design/index.html"
+  },
+  {
+   "slug": "/restaurant-cafe-renovation/",
+   "title": "Restaurant &amp; Café Renovation Lahore | Woodex",
+   "path": "restaurant-cafe-renovation/index.html"
+  },
+  {
+   "slug": "/restaurant-fit-out/",
+   "title": "Restaurant &amp; Café Fit-Out Lahore | Woodex",
+   "path": "restaurant-fit-out/index.html"
+  },
+  {
+   "slug": "/restaurant-interior-design/",
+   "title": "Restaurant Interior Design Lahore | Woodex",
+   "path": "restaurant-interior-design/index.html"
+  },
+  {
+   "slug": "/retail-buildings-design/",
+   "title": "Retail Building Design Lahore | Woodex Architecture",
+   "path": "retail-buildings-design/index.html"
+  },
+  {
+   "slug": "/retail-design/",
+   "title": "Retail Design in Lahore | Woodex Interior",
+   "path": "retail-design/index.html"
+  },
+  {
+   "slug": "/retail-fit-out/",
+   "title": "Retail &amp; Showroom Fit-Out Lahore | Woodex",
+   "path": "retail-fit-out/index.html"
+  },
+  {
+   "slug": "/retail-showroom-renovation/",
+   "title": "Retail &amp; Showroom Renovation Lahore | Woodex",
+   "path": "retail-showroom-renovation/index.html"
+  },
+  {
+   "slug": "/shopping-mall-design/",
+   "title": "Shopping Mall Design in Lahore | Woodex",
+   "path": "shopping-mall-design/index.html"
+  },
+  {
+   "slug": "/showroom-design/",
+   "title": "Showroom Design in Lahore | Woodex Interior",
+   "path": "showroom-design/index.html"
+  },
+  {
+   "slug": "/sialkot/",
+   "title": "Interior Design in Sialkot | Woodex Interior",
+   "path": "sialkot/index.html"
+  },
+  {
+   "slug": "/spa-design/",
+   "title": "Spa Design in Lahore | Woodex Interior",
+   "path": "spa-design/index.html"
+  },
+  {
+   "slug": "/specialized-renovation-services/",
+   "title": "Specialized Renovation Services Lahore | Woodex",
+   "path": "specialized-renovation-services/index.html"
+  },
+  {
+   "slug": "/turnkey-design-build/",
+   "title": "Turnkey Interior Design &amp; Build Lahore | Woodex",
+   "path": "turnkey-design-build/index.html"
+  }
+ ]
+}

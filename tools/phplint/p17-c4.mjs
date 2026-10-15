@@ -1,0 +1,24 @@
+// P17 C4-C6: templates API + MCP content tools (Node mirror). Usage: node tools/phplint/p17-c4.mjs
+const B = "http://127.0.0.1:8080/api/admin.php"; let T = "";
+const call = async (action, o = {}) => (await fetch(B, { method: "POST", headers: { "content-type": "application/json", ...(T ? { "X-WX-ADM": T } : {}) }, body: JSON.stringify({ action, ...o }) })).json();
+const ok = (c, m) => { console.log((c ? "PASS " : "FAIL ") + m); if (!c) process.exitCode = 1; };
+let st = await call("status"); if (st.needsSetup) await call("setup", { builderPassword: "Woodex@2026", name: "Owner", email: "o@woodex.pk", password: "Woodex@2026x" });
+const lg = await call("login", { email: "o@woodex.pk", password: "Woodex@2026x" }); T = lg.token || lg.csrf || ""; ok(lg.ok, "login");
+const t1 = await call("cms_tpl_save", { tpl: { type: "post", name: "Long guide", hero: "navy", toc: true, sections: [{ id: "summary", on: true }, { id: "body", on: true }, { id: "faqs", on: true }], default: true } });
+ok(t1.ok && t1.tpl && t1.tpl.id, "tpl save " + (t1.error || ""));
+ok(!(await call("cms_tpl_save", { tpl: { type: "cars", name: "x" } })).ok, "bad type rejected");
+const tc = await call("cms_tpl_save", { tpl: { type: "city", name: "City std", source: "lahore", order: [{ id: "hero", on: true }] } }); ok(tc.ok, "city tpl " + (tc.error || ""));
+const mt = await call("mcp_token_new", { name: "Test agent" }); ok(mt.ok, "mcp token");
+let rid = 1; const mcp = async (name, args) => { const r = await (await fetch("http://127.0.0.1:8080/api/mcp.php", { method: "POST", headers: { "content-type": "application/json", authorization: "Bearer " + mt.token }, body: JSON.stringify({ jsonrpc: "2.0", id: rid++, method: "tools/call", params: { name, arguments: args } }) })).json(); const c = r.result && r.result.content && r.result.content[0]; let d = null; try { d = JSON.parse(c.text); } catch { d = c && c.text; } return { err: !r.result || r.result.isError, d }; };
+const tl = await (await fetch("http://127.0.0.1:8080/api/mcp.php", { method: "POST", headers: { "content-type": "application/json", authorization: "Bearer " + mt.token }, body: JSON.stringify({ jsonrpc: "2.0", id: 0, method: "tools/list" }) })).json();
+ok(["list_content", "get_content", "list_templates", "save_content_draft", "create_city_draft"].every((n) => tl.result.tools.some((t) => t.name === n)), "tools listed");
+const lt = await mcp("list_templates", { type: "post" }); ok(!lt.err && lt.d.templates.some((t) => t.id === t1.tpl.id), "list_templates");
+const sv = await mcp("save_content_draft", { type: "post", title: "Office fit-out costs in Lahore 2026", body: "## Budget\n\nCosts vary.\n\n## Timeline\n\n- Design 2 weeks\n- Build 6 weeks\n\n## Handover\n\nSnag list.", faqs: [{ q: "How long?", a: "About 8 weeks." }], template: t1.tpl.id });
+ok(!sv.err && sv.d.status === "draft" && sv.d.id, "create draft " + JSON.stringify(sv.d).slice(0, 120));
+const up = await mcp("save_content_draft", { type: "post", id: sv.d.id, dek: "A clear guide." }); ok(!up.err, "update draft");
+const g = await mcp("get_content", { id: sv.d.id }); ok(g.d.data.dek === "A clear guide." && g.d.data.blocks.length >= 5 && g.d.data.tpl === t1.tpl.id && g.d.data.faqs.length === 1, "fields kept + merged");
+ok((await mcp("save_content_draft", { type: "post", title: "x", template: 9999 })).err, "bad template rejected");
+const lc = await mcp("list_content", { type: "city" }); ok(!lc.err && lc.d.items.some((x) => x.slug === "lahore"), "list cities " + (lc.d.count));
+const cd = await mcp("create_city_draft", { city: "Okara" }); ok(!cd.err && cd.d.slug === "okara", "city draft " + JSON.stringify(cd.d).slice(0, 100));
+const c2 = (await call("cms_list", { type: "city" })); const it = (c2.items || []).find((x) => x.slug === "okara"); ok(it && /Okara/.test(it.data.html) && !/\/lahore\//.test(it.data.html.split("<main")[1].split("</main>")[0]), "city html swapped");
+const dl = await call("cms_tpl_delete", { id: t1.tpl.id }); const g2 = await mcp("get_content", { id: sv.d.id }); ok(dl.ok && !g2.d.data.tpl, "delete clears tpl");

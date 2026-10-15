@@ -1,0 +1,94 @@
+[
+ {
+  "id": "67dd94904c",
+  "type": "hero",
+  "html": "\n<section class=\"rv-hero\"><div class=\"rv-wrap rv-hero-grid\"><div class=\"rv-hero-copy rv-reveal\"><nav class=\"rv-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/renovation/\">Renovation</a><span>&gt;</span><span>Restaurant &amp; Café Renovation</span></nav><h1>Restaurant &amp; Café Renovation</h1><p class=\"rv-copy\">Renew the guest experience and the working parts behind it. Woodex coordinates dining, kitchen, ventilation, gas and finishes around closed days or agreed out-of-hours windows.</p><div class=\"rv-hero-actions\"><a class=\"rv-btn rv-btn-light\" href=\"#renovation-sector-contact\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div><div class=\"rv-proof\"><span><strong>Itemized BOQ</strong>Trade-by-trade clarity</span><span><strong>Phased delivery</strong>Lower disruption</span><span><strong>Existing spaces</strong>Upgrade, not first build</span></div></div><figure class=\"rv-hero-media rv-reveal\"><img src=\"/assets/img/img-6f26e32ab200.webp\" alt=\"Contemporary restaurant dining space representing a hospitality renovation\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>Dining atmosphere and kitchen systems upgraded together</figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Restaurant &amp; Café Renovation",
+   "copy": "Renew the guest experience and the working parts behind it. Woodex coordinates dining, kitchen, ventilation, gas and finishes around closed days or agreed out-of-hours windows.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#renovation-sector-contact",
+   "img_src": "/assets/img/img-6f26e32ab200.webp",
+   "img_alt": "Contemporary restaurant dining space representing a hospitality renovation"
+  }
+ },
+ {
+  "id": "19ddf5cc47",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-scope\"><div class=\"rv-wrap rv-intro-grid\"><div class=\"rv-intro-aside rv-reveal\"><h2>What the scope can include</h2><p class=\"rv-copy\">A condition survey decides what should be retained, repaired or replaced.</p><div class=\"rv-intro-note\"><strong>Back to service, on plan</strong><span>Kitchen coordination and hospitality-grade finishes are sequenced around trading.</span></div></div><div class=\"rv-service-list rv-reveal\"><div class=\"rv-service\"><b>01</b><strong>Dining area remodeling</strong><span>Refresh seating, circulation, lighting, wall finishes and focal points.</span></div><div class=\"rv-service\"><b>02</b><strong>Kitchen upgrades</strong><span>Coordinate prep, cooking, washing, storage and service movement.</span></div><div class=\"rv-service\"><b>03</b><strong>Ventilation and gas coordination</strong><span>Plan interfaces for extract, make-up air and gas systems within the scope.</span></div><div class=\"rv-service\"><b>04</b><strong>Counter and bar works</strong><span>Upgrade ordering, display, service and beverage stations.</span></div><div class=\"rv-service\"><b>05</b><strong>Washroom refurbishment</strong><span>Renew guest washrooms with durable, easy-care finishes.</span></div><div class=\"rv-service\"><b>06</b><strong>Terrace and frontage refresh</strong><span>Improve arrival, outdoor seating and visible brand touchpoints where included.</span></div></div></div></section>"
+ },
+ {
+  "id": "186d73211c",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-process\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>A process shaped for restaurant &amp; café renovation</h2><p class=\"rv-copy\">Survey, scope, BOQ and phasing are agreed before disruptive work starts.</p></header><div class=\"rv-steps rv-reveal\"><article class=\"rv-step\"><b>01</b><h3>Operations audit</h3><p>Map covers, service flow, kitchen constraints and trading windows.</p></article><article class=\"rv-step\"><b>02</b><h3>Renovation concept</h3><p>Align atmosphere, layout and back-of-house priorities.</p></article><article class=\"rv-step\"><b>03</b><h3>Technical coordination</h3><p>Resolve kitchen equipment, ventilation, gas, electrical and plumbing interfaces.</p></article><article class=\"rv-step\"><b>04</b><h3>BOQ and closed-window plan</h3><p>Price the work and sequence noisy or disruptive tasks out of hours.</p></article><article class=\"rv-step\"><b>05</b><h3>Commission and reopen</h3><p>Test services, snag finishes, deep clean and hand over.</p></article></div></div></section>"
+ },
+ {
+  "id": "ce167ace99",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-pricing\"><div class=\"rv-wrap rv-pricing-grid\"><div class=\"rv-reveal\"><h2>Indicative renovation pricing</h2><p class=\"rv-copy\">These planning ranges come from comparable Woodex renovation scopes. The exact quote follows a site survey.</p><p class=\"rv-price-note\">Price varies with condition, materials, services, size and the number of delivery phases.</p><a class=\"rv-btn\" href=\"#renovation-sector-contact\">Request a survey + BOQ</a></div><div class=\"rv-price-panel rv-reveal\"><div class=\"rv-price-row\"><strong>2,000 sq. ft. restaurant</strong><span>PKR 3M–6M+</span></div><div class=\"rv-price-row\"><strong>500–1,000 sq. ft. retail benchmark</strong><span>PKR 1M–2.5M</span></div></div></div></section>"
+ },
+ {
+  "id": "945824946e",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Choose the right starting point</h2><p class=\"rv-copy\">Renovation improves an existing space. Fit-out creates a finished space from a shell, while interior design resolves the plan and 3D direction.</p></header><div class=\"rv-choice-grid rv-reveal\"><article class=\"rv-choice is-current\"><small>This page</small><h3>Renovation</h3><p>Survey, repair, upgrade and phased delivery for a space that already exists.</p></article><article class=\"rv-choice\"><small>Design + build</small><h3>Fit-Out</h3><p>Complete a shell or unfinished space for first occupation.</p><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rv-choice\"><small>Design + 3D</small><h3>Interior Design</h3><p>Resolve layouts, materials, lighting and visualization before build.</p><a href=\"/interior-design/\" data-page-route=\"interior\">Explore Interior Design</a></article></div></div></section>"
+ },
+ {
+  "id": "c4c7c16a9f",
+  "type": "faq",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-faq\"><div class=\"rv-wrap rv-faq-grid\"><div class=\"rv-faq-intro rv-reveal\"><h2>Restaurant &amp; Café Renovation FAQs</h2><p class=\"rv-copy\">Six practical answers before survey, costing and site work.</p></div><div class=\"rv-faq-list rv-reveal\"><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"true\"><span>Can the restaurant stay open during renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Some work can happen on closed days, overnight or by zone. Kitchen and life-safety shutdowns require an agreed closure window.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you renovate commercial kitchens?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. We coordinate layout, finishes and service interfaces around the approved equipment schedule.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you handle ventilation and gas?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>We coordinate these systems within the renovation scope and with the relevant specialist contractors.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What materials suit restaurants?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>We choose durable, cleanable hospitality finishes matched to heat, moisture, traffic and maintenance needs.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does restaurant renovation take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>A focused dining refresh may take a few weeks. A full kitchen and dining renovation depends on services, equipment and closure windows.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is design included?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>It can be. Where the direction is changing, interior design and 3D approval can be added before the renovation begins.</p></div></div></div></div></div></section>",
+  "fields": {
+   "heading": "Restaurant &amp; Café Renovation FAQs",
+   "copy": "Six practical answers before survey, costing and site work.",
+   "items": [
+    {
+     "q": "Can the restaurant stay open during renovation?",
+     "a": "<p>Some work can happen on closed days, overnight or by zone. Kitchen and life-safety shutdowns require an agreed closure window.</p>"
+    },
+    {
+     "q": "Do you renovate commercial kitchens?",
+     "a": "<p>Yes. We coordinate layout, finishes and service interfaces around the approved equipment schedule.</p>"
+    },
+    {
+     "q": "Do you handle ventilation and gas?",
+     "a": "<p>We coordinate these systems within the renovation scope and with the relevant specialist contractors.</p>"
+    },
+    {
+     "q": "What materials suit restaurants?",
+     "a": "<p>We choose durable, cleanable hospitality finishes matched to heat, moisture, traffic and maintenance needs.</p>"
+    },
+    {
+     "q": "How long does restaurant renovation take?",
+     "a": "<p>A focused dining refresh may take a few weeks. A full kitchen and dining renovation depends on services, equipment and closure windows.</p>"
+    },
+    {
+     "q": "Is design included?",
+     "a": "<p>It can be. Where the direction is changing, interior design and 3D approval can be added before the renovation begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "c32bbf77d6",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Explore related renovation sectors</h2><p class=\"rv-copy\">Every sector follows the same standard: condition-led scope, itemized pricing and a practical delivery plan.</p></header><nav class=\"rv-related-grid rv-reveal\" aria-label=\"Related renovation sectors\"><a class=\"rv-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>Renovation hub</small><strong>All Renovation Services</strong></a><a class=\"rv-related-link\" href=\"/office-renovation/\" data-renovation-sector=\"office\"><small>Related sector</small><strong>Office Renovation</strong></a><a class=\"rv-related-link\" href=\"/commercial-renovation/\" data-renovation-sector=\"commercial\"><small>Related sector</small><strong>Commercial Renovation</strong></a><a class=\"rv-related-link\" href=\"/retail-showroom-renovation/\" data-renovation-sector=\"retail\"><small>Related sector</small><strong>Retail &amp; Showroom Renovation</strong></a><a class=\"rv-related-link\" href=\"/healthcare-renovation/\" data-renovation-sector=\"healthcare\"><small>Related sector</small><strong>Healthcare Renovation</strong></a><a class=\"rv-related-link\" href=\"/residential-renovation/\" data-renovation-sector=\"residential\"><small>Related sector</small><strong>Residential Renovation</strong></a><a class=\"rv-related-link\" href=\"/specialized-renovation-services/\" data-renovation-sector=\"specialized\"><small>Related sector</small><strong>Specialized Services</strong></a></nav></div></section>"
+ },
+ {
+  "id": "eed4fbc30c",
+  "type": "cta",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-contact\"><div class=\"rv-wrap rv-contact-grid\"><div class=\"rv-reveal\"><h2>Talk to Woodex</h2><p class=\"rv-copy\">Tell us the floor area, covers, kitchen condition, trading windows and target reopening date.</p><div class=\"rv-contact-actions\"><a class=\"rv-btn rv-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Restaurant%20%26%20Caf%C3%A9%20Renovation%20Consultation\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"rv-contact-list rv-reveal\"><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rv-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rv-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"rv-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"rv-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us the floor area, covers, kitchen condition, trading windows and target reopening date.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Restaurant%20%26%20Caf%C3%A9%20Renovation%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

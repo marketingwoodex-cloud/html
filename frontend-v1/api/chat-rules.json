@@ -1,0 +1,150 @@
+{
+ "_note": "Backup answers used when the AI is off or unavailable. Order matters (first match wins). Placeholders: {address} {phones} {email} {hours} {later}.",
+ "greeting": [
+  "Wa alaikum assalam! Thanks for reaching out to Woodex. What are you planning, a home, an office or something else?",
+  "Hello and welcome to Woodex Interior. Tell me a bit about your space and what you have in mind."
+ ],
+ "phone": [
+  "Perfect, thank you. One of our designers will call you {later}. Meanwhile, which area is the project in, and is it a home, office or shop?",
+  "Got it, thanks! A designer will give you a call {later}. Just so they come prepared, roughly what size is the space?"
+ ],
+ "askPhone": " If you share your WhatsApp number, a designer can follow up with you directly.",
+ "rules": [
+  {
+   "k": "human",
+   "re": "\\b(human|agent|real person|person|representative|banda|insaan|talk to (someone|team|designer))\\b",
+   "human": true,
+   "a": [
+    "Of course, I have asked a designer to join this chat. They will reply here shortly.",
+    "Sure, I have let the team know. A designer will pick up this chat in a moment."
+   ]
+  },
+  {
+   "k": "hours",
+   "re": "\\b(timing|timings|office hours|working hours|opening hours|are you open|when do you (open|close)|open (today|tomorrow|on)|closed (today|on)|kab khul|on sunday)",
+   "a": [
+    "We are in the studio {hours}. You can leave your message here any time though, and the team will pick it up first thing."
+   ],
+   "noask": true
+  },
+  {
+   "k": "address",
+   "re": "\\b(where are you|where is your|address|location|located|map|directions|kahan|studio|visit you)",
+   "a": [
+    "Our studio is at {address}. Do give us a call on {phones} before coming so a designer is free to sit with you, and bring any photos or plans you have."
+   ],
+   "noask": true
+  },
+  {
+   "k": "price",
+   "re": "\\b(price|prices|cost|costs|rate|rates|budget|kitna|kitne|qeemat|charges|per sq|sqft|sq ft|square f|estimate|quotation|quote)",
+   "a": [
+    "Honestly, it depends a lot on the size, the finishes you choose and the condition of the site, so any number without seeing it would be a guess. We do a site visit first and then share an itemised quotation, so you can see exactly where the money goes. Which area is the project in?",
+    "Two spaces that look similar can cost very differently once services, materials and joinery are counted. That is why we price from an itemised bill of quantities after seeing the site. What kind of space is it, and roughly how big?"
+   ]
+  },
+  {
+   "k": "kitchen",
+   "re": "\\b(kitchen|wardrobe|cupboard|cabinet|vanity|bed|furniture|sofa|joinery|almari)",
+   "a": [
+    "We design and build kitchens, wardrobes and custom furniture to the drawing, so what you approve in 3D is what gets made. If you can share the room size and a photo, a designer can suggest a layout. Which city are you in?",
+    "Good choice to plan it properly. For kitchens and wardrobes the layout and hardware decide how well it works every day, more than the finish. Is this for a new house or replacing what you have?"
+   ]
+  },
+  {
+   "k": "office",
+   "re": "\\b(office|offices|workplace|workspace|fit-?out|commercial|corporate|shop|retail|store|showroom|restaurant|cafe|café|clinic|hospital|salon|gym|school)",
+   "a": [
+    "That is the kind of project we do a lot of. For commercial spaces the layout, lighting and services matter more than the finishes, so we always start with a site visit. How big is the space, and when would you like it ready?",
+    "Nice. With offices and shops, getting the planning right first saves a lot of rework later, things like seating flow, power points and air-conditioning. Where is the space, and is it a shell or already fitted out?"
+   ]
+  },
+  {
+   "k": "renovation",
+   "re": "\\b(renovat|remodel|repair|old house|refurb|makeover|upgrade|redo|damp|seepage)",
+   "a": [
+    "Renovations go much smoother when the house is surveyed before any finishes are chosen, since wiring, plumbing and damp often decide the plan. Is it the whole house or a few rooms?",
+    "Happy to help. With renovations we check the services and structure first, then plan finishes, so there are no surprises halfway. Which rooms are you thinking of changing?"
+   ]
+  },
+  {
+   "k": "home",
+   "re": "\\b(house|home|apartment|flat|villa|farmhouse|bedroom|lounge|living room|drawing room|dining|kids room|ghar)",
+   "a": [
+    "Lovely. For homes we start with how your family actually uses each room, then build the design and 3D views around that. Which area is the house in, and is it new or already lived in?",
+    "Homes are a big part of what we do. A short brief on how many rooms and the look you like helps a designer prepare. Where is the house?"
+   ]
+  },
+  {
+   "k": "timeline",
+   "re": "\\b(how long|timeline|time line|duration|kitne din|kitna time|weeks|months|ready by|deadline|complete|finish)",
+   "a": [
+    "It depends on the size and how much is being built, so the team gives you a written programme with the quotation after the site visit. If you have a date in mind, tell me and the designer will plan around it.",
+    "We share a clear programme, stage by stage, once the scope is agreed, so you know what happens each week. Do you have a target date?"
+   ]
+  },
+  {
+   "k": "portfolio",
+   "re": "\\b(portfolio|projects|previous work|your work|past work|pictures|photos|examples|samples|references)",
+   "a": [
+    "You can see a selection of our completed spaces on the Projects page of this website. If you tell me the kind of space you are planning, a designer can share similar work with you.",
+    "Our Projects page has homes, offices and commercial spaces we have delivered. What type of space are you planning? I can point you to the closest examples."
+   ]
+  },
+  {
+   "k": "3d",
+   "re": "\\b(3d|render|renders|visuali[sz]|walkthrough|drawing|drawings|layout|plan)",
+   "a": [
+    "Our in-house 3D studio prepares the views, so you can see the space properly before anything is built and make changes on screen rather than on site. What space would you like to visualise?",
+    "Yes, every design comes with 3D views and working drawings from our own studio. Do you already have a floor plan, or should the team measure the site?"
+   ]
+  },
+  {
+   "k": "cities",
+   "re": "\\b(islamabad|rawalpindi|pindi|karachi|faisalabad|multan|sialkot|gujranwala|peshawar|other cit|outside lahore|nationwide)",
+   "a": [
+    "Yes, we are based in Lahore and also work in Islamabad, Karachi and other cities. Which city is your project in, and what kind of space is it?"
+   ]
+  },
+  {
+   "k": "payment",
+   "re": "\\b(payment|payments|advance|instal|installment|pay|bank|terms)",
+   "a": [
+    "Payment terms are set out clearly in the quotation, stage by stage, so you always know what is due and when. The team will go through them with you once the scope is agreed. What is the project, by the way?"
+   ]
+  },
+  {
+   "k": "visit",
+   "re": "\\b(site visit|visit|meeting|meet|appointment|book|consultation|come to)",
+   "a": [
+    "Happy to set that up. A designer visits, measures and listens to what you need, then the team prepares the design and quotation. Which area is the site in, and what days suit you?",
+    "Sure. Share the area and a good day or time, and the team will confirm the visit with you."
+   ]
+  },
+  {
+   "k": "contact",
+   "re": "\\b(phone|number|call|contact|whatsapp|email|rabta)",
+   "a": [
+    "Sure. You can call or WhatsApp us on {phones}, or email {email}. If it is easier, leave your number here and we will call you."
+   ],
+   "noask": true
+  },
+  {
+   "k": "services",
+   "re": "\\b(service|services|design|designer|interior|ceiling|architect|architecture|turnkey|build)",
+   "a": [
+    "We handle the full journey, from design and 3D views to building and handover, all with one team. Tell me a little about your space, where it is and what you would like to change, and I can point you in the right direction.",
+    "We do interior design, office and commercial fit-outs, renovation, 3D visualisation and custom furniture. What are you planning?"
+   ]
+  },
+  {
+   "k": "thanks",
+   "re": "\\b(thank|thanks|shukria|shukriya|jazakallah|ok|okay|great|perfect)\\b",
+   "noask": true,
+   "a": [
+    "My pleasure. Anything else you would like to know?",
+    "You are most welcome. I am here if anything else comes up."
+   ]
+  }
+ ]
+}

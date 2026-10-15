@@ -1,0 +1,71 @@
+[
+ {
+  "id": "427d85f161",
+  "type": "hero",
+  "html": "\n\n    <section class=\"dx-hero dx-hero--image\" aria-labelledby=\"dx-title\">\n      <img class=\"dx-hero-bg\" src=\"/assets/img/img-5048d9095862.webp\" alt=\"\" aria-hidden=\"true\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\">\n      <div class=\"dx-wrap dx-hero-inner\">\n        <p class=\"dx-kicker\">Workplace</p>\n        <h1 id=\"dx-title\">An office that works as hard as you do</h1>\n        <p class=\"dx-dek\">Offices balance focus, meeting and social space. Acoustics and daylight are handled from day one.</p>\n        <dl class=\"dx-meta\">\n          <div class=\"dx-meta-item\"><dt>Category</dt><dd>Workplace</dd></div>\n          <div class=\"dx-meta-item\"><dt>Read time</dt><dd>5 min read</dd></div>\n          <div class=\"dx-meta-item\"><dt>Studio</dt><dd>Woodex Studio</dd></div>\n        </dl>\n      </div>\n    </section>",
+  "fields": {
+   "heading": "An office that works as hard as you do",
+   "img_src": "/assets/img/img-5048d9095862.webp",
+   "img_alt": ""
+  }
+ },
+ {
+  "id": "6a3a21ba21",
+  "type": "faq",
+  "html": "\n\n    \n\n    <section class=\"dx-body\">\n      <div class=\"dx-wrap dx-body-grid\">\n        <div class=\"dx-main\">\n<div data-in-reveal=\"\"><h2>Zoning: focus, meet, social</h2><p>Every office needs three kinds of space. Focus zones for deep work, meeting zones for collaboration, and social zones where the team actually talks.</p><p>Getting the ratio right matters more than any single finish. Watch how your team works for a week before the plan is drawn.</p></div><div data-in-reveal=\"\"><h2>Acoustics and daylight</h2><p>Open offices fail on noise, not looks. Acoustic panels, soft flooring and proper ceiling treatment keep conversations from carrying across the floor.</p><p>Daylight belongs near desks. Meeting rooms and services can sit deeper in the plan, where borrowed light does the job.</p></div><figure class=\"in-image\" data-in-reveal=\"\"><img src=\"/assets/img/img-197da8ddab9b.webp\" alt=\"Office meeting zone with acoustic panels\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>Acoustic treatment keeps open offices usable.</figcaption></figure><div data-in-reveal=\"\"><h2>Brand cues</h2><p>The office should feel like your company, not a catalogue. A restrained palette with one or two brand moments, done well, beats logos on every wall.</p><p>Reception carries the most weight. It is the first thing clients see and the last thing new hires remember from day one.</p></div><div data-in-reveal=\"\"><h2>Plan for growth</h2><p>Teams change. Modular workstations, movable partitions and spare data points let the layout flex without another full fit out.</p><p>For our full workplace service see <a href=\"/office-interior-design/\">office interior design</a>.</p></div>\n          <div data-in-reveal>\n            <h2>The short version.</h2>\n            <ul>\n            <li><strong>Three zones:</strong> Focus, meet and social space in the right ratio beats any finish.</li>\n            <li><strong>Treat the noise:</strong> Acoustics decide whether an open office actually works.</li>\n            <li><strong>Brand with restraint:</strong> One or two strong brand moments carry more than logos everywhere.</li>\n            </ul>\n          </div>\n          <div data-in-reveal>\n<header data-in-reveal=\"\"><p class=\"in-label\">Questions</p><h2>Asked often, answered plainly.</h2></header>\n      <div class=\"in-faq-list\"><div class=\"in-faq-item\"><button class=\"in-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How much space does each person need?</span><span class=\"plus\">+</span></button><div class=\"in-faq-a\"><div><p>Plan 80 to 100 square feet per person including circulation and shared areas. Tighter than that and the office starts fighting itself.</p></div></div></div><div class=\"in-faq-item\"><button class=\"in-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Open plan or cabins?</span><span class=\"plus\">+</span></button><div class=\"in-faq-a\"><div><p>A mix wins. Open focus zones with enough quiet rooms and small meeting spaces for calls and one to ones.</p></div></div></div><div class=\"in-faq-item\"><button class=\"in-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do you fix a noisy office?</span><span class=\"plus\">+</span></button><div class=\"in-faq-a\"><div><p>Acoustic ceiling treatment, panels on hard walls and soft flooring together. One measure alone rarely solves it.</p></div></div></div><div class=\"in-faq-item\"><button class=\"in-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can branding be subtle?</span><span class=\"plus\">+</span></button><div class=\"in-faq-a\"><div><p>Yes, and it usually lands better. Material and colour cues with one confident brand wall read as premium; repetition reads as decoration.</p></div></div></div></div>\n    \n          </div>\n        </div>\n      </div>\n    </section>",
+  "fields": {
+   "label": "Questions",
+   "heading": "Zoning: focus, meet, social",
+   "items": [
+    {
+     "q": "How much space does each person need?",
+     "a": "<p>Plan 80 to 100 square feet per person including circulation and shared areas. Tighter than that and the office starts fighting itself.</p>"
+    },
+    {
+     "q": "Open plan or cabins?",
+     "a": "<p>A mix wins. Open focus zones with enough quiet rooms and small meeting spaces for calls and one to ones.</p>"
+    },
+    {
+     "q": "How do you fix a noisy office?",
+     "a": "<p>Acoustic ceiling treatment, panels on hard walls and soft flooring together. One measure alone rarely solves it.</p>"
+    },
+    {
+     "q": "Can branding be subtle?",
+     "a": "<p>Yes, and it usually lands better. Material and colour cues with one confident brand wall read as premium; repetition reads as decoration.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a5fcecf4b6",
+  "type": "pullquote",
+  "html": "\n\n    <section class=\"dx-quote\"><div class=\"dx-wrap\"><blockquote data-in-reveal>Watch how your team works for a week before the plan is drawn.</blockquote></div></section>",
+  "fields": {
+   "text": "Watch how your team works for a week before the plan is drawn."
+  }
+ },
+ {
+  "id": "8ee57dac16",
+  "type": "raw",
+  "html": "\n\n    <section class=\"dx-related\">\n      <div class=\"dx-wrap\">\n        <header data-in-reveal><p class=\"dx-kicker\">Keep looking</p><h2>Related reading.</h2></header>\n        <div class=\"dx-cards\">\n        <a class=\"dx-card\" href=\"/insights/retail-shop-interior-guide/\" data-in-reveal>\n          <figure><img src=\"/assets/img/img-42bae79b5c89.webp\" alt=\"Woodex retail shop interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Retail</figcaption></figure>\n          <h3>A shop interior that sells</h3>\n          <p>Entrance, path, display, trial and checkout, plus durable materials and light.</p>\n          <span class=\"dx-more\">Read the article</span>\n        </a>\n        <a class=\"dx-card\" href=\"/insights/design-process-explained/\" data-in-reveal>\n          <figure><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Woodex designed office interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Process</figcaption></figure>\n          <h3>How a Woodex project runs</h3>\n          <p>From first call to handover: brief, survey, concept, 3D, quantities, build.</p>\n          <span class=\"dx-more\">Read the article</span>\n        </a>\n        <a class=\"dx-card\" href=\"/insights/restaurant-planning-guide/\" data-in-reveal>\n          <figure><img src=\"/assets/img/img-469cf01b2548.jpg\" alt=\"Woodex restaurant dining interior\" width=\"3000\" height=\"4000\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Hospitality</figcaption></figure>\n          <h3>Planning a restaurant interior</h3>\n          <p>Service flow, seating mix, mood versus durability, and kitchen adjacency.</p>\n          <span class=\"dx-more\">Read the article</span>\n        </a>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "76034e35b8",
+  "type": "cta",
+  "html": "\n\n    <section class=\"in-section\" id=\"cta\"><div class=\"in-wrap in-cta-grid\">\n          <div class=\"in-cta-copy\" data-in-reveal=\"\">\n            <p class=\"in-label\">Start your project</p>\n            <h2>Planning a workplace? Talk to us.</h2>\n            <div class=\"in-cta-meta\"><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address><a href=\"tel:+923224000768\">+92 322 4000768</a><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a><p><strong>Mon–Sat 9:30–6:30</strong> · Sunday closed</p></div>\n            <div class=\"actions\"><a class=\"btn\" href=\"mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project\">Email the studio</a><a class=\"btn btn-light\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div>\n          </div>\n          <figure class=\"in-image\" data-in-reveal=\"\"><img src=\"/assets/img/img-c349a92a4ae0.webp\" alt=\"Contemporary Woodex residential interior used as project photography placeholder\" width=\"2240\" height=\"1120\" loading=\"lazy\" decoding=\"async\"></figure>\n        </div></section>\n\n",
+  "fields": {
+   "heading": "Planning a workplace? Talk to us.",
+   "label": "Start your project",
+   "actions": [
+    {
+     "text": "Email the studio",
+     "href": "mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project"
+    },
+    {
+     "text": "Call +92 322 4000768",
+     "href": "tel:+923224000768"
+    }
+   ]
+  }
+ }
+]

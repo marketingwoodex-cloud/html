@@ -1,0 +1,93 @@
+[
+ {
+  "id": "4c16eebdd9",
+  "type": "hero",
+  "html": "\n\n    <section class=\"ch-hero\" aria-labelledby=\"complete-home-title\"><div class=\"ch-wrap ch-hero-grid\">\n      <div class=\"ch-hero-copy\" data-ch-reveal=\"\"><nav class=\"crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Complete Home Redesign</span></nav><div><p class=\"ch-kicker\">One brief. Every room.</p><h1 id=\"complete-home-title\">Complete Home Redesign in Lahore</h1><p class=\"ch-hero-lead\">Bring the entire home under one clear design direction. One team coordinates every room, every decision and every stage under one contract.</p><div class=\"ch-hero-actions\"><a class=\"ch-btn ch-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ch-btn ch-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"ch-hero-note\"><span>Phased room by room</span><span>Fixed price by room</span><span>2-year warranty</span></div></div>\n      <figure class=\"ch-hero-media\" data-ch-reveal=\"\"><img src=\"/assets/img/img-e3ba33b612d6.webp\" width=\"1920\" height=\"1280\" alt=\"Cohesive contemporary open-plan home with living, dining and kitchen spaces\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"ch-hero-stamp\">Whole-home design<br>by Woodex</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Complete Home Redesign in Lahore",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-e3ba33b612d6.webp",
+   "img_alt": "Cohesive contemporary open-plan home with living, dining and kitchen spaces"
+  }
+ },
+ {
+  "id": "608a660587",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ch-section ch-intro\" id=\"complete-home-intro\"><div class=\"ch-wrap ch-intro-grid\">\n      <div class=\"ch-intro-copy\" data-ch-reveal=\"\"><h2>What Is a Complete Home Redesign?</h2><p class=\"ch-copy\">Every room is handled as one project, by one team and under one contract. A unified design language connects the palette, materials, lighting and built details across the home.</p><p class=\"ch-copy\">It is more considered and efficient than commissioning rooms separately. Work can be phased room by room, so clients can often remain at home while each area is completed.</p><p class=\"ch-copy\">The redesign covers the built space. Furniture-inclusive options are also available by contacting Woodex.</p><div class=\"ch-principle\"><div><strong>One brief</strong><span>Shared priorities across every room</span></div><div><strong>One language</strong><span>Materials and light that belong together</span></div><div><strong>One contract</strong><span>Clear scope and accountability</span></div></div></div>\n      <div class=\"ch-room-sequence\" data-ch-reveal=\"\" aria-label=\"Connected spaces within a complete home\"><figure><img loading=\"lazy\" src=\"/assets/img/img-5048d9095862.webp\" alt=\"Contemporary living room with coordinated media wall, seating and lighting\" width=\"1920\" height=\"1280\"><figcaption>Living</figcaption></figure><figure><img loading=\"lazy\" src=\"/assets/img/img-27ed3ac85189.jpg\" alt=\"Custom kitchen with coordinated cabinetry, worktops and lighting\" width=\"2000\" height=\"1090\"><figcaption>Kitchen</figcaption></figure><figure><img loading=\"lazy\" src=\"/assets/img/img-42bae79b5c89.webp\" alt=\"Calm bedroom with fitted wardrobes and layered lighting\" width=\"1920\" height=\"1280\"><figcaption>Bedroom</figcaption></figure></div>\n    </div></section>"
+ },
+ {
+  "id": "47da44a709",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ch-section ch-deliver\" id=\"complete-home-deliver\"><div class=\"ch-wrap ch-deliver-grid\">\n      <div class=\"ch-deliver-intro\" data-ch-reveal=\"\"><h2>What We Deliver</h2><p class=\"ch-copy\">Eight coordinated layers turn separate rooms into one complete home plan.</p><p class=\"ch-deliver-hint\">Scroll the scope ledger</p></div>\n      <div class=\"ch-ledger\" tabindex=\"0\" role=\"region\" aria-label=\"Eight complete home redesign deliverables\" data-ch-reveal=\"\">\n        <article class=\"ch-scope-item\"><span>01</span><div><h3>Unified Design Concept</h3><p>One palette, colour scheme and lighting style gives every room a clear relationship to the next.</p></div></article>\n        <article class=\"ch-scope-item\"><span>02</span><div><h3>Kitchen + Bathrooms</h3><p>Kitchen and bathroom cabinetry, surfaces, fixtures and plumbing are planned within the wider home.</p></div></article>\n        <article class=\"ch-scope-item\"><span>03</span><div><h3>Bedrooms + Living</h3><p>Wardrobes, flooring, headboard walls, feature walls and the media unit are coordinated around daily life.</p></div></article>\n        <article class=\"ch-scope-item\"><span>04</span><div><h3>Flooring + Lighting Throughout</h3><p>Transitions, light levels and fixture families are resolved consistently from room to room.</p></div></article>\n        <article class=\"ch-scope-item\"><span>05</span><div><h3>Room-by-Room Phasing</h3><p>A practical sequence helps contain disruption and can allow the family to remain at home.</p></div></article>\n        <article class=\"ch-scope-item\"><span>06</span><div><h3>3D Visualization of Key Spaces</h3><p>Important rooms are shown clearly before materials are ordered and work begins.</p></div></article>\n        <article class=\"ch-scope-item\"><span>07</span><div><h3>Phased Cost Planning</h3><p>An itemised fixed-price agreement by room makes each stage and its budget easier to control.</p></div></article>\n        <article class=\"ch-scope-item\"><span>08</span><div><h3>Quality Warranty</h3><p>A 2-year warranty covers construction, fixtures and finishes within the agreed execution scope.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "831ab3e818",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ch-section ch-process\" id=\"complete-home-process\"><div class=\"ch-wrap\">\n      <header class=\"ch-process-head\" data-ch-reveal=\"\"><div><h2>Our Design Process</h2></div><p class=\"ch-copy\">The home is resolved in one sequence, with decisions made before they reach site.</p></header>\n      <div class=\"ch-steps\" data-ch-reveal=\"\"><article class=\"ch-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We understand your rooms, routines, priorities, budget and preferred pace.</p></article><article class=\"ch-step\"><strong>02</strong><h3>Site Measurement</h3><p>Every room, opening, service and retained element is recorded accurately.</p></article><article class=\"ch-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Layouts and a shared visual direction establish how the complete home works.</p></article><article class=\"ch-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Finishes, fixtures and furniture are coordinated across connected spaces.</p></article><article class=\"ch-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Drawings, specifications and key 3D views prepare the project for execution.</p></article></div>\n      <div class=\"ch-timeline\" data-ch-reveal=\"\"><span>Typical design timeline</span><strong>Typically 2-3 weeks from whole-home survey to final design package. Larger homes take longer.</strong></div>\n    </div></section>"
+ },
+ {
+  "id": "c9e351cb25",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ch-section ch-pricing\" id=\"complete-home-pricing\"><div class=\"ch-wrap ch-pricing-grid\">\n      <div class=\"ch-pricing-copy\" data-ch-reveal=\"\"><h2>Pricing</h2><p class=\"ch-copy\">Start with a free whole-home survey and consultation. Design fees typically range from PKR 50,000-150,000+.</p><a class=\"ch-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div data-ch-reveal=\"\" class=\"\"><div class=\"ch-price-matrix\"><article class=\"ch-price-row\"><h3>Whole-home survey</h3><strong>Free</strong><p>Consultation, needs review and initial scope.</p></article><article class=\"ch-price-row\"><h3>1-bed apartment</h3><strong>Around PKR 50K-80K</strong><p>Compact whole-home design package.</p></article><article class=\"ch-price-row\"><h3>3-bed / 5-marla home</h3><strong>Around PKR 70K-110K</strong><p>Coordinated design across the main rooms.</p></article><article class=\"ch-price-row\"><h3>10-marla home</h3><strong>Around PKR 100K-150K+</strong><p>Broader scope and more detailed room packages.</p></article></div><p class=\"ch-price-note\">The exact fixed-price quotation is itemised by room after the survey. Execution and build costs are separate and depend on the agreed scope and materials.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "68c94804c6",
+  "type": "faq",
+  "html": "\n\n    <section class=\"ch-section ch-faq\" id=\"complete-home-faq\"><div class=\"ch-wrap ch-faq-grid\">\n      <div class=\"ch-faq-intro\" data-ch-reveal=\"\"><h2>Complete Home Redesign FAQs</h2><p class=\"ch-copy\">Clear answers on timing, phasing, style, warranty and furniture.</p><figure class=\"ch-faq-media\"><img loading=\"lazy\" src=\"/assets/img/img-469cf01b2548.jpg\" alt=\"Dining area connected to a cohesive whole-home interior\" width=\"3000\" height=\"4000\"></figure></div>\n      <div class=\"ch-faq-list\" data-ch-reveal=\"\">\n        <div class=\"ch-faq-item\"><button class=\"ch-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How long does a complete home redesign take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ch-faq-a\"><div><p>The design package typically takes 2-3 weeks. Phased execution usually takes 6-16 weeks depending on the size and scope.</p></div></div></div>\n        <div class=\"ch-faq-item\"><button class=\"ch-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can we live at home while the work is happening?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ch-faq-a\"><div><p>Yes. Room-by-room phasing often allows you to remain at home while work progresses in planned zones.</p></div></div></div>\n        <div class=\"ch-faq-item\"><button class=\"ch-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is it cheaper to design all rooms together?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ch-faq-a\"><div><p>Usually, yes. A complete brief creates economies of scale and avoids repeated mobilisation, surveys and disconnected decisions.</p></div></div></div>\n        <div class=\"ch-faq-item\"><button class=\"ch-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can different rooms retain different styles?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ch-faq-a\"><div><p>Yes. Each room can have its own mood while sharing a cohesive palette, material logic and lighting language.</p></div></div></div>\n        <div class=\"ch-faq-item\"><button class=\"ch-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What warranty do you provide?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ch-faq-a\"><div><p>Woodex provides a 2-year warranty on construction, fixtures and finishes within the agreed execution scope.</p></div></div></div>\n        <div class=\"ch-faq-item\"><button class=\"ch-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can Woodex also provide the furniture?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ch-faq-a\"><div><p>Yes. Contact Woodex to discuss complete design, build and furnish options for the home.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Complete Home Redesign FAQs",
+   "copy": "Clear answers on timing, phasing, style, warranty and furniture.",
+   "items": [
+    {
+     "q": "How long does a complete home redesign take?",
+     "a": "<p>The design package typically takes 2-3 weeks. Phased execution usually takes 6-16 weeks depending on the size and scope.</p>"
+    },
+    {
+     "q": "Can we live at home while the work is happening?",
+     "a": "<p>Yes. Room-by-room phasing often allows you to remain at home while work progresses in planned zones.</p>"
+    },
+    {
+     "q": "Is it cheaper to design all rooms together?",
+     "a": "<p>Usually, yes. A complete brief creates economies of scale and avoids repeated mobilisation, surveys and disconnected decisions.</p>"
+    },
+    {
+     "q": "Can different rooms retain different styles?",
+     "a": "<p>Yes. Each room can have its own mood while sharing a cohesive palette, material logic and lighting language.</p>"
+    },
+    {
+     "q": "What warranty do you provide?",
+     "a": "<p>Woodex provides a 2-year warranty on construction, fixtures and finishes within the agreed execution scope.</p>"
+    },
+    {
+     "q": "Can Woodex also provide the furniture?",
+     "a": "<p>Yes. Contact Woodex to discuss complete design, build and furnish options for the home.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "c6408140c5",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ch-section ch-related\" id=\"complete-home-related\"><div class=\"ch-wrap\">\n      <header class=\"ch-related-head\" data-ch-reveal=\"\"><h2>Related Services</h2><p class=\"ch-copy\">Explore focused room services or review the home in 3D before work begins.</p></header>\n      <nav class=\"ch-related-grid\" aria-label=\"Related services\" data-ch-reveal=\"\"><a class=\"ch-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ch-related-link\" href=\"/kitchen-design/\" data-page-route=\"kitchen\"><small>02</small><strong>Kitchen Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ch-related-link\" href=\"/residential-bedroom-design/\" data-page-route=\"bedroom\"><small>03</small><strong>Bedroom Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ch-related-link\" href=\"/residential-living-room-design/\" data-page-route=\"livingRoom\"><small>04</small><strong>Living Room Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ch-related-link\" href=\"/residential-basement-design/\" data-page-route=\"basement\"><small>05</small><strong>Basement Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ch-related-link\" href=\"/3d-visualization/\" data-page-route=\"studio\"><small>06</small><strong>Woodex 3D Studio</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "05b2ed0a25",
+  "type": "cta",
+  "html": "\n\n    <section class=\"ch-section ch-contact\" id=\"complete-home-contact\"><div class=\"ch-wrap ch-contact-grid\">\n      <div class=\"ch-contact-copy\" data-ch-reveal=\"\"><h2>Talk to Woodex</h2><p class=\"ch-copy\">Tell us about the home, the rooms you want to change and the pace that suits your family.</p><div class=\"ch-contact-actions\"><a class=\"ch-btn ch-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ch-btn ch-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"ch-contact-list\" data-ch-reveal=\"\"><div class=\"ch-contact-item\"><small>Call</small><span>+92 322 4000768</span></div><div class=\"ch-contact-item\"><small>Call</small><span>+92 321 4686884</span></div><div class=\"ch-contact-item\"><small>Email</small><span>info@woodex.com.pk</span></div><div class=\"ch-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"ch-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"ch-contact-item\"><small>Sunday</small><span>Sunday closed</span></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the home, the rooms you want to change and the pace that suits your family.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

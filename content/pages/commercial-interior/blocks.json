@@ -1,0 +1,97 @@
+[
+ {
+  "id": "25fcb469c1",
+  "type": "hero",
+  "html": "\n\n    <section class=\"ci-hero\" aria-labelledby=\"commercial-interior-title\"><div class=\"ci-wrap ci-hero-grid\">\n      <div class=\"ci-hero-copy ci-reveal\">\n        <nav class=\"ci-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Commercial Interiors</span></nav>\n        <h1 id=\"commercial-interior-title\">Commercial Interior Design in Lahore — Offices, Retail &amp; Hospitality</h1>\n        <p class=\"ci-copy\">Woodex designs offices, coworking spaces, showrooms, malls, retail, restaurants, cafés, hotels, salons, spas, gyms and healthcare interiors. Every plan is shaped to bring footfall, support staff and keep the space on brand.</p>\n        <div class=\"ci-hero-actions\"><a class=\"ci-btn ci-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ci-btn ci-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"ci-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"ci-hero-media ci-reveal\"><img src=\"/assets/img/img-81b231a6c390.webp\" width=\"1536\" height=\"1024\" alt=\"Premium daylight commercial interior with reception, collaborative lounge and meeting space\" loading=\"lazy\" decoding=\"async\"><figcaption>Commercial space shaped for people and brand</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Commercial Interior Design in Lahore — Offices, Retail &amp; Hospitality",
+   "copy": "Woodex designs offices, coworking spaces, showrooms, malls, retail, restaurants, cafés, hotels, salons, spas, gyms and healthcare interiors. Every plan is shaped to bring footfall, support staff and keep the space on brand.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-81b231a6c390.webp",
+   "img_alt": "Premium daylight commercial interior with reception, collaborative lounge and meeting space"
+  }
+ },
+ {
+  "id": "153ecf7a89",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ci-section ci-services\" id=\"commercial-interior-services\"><div class=\"ci-wrap\">\n      <header class=\"ci-services-head ci-reveal\"><h2>What We Design</h2><p class=\"ci-copy\">From focused workplaces to customer-facing destinations, each space is planned around movement, operation and identity.</p></header>\n      <div class=\"ci-service-grid ci-reveal\">\n        <a class=\"ci-service-card\" href=\"/office-interior-design/\" data-page-route=\"officeInterior\"><small>01</small><h3>Office Interior Design</h3><p>Workplaces planned around teams, focus and brand.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/coworking-space-design/\" data-page-route=\"coworking\"><small>02</small><h3>Coworking Space Design</h3><p>Flexible work zones that help members connect.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/showroom-design/\" data-page-route=\"showroom\"><small>03</small><h3>Showroom Design</h3><p>Clear product journeys with a strong first impression.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/shopping-mall-design/\" data-page-route=\"shoppingMall\"><small>04</small><h3>Shopping Mall Design</h3><p>Public spaces balanced for flow, comfort and dwell time.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/retail-design/\" data-page-route=\"retail\"><small>05</small><h3>Retail Design</h3><p>Layouts that guide customers and support sales.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/restaurant-interior-design/\" data-page-route=\"restaurant\"><small>06</small><h3>Restaurant Interior Design</h3><p>Dining spaces tuned for service, atmosphere and turnover.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/cafe-interior-design/\"><small>07</small><h3>Café Interior Design</h3><p>Inviting cafés with efficient counters and memorable character.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/hotel-interior-design/\" data-page-route=\"hotel\"><small>08</small><h3>Hotel Interior Design</h3><p>Guest spaces built around comfort and consistent service.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/beauty-salon-design/\" data-page-route=\"beautySalon\"><small>09</small><h3>Beauty Salon Design</h3><p>Polished treatment and styling zones with smooth workflow.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/spa-design/\" data-page-route=\"spa\"><small>10</small><h3>Spa Design</h3><p>Quiet, private spaces shaped for calm and care.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/gym-design/\"><small>11</small><h3>Gym Design</h3><p>High-energy training zones with safe, intuitive circulation.</p><span aria-hidden=\"true\">↗</span></a>\n        <a class=\"ci-service-card\" href=\"/healthcare-design/\"><small>12</small><h3>Healthcare Design</h3><p>Clear, reassuring environments planned around patient flow.</p><span aria-hidden=\"true\">↗</span></a>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "6e926bcefe",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ci-section ci-process\" id=\"commercial-interior-process\"><div class=\"ci-wrap\">\n      <header class=\"ci-process-head ci-reveal\"><h2>The Commercial Design Process</h2><p class=\"ci-copy\">Five practical stages move the brief from business requirements to an approved, build-ready design.</p></header>\n      <div class=\"ci-steps ci-reveal\">\n        <article class=\"ci-step\"><strong>1</strong><h3>Consultation &amp; Requirements</h3><p>We define the brand, customer experience, staff needs, budget and operational priorities.</p></article>\n        <article class=\"ci-step\"><strong>2</strong><h3>Site Measurement</h3><p>We record dimensions, services, access and any landlord or compliance conditions.</p></article>\n        <article class=\"ci-step\"><strong>3</strong><h3>Concept &amp; Layout Design</h3><p>Footfall flow, staff workflow and the visual direction are tested together.</p></article>\n        <article class=\"ci-step\"><strong>4</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes, lighting and furniture are coordinated with the brand and daily use.</p></article>\n        <article class=\"ci-step\"><strong>5</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved visuals and technical drawings prepare the space for pricing and execution.</p></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "ced53967fe",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ci-section ci-pricing\" id=\"commercial-interior-pricing\"><div class=\"ci-wrap ci-pricing-grid\">\n      <div class=\"ci-pricing-copy ci-reveal\"><h2>Commercial Pricing</h2><p class=\"ci-copy\">The initial consultation and site survey are free. We issue an exact fixed quote once the space and scope are clear.</p><a class=\"ci-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"ci-price-panel ci-reveal\"><div class=\"ci-price-row\"><h3>Small fit-design project</h3><strong>From PKR 30,000 per room/zone</strong></div><div class=\"ci-price-row\"><h3>Typical office or retail design</h3><strong>PKR 100,000–500,000</strong></div><div class=\"ci-price-row\"><h3>Large hospitality or mall project</h3><strong>PKR 500,000–2,000,000+</strong></div><p class=\"ci-price-note\">Pricing varies with space size, finishes and the depth of the 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "92a11191c9",
+  "type": "faq",
+  "html": "\n\n    <section class=\"ci-section ci-faq\" id=\"commercial-interior-faq\"><div class=\"ci-wrap ci-faq-grid\">\n      <div class=\"ci-faq-intro ci-reveal\"><h2>Commercial Interior FAQs</h2><p class=\"ci-copy\">Clear answers on scope, timing, brand and working around an active business.</p></div>\n      <div class=\"ci-faq-list ci-reveal\">\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How is commercial design different from residential design?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>Commercial design balances brand, customer movement, staff workflow, durability and compliance. Residential design is shaped more closely around personal routines and comfort.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does commercial interior design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>A focused office or retail design commonly takes two to four weeks. Larger hospitality, mall or multi-zone projects need a longer programme.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you handle brand alignment?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>Yes. We translate brand colours, tone and customer experience into the layout, materials, signage and lighting.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design for rented or leased spaces?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>Yes. We can prioritize reversible changes, landlord conditions and a clear return-to-shell strategy where needed.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you work around business hours?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>Design reviews can be scheduled around operations. If Woodex also handles execution, phasing and out-of-hours work can be planned separately.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What is included in the design package?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>The package can include measured plans, space planning, concept boards, material and furniture selections, 3D visuals and working drawings.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I get 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>Yes. Key areas are visualized in 3D so the layout, finishes and brand details can be approved before site work.</p></div></div></div>\n        <div class=\"ci-faq-item\"><button class=\"ci-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What are your service areas?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ci-faq-a\"><div><p>Woodex is based in Lahore and supports selected projects across Punjab and Pakistan.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Commercial Interior FAQs",
+   "copy": "Clear answers on scope, timing, brand and working around an active business.",
+   "items": [
+    {
+     "q": "How is commercial design different from residential design?",
+     "a": "<p>Commercial design balances brand, customer movement, staff workflow, durability and compliance. Residential design is shaped more closely around personal routines and comfort.</p>"
+    },
+    {
+     "q": "How long does commercial interior design take?",
+     "a": "<p>A focused office or retail design commonly takes two to four weeks. Larger hospitality, mall or multi-zone projects need a longer programme.</p>"
+    },
+    {
+     "q": "Do you handle brand alignment?",
+     "a": "<p>Yes. We translate brand colours, tone and customer experience into the layout, materials, signage and lighting.</p>"
+    },
+    {
+     "q": "Do you design for rented or leased spaces?",
+     "a": "<p>Yes. We can prioritize reversible changes, landlord conditions and a clear return-to-shell strategy where needed.</p>"
+    },
+    {
+     "q": "Can you work around business hours?",
+     "a": "<p>Design reviews can be scheduled around operations. If Woodex also handles execution, phasing and out-of-hours work can be planned separately.</p>"
+    },
+    {
+     "q": "What is included in the design package?",
+     "a": "<p>The package can include measured plans, space planning, concept boards, material and furniture selections, 3D visuals and working drawings.</p>"
+    },
+    {
+     "q": "Do I get 3D visuals before execution?",
+     "a": "<p>Yes. Key areas are visualized in 3D so the layout, finishes and brand details can be approved before site work.</p>"
+    },
+    {
+     "q": "What are your service areas?",
+     "a": "<p>Woodex is based in Lahore and supports selected projects across Punjab and Pakistan.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "1fa521ec60",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ci-section ci-related\" id=\"commercial-interior-related\"><div class=\"ci-wrap\">\n      <header class=\"ci-related-head ci-reveal\"><h2>Related Services</h2><p class=\"ci-copy\">Move from concept into construction or explore a focused upgrade to an existing space.</p></header>\n      <nav class=\"ci-related-grid ci-reveal\" aria-label=\"Related services\"><a class=\"ci-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ci-related-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\"><small>02</small><strong>Fit Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ci-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>03</small><strong>Renovation</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "ec79f157e9",
+  "type": "cta",
+  "html": "\n\n    <section class=\"ci-section ci-contact\" id=\"commercial-interior-contact\"><div class=\"ci-wrap ci-contact-grid\">\n      <div class=\"ci-reveal\"><h2>Talk to Woodex</h2><p class=\"ci-copy\">Tell us about the space, the business and when you need to open. We will help you define the right starting point.</p><div class=\"ci-contact-actions\"><a class=\"ci-btn ci-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ci-btn ci-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"ci-contact-list ci-reveal\"><div class=\"ci-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"ci-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"ci-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"ci-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"ci-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"ci-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"ci-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the space, the business and when you need to open. We will help you define the right starting point.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

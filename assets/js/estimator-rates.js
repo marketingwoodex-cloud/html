@@ -1,0 +1,91 @@
+/* Woodex estimator rate book (PKR). Starting figures derived from recent
+   Woodex quotations (e.g. Platinum Ventures office renovation, 2024).
+   Nabeel can adjust these any time — the estimator and quotation
+   builder both read from here. */
+window.WX_RATES = {
+  services: [
+    {
+      key: "interior-design",
+      label: "Interior Design",
+      hint: "Design concept, drawings and material palette",
+      unit: "sqft",
+      unitLabel: "Area (sq ft)",
+      rates: { essential: 150, standard: 250, premium: 400 },
+    },
+    {
+      key: "fit-out",
+      label: "Office Fit-Out",
+      hint: "Complete turnkey execution, civil to handover",
+      unit: "sqft",
+      unitLabel: "Area (sq ft)",
+      rates: { essential: 2800, standard: 4200, premium: 6500 },
+    },
+    {
+      key: "renovation",
+      label: "Renovation",
+      hint: "Upgrade of an existing residential or commercial space",
+      unit: "sqft",
+      unitLabel: "Area (sq ft)",
+      rates: { essential: 1200, standard: 2000, premium: 3200 },
+    },
+    {
+      key: "architecture",
+      label: "Architecture",
+      hint: "House and building design with approvals support",
+      unit: "sqft",
+      unitLabel: "Covered area (sq ft)",
+      rates: { essential: 200, standard: 350, premium: 550 },
+    },
+    {
+      key: "3d-visualization",
+      label: "3D Visualization",
+      hint: "Photorealistic views from the Woodex 3D Studio",
+      unit: "views",
+      unitLabel: "Number of views",
+      rates: { essential: 15000, standard: 25000, premium: 45000 },
+    },
+    {
+      key: "furniture",
+      label: "Custom Furniture",
+      hint: "Kitchens, wardrobes and office furniture, made to order",
+      unit: "sqft",
+      unitLabel: "Space area (sq ft)",
+      rates: { essential: 1500, standard: 2500, premium: 4000 },
+    },
+  ],
+  finishes: [
+    { key: "essential", label: "Essential", hint: "Clean, durable, budget-conscious" },
+    { key: "standard", label: "Standard", hint: "The Woodex standard most clients choose" },
+    { key: "premium", label: "Premium", hint: "Top materials and detailing throughout" },
+  ],
+  /* Line-item catalog for the quotation builder, from real Woodex BOQs. */
+  catalog: [
+    { cat: "Dismantling", desc: "Dismantling / removal works — old walls, windows, doors, debris clearing", unit: "job", rate: 70000 },
+    { cat: "Electrical & HVAC", desc: "Electrical points, switches and COB lights (labour)", unit: "job", rate: 55000 },
+    { cat: "Electrical & HVAC", desc: "HVAC pipe with drain, fixing", unit: "rft", rate: 850 },
+    { cat: "Electrical & HVAC", desc: "Split unit installation with MS bracket stand", unit: "nos", rate: 7500 },
+    { cat: "Plumbing", desc: "Plumbing and sanitary repair works, complete", unit: "job", rate: 26000 },
+    { cat: "Plumbing", desc: "Sanitary fixtures labour — commode, vanity, fittings", unit: "job", rate: 24000 },
+    { cat: "Civil Works", desc: "4\" brick wall, complete", unit: "sft", rate: 380 },
+    { cat: "Civil Works", desc: "Plaster works", unit: "sft", rate: 70 },
+    { cat: "Civil Works", desc: "Plaster repair works", unit: "job", rate: 18000 },
+    { cat: "Civil Works", desc: "Floor tiles (labour)", unit: "sft", rate: 80 },
+    { cat: "Civil Works", desc: "Washroom tiles on walls and floor (labour)", unit: "sft", rate: 80 },
+    { cat: "Ceiling", desc: "POP false ceiling, complete", unit: "sft", rate: 130 },
+    { cat: "Glass & Aluminium", desc: "12mm tempered glass partition with sliding panel", unit: "job", rate: 35000 },
+    { cat: "Glass & Aluminium", desc: "Wooden hanging beam for glass partition", unit: "sft", rate: 650 },
+    { cat: "Glass & Aluminium", desc: "Aluminium window with 8mm glass", unit: "sft", rate: 1200 },
+    { cat: "Doors", desc: "Flash door 3.5x7 with frame and complete hardware", unit: "nos", rate: 30000 },
+    { cat: "Furniture", desc: "Dining table 4'6\" x 3'0\"", unit: "nos", rate: 13500 },
+    { cat: "Furniture", desc: "Dining table 3' x 3'", unit: "nos", rate: 11000 },
+    { cat: "Furniture", desc: "Dining chair", unit: "nos", rate: 10500 },
+    { cat: "Furniture", desc: "Sofa seat", unit: "nos", rate: 15500 },
+    { cat: "Furniture", desc: "Bar stool", unit: "nos", rate: 4500 },
+    { cat: "Furniture", desc: "Dining running table, high gloss finish", unit: "rft", rate: 6500 },
+  ],
+  terms: [
+    "50% advance payment with work order.",
+    "Payment will be charged on the actual dimension / size of area.",
+    "Rates are valid for 15 days as per market rates.",
+  ],
+};

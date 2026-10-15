@@ -1,0 +1,95 @@
+[
+ {
+  "id": "b518a0a199",
+  "type": "hero",
+  "html": "\n\n    <section class=\"ho-hero\" aria-labelledby=\"home-office-hero-title\"><div class=\"ho-wrap ho-hero-grid\">\n      <div class=\"ho-hero-copy ho-reveal\">\n        <nav class=\"ho-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Home Office Design</span></nav>\n        <p class=\"ho-label\">A workspace that belongs at home</p><h1 id=\"home-office-hero-title\">Home Office Design in Lahore</h1>\n        <p class=\"ho-copy\">Work feels easier when the room supports focus. We plan a comfortable residential workspace around your routine, technology and the character of your home.</p>\n        <div><a class=\"ho-btn ho-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      </div>\n      <figure class=\"ho-hero-media ho-reveal\"><img src=\"/assets/img/img-e670623c742b.webp\" width=\"992\" height=\"1488\" alt=\"Light-filled residential home office with two ergonomic workstations and garden views\" loading=\"lazy\" decoding=\"async\"><figcaption>Residential workspace concept</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Home Office Design in Lahore",
+   "label": "A workspace that belongs at home",
+   "copy": "Work feels easier when the room supports focus. We plan a comfortable residential workspace around your routine, technology and the character of your home.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-e670623c742b.webp",
+   "img_alt": "Light-filled residential home office with two ergonomic workstations and garden views"
+  }
+ },
+ {
+  "id": "e20a4e919a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ho-section ho-intro\" id=\"home-office-intro\"><div class=\"ho-wrap ho-intro-grid\">\n      <figure class=\"ho-intro-media ho-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-95c63740752c.jpg\" width=\"896\" height=\"1344\" alt=\"Bright dedicated home office with fitted desk, storage and task lighting\"><figcaption>A calm place to think and work</figcaption></figure>\n      <div class=\"ho-intro-copy ho-reveal\"><h2>What Is Home Office Design?</h2><p class=\"ho-copy\">A home office is more than a desk in a spare room. It is a purposeful setting for productive work, physical comfort and sustained focus.</p><p class=\"ho-copy\">We bring layout, ergonomic furniture, lighting, storage, connectivity, privacy and style into one plan. The result works professionally without feeling separate from the home.</p><div class=\"ho-principles\" aria-label=\"Home office priorities\"><span>Comfort</span><span>Focus</span><span>Daily flow</span></div></div>\n    </div></section>"
+ },
+ {
+  "id": "f9e733df81",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ho-section ho-deliver\" id=\"home-office-deliver\"><div class=\"ho-wrap ho-deliver-grid\">\n      <div class=\"ho-deliver-intro ho-reveal\"><h2>What We Deliver</h2><p class=\"ho-copy\">Eight practical decisions create a workspace that feels clear, comfortable and ready for your working day.</p><p class=\"ho-deliver-note\">Scroll through the complete home office scope.</p></div>\n      <div class=\"ho-scope-scroll ho-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight home office design deliverables. Scroll to review all items.\">\n        <article class=\"ho-scope-item\"><span>01</span><div><h3>Layout &amp; Space Planning</h3><p>Desk position, circulation and work zones shaped around the room.</p></div></article>\n        <article class=\"ho-scope-item\"><span>02</span><div><h3>Desk &amp; Workstation Design</h3><p>A practical surface sized for your equipment and daily tasks.</p></div></article>\n        <article class=\"ho-scope-item\"><span>03</span><div><h3>Ergonomic Seating</h3><p>Supportive seating chosen for posture, comfort and long sessions.</p></div></article>\n        <article class=\"ho-scope-item\"><span>04</span><div><h3>Task &amp; Ambient Lighting</h3><p>Focused desk light balanced with comfortable room lighting.</p></div></article>\n        <article class=\"ho-scope-item\"><span>05</span><div><h3>Storage &amp; Organization</h3><p>Files, books and equipment kept close without visual clutter.</p></div></article>\n        <article class=\"ho-scope-item\"><span>06</span><div><h3>Connectivity &amp; Power Planning</h3><p>Sockets, charging, data and cable routes placed where they are needed.</p></div></article>\n        <article class=\"ho-scope-item\"><span>07</span><div><h3>Privacy &amp; Focus Design</h3><p>Visual and acoustic choices that reduce everyday distractions.</p></div></article>\n        <article class=\"ho-scope-item\"><span>08</span><div><h3>Style &amp; Decorative Elements</h3><p>Colour, art and texture that connect the office to your home.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "a0c10ab70d",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ho-section ho-process\" id=\"home-office-process\"><div class=\"ho-wrap\">\n      <header class=\"ho-process-head ho-reveal\"><h2>Our Design Process</h2><p class=\"ho-copy\">Five clear stages take the workspace from requirements to a finished visual package.</p></header>\n      <div class=\"ho-steps ho-reveal\">\n        <article class=\"ho-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss your work pattern, equipment, meetings and preferred atmosphere.</p></article>\n        <article class=\"ho-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the room, openings, power points and existing conditions.</p></article>\n        <article class=\"ho-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Workstation position, storage and circulation come together.</p></article>\n        <article class=\"ho-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Desk, chair, lighting, finishes and storage are coordinated.</p></article>\n        <article class=\"ho-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>You receive drawings, selections and clear 3D views.</p></article>\n      </div>\n      <div class=\"ho-timeline ho-reveal\"><span>Consultation to final design package</span><strong>Typically 1–2 weeks from consultation to final design package.</strong></div>\n    </div></section>"
+ },
+ {
+  "id": "6b55847535",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ho-section ho-pricing\" id=\"home-office-pricing\"><div class=\"ho-wrap ho-pricing-grid\">\n      <div class=\"ho-reveal\"><h2>Pricing</h2><p class=\"ho-copy\">Start with a free conversation. The site visit lets us confirm the right scope and a fixed fee.</p><a class=\"ho-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"ho-reveal\"><div class=\"ho-price-panel\"><article class=\"ho-price\"><div><h3>Initial Consultation</h3><p>A first conversation about your workspace.</p></div><strong>Free</strong></article><article class=\"ho-price\"><div><h3>Design Consultation</h3><p>Focused advice for layout, comfort and direction.</p></div><strong>From around PKR 10,000</strong></article><article class=\"ho-price\"><div><h3>Full Design Package</h3><p>Based on room size and complexity.</p></div><strong>PKR 15,000–35,000</strong></article></div><p class=\"ho-price-note\">You receive an exact fixed quote after the site visit.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "2cf8d84c2f",
+  "type": "faq",
+  "html": "\n\n    <section class=\"ho-section ho-faq\" id=\"home-office-faq\"><div class=\"ho-wrap ho-faq-grid\">\n      <div class=\"ho-faq-intro ho-reveal\"><h2>Home Office Design FAQs</h2><p class=\"ho-copy\">Straight answers on space, comfort, cost and how the room can work.</p></div>\n      <div class=\"ho-faq-list ho-reveal\">\n        <div class=\"ho-faq-item\"><button class=\"ho-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How much does Home Office Design cost?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ho-faq-a\"><div><p>The initial consultation is free. Design consultation starts from around PKR 10,000, while full packages range from PKR 15,000–35,000 depending on size and complexity.</p></div></div></div>\n        <div class=\"ho-faq-item\"><button class=\"ho-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How much space is needed?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ho-faq-a\"><div><p>A compact work nook can begin at around 6×8 feet. A comfortable dedicated office is usually 10×12 feet or more.</p></div></div></div>\n        <div class=\"ho-faq-item\"><button class=\"ho-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What matters most?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ho-faq-a\"><div><p>Ergonomics, lighting and workflow layout matter most. Together they support comfort, focus and an easier working day.</p></div></div></div>\n        <div class=\"ho-faq-item\"><button class=\"ho-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How can I use a small space or spare bedroom?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ho-faq-a\"><div><p>We use fitted storage, compact desks and flexible furniture so the room works well without feeling crowded.</p></div></div></div>\n        <div class=\"ho-faq-item\"><button class=\"ho-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ho-faq-a\"><div><p>A typical home office takes 1–2 weeks from consultation to the final design package.</p></div></div></div>\n        <div class=\"ho-faq-item\"><button class=\"ho-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design for video calls and client meetings?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ho-faq-a\"><div><p>Yes. We plan flattering light, a calm camera background, acoustics and seating for occasional meetings.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Home Office Design FAQs",
+   "copy": "Straight answers on space, comfort, cost and how the room can work.",
+   "items": [
+    {
+     "q": "How much does Home Office Design cost?",
+     "a": "<p>The initial consultation is free. Design consultation starts from around PKR 10,000, while full packages range from PKR 15,000–35,000 depending on size and complexity.</p>"
+    },
+    {
+     "q": "How much space is needed?",
+     "a": "<p>A compact work nook can begin at around 6×8 feet. A comfortable dedicated office is usually 10×12 feet or more.</p>"
+    },
+    {
+     "q": "What matters most?",
+     "a": "<p>Ergonomics, lighting and workflow layout matter most. Together they support comfort, focus and an easier working day.</p>"
+    },
+    {
+     "q": "How can I use a small space or spare bedroom?",
+     "a": "<p>We use fitted storage, compact desks and flexible furniture so the room works well without feeling crowded.</p>"
+    },
+    {
+     "q": "How long does design take?",
+     "a": "<p>A typical home office takes 1–2 weeks from consultation to the final design package.</p>"
+    },
+    {
+     "q": "Do you design for video calls and client meetings?",
+     "a": "<p>Yes. We plan flattering light, a calm camera background, acoustics and seating for occasional meetings.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f3e158db2b",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ho-section ho-related\" id=\"home-office-related\"><div class=\"ho-wrap\">\n      <header class=\"ho-related-head ho-reveal\"><h2>Related Services</h2><p class=\"ho-copy\">Connect the workspace with the rest of your home or preview every detail before work begins.</p></header>\n      <div class=\"ho-related-grid ho-reveal\"><a class=\"ho-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ho-related-link\" href=\"/residential-bedroom-design/\" data-page-route=\"bedroom\"><small>02</small><strong>Bedroom Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ho-related-link\" href=\"/complete-home-redesign/\"><small>03</small><strong>Complete Home Redesign</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ho-related-link\" href=\"/3d-visualization/\" data-page-route=\"studio\"><small>04</small><strong>Woodex 3D Studio</strong><span aria-hidden=\"true\">↗</span></a></div>\n    </div></section>"
+ },
+ {
+  "id": "2e857239c8",
+  "type": "cta",
+  "html": "\n\n    <section class=\"ho-section ho-contact\" id=\"home-office-contact\"><div class=\"ho-wrap ho-contact-grid\">\n      <div class=\"ho-reveal\"><h2>Talk to Woodex</h2><p class=\"ho-copy\">Tell us where you work at home, what equipment you use and what would make the day easier.</p><div class=\"ho-contact-actions\"><a class=\"ho-btn ho-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ho-btn ho-btn-light\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"ho-contact-list ho-reveal\"><div class=\"ho-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"ho-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"ho-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"ho-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"ho-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"ho-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"ho-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us where you work at home, what equipment you use and what would make the day easier.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,94 @@
+[
+ {
+  "id": "e785cd133b",
+  "type": "hero",
+  "html": "\n<section class=\"rv-hero\"><div class=\"rv-wrap rv-hero-grid\"><div class=\"rv-hero-copy rv-reveal\"><nav class=\"rv-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/renovation/\">Renovation</a><span>&gt;</span><span>Retail &amp; Showroom Renovation</span></nav><h1>Retail &amp; Showroom Renovation</h1><p class=\"rv-copy\">Refresh an existing store without ignoring the trading calendar. Woodex plans displays, lighting, circulation and finishes around launch dates, overnight windows and the zones that must keep selling.</p><div class=\"rv-hero-actions\"><a class=\"rv-btn rv-btn-light\" href=\"#renovation-sector-contact\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div><div class=\"rv-proof\"><span><strong>Itemized BOQ</strong>Trade-by-trade clarity</span><span><strong>Phased delivery</strong>Lower disruption</span><span><strong>Existing spaces</strong>Upgrade, not first build</span></div></div><figure class=\"rv-hero-media rv-reveal\"><img src=\"/assets/img/img-c693554a31d5.webp\" alt=\"Modern retail interior representing a showroom renovation\" width=\"2048\" height=\"1024\" loading=\"lazy\" decoding=\"async\"><figcaption>Display, lighting and customer flow upgraded around trading hours</figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Retail &amp; Showroom Renovation",
+   "copy": "Refresh an existing store without ignoring the trading calendar. Woodex plans displays, lighting, circulation and finishes around launch dates, overnight windows and the zones that must keep selling.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#renovation-sector-contact",
+   "img_src": "/assets/img/img-c693554a31d5.webp",
+   "img_alt": "Modern retail interior representing a showroom renovation"
+  }
+ },
+ {
+  "id": "1b65ef5e32",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-scope\"><div class=\"rv-wrap rv-intro-grid\"><div class=\"rv-intro-aside rv-reveal\"><h2>What the scope can include</h2><p class=\"rv-copy\">A condition survey decides what should be retained, repaired or replaced.</p><div class=\"rv-intro-note\"><strong>Trading comes first</strong><span>Overnight, closed-day or zone-by-zone work protects customer access and sales.</span></div></div><div class=\"rv-service-list rv-reveal\"><div class=\"rv-service\"><b>01</b><strong>Store layout refresh</strong><span>Improve customer flow, product zoning and service positions within the existing unit.</span></div><div class=\"rv-service\"><b>02</b><strong>Display upgrades</strong><span>Replace or rework shelving, wall systems, counters and feature displays.</span></div><div class=\"rv-service\"><b>03</b><strong>Lighting improvements</strong><span>Retune ambient, accent and product lighting for the refreshed merchandise plan.</span></div><div class=\"rv-service\"><b>04</b><strong>Brand-store update</strong><span>Carry revised colours, finishes, graphics and touchpoints through the space.</span></div><div class=\"rv-service\"><b>05</b><strong>Floor and ceiling works</strong><span>Renew high-wear surfaces without unnecessary replacement elsewhere.</span></div><div class=\"rv-service\"><b>06</b><strong>Back-of-house upgrades</strong><span>Improve storage, staff areas, cash points and operational support zones.</span></div></div></div></section>"
+ },
+ {
+  "id": "527e0ef9d5",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-process\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>A process shaped for retail &amp; showroom renovation</h2><p class=\"rv-copy\">Survey, scope, BOQ and phasing are agreed before disruptive work starts.</p></header><div class=\"rv-steps rv-reveal\"><article class=\"rv-step\"><b>01</b><h3>Trading audit</h3><p>Map customer routes, peak hours, stock moves and safe work zones.</p></article><article class=\"rv-step\"><b>02</b><h3>Refresh plan</h3><p>Resolve what stays, what changes and the visual priorities.</p></article><article class=\"rv-step\"><b>03</b><h3>Sample and BOQ</h3><p>Approve finishes, display details and itemized quantities.</p></article><article class=\"rv-step\"><b>04</b><h3>Out-of-hours works</h3><p>Use overnight, closed-day or zoned execution where practical.</p></article><article class=\"rv-step\"><b>05</b><h3>Merchandise-ready handover</h3><p>Test lighting, clean the zone and return it ready for display.</p></article></div></div></section>"
+ },
+ {
+  "id": "e33c86d02c",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-pricing\"><div class=\"rv-wrap rv-pricing-grid\"><div class=\"rv-reveal\"><h2>Indicative renovation pricing</h2><p class=\"rv-copy\">These planning ranges come from comparable Woodex renovation scopes. The exact quote follows a site survey.</p><p class=\"rv-price-note\">Price varies with condition, materials, services, size and the number of delivery phases.</p><a class=\"rv-btn\" href=\"#renovation-sector-contact\">Request a survey + BOQ</a></div><div class=\"rv-price-panel rv-reveal\"><div class=\"rv-price-row\"><strong>500–1,000 sq. ft. retail</strong><span>PKR 1M–2.5M</span></div><div class=\"rv-price-row\"><strong>Focused room or zone</strong><span>PKR 400K–1.5M</span></div></div></div></section>"
+ },
+ {
+  "id": "945824946e",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Choose the right starting point</h2><p class=\"rv-copy\">Renovation improves an existing space. Fit-out creates a finished space from a shell, while interior design resolves the plan and 3D direction.</p></header><div class=\"rv-choice-grid rv-reveal\"><article class=\"rv-choice is-current\"><small>This page</small><h3>Renovation</h3><p>Survey, repair, upgrade and phased delivery for a space that already exists.</p></article><article class=\"rv-choice\"><small>Design + build</small><h3>Fit-Out</h3><p>Complete a shell or unfinished space for first occupation.</p><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rv-choice\"><small>Design + 3D</small><h3>Interior Design</h3><p>Resolve layouts, materials, lighting and visualization before build.</p><a href=\"/interior-design/\" data-page-route=\"interior\">Explore Interior Design</a></article></div></div></section>"
+ },
+ {
+  "id": "8887293a0f",
+  "type": "faq",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-faq\"><div class=\"rv-wrap rv-faq-grid\"><div class=\"rv-faq-intro rv-reveal\"><h2>Retail &amp; Showroom Renovation FAQs</h2><p class=\"rv-copy\">Six practical answers before survey, costing and site work.</p></div><div class=\"rv-faq-list rv-reveal\"><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"true\"><span>Can the store keep trading during renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Often, yes. We can plan overnight, closed-day or zone-by-zone work depending on access and safety.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you renovate existing displays?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. Suitable displays can be retained, refinished or reconfigured, while new joinery is added where needed.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can lighting be upgraded without a full renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. A targeted lighting and ceiling scope can be delivered as a specialized upgrade.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you coordinate branding and signage?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>We coordinate the interior brand touchpoints and signage locations included in the approved scope.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does a retail renovation take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>A focused refresh may take one to three weeks. Full store remodeling depends on area, services and trading restrictions.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How is the price controlled?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>The BOQ lists display work, finishes, services and phasing so the trading plan and cost are agreed together.</p></div></div></div></div></div></section>",
+  "fields": {
+   "heading": "Retail &amp; Showroom Renovation FAQs",
+   "copy": "Six practical answers before survey, costing and site work.",
+   "items": [
+    {
+     "q": "Can the store keep trading during renovation?",
+     "a": "<p>Often, yes. We can plan overnight, closed-day or zone-by-zone work depending on access and safety.</p>"
+    },
+    {
+     "q": "Do you renovate existing displays?",
+     "a": "<p>Yes. Suitable displays can be retained, refinished or reconfigured, while new joinery is added where needed.</p>"
+    },
+    {
+     "q": "Can lighting be upgraded without a full renovation?",
+     "a": "<p>Yes. A targeted lighting and ceiling scope can be delivered as a specialized upgrade.</p>"
+    },
+    {
+     "q": "Do you coordinate branding and signage?",
+     "a": "<p>We coordinate the interior brand touchpoints and signage locations included in the approved scope.</p>"
+    },
+    {
+     "q": "How long does a retail renovation take?",
+     "a": "<p>A focused refresh may take one to three weeks. Full store remodeling depends on area, services and trading restrictions.</p>"
+    },
+    {
+     "q": "How is the price controlled?",
+     "a": "<p>The BOQ lists display work, finishes, services and phasing so the trading plan and cost are agreed together.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "5cfe875a78",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Explore related renovation sectors</h2><p class=\"rv-copy\">Every sector follows the same standard: condition-led scope, itemized pricing and a practical delivery plan.</p></header><nav class=\"rv-related-grid rv-reveal\" aria-label=\"Related renovation sectors\"><a class=\"rv-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>Renovation hub</small><strong>All Renovation Services</strong></a><a class=\"rv-related-link\" href=\"/office-renovation/\" data-renovation-sector=\"office\"><small>Related sector</small><strong>Office Renovation</strong></a><a class=\"rv-related-link\" href=\"/commercial-renovation/\" data-renovation-sector=\"commercial\"><small>Related sector</small><strong>Commercial Renovation</strong></a><a class=\"rv-related-link\" href=\"/healthcare-renovation/\" data-renovation-sector=\"healthcare\"><small>Related sector</small><strong>Healthcare Renovation</strong></a><a class=\"rv-related-link\" href=\"/restaurant-cafe-renovation/\" data-renovation-sector=\"restaurant\"><small>Related sector</small><strong>Restaurant &amp; Café Renovation</strong></a><a class=\"rv-related-link\" href=\"/residential-renovation/\" data-renovation-sector=\"residential\"><small>Related sector</small><strong>Residential Renovation</strong></a><a class=\"rv-related-link\" href=\"/specialized-renovation-services/\" data-renovation-sector=\"specialized\"><small>Related sector</small><strong>Specialized Services</strong></a></nav></div></section>"
+ },
+ {
+  "id": "31f280ef69",
+  "type": "cta",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-contact\"><div class=\"rv-wrap rv-contact-grid\"><div class=\"rv-reveal\"><h2>Talk to Woodex</h2><p class=\"rv-copy\">Tell us the store area, trading hours, launch date and the displays or finishes that need to change.</p><div class=\"rv-contact-actions\"><a class=\"rv-btn rv-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Retail%20%26%20Showroom%20Renovation%20Consultation\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"rv-contact-list rv-reveal\"><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rv-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rv-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"rv-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"rv-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us the store area, trading hours, launch date and the displays or finishes that need to change.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Retail%20%26%20Showroom%20Renovation%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

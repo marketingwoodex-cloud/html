@@ -1,0 +1,164 @@
+# ci/verify.yml — the CI definition for this repository.
+#
+# WHY IT LIVES HERE AND NOT IN .github/workflows/:
+# the automation identity that pushes this branch does not carry the `workflows` permission, so
+# GitHub refuses to accept a file under .github/workflows/ at all ("refusing to allow a GitHub App
+# to create or update workflow … without `workflows` permission"). Rather than drop the CI work, the
+# definition ships here — one file, reviewed with the code it tests — and is enabled by either:
+#
+#   1. Actions → New workflow → "set up a workflow yourself", then paste this file, or
+#   2. locally:  mkdir -p .github/workflows && cp ci/verify.yml .github/workflows/verify.yml
+#      then commit with an account that has the workflows scope, or
+#   3. `gh workflow create` from a token with `workflow` scope.
+#
+# Everything below is a copy of what should run; keep the two in sync if you move it.
+
+name: verify
+
+# Master plan §11, Phase 1: "CI — npm run verify + PHP lint + migration dry-run on every push."
+#
+# The three jobs mirror the three ways this tree can break:
+#   · the prototype stops building or a screen stops rendering  → prototype
+#   · the PHP stops parsing, or an API invariant regresses       → platform
+#   · the migrations stop being applicable, or drift             → migrations
+#
+# `pull_request` is deliberately not restricted to branches: every PR into main must pass, and the
+# checks are meant to be required on main.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prototype:
+    name: Prototype — typecheck, render, build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: admin-v25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: admin-v25/package-lock.json
+      - run: npm ci
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Render every route (SSR smoke)
+        run: npm run smoke
+      - name: Production build
+        run: npm run build
+      - name: Bundle budget
+        run: |
+          # The plan sets a budget; a regression here is a product decision, not a detail.
+          limit_kb=700
+          total_kb=$(du -sk dist/assets | cut -f1)
+          echo "dist/assets is ${total_kb} kB (budget ${limit_kb} kB)"
+          if [ "$total_kb" -gt "$limit_kb" ]; then
+            echo "::error::bundle grew past the ${limit_kb} kB budget (${total_kb} kB)"
+            exit 1
+          fi
+
+  platform:
+    name: Platform — PHP lint, structure, conformance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: tools/phplint/package-lock.json
+      - name: Install php-parser
+        run: npm --prefix tools/phplint install --no-audit --no-fund
+      - name: PHP lint (PHP 8 grammar, every .php in the tree)
+        run: node tools/phplint/php-lint.mjs
+      - name: Generated artefacts are current
+        run: |
+          node tools/gen-aliases.mjs --check
+          node tools/gen-caps.mjs --check
+      - name: Structural conformance (routes, envelope, auth, safety, migrations)
+        run: node tests/conformance.mjs
+
+  php-tests:
+    name: Platform — behavioural tests (real PHP)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, json, openssl, pdo_mysql
+          coverage: none
+      - name: Behavioural tests (no database required)
+        run: php tests/run.php --verbose
+
+  migrations:
+    name: Migrations — syntax, guards, dry run
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: woodex_ci
+        ports: ["3306:3306"]
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: pdo_mysql, mbstring, json
+          coverage: none
+
+      - name: Provision a fresh database from the shipped dump
+        run: |
+          mysql -h 127.0.0.1 -uroot -proot woodex_ci < frontend-v1/_database/woodex-v20.sql
+          # The dump seeds a default admin login; CI deletes it so the suite never sees one and so a
+          # regression that re-adds it is caught by the conformance job rather than relied upon here.
+          mysql -h 127.0.0.1 -uroot -proot woodex_ci -e "DELETE FROM wx_users WHERE email='admin';"
+
+      - name: Point the platform at it
+        run: |
+          mkdir -p _private
+          printf '%s\n' '{"host":"127.0.0.1","name":"woodex_ci","user":"root","pass":"root"}' > _private/db.json
+          printf '%s\n' 'Require all denied' > _private/.htaccess
+
+      - name: Dry run — every migration must plan without touching the database
+        run: php db/migrate.php --dry-run
+
+      - name: Apply — then apply again, because a migration must be re-runnable
+        run: |
+          php db/migrate.php
+          php db/migrate.php
+
+      - name: Verify — nothing pending, nothing edited after being applied
+        run: php db/migrate.php --verify
+
+      - name: The platform answers against a migrated database
+        run: php tests/run.php --db --verbose
+
+      - name: A signed-in round trip through the real front controller
+        run: php tests/roundtrip.php
+
+      - name: The Phase 2 money path — a lead quoted, approved, invoiced and paid
+        run: php tests/money-path.php
+
+      - name: Moving the receipts out of the invoice JSON is repeatable
+        run: |
+          # No v2.1-era receipts exist in a fresh dump, so this proves the script runs clean and
+          # idempotently — the dry run reports zero to copy rather than failing on an empty table.
+          php db/backfill_payments.php --dry-run
+          php db/backfill_payments.php --verify

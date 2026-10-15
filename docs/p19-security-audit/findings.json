@@ -1,0 +1,773 @@
+[
+  {
+    "verdict": "confirmed",
+    "fingerprint": "woodex/p19/backup-restore-writes-private",
+    "title": "Backup restore can overwrite _private/ secrets and .htaccess files, letting an Admin take over the Owner account",
+    "description": "An Admin (not Owner) can upload a .zip with backup_up and restore it with backup_restore. a7_restore skips only api/admin/builder folders and script extensions; it writes any other path, including _private/config.json (the HMAC secret for all login tokens), _private/security.json (session list) and any .htaccess. With a known secret and session the Admin can mint a valid X-WX-ADM token for the Owner's user id; pw_ver is available from the Admin-only database download.",
+    "root_cause": "The restore allow-list is a deny-list that omits _private/ and .htaccess.",
+    "intended_behavior": "Uploaded backups must not plant code or change secrets/sessions (the code comment states 'uploaded backups can't plant scripts'), and Admins must not gain Owner powers.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/media-lib.php",
+        "line": 92,
+        "scope": "media_raw backup_up",
+        "description": "Admin uploads any zip containing index.html."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/media-lib.php",
+        "line": 282,
+        "scope": "media_actions backup_restore",
+        "description": "Admin restores the uploaded zip."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/media-lib.php",
+        "line": 116,
+        "scope": "a7_restore",
+        "description": "Deny-list skips only ../, api|admin|builder and script extensions."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/admin.php",
+        "line": 33,
+        "scope": "bsecret",
+        "description": "Token secret read from _private/config.json, now attacker-chosen."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/api/admin.php",
+        "line": 80,
+        "scope": "current_user",
+        "description": "Token accepted when HMAC (with the secret) and session in security.json match."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/security-lib.php",
+        "line": 26,
+        "description": "sec_session_ok trusts _private/security.json."
+      },
+      {
+        "file": "frontend-v1/api/media-lib.php",
+        "line": 88,
+        "description": "backup_up/db_dl/db_up allowed for owner and admin."
+      }
+    ],
+    "conditions": [
+      {
+        "kind": "authorization_role",
+        "description": "Attacker holds an Admin account (lower than Owner)."
+      }
+    ],
+    "execution": {
+      "attacker_perspective": "Signed-in Admin user.",
+      "payloads": [
+        "zip: index.html, _private/config.json {\"secret\":\"<known>\",\"password_hash\":\"...\"}, _private/security.json {\"1\":{\"sessions\":[{\"sid\":\"0123456789abcdef\",\"exp\":9999999999}]}}"
+      ],
+      "instructions": [
+        "On a local test install, POST the zip to admin.php?action=backup_up as Admin.",
+        "Call backup_restore with the returned name.",
+        "Compute HMAC('adm|1|exp|pw_ver|sid', known secret) and call admin.php?action=users with that token."
+      ],
+      "observed_result": "Source trace shows the files are written and the forged token passes current_user() (not executed: no PHP runtime)."
+    },
+    "remediation": {
+      "strategy": "Restore only an explicit allow-list: public pages and assets (html, css, js, images, fonts) outside _private/, api/, admin/, builder/; never write any file named .htaccess or .user.ini; restrict backup_up/backup_restore/db_up to Owner.",
+      "code_changes": [
+        {
+          "file_name": "frontend-v1/api/media-lib.php",
+          "fixed_code": "if (preg_match('~(^|/)(_private|api|admin|builder)/~', $n) || preg_match('~(^|/)\\.(htaccess|user\\.ini)$~i', $n) || !preg_match('~\\.(html|css|js|webp|jpe?g|png|gif|svg|woff2?|json|xml|txt)$~i', $n)) continue;"
+        }
+      ]
+    },
+    "severity": {
+      "likelihood": {
+        "score": "medium",
+        "reason": "Needs a malicious or compromised Admin account."
+      },
+      "impact": {
+        "score": "high",
+        "reason": "Full Owner takeover and arbitrary site configuration; with .htaccess handler changes, server-side code execution is likely on Apache/LiteSpeed."
+      },
+      "overall_severity": "high"
+    },
+    "confidence": {
+      "score": "medium",
+      "reason": "Source path is direct; not executed because the sandbox has no PHP runtime."
+    }
+  },
+  {
+    "verdict": "confirmed",
+    "fingerprint": "woodex/p19/db-restore-users-table",
+    "title": "Database restore lets an Admin replace the users table, including the Owner's password",
+    "description": "db_up is allowed for Admin and restores every wx_ table, including wx_users. An Admin can upload a dump in which the Owner row has a password hash they know, then sign in as Owner. user_save explicitly forbids Admins from editing the Owner.",
+    "root_cause": "a7_db_restore has no exclusion for identity tables and the action is not Owner-only.",
+    "intended_behavior": "Only the Owner can change the Owner account (admin.php enforces this in user_save).",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/media-lib.php",
+        "line": 103,
+        "scope": "media_raw db_up",
+        "description": "Admin uploads a JSON dump."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/api/media-lib.php",
+        "line": 80,
+        "scope": "a7_db_restore",
+        "description": "DELETE + INSERT for every listed wx_ table, wx_users included."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/admin.php",
+        "line": 360,
+        "description": "user_save: 'Only the owner can edit the owner'."
+      }
+    ],
+    "conditions": [
+      {
+        "kind": "authorization_role",
+        "description": "Attacker holds an Admin account."
+      }
+    ],
+    "execution": {
+      "attacker_perspective": "Signed-in Admin.",
+      "payloads": [
+        "{\"tables\":{\"wx_users\":[{\"id\":1,\"name\":\"Owner\",\"email\":\"owner@example.com\",\"role\":\"owner\",\"pass_hash\":\"<bcrypt of known pw>\",\"active\":1,\"pw_ver\":9,\"created_at\":\"2026-01-01 00:00:00\"}]}}"
+      ],
+      "instructions": [
+        "On a local install, POST the dump to admin.php?action=db_up as Admin.",
+        "Sign in as owner@example.com with the known password."
+      ],
+      "observed_result": "Source trace shows wx_users is replaced (not executed: no PHP runtime)."
+    },
+    "remediation": {
+      "strategy": "Make db_up, backup_up and backup_restore Owner-only, and when restoring as non-Owner skip wx_users (and keep current pw_ver/pass_hash).",
+      "code_changes": [
+        {
+          "file_name": "frontend-v1/api/media-lib.php",
+          "fixed_code": "$u = current_user(); if (!$u || $u['role'] !== 'owner') fail('Only the owner can restore', 403);"
+        }
+      ]
+    },
+    "severity": {
+      "likelihood": {
+        "score": "medium",
+        "reason": "Requires an Admin account."
+      },
+      "impact": {
+        "score": "high",
+        "reason": "Owner account takeover, defeating the explicit Owner-only control."
+      },
+      "overall_severity": "high"
+    },
+    "confidence": {
+      "score": "high",
+      "reason": "Straight-line source."
+    }
+  },
+  {
+    "verdict": "confirmed",
+    "fingerprint": "woodex/p19/editor-script-in-admin-preview",
+    "title": "An Editor can save a script into a public page that runs inside the Owner's admin tab through unsandboxed preview iframes",
+    "description": "Editors may save any page HTML through builder.php save (only editor markers are rejected). Admin screens load live pages in same-origin iframes with no sandbox (header/footer editor loads '/', maintenance screen loads page thumbnails). A script in the page then runs with the admin origin, can read sessionStorage 'wxaTok' or call parent.WXA.api() as the Owner (e.g. user_save to promote the Editor).",
+    "root_cause": "Untrusted-role HTML is rendered same-origin and unsandboxed inside the privileged admin UI.",
+    "intended_behavior": "Editors manage content but must not obtain Owner/Admin authority.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/builder.php",
+        "line": 202,
+        "scope": "builder.php save",
+        "description": "Editor saves arbitrary page HTML."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/builder.php",
+        "line": 207,
+        "scope": "builder.php save",
+        "description": "Only contenteditable/data-wx-ed markers are rejected; <script> is allowed."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/admin/admin-chrome.js",
+        "line": 172,
+        "scope": "header/footer editor",
+        "description": "iframe src='/' without sandbox inside the admin page."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/admin/admin-p18h.js",
+        "line": 43,
+        "scope": "maintenance screen",
+        "description": "iframes of public pages without sandbox."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/admin/admin.js",
+        "line": 8,
+        "description": "Admin token lives in sessionStorage of the admin tab, shared with same-origin iframes."
+      },
+      {
+        "file": "frontend-v1/api/builder.php",
+        "line": 78,
+        "description": "Editor role is allowed to edit pages."
+      }
+    ],
+    "conditions": [
+      {
+        "kind": "authorization_role",
+        "description": "Attacker holds an Editor account."
+      },
+      {
+        "kind": "user_interaction",
+        "description": "Owner opens Header & footer or Maintenance in Admin."
+      }
+    ],
+    "execution": {
+      "attacker_perspective": "Signed-in Editor.",
+      "payloads": [
+        "<script>parent.WXA&&parent.WXA.api('user_save',{id:EDITOR_ID,name:'e',email:'e@x.test',role:'admin',active:1})</script>"
+      ],
+      "instructions": [
+        "On a local install, save the payload into index.html as an Editor.",
+        "Sign in as Owner and open Website → Header & footer.",
+        "Check the Editor's role."
+      ],
+      "observed_result": "Source trace shows the iframe executes same-origin script with access to parent.WXA (not executed in this run)."
+    },
+    "remediation": {
+      "strategy": "Add sandbox=\"allow-same-origin\" without allow-scripts to admin preview iframes (or render previews from a separate origin), and strip <script>/on* attributes from Editor saves unless the user is Owner/Admin.",
+      "code_changes": [
+        {
+          "file_name": "frontend-v1/admin/admin-chrome.js",
+          "fixed_code": "<iframe id=\"hf-frame\" sandbox=\"allow-same-origin\" src=\"/\" ...>"
+        },
+        {
+          "file_name": "frontend-v1/admin/admin-p18h.js",
+          "fixed_code": "<iframe sandbox loading=\"lazy\" ...>"
+        }
+      ]
+    },
+    "severity": {
+      "likelihood": {
+        "score": "low",
+        "reason": "Needs a malicious Editor and an Owner visit to the preview screen."
+      },
+      "impact": {
+        "score": "high",
+        "reason": "Editor gains Owner/Admin powers (users, settings, backups)."
+      },
+      "overall_severity": "medium"
+    },
+    "confidence": {
+      "score": "medium",
+      "reason": "Source path is clear; behaviour depends on the admin screens actually being opened."
+    }
+  },
+  {
+    "verdict": "confirmed",
+    "fingerprint": "woodex/p19/forms-autoreply-relay",
+    "title": "Public form sends Woodex-branded WhatsApp and email auto-replies to any number/address, and form=whatsapp skips the spam check",
+    "description": "An anonymous visitor can POST to /api/forms.php with any phone and email. The handler saves the lead and immediately calls notify_client('lead'), which sends the 'Enquiry received' message from the business WhatsApp Cloud API number and SMTP mailbox to the supplied phone and email, with the visitor-chosen {name} inside. Sending form=whatsapp bypasses Turnstile entirely; only a 5-per-10-minute per-IP limit remains.",
+    "root_cause": "Outbound auto-reply is triggered by unauthenticated, unverified contact details, and the Turnstile check is skipped for the 'whatsapp' form value that any caller can choose.",
+    "intended_behavior": "Only real enquirers should receive auto-replies; anti-bot checks should not be bypassable by choosing a request field value.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/forms.php",
+        "line": 66,
+        "scope": "forms.php top-level POST handler",
+        "description": "Turnstile verification is skipped when form === 'whatsapp' (caller-controlled)."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/forms.php",
+        "line": 90,
+        "scope": "forms.php top-level POST handler",
+        "description": "notify_client('lead', name, phone, email) is called for every saved enquiry."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/notify-lib.php",
+        "line": 52,
+        "scope": "notify_client",
+        "description": "wa_text() sends the reply from the business WhatsApp number to the caller-supplied phone."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/api/notify-lib.php",
+        "line": 57,
+        "scope": "notify_client",
+        "description": "smtp_send() sends the reply to the caller-supplied email address."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/notify-lib.php",
+        "line": 12,
+        "description": "The 'lead' auto-reply event is on by default."
+      },
+      {
+        "file": "frontend-v1/api/forms.php",
+        "line": 61,
+        "description": "Only rate limit is 5 per 10 minutes keyed on REMOTE_ADDR."
+      }
+    ],
+    "conditions": [
+      {
+        "kind": "authentication_level",
+        "description": "None: public endpoint."
+      },
+      {
+        "kind": "system_configuration",
+        "description": "WhatsApp Cloud API and/or SMTP configured (the owner's intended production state)."
+      },
+      {
+        "kind": "network_routing",
+        "description": "Attacker rotates IP addresses to exceed 5 messages per 10 minutes."
+      }
+    ],
+    "execution": {
+      "attacker_perspective": "Anonymous internet user with no account.",
+      "payloads": [
+        "{\"form\":\"whatsapp\",\"name\":\"<attacker text>\",\"phone\":\"<victim phone>\",\"email\":\"<victim email>\",\"message\":\"x\"}"
+      ],
+      "instructions": [
+        "Send the payload as JSON POST to /api/forms.php on a local test install with dummy WhatsApp/SMTP credentials.",
+        "Observe notify_client() attempts one WhatsApp and one email send to the supplied victim contacts."
+      ],
+      "observed_result": "Source trace shows the WhatsApp/email send is reached for arbitrary recipients with no Turnstile check on the whatsapp form path (not executed: no PHP runtime in the audit sandbox)."
+    },
+    "remediation": {
+      "strategy": "Do not auto-reply on the public path without verification: require Turnstile for every form including 'whatsapp' when a secret is set, and send the auto-reply only by WhatsApp template after the team confirms, or cap auto-replies per destination number/email per day.",
+      "code_changes": [
+        {
+          "file_name": "frontend-v1/api/forms.php",
+          "fixed_code": "if ($cfg['tsSecret'] !== '') { /* verify Turnstile for every form */ }\n// before notify_client: skip if this phone/email already got an auto-reply in the last 24h\n"
+        }
+      ]
+    },
+    "severity": {
+      "likelihood": {
+        "score": "medium",
+        "reason": "Public endpoint, trivially scripted; per-IP limit only slows it."
+      },
+      "impact": {
+        "score": "medium",
+        "reason": "Abuses the business's WhatsApp/email identity for spam/phishing with attacker-chosen name text and spends paid WhatsApp conversations; can get the number flagged by Meta."
+      },
+      "overall_severity": "medium"
+    },
+    "confidence": {
+      "score": "high",
+      "reason": "Direct source path with no intervening checks; default config enables it."
+    }
+  },
+  {
+    "verdict": "confirmed",
+    "fingerprint": "woodex/p19/import-url-redirect-ssrf",
+    "title": "Image import checks the first URL but follows redirects to private addresses",
+    "description": "builder.php import_url validates the host and resolved IP, then fetches with follow_location=1 and max_redirects=3, so a public URL that redirects to an internal address is fetched by the server. Only image content is kept, so impact is limited to blind requests and image retrieval.",
+    "root_cause": "Redirect targets are not re-validated.",
+    "intended_behavior": "Only public https images may be fetched (fetch_page already refuses redirects).",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/builder.php",
+        "line": 261,
+        "scope": "builder.php import_url",
+        "description": "Editor supplies a URL."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/builder.php",
+        "line": 266,
+        "scope": "builder.php import_url",
+        "description": "Private-range check on the first host only."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/api/builder.php",
+        "line": 267,
+        "scope": "builder.php import_url",
+        "description": "file_get_contents with follow_location=1."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/builder.php",
+        "line": 267,
+        "description": "follow_location => 1, max_redirects => 3"
+      }
+    ],
+    "conditions": [
+      {
+        "kind": "authorization_role",
+        "description": "Editor or higher."
+      },
+      {
+        "kind": "environmental_dependency",
+        "description": "An internal HTTP service reachable from the host."
+      }
+    ],
+    "execution": {
+      "attacker_perspective": "Signed-in Editor.",
+      "payloads": [
+        "https://attacker.example/r -> 302 Location: http://127.0.0.1:8080/x.png"
+      ],
+      "instructions": [
+        "Locally, serve a 302 to a loopback image and call import_url with the public URL."
+      ],
+      "observed_result": "Source trace: redirect followed without a second check (not executed)."
+    },
+    "remediation": {
+      "strategy": "Set follow_location to 0 like fetch_page, or resolve and re-check each hop.",
+      "code_changes": [
+        {
+          "file_name": "frontend-v1/api/builder.php",
+          "fixed_code": "'follow_location' => 0"
+        }
+      ]
+    },
+    "severity": {
+      "likelihood": {
+        "score": "low",
+        "reason": "Needs an Editor account and a reachable internal service."
+      },
+      "impact": {
+        "score": "low",
+        "reason": "Blind requests and image-only reads from the hosting network."
+      },
+      "overall_severity": "low"
+    },
+    "confidence": {
+      "score": "high",
+      "reason": "Options are visible in source."
+    }
+  },
+  {
+    "verdict": "needs_validation",
+    "fingerprint": "woodex/p19/public-ai-chat-spend",
+    "title": "Public chat can drive paid AI calls at 40 messages per 15 minutes per IP",
+    "description": "Anonymous visitors trigger chat_ai_reply on each message; the only limit is per IP. Whether this creates meaningful spend depends on the provider plan and real traffic.",
+    "claimed_root_cause": "Per-IP limit only; no global daily cap on AI replies.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/chat.php",
+        "line": 40,
+        "scope": "chat.php send",
+        "description": "vlimit(40, 900) per IP."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/api/chat-lib.php",
+        "line": 143,
+        "scope": "chat_ai_reply",
+        "description": "Calls the configured AI provider."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/chat.php",
+        "line": 40,
+        "description": "Per-IP limit only."
+      }
+    ],
+    "blockers": [
+      "The AI provider, pricing plan and any provider-side spending cap are configured outside the repository."
+    ],
+    "validation_plan": {
+      "local": "Count AI calls made for 200 messages from rotating dummy IPs on a local install with a mock provider.",
+      "deployment": "Check the AI provider dashboard for a monthly spending cap and set one."
+    }
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-chat-idor",
+    "title": "Visitors can read other chats by id",
+    "description": "chat_id is sequential.",
+    "claimed_root_cause": "chat_id is sequential.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/chat.php",
+        "line": 24,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/chat.php",
+        "line": 24,
+        "description": "Each chat needs a 160-bit random token compared by hash_equals."
+      }
+    ],
+    "reason": "Each chat needs a 160-bit random token compared by hash_equals."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-cron-empty-key",
+    "title": "wa-cron runs with an empty key",
+    "description": "hash_equals('', '') would pass.",
+    "claimed_root_cause": "hash_equals('', '') would pass.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/p18g-lib.php",
+        "line": 17,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/p18g-lib.php",
+        "line": 17,
+        "description": "cronKey is always generated as 24 random hex characters."
+      }
+    ],
+    "reason": "cronKey is always generated as 24 random hex characters."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-csrf",
+    "title": "Admin actions vulnerable to CSRF",
+    "description": "Cross-site requests could trigger admin actions.",
+    "claimed_root_cause": "Cross-site requests could trigger admin actions.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/admin.php",
+        "line": 82,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/admin.php",
+        "line": 82,
+        "description": "Auth uses a custom X-WX-ADM header, which cross-site forms cannot send."
+      }
+    ],
+    "reason": "Auth uses a custom X-WX-ADM header, which cross-site forms cannot send."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-db-reconnect",
+    "title": "db_reconnect lets anyone repoint the database",
+    "description": "Unauthenticated db_reconnect could point the site at an attacker database.",
+    "claimed_root_cause": "Unauthenticated db_reconnect could point the site at an attacker database.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/admin.php",
+        "line": 266,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/admin.php",
+        "line": 266,
+        "description": "Requires the builder password and only works while the saved connection is broken."
+      }
+    ],
+    "reason": "Requires the builder password and only works while the saved connection is broken."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-mail-header-injection",
+    "title": "Visitor name injects email headers",
+    "description": "Lead name is placed in the alert subject.",
+    "claimed_root_cause": "Lead name is placed in the alert subject.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/crm-lib.php",
+        "line": 60,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/crm-lib.php",
+        "line": 60,
+        "description": "Subject is base64 MIME-encoded; recipients are validated emails."
+      }
+    ],
+    "reason": "Subject is base64 MIME-encoded; recipients are validated emails."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-quote-link-guess",
+    "title": "Quotation links are guessable",
+    "description": "Quote ids are sequential.",
+    "claimed_root_cause": "Quote ids are sequential.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/quote-view.php",
+        "line": 21,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/quote-view.php",
+        "line": 21,
+        "description": "Link needs an HMAC token tied to the quote."
+      }
+    ],
+    "reason": "Link needs an HMAC token tied to the quote."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-redirect-htaccess",
+    "title": "Redirect rules inject .htaccess directives",
+    "description": "Redirect from/to go into .htaccess.",
+    "claimed_root_cause": "Redirect from/to go into .htaccess.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/redirects-lib.php",
+        "line": 30,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/redirects-lib.php",
+        "line": 30,
+        "description": "Strict character allow-lists without spaces or newlines."
+      }
+    ],
+    "reason": "Strict character allow-lists without spaces or newlines."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "woodex/p19/rej-upload-exec",
+    "title": "Chat/media uploads can run PHP",
+    "description": "Visitors upload files to /assets/uploads.",
+    "claimed_root_cause": "Visitors upload files to /assets/uploads.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/chat-lib.php",
+        "line": 71,
+        "scope": "checked",
+        "description": "Location of the control that disproves the claim."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/chat-lib.php",
+        "line": 71,
+        "description": "Type sniffed from bytes, server-chosen extension, random name, and uploads/.htaccess turns PHP off."
+      }
+    ],
+    "reason": "Type sniffed from bytes, server-chosen extension, random name, and uploads/.htaccess turns PHP off."
+  },
+  {
+    "verdict": "confirmed",
+    "fingerprint": "woodex/p19/whatsapp-webhook-fail-open",
+    "title": "WhatsApp webhook accepts unsigned events until the App secret is saved",
+    "description": "api/whatsapp.php verifies X-Hub-Signature-256 only when waSecret is non-empty. Before the owner saves the Meta App secret, anyone can POST forged webhook bodies that opt customers out of campaigns, create fake chats and leads with attacker text, fake delivery receipts, and trigger AI/WhatsApp replies.",
+    "root_cause": "Signature verification fails open when the secret is unset.",
+    "intended_behavior": "Webhook events must be rejected unless they carry a valid Meta signature.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "frontend-v1/api/whatsapp.php",
+        "line": 24,
+        "scope": "whatsapp.php top-level",
+        "description": "Signature check is wrapped in if (waSecret !== '')."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/p18g-lib.php",
+        "line": 192,
+        "scope": "wag_webhook",
+        "description": "STOP text adds the sender phone to the campaign opt-out list."
+      },
+      {
+        "kind": "propagation",
+        "file": "frontend-v1/api/whatsapp.php",
+        "line": 44,
+        "scope": "whatsapp.php top-level",
+        "description": "Each forged message is processed by wa_incoming (creates chat + lead)."
+      },
+      {
+        "kind": "sink",
+        "file": "frontend-v1/api/whatsapp.php",
+        "line": 78,
+        "scope": "wa_incoming",
+        "description": "AI reply sent via wa_text to the forged sender."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "frontend-v1/api/whatsapp.php",
+        "line": 33,
+        "description": "wag_webhook runs even when the AI agent is off."
+      }
+    ],
+    "conditions": [
+      {
+        "kind": "system_configuration",
+        "description": "Meta App secret not yet saved in Admin (WhatsApp setup not finished, which is the current state)."
+      },
+      {
+        "kind": "authentication_level",
+        "description": "None."
+      }
+    ],
+    "execution": {
+      "attacker_perspective": "Anonymous internet user.",
+      "payloads": [
+        "{\"entry\":[{\"changes\":[{\"value\":{\"messages\":[{\"id\":\"m1\",\"from\":\"923001112233\",\"type\":\"text\",\"text\":{\"body\":\"STOP\"}}]}}]}]}"
+      ],
+      "instructions": [
+        "POST the payload to /api/whatsapp.php on a local install with waSecret empty.",
+        "Check wa-automation data: 923001112233 is now opted out."
+      ],
+      "observed_result": "Source trace: no signature check runs when waSecret is empty; opt-out and chat creation are reached (not executed: no PHP runtime)."
+    },
+    "remediation": {
+      "strategy": "Reject every POST when waSecret is empty (fail closed) and show a setup warning in Admin.",
+      "code_changes": [
+        {
+          "file_name": "frontend-v1/api/whatsapp.php",
+          "fixed_code": "if ($cfg['waSecret'] === '') { http_response_code(503); exit('webhook not configured'); }\n$sig = ...; if (!hash_equals(...)) { http_response_code(401); exit; }"
+        }
+      ]
+    },
+    "severity": {
+      "likelihood": {
+        "score": "medium",
+        "reason": "Requires the secret to be unset, which is the case until setup finishes."
+      },
+      "impact": {
+        "score": "medium",
+        "reason": "Forged opt-outs silently stop campaigns to real customers; fake leads/chats pollute the CRM; paid replies can be triggered."
+      },
+      "overall_severity": "medium"
+    },
+    "confidence": {
+      "score": "high",
+      "reason": "Simple conditional in source."
+    }
+  }
+]

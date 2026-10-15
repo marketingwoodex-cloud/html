@@ -1,0 +1,24 @@
+import puppeteer from "puppeteer-core";
+const B="http://localhost:8080",OUT="/home/user/-marketingwoodex/tools/";
+const b=await puppeteer.launch({executablePath:process.cwd()+"/al/chromium",headless:"shell",args:["--no-sandbox"]});
+const a=await b.newPage(); await a.setViewport({width:1440,height:950}); const errs=[]; a.on("pageerror",e=>errs.push(e.message));
+const ok=(c,m)=>console.log((c?"PASS ":"FAIL ")+m); const w=t=>new Promise(r=>setTimeout(r,t));
+await a.goto(B+"/admin/",{waitUntil:"load"}); await a.waitForSelector("#l-email",{visible:true}); await a.type("#l-email","o@woodex.pk"); await a.type("#l-pass","Woodex@2026x"); await a.click("#l-btn"); await a.waitForSelector("#app:not([hidden])"); await w(1500);
+const tok=await a.evaluate(()=>WXA.S.token);
+const api=(ac,d)=>a.evaluate(async(ac,d,t)=>(await fetch("/api/admin.php?action="+ac,{method:"POST",headers:{"Content-Type":"application/json","X-WX-ADM":t},body:JSON.stringify({action:ac,...d})})).json(),ac,d,tok);
+const ph="0333"+String(Date.now()).slice(-7);
+const cs=await api("client_save",{name:"Central Test",phone:ph,email:"central@test.pk"}); const cid=cs.client?cs.client.id:cs.id; ok(!!cid,"client created "+(cs.error||""));
+const L=await api("lead_save",{name:"Central Test",phone:"+92 "+ph.slice(1),source:"manual"}); const lid=(L.lead||{}).id;
+const Q=await api("quote_save",{client:{name:"Central Test",phone:ph},project:"Link test",layout:"single",sections:[{name:"A",items:[{desc:"x",qty:1,unit:"job",rate:10}]}]});
+const ch=await a.evaluate(async(ph)=>(await fetch("/api/chat.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"send",name:"Central Test",phone:ph,text:"Hello, I need a kitchen design. My number is "+ph,page:"/kitchens/"})})).json(),ph);
+ok(ch.ok!==false,"chat sent "+JSON.stringify(ch).slice(0,80));
+const r=await api("clients_link",{}); ok(r.ok,"link ran "+JSON.stringify(r.linked));
+const c3=await api("client_360",{id:cid}); ok(c3.leads.some(l=>l.id===lid),"lead linked to client"); ok(c3.quotes.length>=1,"quote on client");
+const cm=await api("client_comms",{id:cid}); ok(cm.ok,"client_comms ok, chats="+(cm.chats||[]).length);
+await a.evaluate(id=>{location.hash="#/clients/"+id;},cid); await w(2500);
+const has=await a.evaluate(()=>!!document.querySelector(".s17-c3t [data-p='m']")); ok(has,"Messages tab present");
+if(has){ await a.click(".s17-c3t [data-p='m']"); await w(1500); }
+await a.screenshot({path:OUT+"p19c.png"});
+console.log("hash",await a.evaluate(()=>location.hash));
+ok(errs.length===0,"no JS errors "+errs.join("|"));
+await b.close();

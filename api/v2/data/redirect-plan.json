@@ -1,0 +1,290 @@
+[
+ {
+  "from": "/contact-us-2/",
+  "to": "/contact/",
+  "type": 301,
+  "match": "exact",
+  "src": "Google index",
+  "on": true
+ },
+ {
+  "from": "/design-planning/",
+  "to": "/interior-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Google index",
+  "on": true
+ },
+ {
+  "from": "/page/",
+  "to": "/",
+  "type": 301,
+  "match": "prefix",
+  "src": "Google index (old blog pages)",
+  "on": true
+ },
+ {
+  "from": "/services/",
+  "to": "/interior-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Old website menu",
+  "on": true
+ },
+ {
+  "from": "/service/",
+  "to": "/interior-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Old website menu",
+  "on": true
+ },
+ {
+  "from": "/studio/",
+  "to": "/about/",
+  "type": 301,
+  "match": "exact",
+  "src": "Old website menu",
+  "on": true
+ },
+ {
+  "from": "/portfolio/",
+  "to": "/projects/",
+  "type": 301,
+  "match": "exact",
+  "src": "Old website menu",
+  "on": true
+ },
+ {
+  "from": "/journal/",
+  "to": "/insights/",
+  "type": 301,
+  "match": "exact",
+  "src": "Old website menu",
+  "on": true
+ },
+ {
+  "from": "/free-consultation/",
+  "to": "/contact/",
+  "type": 301,
+  "match": "exact",
+  "src": "Old website menu",
+  "on": true
+ },
+ {
+  "from": "/interior-design/bedroom/",
+  "to": "/residential-bedroom-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/interior-design/home-office/",
+  "to": "/residential-home-office-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/interior-design/kitchen/",
+  "to": "/kitchen-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/architecture/educational/",
+  "to": "/educational-buildings-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/architecture/master-planning/",
+  "to": "/master-planning/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/renovation/residential/",
+  "to": "/residential-renovation/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/renovation/office/",
+  "to": "/office-renovation/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/renovation/commercial/",
+  "to": "/commercial-renovation/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/renovation/retail/",
+  "to": "/retail-showroom-renovation/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/commercial/restaurant/",
+  "to": "/restaurant-interior-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/commercial/beauty-salon/",
+  "to": "/beauty-salon-design/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/3d-studio/",
+  "to": "/3d-visualization/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/project-the-open-house/",
+  "to": "/projects/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/insight-layering-light/",
+  "to": "/insights/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/insights/small-rooms/",
+  "to": "/insights/small-space-ideas/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/insights/costs-in-pakistan/",
+  "to": "/insights/interior-design-cost-pakistan/",
+  "type": 301,
+  "match": "exact",
+  "src": "Redirect plan",
+  "on": true
+ },
+ {
+  "from": "/gratis-gokkasten-spelen-netent/",
+  "to": "",
+  "type": 410,
+  "match": "exact",
+  "src": "Hacked spam (Google index)",
+  "on": true
+ },
+ {
+  "from": "/777-nl-casino-nl-2025-review/",
+  "to": "",
+  "type": 410,
+  "match": "exact",
+  "src": "Hacked spam (Google index)",
+  "on": true
+ },
+ {
+  "from": "/He&/",
+  "to": "",
+  "type": 410,
+  "match": "exact",
+  "src": "Hacked spam (Google index)",
+  "on": true
+ },
+ {
+  "from": "/cgi-sys/suspendedpage.cgi/",
+  "to": "",
+  "type": 410,
+  "match": "exact",
+  "src": "Hacked spam (Google index)",
+  "on": true
+ },
+ {
+  "from": "/Figuren-itm-60842/",
+  "to": "",
+  "type": 410,
+  "match": "prefix",
+  "src": "Hacked spam (Google index)",
+  "on": true
+ },
+ {
+  "from": "/wp-admin/",
+  "to": "",
+  "type": 410,
+  "match": "prefix",
+  "src": "Old WordPress",
+  "on": true
+ },
+ {
+  "from": "/wp-content/",
+  "to": "",
+  "type": 410,
+  "match": "prefix",
+  "src": "Old WordPress",
+  "on": true
+ },
+ {
+  "from": "/wp-includes/",
+  "to": "",
+  "type": 410,
+  "match": "prefix",
+  "src": "Old WordPress",
+  "on": true
+ },
+ {
+  "from": "/feed/",
+  "to": "",
+  "type": 410,
+  "match": "prefix",
+  "src": "Old WordPress",
+  "on": true
+ },
+ {
+  "from": "/wp-login.php/",
+  "to": "",
+  "type": 410,
+  "match": "exact",
+  "src": "Old WordPress",
+  "on": true
+ },
+ {
+  "from": "/xmlrpc.php/",
+  "to": "",
+  "type": 410,
+  "match": "exact",
+  "src": "Old WordPress",
+  "on": true
+ }
+]

@@ -1,0 +1,28 @@
+node_modules/
+mcp-server/.env
+
+# Page builder private data (password hash, sessions, backups)
+frontend-v1/_private/*
+!frontend-v1/_private/.htaccess
+
+# Live install state — never commit a database credential
+api/v2/_private/
+_private/db.json
+_private/security.json
+_private/demo.json
+
+# The announcement bar: live state the console writes and the site's own script fetches
+assets/announce.json
+
+# Tooling dependencies (installed per machine; see tools/*/package.json)
+tools/phplint/node_modules/
+tools/phpwasm/node_modules/
+# php-wasm resolves its 8_2_33/php_8_2.wasm relative to the CWD, so this is a symlink into the package
+tools/phpwasm/.phpwasm/
+# React build output and the SSR smoke bundle
+admin-v25/dist/
+admin-v25/.smoke/
+
+# TypeScript build info (incremental cache)
+admin-v25/tsconfig.tsbuildinfo
+admin-v25/.smoke/

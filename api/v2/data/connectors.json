@@ -1,0 +1,278 @@
+{
+  "source": "frontend-v1/admin/admin-conn.js",
+  "tabs": [
+    {
+      "id": "f",
+      "label": "Featured"
+    },
+    {
+      "id": "b",
+      "label": "Business"
+    },
+    {
+      "id": "s",
+      "label": "Social & Entertainment"
+    },
+    {
+      "id": "p",
+      "label": "Productivity"
+    },
+    {
+      "id": "all",
+      "label": "See all"
+    }
+  ],
+  "featured": [
+    "gmail",
+    "gdrive",
+    "github",
+    "facebook",
+    "messenger",
+    "instagram",
+    "gbp",
+    "slack",
+    "zapier"
+  ],
+  "connectors": [
+    {
+      "key": "facebook",
+      "name": "Facebook Pages",
+      "tabs": "fs",
+      "what": "Post updates and read comments on your Facebook Page.",
+      "colour": "#1877f2",
+      "account": "Page ID",
+      "secret": "Page access token",
+      "help": "In Meta Business Suite → Settings → Business assets, copy the Page ID. Create a Page access token at developers.facebook.com → your app → Tools → Graph API Explorer."
+    },
+    {
+      "key": "messenger",
+      "name": "Messenger",
+      "tabs": "fs",
+      "what": "Reply to Facebook Messenger chats from the admin inbox.",
+      "colour": "#0084ff",
+      "account": "Page ID",
+      "secret": "Page access token",
+      "help": "In Meta Business Suite → Settings → Business assets, copy the Page ID. Create a Page access token at developers.facebook.com → your app → Tools → Graph API Explorer."
+    },
+    {
+      "key": "instagram",
+      "name": "Instagram Messages",
+      "tabs": "fs",
+      "what": "Answer Instagram DMs and story replies in one place.",
+      "colour": "#e1306c",
+      "account": "Instagram business account ID",
+      "secret": "Page access token",
+      "help": "Your Instagram must be a Business account linked to the Facebook Page. In Meta Business Suite → Settings → Business assets, copy the Page ID. Create a Page access token at developers.facebook.com → your app → Tools → Graph API Explorer."
+    },
+    {
+      "key": "threads",
+      "name": "Threads",
+      "tabs": "fs",
+      "what": "Share new projects and articles to Threads.",
+      "colour": "#000000",
+      "account": "Threads user ID",
+      "secret": "Threads access token",
+      "help": "Create a Threads app at developers.facebook.com → Use cases → Access the Threads API, then generate a user token."
+    },
+    {
+      "key": "gbp",
+      "name": "Google Business Profile",
+      "tabs": "fb",
+      "what": "Keep hours, photos and posts on Google Maps up to date.",
+      "colour": "#4285f4",
+      "account": "Business profile name or ID",
+      "secret": "API key (optional)",
+      "help": "Open business.google.com and copy the profile name. API access needs an approved Google Cloud project."
+    },
+    {
+      "key": "gmail",
+      "name": "Gmail",
+      "tabs": "fp",
+      "what": "Send quotations and replies from woodexinterior.pk@gmail.com.",
+      "colour": "#ea4335",
+      "account": "Gmail address",
+      "secret": "App password (16 letters)",
+      "help": "Google Account → Security → 2-Step Verification (turn on) → App passwords. Create one called Woodex Admin, paste the 16 letters, then press Test."
+    },
+    {
+      "key": "slack",
+      "name": "Slack",
+      "tabs": "fp",
+      "what": "Post new enquiries to a team channel.",
+      "colour": "#4a154b",
+      "account": "Channel name",
+      "secret": "Incoming webhook URL",
+      "help": "api.slack.com/apps → Create app → Incoming Webhooks → Add to channel. Paste the webhook URL."
+    },
+    {
+      "key": "tiktok",
+      "name": "TikTok",
+      "tabs": "s",
+      "what": "Link your TikTok for project reels.",
+      "colour": "#010101",
+      "account": "TikTok username",
+      "secret": "Access token (optional)",
+      "help": "Add the username so it shows on the site. Posting needs a TikTok developer app."
+    },
+    {
+      "key": "youtube",
+      "name": "YouTube",
+      "tabs": "s",
+      "what": "Show project walkthrough videos.",
+      "colour": "#ff0000",
+      "account": "Channel ID or @handle",
+      "secret": "API key (optional)",
+      "help": "YouTube Studio → Settings → Channel → Advanced settings shows the channel ID."
+    },
+    {
+      "key": "linkedin",
+      "name": "LinkedIn Page",
+      "tabs": "sb",
+      "what": "Share company news on LinkedIn.",
+      "colour": "#0a66c2",
+      "account": "Company page URL",
+      "secret": "Access token (optional)",
+      "help": "Paste your company page address. Posting needs a LinkedIn developer app."
+    },
+    {
+      "key": "pinterest",
+      "name": "Pinterest",
+      "tabs": "s",
+      "what": "Pin project photos to mood boards.",
+      "colour": "#e60023",
+      "account": "Pinterest username",
+      "secret": "Access token (optional)",
+      "help": "developers.pinterest.com → My apps → generate a token."
+    },
+    {
+      "key": "x",
+      "name": "X (Twitter)",
+      "tabs": "s",
+      "what": "Share new articles on X.",
+      "colour": "#000000",
+      "account": "@handle",
+      "secret": "API bearer token (optional)",
+      "help": "developer.x.com → Projects & Apps → Keys and tokens."
+    },
+    {
+      "key": "hubspot",
+      "name": "HubSpot CRM",
+      "tabs": "b",
+      "what": "Copy new leads into HubSpot.",
+      "colour": "#ff7a59",
+      "account": "Portal ID",
+      "secret": "Private app token",
+      "help": "HubSpot → Settings → Integrations → Private apps → Create, then copy the token."
+    },
+    {
+      "key": "zoho",
+      "name": "Zoho CRM",
+      "tabs": "b",
+      "what": "Copy new leads into Zoho CRM.",
+      "colour": "#e42527",
+      "account": "Organisation ID",
+      "secret": "Client secret / token",
+      "help": "api-console.zoho.com → Self client → generate a code."
+    },
+    {
+      "key": "calendly",
+      "name": "Calendly",
+      "tabs": "bp",
+      "what": "Let clients book site visits.",
+      "colour": "#006bff",
+      "account": "Booking page URL",
+      "secret": "Personal access token (optional)",
+      "help": "Calendly → Integrations → API & webhooks."
+    },
+    {
+      "key": "gcal",
+      "name": "Google Calendar",
+      "tabs": "p",
+      "what": "Add site visits to the team calendar.",
+      "colour": "#1a73e8",
+      "account": "Calendar ID",
+      "secret": "API key (optional)",
+      "help": "Google Calendar → Settings → your calendar → Integrate calendar → Calendar ID."
+    },
+    {
+      "key": "gdrive",
+      "name": "Google Drive",
+      "tabs": "fp",
+      "what": "Daily off-site backup of the website + database into your Google Drive folder.",
+      "colour": "#0f9d58",
+      "account": "Folder link (https://drive.google.com/drive/folders/…)",
+      "secret": "Script key (any password you choose)",
+      "help": "1) Create a folder in Google Drive and copy its link. 2) Open script.google.com → New project → paste the code shown below → change MY-KEY to your own password → Save. 3) Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone → Deploy → allow access → copy the Web app URL. 4) Paste the folder link, the same password and the Web app URL here → Connect → Back up now."
+    },
+    {
+      "key": "github",
+      "name": "GitHub",
+      "tabs": "fp",
+      "what": "Keep a copy of the website code in a private GitHub repository.",
+      "colour": "#24292f",
+      "account": "Repository (owner/name)",
+      "secret": "Personal access token",
+      "help": "Daily off-site backup goes to backups/ in this repository. github.com → Settings → Developer settings → Fine-grained tokens → Generate. Pick only this repository, Contents: Read and write. Paste the token and owner/repo, then press Test."
+    },
+    {
+      "key": "notion",
+      "name": "Notion",
+      "tabs": "p",
+      "what": "Track projects in a Notion database.",
+      "colour": "#000000",
+      "account": "Database ID",
+      "secret": "Integration secret",
+      "help": "notion.so/my-integrations → New integration, then share the database with it."
+    },
+    {
+      "key": "trello",
+      "name": "Trello",
+      "tabs": "p",
+      "what": "Turn won leads into Trello cards.",
+      "colour": "#0079bf",
+      "account": "Board ID",
+      "secret": "API key + token",
+      "help": "trello.com/power-ups/admin → New → API key."
+    },
+    {
+      "key": "teams",
+      "name": "Microsoft Teams",
+      "tabs": "p",
+      "what": "Post enquiry alerts to a Teams channel.",
+      "colour": "#5059c9",
+      "account": "Channel name",
+      "secret": "Workflow webhook URL",
+      "help": "Teams channel → … → Workflows → Post to a channel when a webhook request is received."
+    },
+    {
+      "key": "zapier",
+      "name": "Zapier",
+      "tabs": "bp",
+      "what": "Connect 6,000+ apps with a webhook.",
+      "colour": "#ff4f00",
+      "account": "Zap name",
+      "secret": "Webhook URL",
+      "help": "zapier.com → Create Zap → Webhooks by Zapier → Catch hook. Paste the URL."
+    },
+    {
+      "key": "make",
+      "name": "Make",
+      "tabs": "bp",
+      "what": "Automate workflows with a Make scenario.",
+      "colour": "#6d00cc",
+      "account": "Scenario name",
+      "secret": "Webhook URL",
+      "help": "make.com → Create scenario → Webhooks → Custom webhook."
+    },
+    {
+      "key": "custom",
+      "name": "Any app (custom)",
+      "tabs": "",
+      "what": "Connect any service with an API key or webhook.",
+      "colour": "#465fff",
+      "account": "Account / user ID",
+      "secret": "API key, token or webhook URL",
+      "help": "Paste the details the other app gives you. Add a test address (https://…) to check it answers."
+    }
+  ]
+}

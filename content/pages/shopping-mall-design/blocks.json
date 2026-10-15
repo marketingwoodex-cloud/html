@@ -1,0 +1,94 @@
+[
+ {
+  "id": "eaaf3381af",
+  "type": "hero",
+  "html": "\n\n    <section class=\"mm-hero\" aria-labelledby=\"shopping-mall-title\"><div class=\"mm-wrap mm-hero-grid\">\n      <div class=\"mm-hero-copy mm-reveal\">\n        <nav class=\"mm-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Shopping Mall Design</span></nav>\n        <h1 id=\"shopping-mall-title\">Shopping Mall Design in Lahore — Atriums, Corridors &amp; Retail Zones</h1>\n        <p class=\"mm-copy\">We plan the shared spaces that shape how people arrive, move and spend time. Atriums, corridors, food courts and retail zones work together as one clear visitor journey.</p>\n        <div class=\"mm-hero-actions\"><a class=\"mm-btn mm-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"mm-btn mm-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"mm-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"mm-hero-media mm-reveal\"><img src=\"/assets/img/img-c7d3a3ebd62b.jpg\" width=\"1920\" height=\"1080\" alt=\"Bright multi-level shopping mall atrium with retail corridors and escalators\" loading=\"lazy\" decoding=\"async\"><figcaption>Clear movement through every level</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Shopping Mall Design in Lahore — Atriums, Corridors &amp; Retail Zones",
+   "copy": "We plan the shared spaces that shape how people arrive, move and spend time. Atriums, corridors, food courts and retail zones work together as one clear visitor journey.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-c7d3a3ebd62b.jpg",
+   "img_alt": "Bright multi-level shopping mall atrium with retail corridors and escalators"
+  }
+ },
+ {
+  "id": "1ca4216d54",
+  "type": "raw",
+  "html": "\n\n    <section class=\"mm-section mm-scope\" id=\"shopping-mall-scope\"><div class=\"mm-wrap\">\n      <header class=\"mm-section-head mm-reveal\"><h2>What We Design</h2><p class=\"mm-copy\">Eight connected layers help a mall feel easy to navigate, comfortable to stay in and ready for every tenant.</p></header>\n      <div class=\"mm-scope-viewport mm-reveal\" id=\"mm-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight shopping mall design services. Scroll horizontally to review all items.\"><div class=\"mm-scope-track\">\n        <article class=\"mm-scope-card\"><span>01</span><h3>Atrium &amp; Common Area Design</h3><p>Arrival spaces, shared seating and social points planned as the heart of the mall.</p></article>\n        <article class=\"mm-scope-card\"><span>02</span><h3>Retail Corridor Planning</h3><p>Clear sightlines and comfortable widths guide people past every shopfront.</p></article>\n        <article class=\"mm-scope-card\"><span>03</span><h3>Food Court Design</h3><p>Seating, vendor fronts and service flow are coordinated for busy periods.</p></article>\n        <article class=\"mm-scope-card\"><span>04</span><h3>Entrance &amp; Facade Design</h3><p>A strong first impression leads visitors naturally into the building.</p></article>\n        <article class=\"mm-scope-card\"><span>05</span><h3>Tenant Mix Zoning</h3><p>Retail categories and anchors are placed to support movement and discovery.</p></article>\n        <article class=\"mm-scope-card\"><span>06</span><h3>Wayfinding &amp; Signage</h3><p>Directories and directional signs make every destination easier to find.</p></article>\n        <article class=\"mm-scope-card\"><span>07</span><h3>Lighting &amp; Ambience</h3><p>Daylight, ambient and feature lighting create comfort and visual rhythm.</p></article>\n        <article class=\"mm-scope-card\"><span>08</span><h3>Safety &amp; Circulation Planning</h3><p>Routes, exits and vertical movement are resolved around safe daily flow.</p></article>\n      </div></div>\n      <div class=\"mm-controls\"><span class=\"mm-status\" id=\"mm-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"mm-control\" id=\"mm-scope-prev\" type=\"button\" aria-label=\"Previous shopping mall design service\" disabled=\"\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5M12 19l-7-7 7-7\"></path></svg></button><button class=\"mm-control\" id=\"mm-scope-next\" type=\"button\" aria-label=\"Next shopping mall design service\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div>\n    </div></section>"
+ },
+ {
+  "id": "ad078e929a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"mm-section mm-process\" id=\"shopping-mall-process\"><div class=\"mm-wrap\">\n      <header class=\"mm-section-head mm-reveal\"><h2>Our Design Process</h2><p class=\"mm-copy\">Five clear stages turn the commercial brief into an approved mall design package.</p></header>\n      <div class=\"mm-steps mm-reveal\"><article class=\"mm-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We define the visitor profile, tenant needs, zones, budget and programme.</p></article><article class=\"mm-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record levels, circulation, services, access and existing conditions.</p></article><article class=\"mm-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Atriums, corridors, retail zones and visitor flow are tested together.</p></article><article class=\"mm-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes, lighting and shared furniture are coordinated for daily use.</p></article><article class=\"mm-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved 3D views and drawings prepare each zone for pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "19b6007378",
+  "type": "raw",
+  "html": "\n\n    <section class=\"mm-section mm-pricing\" id=\"shopping-mall-pricing\"><div class=\"mm-wrap mm-pricing-grid\">\n      <div class=\"mm-pricing-copy mm-reveal\"><h2>Pricing</h2><p class=\"mm-copy\">The initial consultation and site survey are free. We provide a fixed quote once the built-up area, tenant scope and 3D package are clear.</p><a class=\"mm-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"mm-reveal\"><div class=\"mm-price-list\"><article class=\"mm-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"mm-price-row\"><h3>Mall zone design</h3><strong>From PKR 300,000</strong></article><article class=\"mm-price-row\"><h3>Typical projects</h3><strong>PKR 500,000-1,500,000</strong></article><article class=\"mm-price-row\"><h3>Large malls</h3><strong>PKR 1,500,000-3,000,000+</strong></article></div><p class=\"mm-price-note\">Your fixed quote follows the survey. Price varies by built-up area, tenant scope and 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "37d0554978",
+  "type": "raw",
+  "html": "\n\n    <section class=\"mm-section mm-compare\" id=\"shopping-mall-compare\"><div class=\"mm-wrap\">\n      <header class=\"mm-section-head mm-reveal\"><h2>Choose the Right Scope</h2><p class=\"mm-copy\">Start with what is already decided and how far the project needs to move from plan to finished space.</p></header>\n      <div class=\"mm-compare-grid mm-reveal\"><article class=\"mm-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization.</p></article><article class=\"mm-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>Construction, services and installation delivered as one coordinated scope.</p><a class=\"mm-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"mm-compare-card\"><small>Upgrade what exists</small><h3>Renovation</h3><p>Phased improvements for an existing mall or active commercial zone.</p><a class=\"mm-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "131085918e",
+  "type": "faq",
+  "html": "\n\n    <section class=\"mm-section mm-faq\" id=\"shopping-mall-faq\"><div class=\"mm-wrap mm-faq-grid\">\n      <div class=\"mm-faq-intro mm-reveal\"><h2>Shopping Mall Design FAQs</h2><p class=\"mm-copy\">Straight answers on footfall, timing, food courts, active tenants, wayfinding and 3D approval.</p></div>\n      <div class=\"mm-faq-list mm-reveal\">\n        <div class=\"mm-faq-item\"><button class=\"mm-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How can mall design increase footfall?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"mm-faq-a\"><div><p>Clear entrances, visible destinations, comfortable circulation and well-placed activity zones help visitors move deeper into the mall and stay longer.</p></div></div></div>\n        <div class=\"mm-faq-item\"><button class=\"mm-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does shopping mall design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"mm-faq-a\"><div><p>A defined zone can take four to eight weeks. A full mall or multi-phase project needs a longer programme based on area and approvals.</p></div></div></div>\n        <div class=\"mm-faq-item\"><button class=\"mm-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design food courts?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"mm-faq-a\"><div><p>Yes. We plan seating, service flow, vendor fronts, lighting and shared amenities as one coordinated food court experience.</p></div></div></div>\n        <div class=\"mm-faq-item\"><button class=\"mm-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you work with existing tenants in place?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"mm-faq-a\"><div><p>Yes. We can phase surveys and design work around active tenants, then plan execution zones to reduce disruption.</p></div></div></div>\n        <div class=\"mm-faq-item\"><button class=\"mm-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you handle signage and wayfinding?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"mm-faq-a\"><div><p>Yes. We plan directional signs, directories, zone identification and brand touchpoints so visitors can navigate with confidence.</p></div></div></div>\n        <div class=\"mm-faq-item\"><button class=\"mm-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Will we see 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"mm-faq-a\"><div><p>Yes. Key atriums, corridors, entrances and food court views are visualized in 3D before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Shopping Mall Design FAQs",
+   "copy": "Straight answers on footfall, timing, food courts, active tenants, wayfinding and 3D approval.",
+   "items": [
+    {
+     "q": "How can mall design increase footfall?",
+     "a": "<p>Clear entrances, visible destinations, comfortable circulation and well-placed activity zones help visitors move deeper into the mall and stay longer.</p>"
+    },
+    {
+     "q": "How long does shopping mall design take?",
+     "a": "<p>A defined zone can take four to eight weeks. A full mall or multi-phase project needs a longer programme based on area and approvals.</p>"
+    },
+    {
+     "q": "Do you design food courts?",
+     "a": "<p>Yes. We plan seating, service flow, vendor fronts, lighting and shared amenities as one coordinated food court experience.</p>"
+    },
+    {
+     "q": "Can you work with existing tenants in place?",
+     "a": "<p>Yes. We can phase surveys and design work around active tenants, then plan execution zones to reduce disruption.</p>"
+    },
+    {
+     "q": "Do you handle signage and wayfinding?",
+     "a": "<p>Yes. We plan directional signs, directories, zone identification and brand touchpoints so visitors can navigate with confidence.</p>"
+    },
+    {
+     "q": "Will we see 3D visuals before execution?",
+     "a": "<p>Yes. Key atriums, corridors, entrances and food court views are visualized in 3D before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a5b5894787",
+  "type": "raw",
+  "html": "\n\n    <section class=\"mm-section mm-related\" id=\"shopping-mall-related\"><div class=\"mm-wrap\">\n      <header class=\"mm-section-head mm-reveal\"><h2>Related Spaces</h2><p class=\"mm-copy\">Explore the wider commercial portfolio or a focused retail display brief.</p></header>\n      <nav class=\"mm-related-grid mm-reveal\" aria-label=\"Related spaces\"><a class=\"mm-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"mm-related-link\" href=\"/showroom-design/\" data-page-route=\"showroom\"><small>02</small><strong>Showroom Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "240ccf8ed3",
+  "type": "cta",
+  "html": "\n\n    <section class=\"mm-section mm-contact\" id=\"shopping-mall-contact\"><div class=\"mm-wrap mm-contact-grid\">\n      <div class=\"mm-reveal\"><h2>Talk to Woodex</h2><p class=\"mm-copy\">Tell us about the site, the tenant plan and the zones you need to develop.</p><div class=\"mm-contact-actions\"><a class=\"mm-btn mm-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"mm-btn mm-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"mm-contact-list mm-reveal\"><div class=\"mm-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"mm-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"mm-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"mm-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"mm-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"mm-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"mm-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the site, the tenant plan and the zones you need to develop.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

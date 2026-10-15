@@ -1,0 +1,604 @@
+[
+  {
+    "coverage_id": "frontend-v1%2Fadmin%2Fadmin-chat2.js%23render::frontend-v1%2Fassets%2Fjs%2Fwhatsapp-widget.js%23esc::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Stored%20XSS",
+    "canonical_refs": {
+      "surface": "frontend-v1/admin/admin-chat2.js#render",
+      "boundary": "frontend-v1/assets/js/whatsapp-widget.js#esc",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Stored XSS"
+    },
+    "surface": "Admin UI rendering of visitor data",
+    "boundary": "Escaping",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Stored XSS",
+    "starting_paths": [
+      "frontend-v1/admin/admin-chat2.js",
+      "frontend-v1/admin/admin-sales17.js",
+      "frontend-v1/assets/js/whatsapp-widget.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Stored XSS",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/admin/admin-chat2.js",
+      "frontend-v1/admin/admin-sales17.js",
+      "frontend-v1/assets/js/whatsapp-widget.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/admin/admin-chat2.js",
+          "frontend-v1/admin/admin-sales17.js",
+          "frontend-v1/assets/js/whatsapp-widget.js"
+        ],
+        "invariant": "Visitor/AI text is escaped before innerHTML.",
+        "method": "source",
+        "result": "esc() applied; attachment URLs allow-listed.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fadmin.php%23login::frontend-v1%2Fapi%2Fadmin.php%23current_user::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Authentication",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/admin.php#login",
+      "boundary": "frontend-v1/api/admin.php#current_user",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Authentication"
+    },
+    "surface": "Admin login, tokens, password reset, Google sign-in",
+    "boundary": "Admin session token HMAC",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Authentication",
+    "starting_paths": [
+      "frontend-v1/api/admin.php",
+      "frontend-v1/api/phase8-lib.php",
+      "frontend-v1/api/security-lib.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Authentication",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/admin.php",
+      "frontend-v1/api/phase8-lib.php",
+      "frontend-v1/api/security-lib.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/admin.php",
+          "frontend-v1/api/phase8-lib.php",
+          "frontend-v1/api/security-lib.php"
+        ],
+        "invariant": "Only valid signed, live sessions authenticate; reset tokens are single-use HMACs.",
+        "method": "source",
+        "result": "HMAC + hash_equals + pw_ver + revocable sid; Google aud/iss/exp/email_verified checked; db_reconnect needs builder password.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/rej-csrf",
+      "woodex/p19/rej-db-reconnect"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fbuilder.php%23import_url::frontend-v1%2Fapi%2Fbuilder.php%23FILTER_FLAG_NO_PRIV_RANGE::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23SSRF",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/builder.php#import_url",
+      "boundary": "frontend-v1/api/builder.php#FILTER_FLAG_NO_PRIV_RANGE",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#SSRF"
+    },
+    "surface": "Server-side URL fetch",
+    "boundary": "Private network block",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "SSRF",
+    "starting_paths": [
+      "frontend-v1/api/builder.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#SSRF",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/builder.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/builder.php"
+        ],
+        "invariant": "Server fetches only public https URLs.",
+        "method": "source",
+        "result": "Redirects bypass the check in import_url.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/import-url-redirect-ssrf"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fbuilder.php%23save::frontend-v1%2Fadmin%2Fadmin-chrome.js%23hf-frame::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Stored%20XSS",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/builder.php#save",
+      "boundary": "frontend-v1/admin/admin-chrome.js#hf-frame",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Stored XSS"
+    },
+    "surface": "Builder page save and admin previews",
+    "boundary": "Editor vs Owner",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Stored XSS",
+    "starting_paths": [
+      "frontend-v1/api/builder.php",
+      "frontend-v1/admin/admin-chrome.js",
+      "frontend-v1/admin/admin-p18h.js",
+      "frontend-v1/admin/admin.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Stored XSS",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/builder.php",
+      "frontend-v1/admin/admin-chrome.js",
+      "frontend-v1/admin/admin-p18h.js",
+      "frontend-v1/admin/admin.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/builder.php",
+          "frontend-v1/admin/admin-chrome.js",
+          "frontend-v1/admin/admin-p18h.js",
+          "frontend-v1/admin/admin.js"
+        ],
+        "invariant": "Editor HTML cannot act with Owner authority.",
+        "method": "source",
+        "result": "Unsandboxed same-origin preview iframes run Editor scripts in the admin tab.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/editor-script-in-admin-preview"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fchat-lib.php%23chat_save_att::frontend-v1%2Fassets%2Fuploads%2F.htaccess%23engine-off::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23File%20upload",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/chat-lib.php#chat_save_att",
+      "boundary": "frontend-v1/assets/uploads/.htaccess#engine-off",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#File upload"
+    },
+    "surface": "File uploads (chat, media, builder)",
+    "boundary": "Upload type and execution",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "File upload",
+    "starting_paths": [
+      "frontend-v1/api/chat-lib.php",
+      "frontend-v1/api/builder.php",
+      "frontend-v1/api/media-lib.php",
+      "frontend-v1/assets/uploads/.htaccess"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#File upload",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/chat-lib.php",
+      "frontend-v1/api/builder.php",
+      "frontend-v1/api/media-lib.php",
+      "frontend-v1/assets/uploads/.htaccess"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/chat-lib.php",
+          "frontend-v1/api/builder.php",
+          "frontend-v1/api/media-lib.php",
+          "frontend-v1/assets/uploads/.htaccess"
+        ],
+        "invariant": "Uploads can never execute as code.",
+        "method": "source",
+        "result": "Byte sniffing, server extension, random names, PHP off.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/rej-upload-exec"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fchat.php%23send::frontend-v1%2Fapi%2Fchat.php%23hash_equals::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/chat.php#send",
+      "boundary": "frontend-v1/api/chat.php#hash_equals",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "Public live chat",
+    "boundary": "Per-visitor chat token",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Access control",
+    "starting_paths": [
+      "frontend-v1/api/chat.php",
+      "frontend-v1/api/chat-lib.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/chat.php",
+      "frontend-v1/api/chat-lib.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/chat.php",
+          "frontend-v1/api/chat-lib.php"
+        ],
+        "invariant": "A visitor reads only their own chat.",
+        "method": "source",
+        "result": "Token hash check holds; AI spend limited per IP only.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/public-ai-chat-spend",
+      "woodex/p19/rej-chat-idor"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fforms.php%23POST::frontend-v1%2Fapi%2Fnotify-lib.php%23notify_client::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Abuse%20and%20operator%20spend",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/forms.php#POST",
+      "boundary": "frontend-v1/api/notify-lib.php#notify_client",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Abuse and operator spend"
+    },
+    "surface": "Public enquiry form",
+    "boundary": "Anti-spam and outbound messaging",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Abuse and operator spend",
+    "starting_paths": [
+      "frontend-v1/api/forms.php",
+      "frontend-v1/api/notify-lib.php",
+      "frontend-v1/api/crm-lib.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Abuse and operator spend",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/forms.php",
+      "frontend-v1/api/notify-lib.php",
+      "frontend-v1/api/crm-lib.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/forms.php",
+          "frontend-v1/api/notify-lib.php",
+          "frontend-v1/api/crm-lib.php"
+        ],
+        "invariant": "Anonymous input must not drive outbound messages to arbitrary recipients.",
+        "method": "source",
+        "result": "Auto-reply goes to any phone/email; Turnstile skipped for form=whatsapp.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/forms-autoreply-relay",
+      "woodex/p19/rej-mail-header-injection"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fmedia-lib.php%23media_raw::frontend-v1%2Fapi%2Fadmin.php%23user_save::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/media-lib.php#media_raw",
+      "boundary": "frontend-v1/api/admin.php#user_save",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "Role checks on users, backups and DB restore",
+    "boundary": "Owner vs Admin separation",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Access control",
+    "starting_paths": [
+      "frontend-v1/api/media-lib.php",
+      "frontend-v1/api/admin.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/media-lib.php",
+      "frontend-v1/api/admin.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/media-lib.php",
+          "frontend-v1/api/admin.php"
+        ],
+        "invariant": "Admins cannot change the Owner account or secrets.",
+        "method": "source",
+        "result": "Backup/DB restore bypass the Owner-only rule.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/backup-restore-writes-private",
+      "woodex/p19/db-restore-users-table"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fquote-view.php%23GET::frontend-v1%2Fapi%2Fquote-view.php%23q_view_token::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/quote-view.php#GET",
+      "boundary": "frontend-v1/api/quote-view.php#q_view_token",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "Client quotation links",
+    "boundary": "Quote link token",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Access control",
+    "starting_paths": [
+      "frontend-v1/api/quote-view.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/quote-view.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/quote-view.php"
+        ],
+        "invariant": "Only holders of the link see a quote.",
+        "method": "source",
+        "result": "HMAC token required; output JSON-hex-escaped.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/rej-quote-link-guess"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fredirects-lib.php%23rd_save::frontend-v1%2Fapi%2Fredirects-lib.php%23rd_one::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Injection",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/redirects-lib.php#rd_save",
+      "boundary": "frontend-v1/api/redirects-lib.php#rd_one",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Injection"
+    },
+    "surface": "Redirect manager writing .htaccess",
+    "boundary": "Config injection",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Injection",
+    "starting_paths": [
+      "frontend-v1/api/redirects-lib.php",
+      "frontend-v1/api/admin.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Injection",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/redirects-lib.php",
+      "frontend-v1/api/admin.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/redirects-lib.php",
+          "frontend-v1/api/admin.php"
+        ],
+        "invariant": "Admin input cannot add arbitrary server directives.",
+        "method": "source",
+        "result": "Strict allow-list on from/to.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/rej-redirect-htaccess"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fwa-cron.php%23GET::frontend-v1%2Fapi%2Fmcp.php%23Bearer::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Authentication",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/wa-cron.php#GET",
+      "boundary": "frontend-v1/api/mcp.php#Bearer",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Authentication"
+    },
+    "surface": "Cron and AI-agent endpoints",
+    "boundary": "Shared keys",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Authentication",
+    "starting_paths": [
+      "frontend-v1/api/wa-cron.php",
+      "frontend-v1/api/mcp.php",
+      "frontend-v1/api/p18g-lib.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Authentication",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/wa-cron.php",
+      "frontend-v1/api/mcp.php",
+      "frontend-v1/api/p18g-lib.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/wa-cron.php",
+          "frontend-v1/api/mcp.php",
+          "frontend-v1/api/p18g-lib.php"
+        ],
+        "invariant": "Only key holders run cron/MCP tools.",
+        "method": "source",
+        "result": "Random cron key; hashed MCP tokens, off-switch and user re-check.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/rej-cron-empty-key"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "frontend-v1%2Fapi%2Fwhatsapp.php%23POST::frontend-v1%2Fapi%2Fwhatsapp.php%23X-Hub-Signature-256::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23Authentication",
+    "canonical_refs": {
+      "surface": "frontend-v1/api/whatsapp.php#POST",
+      "boundary": "frontend-v1/api/whatsapp.php#X-Hub-Signature-256",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#Authentication"
+    },
+    "surface": "WhatsApp Cloud API webhook",
+    "boundary": "Meta signature",
+    "subsystem": "All in-scope subsystems (quick)",
+    "attack_class": "Authentication",
+    "starting_paths": [
+      "frontend-v1/api/whatsapp.php",
+      "frontend-v1/api/p18g-lib.php"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Authentication",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "parent-single-agent",
+    "reviewed_paths": [
+      "frontend-v1/api/whatsapp.php",
+      "frontend-v1/api/p18g-lib.php"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "parent-single-agent",
+        "reviewed_paths": [
+          "frontend-v1/api/whatsapp.php",
+          "frontend-v1/api/p18g-lib.php"
+        ],
+        "invariant": "Webhook events must be signed by Meta.",
+        "method": "source",
+        "result": "Fails open when App secret is empty.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "woodex/p19/whatsapp-webhook-fail-open"
+    ],
+    "unresolved": []
+  },
+  {
+    "coverage_id": "tools%2F%23node-preview::tools%2F%23dev-only::profile%2Fquick%2Fall-in-scope-subsystems::ATTACK-CLASSES.md%23All",
+    "canonical_refs": {
+      "surface": "tools/#node-preview",
+      "boundary": "tools/#dev-only",
+      "subsystem": "profile/quick/all-in-scope-subsystems",
+      "attack_class": "ATTACK-CLASSES.md#All"
+    },
+    "surface": "Node preview server and test tools",
+    "boundary": "Not deployed",
+    "subsystem": "tools",
+    "attack_class": "All",
+    "starting_paths": [
+      "tools/frontend-v1-server.mjs"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#All",
+    "selected_companion_blocks": [],
+    "excluded_blocks": [],
+    "prior_status": "new",
+    "attempts": [],
+    "wave": 1,
+    "status": "out_of_scope",
+    "agent_id": null,
+    "reviewed_paths": [],
+    "local_checks": [],
+    "result_fingerprints": [],
+    "unresolved": [
+      "Development-only mirror; not uploaded to Hostinger."
+    ]
+  }
+]

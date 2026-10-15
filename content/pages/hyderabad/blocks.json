@@ -1,0 +1,81 @@
+[
+ {
+  "id": "238af9dd2d",
+  "type": "hero",
+  "html": "\n\n    <section class=\"ct-hero\" aria-labelledby=\"city-hero-title\">\n      <figure class=\"ct-hero-media\" aria-hidden=\"true\"><img src=\"/assets/img/img-5048d9095862.webp\" alt=\"\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"></figure>\n      <div class=\"ct-wrap ct-hero-grid\">\n        <div class=\"ct-hero-copy\" data-ct-reveal=\"\">\n          <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>→</span><span>Hyderabad</span></nav>\n          <p class=\"ct-label\">Where we work</p>\n          <h1 id=\"city-hero-title\">Interior design in Hyderabad</h1>\n        </div>\n        <div class=\"ct-hero-note\" data-ct-reveal=\"\">\n          <p>Our studio is at M-71, Zainab Tower, Model Town Link Road, Lahore, and we serve Hyderabad from it. Shops, offices and homes run in scheduled phases with site visits at each stage.</p>\n          <div class=\"actions\"><a class=\"btn\" href=\"/contact/\">Start a Hyderabad project</a><a class=\"btn btn-light\" href=\"/insights/design-process-explained/\">How we work</a></div>\n        </div>\n      </div>\n    </section>",
+  "fields": {
+   "heading": "Interior design in Hyderabad",
+   "label": "Where we work",
+   "cta_text": "Start a Hyderabad project",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-5048d9095862.webp",
+   "img_alt": ""
+  }
+ },
+ {
+  "id": "878d1fb18c",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ct-section ct-soft\" id=\"city-services\"><div class=\"ct-wrap\">\n      <header class=\"ct-center\" data-ct-reveal=\"\"><p class=\"ct-label\">Services</p><h2>What we take on in Hyderabad</h2></header>\n      <div class=\"ct-cards\">\n        <article class=\"ct-card\" data-ct-reveal=\"\"><h3>Interior design</h3><p>Shops, offices and homes run in scheduled phases from Lahore.</p><a href=\"/interior-design/\">Learn more</a></article>\n        <article class=\"ct-card\" data-ct-reveal=\"\"><h3>Fit out</h3><p>One team delivers the build, coordinated from first site visit to handover.</p><a href=\"/fit-out/\">Learn more</a></article>\n        <article class=\"ct-card\" data-ct-reveal=\"\"><h3>Renovation</h3><p>Existing spaces reworked with care and minimal disruption.</p><a href=\"/renovation/\">Learn more</a></article>\n        <article class=\"ct-card\" data-ct-reveal=\"\"><h3>3D visualization</h3><p>See every room in 4K before work begins, with two revision rounds included.</p><a href=\"/3d-visualization/\">Learn more</a></article>\n        <article class=\"ct-card\" data-ct-reveal=\"\"><h3>Custom furniture (Woodex Furniture™)</h3><p>Kitchens, wardrobes and office furniture built by our own joinery.</p><a href=\"/contact/\">Learn more</a></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "a413cc0be7",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ct-section\" id=\"city-process\"><div class=\"ct-wrap\">\n      <header class=\"ct-center\" data-ct-reveal=\"\"><p class=\"ct-label\">Process</p><h2>How a Hyderabad project runs</h2></header>\n      <div class=\"ct-steps\">\n        <article class=\"ct-step\" data-ct-reveal=\"\"><span class=\"ct-step-number\">1</span><h3>Tell us about the space</h3><p>Call, WhatsApp or email with drawings, photos or a rough idea. We shape the brief together.</p></article>\n        <article class=\"ct-step\" data-ct-reveal=\"\"><span class=\"ct-step-number\">2</span><h3>Site visit or drawings review</h3><p>We visit the site on a scheduled round from Lahore, or work from your drawings.</p></article>\n        <article class=\"ct-step\" data-ct-reveal=\"\"><span class=\"ct-step-number\">3</span><h3>Concept & quantities</h3><p>You see the design in 3D and approve itemized quantities before anything is built.</p></article>\n        <article class=\"ct-step\" data-ct-reveal=\"\"><span class=\"ct-step-number\">4</span><h3>Build & handover</h3><p>One team delivers the work and hands over a finished space that matches what you approved.</p></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "7d85806020",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ct-section ct-dark\" id=\"city-note\"><div class=\"ct-wrap ct-note-grid\">\n      <div class=\"ct-note-copy\" data-ct-reveal=\"\"><p class=\"ct-label\">A local note</p><h2>A note on working in Hyderabad</h2><p>Hyderabad is Sindh's second city, and we serve it the way we serve Karachi. Shops, offices and homes are run from our Lahore studio in scheduled phases. Site visits are planned around each stage, with drawings and video check-ins between visits.</p></div>\n      <figure class=\"ct-image\" data-ct-reveal=\"\"><img src=\"/assets/img/img-a824b3688cd4.webp\" alt=\"Office interior used as project photography placeholder\" width=\"827\" height=\"1030\" loading=\"lazy\" decoding=\"async\"></figure>\n    </div></section>"
+ },
+ {
+  "id": "c6e32032a4",
+  "type": "faq",
+  "html": "\n\n    <section class=\"ct-section ct-soft\" id=\"city-faq\"><div class=\"ct-wrap\">\n      <header class=\"ct-center\" data-ct-reveal=\"\"><p class=\"ct-label\">FAQ</p><h2>Questions, answered</h2></header>\n      <div class=\"ct-faq-list\">\n      <div class=\"ct-faq-item\" data-ct-reveal=\"\">\n        <button class=\"ct-faq-q\" type=\"button\" aria-expanded=\"true\"><span>Do you work outside Lahore?</span><span class=\"plus\">+</span></button>\n        <div class=\"ct-faq-a\"><div><p>Yes. Our studio is in Lahore and we take projects across Pakistan, including Hyderabad. Design, drawings and coordination run from Lahore, with site visits scheduled through each phase.</p></div></div>\n      </div>\n      <div class=\"ct-faq-item\" data-ct-reveal=\"\">\n        <button class=\"ct-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do site visits work?</span><span class=\"plus\">+</span></button>\n        <div class=\"ct-faq-a\"><div><p>We plan visits around milestones: first measurement, mid-work checks and finishing. You always know the date before we travel.</p></div></div>\n      </div>\n      <div class=\"ct-faq-item\" data-ct-reveal=\"\">\n        <button class=\"ct-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you start from drawings only?</span><span class=\"plus\">+</span></button>\n        <div class=\"ct-faq-a\"><div><p>Yes. If you have architectural drawings, we develop the design and quantities from them and verify everything on our first site visit.</p></div></div>\n      </div>\n      <div class=\"ct-faq-item\" data-ct-reveal=\"\">\n        <button class=\"ct-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is Hyderabad served the same way as Karachi?</span><span class=\"plus\">+</span></button>\n        <div class=\"ct-faq-a\"><div><p>Yes. Both cities are run from our Lahore studio in scheduled phases, with site visits at each stage and check-ins between visits.</p></div></div>\n      </div>\n      </div>\n    </div></section>",
+  "fields": {
+   "label": "FAQ",
+   "heading": "Questions, answered",
+   "items": [
+    {
+     "q": "Do you work outside Lahore?",
+     "a": "<p>Yes. Our studio is in Lahore and we take projects across Pakistan, including Hyderabad. Design, drawings and coordination run from Lahore, with site visits scheduled through each phase.</p>"
+    },
+    {
+     "q": "How do site visits work?",
+     "a": "<p>We plan visits around milestones: first measurement, mid-work checks and finishing. You always know the date before we travel.</p>"
+    },
+    {
+     "q": "Can you start from drawings only?",
+     "a": "<p>Yes. If you have architectural drawings, we develop the design and quantities from them and verify everything on our first site visit.</p>"
+    },
+    {
+     "q": "Is Hyderabad served the same way as Karachi?",
+     "a": "<p>Yes. Both cities are run from our Lahore studio in scheduled phases, with site visits at each stage and check-ins between visits.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "368507f42f",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ct-section\" id=\"city-nearby\"><div class=\"ct-wrap\" data-ct-reveal=\"\">\n      <p class=\"ct-label\">Nearby</p>\n      <h2>Also served from the Lahore studio</h2>\n      <div class=\"actions\">\n        <a class=\"btn btn-light\" href=\"/karachi/\">Interior design in Karachi</a>\n        <a class=\"btn btn-light\" href=\"/multan/\">Interior design in Multan</a>\n        <a class=\"btn btn-light\" href=\"/quetta/\">Interior design in Quetta</a>\n        <a class=\"btn btn-light\" href=\"/lahore/\">Interior design in Lahore</a>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "141c78ec1a",
+  "type": "cta",
+  "html": "\n\n    <section class=\"ct-section\" id=\"cta\"><div class=\"ct-wrap\"><div class=\"ct-cta\"><div class=\"ct-cta-grid\">\n      <div class=\"ct-cta-copy\" data-ct-reveal=\"\">\n        <p class=\"ct-label\">Start a project</p>\n        <h2>Start your Hyderabad project with one accountable team.</h2>\n        <div class=\"ct-cta-meta\">\n          <address>M-71, Zainab Tower<br>Model Town Link Road<br>Lahore, Pakistan</address>\n          <p><a href=\"tel:+923224000768\">+92 322 4000768</a><br><a href=\"tel:+923214686884\">+92 321 4686884</a><br><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></p>\n          <p><strong>Mon–Sat 9:30–6:30</strong><br>Sunday closed</p>\n        </div>\n        <div class=\"actions\"><a class=\"btn\" href=\"mailto:info@woodex.com.pk\">Email the studio</a><a class=\"btn btn-light\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div>\n      </div>\n      <figure class=\"ct-image ct-cta-media\" data-ct-reveal=\"\"><img src=\"/assets/img/img-ffafc4c12c46.webp\" alt=\"Finished interior used as project photography placeholder\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>Project photography placeholder · Woodex</figcaption></figure>\n    </div></div></div></section>\n\n",
+  "fields": {
+   "heading": "Start your Hyderabad project with one accountable team.",
+   "label": "Start a project",
+   "actions": [
+    {
+     "text": "Email the studio",
+     "href": "mailto:info@woodex.com.pk"
+    },
+    {
+     "text": "Call +92 322 4000768",
+     "href": "tel:+923224000768"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,94 @@
+[
+ {
+  "id": "15b47112a8",
+  "type": "hero",
+  "html": "\n\n    <section class=\"ht-hero\" aria-labelledby=\"hotel-title\"><div class=\"ht-wrap ht-hero-grid\">\n      <div class=\"ht-hero-copy ht-reveal\">\n        <nav class=\"ht-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Hotel Interior Design</span></nav>\n        <h1 id=\"hotel-title\">Hotel Interior Design in Lahore — Lobbies, Rooms &amp; Suites</h1>\n        <p class=\"ht-copy\">Woodex designs hotel lobbies, guest rooms, suites, restaurants and banquet halls. We create welcoming spaces that lift ratings and keep guests returning.</p>\n        <div class=\"ht-hero-actions\"><a class=\"ht-btn ht-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ht-btn ht-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"ht-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"ht-hero-media ht-reveal\"><img src=\"/assets/img/img-00e6912a64f2.webp\" width=\"1536\" height=\"1024\" alt=\"Elegant hotel reception and lobby with warm lighting\" loading=\"lazy\" decoding=\"async\"><figcaption>Arrival, comfort and character in one plan</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Hotel Interior Design in Lahore — Lobbies, Rooms &amp; Suites",
+   "copy": "Woodex designs hotel lobbies, guest rooms, suites, restaurants and banquet halls. We create welcoming spaces that lift ratings and keep guests returning.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-00e6912a64f2.webp",
+   "img_alt": "Elegant hotel reception and lobby with warm lighting"
+  }
+ },
+ {
+  "id": "285ba4c692",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ht-section ht-scope\" id=\"hotel-scope\"><div class=\"ht-wrap\">\n      <header class=\"ht-section-head ht-reveal\"><h2>What We Design</h2><p class=\"ht-copy\">Eight connected areas shape a clear guest journey from arrival to check-out.</p></header>\n      <div class=\"ht-scope-viewport ht-reveal\" id=\"ht-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight hotel design services. Scroll horizontally to review all items.\"><div class=\"ht-scope-track\">\n        <article class=\"ht-scope-card\"><span>01</span><h3>Lobby &amp; Reception Design</h3><p>A warm first impression with clear check-in, waiting and concierge zones.</p></article>\n        <article class=\"ht-scope-card\"><span>02</span><h3>Guest Room Design</h3><p>Comfortable layouts, storage and lighting shaped around the guest stay.</p></article>\n        <article class=\"ht-scope-card\"><span>03</span><h3>Suites &amp; Premium Rooms</h3><p>More generous rooms with distinct living, sleeping and dressing areas.</p></article>\n        <article class=\"ht-scope-card\"><span>04</span><h3>Restaurant &amp; Breakfast Area</h3><p>Dining layouts that support morning flow, service and a relaxed atmosphere.</p></article>\n        <article class=\"ht-scope-card\"><span>05</span><h3>Banquet &amp; Event Halls</h3><p>Flexible planning for weddings, conferences and private gatherings.</p></article>\n        <article class=\"ht-scope-card\"><span>06</span><h3>Corridor &amp; Floor Design</h3><p>Clear wayfinding, durable finishes and a consistent journey to every room.</p></article>\n        <article class=\"ht-scope-card\"><span>07</span><h3>Lighting &amp; Ambience</h3><p>Layered light for welcoming arrivals, restful rooms and memorable evenings.</p></article>\n        <article class=\"ht-scope-card\"><span>08</span><h3>Brand Theming &amp; Artwork</h3><p>Materials, colour and art that carry the hotel identity without feeling forced.</p></article>\n      </div></div>\n      <div class=\"ht-controls\"><span class=\"ht-status\" id=\"ht-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"ht-control\" id=\"ht-scope-prev\" type=\"button\" aria-label=\"Previous hotel design service\" disabled=\"\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5M12 19l-7-7 7-7\"></path></svg></button><button class=\"ht-control\" id=\"ht-scope-next\" type=\"button\" aria-label=\"Next hotel design service\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div>\n    </div></section>"
+ },
+ {
+  "id": "7363145b42",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ht-section ht-process\" id=\"hotel-process\"><div class=\"ht-wrap\">\n      <header class=\"ht-section-head ht-reveal\"><h2>Our Design Process</h2><p class=\"ht-copy\">Five focused stages take the property from operational brief to an approved design package.</p></header>\n      <div class=\"ht-steps ht-reveal\"><article class=\"ht-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss the guest profile, room mix, facilities, brand position and budget.</p></article><article class=\"ht-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record rooms, public areas, circulation, services and existing conditions.</p></article><article class=\"ht-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Guest flow, operations and atmosphere come together in one clear direction.</p></article><article class=\"ht-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes, furniture, lighting and artwork are coordinated throughout.</p></article><article class=\"ht-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Drawings and 3D views prepare key hotel areas for pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "960fe6fe4a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ht-section ht-pricing\" id=\"hotel-pricing\"><div class=\"ht-wrap ht-pricing-grid\">\n      <div class=\"ht-pricing-copy ht-reveal\"><h2>Pricing</h2><p class=\"ht-copy\">The initial consultation and site survey are free. We confirm a fixed quote after the survey, once the room count, star positioning and 3D package are clear.</p><a class=\"ht-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"ht-reveal\"><div class=\"ht-price-list\"><article class=\"ht-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"ht-price-row\"><h3>Boutique properties</h3><strong>From PKR 250,000</strong></article><article class=\"ht-price-row\"><h3>Typical hotels</h3><strong>PKR 500,000-1,500,000</strong></article><article class=\"ht-price-row\"><h3>Large hotels</h3><strong>PKR 1,500,000-3,000,000+</strong></article></div><p class=\"ht-price-note\">The final fee varies with room count, star positioning and the required 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "cbd8af6006",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ht-section ht-compare\" id=\"hotel-compare\"><div class=\"ht-wrap\">\n      <header class=\"ht-section-head ht-reveal\"><h2>Design vs Fit-Out vs Renovation</h2><p class=\"ht-copy\">Choose the scope that matches where your hotel is today.</p></header>\n      <div class=\"ht-compare-grid ht-reveal\"><article class=\"ht-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization for the planning phase.</p></article><article class=\"ht-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>The approved hotel design built and installed as one coordinated scope.</p><a class=\"ht-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"ht-compare-card\"><small>Upgrade what exists</small><h3>Renovation</h3><p>A focused update for an existing hotel or selected guest areas.</p><a class=\"ht-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "84a6e61ca7",
+  "type": "faq",
+  "html": "\n\n    <section class=\"ht-section ht-faq\" id=\"hotel-faq\"><div class=\"ht-wrap ht-faq-grid\">\n      <div class=\"ht-faq-intro ht-reveal\"><h2>Hotel Design FAQs</h2><p class=\"ht-copy\">Straight answers on ratings, room counts, banquet halls, timing and 3D approval.</p></div>\n      <div class=\"ht-faq-list ht-reveal\">\n        <div class=\"ht-faq-item\"><button class=\"ht-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How does hotel design affect ratings and bookings?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ht-faq-a\"><div><p>A welcoming arrival, comfortable rooms and consistent details improve the guest experience. Better stays support stronger reviews, repeat visits and bookings.</p></div></div></div>\n        <div class=\"ht-faq-item\"><button class=\"ht-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design boutique hotels?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ht-faq-a\"><div><p>Yes. We shape boutique hotels around their location, guest profile and brand character, from the lobby to the final room detail.</p></div></div></div>\n        <div class=\"ht-faq-item\"><button class=\"ht-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How many rooms can you handle?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ht-faq-a\"><div><p>We handle boutique properties and larger hotels. The programme is planned around room count, room types and the number of shared spaces.</p></div></div></div>\n        <div class=\"ht-faq-item\"><button class=\"ht-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design banquet halls?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ht-faq-a\"><div><p>Yes. We plan banquet layouts, staging, lighting, circulation and service access for weddings, conferences and private events.</p></div></div></div>\n        <div class=\"ht-faq-item\"><button class=\"ht-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does hotel design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ht-faq-a\"><div><p>A boutique hotel design can take four to eight weeks. Larger properties need a phased programme based on room count and approvals.</p></div></div></div>\n        <div class=\"ht-faq-item\"><button class=\"ht-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I get 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"ht-faq-a\"><div><p>Yes. Key lobbies, rooms, suites and event spaces are shown in 3D before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Hotel Design FAQs",
+   "copy": "Straight answers on ratings, room counts, banquet halls, timing and 3D approval.",
+   "items": [
+    {
+     "q": "How does hotel design affect ratings and bookings?",
+     "a": "<p>A welcoming arrival, comfortable rooms and consistent details improve the guest experience. Better stays support stronger reviews, repeat visits and bookings.</p>"
+    },
+    {
+     "q": "Do you design boutique hotels?",
+     "a": "<p>Yes. We shape boutique hotels around their location, guest profile and brand character, from the lobby to the final room detail.</p>"
+    },
+    {
+     "q": "How many rooms can you handle?",
+     "a": "<p>We handle boutique properties and larger hotels. The programme is planned around room count, room types and the number of shared spaces.</p>"
+    },
+    {
+     "q": "Do you design banquet halls?",
+     "a": "<p>Yes. We plan banquet layouts, staging, lighting, circulation and service access for weddings, conferences and private events.</p>"
+    },
+    {
+     "q": "How long does hotel design take?",
+     "a": "<p>A boutique hotel design can take four to eight weeks. Larger properties need a phased programme based on room count and approvals.</p>"
+    },
+    {
+     "q": "Do I get 3D visuals before execution?",
+     "a": "<p>Yes. Key lobbies, rooms, suites and event spaces are shown in 3D before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "473c53671b",
+  "type": "raw",
+  "html": "\n\n    <section class=\"ht-section ht-related\" id=\"hotel-related\"><div class=\"ht-wrap\">\n      <header class=\"ht-section-head ht-reveal\"><h2>Related Spaces</h2><p class=\"ht-copy\">Explore nearby commercial interior design services.</p></header>\n      <nav class=\"ht-related-grid ht-reveal\" aria-label=\"Related spaces\"><a class=\"ht-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ht-related-link\" href=\"/restaurant-interior-design/\" data-page-route=\"restaurant\"><small>02</small><strong>Restaurant Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"ht-related-link\" href=\"/cafe-interior-design/\" data-page-route=\"cafe\"><small>03</small><strong>Café Interior Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "249ab0a248",
+  "type": "cta",
+  "html": "\n\n    <section class=\"ht-section ht-contact\" id=\"hotel-contact\"><div class=\"ht-wrap ht-contact-grid\">\n      <div class=\"ht-reveal\"><h2>Talk to Woodex</h2><p class=\"ht-copy\">Tell us about the property, room count and guest experience you want to create.</p><div class=\"ht-contact-actions\"><a class=\"ht-btn ht-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"ht-btn ht-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"ht-contact-list ht-reveal\"><div class=\"ht-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"ht-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"ht-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"ht-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"ht-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"ht-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"ht-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the property, room count and guest experience you want to create.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

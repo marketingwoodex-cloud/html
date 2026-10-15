@@ -1,0 +1,145 @@
+[
+ {
+  "id": "d44bb88fbb",
+  "type": "hero",
+  "html": "\n<section class=\"fo-hero\" aria-labelledby=\"fitout-service-title\"><div class=\"fo-wrap fo-hero-grid\"><div class=\"fo-hero-copy fo-reveal\"><nav class=\"fo-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>›</span><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Fit Out</a><span>›</span><span>Turnkey Design Build</span></nav><p class=\"fo-label\">Woodex Fit-Out · Lahore</p><h1 id=\"fitout-service-title\">Turnkey Interior Design and Build in Lahore</h1><p class=\"fo-copy\">One contract, one team, one responsibility for design, build, furniture and final handover.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-hero-media fo-reveal\"><img src=\"/assets/img/img-dce06249b137.webp\" alt=\"Completed contemporary property representing Woodex turnkey design and build\" fetchpriority=\"high\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-hero-note\"><strong>Offices, homes and commercial spaces from brief to handover</strong><span>Design 2–4 weeks · Build 6–12 weeks</span></figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Turnkey Interior Design and Build in Lahore",
+   "label": "Woodex Fit-Out · Lahore",
+   "copy": "One contract, one team, one responsibility for design, build, furniture and final handover.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#fitout-service-contact",
+   "img_src": "/assets/img/img-dce06249b137.webp",
+   "img_alt": "Completed contemporary property representing Woodex turnkey design and build"
+  }
+ },
+ {
+  "id": "b5bb0a516f",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-scope\"><div class=\"fo-wrap fo-scope-layout\"><figure class=\"fo-image fo-scope-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Coordinated Woodex interior showing fit-out services, finishes and furniture\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">One design direction · One coordinated build</figcaption></figure><div class=\"fo-scope-copy fo-reveal\"><p class=\"fo-label\">Build scope</p><h2>What Turnkey Design Build includes</h2><p>Turnkey combines the stages that are usually split across designers, contractors and furniture suppliers.</p><div class=\"fo-scope-list\"><article class=\"fo-scope-item\"><b>01</b><strong>Space planning</strong><span>Concepts, layouts and circulation.</span></article><article class=\"fo-scope-item\"><b>02</b><strong>3D visualization</strong><span>Photorealistic approval before physical work.</span></article><article class=\"fo-scope-item\"><b>03</b><strong>Technical package</strong><span>Materials, lighting, electrical and working drawings.</span></article><article class=\"fo-scope-item\"><b>04</b><strong>BOQ and cost plan</strong><span>Every trade, material and item costed.</span></article><article class=\"fo-scope-item\"><b>05</b><strong>Construction and MEP</strong><span>Partitions, ceilings, floors, power, plumbing and HVAC.</span></article><article class=\"fo-scope-item\"><b>06</b><strong>Custom joinery</strong><span>Kitchens, wardrobes, workstations, counters and millwork.</span></article><article class=\"fo-scope-item\"><b>07</b><strong>Furniture and fixtures</strong><span>Coordinated pieces made or procured to specification.</span></article><article class=\"fo-scope-item\"><b>08</b><strong>Snagging and handover</strong><span>Inspection, cleaning, documentation and warranties.</span></article></div></div></div></section>"
+ },
+ {
+  "id": "3a2505caa4",
+  "type": "process",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-process\"><div class=\"fo-wrap fo-process-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">A controlled programme</p><h2>12 steps from brief to handover</h2><p>Decisions are approved in sequence so the site team can build with fewer changes and clearer accountability.</p><figure class=\"fo-image fo-process-media\"><img loading=\"lazy\" src=\"/assets/img/img-dce06249b137.webp\" alt=\"Turnkey Design Build interior accompanying the Woodex project process\" width=\"1920\" height=\"1280\"></figure></div><div class=\"fo-process-list fo-reveal\"><article class=\"fo-step\"><b>01</b><h3>Brief and survey</h3><p>Confirm goals, site conditions and what is technically possible.</p></article><article class=\"fo-step\"><b>02</b><h3>Concept design</h3><p>Set the spatial character, palette and material direction.</p></article><article class=\"fo-step\"><b>03</b><h3>Space planning</h3><p>Resolve layouts, furniture positions and circulation.</p></article><article class=\"fo-step\"><b>04</b><h3>3D visualization</h3><p>Review and approve the finished space on screen.</p></article><article class=\"fo-step\"><b>05</b><h3>Material specification</h3><p>Select every finish, fixture and key fitting.</p></article><article class=\"fo-step\"><b>06</b><h3>BOQ and cost plan</h3><p>Approve an itemized budget before contract.</p></article><article class=\"fo-step\"><b>07</b><h3>Contract and mobilisation</h3><p>Fix milestones, payment schedule and programme.</p></article><article class=\"fo-step\"><b>08</b><h3>Strip-out and prep</h3><p>Remove agreed elements and prepare the site.</p></article><article class=\"fo-step\"><b>09</b><h3>MEP first-fix</h3><p>Install power, plumbing, HVAC and data infrastructure.</p></article><article class=\"fo-step\"><b>10</b><h3>Finishes and furniture</h3><p>Build walls, ceilings, floors, joinery and furniture.</p></article><article class=\"fo-step\"><b>11</b><h3>Quality inspection</h3><p>Correct snags, re-inspect and deep clean.</p></article><article class=\"fo-step\"><b>12</b><h3>Formal handover</h3><p>Issue documentation and release the finished space.</p></article></div></div></section>",
+  "fields": {
+   "steps": [
+    {
+     "title": "Brief and survey",
+     "copy": "Confirm goals, site conditions and what is technically possible."
+    },
+    {
+     "title": "Concept design",
+     "copy": "Set the spatial character, palette and material direction."
+    },
+    {
+     "title": "Space planning",
+     "copy": "Resolve layouts, furniture positions and circulation."
+    },
+    {
+     "title": "3D visualization",
+     "copy": "Review and approve the finished space on screen."
+    },
+    {
+     "title": "Material specification",
+     "copy": "Select every finish, fixture and key fitting."
+    },
+    {
+     "title": "BOQ and cost plan",
+     "copy": "Approve an itemized budget before contract."
+    },
+    {
+     "title": "Contract and mobilisation",
+     "copy": "Fix milestones, payment schedule and programme."
+    },
+    {
+     "title": "Strip-out and prep",
+     "copy": "Remove agreed elements and prepare the site."
+    },
+    {
+     "title": "MEP first-fix",
+     "copy": "Install power, plumbing, HVAC and data infrastructure."
+    },
+    {
+     "title": "Finishes and furniture",
+     "copy": "Build walls, ceilings, floors, joinery and furniture."
+    },
+    {
+     "title": "Quality inspection",
+     "copy": "Correct snags, re-inspect and deep clean."
+    },
+    {
+     "title": "Formal handover",
+     "copy": "Issue documentation and release the finished space."
+    }
+   ],
+   "label": "A controlled programme",
+   "heading": "12 steps from brief to handover"
+  }
+ },
+ {
+  "id": "46b99987ab",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-pricing\"><div class=\"fo-wrap fo-price-layout\"><div class=\"fo-price-copy fo-reveal\"><p class=\"fo-label\">Indicative PKR pricing</p><h2>A practical range before the survey</h2><p>These planning figures come from the service scope. The proposal is fixed only after site review and specification approval.</p><div class=\"fo-price-list\"><div class=\"fo-price-row\"><div><strong>Basic Turnkey</strong><span>PKR 4,500–6,000 / sq. ft.</span></div><strong>PKR 9M–12M</strong></div><div class=\"fo-price-row\"><div><strong>Mid-Spec Turnkey</strong><span>PKR 6,000–8,000 / sq. ft.</span></div><strong>PKR 12M–16M</strong></div><div class=\"fo-price-row\"><div><strong>Premium Turnkey</strong><span>PKR 8,000–14,000 / sq. ft.</span></div><strong>PKR 16M–28M</strong></div></div><p class=\"fo-price-note\">Examples use a 2,000 sq. ft. project. Final cost depends on area, MEP, joinery, furniture and specification.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-price-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Joinery and finish detail representing the materials within a Woodex fit-out\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">Scope, materials and labour set out in one BOQ</figcaption></figure></div></section>"
+ },
+ {
+  "id": "dc677648eb",
+  "type": "raw",
+  "html": "<section class=\"fo-section fo-soft\"><div class=\"fo-wrap fo-value-layout\"><figure class=\"fo-image fo-value-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-dce06249b137.webp\" alt=\"Finished turnkey design build interior showing the value of coordinated delivery\" width=\"1920\" height=\"1280\"></figure><div class=\"fo-value-copy fo-reveal\"><p class=\"fo-label\">Why Woodex</p><h2>One standard from the drawings to the last detail</h2><p>Design checks, construction, joinery and quality control stay connected throughout the project.</p><div class=\"fo-value-list\"><div class=\"fo-value\"><b>01</b><strong>One contract</strong><span>Design, build, MEP, furniture and handover move under one agreement.</span></div><div class=\"fo-value\"><b>02</b><strong>3D before construction</strong><span>The space is approved visually before the build begins.</span></div><div class=\"fo-value\"><b>03</b><strong>Furniture integrated</strong><span>Woodex Furniture™ joinery is designed as part of the project.</span></div><div class=\"fo-value\"><b>04</b><strong>Single-point accountability</strong><span>One project manager, programme, budget and point of contact.</span></div><div class=\"fo-value\"><b>05</b><strong>Since 2016, 200+ completed spaces</strong><span>Cross-sector delivery experience under one coordinated team.</span></div><div class=\"fo-value\"><b>06</b><strong>Transparent BOQ</strong><span>Every material, trade and labour item is visible before signing.</span></div></div></div></div></section>"
+ },
+ {
+  "id": "31c61aacde",
+  "type": "faq",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-faq\"><div class=\"fo-wrap fo-faq-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">Practical answers</p><h2>Turnkey Design Build FAQs</h2><p>Six short answers about scope, timing and cost.</p></div><div class=\"fo-faq-list fo-reveal\"><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What exactly does turnkey mean?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>One contract covers design, construction, MEP, joinery, furniture and handover.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How is turnkey different from fit-out?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Fit-out is the construction scope. Turnkey adds design, visualization, furniture and overall project management.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is furniture included?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. The agreed custom joinery, kitchens, wardrobes, workstations and millwork are included in the turnkey contract.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can I see the project in 3D first?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. Photorealistic renders are reviewed and approved before physical work starts.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does a turnkey project take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Design typically takes 2–4 weeks and execution 6–12 weeks, depending on area and scope.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you work outside Lahore?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. Woodex supports selected projects in Islamabad, Karachi and across Pakistan.</p></div></div></div></div></div></section>",
+  "fields": {
+   "label": "Practical answers",
+   "heading": "Turnkey Design Build FAQs",
+   "items": [
+    {
+     "q": "What exactly does turnkey mean?",
+     "a": "<p>One contract covers design, construction, MEP, joinery, furniture and handover.</p>"
+    },
+    {
+     "q": "How is turnkey different from fit-out?",
+     "a": "<p>Fit-out is the construction scope. Turnkey adds design, visualization, furniture and overall project management.</p>"
+    },
+    {
+     "q": "Is furniture included?",
+     "a": "<p>Yes. The agreed custom joinery, kitchens, wardrobes, workstations and millwork are included in the turnkey contract.</p>"
+    },
+    {
+     "q": "Can I see the project in 3D first?",
+     "a": "<p>Yes. Photorealistic renders are reviewed and approved before physical work starts.</p>"
+    },
+    {
+     "q": "How long does a turnkey project take?",
+     "a": "<p>Design typically takes 2–4 weeks and execution 6–12 weeks, depending on area and scope.</p>"
+    },
+    {
+     "q": "Do you work outside Lahore?",
+     "a": "<p>Yes. Woodex supports selected projects in Islamabad, Karachi and across Pakistan.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f41876f0fb",
+  "type": "raw",
+  "html": "<section class=\"fo-section\"><div class=\"fo-wrap\"><header class=\"fo-related-head fo-reveal\"><div><p class=\"fo-label\">Keep exploring</p><h2>Related Fit-Out Pages</h2></div><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">View the Fit-Out hub →</a></header><nav class=\"fo-related-grid fo-reveal\" aria-label=\"Related fit-out pages\"><a class=\"fo-related-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\"><small>Fit-Out hub</small><strong>All Fit-Out Services</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/office-fit-out/\" data-page-route=\"officeFitout\"><small>Workplace</small><strong>Office Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/commercial-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Commercial Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/retail-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Retail Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/restaurant-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Restaurant Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/healthcare-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Healthcare Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/pharmacy-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Pharmacy Fit-Out</strong><span aria-hidden=\"true\">↗</span></a></nav></div></section>"
+ },
+ {
+  "id": "dc409b6607",
+  "type": "cta",
+  "html": "<section class=\"fo-section fo-contact\" id=\"fitout-service-contact\"><div class=\"fo-wrap fo-contact-grid\"><div class=\"fo-contact-copy fo-reveal\"><p class=\"fo-label\">Talk to Woodex</p><h2>Start with the space and your opening date</h2><p>Share the location, area and current condition. We will help define the right scope and next step.</p><div class=\"fo-contact-actions\"><a class=\"fo-btn\" href=\"mailto:info@woodex.com.pk?subject=Turnkey%20Design%20Build%20Consultation\">Get a Free Consultation</a></div></div><div class=\"fo-contact-card fo-reveal\"><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"fo-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"fo-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"fo-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"fo-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Start with the space and your opening date",
+   "label": "Talk to Woodex",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Turnkey%20Design%20Build%20Consultation"
+    }
+   ]
+  }
+ }
+]

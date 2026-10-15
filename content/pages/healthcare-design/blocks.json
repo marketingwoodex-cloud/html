@@ -1,0 +1,94 @@
+[
+ {
+  "id": "78e3661428",
+  "type": "hero",
+  "html": "\n\n    <section class=\"hc-hero\" aria-labelledby=\"healthcare-title\"><div class=\"hc-wrap hc-hero-grid\">\n      <div class=\"hc-hero-copy hc-reveal\">\n        <nav class=\"hc-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Healthcare Design</span></nav>\n        <h1 id=\"healthcare-title\">Healthcare Design in Lahore — Clinics, Labs &amp; Care Spaces</h1>\n        <p class=\"hc-copy\">Woodex designs clinics, dental practices, labs, pharmacies and wellness centres. Clean, calming spaces help patients feel at ease while staff work efficiently.</p>\n        <div class=\"hc-hero-actions\"><a class=\"hc-btn hc-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"hc-btn hc-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"hc-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"hc-hero-media hc-reveal\"><img src=\"/assets/img/img-fcc680fef653.webp\" width=\"1920\" height=\"1280\" alt=\"Modern clinic reception and calm waiting area with warm timber and soft seating\" loading=\"lazy\" decoding=\"async\"><figcaption>Calm arrival, clear check-in and comfortable waiting</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Healthcare Design in Lahore — Clinics, Labs &amp; Care Spaces",
+   "copy": "Woodex designs clinics, dental practices, labs, pharmacies and wellness centres. Clean, calming spaces help patients feel at ease while staff work efficiently.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-fcc680fef653.webp",
+   "img_alt": "Modern clinic reception and calm waiting area with warm timber and soft seating"
+  }
+ },
+ {
+  "id": "c09199c43a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hc-section hc-scope\" id=\"healthcare-scope\"><div class=\"hc-wrap\">\n      <header class=\"hc-section-head hc-reveal\"><h2>What We Design</h2><p class=\"hc-copy\">Eight connected decisions shape a safer patient journey and a more efficient clinical workflow.</p></header>\n      <div class=\"hc-scope-viewport hc-reveal\" id=\"hc-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight healthcare design services. Scroll horizontally to review all items.\"><div class=\"hc-scope-track\">\n        <article class=\"hc-scope-card\"><span>01</span><h3>Clinic Layout Planning</h3><p>Rooms, circulation and support spaces planned around real clinical routines.</p></article>\n        <article class=\"hc-scope-card\"><span>02</span><h3>Waiting Area &amp; Reception</h3><p>A calm first impression with clear check-in, privacy and comfortable seating.</p></article>\n        <article class=\"hc-scope-card\"><span>03</span><h3>Consultation &amp; Treatment Rooms</h3><p>Practical rooms with the right privacy, storage, services and staff access.</p></article>\n        <article class=\"hc-scope-card\"><span>04</span><h3>Lab &amp; Diagnostic Zones</h3><p>Equipment, counters and movement coordinated for accurate, efficient work.</p></article>\n        <article class=\"hc-scope-card\"><span>05</span><h3>Hygiene &amp; Material Selection</h3><p>Durable, easy-clean finishes chosen for safety, maintenance and daily care.</p></article>\n        <article class=\"hc-scope-card\"><span>06</span><h3>Patient Flow Design</h3><p>Clear routes reduce confusion and keep public and clinical movement organised.</p></article>\n        <article class=\"hc-scope-card\"><span>07</span><h3>Lighting &amp; Acoustic Comfort</h3><p>Balanced light and quieter rooms support comfort, focus and confidential care.</p></article>\n        <article class=\"hc-scope-card\"><span>08</span><h3>Brand Styling &amp; Signage</h3><p>A professional identity with wayfinding that feels clear, calm and consistent.</p></article>\n      </div></div>\n      <div class=\"hc-controls\"><span class=\"hc-status\" id=\"hc-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"hc-control\" id=\"hc-scope-prev\" type=\"button\" aria-label=\"Previous healthcare design service\" disabled=\"\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5M12 19l-7-7 7-7\"></path></svg></button><button class=\"hc-control\" id=\"hc-scope-next\" type=\"button\" aria-label=\"Next healthcare design service\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div>\n    </div></section>"
+ },
+ {
+  "id": "47a330d3c6",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hc-section hc-process\" id=\"healthcare-process\"><div class=\"hc-wrap\">\n      <header class=\"hc-section-head hc-reveal\"><h2>Our Design Process</h2><p class=\"hc-copy\">Five focused stages turn clinical requirements into an approved design package.</p></header>\n      <div class=\"hc-steps hc-reveal\"><article class=\"hc-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss specialties, patient volume, staff needs, equipment, privacy and budget.</p></article><article class=\"hc-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record dimensions, services, access and existing clinical conditions.</p></article><article class=\"hc-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Patient flow, room adjacencies and staff routes form one clear plan.</p></article><article class=\"hc-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Easy-care finishes, lighting and furniture are coordinated for daily use.</p></article><article class=\"hc-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Drawings and 3D views prepare the facility for confident pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "818340a104",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hc-section hc-pricing\" id=\"healthcare-pricing\"><div class=\"hc-wrap hc-pricing-grid\">\n      <div class=\"hc-pricing-copy hc-reveal\"><h2>Pricing</h2><p class=\"hc-copy\">The initial consultation and site survey are free. We provide an exact fixed quote after the survey, once rooms, equipment coordination and the 3D package are clear.</p><a class=\"hc-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"hc-reveal\"><div class=\"hc-price-list\"><article class=\"hc-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"hc-price-row\"><h3>Compact clinics</h3><strong>From PKR 120,000</strong></article><article class=\"hc-price-row\"><h3>Typical clinics</h3><strong>PKR 250,000-600,000</strong></article><article class=\"hc-price-row\"><h3>Large facilities</h3><strong>PKR 600,000-1,500,000+</strong></article></div><p class=\"hc-price-note\">Cost varies with room count, equipment coordination and the required 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "a46f5008ce",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hc-section hc-compare\" id=\"healthcare-compare\"><div class=\"hc-wrap\">\n      <header class=\"hc-section-head hc-reveal\"><h2>Design vs Fit-Out vs Renovation</h2><p class=\"hc-copy\">Choose the scope that matches where your healthcare space is today.</p></header>\n      <div class=\"hc-compare-grid hc-reveal\"><article class=\"hc-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization. This is the planning phase.</p></article><article class=\"hc-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>The approved healthcare design built and installed as one coordinated scope.</p><a class=\"hc-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"hc-compare-card\"><small>Upgrade an existing space</small><h3>Renovation</h3><p>A focused upgrade for an established clinic, lab or care space.</p><a class=\"hc-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "3bdd59a615",
+  "type": "faq",
+  "html": "\n\n    <section class=\"hc-section hc-faq\" id=\"healthcare-faq\"><div class=\"hc-wrap hc-faq-grid\">\n      <div class=\"hc-faq-intro hc-reveal\"><h2>Healthcare Design FAQs</h2><p class=\"hc-copy\">Straight answers on patient comfort, materials, labs, timing, specialist clinics and 3D approval.</p></div>\n      <div class=\"hc-faq-list hc-reveal\">\n        <div class=\"hc-faq-item\"><button class=\"hc-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How can healthcare design help patients feel calmer?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hc-faq-a\"><div><p>Clear wayfinding, comfortable waiting, soft acoustics and balanced lighting reduce uncertainty and make the visit feel less clinical.</p></div></div></div>\n        <div class=\"hc-faq-item\"><button class=\"hc-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What materials are suitable for clinics?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hc-faq-a\"><div><p>We favour durable, low-maintenance and easy-clean finishes suited to each room, with slip resistance and hygiene needs considered early.</p></div></div></div>\n        <div class=\"hc-faq-item\"><button class=\"hc-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you plan labs and diagnostic areas?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hc-faq-a\"><div><p>Yes. We coordinate workflow, counters, storage, equipment positions, services and staff movement for practical daily use.</p></div></div></div>\n        <div class=\"hc-faq-item\"><button class=\"hc-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does healthcare design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hc-faq-a\"><div><p>A compact clinic commonly takes three to four weeks. Larger facilities need more time for specialist rooms and equipment coordination.</p></div></div></div>\n        <div class=\"hc-faq-item\"><button class=\"hc-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you design dental and specialist clinics?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hc-faq-a\"><div><p>Yes. We plan dental, dermatology, physiotherapy and other specialist clinics around their equipment, privacy and patient journey.</p></div></div></div>\n        <div class=\"hc-faq-item\"><button class=\"hc-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I get 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hc-faq-a\"><div><p>Yes. Key reception, waiting, consultation and treatment areas are shown in 3D before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Healthcare Design FAQs",
+   "copy": "Straight answers on patient comfort, materials, labs, timing, specialist clinics and 3D approval.",
+   "items": [
+    {
+     "q": "How can healthcare design help patients feel calmer?",
+     "a": "<p>Clear wayfinding, comfortable waiting, soft acoustics and balanced lighting reduce uncertainty and make the visit feel less clinical.</p>"
+    },
+    {
+     "q": "What materials are suitable for clinics?",
+     "a": "<p>We favour durable, low-maintenance and easy-clean finishes suited to each room, with slip resistance and hygiene needs considered early.</p>"
+    },
+    {
+     "q": "Do you plan labs and diagnostic areas?",
+     "a": "<p>Yes. We coordinate workflow, counters, storage, equipment positions, services and staff movement for practical daily use.</p>"
+    },
+    {
+     "q": "How long does healthcare design take?",
+     "a": "<p>A compact clinic commonly takes three to four weeks. Larger facilities need more time for specialist rooms and equipment coordination.</p>"
+    },
+    {
+     "q": "Can you design dental and specialist clinics?",
+     "a": "<p>Yes. We plan dental, dermatology, physiotherapy and other specialist clinics around their equipment, privacy and patient journey.</p>"
+    },
+    {
+     "q": "Do I get 3D visuals before execution?",
+     "a": "<p>Yes. Key reception, waiting, consultation and treatment areas are shown in 3D before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "25e66a6e20",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hc-section hc-related\" id=\"healthcare-related\"><div class=\"hc-wrap\">\n      <header class=\"hc-section-head hc-reveal\"><h2>Related Spaces</h2><p class=\"hc-copy\">Explore nearby commercial interior design services.</p></header>\n      <nav class=\"hc-related-grid hc-reveal\" aria-label=\"Related spaces\"><a class=\"hc-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors Hub</strong><span aria-hidden=\"true\">↗</span></a><a class=\"hc-related-link\" href=\"/spa-design/\" data-page-route=\"spa\"><small>02</small><strong>Spa Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"hc-related-link\" href=\"/gym-design/\" data-page-route=\"gym\"><small>03</small><strong>Gym Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "a77fcb0ec3",
+  "type": "cta",
+  "html": "\n\n    <section class=\"hc-section hc-contact\" id=\"healthcare-contact\"><div class=\"hc-wrap hc-contact-grid\">\n      <div class=\"hc-reveal\"><h2>Talk to Woodex</h2><p class=\"hc-copy\">Tell us about the facility, specialties, room count and patient experience you want to create.</p><div class=\"hc-contact-actions\"><a class=\"hc-btn hc-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"hc-btn hc-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"hc-contact-list hc-reveal\"><div class=\"hc-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"hc-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"hc-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"hc-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"hc-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"hc-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"hc-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the facility, specialties, room count and patient experience you want to create.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

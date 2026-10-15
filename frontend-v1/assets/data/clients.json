@@ -1,0 +1,40 @@
+{
+  "title": "Our clients",
+  "kicker": "Trusted by",
+  "mode": "slider",
+  "speed": 30,
+  "grey": true,
+  "show": true,
+  "items": [
+    {
+      "name": "Xiaomi",
+      "logo": "/assets/img/clients/xiaomi.webp",
+      "url": ""
+    },
+    {
+      "name": "MG Motor",
+      "logo": "/assets/img/clients/mg.webp",
+      "url": ""
+    },
+    {
+      "name": "Total Parco",
+      "logo": "/assets/img/clients/total-parco.webp",
+      "url": ""
+    },
+    {
+      "name": "PSO",
+      "logo": "/assets/img/clients/pso.webp",
+      "url": ""
+    },
+    {
+      "name": "Shell",
+      "logo": "/assets/img/clients/shell.webp",
+      "url": ""
+    },
+    {
+      "name": "Attock Petroleum",
+      "logo": "/assets/img/clients/attock.webp",
+      "url": ""
+    }
+  ]
+}

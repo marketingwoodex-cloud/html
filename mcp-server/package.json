@@ -1,0 +1,1 @@
+{"bin":{"woodex-cms-mcp":"./server.mjs"},"dependencies":{"@modelcontextprotocol/sdk":"^1.17.0","zod":"^3.24.0"},"description":"MCP server for the Woodex Interior website: pages, blog posts, projects, settings, media.","license":"UNLICENSED","name":"woodex-cms-mcp","private":true,"type":"module","version":"1.0.0"}

@@ -1,0 +1,352 @@
+[
+ {
+  "id": "v26-01",
+  "name": "Hero · full image, bottom text",
+  "cat": "Hero",
+  "icon": "🏠",
+  "html": "<section class=\"t6 t6-hero\"><img src=\"/assets/img/img-dce06249b137.webp\" alt=\"Woodex interior\" width=\"1920\" height=\"1280\"><div class=\"wrap\"><p class=\"t6-k\">Woodex Interior · Lahore</p><h1>Spaces shaped by<br>purpose and identity</h1><p>Interior design, fit-out and furniture by one accountable team.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"/projects/\">View projects</a></div></div></section>"
+ },
+ {
+  "id": "v26-02",
+  "name": "Hero · centered with chips",
+  "cat": "Hero",
+  "icon": "🎯",
+  "html": "<section class=\"t6 t6-hero center\"><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Woodex Interior project\" width=\"1920\" height=\"1280\"><div class=\"wrap\"><p class=\"t6-k\">Design · Build · Furnish</p><h1>Interiors that<br>feel like yours</h1><p>From first sketch to final handover.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"/projects/\">View projects</a></div><div class=\"t6-chips\" style=\"justify-content:center\"><span>Homes</span><span>Offices</span><span>Restaurants</span><span>Retail</span></div></div></section>"
+ },
+ {
+  "id": "v26-03",
+  "name": "Hero · split text + image",
+  "cat": "Hero",
+  "icon": "◧",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-split\"><div><p class=\"t6-k\">Interior design studio</p><h1>Design that works as well as it looks</h1><p>Measured layouts, honest budgets and furniture made to the drawing.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/projects/\">View projects</a></div></div><figure class=\"t6-img tall\"><img src=\"/assets/img/img-c349a92a4ae0.webp\" alt=\"Living room\" width=\"1600\" height=\"1200\"></figure></div></div></section>"
+ },
+ {
+  "id": "v26-04",
+  "name": "Hero · dark with stats",
+  "cat": "Hero",
+  "icon": "📊",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head\" style=\"max-width:900px\"><p class=\"t6-k\">Since 2016</p><h1>One team for design, build and furniture</h1><p>200+ completed spaces across Pakistan.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"/projects/\">View projects</a></div></div><div class=\"t6-stats\"><div class=\"t6-stat\"><b>2016</b><span>Practising from Lahore</span></div><div class=\"t6-stat\"><b>200+</b><span>Completed spaces</span></div><div class=\"t6-stat\"><b>6</b><span>Disciplines, one team</span></div><div class=\"t6-stat\"><b>4</b><span>Cities served</span></div></div></div></section>"
+ },
+ {
+  "id": "v26-05",
+  "name": "Hero · service page",
+  "cat": "Hero",
+  "icon": "🛠️",
+  "html": "<section class=\"t6 t6-hero\"><img src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Woodex Interior project\" width=\"1920\" height=\"1280\"><div class=\"wrap\"><p class=\"t6-k\">Service</p><h1>Kitchen design<br>in Lahore</h1><p>Practical layouts, durable finishes and cabinetry made to measure.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Get a quote</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"/projects/\">See kitchens</a></div></div></section>"
+ },
+ {
+  "id": "v26-06",
+  "name": "Hero · minimal white",
+  "cat": "Hero",
+  "icon": "▫️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-head\" style=\"max-width:980px\"><p class=\"t6-k\">Woodex Interior</p><h1>Calm, considered interiors for homes and workplaces.</h1><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/projects/\">View projects</a></div></div><figure class=\"t6-img wide\"><img src=\"/assets/img/img-1f4b4ef86cb5.webp\" alt=\"Interior\" width=\"1600\" height=\"1200\"></figure></div></section>"
+ },
+ {
+  "id": "v26-07",
+  "name": "Hero · image grid",
+  "cat": "Hero",
+  "icon": "🧩",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-split\"><div><p class=\"t6-k\">Portfolio</p><h1>Every project, built by our own teams</h1><p>Browse homes, offices and hospitality spaces we have delivered.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/projects/\">All projects</a></div></div><div class=\"t6-g g2\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-fcc680fef653.webp\" alt=\"Project\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-g\"><figure class=\"t6-img\"><img src=\"/assets/img/img-6f26e32ab200.webp\" alt=\"Woodex Interior project\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img\"><img src=\"/assets/img/img-5048d9095862.webp\" alt=\"Woodex Interior project\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-08",
+  "name": "Hero · city page",
+  "cat": "Hero",
+  "icon": "📍",
+  "html": "<section class=\"t6 t6-hero center\"><img src=\"/assets/img/img-5194dc486e09.webp\" alt=\"Woodex Interior project\" width=\"1920\" height=\"1280\"><div class=\"wrap\"><p class=\"t6-k\">Islamabad · Rawalpindi</p><h1>Interior design<br>in Islamabad</h1><p>Site visits, 3D design and full delivery in the twin cities.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Book a site visit</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"/projects/\">Our work</a></div></div></section>"
+ },
+ {
+  "id": "v26-09",
+  "name": "Services · 6 numbered cards",
+  "cat": "Services",
+  "icon": "🔢",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">What we do</p><h2>Design services that cover the whole space</h2></div><div class=\"t6-g g3\"><a class=\"t6-card\" href=\"/interior-design/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">01</span><h3>Interior design</h3><p>Layouts, finishes and furniture planned around how you live.</p></a><a class=\"t6-card\" href=\"/fit-out/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">02</span><h3>Fit out</h3><p>Offices, retail and hospitality delivered to programme.</p></a><a class=\"t6-card\" href=\"/turnkey-design-build/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">03</span><h3>Turnkey</h3><p>One team from empty shell to handover.</p></a><a class=\"t6-card\" href=\"/renovation/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">04</span><h3>Renovation</h3><p>Kitchens, bathrooms and full-home upgrades.</p></a><a class=\"t6-card\" href=\"/architecture/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">05</span><h3>Architecture</h3><p>Residential and commercial buildings, elevations and planning.</p></a><a class=\"t6-card\" href=\"/3d-visualization/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">06</span><h3>3D visualization</h3><p>Photoreal renders before a single wall is built.</p></a></div></div></section>"
+ },
+ {
+  "id": "v26-10",
+  "name": "Services · dark cards",
+  "cat": "Services",
+  "icon": "🌙",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head\"><p class=\"t6-k\">Services</p><h2>Six disciplines, one team</h2></div><div class=\"t6-g g3\"><a class=\"t6-card\" href=\"/interior-design/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">01</span><h3>Interior design</h3><p>Layouts, finishes and furniture planned around how you live.</p></a><a class=\"t6-card\" href=\"/fit-out/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">02</span><h3>Fit out</h3><p>Offices, retail and hospitality delivered to programme.</p></a><a class=\"t6-card\" href=\"/turnkey-design-build/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">03</span><h3>Turnkey</h3><p>One team from empty shell to handover.</p></a><a class=\"t6-card\" href=\"/renovation/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">04</span><h3>Renovation</h3><p>Kitchens, bathrooms and full-home upgrades.</p></a><a class=\"t6-card\" href=\"/architecture/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">05</span><h3>Architecture</h3><p>Residential and commercial buildings, elevations and planning.</p></a><a class=\"t6-card\" href=\"/3d-visualization/\" style=\"text-decoration:none;color:inherit\"><span class=\"t6-num\">06</span><h3>3D visualization</h3><p>Photoreal renders before a single wall is built.</p></a></div></div></section>"
+ },
+ {
+  "id": "v26-11",
+  "name": "Services · image cards",
+  "cat": "Services",
+  "icon": "🖼️",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head\"><p class=\"t6-k\">Services</p><h2>Choose where to start</h2></div><div class=\"t6-g g3\"><a href=\"/interior-design/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-42bae79b5c89.webp\" alt=\"Interior design\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Interior design<small>→</small></div></a><a href=\"/fit-out/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-a824b3688cd4.webp\" alt=\"Fit out\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Fit out<small>→</small></div></a><a href=\"/turnkey-design-build/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-27c481fa9a3d.webp\" alt=\"Turnkey\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Turnkey<small>→</small></div></a><a href=\"/renovation/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-df7c7a7703ae.webp\" alt=\"Renovation\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Renovation<small>→</small></div></a><a href=\"/architecture/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-c693554a31d5.webp\" alt=\"Architecture\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Architecture<small>→</small></div></a><a href=\"/3d-visualization/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-af83a84f72d2.webp\" alt=\"3D visualization\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">3D visualization<small>→</small></div></a></div></div></section>"
+ },
+ {
+  "id": "v26-12",
+  "name": "Services · list + image",
+  "cat": "Services",
+  "icon": "📋",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Studio\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div><p class=\"t6-k\">Our services</p><h2>Everything your space needs</h2><div class=\"t6-steps\"><div><div><h3>Interior design</h3><p>Layouts, finishes and furniture planned around how you live.</p></div></div><div><div><h3>Fit out</h3><p>Offices, retail and hospitality delivered to programme.</p></div></div><div><div><h3>Turnkey</h3><p>One team from empty shell to handover.</p></div></div><div><div><h3>Renovation</h3><p>Kitchens, bathrooms and full-home upgrades.</p></div></div></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-13",
+  "name": "Services · 4 feature columns",
+  "cat": "Services",
+  "icon": "✦",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Why Woodex</p><h2>Built around you</h2></div><div class=\"t6-g g4\"><div><span class=\"t6-num\">01</span><h3>One team</h3><p>Design, build and furniture under one contract.</p></div><div><span class=\"t6-num\">02</span><h3>Own workshop</h3><p>Furniture and joinery made to fit.</p></div><div><span class=\"t6-num\">03</span><h3>Clear budgets</h3><p>Detailed BOQ before work starts.</p></div><div><span class=\"t6-num\">04</span><h3>On schedule</h3><p>Weekly updates and a fixed programme.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-14",
+  "name": "Services · sub-services grid",
+  "cat": "Services",
+  "icon": "🗂️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-row\"><div class=\"t6-head\"><p class=\"t6-k\">Interior design</p><h2>What’s included</h2></div><a class=\"btn wx-btn-dark\" href=\"/contact/\">Get a quote</a></div><div class=\"t6-g g4\"><div class=\"t6-card\"><h3>Living rooms</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Bedrooms</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Kitchens</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Bathrooms</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Home offices</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Dining</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Lighting</h3><p>Planned, drawn and delivered by our team.</p></div><div class=\"t6-card\"><h3>Furniture</h3><p>Planned, drawn and delivered by our team.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-15",
+  "name": "Projects · 3 cards",
+  "cat": "Projects",
+  "icon": "🏗️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-row\"><div class=\"t6-head\"><p class=\"t6-k\">Selected studies</p><h2>Recent projects</h2></div><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/projects/\">All projects</a></div><div class=\"t6-g g3\"><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-dce06249b137.webp\" alt=\"Contemporary villa\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Contemporary villa<small>DHA Lahore</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Corporate office\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Corporate office<small>Gulberg</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-c349a92a4ae0.webp\" alt=\"Café interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Café interior<small>MM Alam Road</small></div></a></div></div></section>"
+ },
+ {
+  "id": "v26-16",
+  "name": "Projects · featured + 2",
+  "cat": "Projects",
+  "icon": "⭐",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head\"><p class=\"t6-k\">Featured</p><h2>A closer look</h2></div><div class=\"t6-split\" style=\"align-items:stretch\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Featured project\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-g\"><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img wide\"><img src=\"/assets/img/img-1f4b4ef86cb5.webp\" alt=\"Corporate office\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Corporate office<small>Gulberg</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img wide\"><img src=\"/assets/img/img-fcc680fef653.webp\" alt=\"Café interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Café interior<small>MM Alam Road</small></div></a></div></div></div></section>"
+ },
+ {
+  "id": "v26-17",
+  "name": "Projects · dark 6 grid",
+  "cat": "Projects",
+  "icon": "🌃",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Portfolio</p><h2>Homes, offices and hospitality</h2></div><div class=\"t6-g g3\"><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-6f26e32ab200.webp\" alt=\"Contemporary villa\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Contemporary villa<small>DHA Lahore</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-5048d9095862.webp\" alt=\"Corporate office\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Corporate office<small>Gulberg</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-5194dc486e09.webp\" alt=\"Café interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Café interior<small>MM Alam Road</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-42bae79b5c89.webp\" alt=\"Family home\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Family home<small>Bahria Town</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-a824b3688cd4.webp\" alt=\"Retail store\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Retail store<small>Emporium</small></div></a><a href=\"/projects/\" style=\"text-decoration:none;color:inherit\"><figure class=\"t6-img\"><img src=\"/assets/img/img-27c481fa9a3d.webp\" alt=\"Penthouse\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div class=\"t6-cap\">Penthouse<small>Islamabad</small></div></a></div></div></section>"
+ },
+ {
+  "id": "v26-18",
+  "name": "Gallery · masonry",
+  "cat": "Gallery",
+  "icon": "🧱",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Gallery</p><h2>Details that make the space</h2></div><div class=\"t6-masonry\"><figure class=\"t6-img\"><img src=\"/assets/img/img-a824b3688cd4.webp\" alt=\"Interior detail\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img\"><img src=\"/assets/img/img-27c481fa9a3d.webp\" alt=\"Interior detail\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img\"><img src=\"/assets/img/img-df7c7a7703ae.webp\" alt=\"Interior detail\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img\"><img src=\"/assets/img/img-c693554a31d5.webp\" alt=\"Interior detail\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img\"><img src=\"/assets/img/img-af83a84f72d2.webp\" alt=\"Interior detail\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img\"><img src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Interior detail\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure></div></div></section>"
+ },
+ {
+  "id": "v26-19",
+  "name": "Gallery · 4 wide",
+  "cat": "Gallery",
+  "icon": "🎞️",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-g g4\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-774a712057fc.webp\" alt=\"Interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img tall\"><img src=\"/assets/img/img-197da8ddab9b.webp\" alt=\"Interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img tall\"><img src=\"/assets/img/img-00e6912a64f2.webp\" alt=\"Interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><figure class=\"t6-img tall\"><img src=\"/assets/img/img-ffafc4c12c46.webp\" alt=\"Interior\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure></div></div></section>"
+ },
+ {
+  "id": "v26-20",
+  "name": "Project · case study",
+  "cat": "Projects",
+  "icon": "📄",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\"><div><p class=\"t6-k\">Case study · DHA Lahore</p><h2>A 1-kanal home, redesigned for family life</h2><p>Open kitchen, warm timber and furniture made in our workshop.</p><div class=\"t6-stats\" style=\"grid-template-columns:repeat(3,1fr);margin-top:28px\"><div class=\"t6-stat\"><b>14</b><span>Weeks</span></div><div class=\"t6-stat\"><b>6</b><span>Rooms</span></div><div class=\"t6-stat\"><b>1</b><span>Team</span></div></div></div><figure class=\"t6-img tall\"><img src=\"/assets/img/img-df7c7a7703ae.webp\" alt=\"Case study\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure></div></div></section>"
+ },
+ {
+  "id": "v26-21",
+  "name": "Process · numbered list",
+  "cat": "Process",
+  "icon": "🪜",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\" style=\"align-items:start\"><div><div class=\"t6-head\"><p class=\"t6-k\">How we work</p><h2>Six clear steps</h2><p>From first call to handover — you always know what happens next.</p></div></div><div class=\"t6-steps\"><div><div><h3>Brief & site visit</h3><p>We listen, measure and understand the space.</p></div></div><div><div><h3>Concept</h3><p>Mood, layout and a first cost range.</p></div></div><div><div><h3>3D design</h3><p>Photoreal views so you can decide with confidence.</p></div></div><div><div><h3>Drawings & BOQ</h3><p>Detailed drawings and a clear bill of quantities.</p></div></div><div><div><h3>Build</h3><p>Our own teams and workshop deliver on site.</p></div></div><div><div><h3>Handover</h3><p>Snag list closed, space ready to use.</p></div></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-22",
+  "name": "Process · 4 cards dark",
+  "cat": "Process",
+  "icon": "🌙",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Process</p><h2>Simple from start to finish</h2></div><div class=\"t6-g g4\"><div class=\"t6-card\"><span class=\"t6-num\">01</span><h3>Brief & site visit</h3><p>We listen, measure and understand the space.</p></div><div class=\"t6-card\"><span class=\"t6-num\">02</span><h3>Concept</h3><p>Mood, layout and a first cost range.</p></div><div class=\"t6-card\"><span class=\"t6-num\">03</span><h3>3D design</h3><p>Photoreal views so you can decide with confidence.</p></div><div class=\"t6-card\"><span class=\"t6-num\">04</span><h3>Drawings & BOQ</h3><p>Detailed drawings and a clear bill of quantities.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-23",
+  "name": "Process · 3 steps with images",
+  "cat": "Process",
+  "icon": "🖼️",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Process</p><h2>Design, build, handover</h2></div><div class=\"t6-g g3\"><div><figure class=\"t6-img\"><img src=\"/assets/img/img-c693554a31d5.webp\" alt=\"3D design\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><span class=\"t6-num\" style=\"margin-top:18px\">01</span><h3>3D design</h3><p>Photoreal views so you can decide with confidence.</p></div><div><figure class=\"t6-img\"><img src=\"/assets/img/img-af83a84f72d2.webp\" alt=\"Build\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><span class=\"t6-num\" style=\"margin-top:18px\">02</span><h3>Build</h3><p>Our own teams and workshop deliver on site.</p></div><div><figure class=\"t6-img\"><img src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Handover\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><span class=\"t6-num\" style=\"margin-top:18px\">03</span><h3>Handover</h3><p>Snag list closed, space ready to use.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-24",
+  "name": "Process · timeline 6",
+  "cat": "Process",
+  "icon": "⏱️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-head\"><p class=\"t6-k\">Timeline</p><h2>What a typical project looks like</h2></div><div class=\"t6-g g3\"><div class=\"t6-card\"><span class=\"t6-num\">Week 1</span><h3>Brief & site visit</h3><p>We listen, measure and understand the space.</p></div><div class=\"t6-card\"><span class=\"t6-num\">Week 2–3</span><h3>Concept</h3><p>Mood, layout and a first cost range.</p></div><div class=\"t6-card\"><span class=\"t6-num\">Week 3–5</span><h3>3D design</h3><p>Photoreal views so you can decide with confidence.</p></div><div class=\"t6-card\"><span class=\"t6-num\">Week 5–6</span><h3>Drawings & BOQ</h3><p>Detailed drawings and a clear bill of quantities.</p></div><div class=\"t6-card\"><span class=\"t6-num\">Week 6–14</span><h3>Build</h3><p>Our own teams and workshop deliver on site.</p></div><div class=\"t6-card\"><span class=\"t6-num\">Week 14+</span><h3>Handover</h3><p>Snag list closed, space ready to use.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-25",
+  "name": "Process · split with checklist",
+  "cat": "Process",
+  "icon": "✅",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-split\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-00e6912a64f2.webp\" alt=\"Site work\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div><p class=\"t6-k\">What you get</p><h2>Every project includes</h2><ul class=\"t6-list\"><li>Site visit and measurements</li><li>Concept and 3D views</li><li>Working drawings and BOQ</li><li>Own site teams and workshop</li><li>Weekly progress updates</li><li>Handover and aftercare</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Book a site visit</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/estimator/\">Pricing</a></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-26",
+  "name": "FAQ · split",
+  "cat": "FAQ",
+  "icon": "❓",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\" style=\"align-items:start\"><div class=\"t6-head\"><p class=\"t6-k\">Common questions</p><h2>Practical answers</h2><p>Can’t find yours? <a href=\"/contact/\">Ask us</a>.</p></div><div class=\"t6-faq\"><details open><summary>How much does interior design cost in Lahore?</summary><p>It depends on size, scope and finishes. After a short site visit we share a clear range, then a detailed BOQ before work starts.</p></details><details><summary>How long does a project take?</summary><p>Most homes take 8–16 weeks from approved design; commercial fit-outs are planned to your opening date.</p></details><details><summary>Do you make the furniture yourselves?</summary><p>Yes. Woodex designs furniture to the drawing, so pieces are made to fit the space.</p></details><details><summary>Can I see the design before building?</summary><p>Every project includes 3D views, so you approve the look before anything is built.</p></details><details><summary>Do you work outside Lahore?</summary><p>Yes — we regularly deliver in Islamabad, Karachi and other cities.</p></details></div></div></div></section>"
+ },
+ {
+  "id": "v26-27",
+  "name": "FAQ · dark accordion",
+  "cat": "FAQ",
+  "icon": "🌙",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">FAQ</p><h2>Common questions</h2></div><div style=\"max-width:820px;margin:auto\"><div class=\"t6-faq\"><details open><summary>How much does interior design cost in Lahore?</summary><p>It depends on size, scope and finishes. After a short site visit we share a clear range, then a detailed BOQ before work starts.</p></details><details><summary>How long does a project take?</summary><p>Most homes take 8–16 weeks from approved design; commercial fit-outs are planned to your opening date.</p></details><details><summary>Do you make the furniture yourselves?</summary><p>Yes. Woodex designs furniture to the drawing, so pieces are made to fit the space.</p></details><details><summary>Can I see the design before building?</summary><p>Every project includes 3D views, so you approve the look before anything is built.</p></details><details><summary>Do you work outside Lahore?</summary><p>Yes — we regularly deliver in Islamabad, Karachi and other cities.</p></details></div></div></div></section>"
+ },
+ {
+  "id": "v26-28",
+  "name": "FAQ · centered cream",
+  "cat": "FAQ",
+  "icon": "☕",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Questions</p><h2>Before you start</h2></div><div style=\"max-width:820px;margin:auto\"><div class=\"t6-faq\"><details open><summary>How much does interior design cost in Lahore?</summary><p>It depends on size, scope and finishes. After a short site visit we share a clear range, then a detailed BOQ before work starts.</p></details><details><summary>How long does a project take?</summary><p>Most homes take 8–16 weeks from approved design; commercial fit-outs are planned to your opening date.</p></details><details><summary>Do you make the furniture yourselves?</summary><p>Yes. Woodex designs furniture to the drawing, so pieces are made to fit the space.</p></details><details><summary>Can I see the design before building?</summary><p>Every project includes 3D views, so you approve the look before anything is built.</p></details></div></div></div></section>"
+ },
+ {
+  "id": "v26-29",
+  "name": "FAQ · with image",
+  "cat": "FAQ",
+  "icon": "🖼️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\" style=\"align-items:start\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-ffafc4c12c46.webp\" alt=\"Studio\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div><p class=\"t6-k\">FAQ</p><h2>Good to know</h2><div class=\"t6-faq\"><details open><summary>How much does interior design cost in Lahore?</summary><p>It depends on size, scope and finishes. After a short site visit we share a clear range, then a detailed BOQ before work starts.</p></details><details><summary>How long does a project take?</summary><p>Most homes take 8–16 weeks from approved design; commercial fit-outs are planned to your opening date.</p></details><details><summary>Do you make the furniture yourselves?</summary><p>Yes. Woodex designs furniture to the drawing, so pieces are made to fit the space.</p></details><details><summary>Can I see the design before building?</summary><p>Every project includes 3D views, so you approve the look before anything is built.</p></details></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-30",
+  "name": "FAQ · 2 columns cards",
+  "cat": "FAQ",
+  "icon": "🗂️",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">FAQ</p><h2>Quick answers</h2></div><div class=\"t6-g g2\"><div class=\"t6-card\"><h3>How much does interior design cost in Lahore?</h3><p>It depends on size, scope and finishes. After a short site visit we share a clear range, then a detailed BOQ before work starts.</p></div><div class=\"t6-card\"><h3>How long does a project take?</h3><p>Most homes take 8–16 weeks from approved design; commercial fit-outs are planned to your opening date.</p></div><div class=\"t6-card\"><h3>Do you make the furniture yourselves?</h3><p>Yes. Woodex designs furniture to the drawing, so pieces are made to fit the space.</p></div><div class=\"t6-card\"><h3>Can I see the design before building?</h3><p>Every project includes 3D views, so you approve the look before anything is built.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-31",
+  "name": "Testimonials · 3 cards",
+  "cat": "Testimonials",
+  "icon": "💬",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Clients</p><h2>What clients say</h2></div><div class=\"t6-g g3\"><div class=\"t6-card\"><div class=\"t6-stars\">★★★★★</div><p class=\"t6-quote\" style=\"font-size:1.1rem\">“Woodex handled everything from design to handover. The 3D views matched the finished home exactly.”</p><div class=\"t6-who\"><img src=\"/assets/img/img-fcc680fef653.webp\" alt=\"\" loading=\"lazy\" width=\"96\" height=\"96\"><div><b>Ayesha K.</b><small>DHA Lahore · Home</small></div></div></div><div class=\"t6-card\"><div class=\"t6-stars\">★★★★★</div><p class=\"t6-quote\" style=\"font-size:1.1rem\">“Our office was delivered on time and on budget. The team was calm, clear and professional.”</p><div class=\"t6-who\"><img src=\"/assets/img/img-6f26e32ab200.webp\" alt=\"\" loading=\"lazy\" width=\"96\" height=\"96\"><div><b>Omar R.</b><small>Gulberg · Office fit-out</small></div></div></div><div class=\"t6-card\"><div class=\"t6-stars\">★★★★★</div><p class=\"t6-quote\" style=\"font-size:1.1rem\">“The kitchen they designed changed how our family uses the house.”</p><div class=\"t6-who\"><img src=\"/assets/img/img-5048d9095862.webp\" alt=\"\" loading=\"lazy\" width=\"96\" height=\"96\"><div><b>Sana M.</b><small>Model Town · Renovation</small></div></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-32",
+  "name": "Testimonial · big quote dark",
+  "cat": "Testimonials",
+  "icon": "🗨️",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div style=\"max-width:900px;margin:auto;text-align:center\"><div class=\"t6-stars\">★★★★★</div><p class=\"t6-quote\">“Woodex handled everything from design to handover. The 3D views matched the finished home exactly.”</p><p><b style=\"color:#f4efe7\">Ayesha K.</b> · DHA Lahore · Home</p></div></div></section>"
+ },
+ {
+  "id": "v26-33",
+  "name": "Testimonial · split image",
+  "cat": "Testimonials",
+  "icon": "🖼️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\"><figure class=\"t6-img tall\"><img src=\"/assets/img/img-e670623c742b.webp\" alt=\"Client home\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div><p class=\"t6-k\">Client story</p><p class=\"t6-quote\">“Our office was delivered on time and on budget. The team was calm, clear and professional.”</p><div class=\"t6-who\"><img src=\"/assets/img/img-6f26e32ab200.webp\" alt=\"\" loading=\"lazy\" width=\"96\" height=\"96\"><div><b>Omar R.</b><small>Gulberg · Office fit-out</small></div></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-34",
+  "name": "Testimonials · rating + quotes",
+  "cat": "Testimonials",
+  "icon": "⭐",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-split\" style=\"align-items:start\"><div><p class=\"t6-k\">Reviews</p><h2>Rated 4.9 by our clients</h2><div class=\"t6-stat\"><b>4.9/5</b><span>Google reviews</span></div></div><div class=\"t6-g\"><div class=\"t6-card\"><p style=\"margin:0 0 14px\">“Our office was delivered on time and on budget. The team was calm, clear and professional.”</p><div class=\"t6-who\"><img src=\"/assets/img/img-fcc680fef653.webp\" alt=\"\" loading=\"lazy\" width=\"96\" height=\"96\"><div><b>Omar R.</b><small>Gulberg · Office fit-out</small></div></div></div><div class=\"t6-card\"><p style=\"margin:0 0 14px\">“The kitchen they designed changed how our family uses the house.”</p><div class=\"t6-who\"><img src=\"/assets/img/img-6f26e32ab200.webp\" alt=\"\" loading=\"lazy\" width=\"96\" height=\"96\"><div><b>Sana M.</b><small>Model Town · Renovation</small></div></div></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-35",
+  "name": "Trust · logos strip",
+  "cat": "Testimonials",
+  "icon": "🏷️",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><p class=\"t6-k\" style=\"display:block;text-align:center\">Trusted by homeowners and brands</p><div class=\"t6-logos\"><span>Emaar</span><span>DHA</span><span>Bahria</span><span>Gulberg Offices</span><span>Café Lahore</span><span>Retail Co.</span></div></div></section>"
+ },
+ {
+  "id": "v26-36",
+  "name": "CTA · dark band",
+  "cat": "CTA",
+  "icon": "📣",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-band\"><div><h2>Ready to plan your space?</h2><p>Share your brief — we reply within one working day.</p></div><div class=\"t6-acts\" style=\"margin:0\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"https://wa.me/923224000768\">WhatsApp</a></div></div></div></section>"
+ },
+ {
+  "id": "v26-37",
+  "name": "CTA · full image",
+  "cat": "CTA",
+  "icon": "🌅",
+  "html": "<section class=\"t6 t6-hero center\" style=\"min-height:60vh\"><img src=\"/assets/img/img-e3ba33b612d6.webp\" alt=\"Woodex Interior project\" width=\"1920\" height=\"1280\"><div class=\"wrap\"><h2 style=\"font-size:clamp(2.2rem,5vw,4rem)\">Let’s shape the space</h2><p>Tell us what you are planning.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Start your project</a><a class=\"btn wx-btn-outline wx-btn-light\" href=\"/estimator/\">Cost estimator</a></div></div></section>"
+ },
+ {
+  "id": "v26-38",
+  "name": "CTA · cream centered",
+  "cat": "CTA",
+  "icon": "✉️",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\" style=\"margin-bottom:0\"><p class=\"t6-k\">Next step</p><h2>Book a free site visit</h2><p>Lahore, Islamabad and Karachi.</p><div class=\"t6-acts\" style=\"justify-content:center\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Book a visit</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div></div></div></section>"
+ },
+ {
+  "id": "v26-39",
+  "name": "Contact · details + form",
+  "cat": "Contact",
+  "icon": "📞",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\" style=\"align-items:start\"><div><p class=\"t6-k\">Contact</p><h2>Talk to Woodex</h2><p>M-71, Zainab Tower, Model Town Link Road, Lahore</p><ul class=\"t6-list\"><li><a href=\"tel:+923224000768\">+92 322 4000768</a></li><li><a href=\"tel:+923224000768\">+92 322 4000768</a></li><li><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></li><li>Mon–Sat 10:00–7:30</li></ul></div><form class=\"t6-form wx-form\" action=\"/api/forms.php\" method=\"post\" data-wx-form=\"website\"><input name=\"name\" placeholder=\"Your name\" required><input name=\"phone\" type=\"tel\" placeholder=\"Phone / WhatsApp\" required><select name=\"service\"><option>Interior design</option><option>Fit out</option><option>Renovation</option><option>Architecture</option></select><textarea name=\"message\" rows=\"4\" placeholder=\"Tell us about your space\"></textarea><button class=\"btn wx-btn-dark\" type=\"submit\">Send enquiry</button></form></div></div></section>"
+ },
+ {
+  "id": "v26-40",
+  "name": "Contact · 3 cards dark",
+  "cat": "Contact",
+  "icon": "🗂️",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Get in touch</p><h2>We’re easy to reach</h2></div><div class=\"t6-g g3\"><a class=\"t6-card\" href=\"tel:+923224000768\" style=\"text-decoration:none\"><span class=\"t6-num\">Call</span><h3>+92 322 4000768</h3><p>Mon–Sat 10:00–7:30</p></a><a class=\"t6-card\" href=\"https://wa.me/923224000768\" style=\"text-decoration:none\"><span class=\"t6-num\">WhatsApp</span><h3>Message us</h3><p>Quick replies during office hours</p></a><a class=\"t6-card\" href=\"mailto:info@woodex.com.pk\" style=\"text-decoration:none\"><span class=\"t6-num\">Email</span><h3>info@woodex.com.pk</h3><p>Send plans and photos</p></a></div></div></section>"
+ },
+ {
+  "id": "v26-41",
+  "name": "Stats · 4 numbers",
+  "cat": "Stats",
+  "icon": "📈",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-stats\" style=\"border:0;padding:0\"><div class=\"t6-stat\"><b>200+</b><span>Completed spaces</span></div><div class=\"t6-stat\"><b>10</b><span>Years of practice</span></div><div class=\"t6-stat\"><b>45</b><span>People on our team</span></div><div class=\"t6-stat\"><b>4.9</b><span>Client rating</span></div></div></div></section>"
+ },
+ {
+  "id": "v26-42",
+  "name": "Stats · dark with text",
+  "cat": "Stats",
+  "icon": "🌙",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-split\"><div><p class=\"t6-k\">In numbers</p><h2>A decade of design and build</h2><p>One accountable team — designers, site engineers and craftsmen.</p></div><div class=\"t6-g g2\"><div class=\"t6-stat\"><b>2016</b><span>Founded in Lahore</span></div><div class=\"t6-stat\"><b>200+</b><span>Spaces delivered</span></div><div class=\"t6-stat\"><b>6</b><span>Disciplines</span></div><div class=\"t6-stat\"><b>1</b><span>Workshop</span></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-43",
+  "name": "About · story split",
+  "cat": "Content",
+  "icon": "📖",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-split\"><div><p class=\"t6-k\">About Woodex</p><h2>Design and craft under one roof</h2><p>Woodex Interior grew from a furniture workshop into a full design-and-build studio. We still design furniture to measure — so every piece fits the space it was designed for.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">About us</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/projects/\">Our work</a></div></div><figure class=\"t6-img tall\"><img src=\"/assets/img/img-853f9698149b.webp\" alt=\"Woodex workshop\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure></div></div></section>"
+ },
+ {
+  "id": "v26-44",
+  "name": "About · values 3",
+  "cat": "Content",
+  "icon": "💎",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Our values</p><h2>How we work</h2></div><div class=\"t6-g g3\"><div class=\"t6-card\"><span class=\"t6-num\">01</span><h3>Honest</h3><p>Clear budgets and no surprises.</p></div><div class=\"t6-card\"><span class=\"t6-num\">02</span><h3>Careful</h3><p>Details checked on site, every week.</p></div><div class=\"t6-card\"><span class=\"t6-num\">03</span><h3>Lasting</h3><p>Materials and furniture built to last.</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-45",
+  "name": "Pricing · 3 plans",
+  "cat": "Pricing",
+  "icon": "💰",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Pricing</p><h2>Clear packages</h2><p>Final price depends on size and finishes — we confirm after a site visit.</p></div><div class=\"t6-g g3\"><div class=\"t6-card t6-price\"><span class=\"t6-num\">Consultation</span><b>Free</b><p>Site visit and first ideas</p><ul class=\"t6-list\"><li>Site visit</li><li>Brief & budget</li><li>Next steps</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Get a quote</a></div></div><div class=\"t6-card t6-price hot\"><span class=\"t6-num\">Design</span><b>PKR / sq ft</b><p>Full design package</p><ul class=\"t6-list\"><li>Concept & 3D</li><li>Drawings</li><li>BOQ</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Get a quote</a></div></div><div class=\"t6-card t6-price\"><span class=\"t6-num\">Turnkey</span><b>Quoted</b><p>Design + build + furniture</p><ul class=\"t6-list\"><li>Everything in Design</li><li>Site teams</li><li>Furniture & handover</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Get a quote</a></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-46",
+  "name": "Pricing · cream with note",
+  "cat": "Pricing",
+  "icon": "🧾",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Packages</p><h2>Pick a starting point</h2></div><div class=\"t6-g g3\"><div class=\"t6-card t6-price\"><span class=\"t6-num\">Consultation</span><b>Free</b><p>Site visit and first ideas</p><ul class=\"t6-list\"><li>Site visit</li><li>Brief & budget</li><li>Next steps</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Get a quote</a></div></div><div class=\"t6-card t6-price hot\"><span class=\"t6-num\">Design</span><b>PKR / sq ft</b><p>Full design package</p><ul class=\"t6-list\"><li>Concept & 3D</li><li>Drawings</li><li>BOQ</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-light\" href=\"/contact/\">Get a quote</a></div></div><div class=\"t6-card t6-price\"><span class=\"t6-num\">Turnkey</span><b>Quoted</b><p>Design + build + furniture</p><ul class=\"t6-list\"><li>Everything in Design</li><li>Site teams</li><li>Furniture & handover</li></ul><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Get a quote</a></div></div></div></div></section>"
+ },
+ {
+  "id": "v26-47",
+  "name": "Pricing · estimator CTA",
+  "cat": "Pricing",
+  "icon": "🧮",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-band\" style=\"background:#f4efe7;color:#12151c\"><div><h2>How much will my project cost?</h2><p style=\"color:#6a6560\">Get an instant range with our free cost estimator.</p></div><a class=\"btn wx-btn-dark\" href=\"/estimator/\">Open estimator</a></div></div></section>"
+ },
+ {
+  "id": "v26-48",
+  "name": "Team · 4 people",
+  "cat": "Team",
+  "icon": "👥",
+  "html": "<section class=\"t6 \"><div class=\"wrap\"><div class=\"t6-head c\"><p class=\"t6-k\">Our team</p><h2>The people behind the work</h2></div><div class=\"t6-g g4\"><div class=\"t6-team\"><img src=\"/assets/img/img-42bae79b5c89.webp\" alt=\"Design lead\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>Design lead · Interior design</p></div><div class=\"t6-team\"><img src=\"/assets/img/img-a824b3688cd4.webp\" alt=\"Project manager\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>Project manager · Site & delivery</p></div><div class=\"t6-team\"><img src=\"/assets/img/img-27c481fa9a3d.webp\" alt=\"3D artist\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>3D artist · Visualization</p></div><div class=\"t6-team\"><img src=\"/assets/img/img-df7c7a7703ae.webp\" alt=\"Workshop head\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>Workshop head · Furniture</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-49",
+  "name": "Team · dark",
+  "cat": "Team",
+  "icon": "🌙",
+  "html": "<section class=\"t6 navy\"><div class=\"wrap\"><div class=\"t6-head\"><p class=\"t6-k\">Team</p><h2>Designers, engineers and craftsmen</h2></div><div class=\"t6-g g4\"><div class=\"t6-team\"><img src=\"/assets/img/img-42bae79b5c89.webp\" alt=\"Design lead\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>Design lead · Interior design</p></div><div class=\"t6-team\"><img src=\"/assets/img/img-a824b3688cd4.webp\" alt=\"Project manager\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>Project manager · Site & delivery</p></div><div class=\"t6-team\"><img src=\"/assets/img/img-27c481fa9a3d.webp\" alt=\"3D artist\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>3D artist · Visualization</p></div><div class=\"t6-team\"><img src=\"/assets/img/img-df7c7a7703ae.webp\" alt=\"Workshop head\" loading=\"lazy\" width=\"800\" height=\"1000\"><h3>Team member</h3><p>Workshop head · Furniture</p></div></div></div></section>"
+ },
+ {
+  "id": "v26-50",
+  "name": "Team · join us",
+  "cat": "Team",
+  "icon": "🤝",
+  "html": "<section class=\"t6 cream\"><div class=\"wrap\"><div class=\"t6-split\"><figure class=\"t6-img wide\"><img src=\"/assets/img/img-af83a84f72d2.webp\" alt=\"Team at work\" loading=\"lazy\" width=\"1600\" height=\"1200\"></figure><div><p class=\"t6-k\">Careers</p><h2>Join the Woodex team</h2><p>We’re always looking for designers, site engineers and craftsmen.</p><div class=\"t6-acts\"><a class=\"btn wx-btn-dark\" href=\"/contact/\">Send your CV</a><a class=\"btn wx-btn-outline wx-btn-dark\" href=\"/about/\">About us</a></div></div></div></div></section>"
+ }
+]

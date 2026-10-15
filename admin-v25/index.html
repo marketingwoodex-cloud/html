@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-density="comfortable">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Woodex Admin v2.5 Pro — Master Dashboard</title>
+    <script>
+      // Apply the stored theme before first paint so there is no flash of the
+      // wrong palette. Mirrors the token contract in src/styles/tokens.css.
+      try {
+        var t = localStorage.getItem("wx.theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        var d = localStorage.getItem("wx.density") || "comfortable";
+        var a = localStorage.getItem("wx.accent") || "brand";
+        document.documentElement.dataset.theme = t;
+        document.documentElement.dataset.density = d;
+        document.documentElement.dataset.accent = a;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

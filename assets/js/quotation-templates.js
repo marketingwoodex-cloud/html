@@ -1,0 +1,303 @@
+/* Woodex quotation templates — sectioned line items + descriptions + terms per work type.
+   Renovation / Civil Work sections carry real BOQ data from the Shahzad SB House
+   renovation workbook (Sep 2026). Interior Designing is the design-only scope.
+   Editable in the dashboard under Templates; every quotation built from a
+   template stays fully customizable per client. */
+(function () {
+  var EXEC_TERMS = [
+    "50% advance payment with work order.",
+    "Payment will be charged on the actual dimension / size of area.",
+    "Rates are valid for 15 days as per market rates.",
+  ].join("\n");
+  var DESIGN_TERMS = [
+    "75% advance payment with work order.",
+    "25% on approval of project.",
+    "Above quote is exclusive of all applicable taxes.",
+    "Advance is nonrefundable.",
+  ].join("\n");
+
+  window.WX_QUOT_TEMPLATES = [
+    {
+      name: "Renovation",
+      description: "Full home or office renovation in our standard BOQ format. Ten work sections with a summary rollup, rates from live market.",
+      sections: [
+        {
+          name: "Civil Work",
+          items: [
+            { desc: "Removal of existing windows, marble, brick walls and slabs demolished wherever required", qty: 1, unit: "lumpsum", rate: 50000 },
+            { desc: "Removal and disposal of bath tiles", qty: 1, unit: "lumpsum", rate: 50000 },
+            { desc: "A class brick work, beam/girder and slab pouring 1:4:8, PCC and plaster as per drawing", qty: 256, unit: "sft", rate: 2000 },
+            { desc: "MS girder", qty: 2, unit: "lumpsum", rate: 35000 },
+            { desc: "Transportation", qty: 1, unit: "lumpsum", rate: 0 },
+          ],
+        },
+        {
+          name: "Flooring",
+          items: [
+            { desc: "Floor tile, Master Bath (01), full body porcelain", qty: 17, unit: "sqmt", rate: 3200 },
+            { desc: "Wall tile, Master Bath (01)", qty: 62, unit: "sqmt", rate: 3200 },
+            { desc: "Floor tile, Bath (02)", qty: 12, unit: "sqmt", rate: 3200 },
+            { desc: "Wall tile, Bath (02)", qty: 35, unit: "sqmt", rate: 3200 },
+            { desc: "Cement, sand, tile bond and filling as directed by consultant", qty: 1355, unit: "sft", rate: 65 },
+            { desc: "Laying and fixing 2x4 porcelain tiles with mortar, joint filling and curing complete", qty: 1355, unit: "sft", rate: 120 },
+            { desc: "Laminate floor, Room 01 and 02", qty: 700, unit: "sft", rate: 1350 },
+            { desc: 'Wooden skirting 4"', qty: 150, unit: "rft", rate: 0 },
+            { desc: "Transportation", qty: 1, unit: "lumpsum", rate: 20000 },
+          ],
+        },
+        {
+          name: "Ceiling",
+          items: [
+            { desc: "POP false ceiling with aluminum channels and steel hanging wire, as per approved design", qty: 1000, unit: "sft", rate: 120 },
+            { desc: "Transportation", qty: 1, unit: "lumpsum", rate: 0 },
+          ],
+        },
+        {
+          name: "Paint Work",
+          items: [
+            { desc: "Ceiling paint, plastic emulsion 4 coats", qty: 1000, unit: "sft", rate: 80 },
+            { desc: "Wall paint, plastic emulsion 4 coats", qty: 695, unit: "sft", rate: 75 },
+            { desc: "Transportation", qty: 1, unit: "lumpsum", rate: 0 },
+          ],
+        },
+        {
+          name: "Wood Work",
+          items: [
+            { desc: "Media wall, Master Bed 01, supply making and fixing", qty: 142.5, unit: "sft", rate: 1200 },
+            { desc: "Media wall, Bed 02", qty: 121.125, unit: "sft", rate: 1200 },
+            { desc: "Bed wall, Master Bed 01", qty: 142.5, unit: "sft", rate: 1200 },
+            { desc: "Bed wall, Bed 02", qty: 102.125, unit: "sft", rate: 1200 },
+            { desc: "Wardrobe, Master Bath 01", qty: 92.625, unit: "sft", rate: 2800 },
+            { desc: "Wardrobe, Bath 02", qty: 76, unit: "sft", rate: 2800 },
+            { desc: "Dressing cabinet, Master Bath 01", qty: 48, unit: "sft", rate: 2200 },
+          ],
+        },
+        {
+          name: "Glass Work",
+          items: [
+            { desc: "Aluminium windows, Master Bed 01", qty: 128, unit: "sft", rate: 1500 },
+            { desc: "Aluminium windows, Bed 02", qty: 27.5, unit: "sft", rate: 1500 },
+            { desc: "12mm tempered glass, Master Bath 01", qty: 20, unit: "sft", rate: 1800 },
+            { desc: "12mm tempered glass, Bath 02", qty: 68, unit: "sft", rate: 1800 },
+            { desc: "Transportation", qty: 1, unit: "lumpsum", rate: 25000 },
+          ],
+        },
+        {
+          name: "Bath Fitting, Fixtures and Accessories",
+          items: [
+            { desc: "Muslim shower with fittings", qty: 10, unit: "each", rate: 0 },
+            { desc: "Vanity mixer tap", qty: 10, unit: "each", rate: 0 },
+            { desc: "Floor mounted W.C with fittings", qty: 10, unit: "each", rate: 0 },
+            { desc: "Vanity", qty: 10, unit: "each", rate: 0 },
+            { desc: "Paper holder, floor trap and accessories", qty: 32, unit: "each", rate: 0 },
+          ],
+        },
+        {
+          name: "Curtain and Blinds",
+          items: [
+            { desc: "Curtain, Master Bed 01, making providing and fixing", qty: 145, unit: "sft", rate: 0 },
+            { desc: "Curtain, Bed 02", qty: 80, unit: "sft", rate: 0 },
+            { desc: "Blackout blinds, Master Bed 01", qty: 145, unit: "sft", rate: 0 },
+            { desc: "Blinds, Bed 02", qty: 80, unit: "sft", rate: 0 },
+          ],
+        },
+        {
+          name: "Electrical Work",
+          items: [
+            { desc: "Complete electrical work, making providing and fixing", qty: 1, unit: "lumpsum", rate: 0 },
+          ],
+        },
+        {
+          name: "Plumbing Work",
+          items: [
+            { desc: "Water supply and drainage for 2 baths, providing laying and fixing", qty: 1, unit: "lumpsum", rate: 0 },
+          ],
+        },
+      ],
+      terms: EXEC_TERMS,
+    },
+    {
+      name: "Civil Work",
+      description: "Dismantling, brick work, plaster and structural items for renovation and new build civil scope.",
+      sections: [
+        {
+          name: "Demolition",
+          items: [
+            { desc: "Removal of existing windows, marble, brick walls and slabs demolished wherever required", qty: 1, unit: "lumpsum", rate: 50000 },
+            { desc: "Removal and disposal of bath tiles", qty: 1, unit: "lumpsum", rate: 50000 },
+          ],
+        },
+        {
+          name: "Proposed Work",
+          items: [
+            { desc: "A class brick work, beam/girder and slab pouring 1:4:8, PCC and plaster as per drawing", qty: 256, unit: "sft", rate: 2000 },
+            { desc: "MS girder", qty: 2, unit: "lumpsum", rate: 35000 },
+          ],
+        },
+        {
+          name: "Transportation",
+          items: [
+            { desc: "Transportation", qty: 1, unit: "lumpsum", rate: 0 },
+          ],
+        },
+      ],
+      terms: EXEC_TERMS,
+    },
+    {
+      name: "Interior Designing",
+      description: "Design-only scope. Concept, 3D views and working drawings. No execution.",
+      sections: [
+        {
+          name: "Design Concept",
+          items: [
+            { desc: "Design concept and mood boards", qty: 1, unit: "job", rate: 75000 },
+            { desc: "Space planning and 2D layouts", qty: 1, unit: "job", rate: 50000 },
+            { desc: "Material and color palette", qty: 1, unit: "job", rate: 25000 },
+          ],
+        },
+        {
+          name: "3D Visualization",
+          items: [
+            { desc: "3D interior views (4K delivery), 2 revision rounds included", qty: 4, unit: "nos", rate: 25000 },
+          ],
+        },
+        {
+          name: "Working Drawings",
+          items: [
+            { desc: "Electrical layout drawings", qty: 1, unit: "job", rate: 30000 },
+            { desc: "Plumbing layout drawings", qty: 1, unit: "job", rate: 30000 },
+            { desc: "False ceiling and flooring drawings", qty: 1, unit: "job", rate: 40000 },
+          ],
+        },
+      ],
+      terms: DESIGN_TERMS,
+    },
+    {
+      name: "Interior",
+      description: "Interior finishing scope. Ceiling, paint, partitions and branding.",
+      sections: [
+        {
+          name: "Ceiling and Paint",
+          items: [
+            { desc: "POP false ceiling, providing and fixing complete in all respects", qty: 1, unit: "sft", rate: 130 },
+            { desc: "Paint works, approved brand and color (ICI / Brighto)", qty: 1, unit: "sft", rate: 55 },
+          ],
+        },
+        {
+          name: "Partitions and Glass",
+          items: [
+            { desc: "Glass partition with door", qty: 1, unit: "sft", rate: 950 },
+            { desc: "Glass frosted", qty: 1, unit: "sft", rate: 120 },
+            { desc: "Wooden partition 5ft height", qty: 1, unit: "sft", rate: 725 },
+            { desc: "Wooden hanging beam for glass partition", qty: 1, unit: "sft", rate: 650 },
+          ],
+        },
+        {
+          name: "Branding",
+          items: [
+            { desc: "Branding vinyl", qty: 1, unit: "sft", rate: 150 },
+          ],
+        },
+      ],
+      terms: EXEC_TERMS,
+    },
+    {
+      name: "Fit-out",
+      description: "Commercial fit-out scope. Electrical, HVAC, partitions, doors and loose furniture.",
+      sections: [
+        {
+          name: "Electrical and HVAC",
+          items: [
+            { desc: "Electrical labour: complete electrical points, switches and COB lights", qty: 1, unit: "job", rate: 55000 },
+            { desc: "HVAC pipe fixing with drain, as per instructions", qty: 1, unit: "rft", rate: 850 },
+            { desc: "Split unit installation with M.S. bracket stand", qty: 1, unit: "nos", rate: 7500 },
+          ],
+        },
+        {
+          name: "Glass and Doors",
+          items: [
+            { desc: "Glass partition: fix panel door including sliding panel", qty: 1, unit: "job", rate: 35000 },
+            { desc: "Flash door (3.5x7) including chokat with complete hardware", qty: 1, unit: "nos", rate: 30000 },
+            { desc: "Aluminium window with 8mm glass", qty: 1, unit: "sft", rate: 1200 },
+          ],
+        },
+        {
+          name: "Furniture",
+          items: [
+            { desc: "Workstation repairing with top change and powder coating paint", qty: 1, unit: "nos", rate: 9500 },
+            { desc: "Meeting table 8 to 10 person", qty: 1, unit: "job", rate: 55000 },
+          ],
+        },
+      ],
+      terms: EXEC_TERMS,
+    },
+    {
+      name: "Architecture",
+      description: "Architectural design scope from concept to working drawings.",
+      sections: [
+        {
+          name: "Design",
+          items: [
+            { desc: "Architectural design consultancy", qty: 1, unit: "sft", rate: 350 },
+            { desc: "2D layouts and space planning", qty: 1, unit: "job", rate: 0 },
+          ],
+        },
+        {
+          name: "Visualization and Drawings",
+          items: [
+            { desc: "3D exterior and interior views", qty: 1, unit: "nos", rate: 25000 },
+            { desc: "Complete working drawings set", qty: 1, unit: "job", rate: 0 },
+          ],
+        },
+      ],
+      terms: DESIGN_TERMS,
+    },
+    {
+      name: "3D Visualization",
+      description: "Photorealistic 3D views, 4K delivery, two revision rounds included.",
+      sections: [
+        {
+          name: "3D Views",
+          items: [
+            { desc: "3D interior views (4K delivery), 2 revision rounds included", qty: 1, unit: "nos", rate: 25000 },
+          ],
+        },
+      ],
+      terms: DESIGN_TERMS,
+    },
+    {
+      name: "Furniture",
+      description: "Custom furniture items made to order in our workshop.",
+      sections: [
+        {
+          name: "Furniture",
+          items: [
+            { desc: "Dining table", qty: 1, unit: "nos", rate: 10500 },
+            { desc: "Dining chair", qty: 1, unit: "nos", rate: 10500 },
+            { desc: "Sofa seat", qty: 1, unit: "nos", rate: 15500 },
+            { desc: "Bar stool", qty: 1, unit: "nos", rate: 4500 },
+            { desc: "Running table", qty: 1, unit: "rft", rate: 6500 },
+          ],
+        },
+      ],
+      terms: [
+        "50% advance payment with work order.",
+        "Rates are exclusive of GST / PST.",
+        "Delivery time as mutually agreed.",
+      ].join("\n"),
+    },
+    {
+      name: "Design Consultancy",
+      description: "Complete interior design consultancy from layouts to detail drawings.",
+      sections: [
+        {
+          name: "Consultancy",
+          items: [
+            { desc: "Complete interior design consultancy: 2D layouts, 3D design, mood boards and detail drawings", qty: 1, unit: "sft", rate: 100 },
+          ],
+        },
+      ],
+      terms: DESIGN_TERMS + "\nSite visits: 3 included; additional visits Rs 3,500 per visit.",
+    },
+  ];
+})();

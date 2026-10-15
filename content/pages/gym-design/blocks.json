@@ -1,0 +1,94 @@
+[
+ {
+  "id": "407c128c2e",
+  "type": "hero",
+  "html": "\n\n    <section class=\"gy-hero\" aria-labelledby=\"gym-title\"><div class=\"gy-wrap gy-hero-grid\">\n      <div class=\"gy-hero-copy gy-reveal\">\n        <nav class=\"gy-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Gym Design</span></nav>\n        <h1 id=\"gym-title\">Gym Design in Lahore — Fitness Spaces That Perform</h1>\n        <p class=\"gy-copy\">Woodex designs gym interiors around how members actually train. From cardio and strength zones to studios and locker rooms, every space is built for energy, flow and everyday performance.</p>\n        <div class=\"gy-hero-actions\"><a class=\"gy-btn gy-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"gy-btn gy-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"gy-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"gy-hero-media gy-reveal\"><img src=\"/assets/img/img-ffafc4c12c46.webp\" width=\"1920\" height=\"1280\" alt=\"Modern gym floor with clearly defined cardio, functional training and free-weight zones under strong lighting\" loading=\"lazy\" decoding=\"async\"><figcaption>Clear zones, durable finishes and strong light</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Gym Design in Lahore — Fitness Spaces That Perform",
+   "copy": "Woodex designs gym interiors around how members actually train. From cardio and strength zones to studios and locker rooms, every space is built for energy, flow and everyday performance.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-ffafc4c12c46.webp",
+   "img_alt": "Modern gym floor with clearly defined cardio, functional training and free-weight zones under strong lighting"
+  }
+ },
+ {
+  "id": "ec1fe3ee77",
+  "type": "raw",
+  "html": "\n\n    <section class=\"gy-section gy-scope\" id=\"gym-scope\"><div class=\"gy-wrap\">\n      <header class=\"gy-section-head gy-reveal\"><h2>What We Design</h2><p class=\"gy-copy\">Eight connected parts make the gym easy to navigate, comfortable to use and ready for hard daily wear.</p></header>\n      <div class=\"gy-scope-viewport gy-reveal\" id=\"gy-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight gym design services. Scroll horizontally to review all items.\"><div class=\"gy-scope-track\">\n        <article class=\"gy-scope-card\"><span>01</span><h3>Training Zone Planning</h3><p>Equipment, circulation and safety clearances shaped around real training patterns.</p></article>\n        <article class=\"gy-scope-card\"><span>02</span><h3>Cardio Area Design</h3><p>Comfortable spacing, strong sightlines and fresh airflow for longer sessions.</p></article>\n        <article class=\"gy-scope-card\"><span>03</span><h3>Strength &amp; Free-Weight Zones</h3><p>Racks, machines and lifting platforms arranged for safe, efficient movement.</p></article>\n        <article class=\"gy-scope-card\"><span>04</span><h3>Group Class Studios</h3><p>Flexible studios for yoga, spin, HIIT or Pilates with the right floor and AV.</p></article>\n        <article class=\"gy-scope-card\"><span>05</span><h3>Locker Rooms &amp; Changing Areas</h3><p>Private, easy-clean spaces with practical lockers, benches and wet zones.</p></article>\n        <article class=\"gy-scope-card\"><span>06</span><h3>Reception &amp; Member Lounge</h3><p>A clear welcome, simple check-in and a comfortable place to pause.</p></article>\n        <article class=\"gy-scope-card\"><span>07</span><h3>Flooring &amp; Acoustic Design</h3><p>Impact protection and sound control matched to every activity zone.</p></article>\n        <article class=\"gy-scope-card\"><span>08</span><h3>Lighting &amp; Ventilation</h3><p>Bright, energising light with airflow planned for comfort at peak hours.</p></article>\n      </div></div>\n      <div class=\"gy-controls\"><span class=\"gy-status\" id=\"gy-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"gy-control\" id=\"gy-scope-prev\" type=\"button\" aria-label=\"Previous gym design service\" disabled=\"\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5M12 19l-7-7 7-7\"></path></svg></button><button class=\"gy-control\" id=\"gy-scope-next\" type=\"button\" aria-label=\"Next gym design service\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div>\n    </div></section>"
+ },
+ {
+  "id": "c834bf1afd",
+  "type": "raw",
+  "html": "\n\n    <section class=\"gy-section gy-process\" id=\"gym-process\"><div class=\"gy-wrap\">\n      <header class=\"gy-section-head gy-reveal\"><h2>Our Design Process</h2><p class=\"gy-copy\">Five focused stages turn your training brief into a coordinated design package.</p></header>\n      <div class=\"gy-steps gy-reveal\"><article class=\"gy-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss your members, equipment, capacity, brand, budget and training mix.</p></article><article class=\"gy-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the floor, services, access, ventilation and structural conditions.</p></article><article class=\"gy-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Cardio, strength, class and support zones form one clear member journey.</p></article><article class=\"gy-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Flooring, lighting, finishes and furniture are chosen for hard daily use.</p></article><article class=\"gy-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Drawings and 3D views prepare the gym for accurate pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "8c88a47921",
+  "type": "raw",
+  "html": "\n\n    <section class=\"gy-section gy-pricing\" id=\"gym-pricing\"><div class=\"gy-wrap gy-pricing-grid\">\n      <div class=\"gy-pricing-copy gy-reveal\"><h2>Pricing</h2><p class=\"gy-copy\">The initial consultation and site survey are free. We provide an exact fixed quote after the survey, once the floor area, zones and 3D package are clear.</p><a class=\"gy-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"gy-reveal\"><div class=\"gy-price-list\"><article class=\"gy-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"gy-price-row\"><h3>Compact gyms</h3><strong>From PKR 100,000</strong></article><article class=\"gy-price-row\"><h3>Typical gyms</h3><strong>PKR 200,000-500,000</strong></article><article class=\"gy-price-row\"><h3>Large fitness clubs</h3><strong>PKR 500,000-1,200,000+</strong></article></div><p class=\"gy-price-note\">Cost varies with floor area, the number of zones and the required 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "5f83633d1d",
+  "type": "raw",
+  "html": "\n\n    <section class=\"gy-section gy-compare\" id=\"gym-compare\"><div class=\"gy-wrap\">\n      <header class=\"gy-section-head gy-reveal\"><h2>Design vs Fit-Out vs Renovation</h2><p class=\"gy-copy\">Choose the scope that matches where your gym is today.</p></header>\n      <div class=\"gy-compare-grid gy-reveal\"><article class=\"gy-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization. This is the planning phase.</p></article><article class=\"gy-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>The approved gym design built and installed as one coordinated scope.</p><a class=\"gy-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"gy-compare-card\"><small>Upgrade an existing space</small><h3>Renovation</h3><p>A focused upgrade for an established or operating gym.</p><a class=\"gy-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "107a29f4dc",
+  "type": "faq",
+  "html": "\n\n    <section class=\"gy-section gy-faq\" id=\"gym-faq\"><div class=\"gy-wrap gy-faq-grid\">\n      <div class=\"gy-faq-intro gy-reveal\"><h2>Gym Design FAQs</h2><p class=\"gy-copy\">Straight answers on member experience, zoning, flooring, locker rooms, timing and 3D approval.</p></div>\n      <div class=\"gy-faq-list gy-reveal\">\n        <div class=\"gy-faq-item\"><button class=\"gy-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How does gym design improve the member experience?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"gy-faq-a\"><div><p>Clear movement, comfortable spacing, good light and fresh air make training safer and more enjoyable from arrival to cooldown.</p></div></div></div>\n        <div class=\"gy-faq-item\"><button class=\"gy-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do you zone cardio, strength, and classes?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"gy-faq-a\"><div><p>We group compatible activities, protect clear circulation and separate noisy or high-impact zones from quieter studios.</p></div></div></div>\n        <div class=\"gy-faq-item\"><button class=\"gy-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What flooring suits a gym?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"gy-faq-a\"><div><p>Heavy weights need impact-resistant rubber, cardio needs durable resilient flooring, and studios need finishes suited to their class type.</p></div></div></div>\n        <div class=\"gy-faq-item\"><button class=\"gy-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design locker rooms?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"gy-faq-a\"><div><p>Yes. We plan lockers, changing areas, showers, washrooms, benches, privacy and practical wet-area finishes.</p></div></div></div>\n        <div class=\"gy-faq-item\"><button class=\"gy-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does gym design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"gy-faq-a\"><div><p>A compact gym usually takes two to three weeks. Larger clubs with several zones may take four to six weeks.</p></div></div></div>\n        <div class=\"gy-faq-item\"><button class=\"gy-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I get 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"gy-faq-a\"><div><p>Yes. Key training zones, reception, studios and locker areas are shown in 3D before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Gym Design FAQs",
+   "copy": "Straight answers on member experience, zoning, flooring, locker rooms, timing and 3D approval.",
+   "items": [
+    {
+     "q": "How does gym design improve the member experience?",
+     "a": "<p>Clear movement, comfortable spacing, good light and fresh air make training safer and more enjoyable from arrival to cooldown.</p>"
+    },
+    {
+     "q": "How do you zone cardio, strength, and classes?",
+     "a": "<p>We group compatible activities, protect clear circulation and separate noisy or high-impact zones from quieter studios.</p>"
+    },
+    {
+     "q": "What flooring suits a gym?",
+     "a": "<p>Heavy weights need impact-resistant rubber, cardio needs durable resilient flooring, and studios need finishes suited to their class type.</p>"
+    },
+    {
+     "q": "Do you design locker rooms?",
+     "a": "<p>Yes. We plan lockers, changing areas, showers, washrooms, benches, privacy and practical wet-area finishes.</p>"
+    },
+    {
+     "q": "How long does gym design take?",
+     "a": "<p>A compact gym usually takes two to three weeks. Larger clubs with several zones may take four to six weeks.</p>"
+    },
+    {
+     "q": "Do I get 3D visuals before execution?",
+     "a": "<p>Yes. Key training zones, reception, studios and locker areas are shown in 3D before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "ac52b4e0cf",
+  "type": "raw",
+  "html": "\n\n    <section class=\"gy-section gy-related\" id=\"gym-related\"><div class=\"gy-wrap\">\n      <header class=\"gy-section-head gy-reveal\"><h2>Related Spaces</h2><p class=\"gy-copy\">Explore nearby commercial interior design services.</p></header>\n      <nav class=\"gy-related-grid gy-reveal\" aria-label=\"Related spaces\"><a class=\"gy-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors Hub</strong><span aria-hidden=\"true\">↗</span></a><a class=\"gy-related-link\" href=\"/spa-design/\" data-page-route=\"spa\"><small>02</small><strong>Spa Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"gy-related-link\" href=\"/hotel-interior-design/\" data-page-route=\"hotel\"><small>03</small><strong>Hotel Interior Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "0288af4d75",
+  "type": "cta",
+  "html": "\n\n    <section class=\"gy-section gy-contact\" id=\"gym-contact\"><div class=\"gy-wrap gy-contact-grid\">\n      <div class=\"gy-reveal\"><h2>Talk to Woodex</h2><p class=\"gy-copy\">Tell us about the site, equipment list, member capacity and training experience you want to create.</p><div class=\"gy-contact-actions\"><a class=\"gy-btn gy-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"gy-btn gy-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"gy-contact-list gy-reveal\"><div class=\"gy-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"gy-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"gy-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"gy-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"gy-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"gy-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"gy-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the site, equipment list, member capacity and training experience you want to create.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

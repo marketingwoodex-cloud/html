@@ -1,0 +1,49 @@
+[
+ {
+  "id": "91dd5fabda",
+  "type": "hero",
+  "html": "\n\n    <section class=\"dx-hero dx-hero--image\" aria-labelledby=\"dx-title\">\n      <img class=\"dx-hero-bg\" src=\"/assets/img/img-dce06249b137.webp\" alt=\"\" aria-hidden=\"true\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\">\n      <div class=\"dx-wrap dx-hero-inner\" data-st-reveal>\n        <p class=\"dx-kicker\">Illustrative design study</p>\n        <h1 id=\"dx-title\">A house around a courtyard</h1>\n        <p class=\"dx-dek\">An older house re-planned around a small courtyard so light and air reach every room.</p>\n        <dl class=\"dx-meta\">\n        <div class=\"dx-meta-item\"><dt>Project type</dt><dd>Residential renovation</dd></div>\n        <div class=\"dx-meta-item\"><dt>Setting</dt><dd>Lahore residence</dd></div>\n        <div class=\"dx-meta-item\"><dt>Year</dt><dd>2026</dd></div>\n        <div class=\"dx-meta-item\"><dt>Size</dt><dd>Single-family house</dd></div>\n        </dl>\n      </div>\n    </section>",
+  "fields": {
+   "heading": "A house around a courtyard",
+   "img_src": "/assets/img/img-dce06249b137.webp",
+   "img_alt": ""
+  }
+ },
+ {
+  "id": "38dd239241",
+  "type": "raw",
+  "html": "\n    \n    <section class=\"dx-body\">\n      <div class=\"dx-wrap dx-body-grid\">\n        <aside class=\"dx-side\">\n          <div class=\"dx-facts\" data-st-reveal>\n            <h2>Study facts</h2>\n            <ul class=\"dx-arrow-list\">\n              <li><strong>Scope</strong> Renovation of an existing single-family house</li>\n              <li><strong>Key move</strong> A small court cut from the centre of the plan</li>\n              <li><strong>Materials</strong> Brick, lime plaster and timber</li>\n            </ul>\n            <p class=\"dx-note\">Illustrative design study. Not built work, not a client project.</p>\n          </div>\n        </aside>\n        <div class=\"dx-main\">\n        <div data-st-reveal>\n          <h2>The brief</h2>\n          <p>The house is a typical older home with deep rooms and dark corridors. The family wants light and air without losing rooms or starting over.</p>\n          <p>We keep the structure and open a small court at its centre. It becomes the lungs of the house, and every room borrows from it.</p>\n        </div>\n        <div data-st-reveal>\n          <h2>The moves</h2>\n          <ul class=\"dx-arrow-list\">\n            <li><strong>A court in the middle.</strong> Part of the old roof slab comes out to open the court. No new footprint, no lost plot area.</li>\n            <li><strong>Rooms facing inward.</strong> Living, dining and bedrooms open onto the court with full glazing. Corridors shrink as rooms take the view.</li>\n            <li><strong>Shade and breeze first.</strong> Deep overhangs, a jali screen and planting keep the court cool through the Lahore summer.</li>\n            <li><strong>One material language.</strong> Brick, lime plaster and timber repeat inside and out, so the house reads as one piece.</li>\n          </ul>\n        </div>\n        <div data-st-reveal>\n          <h2>Takeaways</h2>\n          <p>Light matters more than square footage in a family home.</p>\n          <p>A courtyard cools the house and cuts daytime lighting bills.</p>\n          <p>When the structure is sound, renovation beats rebuilding.</p>\n        </div>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "2f91c4cb7c",
+  "type": "pullquote",
+  "html": "\n    <section class=\"dx-quote\" data-st-reveal><div class=\"dx-wrap\"><blockquote>Light matters more than square footage in a family home.</blockquote></div></section>",
+  "fields": {
+   "text": "Light matters more than square footage in a family home."
+  }
+ },
+ {
+  "id": "ab63d5c729",
+  "type": "raw",
+  "html": "\n    <section class=\"dx-related\">\n      <div class=\"dx-wrap\">\n        <header data-st-reveal><p class=\"dx-kicker\">Keep looking</p><h2>Related studies.</h2></header>\n        <div class=\"dx-cards\">\n          <a class=\"dx-card\" href=\"/projects/small-apartment/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-1f4b4ef86cb5.webp\" alt=\"Compact apartment living space\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Residential study</figcaption></figure>\n            <h3>Sixty square metres, fully used</h3><p>One storage wall and clear sightlines make 60 square metres do three jobs.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/clinic-fit-out/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-5048d9095862.webp\" alt=\"Calm clinic interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Healthcare fit-out study</figcaption></figure>\n            <h3>A clinic that calms</h3><p>Waiting, consult and procedure arranged for calm and easy cleaning.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/retail-corner/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-5194dc486e09.webp\" alt=\"Bright corner shop interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Retail study</figcaption></figure>\n            <h3>A corner shop that stops footfall</h3><p>Entrance, display wall and checkout set out to turn footfall into sales.</p><span class=\"dx-more\">View the study</span>\n          </a>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "06e0bc2764",
+  "type": "cta",
+  "html": "\n\n<section class=\"st-section\" id=\"cta\" aria-labelledby=\"cta-title\">\n      <div class=\"st-wrap st-cta-grid\">\n        <div class=\"st-cta-copy\" data-st-reveal=\"\">\n          <p class=\"st-label\">Start your project</p>\n          <h2 id=\"cta-title\">Have a house to rethink?</h2>\n          <p>Woodex Interior designs and builds across Lahore, Islamabad, Karachi and nationwide. Tell us about your space and we will take it from there.</p>\n          <address class=\"st-cta-meta\">M-71, Zainab Tower, Model Town Link Road, Lahore<br><a href=\"tel:+923224000768\">+92 322 4000768</a> &middot; <a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a><br><strong>Mon&ndash;Sat 9:30&ndash;6:30</strong> &middot; Sunday closed</address>\n          <div class=\"actions\"><a class=\"btn\" href=\"mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project\">Email the studio</a><a class=\"btn btn-light\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div>\n        </div>\n        <figure class=\"st-image st-cta-media\" data-st-reveal=\"\"><img src=\"/assets/img/img-27ed3ac85189.jpg\" alt=\"House courtyard view used as project photography placeholder\" width=\"2000\" height=\"1090\" loading=\"lazy\" decoding=\"async\"></figure>\n      </div>\n    </section>\n\n",
+  "fields": {
+   "heading": "Have a house to rethink?",
+   "label": "Start your project",
+   "actions": [
+    {
+     "text": "Email the studio",
+     "href": "mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project"
+    },
+    {
+     "text": "Call +92 322 4000768",
+     "href": "tel:+923224000768"
+    }
+   ]
+  }
+ }
+]

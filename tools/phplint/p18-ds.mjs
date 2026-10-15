@@ -1,0 +1,28 @@
+import pp from "puppeteer-core";
+const OUT = "/home/user/-marketingwoodex/tools/", w = (t) => new Promise((r) => setTimeout(r, t));
+const ok = (x, m) => { console.log((x ? "PASS " : "FAIL ") + m); if (!x) process.exitCode = 1; };
+const b = await pp.launch({ executablePath: process.env.HOME + "/.cache/pb/al/chromium", args: ["--no-sandbox"], headless: "shell", defaultViewport: { width: 1440, height: 900 } });
+const a = await b.newPage(); const errs = []; a.on("pageerror", (e) => errs.push(e.message));
+await a.goto("http://127.0.0.1:8080/admin/", { waitUntil: "networkidle0" });
+await a.evaluate(() => document.documentElement.classList.add("dark")); await w(600);
+const c = await a.$eval("#l-btn", (x) => { const s = getComputedStyle(x); return s.backgroundColor + " / " + s.color; }); ok(/184, 149, 106/.test(c), "dark-mode Sign in button is gold: " + c);
+await a.type("input[type=email]", "dev@woodex.local"); await a.screenshot({ path: OUT + "p18-ds-login-dark.png" });
+await a.evaluate(() => document.documentElement.classList.remove("dark"));
+await a.$eval("input[type=email]", (x) => (x.value = "")); await a.type("input[type=email]", "o@woodex.pk"); await a.type("input[type=password]", "Woodex@2026x"); await a.keyboard.press("Enter"); await w(2500);
+await a.evaluate(() => (location.hash = "#/invoices")); await w(2500);
+ok(await a.$$eval("#view table.tbl th.srt", (x) => x.length) > 2, "invoice table headers sortable");
+ok(!!(await a.$(".lp-per select")), "Show N entries selector");
+const col = await a.evaluate(() => { const ths = [...document.querySelectorAll("#view table.tbl thead th")]; return ths.findIndex((t) => /total/i.test(t.textContent)); });
+const firstVals = async () => a.evaluate((i) => [...document.querySelectorAll("#view table.tbl tbody tr")].filter((r) => r.style.display !== "none").slice(0, 4).map((r) => r.cells[i].textContent.trim()), col);
+await a.evaluate((i) => document.querySelectorAll("#view table.tbl thead th")[i].click(), col); await w(400); const asc = await firstVals();
+await a.evaluate((i) => document.querySelectorAll("#view table.tbl thead th")[i].click(), col); await w(400); const desc = await firstVals();
+const n = (s) => +s.replace(/[^\d]/g, ""); console.log("asc", asc, "desc", desc);
+ok(n(asc[0]) <= n(asc[1]) && n(desc[0]) >= n(desc[1]) && n(desc[0]) >= n(asc[0]), "sort asc/desc by Total");
+await a.evaluate(() => (location.hash = "#/leads")); await w(2500);
+const nr = await a.$$eval("#view table.tbl tbody tr", (r) => r.length); console.log("tracker rows", nr);
+if (await a.$(".lp-per select")) { await a.select(".lp-per select", "10"); await w(500); ok(await a.$$eval("#view table.tbl tbody tr", (r) => r.filter((x) => x.style.display !== "none").length) === 10, "Show 10 entries → 10 rows"); } else ok(nr <= 10, "no selector because ≤10 rows");
+await a.screenshot({ path: OUT + "p18-ds-invoices.png" });
+for (const r of ["#/dashboard", "#/leads", "#/quotes", "#/clients", "#/projects", "#/bookings"]) { await a.evaluate((h) => (location.hash = h), r); await w(1500); }
+await a.screenshot({ path: OUT + "p18-ds-bookings.png" });
+ok(!errs.length, "no JS errors " + JSON.stringify(errs.slice(0, 3)));
+await b.close();

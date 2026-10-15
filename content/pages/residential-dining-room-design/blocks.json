@@ -1,0 +1,95 @@
+[
+ {
+  "id": "09648f9e8f",
+  "type": "hero",
+  "html": "\n\n    <section class=\"dr-hero\" aria-labelledby=\"dining-room-hero-title\"><div class=\"dr-wrap dr-hero-grid\">\n      <div class=\"dr-hero-copy dr-reveal\">\n        <nav class=\"dr-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Dining Room Design</span></nav>\n        <p class=\"dr-label\">Made for gathering</p><h1 id=\"dining-room-hero-title\">Dining Room Design in Lahore</h1>\n        <p class=\"dr-copy\">The dining room is where family gathers for meals, celebrations and everyday moments. We shape a beautiful, easy-flowing space around the way you host and live.</p>\n        <div><a class=\"dr-btn dr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      </div>\n      <figure class=\"dr-hero-media dr-reveal\"><img src=\"/assets/img/img-469cf01b2548.jpg\" width=\"3000\" height=\"4000\" alt=\"Elegant dining room with a sculptural pendant, timber table and comfortable seating\" loading=\"lazy\" decoding=\"async\"><figcaption>Dining room design concept</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Dining Room Design in Lahore",
+   "label": "Made for gathering",
+   "copy": "The dining room is where family gathers for meals, celebrations and everyday moments. We shape a beautiful, easy-flowing space around the way you host and live.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-469cf01b2548.jpg",
+   "img_alt": "Elegant dining room with a sculptural pendant, timber table and comfortable seating"
+  }
+ },
+ {
+  "id": "063385f863",
+  "type": "raw",
+  "html": "\n\n    <section class=\"dr-section dr-intro\" id=\"dining-room-intro\"><div class=\"dr-wrap dr-intro-grid\">\n      <div class=\"dr-intro-copy dr-reveal\"><h2>What Is Dining Room Design?</h2><p class=\"dr-copy\">A dining room brings people together for daily meals and special occasions. Good design balances function, beauty and flow so every seat feels comfortable and the room connects naturally with the home.</p><p class=\"dr-copy\">We plan table placement, seating, lighting, colour, materials and finishes as one composition. Styling adds warmth while keeping sightlines across the table open.</p></div>\n      <figure class=\"dr-intro-media dr-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-711f2ea6de04.jpg\" width=\"960\" height=\"960\" alt=\"Contemporary dining room with a six-seat table and pendant lighting\"><figcaption>Table, light and movement planned together</figcaption></figure>\n    </div></section>"
+ },
+ {
+  "id": "d2514c20f1",
+  "type": "raw",
+  "html": "\n\n    <section class=\"dr-section dr-deliver\" id=\"dining-room-deliver\"><div class=\"dr-wrap dr-deliver-grid\">\n      <div class=\"dr-deliver-intro dr-reveal\"><h2>What We Deliver</h2><p class=\"dr-copy\">Every choice is coordinated around comfortable meals, clear movement and the character of your home.</p><p class=\"dr-deliver-note\">Scroll through the full dining room scope.</p></div>\n      <div class=\"dr-scope-scroll dr-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight dining room design deliverables. Scroll to review all items.\">\n        <article class=\"dr-scope-item\"><span>01</span><div><h3>Table &amp; Seating Layout</h3><p>Table size for your guest count, with room to pull out chairs and move comfortably.</p></div></article>\n        <article class=\"dr-scope-item\"><span>02</span><div><h3>Dining Table &amp; Chair Selection</h3><p>Shapes, materials and matching or coordinating chairs chosen for the room.</p></div></article>\n        <article class=\"dr-scope-item\"><span>03</span><div><h3>Statement Lighting</h3><p>A chandelier or pendant cluster at the right height and scale above the table.</p></div></article>\n        <article class=\"dr-scope-item\"><span>04</span><div><h3>Colour Scheme Design</h3><p>A cohesive palette with mood boards that make the room feel considered.</p></div></article>\n        <article class=\"dr-scope-item\"><span>05</span><div><h3>Decorative Styling</h3><p>Art, mirrors, rugs and low centerpieces that never block conversation.</p></div></article>\n        <article class=\"dr-scope-item\"><span>06</span><div><h3>Material &amp; Finish Selection</h3><p>Walls, flooring, curtains and feature elements selected together.</p></div></article>\n        <article class=\"dr-scope-item\"><span>07</span><div><h3>Open-Plan Coordination</h3><p>A defined dining zone that flows naturally into the kitchen or living room.</p></div></article>\n        <article class=\"dr-scope-item\"><span>08</span><div><h3>Small Dining Solutions &amp; Storage</h3><p>Round or extendable tables, wall lighting, mirrors and compact storage for dining essentials.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "2eb8a14d63",
+  "type": "raw",
+  "html": "\n\n    <section class=\"dr-section dr-process\" id=\"dining-room-process\"><div class=\"dr-wrap\">\n      <header class=\"dr-process-head dr-reveal\"><h2>Our Design Process</h2><p class=\"dr-copy\">Five focused stages take the room from conversation to a clear visual package.</p></header>\n      <div class=\"dr-steps dr-reveal\">\n        <article class=\"dr-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss daily meals, entertaining, guest count, style and budget.</p></article>\n        <article class=\"dr-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record walls, openings and adjoining spaces for a precise fit.</p></article>\n        <article class=\"dr-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Table placement, circulation and the dining mood come together.</p></article>\n        <article class=\"dr-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>We choose the table, chairs, lighting, colour and finishes.</p></article>\n        <article class=\"dr-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>You receive drawings, specifications and clear 3D views.</p></article>\n      </div>\n      <div class=\"dr-timeline dr-reveal\"><span>Consultation to final design package</span><strong>Typically 1-2 weeks</strong></div>\n    </div></section>"
+ },
+ {
+  "id": "d8fd3c0328",
+  "type": "raw",
+  "html": "\n\n    <section class=\"dr-section dr-pricing\" id=\"dining-room-pricing\"><div class=\"dr-wrap dr-pricing-grid\">\n      <div class=\"dr-reveal\"><h2>Pricing</h2><p class=\"dr-copy\">The dining room follows our single-room design band. Start with a free conversation, then choose the depth of support you need.</p><a class=\"dr-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"dr-reveal\"><div class=\"dr-price-panel\"><article class=\"dr-price\"><div><h3>Initial Consultation</h3><p>A first conversation about the room.</p></div><strong>Free</strong></article><article class=\"dr-price\"><div><h3>Design Consultation</h3><p>Focused layout and design advice.</p></div><strong>From around PKR 12,000</strong></article><article class=\"dr-price\"><div><h3>Full Design Package</h3><p>Based on room size and complexity.</p></div><strong>PKR 15,000-35,000</strong></article></div><p class=\"dr-price-note\">You receive an exact fixed quote after the site visit.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "9269dc4163",
+  "type": "faq",
+  "html": "\n\n    <section class=\"dr-section dr-faq\" id=\"dining-room-faq\"><div class=\"dr-wrap dr-faq-grid\">\n      <div class=\"dr-faq-intro dr-reveal\"><h2>Dining Room Design FAQs</h2><p class=\"dr-copy\">Quick guidance on cost, proportion, lighting and timing.</p></div>\n      <div class=\"dr-faq-list dr-reveal\">\n        <div class=\"dr-faq-item\"><button class=\"dr-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How much does dining room design cost?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"dr-faq-a\"><div><p>The initial consultation is free. Design consultation starts from around PKR 12,000, while full packages range from PKR 15,000-35,000.</p></div></div></div>\n        <div class=\"dr-faq-item\"><button class=\"dr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What size dining table do I need?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"dr-faq-a\"><div><p>Allow about 24 inches per person and 36-48 inches around the table for chairs and comfortable movement.</p></div></div></div>\n        <div class=\"dr-faq-item\"><button class=\"dr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How high should the chandelier or pendant hang?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"dr-faq-a\"><div><p>A dining light usually hangs 30-36 inches above the table. We also size it in proportion to the tabletop.</p></div></div></div>\n        <div class=\"dr-faq-item\"><button class=\"dr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What colour scheme works for a dining room?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"dr-faq-a\"><div><p>The best palette responds to daylight, room size and mood. We coordinate walls, furniture, curtains and flooring.</p></div></div></div>\n        <div class=\"dr-faq-item\"><button class=\"dr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does dining room design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"dr-faq-a\"><div><p>A typical dining room takes 1-2 weeks from consultation to the final design package.</p></div></div></div>\n        <div class=\"dr-faq-item\"><button class=\"dr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design open-plan kitchen-dining spaces?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"dr-faq-a\"><div><p>Yes. We define the dining zone and coordinate its layout, lighting and finishes with the kitchen and living areas.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Dining Room Design FAQs",
+   "copy": "Quick guidance on cost, proportion, lighting and timing.",
+   "items": [
+    {
+     "q": "How much does dining room design cost?",
+     "a": "<p>The initial consultation is free. Design consultation starts from around PKR 12,000, while full packages range from PKR 15,000-35,000.</p>"
+    },
+    {
+     "q": "What size dining table do I need?",
+     "a": "<p>Allow about 24 inches per person and 36-48 inches around the table for chairs and comfortable movement.</p>"
+    },
+    {
+     "q": "How high should the chandelier or pendant hang?",
+     "a": "<p>A dining light usually hangs 30-36 inches above the table. We also size it in proportion to the tabletop.</p>"
+    },
+    {
+     "q": "What colour scheme works for a dining room?",
+     "a": "<p>The best palette responds to daylight, room size and mood. We coordinate walls, furniture, curtains and flooring.</p>"
+    },
+    {
+     "q": "How long does dining room design take?",
+     "a": "<p>A typical dining room takes 1-2 weeks from consultation to the final design package.</p>"
+    },
+    {
+     "q": "Do you design open-plan kitchen-dining spaces?",
+     "a": "<p>Yes. We define the dining zone and coordinate its layout, lighting and finishes with the kitchen and living areas.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "858ad5e85e",
+  "type": "raw",
+  "html": "\n\n    <section class=\"dr-section dr-related\" id=\"dining-room-related\"><div class=\"dr-wrap\">\n      <header class=\"dr-related-head dr-reveal\"><h2>Related Services</h2><p class=\"dr-copy\">Continue with an adjoining room or bring the full home into one coordinated plan.</p></header>\n      <div class=\"dr-related-grid dr-reveal\"><a class=\"dr-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"dr-related-link\" href=\"/kitchen-design/\" data-page-route=\"kitchen\"><small>02</small><strong>Kitchen Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"dr-related-link\" href=\"/residential-living-room-design/\" data-page-route=\"livingRoom\"><small>03</small><strong>Living Room Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"dr-related-link\" href=\"/complete-home-redesign/\"><small>04</small><strong>Complete Home Redesign</strong><span aria-hidden=\"true\">↗</span></a><a class=\"dr-related-link\" href=\"/3d-visualization/\" data-page-route=\"studio\"><small>05</small><strong>Woodex 3D Studio</strong><span aria-hidden=\"true\">↗</span></a></div>\n    </div></section>"
+ },
+ {
+  "id": "5665eda7e4",
+  "type": "cta",
+  "html": "\n\n    <section class=\"dr-section dr-contact\" id=\"dining-room-contact\"><div class=\"dr-wrap dr-contact-grid\">\n      <div class=\"dr-reveal\"><h2>Talk to Woodex</h2><p class=\"dr-copy\">Tell us the room size, how many people you seat and the feeling you want to create.</p><div class=\"dr-contact-actions\"><a class=\"dr-btn dr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"dr-btn dr-btn-light\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"dr-contact-list dr-reveal\"><div class=\"dr-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"dr-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"dr-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"dr-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"dr-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"dr-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"dr-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us the room size, how many people you seat and the feeling you want to create.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,94 @@
+[
+ {
+  "id": "62371c4bd6",
+  "type": "hero",
+  "html": "\n\n    <section class=\"kr-hero\" aria-labelledby=\"kids-room-hero-title\"><div class=\"kr-wrap kr-hero-grid\">\n      <div class=\"kr-hero-copy kr-reveal\">\n        <nav class=\"kr-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Kids Room Design</span></nav>\n        <h1 id=\"kids-room-hero-title\">Kids Room Design in Lahore</h1>\n        <p class=\"kr-copy\">A child’s room should make everyday life easier and leave space for imagination. We design safe, playful bedrooms, nurseries and study areas that feel right now and adapt as children grow.</p>\n        <div><a class=\"kr-btn kr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      </div>\n      <figure class=\"kr-hero-media kr-reveal\"><img src=\"/assets/img/img-853f9698149b.webp\" width=\"1400\" height=\"959\" alt=\"Warm modern children’s bedroom with integrated bed, play and storage areas\" loading=\"lazy\" decoding=\"async\"><figcaption>Sleep, play, study and grow</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Kids Room Design in Lahore",
+   "copy": "A child’s room should make everyday life easier and leave space for imagination. We design safe, playful bedrooms, nurseries and study areas that feel right now and adapt as children grow.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-853f9698149b.webp",
+   "img_alt": "Warm modern children’s bedroom with integrated bed, play and storage areas"
+  }
+ },
+ {
+  "id": "a58ce5b791",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kr-section kr-intro\" id=\"kids-room-intro\"><div class=\"kr-wrap kr-intro-grid\">\n      <div class=\"kr-intro-visual kr-reveal\"><figure class=\"kr-intro-media\"><img loading=\"lazy\" src=\"/assets/img/img-a824b3688cd4.webp\" width=\"827\" height=\"1030\" alt=\"Children’s room with child-height storage, study desk and open play space\"></figure></div>\n      <div class=\"kr-intro-copy kr-reveal\"><h2>What Is Kids Room Design?</h2><p class=\"kr-copy\">Kids room design shapes one room around the many ways a child lives in it: sleeping, playing, studying, dreaming and growing. The layout needs to feel fun and comfortable while staying safe and easy to use.</p><p class=\"kr-copy\">We plan age-appropriate furniture, storage, lighting and flexible details that can move from nursery to toddler room, school-age bedroom and teen space without starting over each time.</p><div class=\"kr-age-track\" aria-label=\"Room stages\"><span>Nursery</span><span>Toddler</span><span>School age</span><span>Teen</span></div></div>\n    </div></section>"
+ },
+ {
+  "id": "90076b5ae2",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kr-section kr-deliver\" id=\"kids-room-deliver\"><div class=\"kr-wrap kr-deliver-grid\">\n      <div class=\"kr-deliver-intro kr-reveal\"><h2>What We Deliver</h2><p class=\"kr-copy\">Eight practical layers create a room that is safer, calmer and easier for a child to enjoy every day.</p><p class=\"kr-deliver-note\">Scroll through the complete kids room scope.</p></div>\n      <div class=\"kr-scope-scroll kr-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight kids room design deliverables. Scroll to review all items.\">\n        <article class=\"kr-scope-item\"><span>01</span><div><h3>Layout &amp; Space Planning</h3><p>Clear zones for sleep, play, study and storage, with comfortable movement between them.</p></div></article>\n        <article class=\"kr-scope-item\"><span>02</span><div><h3>Age-Appropriate Design</h3><p>A room shaped for nursery, toddler, school-age or teen routines.</p></div></article>\n        <article class=\"kr-scope-item\"><span>03</span><div><h3>Play Area Integration</h3><p>Open floor play, child-height toy storage and a creative corner within easy reach.</p></div></article>\n        <article class=\"kr-scope-item\"><span>04</span><div><h3>Storage &amp; Organization</h3><p>Accessible places for toys, books, clothes and school supplies that help children tidy up.</p></div></article>\n        <article class=\"kr-scope-item\"><span>05</span><div><h3>Safety-First Design</h3><p>Rounded edges, anchored furniture, non-toxic materials and cordless blinds.</p></div></article>\n        <article class=\"kr-scope-item\"><span>06</span><div><h3>Study Nook</h3><p>A desk, task light, comfortable chair and focused setup for schoolwork.</p></div></article>\n        <article class=\"kr-scope-item\"><span>07</span><div><h3>Grow-With-Child Design</h3><p>A neutral base, changeable accents and convertible furniture that adapt over time.</p></div></article>\n        <article class=\"kr-scope-item\"><span>08</span><div><h3>Durable &amp; Easy-Clean Materials</h3><p>Washable paint, stain-resistant fabrics and tough flooring for active family life.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "a1d06d117a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kr-section kr-process\" id=\"kids-room-process\"><div class=\"kr-wrap\">\n      <header class=\"kr-process-head kr-reveal\"><h2>Our Design Process</h2><p class=\"kr-copy\">Five clear stages take the room from family needs to a complete, build-ready design.</p></header>\n      <div class=\"kr-steps kr-reveal\">\n        <article class=\"kr-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We learn the child’s age, needs and interests, involving them when appropriate.</p></article>\n        <article class=\"kr-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record room dimensions, openings, built-ins and safety considerations.</p></article>\n        <article class=\"kr-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Sleep, play, study, storage and circulation come together in one plan.</p></article>\n        <article class=\"kr-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>We coordinate safe, durable furniture, finishes, lighting and colours.</p></article>\n        <article class=\"kr-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>You receive drawings, specifications, safety notes and clear 3D views.</p></article>\n      </div>\n      <div class=\"kr-timeline kr-reveal\"><span>Consultation to final design package</span><strong>Typically 1–2 weeks from consultation to final design package.</strong></div>\n    </div></section>"
+ },
+ {
+  "id": "bea5bd7fd4",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kr-section kr-pricing\" id=\"kids-room-pricing\"><div class=\"kr-wrap kr-pricing-grid\">\n      <div class=\"kr-reveal\"><h2>Pricing</h2><p class=\"kr-copy\">Start with a free conversation about the child, the room and the way your family uses it. A site visit helps us confirm the right scope and fee.</p><a class=\"kr-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"kr-reveal\"><div class=\"kr-price-panel\"><article class=\"kr-price\"><div><h3>Initial Consultation</h3><p>A first conversation about the room.</p></div><strong>Free</strong></article><article class=\"kr-price\"><div><h3>Design Consultation</h3><p>Focused advice for layout, safety and direction.</p></div><strong>From around PKR 10,000</strong></article><article class=\"kr-price\"><div><h3>Full Design Package</h3><p>Based on room size and complexity.</p></div><strong>PKR 15,000–35,000</strong></article></div><p class=\"kr-price-note\">You receive an exact fixed quote after the site visit.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "c11e9b1ba5",
+  "type": "faq",
+  "html": "\n\n    <section class=\"kr-section kr-faq\" id=\"kids-room-faq\"><div class=\"kr-wrap kr-faq-grid\">\n      <div class=\"kr-faq-intro kr-reveal\"><h2>Kids Room Design FAQs</h2><p class=\"kr-copy\">Straight answers on cost, safety, shared rooms and designing for change.</p></div>\n      <div class=\"kr-faq-list kr-reveal\">\n        <div class=\"kr-faq-item\"><button class=\"kr-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How much does kids room design cost in Lahore?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kr-faq-a\"><div><p>The initial consultation is free. Design consultation starts from around PKR 10,000, while full packages range from PKR 15,000–35,000 depending on size and complexity.</p></div></div></div>\n        <div class=\"kr-faq-item\"><button class=\"kr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do I design a room that grows with my child?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kr-faq-a\"><div><p>Use a neutral, lasting base and changeable accents. Flexible furniture can then adapt as your child gets older.</p></div></div></div>\n        <div class=\"kr-faq-item\"><button class=\"kr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What safety features should I consider?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kr-faq-a\"><div><p>Anchor tall furniture, use rounded edges, choose non-toxic paint and install cordless blinds. We build these choices into the room plan.</p></div></div></div>\n        <div class=\"kr-faq-item\"><button class=\"kr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What is the difference between a nursery and a toddler room?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kr-faq-a\"><div><p>A nursery centres on a crib, changing area and calm light. A toddler room introduces a low bed, more floor play and storage the child can reach.</p></div></div></div>\n        <div class=\"kr-faq-item\"><button class=\"kr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you design a shared room for siblings?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kr-faq-a\"><div><p>Yes. We give each child a clear sleeping and storage zone, then plan shared study or play space around the room’s size.</p></div></div></div>\n        <div class=\"kr-faq-item\"><button class=\"kr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does kids room design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kr-faq-a\"><div><p>A typical kids room takes 1–2 weeks from consultation to the final design package.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Kids Room Design FAQs",
+   "copy": "Straight answers on cost, safety, shared rooms and designing for change.",
+   "items": [
+    {
+     "q": "How much does kids room design cost in Lahore?",
+     "a": "<p>The initial consultation is free. Design consultation starts from around PKR 10,000, while full packages range from PKR 15,000–35,000 depending on size and complexity.</p>"
+    },
+    {
+     "q": "How do I design a room that grows with my child?",
+     "a": "<p>Use a neutral, lasting base and changeable accents. Flexible furniture can then adapt as your child gets older.</p>"
+    },
+    {
+     "q": "What safety features should I consider?",
+     "a": "<p>Anchor tall furniture, use rounded edges, choose non-toxic paint and install cordless blinds. We build these choices into the room plan.</p>"
+    },
+    {
+     "q": "What is the difference between a nursery and a toddler room?",
+     "a": "<p>A nursery centres on a crib, changing area and calm light. A toddler room introduces a low bed, more floor play and storage the child can reach.</p>"
+    },
+    {
+     "q": "Can you design a shared room for siblings?",
+     "a": "<p>Yes. We give each child a clear sleeping and storage zone, then plan shared study or play space around the room’s size.</p>"
+    },
+    {
+     "q": "How long does kids room design take?",
+     "a": "<p>A typical kids room takes 1–2 weeks from consultation to the final design package.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "5eabc0b2f7",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kr-section kr-related\" id=\"kids-room-related\"><div class=\"kr-wrap\">\n      <header class=\"kr-related-head kr-reveal\"><h2>Related Services</h2><p class=\"kr-copy\">Connect the child’s room with the wider home or preview every detail before work begins.</p></header>\n      <div class=\"kr-related-grid kr-reveal\"><a class=\"kr-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"kr-related-link\" href=\"/residential-bedroom-design/\" data-page-route=\"bedroom\"><small>02</small><strong>Bedroom Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"kr-related-link\" href=\"/residential-home-office-design/\" data-page-route=\"homeOffice\"><small>03</small><strong>Home Office Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"kr-related-link\" href=\"/3d-visualization/\" data-page-route=\"studio\"><small>04</small><strong>Woodex 3D Studio</strong><span aria-hidden=\"true\">↗</span></a></div>\n    </div></section>"
+ },
+ {
+  "id": "bc268caed1",
+  "type": "cta",
+  "html": "\n\n    <section class=\"kr-section kr-contact\" id=\"kids-room-contact\"><div class=\"kr-wrap kr-contact-grid\">\n      <div class=\"kr-reveal\"><h2>Talk to Woodex</h2><p class=\"kr-copy\">Tell us your child’s age, what they enjoy and what the room needs to handle every day.</p><div class=\"kr-contact-actions\"><a class=\"kr-btn kr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"kr-btn kr-btn-light\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"kr-contact-list kr-reveal\"><div class=\"kr-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"kr-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"kr-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"kr-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"kr-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"kr-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"kr-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us your child’s age, what they enjoy and what the room needs to handle every day.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

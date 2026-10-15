@@ -1,0 +1,94 @@
+[
+ {
+  "id": "e9bed72c76",
+  "type": "hero",
+  "html": "\n\n    <section class=\"rs-hero\" aria-labelledby=\"restaurant-title\"><div class=\"rs-wrap rs-hero-grid\">\n      <div class=\"rs-hero-copy rs-reveal\">\n        <nav class=\"rs-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Restaurant Interior Design</span></nav>\n        <h1 id=\"restaurant-title\">Restaurant Interior Design in Lahore — Dining Spaces Guests Love</h1>\n        <p class=\"rs-copy\">Woodex designs dining rooms, bars, kitchens, entrances and outdoor seating. We create an atmosphere that suits the menu, helps service run smoothly and keeps guests coming back.</p>\n        <div class=\"rs-hero-actions\"><a class=\"rs-btn rs-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"rs-btn rs-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"rs-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"rs-hero-media rs-reveal\"><img src=\"/assets/img/img-6f26e32ab200.webp\" width=\"1920\" height=\"1280\" alt=\"Elegant restaurant dining room with warm lighting and set tables\" loading=\"lazy\" decoding=\"async\"><figcaption>Atmosphere, comfort and service in balance</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Restaurant Interior Design in Lahore — Dining Spaces Guests Love",
+   "copy": "Woodex designs dining rooms, bars, kitchens, entrances and outdoor seating. We create an atmosphere that suits the menu, helps service run smoothly and keeps guests coming back.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-6f26e32ab200.webp",
+   "img_alt": "Elegant restaurant dining room with warm lighting and set tables"
+  }
+ },
+ {
+  "id": "238120a6c6",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rs-section rs-scope\" id=\"restaurant-scope\"><div class=\"rs-wrap\">\n      <header class=\"rs-section-head rs-reveal\"><h2>What We Design</h2><p class=\"rs-copy\">Eight connected parts shape the guest experience and the way your team works.</p></header>\n      <div class=\"rs-scope-viewport rs-reveal\" id=\"rs-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight restaurant design services. Scroll horizontally to review all items.\"><div class=\"rs-scope-track\">\n        <article class=\"rs-scope-card\"><span>01</span><h3>Dining Room Layout</h3><p>Tables, booths and circulation planned around comfort, capacity and smooth service.</p></article>\n        <article class=\"rs-scope-card\"><span>02</span><h3>Kitchen &amp; Back-of-House Planning</h3><p>Prep, cooking, storage and staff routes arranged around the operating model.</p></article>\n        <article class=\"rs-scope-card\"><span>03</span><h3>Bar &amp; Beverage Counter</h3><p>A practical focal point with clear service flow, storage and guest seating.</p></article>\n        <article class=\"rs-scope-card\"><span>04</span><h3>Lighting &amp; Ambience</h3><p>Layered light creates the right mood while keeping tables and routes clear.</p></article>\n        <article class=\"rs-scope-card\"><span>05</span><h3>Furniture Selection</h3><p>Tables, chairs and booths chosen for comfort, durability and the room's scale.</p></article>\n        <article class=\"rs-scope-card\"><span>06</span><h3>Entrance &amp; Waiting Area</h3><p>The first impression, host point and guest queue are planned as one arrival.</p></article>\n        <article class=\"rs-scope-card\"><span>07</span><h3>Outdoor &amp; Rooftop Seating</h3><p>Weather, comfort, lighting and service access shape usable open-air dining.</p></article>\n        <article class=\"rs-scope-card\"><span>08</span><h3>Brand Theming &amp; Décor</h3><p>Materials, colour and details express the cuisine without feeling forced.</p></article>\n      </div></div>\n      <div class=\"rs-controls\"><span class=\"rs-status\" id=\"rs-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"rs-control\" id=\"rs-scope-prev\" type=\"button\" aria-label=\"Previous restaurant design service\" disabled=\"\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5M12 19l-7-7 7-7\"></path></svg></button><button class=\"rs-control\" id=\"rs-scope-next\" type=\"button\" aria-label=\"Next restaurant design service\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div>\n    </div></section>"
+ },
+ {
+  "id": "e53d037a6b",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rs-section rs-process\" id=\"restaurant-process\"><div class=\"rs-wrap\">\n      <header class=\"rs-section-head rs-reveal\"><h2>Our Design Process</h2><p class=\"rs-copy\">Five focused stages take the restaurant from brief to an approved design package.</p></header>\n      <div class=\"rs-steps rs-reveal\"><article class=\"rs-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss the cuisine, guests, cover target, service style, budget and opening plan.</p></article><article class=\"rs-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the floor, access, services, kitchen needs and existing conditions.</p></article><article class=\"rs-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Dining, bar, kitchen and guest movement are tested as one working plan.</p></article><article class=\"rs-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes, tables, seating, lighting and décor are coordinated.</p></article><article class=\"rs-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved 3D views and drawings prepare the restaurant for pricing and build.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "00a3b989af",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rs-section rs-pricing\" id=\"restaurant-pricing\"><div class=\"rs-wrap rs-pricing-grid\">\n      <div class=\"rs-pricing-copy rs-reveal\"><h2>Pricing</h2><p class=\"rs-copy\">The initial consultation and site survey are free. Your fixed quote follows the survey, once the cover count, kitchen scope and 3D package are clear.</p><a class=\"rs-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"rs-reveal\"><div class=\"rs-price-list\"><article class=\"rs-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"rs-price-row\"><h3>Compact eateries</h3><strong>From PKR 150,000</strong></article><article class=\"rs-price-row\"><h3>Typical restaurants</h3><strong>PKR 300,000-800,000</strong></article><article class=\"rs-price-row\"><h3>Large fine-dining projects</h3><strong>PKR 800,000-2,000,000+</strong></article></div><p class=\"rs-price-note\">The final fee varies with covers, kitchen scope and the required 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "436995357a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rs-section rs-compare\" id=\"restaurant-compare\"><div class=\"rs-wrap\">\n      <header class=\"rs-section-head rs-reveal\"><h2>Design vs Fit-Out vs Renovation</h2><p class=\"rs-copy\">Choose the scope that matches where your restaurant is today.</p></header>\n      <div class=\"rs-compare-grid rs-reveal\"><article class=\"rs-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization for the planning phase.</p></article><article class=\"rs-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>Construction, services, joinery and installation delivered as one scope.</p><a class=\"rs-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rs-compare-card\"><small>Upgrade what exists</small><h3>Renovation</h3><p>A focused upgrade for an existing or trading restaurant.</p><a class=\"rs-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "6703ce6e37",
+  "type": "faq",
+  "html": "\n\n    <section class=\"rs-section rs-faq\" id=\"restaurant-faq\"><div class=\"rs-wrap rs-faq-grid\">\n      <div class=\"rs-faq-intro rs-reveal\"><h2>Restaurant Design FAQs</h2><p class=\"rs-copy\">Straight answers on footfall, capacity, kitchens, timing, themes and 3D approval.</p></div>\n      <div class=\"rs-faq-list rs-reveal\">\n        <div class=\"rs-faq-item\"><button class=\"rs-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How does restaurant design affect footfall?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rs-faq-a\"><div><p>A clear entrance, strong street presence and a memorable atmosphere can attract attention, encourage visits and give guests a reason to return.</p></div></div></div>\n        <div class=\"rs-faq-item\"><button class=\"rs-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How many covers fit my space?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rs-faq-a\"><div><p>Capacity depends on the floor area, table mix, circulation and service routes. We test seating layouts before the final cover count is agreed.</p></div></div></div>\n        <div class=\"rs-faq-item\"><button class=\"rs-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design commercial kitchens?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rs-faq-a\"><div><p>Yes. We plan kitchen zones, storage, staff circulation and service access around the menu and operating model.</p></div></div></div>\n        <div class=\"rs-faq-item\"><button class=\"rs-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does restaurant design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rs-faq-a\"><div><p>A focused restaurant design commonly takes two to four weeks. Larger or more detailed hospitality spaces need a longer programme.</p></div></div></div>\n        <div class=\"rs-faq-item\"><button class=\"rs-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you theme the restaurant around my cuisine?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rs-faq-a\"><div><p>Yes. Materials, colour, lighting, furniture and details can express the cuisine without making the concept feel forced.</p></div></div></div>\n        <div class=\"rs-faq-item\"><button class=\"rs-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I get 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rs-faq-a\"><div><p>Yes. Key dining, bar and arrival views are shown in 3D so you can approve the atmosphere before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Restaurant Design FAQs",
+   "copy": "Straight answers on footfall, capacity, kitchens, timing, themes and 3D approval.",
+   "items": [
+    {
+     "q": "How does restaurant design affect footfall?",
+     "a": "<p>A clear entrance, strong street presence and a memorable atmosphere can attract attention, encourage visits and give guests a reason to return.</p>"
+    },
+    {
+     "q": "How many covers fit my space?",
+     "a": "<p>Capacity depends on the floor area, table mix, circulation and service routes. We test seating layouts before the final cover count is agreed.</p>"
+    },
+    {
+     "q": "Do you design commercial kitchens?",
+     "a": "<p>Yes. We plan kitchen zones, storage, staff circulation and service access around the menu and operating model.</p>"
+    },
+    {
+     "q": "How long does restaurant design take?",
+     "a": "<p>A focused restaurant design commonly takes two to four weeks. Larger or more detailed hospitality spaces need a longer programme.</p>"
+    },
+    {
+     "q": "Can you theme the restaurant around my cuisine?",
+     "a": "<p>Yes. Materials, colour, lighting, furniture and details can express the cuisine without making the concept feel forced.</p>"
+    },
+    {
+     "q": "Do I get 3D visuals before execution?",
+     "a": "<p>Yes. Key dining, bar and arrival views are shown in 3D so you can approve the atmosphere before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "c464620e15",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rs-section rs-related\" id=\"restaurant-related\"><div class=\"rs-wrap\">\n      <header class=\"rs-section-head rs-reveal\"><h2>Related Spaces</h2><p class=\"rs-copy\">Explore the wider commercial portfolio and retail design service.</p></header>\n      <nav class=\"rs-related-grid rs-reveal\" aria-label=\"Related spaces\"><a class=\"rs-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"rs-related-link\" href=\"/retail-design/\" data-page-route=\"retail\"><small>02</small><strong>Retail Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "cf9d76ed7c",
+  "type": "cta",
+  "html": "\n\n    <section class=\"rs-section rs-contact\" id=\"restaurant-contact\"><div class=\"rs-wrap rs-contact-grid\">\n      <div class=\"rs-reveal\"><h2>Talk to Woodex</h2><p class=\"rs-copy\">Tell us about the menu, site, cover target and when you want to open.</p><div class=\"rs-contact-actions\"><a class=\"rs-btn rs-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"rs-btn rs-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"rs-contact-list rs-reveal\"><div class=\"rs-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rs-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rs-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rs-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"rs-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"rs-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"rs-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the menu, site, cover target and when you want to open.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,94 @@
+[
+ {
+  "id": "620e9fab28",
+  "type": "hero",
+  "html": "\n\n    <section class=\"sr-hero\" aria-labelledby=\"showroom-title\"><div class=\"sr-wrap sr-hero-grid\">\n      <div class=\"sr-hero-copy sr-reveal\">\n        <nav class=\"sr-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Showroom Design</span></nav>\n        <h1 id=\"showroom-title\">Showroom Design in Lahore — Display &amp; Brand Experience</h1>\n        <p class=\"sr-copy\">We shape displays, brand zones and customer flow into one clear retail journey. Product lighting and material choices help every range feel considered, easy to explore and ready to sell.</p>\n        <div class=\"sr-hero-actions\"><a class=\"sr-btn sr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"sr-btn sr-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"sr-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"sr-hero-media sr-reveal\"><img src=\"/assets/img/img-f655d51401e8.webp\" width=\"1920\" height=\"1280\" alt=\"Clean product showroom floor with illuminated display zones\" loading=\"lazy\" decoding=\"async\"><figcaption>Products placed in their best light</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Showroom Design in Lahore — Display &amp; Brand Experience",
+   "copy": "We shape displays, brand zones and customer flow into one clear retail journey. Product lighting and material choices help every range feel considered, easy to explore and ready to sell.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-f655d51401e8.webp",
+   "img_alt": "Clean product showroom floor with illuminated display zones"
+  }
+ },
+ {
+  "id": "aa695fb066",
+  "type": "raw",
+  "html": "\n\n    <section class=\"sr-section sr-scope\" id=\"showroom-scope\"><div class=\"sr-wrap\">\n      <header class=\"sr-section-head sr-reveal\"><h2>What We Design</h2><p class=\"sr-copy\">Eight connected layers turn a showroom floor into a clear, confident brand experience.</p></header>\n      <div class=\"sr-scope-viewport sr-reveal\" id=\"sr-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight showroom design services. Scroll horizontally to review all items.\"><div class=\"sr-scope-track\">\n        <article class=\"sr-scope-card\"><span>01</span><h3>Display Planning</h3><p>Fixtures, sightlines and product groupings planned around how customers browse.</p></article>\n        <article class=\"sr-scope-card\"><span>02</span><h3>Customer Flow Design</h3><p>A natural route from entrance to feature displays, decisions and checkout.</p></article>\n        <article class=\"sr-scope-card\"><span>03</span><h3>Brand Zone Design</h3><p>Distinct zones communicate collections, campaigns and brand priorities clearly.</p></article>\n        <article class=\"sr-scope-card\"><span>04</span><h3>Product Lighting</h3><p>Ambient and focused light reveal colour, texture and detail accurately.</p></article>\n        <article class=\"sr-scope-card\"><span>05</span><h3>Material &amp; Finish Selection</h3><p>Durable surfaces support the brand and hold up to daily footfall.</p></article>\n        <article class=\"sr-scope-card\"><span>06</span><h3>Trial &amp; Demo Areas</h3><p>Comfortable places to test, compare and understand products before buying.</p></article>\n        <article class=\"sr-scope-card\"><span>07</span><h3>Storage &amp; Back-of-House</h3><p>Stock, packing and staff functions stay efficient and out of customer sight.</p></article>\n        <article class=\"sr-scope-card\"><span>08</span><h3>Facade &amp; Window Display</h3><p>The storefront introduces the brand and gives people a reason to step inside.</p></article>\n      </div></div>\n      <div class=\"sr-controls\"><span class=\"sr-status\" id=\"sr-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"sr-control\" id=\"sr-scope-prev\" type=\"button\" aria-label=\"Previous showroom design service\" disabled=\"\">←</button><button class=\"sr-control\" id=\"sr-scope-next\" type=\"button\" aria-label=\"Next showroom design service\">→</button></div>\n    </div></section>"
+ },
+ {
+  "id": "3e3ae0e71e",
+  "type": "raw",
+  "html": "\n\n    <section class=\"sr-section sr-process\" id=\"showroom-process\"><div class=\"sr-wrap\">\n      <header class=\"sr-section-head sr-reveal\"><h2>Our Design Process</h2><p class=\"sr-copy\">Five clear stages take the showroom from product brief to an approved visual package.</p></header>\n      <div class=\"sr-steps sr-reveal\"><article class=\"sr-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We review the product range, brand, customer profile, budget and opening target.</p></article><article class=\"sr-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the floor, frontage, services, access and existing conditions.</p></article><article class=\"sr-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Display zones, sightlines and customer flow are tested together.</p></article><article class=\"sr-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Display fixtures, finishes and lighting are coordinated for daily use.</p></article><article class=\"sr-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved 3D views and drawings prepare the showroom for pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "46d86cf56b",
+  "type": "raw",
+  "html": "\n\n    <section class=\"sr-section sr-pricing\" id=\"showroom-pricing\"><div class=\"sr-wrap sr-pricing-grid\">\n      <div class=\"sr-pricing-copy sr-reveal\"><h2>Pricing</h2><p class=\"sr-copy\">The initial consultation and site survey are free. We provide an exact fixed quote once the floor area, display complexity and 3D package are clear.</p><a class=\"sr-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"sr-reveal\"><div class=\"sr-price-list\"><article class=\"sr-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"sr-price-row\"><h3>Compact spaces</h3><strong>From PKR 100,000</strong></article><article class=\"sr-price-row\"><h3>Typical projects</h3><strong>PKR 250,000-800,000</strong></article><article class=\"sr-price-row\"><h3>Flagship showrooms</h3><strong>PKR 800,000-2,000,000+</strong></article></div><p class=\"sr-price-note\">Price varies by floor area, display complexity and 3D package. You receive an exact fixed quote after the survey.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "16538eb62a",
+  "type": "raw",
+  "html": "\n\n    <section class=\"sr-section sr-compare\" id=\"showroom-compare\"><div class=\"sr-wrap\">\n      <header class=\"sr-section-head sr-reveal\"><h2>Choose the Right Scope</h2><p class=\"sr-copy\">Start with the condition of the space and how much of the customer experience is already decided.</p></header>\n      <div class=\"sr-compare-grid sr-reveal\"><article class=\"sr-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization for a complete showroom concept.</p></article><article class=\"sr-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>Design, construction and installation delivered by one team.</p><a class=\"sr-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"sr-compare-card\"><small>Upgrade an existing space</small><h3>Renovation</h3><p>Targeted changes that improve an operating or established showroom.</p><a class=\"sr-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "6a242b8b9b",
+  "type": "faq",
+  "html": "\n\n    <section class=\"sr-section sr-faq\" id=\"showroom-faq\"><div class=\"sr-wrap sr-faq-grid\">\n      <div class=\"sr-faq-intro sr-reveal\"><h2>Showroom Design FAQs</h2><p class=\"sr-copy\">Straight answers on sales, lighting, customer flow, leased spaces, timing and 3D approval.</p></div>\n      <div class=\"sr-faq-list sr-reveal\">\n        <div class=\"sr-faq-item\"><button class=\"sr-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How does showroom design help boost sales?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"sr-faq-a\"><div><p>A clear layout places priority products in stronger sightlines, makes comparison easier and guides customers naturally through the full range.</p></div></div></div>\n        <div class=\"sr-faq-item\"><button class=\"sr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What lighting is best for showroom products?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"sr-faq-a\"><div><p>Layered lighting works best. Ambient light keeps the room comfortable, while adjustable spotlights reveal product colour, texture and detail.</p></div></div></div>\n        <div class=\"sr-faq-item\"><button class=\"sr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do you plan customer flow?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"sr-faq-a\"><div><p>We study the entrance, key displays, decision points and checkout path, then create a route that feels natural without forcing movement.</p></div></div></div>\n        <div class=\"sr-faq-item\"><button class=\"sr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you design a rented showroom?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"sr-faq-a\"><div><p>Yes. We can prioritise modular displays, reversible finishes and landlord conditions for a leased space.</p></div></div></div>\n        <div class=\"sr-faq-item\"><button class=\"sr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does showroom design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"sr-faq-a\"><div><p>A focused showroom usually takes two to four weeks from survey to final design. Larger flagship spaces need a longer programme.</p></div></div></div>\n        <div class=\"sr-faq-item\"><button class=\"sr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Will I see 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"sr-faq-a\"><div><p>Yes. Key customer views and display zones are shown in 3D so you can approve the experience before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Showroom Design FAQs",
+   "copy": "Straight answers on sales, lighting, customer flow, leased spaces, timing and 3D approval.",
+   "items": [
+    {
+     "q": "How does showroom design help boost sales?",
+     "a": "<p>A clear layout places priority products in stronger sightlines, makes comparison easier and guides customers naturally through the full range.</p>"
+    },
+    {
+     "q": "What lighting is best for showroom products?",
+     "a": "<p>Layered lighting works best. Ambient light keeps the room comfortable, while adjustable spotlights reveal product colour, texture and detail.</p>"
+    },
+    {
+     "q": "How do you plan customer flow?",
+     "a": "<p>We study the entrance, key displays, decision points and checkout path, then create a route that feels natural without forcing movement.</p>"
+    },
+    {
+     "q": "Can you design a rented showroom?",
+     "a": "<p>Yes. We can prioritise modular displays, reversible finishes and landlord conditions for a leased space.</p>"
+    },
+    {
+     "q": "How long does showroom design take?",
+     "a": "<p>A focused showroom usually takes two to four weeks from survey to final design. Larger flagship spaces need a longer programme.</p>"
+    },
+    {
+     "q": "Will I see 3D visuals before execution?",
+     "a": "<p>Yes. Key customer views and display zones are shown in 3D so you can approve the experience before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "28270b27db",
+  "type": "raw",
+  "html": "\n\n    <section class=\"sr-section sr-related\" id=\"showroom-related\"><div class=\"sr-wrap\">\n      <header class=\"sr-section-head sr-reveal\"><h2>Related Spaces</h2><p class=\"sr-copy\">Explore the wider commercial portfolio or compare a dedicated workplace brief.</p></header>\n      <nav class=\"sr-related-grid sr-reveal\" aria-label=\"Related spaces\"><a class=\"sr-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"sr-related-link\" href=\"/office-interior-design/\" data-page-route=\"officeInterior\"><small>02</small><strong>Office Interior Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "48979328c1",
+  "type": "cta",
+  "html": "\n\n    <section class=\"sr-section sr-contact\" id=\"showroom-contact\"><div class=\"sr-wrap sr-contact-grid\">\n      <div class=\"sr-reveal\"><h2>Talk to Woodex</h2><p class=\"sr-copy\">Tell us about the product range, the floor and when you want to welcome customers.</p><div class=\"sr-contact-actions\"><a class=\"sr-btn sr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"sr-btn sr-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"sr-contact-list sr-reveal\"><div class=\"sr-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"sr-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"sr-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"sr-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"sr-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"sr-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"sr-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the product range, the floor and when you want to welcome customers.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

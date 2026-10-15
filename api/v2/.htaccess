@@ -1,0 +1,33 @@
+# api/v2/.htaccess — Apache configuration for the v2 API on Hostinger.
+#
+# Two jobs:
+#   1. send every path under /api/v2/ to index.php, so /api/v2/leads works without a file per verb;
+#   2. make sure nothing but index.php is reachable. The library files are not secret, but a route
+#      file that runs on its own would execute without the front controller's error boundary, and
+#      that is exactly the class of bug this rewrite fixes.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /api/v2/
+
+  # Never rewrite the front controller into itself.
+  RewriteRule ^index\.php$ - [L]
+
+  # Anything that is a real file (none should be, but be honest about it) is served as-is…
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # …everything else goes to the front controller, with the original path available to PHP.
+  RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]
+</IfModule>
+
+# Belt and braces: even if mod_rewrite is off, these paths must not be fetched directly.
+<FilesMatch "\.(php)$">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+</FilesMatch>
+
+# lib/ and routes/ are include-only. Deny direct access on both Apache generations.
+RedirectMatch 404 ^/api/v2/lib/
+RedirectMatch 404 ^/api/v2/routes/

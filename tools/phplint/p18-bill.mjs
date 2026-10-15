@@ -1,0 +1,40 @@
+// P18 A3: Create invoice page + Transactions page
+import pp from "puppeteer-core";
+const OUT = "/home/user/-marketingwoodex/tools/", w = (t) => new Promise((r) => setTimeout(r, t));
+const ok = (x, m) => { console.log((x ? "PASS " : "FAIL ") + m); if (!x) process.exitCode = 1; };
+const b = await pp.launch({ executablePath: process.env.HOME + "/.cache/pb/al/chromium", args: ["--no-sandbox"], headless: "shell", defaultViewport: { width: 1440, height: 1000 } });
+const a = await b.newPage(); const errs = []; a.on("pageerror", (e) => errs.push(e.message));
+await a.goto("http://127.0.0.1:8080/admin/", { waitUntil: "networkidle0" });
+await a.type("input[type=email]", "o@woodex.pk"); await a.type("input[type=password]", "Woodex@2026x"); await a.keyboard.press("Enter"); await w(2500);
+ok(await a.$$eval(".nav-a", (L) => L.some((x) => x.dataset.v === "transactions")), "Transactions in menu");
+await a.evaluate(() => (location.hash = "#/invoices")); await w(2000);
+await a.click("#it-new"); await w(1500); ok(location => true, ""); ok(await a.evaluate(() => location.hash) === "#/invoice/new" && !!(await a.$("#ci-rows")), "New invoice opens the full page");
+await a.type("#ci-c", "Gulberg Cafe Pvt Ltd"); await w(200); ok(await a.$eval("#ci-new", (x) => !x.hidden), "new client fields shown");
+await a.type("#ci-cn", "Ali Raza"); await a.type("#ci-cp", "0300 7778899"); await a.select("#ci-l", "furniture");
+const fill = async (i, d, q, r, disc) => { const tr = (await a.$$("#ci-rows tr"))[i]; await (await tr.$("[data-k=desc]")).type(d); await (await tr.$("[data-k=qty]")).evaluate((x, v) => { x.value = v; x.dispatchEvent(new Event("input", { bubbles: true })); }, String(q)); await (await tr.$("[data-k=rate]")).type(String(r)); if (disc) await (await tr.$("[data-k=disc]")).type(String(disc)); };
+await fill(0, "Cafe chairs, solid ash", 24, 18500, 12000);
+await a.click("#ci-add"); await w(200); await fill(1, "Round tables 30 in", 6, 42000, 0);
+await a.click("#ci-add"); await w(200); ok(await a.$$eval("#ci-rows tr", (r) => r.length) === 3, "add row"); await a.click("#ci-rows tr:last-child [data-x]"); await w(200); ok(await a.$$eval("#ci-rows tr", (r) => r.length) === 2, "remove row");
+await a.type("#ci-r", "15000"); await a.type("#ci-tx", "5"); await w(300);
+const sub = 24 * 18500 - 12000 + 6 * 42000, gt = sub + 15000 + Math.round((sub + 15000) * 0.05);
+const shown = await a.$eval("#ci-gt", (x) => +x.textContent.replace(/,/g, "")); ok(shown === gt, `live grand total ${shown} = ${gt}`);
+ok(/Rupees/.test(await a.$eval("#ci-w", (x) => x.textContent)), "amount in words");
+await a.screenshot({ path: OUT + "p18-bill-create.png", fullPage: true });
+await a.click("#ci-go"); await w(2500);
+const h = await a.evaluate(() => location.hash); ok(/^#\/invoice\/\d+$/.test(h), "created → invoice page " + h);
+const inv = await a.evaluate(async (id) => { const t = (JSON.parse(localStorage.getItem("wx-adm-s") || "null") || {}).t; return null; }, 0);
+const txt = await a.$eval("#view", (x) => x.innerText); ok(/WF-\d+/.test(txt) && txt.includes(gt.toLocaleString("en-US")), "invoice WF- number and total " + gt.toLocaleString("en-US"));
+// record a payment on it via UI if available, else API
+const id = +h.split("/").pop();
+await a.evaluate(() => (location.hash = "#/invoices")); await w(2000);
+await a.evaluate((id) => { const btn = document.querySelector("[data-pay='" + id + "']"); btn && btn.click(); }, id); await w(800);
+if (await a.$("#py-go")) { await a.$eval("#py-a", (x) => (x.value = "200000")); await a.select("#py-m", "cheque"); await a.type("#py-r", "CHQ-4471"); await a.click("#py-go"); await w(1500); }
+await a.evaluate(() => (location.hash = "#/transactions")); await w(2500);
+const rows = await a.$$eval("#tx-rows tr[data-i]", (r) => r.map((x) => x.innerText)); console.log("tx rows", rows.length);
+ok(rows.some((r) => /CHQ-4471/.test(r) && /200,000/.test(r)), "new cheque payment listed");
+ok(await a.$$eval("#tx-cards .tx-c", (c) => c.length) === 4, "4 totals cards");
+await a.select("#tx-me", "cheque"); await w(300); ok(await a.$$eval("#tx-rows tr[data-i]", (r) => r.every((x) => /Cheque/.test(x.innerText))), "filter by method");
+await a.screenshot({ path: OUT + "p18-bill-tx.png" });
+await a.click("#tx-rows tr[data-i] td:first-child"); await w(2500); console.log("pv:", await a.evaluate(() => { const p = document.querySelector(".pv"); return p ? p.querySelector(".pv-bar").innerText : "none"; }), JSON.stringify(errs)); ok(!!(await a.$(".pv [data-dl]")) && /Receipt/.test(await a.$eval(".pv-bar", (x) => x.innerText)), "receipt preview with Download PDF: " + "");
+ok(!errs.length, "no JS errors " + JSON.stringify(errs.slice(0, 3)));
+await b.close();

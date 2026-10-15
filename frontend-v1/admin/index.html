@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Woodex Admin</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="admin.css">
+<script>try{if(localStorage.getItem("wxaTheme")==="dark"||(!localStorage.getItem("wxaTheme")&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}</script>
+</head>
+<body>
+
+<!-- ============ AUTH (setup / login) ============ -->
+<div class="auth" id="auth" hidden>
+  <aside class="auth-side" aria-hidden="true">
+    <div class="as-brand"><span class="logo">W</span><b>Woodex Interior</b></div>
+    <div class="as-copy"><span class="as-kicker">Admin v2</span><h2>Run the whole studio<br>from one place.</h2>
+      <ul><li>Enquiries, pipeline &amp; follow-ups</li><li>Quotations, invoices &amp; payments</li><li>Live chat, WhatsApp &amp; AI replies</li><li>Pages, blog, SEO &amp; speed</li></ul></div>
+    <small class="as-foot">© Woodex Interior · woodex.com.pk</small>
+  </aside>
+  <div class="auth-card">
+    <div class="brand"><span class="logo">W</span><div><b>Woodex</b><small>Admin</small></div></div>
+
+    <form id="login-form" hidden>
+      <h1>Sign in</h1><p class="muted">Welcome back. Sign in to manage the website.</p>
+      <label>Email<input type="text" inputmode="email" id="l-email" autocomplete="username" autocapitalize="none" required></label>
+      <label>Password<span class="pw-wrap"><input type="password" id="l-pass" autocomplete="current-password" required><button type="button" class="pw-eye" aria-label="Show password" onclick="var i=this.previousElementSibling;i.type=i.type==='password'?'text':'password';this.classList.toggle('on')">Show</button></span></label>
+      <p class="err" id="l-err"></p>
+      <button class="btn pri block" id="l-btn">Sign in</button>
+      <p style="text-align:center;margin:10px 0 0;font-size:13px"><a href="#" id="l-forgot">Forgot password?</a></p>
+      <div id="g-login" hidden><div class="g-or"><span>or</span></div><div id="g-btn"></div><p class="muted" style="font-size:12px;text-align:center;margin:6px 0 0">Only for existing Admin users.</p></div>
+    </form>
+
+    <form id="fp-form" hidden>
+      <h1>Forgot password</h1><p class="muted">Enter your Admin email. We will email you a link to choose a new password.</p>
+      <label>Email<input type="email" id="fp-email" autocomplete="username" required></label>
+      <p class="err" id="fp-err"></p><p class="muted" id="fp-ok" style="font-size:13px"></p>
+      <button class="btn pri block" id="fp-btn">Send reset link</button>
+      <p style="text-align:center;margin:10px 0 0;font-size:13px"><a href="#" class="fp-back">Back to sign in</a></p>
+    </form>
+    <form id="rp-form" hidden>
+      <h1>Choose a new password</h1><p class="muted">At least 8 characters. You will be signed out of other devices.</p>
+      <label>New password<input type="password" id="rp-pass" autocomplete="new-password" minlength="8" required></label>
+      <label>Repeat new password<input type="password" id="rp-pass2" autocomplete="new-password" minlength="8" required></label>
+      <p class="err" id="rp-err"></p>
+      <button class="btn pri block" id="rp-btn">Save new password</button>
+      <p style="text-align:center;margin:10px 0 0;font-size:13px"><a href="#" class="fp-back">Back to sign in</a></p>
+    </form>
+
+    <form id="tfa-form" hidden>
+      <h1>Two-step sign in</h1><p class="muted">Open your authenticator app and enter the 6-digit code for Woodex Admin. Lost your phone? Enter one of your recovery codes.</p>
+      <label>Code<input id="t-code" inputmode="numeric" autocomplete="one-time-code" maxlength="9" required placeholder="123456"></label>
+      <p class="err" id="t-err"></p>
+      <button class="btn pri block" id="t-btn">Verify</button>
+      <button type="button" class="btn block ghost" id="t-back" style="margin-top:8px">Back</button>
+    </form>
+
+    <form id="setup-form" hidden>
+      <h1>Set up Woodex Admin</h1><p class="muted">One-time setup. Creates the database tables and your owner account.</p>
+      <fieldset id="s-db"><legend>Database <small>(hPanel → Databases → MySQL)</small></legend>
+        <div class="g2"><label>Host<input id="s-host" value="localhost"></label><label>Database name<input id="s-name"></label></div>
+        <div class="g2"><label>Database user<input id="s-user"></label><label>Database password<input type="password" id="s-dpass"></label></div>
+      </fieldset>
+      <fieldset><legend>Owner account</legend>
+        <div class="g2"><label>Your name<input id="s-uname"></label><label>Email<input type="email" id="s-email"></label></div>
+        <label>Password <small>(8+ characters)</small><input type="password" id="s-pass" minlength="8"></label>
+        <p class="muted" style="font-size:12px;margin:6px 0 0">Already installed with wx-install.php? Leave these 3 fields empty: the database is reconnected and you sign in with <b>admin</b> / <b>admin</b>.</p>
+      </fieldset>
+      <fieldset id="s-bp"><legend>Security check</legend>
+        <label>Current page-builder password<input type="password" id="s-bpass"></label>
+        <p class="hint">Proves you own this site. After setup everyone signs in with their own email.</p>
+      </fieldset>
+      <p class="err" id="s-err"></p>
+      <button class="btn pri block" id="s-btn">Install &amp; create owner</button>
+    </form>
+    <form id="db-form" hidden>
+      <h1>Reconnect the database</h1><p class="muted">The admin can’t reach its database (for example after a new Hostinger database or password). Enter the details from <b>hPanel → Websites → Dashboard → Databases Management</b>. Existing data is kept.</p>
+      <fieldset><legend>Database</legend>
+        <div class="g2"><label>Host<input id="d-host" value="localhost"></label><label>Database name<input id="d-name" placeholder="u128159657_woodex" required></label></div>
+        <div class="g2"><label>Database user<input id="d-user" placeholder="u128159657_woodex" required></label><label>Database password<input type="password" id="d-dpass"></label></div>
+      </fieldset>
+      <fieldset id="d-owner" hidden><legend>New owner account <small>(the database is empty)</small></legend>
+        <div class="g2"><label>Your name<input id="d-uname"></label><label>Email<input type="email" id="d-email"></label></div>
+        <label>Password <small>(8+ characters)</small><input type="password" id="d-pass" minlength="8"></label>
+      </fieldset>
+      <fieldset><legend>Security check</legend>
+        <label>Page-builder password<input type="password" id="d-bpass" required></label>
+        <p class="hint">Proves you own this site (same password you used at first setup).</p>
+      </fieldset>
+      <p class="err" id="d-err"></p>
+      <button class="btn pri block" id="d-btn">Test &amp; reconnect</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div class="app" id="app" hidden>
+  <aside class="side" id="side">
+    <div class="side-top"><a href="#/dashboard" class="brand"><span class="logo">W</span><div><b>Woodex</b><small>Admin v2</small></div></a>
+      <button class="icon-btn side-x" id="side-x" aria-label="Close menu"><i data-i="x"></i></button></div>
+    <nav id="nav"></nav>
+    <div class="side-foot"><a href="/" target="_blank" rel="noopener"><i data-i="external-link"></i><span>View website</span></a></div>
+  </aside>
+  <div class="side-shade" id="side-shade"></div>
+
+  <div class="main">
+    <header class="top">
+      <button class="icon-btn" id="menu-btn" aria-label="Toggle menu"><i data-i="panel-left"></i></button>
+      <div class="top-search"><i data-i="search"></i><input id="gsearch" placeholder="Search pages…  ( / )" list="gsearch-list" autocomplete="off"><datalist id="gsearch-list"></datalist></div>
+      <button class="pk-btn" id="pk-btn" type="button" title="Search all screens"><i data-i="search"></i><span>Go to screen…</span><kbd>Ctrl K</kbd></button>
+      <div class="top-r">
+        <div class="dd" id="nt-dd"><button class="icon-btn" id="nt-btn" aria-label="Notifications"><i data-i="bell"></i><span class="nt-n" id="nt-n" hidden>0</span></button><div class="dd-menu nt-menu" id="nt-menu" hidden></div></div>
+        <button class="icon-btn" id="dark-btn" aria-label="Dark mode"><i data-i="moon" class="i-moon"></i><i data-i="sun" class="i-sun"></i></button>
+        <div class="dd" id="user-dd">
+          <button class="user-btn" id="user-btn"><span class="av" id="u-av">?</span><span class="u-txt"><b id="u-name">…</b><small id="u-role"></small></span><i data-i="chevron-down"></i></button>
+          <div class="dd-menu" id="user-menu" hidden>
+            <a href="#/profile"><i data-i="user"></i>My profile</a>
+            <a href="#/activity" data-roles="owner,admin"><i data-i="activity"></i>Activity log</a>
+            <button id="logout"><i data-i="log-out"></i>Sign out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="content" id="view"></main>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="modal" id="modal" hidden><div class="modal-card" id="modal-card"></div></div>
+
+<script src="vendor/icons.js"></script>
+<script src="vendor/chart.umd.js" defer></script>
+<script src="admin.js" defer></script>
+<script src="admin-pages.js" defer></script>
+<script src="admin-chrome.js" defer></script>
+<script src="/builder/wx-css.js" defer></script>
+<script src="/builder/blocks.js" defer></script>
+<script src="admin-library.js" defer></script>
+<script src="admin-lib26.js" defer></script>
+<script src="admin-crm.js" defer></script>
+<script src="admin-reports.js" defer></script>
+<script src="vendor/quote-starter.js" defer></script>
+<script src="admin-print.js" defer></script>
+<script src="admin-print17.js" defer></script>
+<script src="/assets/js/quotation-scopes.js" defer></script>
+<script src="admin-sales.js" defer></script>
+<script src="admin-content.js" defer></script>
+<script src="admin-starters.js" defer></script>
+<script src="admin-fields.js" defer></script>
+<script src="admin-media.js" defer></script>
+<script src="admin-speed.js" defer></script>
+<script src="admin-system.js" defer></script>
+<script src="vendor/qrcode.js" defer></script>
+<script src="admin-settings.js" defer></script>
+<script src="admin-theme.js" defer></script>
+<script src="admin-xlsx.js" defer></script>
+<script src="admin-sheets.js" defer></script>
+<script src="admin-p3.js" defer></script>
+<script src="admin-p8.js" defer></script>
+<script src="admin-chat.js" defer></script>
+<script src="admin-chat2.js" defer></script>
+  <script src="admin-train.js" defer></script>
+  <script src="admin-notify.js" defer></script>
+  <script src="seo-analyzer.js" defer></script>
+  <script src="admin-seo.js" defer></script>
+<script src="admin-offers.js" defer></script>
+<script src="admin-google.js" defer></script>
+<script src="admin-dash.js" defer></script>
+<script src="admin-lists.js" defer></script>
+<script src="admin-integ.js" defer></script>
+<script src="admin-conn.js" defer></script>
+<script src="admin-inbox.js" defer></script>
+<script src="admin-users.js" defer></script>
+<script src="admin-redirects.js" defer></script>
+<script src="admin-templates.js" defer></script>
+<script src="admin-booking.js" defer></script>
+<script src="admin-p18.js" defer></script>
+<script src="admin-p18e.js" defer></script>
+<script src="admin-p18g.js" defer></script>
+<script src="admin-p18h.js" defer></script>
+<script src="admin-p18j.js" defer></script>
+<script src="admin-p19f.js" defer></script>
+<script src="admin-logos.js" defer></script>
+<script src="admin-p19c.js" defer></script>
+<script src="admin-sales17.js" defer></script>
+<script src="admin-p38wa.js" defer></script>
+<script src="admin-hero.js" defer></script>
+<script src="admin-p36.js" defer></script>
+<script src="admin-seo38.js" defer></script>
+<script src="admin-appr.js" defer></script>
+<script src="admin-tg.js" defer></script>
+<script src="admin-aia.js" defer></script>
+<script src="admin-wahub.js" defer></script>
+<script src="admin-wains.js" defer></script>
+<script src="admin-aicenter.js" defer></script>
+<script src="admin-social.js" defer></script>
+<script src="admin-seoagent.js" defer></script>
+</body>
+</html>

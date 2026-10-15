@@ -1,0 +1,99 @@
+[
+ {
+  "id": "f72a2c818e",
+  "type": "hero",
+  "html": "\n\n    <section class=\"oi-hero\" aria-labelledby=\"office-interior-title\"><div class=\"oi-wrap oi-hero-grid\">\n      <div class=\"oi-hero-copy oi-reveal\">\n        <nav class=\"oi-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Office Interior Design</span></nav>\n        <h1 id=\"office-interior-title\">Office Interior Design in Lahore</h1>\n        <p class=\"oi-copy\">A good office makes work easier and gives the business a clear identity. We plan the workplace around your team, brand and daily operations, then show every key decision before site work begins.</p>\n        <div class=\"oi-hero-actions\"><a class=\"oi-btn oi-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"oi-btn oi-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n      </div>\n      <figure class=\"oi-hero-media oi-reveal\"><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" width=\"1920\" height=\"1280\" alt=\"Premium corporate office in Lahore with branded reception, open workstations and warm lighting\" loading=\"lazy\" decoding=\"async\"><figcaption>Workplace concept and 3D visualization</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Office Interior Design in Lahore",
+   "copy": "A good office makes work easier and gives the business a clear identity. We plan the workplace around your team, brand and daily operations, then show every key decision before site work begins.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-1d6ad6c77d0f.webp",
+   "img_alt": "Premium corporate office in Lahore with branded reception, open workstations and warm lighting"
+  }
+ },
+ {
+  "id": "7fd9f00719",
+  "type": "raw",
+  "html": "\n\n    <section class=\"oi-section oi-intro\" id=\"office-interior-intro\"><div class=\"oi-wrap oi-intro-grid\">\n      <div class=\"oi-intro-copy oi-reveal\"><h2>What Is Office Interior Design?</h2><p class=\"oi-copy\">Office interior design shapes a workplace so it functions well, reflects the brand and supports the people using it. It starts with understanding how the business works, how teams connect and what clients should experience on arrival.</p><p class=\"oi-copy\">The design package is the plan: layouts, 3D visuals, material choices and technical drawings. Fit-out is the physical execution. Woodex offers both separately or as one coordinated design and build project.</p><a class=\"oi-btn\" href=\"/office-fit-out/\" data-page-route=\"officeFitout\">Explore Office Fit-Out</a></div>\n      <div class=\"oi-workplan oi-reveal\" role=\"img\" aria-label=\"Office floor plan concept showing open workspace, meeting room and reception zones\"><div class=\"oi-zone\"><small>58% of plan</small>Open workspace</div><div class=\"oi-zone\"><small>Client facing</small>Meeting room</div><div class=\"oi-zone\"><small>First impression</small>Reception</div></div>\n    </div></section>"
+ },
+ {
+  "id": "5e2e7082fa",
+  "type": "raw",
+  "html": "\n\n    <section class=\"oi-section oi-deliver\" id=\"office-interior-deliver\"><div class=\"oi-wrap oi-deliver-grid\">\n      <div class=\"oi-deliver-intro oi-reveal\"><h2>What We Deliver</h2><p class=\"oi-copy\">A complete office design package, from accurate measurements to the documents your build team needs.</p><p class=\"oi-scroll-note\">Scroll through the full workplace scope.</p></div>\n      <div class=\"oi-scope-scroll oi-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight office interior design deliverables. Scroll to review all items.\">\n        <article class=\"oi-scope-item\"><span>01</span><div><h3>Site Measurement &amp; Survey</h3><p>Accurate dimensions, existing services and site conditions recorded before planning.</p></div></article>\n        <article class=\"oi-scope-item\"><span>02</span><div><h3>Space Planning &amp; Layout Optimization</h3><p>Departments, meeting rooms, reception and circulation arranged around how the team works.</p></div></article>\n        <article class=\"oi-scope-item\"><span>03</span><div><h3>Concept Design &amp; Mood Board</h3><p>A clear visual direction that connects the workplace with the brand.</p></div></article>\n        <article class=\"oi-scope-item\"><span>04</span><div><h3>Material &amp; Finish Selection</h3><p>Floors, ceilings, walls and joinery chosen as one practical palette.</p></div></article>\n        <article class=\"oi-scope-item\"><span>05</span><div><h3>Ceiling, Lighting &amp; Electrical Layout</h3><p>False ceiling, lighting and switch points coordinated with each work zone.</p></div></article>\n        <article class=\"oi-scope-item\"><span>06</span><div><h3>Furniture Planning &amp; Specification</h3><p>Workstations, meeting tables and executive desks planned with brand integration.</p></div></article>\n        <article class=\"oi-scope-item\"><span>07</span><div><h3>3D Photorealistic Rendering</h3><p>Review and approve the office before any physical work starts.</p></div></article>\n        <article class=\"oi-scope-item\"><span>08</span><div><h3>Working Drawings &amp; BOQ</h3><p>Technical plans, material schedule and an itemised cost estimate for execution.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "b2e551008d",
+  "type": "raw",
+  "html": "\n\n    <section class=\"oi-section oi-styles\" id=\"office-interior-styles\"><div class=\"oi-wrap\">\n      <header class=\"oi-styles-head oi-reveal\"><h2>Office Design Styles</h2><p class=\"oi-copy\">The right style should support the way the company works, not simply follow a trend. We shape each direction around the brief.</p></header>\n      <div class=\"oi-style-field oi-reveal\">\n        <article class=\"oi-style-tile\"><small>01</small><div><h3>Modern Corporate</h3><p>Polished materials, clear lines and a confident client-facing atmosphere.</p></div></article>\n        <article class=\"oi-style-tile\"><small>02</small><div><h3>Industrial</h3><p>Exposed structure, honest finishes and adaptable open work areas.</p></div></article>\n        <article class=\"oi-style-tile\"><small>03</small><div><h3>Contemporary Minimal</h3><p>Quiet detailing and reduced visual clutter for a focused workplace.</p></div></article>\n        <article class=\"oi-style-tile\"><small>04</small><div><h3>Branded &amp; Themed</h3><p>Colour, graphics and custom details that express the business clearly.</p></div></article>\n        <article class=\"oi-style-tile\"><small>05</small><div><h3>Biophilic</h3><p>Natural light, planting and warm materials that soften the working day.</p></div></article>\n        <article class=\"oi-style-tile\"><small>06</small><div><h3>Hybrid Collaborative</h3><p>Focused desks, team zones and flexible rooms for changing work patterns.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "c62d005310",
+  "type": "raw",
+  "html": "\n\n    <section class=\"oi-section oi-process\" id=\"office-interior-process\"><div class=\"oi-wrap\">\n      <header class=\"oi-process-head oi-reveal\"><h2>Our Design Process</h2><p class=\"oi-copy\">Five clear stages turn the business brief into an approved, build-ready workplace design.</p></header>\n      <div class=\"oi-steps oi-reveal\">\n        <article class=\"oi-step\"><strong>1</strong><h3>Consultation &amp; Requirements</h3><p>We learn the team structure, work patterns, brand priorities, budget and target date.</p></article>\n        <article class=\"oi-step\"><strong>2</strong><h3>Site Measurement</h3><p>We survey the office, openings, services and existing conditions accurately.</p></article>\n        <article class=\"oi-step\"><strong>3</strong><h3>Concept &amp; Layout Design</h3><p>Space planning, circulation and the visual concept take shape for review.</p></article>\n        <article class=\"oi-step\"><strong>4</strong><h3>Material &amp; Furniture Selection</h3><p>Finishes, lighting, workstations and custom furniture are coordinated.</p></article>\n        <article class=\"oi-step\"><strong>5</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved 3D views and technical documentation prepare the office for execution.</p></article>\n      </div>\n      <div class=\"oi-timeline oi-reveal\"><span>Typical design timeline</span><strong>Typically 2-4 weeks from brief to approved drawings for a 1,000-2,000 sq ft office; larger projects take longer.</strong></div>\n    </div></section>"
+ },
+ {
+  "id": "4894ca4d53",
+  "type": "raw",
+  "html": "\n\n    <section class=\"oi-section oi-pricing\" id=\"office-interior-pricing\"><div class=\"oi-wrap oi-pricing-grid\">\n      <div class=\"oi-pricing-copy oi-reveal\"><h2>Pricing</h2><p class=\"oi-copy\">The initial consultation is free. Your fee is shaped by office size, scope, specification level and timeline.</p><a class=\"oi-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"oi-price-panel oi-reveal\"><div class=\"oi-fee\"><span>Typical office design fee</span><strong>PKR 30,000-100,000+</strong></div><div class=\"oi-levels\" aria-label=\"Office design engagement levels\"><span>Design Essentials</span><span>Design and Documentation</span><span>Turnkey Design and Build</span></div><p>The exact quotation follows the brief and site survey. Woodex does not publish fixed rate cards.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "4b45235834",
+  "type": "faq",
+  "html": "\n\n    <section class=\"oi-section oi-faq\" id=\"office-interior-faq\"><div class=\"oi-wrap oi-faq-grid\">\n      <div class=\"oi-faq-intro oi-reveal\"><h2>Office Interior Design FAQs</h2><p class=\"oi-copy\">Straight answers about scope, timing, visualization and execution.</p></div>\n      <div class=\"oi-faq-list oi-reveal\">\n        <div class=\"oi-faq-item\"><button class=\"oi-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What does an office interior designer do?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"oi-faq-a\"><div><p>An office interior designer plans how the workplace functions and feels. We resolve layouts, materials, lighting, furniture, brand details and technical drawings.</p></div></div></div>\n        <div class=\"oi-faq-item\"><button class=\"oi-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What is the difference between interior design and fit-out?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"oi-faq-a\"><div><p>Interior design creates the approved plan, visuals and drawings. Fit-out is the physical construction and installation that brings that plan to life.</p></div></div></div>\n        <div class=\"oi-faq-item\"><button class=\"oi-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does office interior design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"oi-faq-a\"><div><p>A 1,000 to 2,000 sq ft office usually takes 2 to 4 weeks from brief to approved drawings. Larger or more complex workplaces take longer.</p></div></div></div>\n        <div class=\"oi-faq-item\"><button class=\"oi-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you provide 3D visualization for every project?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"oi-faq-a\"><div><p>Yes. Every office design includes photorealistic 3D views so you can review the space before execution begins.</p></div></div></div>\n        <div class=\"oi-faq-item\"><button class=\"oi-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can Woodex design and also carry out the fit-out?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"oi-faq-a\"><div><p>Yes. One Woodex team can manage the design and fit-out as a coordinated design and build project.</p></div></div></div>\n        <div class=\"oi-faq-item\"><button class=\"oi-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you work on offices outside Lahore?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"oi-faq-a\"><div><p>Yes. Woodex works on selected office projects in Islamabad, Karachi and other cities.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Office Interior Design FAQs",
+   "copy": "Straight answers about scope, timing, visualization and execution.",
+   "items": [
+    {
+     "q": "What does an office interior designer do?",
+     "a": "<p>An office interior designer plans how the workplace functions and feels. We resolve layouts, materials, lighting, furniture, brand details and technical drawings.</p>"
+    },
+    {
+     "q": "What is the difference between interior design and fit-out?",
+     "a": "<p>Interior design creates the approved plan, visuals and drawings. Fit-out is the physical construction and installation that brings that plan to life.</p>"
+    },
+    {
+     "q": "How long does office interior design take?",
+     "a": "<p>A 1,000 to 2,000 sq ft office usually takes 2 to 4 weeks from brief to approved drawings. Larger or more complex workplaces take longer.</p>"
+    },
+    {
+     "q": "Do you provide 3D visualization for every project?",
+     "a": "<p>Yes. Every office design includes photorealistic 3D views so you can review the space before execution begins.</p>"
+    },
+    {
+     "q": "Can Woodex design and also carry out the fit-out?",
+     "a": "<p>Yes. One Woodex team can manage the design and fit-out as a coordinated design and build project.</p>"
+    },
+    {
+     "q": "Do you work on offices outside Lahore?",
+     "a": "<p>Yes. Woodex works on selected office projects in Islamabad, Karachi and other cities.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "acec29d69e",
+  "type": "raw",
+  "html": "\n\n    <section class=\"oi-section oi-related\" id=\"office-interior-related\"><div class=\"oi-wrap\">\n      <header class=\"oi-related-head oi-reveal\"><h2>Related Services</h2><p class=\"oi-copy\">Continue from design into execution, explore a focused home workspace or preview the office in 3D.</p></header>\n      <nav class=\"oi-related-grid oi-reveal\" aria-label=\"Related services\"><a class=\"oi-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"oi-related-link\" href=\"/office-fit-out/\" data-page-route=\"officeFitout\"><small>02</small><strong>Office Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"oi-related-link\" href=\"/residential-home-office-design/\" data-page-route=\"homeOffice\"><small>03</small><strong>Home Office Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"oi-related-link\" href=\"/complete-home-redesign/\" data-page-route=\"completeHome\"><small>04</small><strong>Complete Home Redesign</strong><span aria-hidden=\"true\">↗</span></a><a class=\"oi-related-link\" href=\"/3d-visualization/\" data-page-route=\"studio\"><small>05</small><strong>Woodex 3D Studio</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "5e5024cafe",
+  "type": "cta",
+  "html": "\n\n    <section class=\"oi-section oi-contact\" id=\"office-interior-contact\"><div class=\"oi-wrap oi-contact-grid\">\n      <div class=\"oi-reveal\"><h2>Talk to Woodex</h2><p class=\"oi-copy\">Tell us about the office, your team and when you want to move in. We will help you define the right starting point.</p><div class=\"oi-contact-actions\"><a class=\"oi-btn oi-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"oi-btn oi-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"oi-contact-list oi-reveal\"><div class=\"oi-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"oi-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"oi-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"oi-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"oi-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"oi-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"oi-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the office, your team and when you want to move in. We will help you define the right starting point.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

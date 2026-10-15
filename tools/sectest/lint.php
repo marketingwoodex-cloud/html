@@ -1,0 +1,1 @@
+<?php foreach (glob("/api/*.php") as $f) { $o=[]; try { token_get_all(file_get_contents($f), TOKEN_PARSE); } catch (Throwable $e) { echo basename($f),": ",$e->getMessage()," line ",$e->getLine(),"\n"; } } echo count(glob("/api/*.php")), " files parsed\n";

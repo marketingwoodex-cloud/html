@@ -1,0 +1,99 @@
+[
+ {
+  "id": "4b77ae8fe1",
+  "type": "hero",
+  "html": "\n\n    <section class=\"hr-hero\" aria-labelledby=\"home-refurbishment-title\"><div class=\"hr-wrap hr-hero-grid\">\n      <div class=\"hr-hero-copy hr-reveal\">\n        <nav class=\"hr-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><span>Home Refurbishment</span></nav>\n        <h1 id=\"home-refurbishment-title\">Home Refurbishment in Lahore — Renovation &amp; Interior Upgrades</h1>\n        <p class=\"hr-copy\">Refresh one room, a full floor or the whole home without the cost and disruption of rebuilding from scratch. We retain what works, improve what does not, and bring every finish into one clear direction.</p>\n        <div class=\"hr-hero-actions\"><a class=\"hr-btn hr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"hr-btn hr-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"hr-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"hr-hero-media hr-reveal\"><img src=\"/assets/img/img-5194dc486e09.webp\" width=\"1920\" height=\"1280\" alt=\"Refreshed living room with warm timber, fitted storage and soft daylight\" loading=\"lazy\" decoding=\"async\"><figcaption>A lighter home, built around what remains</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Home Refurbishment in Lahore — Renovation &amp; Interior Upgrades",
+   "copy": "Refresh one room, a full floor or the whole home without the cost and disruption of rebuilding from scratch. We retain what works, improve what does not, and bring every finish into one clear direction.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-5194dc486e09.webp",
+   "img_alt": "Refreshed living room with warm timber, fitted storage and soft daylight"
+  }
+ },
+ {
+  "id": "c0d1c53dce",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hr-section hr-intro\" id=\"home-refurbishment-intro\"><div class=\"hr-wrap hr-intro-grid\">\n      <div class=\"hr-reveal\"><h2>What Is Home Refurbishment?</h2><p class=\"hr-copy\">Home refurbishment improves an existing interior while keeping the main structure. Floors, wall finishes, lighting, storage, fixtures and furniture can all be updated around a better room plan.</p><p class=\"hr-copy\">It is more focused than a complete home redesign and lighter than architectural work. The aim is to make the home feel renewed without rebuilding every room or changing the building itself.</p><p class=\"hr-copy\">The final scope can be as simple as a room refresh or as broad as a coordinated whole-home upgrade.</p></div>\n      <aside class=\"hr-retain hr-reveal\" aria-label=\"Refurbishment priorities\"><div class=\"hr-retain-head\"><h3>Keep the structure.<br>Change the experience.</h3><span>Selective work</span></div><div class=\"hr-retain-list\"><span>Retain sound elements</span><span>Improve weak layouts</span><span>Update visible finishes</span><span>Coordinate new details</span></div></aside>\n    </div></section>"
+ },
+ {
+  "id": "523ed4e834",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hr-section hr-scope\" id=\"home-refurbishment-scope\"><div class=\"hr-wrap hr-scope-grid\">\n      <div class=\"hr-scope-intro hr-reveal\"><h2>What’s Included</h2><p class=\"hr-copy\">A practical refurbishment scope built around the rooms, surfaces and systems that will make the greatest difference.</p><p class=\"hr-scroll-note\">Scroll through the complete scope.</p></div>\n      <div class=\"hr-scope-scroll hr-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight home refurbishment services. Scroll to review all items.\">\n        <article class=\"hr-scope-item\"><span>01</span><div><h3>Room-by-Room Refresh</h3><p>Focused updates for bedrooms, lounges, dining rooms and everyday family spaces.</p></div></article>\n        <article class=\"hr-scope-item\"><span>02</span><div><h3>Full-Floor Makeovers</h3><p>Connected rooms planned as one phase with consistent finishes and a clear work sequence.</p></div></article>\n        <article class=\"hr-scope-item\"><span>03</span><div><h3>Surface &amp; Finish Upgrades</h3><p>Flooring, wall treatments, ceilings, paint and hardware selected to work together.</p></div></article>\n        <article class=\"hr-scope-item\"><span>04</span><div><h3>Kitchen &amp; Bathroom Refurbishment</h3><p>Cabinetry, worktops, tiles, fixtures and storage updated around retained services where practical.</p></div></article>\n        <article class=\"hr-scope-item\"><span>05</span><div><h3>Lighting &amp; Electrical Refresh</h3><p>New light layers, fixtures, switches and practical power points coordinated room by room.</p></div></article>\n        <article class=\"hr-scope-item\"><span>06</span><div><h3>Furniture &amp; Styling</h3><p>Existing and new pieces composed into a more comfortable, finished interior.</p></div></article>\n        <article class=\"hr-scope-item\"><span>07</span><div><h3>Space Re-planning</h3><p>Furniture positions and selected non-structural changes improve flow and everyday use.</p></div></article>\n        <article class=\"hr-scope-item\"><span>08</span><div><h3>Storage &amp; Joinery Upgrades</h3><p>Wardrobes, media walls, shelving and fitted storage designed for the room.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "706d1afaef",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hr-section hr-compare\" id=\"home-refurbishment-compare\"><div class=\"hr-wrap\">\n      <header class=\"hr-compare-head hr-reveal\"><h2>Refurbishment vs Full Redesign</h2><p class=\"hr-copy\">Both improve the home. The difference is how much of the existing interior stays in place.</p></header>\n      <div class=\"hr-compare-grid hr-reveal\"><article class=\"hr-compare-card\"><small>Focused upgrade</small><h3>Refurbishment</h3><p>Upgrade what exists with selected finish, fixture and layout changes. It is faster, costs less and causes less disruption.</p></article><article class=\"hr-compare-card\"><small>Complete overhaul</small><h3>Complete Redesign</h3><p>Rework the full interior direction with major layout changes, a broader design scope and a higher budget.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "aba9bf20ef",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hr-section hr-process\" id=\"home-refurbishment-process\"><div class=\"hr-wrap\">\n      <header class=\"hr-process-head hr-reveal\"><h2>Our Design Process</h2><p class=\"hr-copy\">Five clear steps define what stays, what changes and how the refreshed home will come together.</p></header>\n      <div class=\"hr-steps hr-reveal\">\n        <article class=\"hr-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss the rooms, priorities, budget and the level of disruption that works for you.</p></article>\n        <article class=\"hr-step\"><strong>02</strong><h3>Site Measurement</h3><p>We measure the space and record its condition, services and elements worth retaining.</p></article>\n        <article class=\"hr-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>We improve the plan and establish a clear direction for the upgraded interior.</p></article>\n        <article class=\"hr-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Finishes, fixtures, furniture and joinery are coordinated within the agreed budget.</p></article>\n        <article class=\"hr-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>You receive the approved design, specifications and key 3D views before work starts.</p></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "fe8070b41e",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hr-section hr-pricing\" id=\"home-refurbishment-pricing\"><div class=\"hr-wrap hr-pricing-grid\">\n      <div class=\"hr-pricing-copy hr-reveal\"><h2>Pricing</h2><p class=\"hr-copy\">Your initial consultation and site survey are free. We then provide an exact fixed quote for the agreed scope.</p><a class=\"hr-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"hr-reveal\"><div class=\"hr-price-list\"><article class=\"hr-price-row\"><h3>Initial consultation &amp; site survey</h3><strong>Free</strong></article><article class=\"hr-price-row\"><h3>Room refresh</h3><strong>From PKR 150,000</strong></article><article class=\"hr-price-row\"><h3>Full-floor refurbishment</h3><strong>PKR 400,000-1,500,000</strong></article><article class=\"hr-price-row\"><h3>Whole-home refurbishment</h3><strong>PKR 1,000,000-3,000,000+</strong></article></div><p class=\"hr-price-note\">Prices vary with the finishes selected and the extent of work. The site survey and final scope determine the fixed quotation.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "7acb602878",
+  "type": "faq",
+  "html": "\n\n    <section class=\"hr-section hr-faq\" id=\"home-refurbishment-faq\"><div class=\"hr-wrap hr-faq-grid\">\n      <div class=\"hr-faq-intro hr-reveal\"><h2>Home Refurbishment FAQs</h2><p class=\"hr-copy\">Clear answers on scope, timing, living through the work and the value of planning first.</p></div>\n      <div class=\"hr-faq-list hr-reveal\">\n        <div class=\"hr-faq-item\"><button class=\"hr-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What is the difference between refurbishment and renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hr-faq-a\"><div><p>Refurbishment refreshes finishes, fixtures, furniture and selected layouts while keeping most of the existing structure. Renovation can involve heavier demolition, services and structural changes.</p></div></div></div>\n        <div class=\"hr-faq-item\"><button class=\"hr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does home refurbishment take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hr-faq-a\"><div><p>A room refresh can take 1 to 3 weeks. A floor or whole-home scope may take 4 to 12 weeks depending on materials, joinery and how the work is phased.</p></div></div></div>\n        <div class=\"hr-faq-item\"><button class=\"hr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can we stay at home during the work?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hr-faq-a\"><div><p>Often, yes. We can phase the work room by room or floor by floor to keep part of the home usable, though kitchens and bathrooms may need short periods without access.</p></div></div></div>\n        <div class=\"hr-faq-item\"><button class=\"hr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you refurbish kitchens and bathrooms?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hr-faq-a\"><div><p>Yes. We can update cabinetry, worktops, sanitary fixtures, lighting, tiles and storage while retaining suitable existing services and structure.</p></div></div></div>\n        <div class=\"hr-faq-item\"><button class=\"hr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Does refurbishment add property value?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hr-faq-a\"><div><p>Well-planned upgrades can improve presentation, comfort and buyer appeal. The result depends on the property, area and quality of the completed work.</p></div></div></div>\n        <div class=\"hr-faq-item\"><button class=\"hr-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Will I see 3D designs before work starts?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"hr-faq-a\"><div><p>Yes. Key rooms can be visualized in 3D so you can approve layouts, finishes and furniture before execution begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Home Refurbishment FAQs",
+   "copy": "Clear answers on scope, timing, living through the work and the value of planning first.",
+   "items": [
+    {
+     "q": "What is the difference between refurbishment and renovation?",
+     "a": "<p>Refurbishment refreshes finishes, fixtures, furniture and selected layouts while keeping most of the existing structure. Renovation can involve heavier demolition, services and structural changes.</p>"
+    },
+    {
+     "q": "How long does home refurbishment take?",
+     "a": "<p>A room refresh can take 1 to 3 weeks. A floor or whole-home scope may take 4 to 12 weeks depending on materials, joinery and how the work is phased.</p>"
+    },
+    {
+     "q": "Can we stay at home during the work?",
+     "a": "<p>Often, yes. We can phase the work room by room or floor by floor to keep part of the home usable, though kitchens and bathrooms may need short periods without access.</p>"
+    },
+    {
+     "q": "Do you refurbish kitchens and bathrooms?",
+     "a": "<p>Yes. We can update cabinetry, worktops, sanitary fixtures, lighting, tiles and storage while retaining suitable existing services and structure.</p>"
+    },
+    {
+     "q": "Does refurbishment add property value?",
+     "a": "<p>Well-planned upgrades can improve presentation, comfort and buyer appeal. The result depends on the property, area and quality of the completed work.</p>"
+    },
+    {
+     "q": "Will I see 3D designs before work starts?",
+     "a": "<p>Yes. Key rooms can be visualized in 3D so you can approve layouts, finishes and furniture before execution begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "1fb59b1cfd",
+  "type": "raw",
+  "html": "\n\n    <section class=\"hr-section hr-related\" id=\"home-refurbishment-related\"><div class=\"hr-wrap\">\n      <header class=\"hr-related-head hr-reveal\"><h2>Related Services</h2><p class=\"hr-copy\">Explore a larger home transformation or focus on the rooms that need attention first.</p></header>\n      <nav class=\"hr-related-grid hr-reveal\" aria-label=\"Related services\"><a class=\"hr-related-link\" href=\"/complete-home-redesign/\" data-page-route=\"completeHome\"><small>01</small><strong>Complete Home Redesign</strong><span aria-hidden=\"true\">↗</span></a><a class=\"hr-related-link\" href=\"/kitchen-design/\" data-page-route=\"kitchen\"><small>02</small><strong>Kitchen Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"hr-related-link\" href=\"/residential-bedroom-design/\" data-page-route=\"bedroom\"><small>03</small><strong>Bedroom Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"hr-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>04</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "3414c93593",
+  "type": "cta",
+  "html": "\n\n    <section class=\"hr-section hr-contact\" id=\"home-refurbishment-contact\"><div class=\"hr-wrap hr-contact-grid\">\n      <div class=\"hr-reveal\"><h2>Talk to Woodex</h2><p class=\"hr-copy\">Tell us what feels dated, what needs to work better and which parts of the home you want to keep.</p><div class=\"hr-contact-actions\"><a class=\"hr-btn hr-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"hr-btn hr-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"hr-contact-list hr-reveal\"><div class=\"hr-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"hr-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"hr-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"hr-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"hr-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"hr-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"hr-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us what feels dated, what needs to work better and which parts of the home you want to keep.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

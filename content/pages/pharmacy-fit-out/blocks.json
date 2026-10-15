@@ -1,0 +1,121 @@
+[
+ {
+  "id": "9bfb3126c1",
+  "type": "hero",
+  "html": "\n<section class=\"fo-hero\" aria-labelledby=\"fitout-service-title\"><div class=\"fo-wrap fo-hero-grid\"><div class=\"fo-hero-copy fo-reveal\"><nav class=\"fo-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>›</span><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Fit Out</a><span>›</span><span>Pharmacy Fit-Out</span></nav><p class=\"fo-label\">Woodex Fit-Out · Lahore</p><h1 id=\"fitout-service-title\">Pharmacy Fit-Out in Lahore</h1><p class=\"fo-copy\">Dispensing workflow, secure storage, hygienic finishes and customer flow planned for independent pharmacies and chain rollouts.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-hero-media fo-reveal\"><img src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Custom pharmacy-style counters and storage representing a Woodex pharmacy fit-out\" fetchpriority=\"high\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-hero-note\"><strong>Independent pharmacies, hospital dispensaries and chain rollouts</strong><span>4–8 weeks</span></figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Pharmacy Fit-Out in Lahore",
+   "label": "Woodex Fit-Out · Lahore",
+   "copy": "Dispensing workflow, secure storage, hygienic finishes and customer flow planned for independent pharmacies and chain rollouts.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#fitout-service-contact",
+   "img_src": "/assets/img/img-f655d51401e8.webp",
+   "img_alt": "Custom pharmacy-style counters and storage representing a Woodex pharmacy fit-out"
+  }
+ },
+ {
+  "id": "3c859e3d17",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-scope\"><div class=\"fo-wrap fo-scope-layout\"><figure class=\"fo-image fo-scope-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Coordinated Woodex interior showing fit-out services, finishes and furniture\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">One design direction · One coordinated build</figcaption></figure><div class=\"fo-scope-copy fo-reveal\"><p class=\"fo-label\">Build scope</p><h2>What Pharmacy Fit-Out includes</h2><p>Every fixture supports fast dispensing, secure storage, clear customer movement and licensing readiness.</p><div class=\"fo-scope-list\"><article class=\"fo-scope-item\"><b>01</b><strong>Dispensing counter</strong><span>L-shaped, U-shaped or island layout.</span></article><article class=\"fo-scope-item\"><b>02</b><strong>Controlled storage</strong><span>Locked, alarmed and access-restricted cabinets.</span></article><article class=\"fo-scope-item\"><b>03</b><strong>Climate zones</strong><span>Temperature control for sensitive medication.</span></article><article class=\"fo-scope-item\"><b>04</b><strong>Wall finishes</strong><span>Antibacterial and washable surfaces.</span></article><article class=\"fo-scope-item\"><b>05</b><strong>Flooring</strong><span>Anti-slip, easy-clean vinyl or commercial tile.</span></article><article class=\"fo-scope-item\"><b>06</b><strong>Pharmacy lighting</strong><span>Glare-free 4000K–5000K light for labels.</span></article><article class=\"fo-scope-item\"><b>07</b><strong>Signage and branding</strong><span>DGDA/PBMC-focused signs and brand touchpoints.</span></article><article class=\"fo-scope-item\"><b>08</b><strong>Security</strong><span>CCTV, alarms and restricted-access areas.</span></article></div></div></div></section>"
+ },
+ {
+  "id": "02124b2a81",
+  "type": "process",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-process\"><div class=\"fo-wrap fo-process-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">A controlled programme</p><h2>6 steps from brief to handover</h2><p>Decisions are approved in sequence so the site team can build with fewer changes and clearer accountability.</p><figure class=\"fo-image fo-process-media\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Pharmacy Fit-Out interior accompanying the Woodex project process\" width=\"1920\" height=\"1280\"></figure></div><div class=\"fo-process-list fo-reveal\"><article class=\"fo-step\"><b>01</b><h3>Survey and brief</h3><p>Review the unit, counter type, storage and brand needs.</p></article><article class=\"fo-step\"><b>02</b><h3>Design and 3D</h3><p>Approve the counter, shelving, lighting and finishes.</p></article><article class=\"fo-step\"><b>03</b><h3>Compliance check</h3><p>Review controlled storage, hygiene, signage and dispensing needs.</p></article><article class=\"fo-step\"><b>04</b><h3>Construction and MEP</h3><p>Coordinate floors, ceilings, power, HVAC and joinery.</p></article><article class=\"fo-step\"><b>05</b><h3>Finishing and branding</h3><p>Install surfaces, shelving, graphics and security systems.</p></article><article class=\"fo-step\"><b>06</b><h3>Handover</h3><p>Snag, clean and prepare the pharmacy for inspection.</p></article></div></div></section>",
+  "fields": {
+   "steps": [
+    {
+     "title": "Survey and brief",
+     "copy": "Review the unit, counter type, storage and brand needs."
+    },
+    {
+     "title": "Design and 3D",
+     "copy": "Approve the counter, shelving, lighting and finishes."
+    },
+    {
+     "title": "Compliance check",
+     "copy": "Review controlled storage, hygiene, signage and dispensing needs."
+    },
+    {
+     "title": "Construction and MEP",
+     "copy": "Coordinate floors, ceilings, power, HVAC and joinery."
+    },
+    {
+     "title": "Finishing and branding",
+     "copy": "Install surfaces, shelving, graphics and security systems."
+    },
+    {
+     "title": "Handover",
+     "copy": "Snag, clean and prepare the pharmacy for inspection."
+    }
+   ],
+   "label": "A controlled programme",
+   "heading": "6 steps from brief to handover"
+  }
+ },
+ {
+  "id": "4b174ff8ba",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-pricing\"><div class=\"fo-wrap fo-price-layout\"><div class=\"fo-price-copy fo-reveal\"><p class=\"fo-label\">Indicative PKR pricing</p><h2>A practical range before the survey</h2><p>These planning figures come from the service scope. The proposal is fixed only after site review and specification approval.</p><div class=\"fo-price-list\"><div class=\"fo-price-row\"><div><strong>Basic Pharmacy</strong><span>PKR 5,500–7,000 / sq. ft.</span></div><strong>PKR 5.5M–7M</strong></div><div class=\"fo-price-row\"><div><strong>Mid-Spec Pharmacy</strong><span>PKR 7,000–9,000 / sq. ft.</span></div><strong>PKR 7M–9M</strong></div><div class=\"fo-price-row\"><div><strong>Premium / Chain</strong><span>PKR 9,000–12,000 / sq. ft.</span></div><strong>PKR 9M–12M</strong></div></div><p class=\"fo-price-note\">Examples use a 1,000 sq. ft. unit. Final cost depends on counter layout, storage, security and specification.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-price-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Joinery and finish detail representing the materials within a Woodex fit-out\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">Scope, materials and labour set out in one BOQ</figcaption></figure></div></section>"
+ },
+ {
+  "id": "f2f1ff70a0",
+  "type": "raw",
+  "html": "<section class=\"fo-section fo-soft\"><div class=\"fo-wrap fo-value-layout\"><figure class=\"fo-image fo-value-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Finished pharmacy fit-out interior showing the value of coordinated delivery\" width=\"1920\" height=\"1280\"></figure><div class=\"fo-value-copy fo-reveal\"><p class=\"fo-label\">Why Woodex</p><h2>One standard from the drawings to the last detail</h2><p>Design checks, construction, joinery and quality control stay connected throughout the project.</p><div class=\"fo-value-list\"><div class=\"fo-value\"><b>01</b><strong>Chain rollout expertise</strong><span>One approved prototype can be repeated across locations.</span></div><div class=\"fo-value\"><b>02</b><strong>Compliance built in</strong><span>Storage, dispensing, hygiene and signage needs are reviewed early.</span></div><div class=\"fo-value\"><b>03</b><strong>In-house 3D studio</strong><span>Approve the complete pharmacy before construction.</span></div><div class=\"fo-value\"><b>04</b><strong>Custom joinery</strong><span>Counters, drug cabinets, shelving and storage are made in-house.</span></div></div></div></div></section>"
+ },
+ {
+  "id": "0b90293b6a",
+  "type": "faq",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-faq\"><div class=\"fo-wrap fo-faq-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">Practical answers</p><h2>Pharmacy Fit-Out FAQs</h2><p>Six short answers about scope, timing and cost.</p></div><div class=\"fo-faq-list fo-reveal\"><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How much does a pharmacy fit-out cost?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>A 1,000 sq. ft. pharmacy typically ranges from PKR 5.5M to 12M, depending on specification and joinery.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does it take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>An independent pharmacy takes 4–6 weeks. A chain prototype often takes 6–8 weeks.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you handle pharmacy licensing requirements?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>We design around DGDA and PBMC requirements for storage, dispensing, hygiene, signage and security.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you fit out several chain locations?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. We create a repeatable counter, storage, lighting, finish and signage system.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How is fit-out different from renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Fit-out completes a new shell. Renovation updates a pharmacy that is already built or trading.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can Woodex make the dispensing counter?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. Woodex Furniture™ can manufacture L-shaped, U-shaped or island counters with integrated secure storage.</p></div></div></div></div></div></section>",
+  "fields": {
+   "label": "Practical answers",
+   "heading": "Pharmacy Fit-Out FAQs",
+   "items": [
+    {
+     "q": "How much does a pharmacy fit-out cost?",
+     "a": "<p>A 1,000 sq. ft. pharmacy typically ranges from PKR 5.5M to 12M, depending on specification and joinery.</p>"
+    },
+    {
+     "q": "How long does it take?",
+     "a": "<p>An independent pharmacy takes 4–6 weeks. A chain prototype often takes 6–8 weeks.</p>"
+    },
+    {
+     "q": "Do you handle pharmacy licensing requirements?",
+     "a": "<p>We design around DGDA and PBMC requirements for storage, dispensing, hygiene, signage and security.</p>"
+    },
+    {
+     "q": "Can you fit out several chain locations?",
+     "a": "<p>Yes. We create a repeatable counter, storage, lighting, finish and signage system.</p>"
+    },
+    {
+     "q": "How is fit-out different from renovation?",
+     "a": "<p>Fit-out completes a new shell. Renovation updates a pharmacy that is already built or trading.</p>"
+    },
+    {
+     "q": "Can Woodex make the dispensing counter?",
+     "a": "<p>Yes. Woodex Furniture™ can manufacture L-shaped, U-shaped or island counters with integrated secure storage.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b0df1d6b9f",
+  "type": "raw",
+  "html": "<section class=\"fo-section\"><div class=\"fo-wrap\"><header class=\"fo-related-head fo-reveal\"><div><p class=\"fo-label\">Keep exploring</p><h2>Related Fit-Out Pages</h2></div><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">View the Fit-Out hub →</a></header><nav class=\"fo-related-grid fo-reveal\" aria-label=\"Related fit-out pages\"><a class=\"fo-related-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\"><small>Fit-Out hub</small><strong>All Fit-Out Services</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/office-fit-out/\" data-page-route=\"officeFitout\"><small>Workplace</small><strong>Office Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/commercial-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Commercial Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/retail-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Retail Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/restaurant-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Restaurant Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/healthcare-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Healthcare Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/turnkey-design-build/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Turnkey Design Build</strong><span aria-hidden=\"true\">↗</span></a></nav></div></section>"
+ },
+ {
+  "id": "504bf2f516",
+  "type": "cta",
+  "html": "<section class=\"fo-section fo-contact\" id=\"fitout-service-contact\"><div class=\"fo-wrap fo-contact-grid\"><div class=\"fo-contact-copy fo-reveal\"><p class=\"fo-label\">Talk to Woodex</p><h2>Start with the space and your opening date</h2><p>Share the location, area and current condition. We will help define the right scope and next step.</p><div class=\"fo-contact-actions\"><a class=\"fo-btn\" href=\"mailto:info@woodex.com.pk?subject=Pharmacy%20Fit-Out%20Consultation\">Get a Free Consultation</a></div></div><div class=\"fo-contact-card fo-reveal\"><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"fo-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"fo-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"fo-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"fo-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Start with the space and your opening date",
+   "label": "Talk to Woodex",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Pharmacy%20Fit-Out%20Consultation"
+    }
+   ]
+  }
+ }
+]

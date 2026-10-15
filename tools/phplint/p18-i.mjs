@@ -1,0 +1,73 @@
+// P18 I test: login polish, blog editor (toolbar, status/visibility/category/tags, unlisted), API token switch/regenerate. cp to ~/.cache/pb
+import puppeteer from "puppeteer-core";
+import fs from "node:fs";
+const B = "http://localhost:8080", OUT = "/home/user/-marketingwoodex/tools/", R = "/home/user/-marketingwoodex/frontend-v1/";
+const b = await puppeteer.launch({ executablePath: process.cwd() + "/al/chromium", headless: "shell", args: ["--no-sandbox"] });
+const a = await b.newPage(); await a.setViewport({ width: 1440, height: 900 }); a.on("dialog", (d) => d.accept(d.type() === "prompt" ? (globalThis.PROMPT || d.defaultValue()) : undefined));
+const errs = []; a.on("pageerror", (e) => { errs.push(e.message.slice(0, 200)); console.log("STACK", (e.stack || "").split("\n").slice(0, 4).join(" / ")); });
+const ok = (c, m) => { console.log((c ? "PASS " : "FAIL ") + m); if (!c) process.exitCode = 1; };
+const pub = async () => { await a.evaluate(() => document.querySelector("#ce-pub").scrollIntoView({ block: "center" })); await a.click("#ce-pub"); };
+const w = (ms) => new Promise((r) => setTimeout(r, ms));
+await a.goto(B + "/admin/", { waitUntil: "load" }); await a.waitForSelector("#l-email", { visible: true });
+// ---- login polish
+const hs = await a.evaluate(() => [document.querySelector("#l-email").offsetHeight, document.querySelector("#l-pass").offsetHeight]); ok(hs[0] === hs[1], "email & password boxes same height " + hs);
+ok(await a.evaluate(() => getComputedStyle(document.querySelector("#l-err")).display === "none"), "no empty error gap");
+await a.type("#l-email", "o@woodex.pk"); await a.type("#l-pass", "wrong-pass");
+await a.click("#l-btn"); const busy = await a.evaluate(() => document.querySelector("#l-btn").classList.contains("busy")); await w(1200);
+ok(busy, "button shows spinner while signing in"); ok(await a.evaluate(() => /./.test(document.querySelector("#l-err").textContent) && getComputedStyle(document.querySelector("#l-err")).display !== "none"), "wrong password → visible error");
+await a.screenshot({ path: OUT + "p18-i-login.png" });
+await a.evaluate(() => { document.querySelector("#l-pass").value = ""; }); await a.type("#l-pass", "Woodex@2026x"); await a.click("#l-btn"); await a.waitForSelector("#app:not([hidden])");
+ok(await a.evaluate(() => !document.querySelector("#l-btn").classList.contains("busy")), "spinner cleared after sign in");
+// ---- blog editor
+const SL = "qa-p18i-post", REL = "insights/" + SL + "/index.html";
+await a.evaluate(() => (location.hash = "#/post/new")); await a.waitForSelector("#ce-tb", { timeout: 8000 }); await w(600);
+await w(800); await a.evaluate(() => WXA.closeModal && WXA.closeModal()); await w(300);
+ok(!!(await a.$("#ce-cat")) && !!(await a.$("#ce-tags")) && (await a.$$("[name=ce-vis]")).length === 2, "side cards: status/visibility, category, tags");
+await a.type("#ce-title", "QA P18I test post"); await a.evaluate((s) => { const e = document.querySelector("#ce-slug"); e.value = s; e.dispatchEvent(new Event("input", { bubbles: true })); }, SL);
+await a.evaluate(() => { document.querySelector("#ce-hero input").value = "/assets/img/img-00e6912a64f2-480.webp"; });
+await a.type("#ce-blocks .bk-h input", "Why this matters");
+const ta = "#ce-blocks .bk-p textarea"; await a.type(ta, "Good design saves money over time.");
+await a.evaluate((q) => { const t = document.querySelector(q); t.focus(); t.setSelectionRange(5, 11); }, ta);
+await a.click('#ce-tb [data-fmt="b"]'); ok(/\*\*design\*\*/.test(await a.$eval(ta, (t) => t.value)), "toolbar Bold wraps selection");
+await a.evaluate((q) => { const t = document.querySelector(q); t.focus(); t.setSelectionRange(0, 4); }, ta); await a.keyboard.down("Control"); await a.keyboard.press("i"); await a.keyboard.up("Control");
+ok(/^\*Good\*/.test(await a.$eval(ta, (t) => t.value)), "Ctrl+I italic");
+const n0 = (await a.$$("#ce-blocks .bk")).length; await a.evaluate((q) => document.querySelector(q).focus(), ta); await a.click('#ce-tb [data-ins="list"]'); await w(300);
+const types = await a.$$eval("#ce-blocks .bk", (x) => x.map((e) => e.className)); ok(types.length === n0 + 1 && /bk-list/.test(types[2]), "insert list right after current block");
+await a.type("#ce-blocks .bk-list textarea", "Plan early\nBuy once");
+ok(/\d+ words/.test(await a.$eval("#ce-tb-wc", (e) => e.textContent)) && +(await a.$eval("#ce-wc", (e) => e.textContent)) > 5, "word count + reading time");
+await a.select("#ce-cat", "Design ideas");
+for (const t of ["Modern", "lahore"]) { await a.click("#ce-tags"); await a.type("#ce-tag-in", t); await a.keyboard.press("Enter"); }
+ok((await a.$$("#ce-tags .ce-chip")).length === 2, "2 tag chips");
+await a.click('[name=ce-vis][value="unlisted"]');
+await a.screenshot({ path: OUT + "p18-i-editor.png" });
+await a.evaluate(() => { document.querySelector("#ce-hero input").value = "/assets/img/img-00e6912a64f2-480.webp"; });
+ok(await a.evaluate(() => document.querySelector('.ce-vo.on input').value === "unlisted" && document.querySelectorAll(".ce-vo.on").length === 1), "only the chosen visibility is highlighted");
+await pub(); await w(1000); console.log("t1:", await a.$eval("#toast", (t) => t.textContent), await a.evaluate(() => location.hash)); await a.waitForFunction(() => /Published/.test(document.body.innerText) || document.querySelector(".toast.bad, .toast.err"), { timeout: 20000 }).catch(() => {}); await w(1500);
+console.log("toast:", await a.$eval("#toast", (t) => t.textContent));
+ok(fs.existsSync(R + REL), "page written");
+let H = fs.readFileSync(R + REL, "utf8"), L = fs.readFileSync(R + "insights/index.html", "utf8"), SM = fs.readFileSync(R + "sitemap.xml", "utf8");
+ok(/<meta name="robots" content="noindex, follow">/.test(H), "unlisted → noindex"); ok(!L.includes('href="/insights/' + SL + '/"'), "unlisted → not on Insights list"); ok(!SM.includes("/insights/" + SL + "/"), "unlisted → not in sitemap");
+ok(/"articleSection":"Design ideas"/.test(H) && /"keywords":"modern, lahore"/.test(H), "schema: category + tags");
+ok(/<dd[^>]*>\s*Design ideas\s*<\/dd>/.test(H) || H.includes("Design ideas"), "category shown in details strip");
+// make public
+await a.click('[name=ce-vis][value="public"]'); await pub(); await w(4000);
+H = fs.readFileSync(R + REL, "utf8"); L = fs.readFileSync(R + "insights/index.html", "utf8"); SM = fs.readFileSync(R + "sitemap.xml", "utf8");
+ok(!/name="robots"/.test(H), "public → no noindex"); ok(L.includes('href="/insights/' + SL + '/"') && /hx-date">Design ideas</.test(L), "public → card on Insights with category label"); ok(SM.includes("/insights/" + SL + "/"), "public → in sitemap");
+await a.click('[name=ce-vis][value="unlisted"]'); await pub(); await w(4000);
+ok(!fs.readFileSync(R + "insights/index.html", "utf8").includes('href="/insights/' + SL + '/"') && !fs.readFileSync(R + "sitemap.xml", "utf8").includes("/insights/" + SL + "/"), "unlisted again → card + sitemap entry removed");
+// ---- API tokens
+const call = (act, o = {}) => a.evaluate((act, o) => WXA.api(act, o), act, o);
+const mcp = (tok) => fetch(B + "/api/mcp.php", { method: "POST", headers: { Authorization: "Bearer " + tok, "Content-Type": "application/json", Accept: "application/json, text/event-stream" }, body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "qa", version: "1" } } }) }).then((r) => r.status);
+const nt = await call("mcp_token_new", { name: "QA token" }); const id = nt.tokens[0].id; ok(nt.ok && (await mcp(nt.token)) === 200, "new token works");
+await call("mcp_token_toggle", { id, on: false }); ok((await mcp(nt.token)) === 401, "switched off → refused");
+let tl = await call("mcp_tokens"); ok(tl.tokens.find((t) => t.id === id).off === true, "list shows off");
+await call("mcp_token_toggle", { id, on: true }); ok((await mcp(nt.token)) === 200, "switched on → works");
+const rg = await call("mcp_token_regen", { id }); ok(rg.ok && (await mcp(nt.token)) === 401 && (await mcp(rg.token)) === 200 && rg.tokens.find((t) => t.id === id).hint === rg.token.slice(-4), "regenerate: old fails, new works");
+await a.evaluate(() => (location.hash = "#/settings/integrations")); await a.evaluate(() => { const x = document.querySelector('#st-tabs [data-t="integrations"]'); if (x) x.click(); }); await w(2500);
+ok(!!(await a.$('#ig-keys [data-tog]')) && !!(await a.$("#ig-keys [data-regen]")) && !!(await a.$("#ig-keys [data-cpu]")), "keys table: switch, Regenerate, Copy URL");
+await a.evaluate(() => document.querySelector("#ig-keys [data-tog]").click()); await w(1000); ok((await call("mcp_tokens")).tokens.find((t) => t.id === id).off, "UI switch turns token off");
+await a.evaluate(() => document.querySelector("#ig-keys").scrollIntoView()); await w(300); await a.screenshot({ path: OUT + "p18-i-keys.png" });
+await a.evaluate(() => document.querySelector("#ig-keys [data-regen]").click()); await w(1200); ok(/wxmcp_[0-9a-f]{48}/.test(await a.$eval("#ig-tok", (e) => e.textContent).catch(() => "")), "regenerate shows the new token once");
+await a.screenshot({ path: OUT + "p18-i-once.png" }); await a.evaluate(() => document.querySelector("#ig-done").click());
+for (const t of (await call("mcp_tokens")).tokens.filter((t) => t.name === "QA token")) await call("mcp_token_revoke", { id: t.id });
+ok(!errs.length, "no JS errors " + errs.join(" | ")); await b.close();

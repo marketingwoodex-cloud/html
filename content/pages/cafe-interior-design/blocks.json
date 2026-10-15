@@ -1,0 +1,94 @@
+[
+ {
+  "id": "8b83dcc194",
+  "type": "hero",
+  "html": "\n\n    <section class=\"cf-hero\" aria-labelledby=\"cafe-hero-title\"><div class=\"cf-wrap cf-hero-grid\">\n      <div class=\"cf-hero-copy cf-reveal\">\n        <nav class=\"cf-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Café Interior Design</span></nav>\n        <h1 id=\"cafe-hero-title\">Café Interior Design in Lahore — Cosy Spaces, Great Coffee</h1>\n        <p class=\"cf-copy\">Woodex designs café interiors from the counter and seating to lighting and brand styling. The result is a warm space that invites people in and gives them a reason to come back.</p>\n        <div class=\"cf-hero-actions\"><a class=\"cf-btn cf-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n        <div class=\"cf-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"cf-hero-media cf-reveal\"><img src=\"/assets/img/img-774a712057fc.webp\" width=\"1920\" height=\"1280\" alt=\"Cosy café interior with a warm timber counter and window seating\" loading=\"lazy\" decoding=\"async\"><figcaption>Counter, comfort and character in one plan</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Café Interior Design in Lahore — Cosy Spaces, Great Coffee",
+   "copy": "Woodex designs café interiors from the counter and seating to lighting and brand styling. The result is a warm space that invites people in and gives them a reason to come back.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-774a712057fc.webp",
+   "img_alt": "Cosy café interior with a warm timber counter and window seating"
+  }
+ },
+ {
+  "id": "23163290fb",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cf-section cf-scope\" id=\"cafe-scope\"><div class=\"cf-wrap\">\n      <header class=\"cf-section-head cf-reveal\"><h2>What We Design</h2><p class=\"cf-copy\">Eight connected details shape the coffee service, guest comfort and street presence.</p></header>\n      <div class=\"cf-scope-viewport cf-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight café design services. Scroll horizontally to review all items.\"><div class=\"cf-scope-track\">\n        <article class=\"cf-scope-card\"><span>01</span><h3>Counter &amp; Bar Design</h3><p>A welcoming service point planned around equipment, display and staff movement.</p></article>\n        <article class=\"cf-scope-card\"><span>02</span><h3>Seating Layout</h3><p>Indoor, window and outdoor seats balanced with clear guest and service routes.</p></article>\n        <article class=\"cf-scope-card\"><span>03</span><h3>Lighting &amp; Ambience</h3><p>Warm layers of light for mornings, late evenings and flattering table settings.</p></article>\n        <article class=\"cf-scope-card\"><span>04</span><h3>Brand Styling &amp; Décor</h3><p>Colour, materials, furniture and details that make the brand feel at home.</p></article>\n        <article class=\"cf-scope-card\"><span>05</span><h3>Menu Board &amp; Graphics</h3><p>Clear menu presentation and graphic touchpoints placed where guests need them.</p></article>\n        <article class=\"cf-scope-card\"><span>06</span><h3>Kitchenette &amp; Prep Area</h3><p>A practical back counter for prep, storage, washing and daily service flow.</p></article>\n        <article class=\"cf-scope-card\"><span>07</span><h3>Facade &amp; Signage</h3><p>A recognisable shopfront that helps the café stand out from the street.</p></article>\n        <article class=\"cf-scope-card\"><span>08</span><h3>Acoustic Comfort</h3><p>Materials and layout choices that soften noise without losing the café buzz.</p></article>\n      </div></div>\n    </div></section>"
+ },
+ {
+  "id": "153480d59c",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cf-section cf-process\" id=\"cafe-process\"><div class=\"cf-wrap\">\n      <header class=\"cf-section-head cf-reveal\"><h2>Our Design Process</h2><p class=\"cf-copy\">Five focused stages take the café from first conversation to an approved design package.</p></header>\n      <div class=\"cf-steps cf-reveal\"><article class=\"cf-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss the coffee offer, guest profile, service style, budget and opening plan.</p></article><article class=\"cf-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the floor, frontage, services, equipment needs and existing conditions.</p></article><article class=\"cf-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Counter, seating, prep and customer movement come together in one clear plan.</p></article><article class=\"cf-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes, tables, seating, lighting and brand details are coordinated.</p></article><article class=\"cf-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Drawings and 3D views prepare the café for confident pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "2709bc5569",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cf-section cf-pricing\" id=\"cafe-pricing\"><div class=\"cf-wrap cf-pricing-grid\">\n      <div class=\"cf-pricing-copy cf-reveal\"><h2>Pricing</h2><p class=\"cf-copy\">The initial consultation and site survey are free. We confirm a fixed quote once the cover count, theme and 3D package are clear.</p><a class=\"cf-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"cf-reveal\"><div class=\"cf-price-list\"><article class=\"cf-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"cf-price-row\"><h3>Compact cafés</h3><strong>From PKR 100,000</strong></article><article class=\"cf-price-row\"><h3>Typical cafés</h3><strong>PKR 200,000-500,000</strong></article><article class=\"cf-price-row\"><h3>Large themed cafés</h3><strong>PKR 500,000-1,000,000+</strong></article></div><p class=\"cf-price-note\">The final fee varies with covers, theming and the required 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "0d59e2e7f8",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cf-section cf-compare\" id=\"cafe-compare\"><div class=\"cf-wrap\">\n      <header class=\"cf-section-head cf-reveal\"><h2>Design vs Fit-Out vs Renovation</h2><p class=\"cf-copy\">Choose the scope that matches where your café is today.</p></header>\n      <div class=\"cf-compare-grid cf-reveal\"><article class=\"cf-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization for the planning phase.</p></article><article class=\"cf-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>The approved café design built and installed as one coordinated scope.</p><a class=\"cf-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"cf-compare-card\"><small>Upgrade what exists</small><h3>Renovation</h3><p>A focused update for an existing or trading café.</p><a class=\"cf-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "fd3da6573a",
+  "type": "faq",
+  "html": "\n\n    <section class=\"cf-section cf-faq\" id=\"cafe-faq\"><div class=\"cf-wrap cf-faq-grid\">\n      <div class=\"cf-faq-intro cf-reveal\"><h2>Café Design FAQs</h2><p class=\"cf-copy\">Straight answers on customer appeal, capacity, workflow, timing, branding and 3D approval.</p></div>\n      <div class=\"cf-faq-list cf-reveal\">\n        <div class=\"cf-faq-item\"><button class=\"cf-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How can café design attract more customers?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cf-faq-a\"><div><p>A welcoming facade, memorable counter and comfortable atmosphere help people notice the café, step inside and return.</p></div></div></div>\n        <div class=\"cf-faq-item\"><button class=\"cf-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How many seats fit my café?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cf-faq-a\"><div><p>It depends on floor area, table mix, circulation and service flow. We test indoor, window and outdoor options before confirming the count.</p></div></div></div>\n        <div class=\"cf-faq-item\"><button class=\"cf-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you design the coffee counter and prep area?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cf-faq-a\"><div><p>Yes. We coordinate the customer-facing counter with equipment, storage, staff movement and the prep workflow behind it.</p></div></div></div>\n        <div class=\"cf-faq-item\"><button class=\"cf-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does café design take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cf-faq-a\"><div><p>A compact café can take two to three weeks. Larger or themed spaces need more time for detailing and approvals.</p></div></div></div>\n        <div class=\"cf-faq-item\"><button class=\"cf-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you theme the café around my brand?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cf-faq-a\"><div><p>Yes. Colour, materials, graphics, furniture and lighting can express the brand in a warm, natural way.</p></div></div></div>\n        <div class=\"cf-faq-item\"><button class=\"cf-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I get 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"cf-faq-a\"><div><p>Yes. Key counter, seating and arrival views are shown in 3D before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Café Design FAQs",
+   "copy": "Straight answers on customer appeal, capacity, workflow, timing, branding and 3D approval.",
+   "items": [
+    {
+     "q": "How can café design attract more customers?",
+     "a": "<p>A welcoming facade, memorable counter and comfortable atmosphere help people notice the café, step inside and return.</p>"
+    },
+    {
+     "q": "How many seats fit my café?",
+     "a": "<p>It depends on floor area, table mix, circulation and service flow. We test indoor, window and outdoor options before confirming the count.</p>"
+    },
+    {
+     "q": "Do you design the coffee counter and prep area?",
+     "a": "<p>Yes. We coordinate the customer-facing counter with equipment, storage, staff movement and the prep workflow behind it.</p>"
+    },
+    {
+     "q": "How long does café design take?",
+     "a": "<p>A compact café can take two to three weeks. Larger or themed spaces need more time for detailing and approvals.</p>"
+    },
+    {
+     "q": "Can you theme the café around my brand?",
+     "a": "<p>Yes. Colour, materials, graphics, furniture and lighting can express the brand in a warm, natural way.</p>"
+    },
+    {
+     "q": "Do I get 3D visuals before execution?",
+     "a": "<p>Yes. Key counter, seating and arrival views are shown in 3D before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "fd0ca43219",
+  "type": "raw",
+  "html": "\n\n    <section class=\"cf-section cf-related\" id=\"cafe-related\"><div class=\"cf-wrap\">\n      <header class=\"cf-section-head cf-reveal\"><h2>Related Spaces</h2><p class=\"cf-copy\">Explore nearby commercial design services.</p></header>\n      <nav class=\"cf-related-grid cf-reveal\" aria-label=\"Related spaces\"><a class=\"cf-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"cf-related-link\" href=\"/restaurant-interior-design/\" data-page-route=\"restaurant\"><small>02</small><strong>Restaurant Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"cf-related-link\" href=\"/coworking-space-design/\" data-page-route=\"coworking\"><small>03</small><strong>Coworking Space Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "32d8a5542c",
+  "type": "cta",
+  "html": "\n\n    <section class=\"cf-section cf-contact\" id=\"cafe-contact\"><div class=\"cf-wrap cf-contact-grid\">\n      <div class=\"cf-reveal\"><h2>Talk to Woodex</h2><p class=\"cf-copy\">Tell us about the site, coffee offer, seating target and the feeling you want to create.</p><div class=\"cf-contact-actions\"><a class=\"cf-btn cf-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"cf-btn cf-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"cf-contact-list cf-reveal\"><div class=\"cf-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"cf-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"cf-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"cf-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"cf-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"cf-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"cf-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the site, coffee offer, seating target and the feeling you want to create.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

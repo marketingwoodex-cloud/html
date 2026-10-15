@@ -1,0 +1,4 @@
+php_flag engine off
+<FilesMatch "\.(php|phtml|phar|html?|js|svg)$">
+Require all denied
+</FilesMatch>

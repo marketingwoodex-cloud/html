@@ -1,0 +1,12 @@
+# _private/.htaccess — the site root's private folder, denied to the web.
+#
+# api/v2 reads its database credentials from here (api/v2/lib/bootstrap.php sets WX_PRIVATE_DIR to the
+# site root's _private, resolved as dirname(dirname(api/v2))), and the JSON stores the platform still
+# needs — the application secret, the lockout state, the live-data flags — live beside it. None of it
+# is ever fetched over HTTP.
+#
+# The rule is written for both Apache generations, because a Hostinger account can be on either:
+# `Require all denied` for Apache 2.4, `Deny from all` for 2.2. If neither module is loaded the file
+# still ships, and the deploy notes call for a check — see ci/README.md.
+Require all denied
+Deny from all

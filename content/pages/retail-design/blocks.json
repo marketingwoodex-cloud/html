@@ -1,0 +1,94 @@
+[
+ {
+  "id": "89bb4d5bfb",
+  "type": "hero",
+  "html": "\n\n    <section class=\"rt-hero\" aria-labelledby=\"retail-title\"><div class=\"rt-wrap rt-hero-grid\">\n      <div class=\"rt-hero-copy rt-reveal\">\n        <nav class=\"rt-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>&gt;</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span>&gt;</span><a href=\"/commercial-interior/\" data-page-route=\"commercialInterior\">Commercial Interiors</a><span>&gt;</span><span>Retail Design</span></nav>\n        <h1 id=\"retail-title\">Retail Design in Lahore — Stores That Sell</h1>\n        <p class=\"rt-copy\">We shape layouts, displays, lighting and brand details around easy browsing. Every decision helps customers find products, feel comfortable and move naturally toward a purchase.</p>\n        <div class=\"rt-hero-actions\"><a class=\"rt-btn rt-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"rt-btn rt-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div>\n        <div class=\"rt-trust\" aria-label=\"Woodex experience\"><span><strong>200+</strong>spaces delivered</span><span><strong>10 years</strong>experience</span><span><strong>1 year</strong>workmanship warranty</span><span><strong>4 cities</strong>served</span></div>\n      </div>\n      <figure class=\"rt-hero-media rt-reveal\"><img src=\"/assets/img/img-c693554a31d5.webp\" width=\"2048\" height=\"1024\" alt=\"Warm contemporary retail store with product shelving and illuminated displays\" loading=\"lazy\" decoding=\"async\"><figcaption>Clear browsing, stronger product focus</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Retail Design in Lahore — Stores That Sell",
+   "copy": "We shape layouts, displays, lighting and brand details around easy browsing. Every decision helps customers find products, feel comfortable and move naturally toward a purchase.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-c693554a31d5.webp",
+   "img_alt": "Warm contemporary retail store with product shelving and illuminated displays"
+  }
+ },
+ {
+  "id": "6ecb65ee07",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rt-section rt-scope\" id=\"retail-scope\"><div class=\"rt-wrap\">\n      <header class=\"rt-section-head rt-reveal\"><h2>What We Design</h2><p class=\"rt-copy\">Eight connected parts turn a shop floor into a clear, memorable buying journey.</p></header>\n      <div class=\"rt-scope-viewport rt-reveal\" id=\"rt-scope-viewport\" tabindex=\"0\" role=\"region\" aria-label=\"Eight retail design services. Scroll horizontally to review all items.\"><div class=\"rt-scope-track\">\n        <article class=\"rt-scope-card\"><span>01</span><h3>Store Layout Planning</h3><p>Customer routes, product zones and staff movement are resolved around the floor.</p></article>\n        <article class=\"rt-scope-card\"><span>02</span><h3>Product Display &amp; Shelving</h3><p>Displays make products easy to notice, compare and reach.</p></article>\n        <article class=\"rt-scope-card\"><span>03</span><h3>Brand Styling &amp; Graphics</h3><p>Colour, materials and graphics carry one recognisable store identity.</p></article>\n        <article class=\"rt-scope-card\"><span>04</span><h3>Retail Lighting Design</h3><p>Ambient and accent light reveal product colour, texture and detail.</p></article>\n        <article class=\"rt-scope-card\"><span>05</span><h3>Checkout &amp; Billing Counter</h3><p>The final customer touchpoint is planned for smooth queues and staff workflow.</p></article>\n        <article class=\"rt-scope-card\"><span>06</span><h3>Trial Room Design</h3><p>Privacy, mirrors, seating and flattering light create an easy fitting experience.</p></article>\n        <article class=\"rt-scope-card\"><span>07</span><h3>Facade &amp; Signage</h3><p>A clear shopfront and visible signage help the store stand out.</p></article>\n        <article class=\"rt-scope-card\"><span>08</span><h3>Storage &amp; Stockroom</h3><p>Back-of-house storage supports quick replenishment without crowding the floor.</p></article>\n      </div></div>\n      <div class=\"rt-controls\"><span class=\"rt-status\" id=\"rt-scope-status\" aria-live=\"polite\">01 / 08</span><button class=\"rt-control\" id=\"rt-scope-prev\" type=\"button\" aria-label=\"Previous retail design service\" disabled=\"\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5M12 19l-7-7 7-7\"></path></svg></button><button class=\"rt-control\" id=\"rt-scope-next\" type=\"button\" aria-label=\"Next retail design service\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div>\n    </div></section>"
+ },
+ {
+  "id": "e364c3f2a2",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rt-section rt-process\" id=\"retail-process\"><div class=\"rt-wrap\">\n      <header class=\"rt-section-head rt-reveal\"><h2>Our Design Process</h2><p class=\"rt-copy\">Five focused stages take the store from brief to an approved design package.</p></header>\n      <div class=\"rt-steps rt-reveal\"><article class=\"rt-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We define the product mix, customer, brand direction, budget and programme.</p></article><article class=\"rt-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record the floor, services, frontage, access and existing conditions.</p></article><article class=\"rt-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>Customer flow, product zones, displays and checkout are tested together.</p></article><article class=\"rt-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>Durable finishes, shelving, counters and lighting are coordinated.</p></article><article class=\"rt-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>Approved 3D views and drawings prepare the store for pricing and execution.</p></article></div>\n    </div></section>"
+ },
+ {
+  "id": "54a03dc2c2",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rt-section rt-pricing\" id=\"retail-pricing\"><div class=\"rt-wrap rt-pricing-grid\">\n      <div class=\"rt-pricing-copy rt-reveal\"><h2>Pricing</h2><p class=\"rt-copy\">The initial consultation and site survey are free. Your exact fixed quote follows the survey, once the size and display requirements are clear.</p><a class=\"rt-btn\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n      <div class=\"rt-reveal\"><div class=\"rt-price-list\"><article class=\"rt-price-row\"><h3>Initial consultation and site survey</h3><strong>Free</strong></article><article class=\"rt-price-row\"><h3>Compact shops</h3><strong>From PKR 80,000</strong></article><article class=\"rt-price-row\"><h3>Typical stores</h3><strong>PKR 150,000-500,000</strong></article><article class=\"rt-price-row\"><h3>Flagship stores</h3><strong>PKR 500,000-1,200,000+</strong></article></div><p class=\"rt-price-note\">Price varies with shop size, display complexity and the required 3D package.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "ff98117733",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rt-section rt-compare\" id=\"retail-compare\"><div class=\"rt-wrap\">\n      <header class=\"rt-section-head rt-reveal\"><h2>Design, Fit-Out or Renovation?</h2><p class=\"rt-copy\">Choose the scope that matches where your shop is today.</p></header>\n      <div class=\"rt-compare-grid rt-reveal\"><article class=\"rt-compare-card\"><small>This page</small><h3>Interior Design</h3><p>Planning, layouts and 3D visualization for the planning phase.</p></article><article class=\"rt-compare-card\"><small>Design plus build</small><h3>Fit-Out</h3><p>Construction, services, displays and installation delivered as one scope.</p><a class=\"rt-text-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rt-compare-card\"><small>Upgrade what exists</small><h3>Renovation</h3><p>A focused upgrade for an existing shop or active retail space.</p><a class=\"rt-text-link\" href=\"/renovation/\" data-page-route=\"renovation\">Explore Renovation</a></article></div>\n    </div></section>"
+ },
+ {
+  "id": "b957ac6336",
+  "type": "faq",
+  "html": "\n\n    <section class=\"rt-section rt-faq\" id=\"retail-faq\"><div class=\"rt-wrap rt-faq-grid\">\n      <div class=\"rt-faq-intro rt-reveal\"><h2>Retail Design FAQs</h2><p class=\"rt-copy\">Straight answers on sales, layouts, lighting, trial rooms, rented shops and 3D approval.</p></div>\n      <div class=\"rt-faq-list rt-reveal\">\n        <div class=\"rt-faq-item\"><button class=\"rt-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How can retail design increase sales?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rt-faq-a\"><div><p>A clear layout makes products easier to find, keeps priority ranges in strong sightlines and gives customers a comfortable path from entrance to checkout.</p></div></div></div>\n        <div class=\"rt-faq-item\"><button class=\"rt-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What makes a good store layout?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rt-faq-a\"><div><p>A good layout balances customer flow, product visibility, accessible circulation, staff movement and a checkout position that feels natural.</p></div></div></div>\n        <div class=\"rt-faq-item\"><button class=\"rt-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How should retail products be lit?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rt-faq-a\"><div><p>Ambient lighting supports comfort, while adjustable accent lighting reveals product colour, texture and detail without glare.</p></div></div></div>\n        <div class=\"rt-faq-item\"><button class=\"rt-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Does Woodex design trial rooms?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rt-faq-a\"><div><p>Yes. We plan privacy, mirrors, seating, lighting and circulation so trial rooms feel comfortable and support the wider sales floor.</p></div></div></div>\n        <div class=\"rt-faq-item\"><button class=\"rt-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you design a rented shop?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rt-faq-a\"><div><p>Yes. We can prioritize modular displays, reversible finishes and landlord conditions for a leased retail space.</p></div></div></div>\n        <div class=\"rt-faq-item\"><button class=\"rt-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Will we receive 3D visuals before execution?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rt-faq-a\"><div><p>Yes. Key customer views, displays and the checkout area are visualized in 3D before site work begins.</p></div></div></div>\n      </div>\n    </div></section>",
+  "fields": {
+   "heading": "Retail Design FAQs",
+   "copy": "Straight answers on sales, layouts, lighting, trial rooms, rented shops and 3D approval.",
+   "items": [
+    {
+     "q": "How can retail design increase sales?",
+     "a": "<p>A clear layout makes products easier to find, keeps priority ranges in strong sightlines and gives customers a comfortable path from entrance to checkout.</p>"
+    },
+    {
+     "q": "What makes a good store layout?",
+     "a": "<p>A good layout balances customer flow, product visibility, accessible circulation, staff movement and a checkout position that feels natural.</p>"
+    },
+    {
+     "q": "How should retail products be lit?",
+     "a": "<p>Ambient lighting supports comfort, while adjustable accent lighting reveals product colour, texture and detail without glare.</p>"
+    },
+    {
+     "q": "Does Woodex design trial rooms?",
+     "a": "<p>Yes. We plan privacy, mirrors, seating, lighting and circulation so trial rooms feel comfortable and support the wider sales floor.</p>"
+    },
+    {
+     "q": "Can you design a rented shop?",
+     "a": "<p>Yes. We can prioritize modular displays, reversible finishes and landlord conditions for a leased retail space.</p>"
+    },
+    {
+     "q": "Will we receive 3D visuals before execution?",
+     "a": "<p>Yes. Key customer views, displays and the checkout area are visualized in 3D before site work begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "3b69597a61",
+  "type": "raw",
+  "html": "\n\n    <section class=\"rt-section rt-related\" id=\"retail-related\"><div class=\"rt-wrap\">\n      <header class=\"rt-section-head rt-reveal\"><h2>Related Spaces</h2><p class=\"rt-copy\">Explore the wider commercial portfolio and nearby retail design services.</p></header>\n      <nav class=\"rt-related-grid rt-reveal\" aria-label=\"Related spaces\"><a class=\"rt-related-link\" href=\"/commercial-interior/\" data-page-route=\"commercialInterior\"><small>01</small><strong>Commercial Interiors</strong><span aria-hidden=\"true\">↗</span></a><a class=\"rt-related-link\" href=\"/showroom-design/\" data-page-route=\"showroom\"><small>02</small><strong>Showroom Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"rt-related-link\" href=\"/shopping-mall-design/\" data-page-route=\"shoppingMall\"><small>03</small><strong>Shopping Mall Design</strong><span aria-hidden=\"true\">↗</span></a></nav>\n    </div></section>"
+ },
+ {
+  "id": "232a01d5d2",
+  "type": "cta",
+  "html": "\n\n    <section class=\"rt-section rt-contact\" id=\"retail-contact\"><div class=\"rt-wrap rt-contact-grid\">\n      <div class=\"rt-reveal\"><h2>Talk to Woodex</h2><p class=\"rt-copy\">Tell us about the shop, product range and when you want to open.</p><div class=\"rt-contact-actions\"><a class=\"rt-btn rt-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"rt-btn rt-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div>\n      <div class=\"rt-contact-list rt-reveal\"><div class=\"rt-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rt-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rt-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rt-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"rt-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"rt-contact-item\"><small>Sunday</small><span>Sunday closed</span></div><div class=\"rt-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">wa.me/923224000768</a></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us about the shop, product range and when you want to open.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

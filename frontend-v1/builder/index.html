@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Woodex Page Builder</title>
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/codemirror/codemirror.css">
+<link rel="stylesheet" href="builder.css">
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div id="login" class="login" hidden>
+  <form id="login-form" class="login-card">
+    <img src="/assets/img/img-f941b08b9510.png" alt="Woodex" width="90">
+    <h1 id="login-title">Page Builder</h1>
+    <p id="login-sub">Sign in to edit the website.</p>
+    <label for="login-pass">Password</label>
+    <input type="password" id="login-pass" autocomplete="current-password" required minlength="8">
+    <div id="login-confirm-wrap" hidden><label for="login-pass2">Confirm password</label><input type="password" id="login-pass2" autocomplete="new-password"></div>
+    <button type="submit" class="btn btn-pri" id="login-btn">Sign in</button>
+    <p class="login-err" id="login-err" role="alert"></p>
+  </form>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app" class="app" hidden>
+
+  <!-- top bar -->
+  <header class="top">
+    <div class="top-l">
+      <strong class="brand">Woodex <b>Builder</b></strong>
+      <select id="page-select" aria-label="Page"></select>
+    </div>
+    <div class="top-c">
+      <button class="ic" id="panel-btn" title="Hide / show left panel"><i data-ic="panel-left"></i></button>
+      <span class="sep"></span>
+      <button class="ic" id="undo" title="Undo (Ctrl+Z)" disabled><i data-ic="undo-2"></i></button>
+      <button class="ic" id="redo" title="Redo (Ctrl+Y)" disabled><i data-ic="redo-2"></i></button>
+      <span class="sep"></span>
+      <div class="devs" role="group" aria-label="Device">
+        <button class="ic dev is-on" data-dev="d" title="Desktop"><i data-ic="monitor"></i></button>
+        <button class="ic dev" data-dev="t" title="Tablet (styles ≤1024px)"><i data-ic="tablet"></i></button>
+        <button class="ic dev" data-dev="m" title="Mobile (styles ≤640px)"><i data-ic="smartphone"></i></button>
+      </div>
+      <span class="dev-note" id="dev-note">Editing: Desktop</span>
+      <span class="sep"></span>
+      <button class="ic" id="preview-btn" title="Preview (hide editor outlines)"><i data-ic="eye"></i></button>
+      <button class="ic" id="code-btn" title="Code editor"><i data-ic="code"></i></button>
+      <button class="ic" id="hf-btn" title="Header, mega menu &amp; footer (all pages)"><i data-ic="panel-top"></i></button>
+    </div>
+    <div class="top-r">
+      <a class="btn" id="view-live">View page</a>
+      <button class="btn btn-pri" id="save" disabled>Save</button>
+      <button class="ic" id="menu-btn" title="More"><i data-ic="ellipsis"></i></button>
+      <div class="menu" id="menu" hidden>
+        <button data-act="newpage">＋ New page</button>
+        <button data-act="duppage">⧉ Duplicate this page</button>
+        <button data-act="export">⬇ Download page HTML</button>
+        <button data-act="zip">🗜 Download page + assets (ZIP)</button>
+        <button data-act="pagecode">&lt;/&gt; Edit whole page code</button>
+        <button data-act="keys">⌨ Keyboard shortcuts</button>
+        <hr>
+        <button data-act="backups">Page history / restore</button>
+        <button data-act="password">Change password</button>
+        <button data-act="logout">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- left: rail + panel -->
+  <nav class="rail" aria-label="Builder tools">
+    <button class="rl" data-left="pages"><i data-ic="file-text"></i>Pages</button>
+    <button class="rl is-on" data-left="sections"><i data-ic="layout-grid"></i>Sections</button>
+    <button class="rl" data-left="elements"><i data-ic="square-plus"></i>Elements</button>
+    <button class="rl" data-left="layers"><i data-ic="layers"></i>Layers</button>
+    <button class="rl" data-left="theme"><i data-ic="palette"></i>Theme</button>
+    <button class="rl" data-left="seo"><i data-ic="search"></i>SEO</button>
+  </nav>
+
+  <aside class="left">
+    <section class="lp" data-lp="pages">
+      <h2>Pages <button class="btn btn-sm" id="pages-new" style="float:right">＋ New</button></h2>
+      <p class="hint">All website pages by folder. Click to open.</p>
+      <input type="search" class="lib-q" id="pages-q" placeholder="Search pages…">
+      <div id="pages-tree" class="layers"></div>
+    </section>
+    <section class="lp is-on" data-lp="sections">
+      <h2>Sections</h2>
+      <p class="hint">Drag onto the page, or click to add after the selected section.</p>
+      <input type="search" class="lib-q" data-q="lib-sections" placeholder="Search sections…">
+      <div class="lib" id="lib-sections"></div>
+      <h3 class="lib-h">Templates · v26 + UI kit <small class="hint" id="v26-n"></small></h3>
+      <select id="v26-cat" class="lib-q" style="height:34px"><option value="">All categories</option></select>
+      <div class="lib" id="lib-v26"></div>
+      <h3 class="lib-h">My sections <button class="btn btn-sm" id="import-sec">⬆ Import</button></h3>
+      <div class="lib" id="lib-mine"><p class="hint">Save any section with 💾 in the toolbar.</p></div>
+    </section>
+    <section class="lp" data-lp="elements">
+      <h2>Elements</h2>
+      <p class="hint">Drag into any section, or click to add after the selected element.</p>
+      <input type="search" class="lib-q" data-q="lib-elements" placeholder="Search elements…">
+      <div class="lib lib-sm" id="lib-elements"></div>
+    </section>
+    <section class="lp" data-lp="layers">
+      <h2>Layers</h2>
+      <p class="hint">Click to select. Drag sections to reorder.</p>
+      <input type="search" class="lib-q" id="layers-q" placeholder="Search layers (text or class)…">
+      <div id="layers" class="layers"></div>
+    </section>
+    <section class="lp" data-lp="theme">
+      <h2>Theme <small>(whole website)</small></h2>
+      <div class="grp"><h3>Colours</h3>
+        <label class="clr">Brand navy <input type="color" data-var="--wx-navy" value="#0c1628"></label>
+        <label class="clr">Text <input type="color" data-var="--wx-ink" value="#000000"></label>
+        <label class="clr">Muted text <input type="color" data-var="--wx-muted" value="#525252"></label>
+        <label class="clr">Page background <input type="color" data-var="--wx-paper" value="#ffffff"></label>
+        <label class="clr">Light surface <input type="color" data-var="--wx-surface" value="#f7f7f7"></label>
+        <label class="clr">Beige <input type="color" data-var="--wx-beige" value="#fcf2e8"></label>
+      </div>
+      <div class="grp"><h3>Fonts</h3>
+        <label>Body font<input type="text" class="font-pick" data-var="--wx-font" list="wx-fontlist" placeholder="DM Sans (brand)"></label>
+        <label>Heading font<input type="text" class="font-pick" data-var="--wx-font-head" list="wx-fontlist" placeholder="DM Sans (brand)"></label>
+        <p class="hint" style="margin-top:-4px">Type to search 1,900 Google Fonts. Leave empty for DM Sans.</p>
+        <label>Base text size <output></output><input type="range" data-var="--wx-base-size" data-unit="px" min="14" max="19" step="1" value="16"></label>
+      </div>
+      <div class="grp"><h3>Heading sizes (desktop)</h3>
+        <label>H1 <output></output><input type="range" data-var="--wx-h1" data-unit="px" data-opt="1" min="32" max="120" step="2" value="72"></label>
+        <label>H2 <output></output><input type="range" data-var="--wx-h2" data-unit="px" data-opt="1" min="24" max="80" step="2" value="48"></label>
+        <label>H3 <output></output><input type="range" data-var="--wx-h3" data-unit="px" data-opt="1" min="16" max="40" step="1" value="22"></label>
+        <label class="tgl" style="color:var(--mut)">Use custom heading sizes <input type="checkbox" id="th-hs"></label>
+      </div>
+      <div class="grp"><h3>Palette <small style="text-transform:none;letter-spacing:0">(shown in every colour picker)</small></h3>
+        <label class="clr">Accent 1 <input type="color" data-var="--wx-c1" value="#d4af6a"></label>
+        <label class="clr">Accent 2 <input type="color" data-var="--wx-c2" value="#1f3a5f"></label>
+        <label class="clr">Accent 3 <input type="color" data-var="--wx-c3" value="#6b7a5a"></label>
+        <label class="clr">Accent 4 <input type="color" data-var="--wx-c4" value="#b85c38"></label>
+      </div>
+      <div class="grp"><h3>Layout</h3>
+        <label>Section spacing <output></output><input type="range" data-var="--wx-section" data-unit="px" min="40" max="180" step="4" value="112"></label>
+        <label>Content width <output></output><input type="range" data-var="--wx-container" data-unit="px" min="960" max="1600" step="20" value="1240"></label>
+        <label>Button roundness <output></output><input type="range" data-var="--wx-btn-radius" data-unit="px" min="0" max="999" step="1" value="999"></label>
+        <label>Card roundness <output></output><input type="range" data-var="--wx-r-lg" data-unit="px" min="0" max="32" step="1" value="16"></label>
+      </div>
+      <div class="row"><button class="btn" id="theme-reset">Reset</button><button class="btn btn-pri" id="theme-save">Save theme</button></div>
+    </section>
+    <section class="lp" data-lp="seo">
+      <h2>SEO</h2>
+      <label>Page title <small id="seo-title-n"></small><input type="text" id="seo-title" maxlength="120"></label>
+      <label>Meta description <small id="seo-desc-n"></small><textarea id="seo-desc" rows="5" maxlength="300"></textarea></label>
+      <div class="serp"><div class="serp-url" id="serp-url"></div><div class="serp-t" id="serp-t"></div><div class="serp-d" id="serp-d"></div></div>
+      <label style="margin-top:10px">Focus keyphrase<input type="text" id="seo-kw" placeholder="e.g. office renovation Lahore"></label>
+      <div class="row" style="gap:6px;margin:4px 0 8px"><button class="btn btn-sm" id="seo-an-run">Analyse</button><a class="btn btn-sm" id="seo-mgr" target="_blank">Open in SEO manager ↗</a></div>
+      <div id="seo-an" style="font-size:13px"></div>
+      <h3 class="lib-h">Page check <button class="btn btn-sm" id="audit-run">Run check</button></h3>
+      <div id="audit" class="audit"><p class="hint">Checks SEO and accessibility: alt text, headings, links, sizes.</p></div>
+    </section>
+  </aside>
+
+  <!-- canvas -->
+  <main class="stage" id="stage">
+    <div class="frame-wrap" id="frame-wrap">
+      <iframe id="frame" title="Page canvas" sandbox="allow-same-origin allow-modals"></iframe>
+      <datalist id="wx-links"></datalist><datalist id="wx-fontlist"></datalist><datalist id="wx-palette"></datalist>
+      <div class="ov" id="ov">
+        <div class="ov-hover" id="ov-hover"><span id="ov-hover-lbl"></span></div>
+        <div class="ov-sel" id="ov-sel">
+          <div class="ov-bar" id="ov-bar">
+            <span class="ov-name" id="ov-name"></span>
+            <button data-t="move" class="ov-move" title="Drag to move"><i data-ic="move"></i></button>
+            <button data-t="parent" title="Select parent"><i data-ic="corner-left-up"></i></button>
+            <button data-t="up" title="Move up"><i data-ic="arrow-up"></i></button>
+            <button data-t="down" title="Move down"><i data-ic="arrow-down"></i></button>
+            <button data-t="code" title="Edit HTML"><i data-ic="code"></i></button>
+            <button data-t="wand" title="Quick styles"><i data-ic="wand-sparkles"></i></button>
+            <button data-t="saveblock" title="Save as reusable block"><i data-ic="save"></i></button>
+            <button data-t="dup" title="Duplicate (Ctrl+D)"><i data-ic="copy"></i></button>
+            <button data-t="del" title="Delete (Del)"><i data-ic="trash-2"></i></button>
+          </div>
+          <button class="ov-plus" id="ov-plus" title="Add below"><i data-ic="plus"></i></button>
+          <div class="ov-h" id="ov-h"><i data-h="nw"></i><i data-h="n"></i><i data-h="ne"></i><i data-h="e"></i><i data-h="se"></i><i data-h="s"></i><i data-h="sw"></i><i data-h="w"></i><span class="ov-size" id="ov-size"></span></div>
+        </div>
+        <div class="ov-drop" id="ov-drop"></div>
+        <div class="ov-text" id="ov-text">
+          <button data-cmd="bold" title="Bold"><b>B</b></button><button data-cmd="italic" title="Italic"><i>I</i></button><button data-cmd="underline" title="Underline"><u>U</u></button><button data-cmd="strikeThrough" title="Strike"><s>S</s></button>
+          <span></span><button data-cmd="createLink" title="Link">🔗</button><button data-cmd="unlink" title="Remove link">⛓</button>
+          <span></span><button data-cmd="insertUnorderedList" title="Bullet list">•≡</button><button data-cmd="insertOrderedList" title="Numbered list">1≡</button>
+          <span></span><button data-cmd="justifyLeft" title="Left">⇤</button><button data-cmd="justifyCenter" title="Centre">↔</button><button data-cmd="justifyRight" title="Right">⇥</button>
+          <span></span><label title="Text colour" class="ov-tc">A<input type="color" id="ov-tcolor" value="#0c1628"></label><button data-cmd="removeFormat" title="Clear formatting">⌫</button>
+        </div>
+        <div class="ov-cap" id="ov-cap"></div>
+      </div>
+    </div>
+    <div class="loading" id="loading">Loading…</div>
+  </main>
+
+  <!-- right: properties -->
+  <aside class="right" id="right">
+    <nav class="rtabs"><button class="rt is-on" data-rt="content"><i data-ic="square-pen"></i> Content</button><button class="rt" data-rt="style"><i data-ic="paintbrush"></i> Style</button><button class="rt" data-rt="advanced"><i data-ic="settings"></i> Advanced</button></nav>
+    <div class="rp-empty" id="rp-empty">Click anything on the page to edit it.<br><br><b>Tips</b><br>• Click text and type directly<br>• Enter = finish, Shift+Enter = new line<br>• Style changes apply to the device selected at the top<br>• Ctrl+S saves</div>
+    <div class="rp" id="rp" hidden>
+      <div class="rp-pane is-on" data-rp="content" id="pane-content"></div>
+      <div class="rp-pane" data-rp="style" id="pane-style"></div>
+      <div class="rp-pane" data-rp="advanced" id="pane-advanced"></div>
+    </div>
+  </aside>
+
+  <!-- bottom: breadcrumb + code -->
+  <footer class="bottom">
+    <div class="crumbs" id="crumbs"></div>
+    <button class="btn btn-sm" id="code-btn2">&lt;/&gt; Code editor</button>
+  </footer>
+  <div class="code" id="code" hidden>
+    <div class="code-head"><b id="code-title">HTML of selected element</b><span><button class="btn btn-sm" id="code-cancel">Close</button> <button class="btn btn-sm btn-pri" id="code-apply">Apply</button></span></div>
+    <textarea id="code-ta" spellcheck="false"></textarea>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden><div class="modal-card"><button class="modal-x" id="modal-x" aria-label="Close">×</button><div id="modal-body"></div></div></div>
+<div class="ctx" id="ctx" hidden>
+  <button data-c="parent">⤴ Select parent</button><button data-c="copy">⧉ Copy <kbd>Ctrl+C</kbd></button><button data-c="paste">📋 Paste after <kbd>Ctrl+V</kbd></button>
+  <button data-c="dup">⧉ Duplicate <kbd>Ctrl+D</kbd></button><button data-c="up">↑ Move up</button><button data-c="down">↓ Move down</button>
+  <button data-c="code">&lt;/&gt; Edit HTML</button><button data-c="wand">🪄 Quick styles</button><button data-c="saveblock">💾 Save as block</button><button data-c="export">⬇ Export HTML</button><button data-c="exportjson">⬇ Export as JSON</button>
+  <hr><button data-c="del" class="danger">🗑 Delete <kbd>Del</kbd></button>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="img-file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+
+<script src="vendor/codemirror/codemirror.js"></script>
+<script src="vendor/google-fonts.js"></script>
+<script src="vendor/ui-icons.js"></script>
+<script src="blocks.js"></script>
+<script src="templates-v26.js"></script>
+<script src="uikit.js"></script>
+<script src="wx-css.js"></script>
+<script src="../admin/seo-analyzer.js"></script>
+<script src="builder.js"></script>
+<script src="builder-p17.js"></script>
+<script src="builder-p18f.js"></script>
+<script src="builder-p18k.js"></script>
+<script src="builder-p38.js"></script>
+</body>
+</html>

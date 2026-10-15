@@ -1,0 +1,31 @@
+// Deep QA: visit every admin route, log JS errors, failed API calls, stuck "Loading…". Copy to ~/.cache/pb.
+import puppeteer from "puppeteer-core";
+const B = "http://localhost:8080";
+const b = await puppeteer.launch({ executablePath: process.cwd() + "/al/chromium", headless: "shell", args: ["--no-sandbox"] });
+const a = await b.newPage(); await a.setViewport({ width: 1366, height: 900 }); a.on("dialog", (d) => d.accept());
+let cur = "", log = {};
+const add = (m) => { (log[cur] ||= []).push(m); };
+a.on("pageerror", (e) => add("JSERR " + e.message.slice(0, 160)));
+a.on("response", async (r) => { const u = r.url(); if (!/\/api\//.test(u) || r.request().method() !== "POST") return; let j; try { j = await r.json(); } catch { return add("NONJSON " + u.split("/api/")[1] + " " + r.status()); } if (j && j.ok === false) { let act = ""; try { act = JSON.parse(r.request().postData() || "{}").action; } catch {} add("APIFAIL " + u.split("/api/")[1] + ":" + act + " → " + String(j.error).slice(0, 120)); } });
+await a.goto(B + "/admin/", { waitUntil: "load" });
+const st = await a.evaluate(() => fetch("/api/admin.php", { method: "POST", body: JSON.stringify({ action: "status" }) }).then((r) => r.json()));
+if (st.needsSetup) { await a.evaluate(() => fetch("/api/admin.php", { method: "POST", body: JSON.stringify({ action: "setup", builderPassword: "Woodex@2026", name: "Owner", email: "o@woodex.pk", password: "Woodex@2026x" }) })); await a.reload({ waitUntil: "load" }); }
+await a.waitForSelector("#l-email", { visible: true }); await a.type("#l-email", "o@woodex.pk"); await a.type("#l-pass", "Woodex@2026x"); await a.click("#l-btn"); await a.waitForSelector("#app:not([hidden])");
+const w = ms => new Promise(r=>setTimeout(r,ms)); const S="/home/user/-marketingwoodex/tools/";
+const v = await b.newPage(); for (const u of ["/old-kitchen-offer/","/old-kitchen-offer/","/team-page/"]) { await v.goto("http://localhost:8080"+u); await w(600); } await v.close();
+await a.setViewport({width:1440,height:1000});
+await a.evaluate(()=>location.hash="#/redirects"); await w(2500);
+console.log("kpis:", await a.$$eval("#rd-k .kpi", k=>k.map(x=>x.innerText.replace(/\s+/g," ")).join(" | ")));
+console.log("rows:", await a.$$eval("#rd-rows tr", r=>r.length), "www:", await a.$eval("#rd-www", x=>x.checked));
+await a.screenshot({path:S+"p16-rd-1.png", fullPage:true});
+await a.click("#rd-f [data-f='410']"); await w(300); console.log("410 rows:", await a.$$eval("#rd-rows tr", r=>r.length)); await a.click("#rd-f [data-f='all']");
+await a.click("#rd-tabs [data-t='404']"); await w(500);
+console.log("404 rows:", await a.$$eval("#rd-404rows tr", r=>r.map(x=>x.innerText.replace(/\s+/g," ").slice(0,60))));
+await a.screenshot({path:S+"p16-rd-2.png"});
+await a.click("#rd-404rows [data-fix]"); await w(400);
+await a.type("#rd-rows input[data-k=to]", "/kitchen-design/"); await a.click("#rd-save"); await w(1200);
+console.log("toast:", await a.evaluate(()=>[...document.querySelectorAll(".toast")].map(t=>t.innerText).pop()));
+const r = await fetch("http://localhost:8080/old-kitchen-offer/",{redirect:"manual"}); console.log("new rule live:", r.status, r.headers.get("location"));
+await a.setViewport({width:390,height:844}); await w(500); await a.click("#rd-tabs [data-t='rules']"); await a.screenshot({path:S+"p16-rd-m.png"});
+console.log("overflow:", await a.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1));
+console.log(JSON.stringify(log)); await b.close();

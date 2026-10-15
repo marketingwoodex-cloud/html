@@ -1,0 +1,94 @@
+[
+ {
+  "id": "a0c7e76b6e",
+  "type": "hero",
+  "html": "\n<section class=\"rv-hero\"><div class=\"rv-wrap rv-hero-grid\"><div class=\"rv-hero-copy rv-reveal\"><nav class=\"rv-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/renovation/\">Renovation</a><span>&gt;</span><span>Healthcare Renovation</span></nav><h1>Healthcare Renovation in Lahore</h1><p class=\"rv-copy\">Upgrade a working clinic, laboratory, pharmacy or diagnostic space with hygiene, patient flow and continuity of service at the centre of the plan.</p><div class=\"rv-hero-actions\"><a class=\"rv-btn rv-btn-light\" href=\"#renovation-sector-contact\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div><div class=\"rv-proof\"><span><strong>Itemized BOQ</strong>Trade-by-trade clarity</span><span><strong>Phased delivery</strong>Lower disruption</span><span><strong>Existing spaces</strong>Upgrade, not first build</span></div></div><figure class=\"rv-hero-media rv-reveal\"><img src=\"/assets/img/img-fcc680fef653.webp\" alt=\"Calm modern clinic reception representing healthcare renovation\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>Easy-care finishes, clear patient flow and controlled phasing</figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Healthcare Renovation in Lahore",
+   "copy": "Upgrade a working clinic, laboratory, pharmacy or diagnostic space with hygiene, patient flow and continuity of service at the centre of the plan.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#renovation-sector-contact",
+   "img_src": "/assets/img/img-fcc680fef653.webp",
+   "img_alt": "Calm modern clinic reception representing healthcare renovation"
+  }
+ },
+ {
+  "id": "4dac79ea2f",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-scope\"><div class=\"rv-wrap rv-intro-grid\"><div class=\"rv-intro-aside rv-reveal\"><h2>What the scope can include</h2><p class=\"rv-copy\">A condition survey decides what should be retained, repaired or replaced.</p><div class=\"rv-intro-note\"><strong>Care continues during the work</strong><span>Hygiene-first materials and carefully released zones support a safer phased renovation.</span></div></div><div class=\"rv-service-list rv-reveal\"><div class=\"rv-service\"><b>01</b><strong>Clinic refurbishment</strong><span>Update reception, waiting, consultation and treatment spaces.</span></div><div class=\"rv-service\"><b>02</b><strong>Pharmacy renovation</strong><span>Improve dispensing, counters, storage, customer flow and display.</span></div><div class=\"rv-service\"><b>03</b><strong>Laboratory upgrades</strong><span>Coordinate worktops, services, equipment positions and easy-clean surfaces.</span></div><div class=\"rv-service\"><b>04</b><strong>Diagnostic centre works</strong><span>Replan patient movement, procedure rooms and support areas.</span></div><div class=\"rv-service\"><b>05</b><strong>Hygiene-focused finishes</strong><span>Specify durable, cleanable and low-maintenance materials by zone.</span></div><div class=\"rv-service\"><b>06</b><strong>Building services coordination</strong><span>Plan lighting, power, plumbing, ventilation and specialist equipment interfaces.</span></div></div></div></section>"
+ },
+ {
+  "id": "5cb22dd88a",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-process\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>A process shaped for healthcare renovation</h2><p class=\"rv-copy\">Survey, scope, BOQ and phasing are agreed before disruptive work starts.</p></header><div class=\"rv-steps rv-reveal\"><article class=\"rv-step\"><b>01</b><h3>Clinical audit</h3><p>Map patient flow, active rooms, equipment and hygiene controls.</p></article><article class=\"rv-step\"><b>02</b><h3>Service continuity plan</h3><p>Agree isolation, temporary routes and rooms that must remain active.</p></article><article class=\"rv-step\"><b>03</b><h3>Design and approvals input</h3><p>Coordinate the renovation package; the client retains responsibility for formal regulatory approvals.</p></article><article class=\"rv-step\"><b>04</b><h3>BOQ and protected execution</h3><p>Price each zone, isolate work areas and control dust and access.</p></article><article class=\"rv-step\"><b>05</b><h3>Testing and handover</h3><p>Clean, inspect and return each completed area to service.</p></article></div></div></section>"
+ },
+ {
+  "id": "b31ebe1a60",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-pricing\"><div class=\"rv-wrap rv-pricing-grid\"><div class=\"rv-reveal\"><h2>Indicative renovation pricing</h2><p class=\"rv-copy\">These planning ranges come from comparable Woodex renovation scopes. The exact quote follows a site survey.</p><p class=\"rv-price-note\">Price varies with condition, materials, services, size and the number of delivery phases.</p><a class=\"rv-btn\" href=\"#renovation-sector-contact\">Request a survey + BOQ</a></div><div class=\"rv-price-panel rv-reveal\"><div class=\"rv-price-row\"><strong>1,000 sq. ft. healthcare space</strong><span>PKR 2.5M–5M+</span></div><div class=\"rv-price-row\"><strong>Focused room or zone</strong><span>PKR 400K–1.5M</span></div></div></div></section>"
+ },
+ {
+  "id": "945824946e",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Choose the right starting point</h2><p class=\"rv-copy\">Renovation improves an existing space. Fit-out creates a finished space from a shell, while interior design resolves the plan and 3D direction.</p></header><div class=\"rv-choice-grid rv-reveal\"><article class=\"rv-choice is-current\"><small>This page</small><h3>Renovation</h3><p>Survey, repair, upgrade and phased delivery for a space that already exists.</p></article><article class=\"rv-choice\"><small>Design + build</small><h3>Fit-Out</h3><p>Complete a shell or unfinished space for first occupation.</p><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rv-choice\"><small>Design + 3D</small><h3>Interior Design</h3><p>Resolve layouts, materials, lighting and visualization before build.</p><a href=\"/interior-design/\" data-page-route=\"interior\">Explore Interior Design</a></article></div></div></section>"
+ },
+ {
+  "id": "e47bea0bbb",
+  "type": "faq",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-faq\"><div class=\"rv-wrap rv-faq-grid\"><div class=\"rv-faq-intro rv-reveal\"><h2>Healthcare Renovation FAQs</h2><p class=\"rv-copy\">Six practical answers before survey, costing and site work.</p></div><div class=\"rv-faq-list rv-reveal\"><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"true\"><span>Can a clinic remain operational during renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Often, yes. We phase rooms, protect routes and agree infection-control measures with the client before work starts.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What finishes suit healthcare spaces?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>We prioritise durable, easy-clean finishes appropriate to each room, with slip resistance and maintenance considered early.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you handle formal healthcare approvals?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Woodex coordinates the design and renovation information, but the client remains responsible for formal regulatory and clinical approvals.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you renovate pharmacies and laboratories?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. We coordinate counters, storage, equipment positions, services and circulation for these spaces.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does healthcare renovation take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Timing depends on the number of active rooms, service shutdowns and hygiene controls. The phased programme is agreed before execution.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is the BOQ itemized by room?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. Rooms, finishes, services and specialist coordination can be separated clearly in the BOQ.</p></div></div></div></div></div></section>",
+  "fields": {
+   "heading": "Healthcare Renovation FAQs",
+   "copy": "Six practical answers before survey, costing and site work.",
+   "items": [
+    {
+     "q": "Can a clinic remain operational during renovation?",
+     "a": "<p>Often, yes. We phase rooms, protect routes and agree infection-control measures with the client before work starts.</p>"
+    },
+    {
+     "q": "What finishes suit healthcare spaces?",
+     "a": "<p>We prioritise durable, easy-clean finishes appropriate to each room, with slip resistance and maintenance considered early.</p>"
+    },
+    {
+     "q": "Do you handle formal healthcare approvals?",
+     "a": "<p>Woodex coordinates the design and renovation information, but the client remains responsible for formal regulatory and clinical approvals.</p>"
+    },
+    {
+     "q": "Can you renovate pharmacies and laboratories?",
+     "a": "<p>Yes. We coordinate counters, storage, equipment positions, services and circulation for these spaces.</p>"
+    },
+    {
+     "q": "How long does healthcare renovation take?",
+     "a": "<p>Timing depends on the number of active rooms, service shutdowns and hygiene controls. The phased programme is agreed before execution.</p>"
+    },
+    {
+     "q": "Is the BOQ itemized by room?",
+     "a": "<p>Yes. Rooms, finishes, services and specialist coordination can be separated clearly in the BOQ.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "bfbcf99958",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Explore related renovation sectors</h2><p class=\"rv-copy\">Every sector follows the same standard: condition-led scope, itemized pricing and a practical delivery plan.</p></header><nav class=\"rv-related-grid rv-reveal\" aria-label=\"Related renovation sectors\"><a class=\"rv-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>Renovation hub</small><strong>All Renovation Services</strong></a><a class=\"rv-related-link\" href=\"/office-renovation/\" data-renovation-sector=\"office\"><small>Related sector</small><strong>Office Renovation</strong></a><a class=\"rv-related-link\" href=\"/commercial-renovation/\" data-renovation-sector=\"commercial\"><small>Related sector</small><strong>Commercial Renovation</strong></a><a class=\"rv-related-link\" href=\"/retail-showroom-renovation/\" data-renovation-sector=\"retail\"><small>Related sector</small><strong>Retail &amp; Showroom Renovation</strong></a><a class=\"rv-related-link\" href=\"/restaurant-cafe-renovation/\" data-renovation-sector=\"restaurant\"><small>Related sector</small><strong>Restaurant &amp; Café Renovation</strong></a><a class=\"rv-related-link\" href=\"/residential-renovation/\" data-renovation-sector=\"residential\"><small>Related sector</small><strong>Residential Renovation</strong></a><a class=\"rv-related-link\" href=\"/specialized-renovation-services/\" data-renovation-sector=\"specialized\"><small>Related sector</small><strong>Specialized Services</strong></a></nav></div></section>"
+ },
+ {
+  "id": "41a31930ac",
+  "type": "cta",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-contact\"><div class=\"rv-wrap rv-contact-grid\"><div class=\"rv-reveal\"><h2>Talk to Woodex</h2><p class=\"rv-copy\">Share the facility type, active rooms, equipment needs and any service-continuity restrictions.</p><div class=\"rv-contact-actions\"><a class=\"rv-btn rv-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Healthcare%20Renovation%20Consultation\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"rv-contact-list rv-reveal\"><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rv-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rv-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"rv-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"rv-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Share the facility type, active rooms, equipment needs and any service-continuity restrictions.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Healthcare%20Renovation%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

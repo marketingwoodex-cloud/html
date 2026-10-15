@@ -1,0 +1,94 @@
+[
+ {
+  "id": "23b8c1d215",
+  "type": "hero",
+  "html": "\n<section class=\"rv-hero\"><div class=\"rv-wrap rv-hero-grid\"><div class=\"rv-hero-copy rv-reveal\"><nav class=\"rv-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/renovation/\">Renovation</a><span>&gt;</span><span>Residential Renovation</span></nav><h1>Residential Renovation in Lahore</h1><p class=\"rv-copy\">Upgrade a home room by room or as one complete programme. Woodex coordinates design, services, finishes and joinery while planning around the people still living there.</p><div class=\"rv-hero-actions\"><a class=\"rv-btn rv-btn-light\" href=\"#renovation-sector-contact\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div><div class=\"rv-proof\"><span><strong>Itemized BOQ</strong>Trade-by-trade clarity</span><span><strong>Phased delivery</strong>Lower disruption</span><span><strong>Existing spaces</strong>Upgrade, not first build</span></div></div><figure class=\"rv-hero-media rv-reveal\"><img src=\"/assets/img/img-df7c7a7703ae.webp\" alt=\"Contemporary residential living room representing home renovation in Lahore\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>New layout, finishes and joinery approved before site work</figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Residential Renovation in Lahore",
+   "copy": "Upgrade a home room by room or as one complete programme. Woodex coordinates design, services, finishes and joinery while planning around the people still living there.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#renovation-sector-contact",
+   "img_src": "/assets/img/img-df7c7a7703ae.webp",
+   "img_alt": "Contemporary residential living room representing home renovation in Lahore"
+  }
+ },
+ {
+  "id": "a480d152ee",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-scope\"><div class=\"rv-wrap rv-intro-grid\"><div class=\"rv-intro-aside rv-reveal\"><h2>What the scope can include</h2><p class=\"rv-copy\">A condition survey decides what should be retained, repaired or replaced.</p><div class=\"rv-intro-note\"><strong>A home, not an empty site</strong><span>Room-by-room phasing keeps essential areas usable and protects daily routines.</span></div></div><div class=\"rv-service-list rv-reveal\"><div class=\"rv-service\"><b>01</b><strong>Complete home renovation</strong><span>Coordinate layout, services, finishes and furniture across the whole property.</span></div><div class=\"rv-service\"><b>02</b><strong>Kitchen renovation</strong><span>Upgrade storage, work zones, services, counters and finishes.</span></div><div class=\"rv-service\"><b>03</b><strong>Bathroom renovation</strong><span>Renew waterproofing, plumbing, sanitaryware, lighting and surfaces.</span></div><div class=\"rv-service\"><b>04</b><strong>Living and bedroom upgrades</strong><span>Improve comfort, storage, lighting and material continuity.</span></div><div class=\"rv-service\"><b>05</b><strong>Apartment and villa renovation</strong><span>Plan access, shared-building rules and phased work around occupation.</span></div><div class=\"rv-service\"><b>06</b><strong>Remote project management</strong><span>Support overseas clients with digital approvals, progress updates and documented decisions.</span></div></div></div></section>"
+ },
+ {
+  "id": "b675be8d39",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-process\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>A process shaped for residential renovation</h2><p class=\"rv-copy\">Survey, scope, BOQ and phasing are agreed before disruptive work starts.</p></header><div class=\"rv-steps rv-reveal\"><article class=\"rv-step\"><b>01</b><h3>Home survey</h3><p>Record condition, routines, access and the rooms that must stay usable.</p></article><article class=\"rv-step\"><b>02</b><h3>Design and 3D approval</h3><p>Resolve layouts, materials and key views before physical work.</p></article><article class=\"rv-step\"><b>03</b><h3>Room-by-room BOQ</h3><p>Price each area and trade so priorities stay visible.</p></article><article class=\"rv-step\"><b>04</b><h3>Phased renovation</h3><p>Protect occupied zones and release rooms in an agreed sequence.</p></article><article class=\"rv-step\"><b>05</b><h3>Final styling and handover</h3><p>Snag, clean and return the home ready to live in.</p></article></div></div></section>"
+ },
+ {
+  "id": "49738319a9",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-pricing\"><div class=\"rv-wrap rv-pricing-grid\"><div class=\"rv-reveal\"><h2>Indicative renovation pricing</h2><p class=\"rv-copy\">These planning ranges come from comparable Woodex renovation scopes. The exact quote follows a site survey.</p><p class=\"rv-price-note\">Price varies with condition, materials, services, size and the number of delivery phases.</p><a class=\"rv-btn\" href=\"#renovation-sector-contact\">Request a survey + BOQ</a></div><div class=\"rv-price-panel rv-reveal\"><div class=\"rv-price-row\"><strong>Single room</strong><span>PKR 400K–1.5M</span></div><div class=\"rv-price-row\"><strong>Kitchen</strong><span>PKR 700K–2.5M</span></div><div class=\"rv-price-row\"><strong>Bathroom</strong><span>PKR 500K–1.8M</span></div><div class=\"rv-price-row\"><strong>Complete 5 Marla home</strong><span>PKR 2M–5M</span></div><div class=\"rv-price-row\"><strong>Complete 10 Marla home</strong><span>PKR 3.5M–7M+</span></div></div></div></section>"
+ },
+ {
+  "id": "945824946e",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Choose the right starting point</h2><p class=\"rv-copy\">Renovation improves an existing space. Fit-out creates a finished space from a shell, while interior design resolves the plan and 3D direction.</p></header><div class=\"rv-choice-grid rv-reveal\"><article class=\"rv-choice is-current\"><small>This page</small><h3>Renovation</h3><p>Survey, repair, upgrade and phased delivery for a space that already exists.</p></article><article class=\"rv-choice\"><small>Design + build</small><h3>Fit-Out</h3><p>Complete a shell or unfinished space for first occupation.</p><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rv-choice\"><small>Design + 3D</small><h3>Interior Design</h3><p>Resolve layouts, materials, lighting and visualization before build.</p><a href=\"/interior-design/\" data-page-route=\"interior\">Explore Interior Design</a></article></div></div></section>"
+ },
+ {
+  "id": "0eef88e6ac",
+  "type": "faq",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-faq\"><div class=\"rv-wrap rv-faq-grid\"><div class=\"rv-faq-intro rv-reveal\"><h2>Residential Renovation FAQs</h2><p class=\"rv-copy\">Six practical answers before survey, costing and site work.</p></div><div class=\"rv-faq-list rv-reveal\"><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"true\"><span>Can we live at home during renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Often, yes. We plan room-by-room work, dust protection and temporary access around the household routine.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you renovate kitchens and bathrooms?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. These are high-value scopes and can be completed alone or within a whole-home programme.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Will I see the design before work starts?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes, when design is included. Key rooms and material decisions can be approved through 3D views before execution.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you manage a project for an overseas owner?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. We can organise digital approvals, progress updates and documented selections for NRI and overseas clients.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does a home renovation take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>A single room may take one to three weeks. Complete homes commonly need several phases depending on condition and scope.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do you control the budget?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>A room-by-room, trade-by-trade BOQ is agreed before the renovation programme begins.</p></div></div></div></div></div></section>",
+  "fields": {
+   "heading": "Residential Renovation FAQs",
+   "copy": "Six practical answers before survey, costing and site work.",
+   "items": [
+    {
+     "q": "Can we live at home during renovation?",
+     "a": "<p>Often, yes. We plan room-by-room work, dust protection and temporary access around the household routine.</p>"
+    },
+    {
+     "q": "Do you renovate kitchens and bathrooms?",
+     "a": "<p>Yes. These are high-value scopes and can be completed alone or within a whole-home programme.</p>"
+    },
+    {
+     "q": "Will I see the design before work starts?",
+     "a": "<p>Yes, when design is included. Key rooms and material decisions can be approved through 3D views before execution.</p>"
+    },
+    {
+     "q": "Can you manage a project for an overseas owner?",
+     "a": "<p>Yes. We can organise digital approvals, progress updates and documented selections for NRI and overseas clients.</p>"
+    },
+    {
+     "q": "How long does a home renovation take?",
+     "a": "<p>A single room may take one to three weeks. Complete homes commonly need several phases depending on condition and scope.</p>"
+    },
+    {
+     "q": "How do you control the budget?",
+     "a": "<p>A room-by-room, trade-by-trade BOQ is agreed before the renovation programme begins.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "220d0c0fdf",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Explore related renovation sectors</h2><p class=\"rv-copy\">Every sector follows the same standard: condition-led scope, itemized pricing and a practical delivery plan.</p></header><nav class=\"rv-related-grid rv-reveal\" aria-label=\"Related renovation sectors\"><a class=\"rv-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>Renovation hub</small><strong>All Renovation Services</strong></a><a class=\"rv-related-link\" href=\"/office-renovation/\" data-renovation-sector=\"office\"><small>Related sector</small><strong>Office Renovation</strong></a><a class=\"rv-related-link\" href=\"/commercial-renovation/\" data-renovation-sector=\"commercial\"><small>Related sector</small><strong>Commercial Renovation</strong></a><a class=\"rv-related-link\" href=\"/retail-showroom-renovation/\" data-renovation-sector=\"retail\"><small>Related sector</small><strong>Retail &amp; Showroom Renovation</strong></a><a class=\"rv-related-link\" href=\"/healthcare-renovation/\" data-renovation-sector=\"healthcare\"><small>Related sector</small><strong>Healthcare Renovation</strong></a><a class=\"rv-related-link\" href=\"/restaurant-cafe-renovation/\" data-renovation-sector=\"restaurant\"><small>Related sector</small><strong>Restaurant &amp; Café Renovation</strong></a><a class=\"rv-related-link\" href=\"/specialized-renovation-services/\" data-renovation-sector=\"specialized\"><small>Related sector</small><strong>Specialized Services</strong></a></nav></div></section>"
+ },
+ {
+  "id": "605253ccdf",
+  "type": "cta",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-contact\"><div class=\"rv-wrap rv-contact-grid\"><div class=\"rv-reveal\"><h2>Talk to Woodex</h2><p class=\"rv-copy\">Share the property size, rooms to change, occupancy plan and whether you need remote project management.</p><div class=\"rv-contact-actions\"><a class=\"rv-btn rv-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Residential%20Renovation%20Consultation\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"rv-contact-list rv-reveal\"><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rv-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rv-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"rv-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"rv-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Share the property size, rooms to change, occupancy plan and whether you need remote project management.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Residential%20Renovation%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

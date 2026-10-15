@@ -1,0 +1,9 @@
+{
+  "name": "woodex-phplint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Parse-only PHP lint for the Woodex tree — used by CI because the sandbox has no PHP binary",
+  "dependencies": {
+    "php-parser": "^3.7.0"
+  }
+}

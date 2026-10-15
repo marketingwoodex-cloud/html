@@ -1,0 +1,107 @@
+[
+ {
+  "id": "7a39f08c22",
+  "type": "hero",
+  "html": "\n\n    <section class=\"kd-hero\" aria-labelledby=\"kitchen-hero-title\"><div class=\"kd-wrap kd-hero-grid\">\n      <div class=\"kd-hero-copy kd-reveal\">\n        <nav class=\"kd-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span aria-hidden=\"true\">›</span><a href=\"/interior-design/\" data-page-route=\"interior\">Interior Design</a><span aria-hidden=\"true\">›</span><span>Kitchen Design</span></nav>\n        <p class=\"kd-label\">Kitchen Design · Lahore</p>\n        <h1 id=\"kitchen-hero-title\">Kitchen Design in Lahore — Modular, Custom &amp; Modern Kitchens</h1>\n        <p class=\"kd-copy\">We design modular, custom, modern, luxury and small-space kitchens in Lahore. Every plan resolves layout, cabinetry, countertops, storage, lighting and ventilation before work begins.</p>\n        <div><a class=\"kd-btn kd-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a></div>\n        <div class=\"kd-trust\" aria-label=\"Woodex kitchen service facts\"><span>200+ kitchens designed</span><span>10 years experience</span><span>Modular &amp; custom</span><span>1-year workmanship warranty</span></div>\n      </div>\n      <figure class=\"kd-hero-media kd-reveal\"><img src=\"/assets/img/img-27ed3ac85189.jpg\" width=\"2000\" height=\"1090\" alt=\"Premium modern kitchen with timber cabinetry, a stone island and integrated lighting\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"><figcaption>Modern kitchen planning in Lahore</figcaption></figure>\n    </div></section>",
+  "fields": {
+   "heading": "Kitchen Design in Lahore — Modular, Custom &amp; Modern Kitchens",
+   "label": "Kitchen Design · Lahore",
+   "copy": "We design modular, custom, modern, luxury and small-space kitchens in Lahore. Every plan resolves layout, cabinetry, countertops, storage, lighting and ventilation before work begins.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "/contact/",
+   "img_src": "/assets/img/img-27ed3ac85189.jpg",
+   "img_alt": "Premium modern kitchen with timber cabinetry, a stone island and integrated lighting"
+  }
+ },
+ {
+  "id": "48fb9b80fc",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-intro\" id=\"kitchen-intro\" aria-labelledby=\"kitchen-intro-title\"><div class=\"kd-wrap kd-intro-grid\">\n      <div class=\"kd-intro-copy kd-reveal\">\n        <p class=\"kd-label\">What is kitchen design?</p><h2 id=\"kitchen-intro-title\">Planning the room before building it.</h2>\n        <p class=\"kd-copy\">Kitchen design is the practical and visual planning of the room. It starts with the sink, stove and refrigerator work triangle, then resolves the layout, modular or custom cabinetry, storage, countertops and appliance positions.</p>\n        <p class=\"kd-copy\">It also brings lighting, ventilation, materials and 3D visualization into one coordinated plan. Kitchen design sets the decisions. Renovation is the execution of those decisions on site.</p>\n      </div>\n      <div class=\"kd-triangle kd-reveal\" aria-label=\"Kitchen work triangle\"><div class=\"kd-zone\"><small>Clean</small><strong>Sink</strong></div><div class=\"kd-zone\"><small>Cook</small><strong>Stove</strong></div><div class=\"kd-zone\"><small>Store</small><strong>Refrigerator</strong></div></div>\n    </div></section>"
+ },
+ {
+  "id": "ae1f4f0348",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-included\" id=\"kitchen-included\" aria-labelledby=\"kitchen-included-title\"><div class=\"kd-wrap kd-included-grid\">\n      <div class=\"kd-included-intro kd-reveal\"><p class=\"kd-label\">What's included</p><h2 id=\"kitchen-included-title\">Every kitchen decision, coordinated.</h2><p class=\"kd-copy\">Eight connected parts shape a kitchen that works well, looks considered and is ready to build.</p><p class=\"kd-scroll-note\">Scroll the scope</p></div>\n      <div class=\"kd-scope-scroll kd-reveal\" tabindex=\"0\" role=\"region\" aria-label=\"Eight kitchen design deliverables. Scroll to review all items.\">\n        <article class=\"kd-scope-item\"><span>01</span><div><h3>Layout Planning &amp; Work Triangle</h3><p>L-shaped, U-shaped, galley, island and one-wall plans with clear sink, stove and refrigerator movement.</p></div></article>\n        <article class=\"kd-scope-item\"><span>02</span><div><h3>Modular Kitchen Design</h3><p>Planned base, wall, tall and drawer units with reliable dimensions, hardware and installation logic.</p></div></article>\n        <article class=\"kd-scope-item\"><span>03</span><div><h3>Custom Kitchen Design</h3><p>Bespoke joinery for irregular rooms, specific storage needs and a tailored architectural fit.</p></div></article>\n        <article class=\"kd-scope-item\"><span>04</span><div><h3>Smart Storage Design</h3><p>Pull-outs, drawer systems, corner solutions, pantry storage and full-height utility units.</p></div></article>\n        <article class=\"kd-scope-item\"><span>05</span><div><h3>Countertops &amp; Backsplash</h3><p>Practical selections across marble, granite and quartz, coordinated with wall protection and detailing.</p></div></article>\n        <article class=\"kd-scope-item\"><span>06</span><div><h3>Appliance Integration</h3><p>Positions and clearances for the chimney, hob, sink, dishwasher, oven and refrigerator.</p></div></article>\n        <article class=\"kd-scope-item\"><span>07</span><div><h3>Lighting &amp; Ventilation Design</h3><p>General, task and under-cabinet lighting with planned airflow and chimney extraction.</p></div></article>\n        <article class=\"kd-scope-item\"><span>08</span><div><h3>Materials &amp; Finishes</h3><p>Cabinet finishes including lamination, acrylic and PU, paired with suitable hardware and surfaces.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "c3cbc39344",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-layouts\" id=\"kitchen-layouts\" aria-labelledby=\"kitchen-layouts-title\"><div class=\"kd-wrap\">\n      <header class=\"kd-head kd-reveal\"><div><p class=\"kd-label\">Kitchen layouts we design</p><h2 id=\"kitchen-layouts-title\">A clear plan for every footprint.</h2></div><p class=\"kd-copy\">The right layout depends on room width, openings, circulation, utilities and the number of people using the kitchen.</p></header>\n      <div class=\"kd-layout-grid kd-reveal\">\n        <article class=\"kd-layout\"><small>CORNER</small><div><h3>L-Shaped</h3><p>Open corners and efficient movement for compact or connected living spaces.</p></div></article>\n        <article class=\"kd-layout\"><small>PARALLEL</small><div><h3>Parallel / Galley</h3><p>Two productive runs that keep storage, prep and cooking close.</p></div></article>\n        <article class=\"kd-layout\"><small>THREE SIDES</small><div><h3>U-Shaped</h3><p>Generous work surface and storage across three connected sides.</p></div></article>\n        <article class=\"kd-layout\"><small>CENTRAL</small><div><h3>Island</h3><p>A central zone for preparation, seating, storage or cooking.</p></div></article>\n        <article class=\"kd-layout\"><small>LINEAR</small><div><h3>One-Wall</h3><p>A disciplined linear plan for studios, apartments and narrow rooms.</p></div></article>\n        <article class=\"kd-layout\"><small>PENINSULA</small><div><h3>G-Shaped / Peninsula</h3><p>Extra counter space and zoning without a fully detached island.</p></div></article>\n      </div>\n    </div></section>"
+ },
+ {
+  "id": "11b0b8299b",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-compare\" id=\"kitchen-compare\" aria-labelledby=\"kitchen-compare-title\"><div class=\"kd-wrap\">\n      <header class=\"kd-head kd-reveal\"><div><p class=\"kd-label\">Modular vs custom kitchen</p><h2 id=\"kitchen-compare-title\">Choose the build method that fits.</h2></div><p class=\"kd-copy\">Both can deliver a refined kitchen. The difference is how the cabinets are engineered, fitted and installed.</p></header>\n      <div class=\"kd-compare-grid kd-reveal\"><article class=\"kd-choice\"><span>SYSTEM</span><div><h3>Modular kitchen</h3><p>Pre-engineered modules support faster installation, consistent quality and efficient planning for standard layouts.</p></div></article><article class=\"kd-choice\"><span>BESPOKE</span><div><h3>Custom kitchen</h3><p>Bespoke joinery is measured and made for a tailored fit, irregular spaces or very specific functional needs.</p></div></article></div>\n    </div></section>"
+ },
+ {
+  "id": "0b9206afb7",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-process\" id=\"kitchen-process\" aria-labelledby=\"kitchen-process-title\"><div class=\"kd-wrap\">\n      <header class=\"kd-head kd-reveal\"><div><p class=\"kd-label\">Our design process</p><h2 id=\"kitchen-process-title\">Five practical steps.</h2></div><p class=\"kd-copy\">Each stage is reviewed before the next begins, so the final kitchen is coordinated before installation.</p></header>\n      <div class=\"kd-steps kd-reveal\">\n        <article class=\"kd-step\"><strong>01</strong><h3>Consultation &amp; Requirements</h3><p>We discuss cooking habits, storage, style, budget and timing.</p></article>\n        <article class=\"kd-step\"><strong>02</strong><h3>Site Measurement</h3><p>We record dimensions, utilities, openings and site constraints.</p></article>\n        <article class=\"kd-step\"><strong>03</strong><h3>Concept &amp; Layout Design</h3><p>We test work zones, circulation and the cabinet arrangement.</p></article>\n        <article class=\"kd-step\"><strong>04</strong><h3>Material &amp; Furniture Selection</h3><p>We select cabinetry finishes, counters, hardware and lighting.</p></article>\n        <article class=\"kd-step\"><strong>05</strong><h3>Final Design Package &amp; 3D Visualization</h3><p>You receive coordinated drawings, selections and realistic views.</p></article>\n      </div>\n      <div class=\"kd-timeline kd-reveal\"><span>Design typically takes<strong>1–2 weeks</strong></span><span>Design plus installation typically takes<strong>3–6 weeks, depending on modular vs custom</strong></span></div>\n    </div></section>"
+ },
+ {
+  "id": "ae62067513",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-pricing\" id=\"kitchen-pricing\" aria-labelledby=\"kitchen-pricing-title\"><div class=\"kd-wrap kd-pricing-grid\">\n      <div class=\"kd-pricing-intro kd-reveal\"><p class=\"kd-label\">Kitchen pricing</p><h2 id=\"kitchen-pricing-title\">A useful range before the fixed quote.</h2><p class=\"kd-copy\">The initial consultation and kitchen survey are free. A fixed quote follows site measurement and design.</p><a class=\"kd-btn\" href=\"/contact/\" data-page-route=\"contact\">Request Your Estimate</a></div>\n      <div class=\"kd-reveal\"><div class=\"kd-price-list\" aria-label=\"Kitchen design and installation pricing guide\">\n        <article class=\"kd-price\"><div><h3>Small kitchen</h3><p>Up to 10–12 running ft</p></div><strong>PKR 150,000–400,000</strong></article>\n        <article class=\"kd-price\"><div><h3>Medium kitchen</h3><p>12–20 running ft</p></div><strong>PKR 300,000–800,000</strong></article>\n        <article class=\"kd-price\"><div><h3>Large kitchen</h3><p>20–30+ running ft</p></div><strong>PKR 600,000–1,500,000+</strong></article>\n        <article class=\"kd-price\"><div><h3>Luxury / custom</h3><p>Premium finishes and bespoke detailing</p></div><strong>PKR 1,000,000–3,000,000+</strong></article>\n      </div><p class=\"kd-price-notes\">Ranges cover design plus installation, including modules or joinery, countertop, backsplash and basic lighting. Premium appliances are quoted separately.</p></div>\n    </div></section>"
+ },
+ {
+  "id": "3ea82c8d36",
+  "type": "faq",
+  "html": "\n\n    <section class=\"kd-section kd-faq\" id=\"kitchen-faq\" aria-labelledby=\"kitchen-faq-title\"><div class=\"kd-wrap kd-faq-grid\">\n      <div class=\"kd-faq-intro kd-reveal\"><p class=\"kd-label\">Good to know</p><h2 id=\"kitchen-faq-title\">Kitchen design FAQs.</h2><p class=\"kd-copy\">Straight answers to the questions we hear before a kitchen project begins.</p></div>\n      <div class=\"kd-faq-list kd-reveal\">\n        <article class=\"kd-faq-item\"><button class=\"kd-faq-q\" type=\"button\" aria-expanded=\"true\"><span>What is the difference between modular and custom kitchens?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kd-faq-a\"><div><p>Modular kitchens use pre-engineered cabinet sizes and systems. Custom kitchens are measured and made for the exact room, layout and storage needs.</p></div></div></article>\n        <article class=\"kd-faq-item\"><button class=\"kd-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Which kitchen layout is best for my home?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kd-faq-a\"><div><p>It depends on room width, openings, utilities and daily use. We test L-shaped, U-shaped, galley, one-wall, peninsula and island options where suitable.</p></div></div></article>\n        <article class=\"kd-faq-item\"><button class=\"kd-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long do design and installation take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kd-faq-a\"><div><p>Design typically takes 1–2 weeks. Design plus installation typically takes 3–6 weeks, depending on whether the kitchen is modular or custom.</p></div></div></article>\n        <article class=\"kd-faq-item\"><button class=\"kd-faq-q\" type=\"button\" aria-expanded=\"false\"><span>What is the kitchen work triangle?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kd-faq-a\"><div><p>It is the working relationship between the sink, stove and refrigerator. Good spacing between these points makes everyday cooking more efficient.</p></div></div></article>\n        <article class=\"kd-faq-item\"><button class=\"kd-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How do granite, marble and quartz compare?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kd-faq-a\"><div><p>Granite is durable and natural. Marble has a distinctive character but needs more care. Quartz is consistent, low-maintenance and available in many finishes.</p></div></div></article>\n        <article class=\"kd-faq-item\"><button class=\"kd-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you design a small kitchen?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"kd-faq-a\"><div><p>Yes. Efficient layouts, full-height storage, pull-outs, corner solutions and integrated appliances make compact kitchens work harder.</p></div></div></article>\n      </div>\n    </div></section>",
+  "fields": {
+   "label": "Good to know",
+   "heading": "Kitchen design FAQs.",
+   "copy": "Straight answers to the questions we hear before a kitchen project begins.",
+   "items": [
+    {
+     "q": "What is the difference between modular and custom kitchens?",
+     "a": "<p>Modular kitchens use pre-engineered cabinet sizes and systems. Custom kitchens are measured and made for the exact room, layout and storage needs.</p>"
+    },
+    {
+     "q": "Which kitchen layout is best for my home?",
+     "a": "<p>It depends on room width, openings, utilities and daily use. We test L-shaped, U-shaped, galley, one-wall, peninsula and island options where suitable.</p>"
+    },
+    {
+     "q": "How long do design and installation take?",
+     "a": "<p>Design typically takes 1–2 weeks. Design plus installation typically takes 3–6 weeks, depending on whether the kitchen is modular or custom.</p>"
+    },
+    {
+     "q": "What is the kitchen work triangle?",
+     "a": "<p>It is the working relationship between the sink, stove and refrigerator. Good spacing between these points makes everyday cooking more efficient.</p>"
+    },
+    {
+     "q": "How do granite, marble and quartz compare?",
+     "a": "<p>Granite is durable and natural. Marble has a distinctive character but needs more care. Quartz is consistent, low-maintenance and available in many finishes.</p>"
+    },
+    {
+     "q": "Can you design a small kitchen?",
+     "a": "<p>Yes. Efficient layouts, full-height storage, pull-outs, corner solutions and integrated appliances make compact kitchens work harder.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a68f657406",
+  "type": "raw",
+  "html": "\n\n    <section class=\"kd-section kd-related\" id=\"kitchen-related\" aria-labelledby=\"kitchen-related-title\"><div class=\"kd-wrap\">\n      <header class=\"kd-head kd-reveal\"><div><p class=\"kd-label\">Related services</p><h2 id=\"kitchen-related-title\">Continue your project.</h2></div><p class=\"kd-copy\">Connect the kitchen to a wider interior design, home or visualization scope.</p></header>\n      <div class=\"kd-related-grid kd-reveal\"><a class=\"kd-related-link\" href=\"/interior-design/\" data-page-route=\"interior\"><small>01</small><strong>Interior Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"kd-related-link\" href=\"/complete-home-redesign/\" data-page-route=\"completeHome\"><small>02</small><strong>Complete Home Redesign</strong><span aria-hidden=\"true\">↗</span></a><a class=\"kd-related-link\" href=\"/residential-dining-room-design/\" data-page-route=\"diningRoom\"><small>03</small><strong>Dining Room Design</strong><span aria-hidden=\"true\">↗</span></a><a class=\"kd-related-link\" href=\"/3d-visualization/\" data-page-route=\"studio\"><small>04</small><strong>3D Visualization</strong><span aria-hidden=\"true\">↗</span></a></div>\n    </div></section>"
+ },
+ {
+  "id": "ed673bb195",
+  "type": "cta",
+  "html": "\n\n    <section class=\"kd-section kd-contact\" id=\"kitchen-contact\" aria-labelledby=\"kitchen-contact-title\"><div class=\"kd-wrap kd-contact-grid\">\n      <div class=\"kd-reveal\"><p class=\"kd-label\">Talk to Woodex</p><h2 id=\"kitchen-contact-title\">Plan your kitchen with us.</h2><p class=\"kd-copy\">Share your room dimensions, inspiration or budget. We will help you define a practical next step.</p><div class=\"kd-contact-actions\"><a class=\"kd-btn kd-btn-light\" href=\"/contact/\" data-page-route=\"contact\">Get a Free Consultation</a><a class=\"kd-btn\" href=\"https://wa.me/923224000768\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp Woodex</a></div></div>\n      <div class=\"kd-contact-list kd-reveal\"><div class=\"kd-contact-item\"><small>Phone</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"kd-contact-item\"><small>Alternate</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"kd-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"kd-contact-item\"><small>Studio</small><address>M-71 Zainab Tower, Model Town Link Road Lahore</address></div><div class=\"kd-contact-item\"><small>Hours</small><span>Mon-Sat 9:30-6:30</span></div><div class=\"kd-contact-item\"><small>Sunday</small><span>Sunday closed</span></div></div>\n    </div></section>\n  \n",
+  "fields": {
+   "heading": "Plan your kitchen with us.",
+   "label": "Talk to Woodex",
+   "copy": "Share your room dimensions, inspiration or budget. We will help you define a practical next step.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "/contact/"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

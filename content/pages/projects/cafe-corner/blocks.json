@@ -1,0 +1,49 @@
+[
+ {
+  "id": "10f57fda0f",
+  "type": "hero",
+  "html": "\n\n    <section class=\"dx-hero dx-hero--image\" aria-labelledby=\"dx-title\">\n      <img class=\"dx-hero-bg\" src=\"/assets/img/img-c7d3a3ebd62b.jpg\" alt=\"\" aria-hidden=\"true\" width=\"1920\" height=\"1080\" loading=\"lazy\" decoding=\"async\">\n      <div class=\"dx-wrap dx-hero-inner\" data-st-reveal>\n        <p class=\"dx-kicker\">Illustrative design study</p>\n        <h1 id=\"dx-title\">A café that holds a crowd</h1>\n        <p class=\"dx-dek\">A corner café reworked so it holds a crowd all day, not just at breakfast.</p>\n        <dl class=\"dx-meta\">\n        <div class=\"dx-meta-item\"><dt>Project type</dt><dd>Hospitality interior</dd></div>\n        <div class=\"dx-meta-item\"><dt>Setting</dt><dd>Lahore corner unit</dd></div>\n        <div class=\"dx-meta-item\"><dt>Year</dt><dd>2026</dd></div>\n        <div class=\"dx-meta-item\"><dt>Size</dt><dd>Compact café</dd></div>\n        </dl>\n      </div>\n    </section>",
+  "fields": {
+   "heading": "A café that holds a crowd",
+   "img_src": "/assets/img/img-c7d3a3ebd62b.jpg",
+   "img_alt": ""
+  }
+ },
+ {
+  "id": "d2c7b8d91a",
+  "type": "raw",
+  "html": "\n    \n    <section class=\"dx-body\">\n      <div class=\"dx-wrap dx-body-grid\">\n        <aside class=\"dx-side\">\n          <div class=\"dx-facts\" data-st-reveal>\n            <h2>Study facts</h2>\n            <ul class=\"dx-arrow-list\">\n              <li><strong>Scope</strong> Interior of a corner café</li>\n              <li><strong>Key move</strong> Counter flow in one line, order to collect</li>\n              <li><strong>Seating</strong> A mix for quick coffee, laptops and groups</li>\n            </ul>\n            <p class=\"dx-note\">Illustrative design study. Not built work, not a client project.</p>\n          </div>\n        </aside>\n        <div class=\"dx-main\">\n        <div data-st-reveal>\n          <h2>The brief</h2>\n          <p>A corner unit with good morning footfall and a long, dead afternoon. The counter jams at peak hour and the seats feel leftover.</p>\n          <p>We split the crowd by habit. Quick coffee near the counter, long stays at the back, and lighting that shifts from morning bright to evening warm.</p>\n        </div>\n        <div data-st-reveal>\n          <h2>The moves</h2>\n          <ul class=\"dx-arrow-list\">\n            <li><strong>Counter flow in one line.</strong> Order, pay and collect run in a single line. Staff never cross the queue and peak hour stops jamming.</li>\n            <li><strong>A seating mix, not rows.</strong> Counter stools for quick coffee, two-tops for laptops, a long table for groups. Every visit finds its seat.</li>\n            <li><strong>Lighting that shifts.</strong> Bright and cool at breakfast, warm and low by evening. The café changes mood without changing a bulb.</li>\n            <li><strong>Surfaces for service.</strong> Solid counters, sealed timber and washable walls stand up to spills, mopping and years of daily use.</li>\n          </ul>\n        </div>\n        <div data-st-reveal>\n          <h2>Takeaways</h2>\n          <p>Counter flow is throughput. Get it right and queues vanish.</p>\n          <p>Mixed seating serves more visit types than more seats.</p>\n          <p>Lighting can run two cafés in one room.</p>\n        </div>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "4ba53697d4",
+  "type": "pullquote",
+  "html": "\n    <section class=\"dx-quote\" data-st-reveal><div class=\"dx-wrap\"><blockquote>Lighting can run two cafés in one room.</blockquote></div></section>",
+  "fields": {
+   "text": "Lighting can run two cafés in one room."
+  }
+ },
+ {
+  "id": "efa744bfd1",
+  "type": "raw",
+  "html": "\n    <section class=\"dx-related\">\n      <div class=\"dx-wrap\">\n        <header data-st-reveal><p class=\"dx-kicker\">Keep looking</p><h2>Related studies.</h2></header>\n        <div class=\"dx-cards\">\n          <a class=\"dx-card\" href=\"/projects/retail-corner/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-5194dc486e09.webp\" alt=\"Bright corner shop interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Retail study</figcaption></figure>\n            <h3>A corner shop that stops footfall</h3><p>Entrance, display wall and checkout set out to turn footfall into sales.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/courtyard-house/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-dce06249b137.webp\" alt=\"Contemporary house exterior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Residential renovation study</figcaption></figure>\n            <h3>A house around a courtyard</h3><p>An existing house re-planned so light and a small court reach every room.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/office-floor/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Open-plan office floor\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Workplace study</figcaption></figure>\n            <h3>One floor, three ways of working</h3><p>Focus rows, meeting rooms and a social edge balanced for daylight and quiet.</p><span class=\"dx-more\">View the study</span>\n          </a>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "de1488b5fa",
+  "type": "cta",
+  "html": "\n\n<section class=\"st-section\" id=\"cta\" aria-labelledby=\"cta-title\">\n      <div class=\"st-wrap st-cta-grid\">\n        <div class=\"st-cta-copy\" data-st-reveal=\"\">\n          <p class=\"st-label\">Start your project</p>\n          <h2 id=\"cta-title\">Dreaming of a café?</h2>\n          <p>Woodex Interior designs and builds across Lahore, Islamabad, Karachi and nationwide. Tell us about your space and we will take it from there.</p>\n          <address class=\"st-cta-meta\">M-71, Zainab Tower, Model Town Link Road, Lahore<br><a href=\"tel:+923224000768\">+92 322 4000768</a> &middot; <a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a><br><strong>Mon&ndash;Sat 9:30&ndash;6:30</strong> &middot; Sunday closed</address>\n          <div class=\"actions\"><a class=\"btn\" href=\"mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project\">Email the studio</a><a class=\"btn btn-light\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div>\n        </div>\n        <figure class=\"st-image st-cta-media\" data-st-reveal=\"\"><img src=\"/assets/img/img-cfcd9b53bb11.jpg\" alt=\"Café interior used as project photography placeholder\" width=\"1214\" height=\"1214\" loading=\"lazy\" decoding=\"async\"></figure>\n      </div>\n    </section>\n\n",
+  "fields": {
+   "heading": "Dreaming of a café?",
+   "label": "Start your project",
+   "actions": [
+    {
+     "text": "Email the studio",
+     "href": "mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project"
+    },
+    {
+     "text": "Call +92 322 4000768",
+     "href": "tel:+923224000768"
+    }
+   ]
+  }
+ }
+]

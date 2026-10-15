@@ -1,0 +1,49 @@
+[
+ {
+  "id": "eaca9f8fcb",
+  "type": "hero",
+  "html": "\n\n    <section class=\"dx-hero dx-hero--image\" aria-labelledby=\"dx-title\">\n      <img class=\"dx-hero-bg\" src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"\" aria-hidden=\"true\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\">\n      <div class=\"dx-wrap dx-hero-inner\" data-st-reveal>\n        <p class=\"dx-kicker\">Illustrative design study</p>\n        <h1 id=\"dx-title\">One floor, three ways of working</h1>\n        <p class=\"dx-dek\">One floor for quiet focus, closed meetings and a place to gather.</p>\n        <dl class=\"dx-meta\">\n        <div class=\"dx-meta-item\"><dt>Project type</dt><dd>Workplace fit-out</dd></div>\n        <div class=\"dx-meta-item\"><dt>Setting</dt><dd>Lahore office floor</dd></div>\n        <div class=\"dx-meta-item\"><dt>Year</dt><dd>2026</dd></div>\n        <div class=\"dx-meta-item\"><dt>Size</dt><dd>Single floor plate</dd></div>\n        </dl>\n      </div>\n    </section>",
+  "fields": {
+   "heading": "One floor, three ways of working",
+   "img_src": "/assets/img/img-1d6ad6c77d0f.webp",
+   "img_alt": ""
+  }
+ },
+ {
+  "id": "0bf0f7c7d3",
+  "type": "raw",
+  "html": "\n    \n    <section class=\"dx-body\">\n      <div class=\"dx-wrap dx-body-grid\">\n        <aside class=\"dx-side\">\n          <div class=\"dx-facts\" data-st-reveal>\n            <h2>Study facts</h2>\n            <ul class=\"dx-arrow-list\">\n              <li><strong>Scope</strong> Fit-out of one open office floor</li>\n              <li><strong>Key move</strong> Divide by need: focus, meeting, social</li>\n              <li><strong>Daylight</strong> Desks at the window, meetings in the core</li>\n            </ul>\n            <p class=\"dx-note\">Illustrative design study. Not built work, not a client project.</p>\n          </div>\n        </aside>\n        <div class=\"dx-main\">\n        <div data-st-reveal>\n          <h2>The brief</h2>\n          <p>The company rents one open floor. Noise travels, meeting rooms are scarce, and the window side sits empty half the day.</p>\n          <p>We divide the floor by need, not by hierarchy. Focus rows face the light, meetings sit deep in the plan, and a social edge gives the team a reason to gather.</p>\n        </div>\n        <div data-st-reveal>\n          <h2>The moves</h2>\n          <ul class=\"dx-arrow-list\">\n            <li><strong>Focus rows at the window.</strong> Desks face the glass for daylight and view. Acoustic screens and soft flooring keep the rows quiet.</li>\n            <li><strong>Meetings in the core.</strong> Phone booths and meeting rooms sit in the deep zone with full acoustic treatment. No more shouting over the floor.</li>\n            <li><strong>The social edge.</strong> A café-style corner with varied seating pulls people from their desks. Breaks happen where the light is best.</li>\n            <li><strong>Daylight with a dimmer.</strong> Circadian-friendly lighting and solar control keep the floor bright without glare or heat gain.</li>\n          </ul>\n        </div>\n        <div data-st-reveal>\n          <h2>Takeaways</h2>\n          <p>Acoustics decide whether an open office works.</p>\n          <p>Put desks at the window and meetings in the core.</p>\n          <p>A social edge is a productivity tool, not a luxury.</p>\n        </div>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "aaf65187fa",
+  "type": "pullquote",
+  "html": "\n    <section class=\"dx-quote\" data-st-reveal><div class=\"dx-wrap\"><blockquote>A social edge is a productivity tool, not a luxury.</blockquote></div></section>",
+  "fields": {
+   "text": "A social edge is a productivity tool, not a luxury."
+  }
+ },
+ {
+  "id": "cea9cd89c5",
+  "type": "raw",
+  "html": "\n    <section class=\"dx-related\">\n      <div class=\"dx-wrap\">\n        <header data-st-reveal><p class=\"dx-kicker\">Keep looking</p><h2>Related studies.</h2></header>\n        <div class=\"dx-cards\">\n          <a class=\"dx-card\" href=\"/projects/clinic-fit-out/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-5048d9095862.webp\" alt=\"Calm clinic interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Healthcare fit-out study</figcaption></figure>\n            <h3>A clinic that calms</h3><p>Waiting, consult and procedure arranged for calm and easy cleaning.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/small-apartment/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-1f4b4ef86cb5.webp\" alt=\"Compact apartment living space\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Residential study</figcaption></figure>\n            <h3>Sixty square metres, fully used</h3><p>One storage wall and clear sightlines make 60 square metres do three jobs.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/retail-corner/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-5194dc486e09.webp\" alt=\"Bright corner shop interior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Retail study</figcaption></figure>\n            <h3>A corner shop that stops footfall</h3><p>Entrance, display wall and checkout set out to turn footfall into sales.</p><span class=\"dx-more\">View the study</span>\n          </a>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "1a7d0e52e0",
+  "type": "cta",
+  "html": "\n\n<section class=\"st-section\" id=\"cta\" aria-labelledby=\"cta-title\">\n      <div class=\"st-wrap st-cta-grid\">\n        <div class=\"st-cta-copy\" data-st-reveal=\"\">\n          <p class=\"st-label\">Start your project</p>\n          <h2 id=\"cta-title\">Outgrown your office?</h2>\n          <p>Woodex Interior designs and builds across Lahore, Islamabad, Karachi and nationwide. Tell us about your space and we will take it from there.</p>\n          <address class=\"st-cta-meta\">M-71, Zainab Tower, Model Town Link Road, Lahore<br><a href=\"tel:+923224000768\">+92 322 4000768</a> &middot; <a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a><br><strong>Mon&ndash;Sat 9:30&ndash;6:30</strong> &middot; Sunday closed</address>\n          <div class=\"actions\"><a class=\"btn\" href=\"mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project\">Email the studio</a><a class=\"btn btn-light\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div>\n        </div>\n        <figure class=\"st-image st-cta-media\" data-st-reveal=\"\"><img src=\"/assets/img/img-af83a84f72d2.webp\" alt=\"Office interior used as project photography placeholder\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"></figure>\n      </div>\n    </section>\n\n",
+  "fields": {
+   "heading": "Outgrown your office?",
+   "label": "Start your project",
+   "actions": [
+    {
+     "text": "Email the studio",
+     "href": "mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project"
+    },
+    {
+     "text": "Call +92 322 4000768",
+     "href": "tel:+923224000768"
+    }
+   ]
+  }
+ }
+]

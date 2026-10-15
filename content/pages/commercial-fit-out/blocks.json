@@ -1,0 +1,125 @@
+[
+ {
+  "id": "5a2bab658c",
+  "type": "hero",
+  "html": "\n<section class=\"fo-hero\" aria-labelledby=\"fitout-service-title\"><div class=\"fo-wrap fo-hero-grid\"><div class=\"fo-hero-copy fo-reveal\"><nav class=\"fo-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>›</span><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Fit Out</a><span>›</span><span>Commercial Fit-Out</span></nav><p class=\"fo-label\">Woodex Fit-Out · Lahore</p><h1 id=\"fitout-service-title\">Commercial Fit-Out in Lahore</h1><p class=\"fo-copy\">From empty shell to operational business space. Woodex coordinates the build, services, finishes, joinery and handover under one accountable team.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-hero-media fo-reveal\"><img src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Contemporary commercial interior representing a Woodex fit-out in Lahore\" fetchpriority=\"high\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-hero-note\"><strong>Offices, retail, restaurants, clinics and showrooms</strong><span>3–6 weeks</span></figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Commercial Fit-Out in Lahore",
+   "label": "Woodex Fit-Out · Lahore",
+   "copy": "From empty shell to operational business space. Woodex coordinates the build, services, finishes, joinery and handover under one accountable team.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#fitout-service-contact",
+   "img_src": "/assets/img/img-81b231a6c390.webp",
+   "img_alt": "Contemporary commercial interior representing a Woodex fit-out in Lahore"
+  }
+ },
+ {
+  "id": "81a9ce9889",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-scope\"><div class=\"fo-wrap fo-scope-layout\"><figure class=\"fo-image fo-scope-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Coordinated Woodex interior showing fit-out services, finishes and furniture\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">One design direction · One coordinated build</figcaption></figure><div class=\"fo-scope-copy fo-reveal\"><p class=\"fo-label\">Build scope</p><h2>What Commercial Fit-Out includes</h2><p>The scope is shaped around the business, but the delivery stays joined up. Every trade follows one layout, one BOQ and one site programme.</p><div class=\"fo-scope-list\"><article class=\"fo-scope-item\"><b>01</b><strong>Space division</strong><span>Drywall, glass, doors and functional zones.</span></article><article class=\"fo-scope-item\"><b>02</b><strong>Ceilings</strong><span>Gypsum, grid, open and acoustic systems.</span></article><article class=\"fo-scope-item\"><b>03</b><strong>Flooring</strong><span>Tile, vinyl, wood-look, epoxy and level correction.</span></article><article class=\"fo-scope-item\"><b>04</b><strong>Electrical and lighting</strong><span>Load planning, circuits, fixtures and emergency lighting.</span></article><article class=\"fo-scope-item\"><b>05</b><strong>Plumbing and HVAC</strong><span>Washrooms, pantry, drainage and cooling coordination.</span></article><article class=\"fo-scope-item\"><b>06</b><strong>Joinery and furniture</strong><span>Reception, workstations, counters, displays and storage.</span></article><article class=\"fo-scope-item\"><b>07</b><strong>Finishes and branding</strong><span>Paint, wall panels, signage and branded details.</span></article><article class=\"fo-scope-item\"><b>08</b><strong>Testing and handover</strong><span>Snagging, service checks, cleaning and final release for operations.</span></article></div></div></div></section>"
+ },
+ {
+  "id": "dc9e21ff95",
+  "type": "process",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-process\"><div class=\"fo-wrap fo-process-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">A controlled programme</p><h2>7 steps from brief to handover</h2><p>Decisions are approved in sequence so the site team can build with fewer changes and clearer accountability.</p><figure class=\"fo-image fo-process-media\"><img loading=\"lazy\" src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Commercial Fit-Out interior accompanying the Woodex project process\" width=\"1920\" height=\"1280\"></figure></div><div class=\"fo-process-list fo-reveal\"><article class=\"fo-step\"><b>01</b><h3>Survey</h3><p>Assess the shell, utilities, access and building rules.</p></article><article class=\"fo-step\"><b>02</b><h3>Plan</h3><p>Resolve business zones, circulation and built-in elements.</p></article><article class=\"fo-step\"><b>03</b><h3>BOQ</h3><p>Agree itemized quantities, price, milestones and timeline.</p></article><article class=\"fo-step\"><b>04</b><h3>Select</h3><p>Approve materials, fixtures, finishes and samples.</p></article><article class=\"fo-step\"><b>05</b><h3>Build</h3><p>Coordinate partitions, services, floors, ceilings and finishes.</p></article><article class=\"fo-step\"><b>06</b><h3>Install</h3><p>Fit joinery, furniture, signage and final details.</p></article><article class=\"fo-step\"><b>07</b><h3>Handover</h3><p>Test, snag, clean and release the space for operations.</p></article></div></div></section>",
+  "fields": {
+   "steps": [
+    {
+     "title": "Survey",
+     "copy": "Assess the shell, utilities, access and building rules."
+    },
+    {
+     "title": "Plan",
+     "copy": "Resolve business zones, circulation and built-in elements."
+    },
+    {
+     "title": "BOQ",
+     "copy": "Agree itemized quantities, price, milestones and timeline."
+    },
+    {
+     "title": "Select",
+     "copy": "Approve materials, fixtures, finishes and samples."
+    },
+    {
+     "title": "Build",
+     "copy": "Coordinate partitions, services, floors, ceilings and finishes."
+    },
+    {
+     "title": "Install",
+     "copy": "Fit joinery, furniture, signage and final details."
+    },
+    {
+     "title": "Handover",
+     "copy": "Test, snag, clean and release the space for operations."
+    }
+   ],
+   "label": "A controlled programme",
+   "heading": "7 steps from brief to handover"
+  }
+ },
+ {
+  "id": "524b16b676",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-pricing\"><div class=\"fo-wrap fo-price-layout\"><div class=\"fo-price-copy fo-reveal\"><p class=\"fo-label\">Indicative PKR pricing</p><h2>A practical range before the survey</h2><p>These planning figures come from the service scope. The proposal is fixed only after site review and specification approval.</p><div class=\"fo-price-list\"><div class=\"fo-price-row\"><div><strong>Small · 500–1,500 sq. ft.</strong><span>Full commercial fit-out</span></div><strong>PKR 1M–4M</strong></div><div class=\"fo-price-row\"><div><strong>Medium · 1,500–4,000 sq. ft.</strong><span>Full commercial fit-out</span></div><strong>PKR 3M–10M</strong></div><div class=\"fo-price-row\"><div><strong>Large · 4,000–10,000+ sq. ft.</strong><span>Full commercial fit-out</span></div><strong>PKR 8M–25M+</strong></div></div><p class=\"fo-price-note\">Indicative Lahore ranges. Final cost follows the site condition, business type, specification and itemized BOQ.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-price-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Joinery and finish detail representing the materials within a Woodex fit-out\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">Scope, materials and labour set out in one BOQ</figcaption></figure></div></section>"
+ },
+ {
+  "id": "b2475388dd",
+  "type": "raw",
+  "html": "<section class=\"fo-section fo-soft\"><div class=\"fo-wrap fo-value-layout\"><figure class=\"fo-image fo-value-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-81b231a6c390.webp\" alt=\"Finished commercial fit-out interior showing the value of coordinated delivery\" width=\"1920\" height=\"1280\"></figure><div class=\"fo-value-copy fo-reveal\"><p class=\"fo-label\">Why Woodex</p><h2>One standard from the drawings to the last detail</h2><p>Design checks, construction, joinery and quality control stay connected throughout the project.</p><div class=\"fo-value-list\"><div class=\"fo-value\"><b>01</b><strong>Multi-sector experience</strong><span>One team for offices, shops, restaurants, clinics and mixed-use spaces.</span></div><div class=\"fo-value\"><b>02</b><strong>One project lead</strong><span>Trades, procurement and site access stay coordinated.</span></div><div class=\"fo-value\"><b>03</b><strong>Fixed written scope</strong><span>The BOQ, payment stages and programme are agreed before work.</span></div><div class=\"fo-value\"><b>04</b><strong>Furniture included when needed</strong><span>Woodex Furniture™ can manufacture project-specific joinery and furniture.</span></div></div></div></div></section>"
+ },
+ {
+  "id": "6f925b35ea",
+  "type": "faq",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-faq\"><div class=\"fo-wrap fo-faq-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">Practical answers</p><h2>Commercial Fit-Out FAQs</h2><p>Six short answers about scope, timing and cost.</p></div><div class=\"fo-faq-list fo-reveal\"><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How is commercial fit-out different from office fit-out?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Office fit-out is one type of commercial fit-out. Commercial fit-out also covers retail, restaurants, clinics, showrooms and coworking spaces.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does a commercial fit-out take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>A standard 1,000–3,000 sq. ft. project usually takes 3–6 weeks after design approval. Complex kitchens and larger spaces take longer.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you work with empty shells?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. We regularly start with empty shells and coordinate partitions, ceilings, floors, services, joinery, furniture and finishing.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do I need a design first?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Not always. We can build from approved drawings, develop the design with you, or combine design and fit-out as a turnkey service.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you coordinate with building management?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. We coordinate access, working hours, service connections and the technical information needed for building approvals or NOCs.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can Woodex supply the furniture?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. Woodex Furniture™ can manufacture project-specific reception desks, workstations, counters, displays and storage.</p></div></div></div></div></div></section>",
+  "fields": {
+   "label": "Practical answers",
+   "heading": "Commercial Fit-Out FAQs",
+   "items": [
+    {
+     "q": "How is commercial fit-out different from office fit-out?",
+     "a": "<p>Office fit-out is one type of commercial fit-out. Commercial fit-out also covers retail, restaurants, clinics, showrooms and coworking spaces.</p>"
+    },
+    {
+     "q": "How long does a commercial fit-out take?",
+     "a": "<p>A standard 1,000–3,000 sq. ft. project usually takes 3–6 weeks after design approval. Complex kitchens and larger spaces take longer.</p>"
+    },
+    {
+     "q": "Do you work with empty shells?",
+     "a": "<p>Yes. We regularly start with empty shells and coordinate partitions, ceilings, floors, services, joinery, furniture and finishing.</p>"
+    },
+    {
+     "q": "Do I need a design first?",
+     "a": "<p>Not always. We can build from approved drawings, develop the design with you, or combine design and fit-out as a turnkey service.</p>"
+    },
+    {
+     "q": "Can you coordinate with building management?",
+     "a": "<p>Yes. We coordinate access, working hours, service connections and the technical information needed for building approvals or NOCs.</p>"
+    },
+    {
+     "q": "Can Woodex supply the furniture?",
+     "a": "<p>Yes. Woodex Furniture™ can manufacture project-specific reception desks, workstations, counters, displays and storage.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "746ab4a4e5",
+  "type": "raw",
+  "html": "<section class=\"fo-section\"><div class=\"fo-wrap\"><header class=\"fo-related-head fo-reveal\"><div><p class=\"fo-label\">Keep exploring</p><h2>Related Fit-Out Pages</h2></div><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">View the Fit-Out hub →</a></header><nav class=\"fo-related-grid fo-reveal\" aria-label=\"Related fit-out pages\"><a class=\"fo-related-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\"><small>Fit-Out hub</small><strong>All Fit-Out Services</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/office-fit-out/\" data-page-route=\"officeFitout\"><small>Workplace</small><strong>Office Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/retail-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Retail Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/restaurant-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Restaurant Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/healthcare-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Healthcare Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/pharmacy-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Pharmacy Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/turnkey-design-build/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Turnkey Design Build</strong><span aria-hidden=\"true\">↗</span></a></nav></div></section>"
+ },
+ {
+  "id": "0d9e1978e1",
+  "type": "cta",
+  "html": "<section class=\"fo-section fo-contact\" id=\"fitout-service-contact\"><div class=\"fo-wrap fo-contact-grid\"><div class=\"fo-contact-copy fo-reveal\"><p class=\"fo-label\">Talk to Woodex</p><h2>Start with the space and your opening date</h2><p>Share the location, area and current condition. We will help define the right scope and next step.</p><div class=\"fo-contact-actions\"><a class=\"fo-btn\" href=\"mailto:info@woodex.com.pk?subject=Commercial%20Fit-Out%20Consultation\">Get a Free Consultation</a></div></div><div class=\"fo-contact-card fo-reveal\"><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"fo-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"fo-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"fo-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"fo-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Start with the space and your opening date",
+   "label": "Talk to Woodex",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Commercial%20Fit-Out%20Consultation"
+    }
+   ]
+  }
+ }
+]

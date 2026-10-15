@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://woodex.com.pk/sitemap.xml

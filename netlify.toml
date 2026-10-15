@@ -1,0 +1,5 @@
+# Netlify configuration for the Woodex static site.
+# No build step: the repo root is published as-is.
+
+[functions]
+  directory = "netlify/functions"

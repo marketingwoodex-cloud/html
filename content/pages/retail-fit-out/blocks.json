@@ -1,0 +1,121 @@
+[
+ {
+  "id": "bd79ffc896",
+  "type": "hero",
+  "html": "\n<section class=\"fo-hero\" aria-labelledby=\"fitout-service-title\"><div class=\"fo-wrap fo-hero-grid\"><div class=\"fo-hero-copy fo-reveal\"><nav class=\"fo-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\" data-page-route=\"home\">Home</a><span>›</span><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Fit Out</a><span>›</span><span>Retail Fit-Out</span></nav><p class=\"fo-label\">Woodex Fit-Out · Lahore</p><h1 id=\"fitout-service-title\">Retail &amp; Showroom Fit-Out in Lahore</h1><p class=\"fo-copy\">Shopfront, display, lighting and customer flow planned as one retail experience, then built for opening day.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-hero-media fo-reveal\"><img src=\"/assets/img/img-c693554a31d5.webp\" alt=\"Modern retail interior with branded displays and focused product lighting\" fetchpriority=\"high\" width=\"2048\" height=\"1024\"><figcaption class=\"fo-hero-note\"><strong>Brand stores, showrooms, boutiques and chain rollouts</strong><span>5–10 weeks</span></figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Retail &amp; Showroom Fit-Out in Lahore",
+   "label": "Woodex Fit-Out · Lahore",
+   "copy": "Shopfront, display, lighting and customer flow planned as one retail experience, then built for opening day.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#fitout-service-contact",
+   "img_src": "/assets/img/img-c693554a31d5.webp",
+   "img_alt": "Modern retail interior with branded displays and focused product lighting"
+  }
+ },
+ {
+  "id": "4e2aadb9c1",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-scope\"><div class=\"fo-wrap fo-scope-layout\"><figure class=\"fo-image fo-scope-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Coordinated Woodex interior showing fit-out services, finishes and furniture\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">One design direction · One coordinated build</figcaption></figure><div class=\"fo-scope-copy fo-reveal\"><p class=\"fo-label\">Build scope</p><h2>What Retail Fit-Out includes</h2><p>Every decision supports merchandise, movement and brand recognition. The result is a store that looks clear and works hard.</p><div class=\"fo-scope-list\"><article class=\"fo-scope-item\"><b>01</b><strong>Customer flow</strong><span>Plan product zones, circulation and conversion points.</span></article><article class=\"fo-scope-item\"><b>02</b><strong>Shopfront</strong><span>Entrance, fascia, glass, doors and signage.</span></article><article class=\"fo-scope-item\"><b>03</b><strong>Display joinery</strong><span>Custom shelving, counters and product fixtures.</span></article><article class=\"fo-scope-item\"><b>04</b><strong>Retail lighting</strong><span>Track, spotlight, ambient and feature lighting.</span></article><article class=\"fo-scope-item\"><b>05</b><strong>Feature ceilings</strong><span>Branded panels, illuminated details and service coordination.</span></article><article class=\"fo-scope-item\"><b>06</b><strong>Brand graphics</strong><span>Wall applications, murals, signs and wayfinding.</span></article><article class=\"fo-scope-item\"><b>07</b><strong>Flooring</strong><span>Vinyl, tile and wood-look commercial surfaces.</span></article><article class=\"fo-scope-item\"><b>08</b><strong>Back of house</strong><span>Stockroom, storage and staff support areas.</span></article></div></div></div></section>"
+ },
+ {
+  "id": "e1480b9473",
+  "type": "process",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-process\"><div class=\"fo-wrap fo-process-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">A controlled programme</p><h2>6 steps from brief to handover</h2><p>Decisions are approved in sequence so the site team can build with fewer changes and clearer accountability.</p><figure class=\"fo-image fo-process-media\"><img loading=\"lazy\" src=\"/assets/img/img-c693554a31d5.webp\" alt=\"Retail Fit-Out interior accompanying the Woodex project process\" width=\"2048\" height=\"1024\"></figure></div><div class=\"fo-process-list fo-reveal\"><article class=\"fo-step\"><b>01</b><h3>Survey and brief</h3><p>Measure the unit and understand brand, product and customer needs.</p></article><article class=\"fo-step\"><b>02</b><h3>Brand design and 3D</h3><p>Approve the layout, shopfront, displays, lighting and finishes.</p></article><article class=\"fo-step\"><b>03</b><h3>Procurement</h3><p>Source materials and manufacture branded joinery in-house.</p></article><article class=\"fo-step\"><b>04</b><h3>Construction and MEP</h3><p>Build partitions, ceilings, floors, power, HVAC and services.</p></article><article class=\"fo-step\"><b>05</b><h3>Branding and finishing</h3><p>Install displays, graphics, signage and focused lighting.</p></article><article class=\"fo-step\"><b>06</b><h3>Handover</h3><p>Snag, correct and release a customer-ready store.</p></article></div></div></section>",
+  "fields": {
+   "steps": [
+    {
+     "title": "Survey and brief",
+     "copy": "Measure the unit and understand brand, product and customer needs."
+    },
+    {
+     "title": "Brand design and 3D",
+     "copy": "Approve the layout, shopfront, displays, lighting and finishes."
+    },
+    {
+     "title": "Procurement",
+     "copy": "Source materials and manufacture branded joinery in-house."
+    },
+    {
+     "title": "Construction and MEP",
+     "copy": "Build partitions, ceilings, floors, power, HVAC and services."
+    },
+    {
+     "title": "Branding and finishing",
+     "copy": "Install displays, graphics, signage and focused lighting."
+    },
+    {
+     "title": "Handover",
+     "copy": "Snag, correct and release a customer-ready store."
+    }
+   ],
+   "label": "A controlled programme",
+   "heading": "6 steps from brief to handover"
+  }
+ },
+ {
+  "id": "cf1621a488",
+  "type": "raw",
+  "html": "<section class=\"fo-section\" id=\"fitout-service-pricing\"><div class=\"fo-wrap fo-price-layout\"><div class=\"fo-price-copy fo-reveal\"><p class=\"fo-label\">Indicative PKR pricing</p><h2>A practical range before the survey</h2><p>These planning figures come from the service scope. The proposal is fixed only after site review and specification approval.</p><div class=\"fo-price-list\"><div class=\"fo-price-row\"><div><strong>Basic Retail</strong><span>PKR 5,000–7,000 / sq. ft.</span></div><strong>PKR 7.5M–10.5M</strong></div><div class=\"fo-price-row\"><div><strong>Mid-Spec Retail</strong><span>PKR 7,000–9,000 / sq. ft.</span></div><strong>PKR 10.5M–13.5M</strong></div><div class=\"fo-price-row\"><div><strong>Luxury Showroom</strong><span>PKR 10,000–15,000 / sq. ft.</span></div><strong>PKR 15M–22.5M</strong></div></div><p class=\"fo-price-note\">Examples use a 1,500 sq. ft. unit. The fixed quote follows the site survey and selected specification.</p><div class=\"fo-actions\"><a class=\"fo-btn\" href=\"#fitout-service-contact\">Get a Free Consultation</a></div></div><figure class=\"fo-image fo-price-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-f655d51401e8.webp\" alt=\"Joinery and finish detail representing the materials within a Woodex fit-out\" width=\"1920\" height=\"1280\"><figcaption class=\"fo-caption\">Scope, materials and labour set out in one BOQ</figcaption></figure></div></section>"
+ },
+ {
+  "id": "e00cec94f8",
+  "type": "raw",
+  "html": "<section class=\"fo-section fo-soft\"><div class=\"fo-wrap fo-value-layout\"><figure class=\"fo-image fo-value-media fo-reveal\"><img loading=\"lazy\" src=\"/assets/img/img-c693554a31d5.webp\" alt=\"Finished retail fit-out interior showing the value of coordinated delivery\" width=\"2048\" height=\"1024\"></figure><div class=\"fo-value-copy fo-reveal\"><p class=\"fo-label\">Why Woodex</p><h2>One standard from the drawings to the last detail</h2><p>Design checks, construction, joinery and quality control stay connected throughout the project.</p><div class=\"fo-value-list\"><div class=\"fo-value\"><b>01</b><strong>Brand rollout expertise</strong><span>Approve one retail prototype, then repeat it consistently across locations.</span></div><div class=\"fo-value\"><b>02</b><strong>In-house display joinery</strong><span>Counters, shelving and product fixtures are made by Woodex Furniture™.</span></div><div class=\"fo-value\"><b>03</b><strong>In-house 3D studio</strong><span>See the shopfront, displays and lighting before construction.</span></div><div class=\"fo-value\"><b>04</b><strong>Opening-day focus</strong><span>Procurement and site work are sequenced around your launch date.</span></div></div></div></div></section>"
+ },
+ {
+  "id": "efd8cdf1d3",
+  "type": "faq",
+  "html": "<section class=\"fo-section fo-dark\" id=\"fitout-service-faq\"><div class=\"fo-wrap fo-faq-grid\"><div class=\"fo-sticky fo-reveal\"><p class=\"fo-label\">Practical answers</p><h2>Retail Fit-Out FAQs</h2><p>Six short answers about scope, timing and cost.</p></div><div class=\"fo-faq-list fo-reveal\"><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"true\"><span>How much does a retail fit-out cost?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>A 1,500 sq. ft. retail unit typically ranges from PKR 7.5M to 22.5M, depending on specification, shopfront and custom displays.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does it take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>A standard retail unit takes 5–7 weeks. A chain prototype can take 7–10 weeks, with later locations often faster.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you fit out several locations?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. We develop a repeatable prototype for shopfronts, displays, lighting, finishes and signage.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you follow our brand guidelines?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. We work to your approved colours, materials, logo use, signage and display standards.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How is fit-out different from renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Fit-out builds a new shell into a working store. Renovation upgrades an existing retail space.</p></div></div></div><div class=\"fo-faq-item\"><button class=\"fo-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can Woodex make the displays and counters?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"fo-faq-a\"><div><p>Yes. Woodex Furniture™ manufactures custom display units, shelving, counters, feature walls and storage.</p></div></div></div></div></div></section>",
+  "fields": {
+   "label": "Practical answers",
+   "heading": "Retail Fit-Out FAQs",
+   "items": [
+    {
+     "q": "How much does a retail fit-out cost?",
+     "a": "<p>A 1,500 sq. ft. retail unit typically ranges from PKR 7.5M to 22.5M, depending on specification, shopfront and custom displays.</p>"
+    },
+    {
+     "q": "How long does it take?",
+     "a": "<p>A standard retail unit takes 5–7 weeks. A chain prototype can take 7–10 weeks, with later locations often faster.</p>"
+    },
+    {
+     "q": "Can you fit out several locations?",
+     "a": "<p>Yes. We develop a repeatable prototype for shopfronts, displays, lighting, finishes and signage.</p>"
+    },
+    {
+     "q": "Can you follow our brand guidelines?",
+     "a": "<p>Yes. We work to your approved colours, materials, logo use, signage and display standards.</p>"
+    },
+    {
+     "q": "How is fit-out different from renovation?",
+     "a": "<p>Fit-out builds a new shell into a working store. Renovation upgrades an existing retail space.</p>"
+    },
+    {
+     "q": "Can Woodex make the displays and counters?",
+     "a": "<p>Yes. Woodex Furniture™ manufactures custom display units, shelving, counters, feature walls and storage.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "d4c4e31904",
+  "type": "raw",
+  "html": "<section class=\"fo-section\"><div class=\"fo-wrap\"><header class=\"fo-related-head fo-reveal\"><div><p class=\"fo-label\">Keep exploring</p><h2>Related Fit-Out Pages</h2></div><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">View the Fit-Out hub →</a></header><nav class=\"fo-related-grid fo-reveal\" aria-label=\"Related fit-out pages\"><a class=\"fo-related-link\" href=\"/fit-out/\" data-page-route=\"fitout-hub\"><small>Fit-Out hub</small><strong>All Fit-Out Services</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/office-fit-out/\" data-page-route=\"officeFitout\"><small>Workplace</small><strong>Office Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/commercial-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Commercial Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/restaurant-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Restaurant Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/healthcare-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Healthcare Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/pharmacy-fit-out/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Pharmacy Fit-Out</strong><span aria-hidden=\"true\">↗</span></a><a class=\"fo-related-link\" href=\"/turnkey-design-build/\" data-page-route=\"fitoutService\" aria-current=\"\"><small>Related fit-out</small><strong>Turnkey Design Build</strong><span aria-hidden=\"true\">↗</span></a></nav></div></section>"
+ },
+ {
+  "id": "ca40e7e772",
+  "type": "cta",
+  "html": "<section class=\"fo-section fo-contact\" id=\"fitout-service-contact\"><div class=\"fo-wrap fo-contact-grid\"><div class=\"fo-contact-copy fo-reveal\"><p class=\"fo-label\">Talk to Woodex</p><h2>Start with the space and your opening date</h2><p>Share the location, area and current condition. We will help define the right scope and next step.</p><div class=\"fo-contact-actions\"><a class=\"fo-btn\" href=\"mailto:info@woodex.com.pk?subject=Retail%20Fit-Out%20Consultation\">Get a Free Consultation</a></div></div><div class=\"fo-contact-card fo-reveal\"><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"fo-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"fo-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"fo-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"fo-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"fo-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Start with the space and your opening date",
+   "label": "Talk to Woodex",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Retail%20Fit-Out%20Consultation"
+    }
+   ]
+  }
+ }
+]

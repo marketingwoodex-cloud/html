@@ -1,0 +1,94 @@
+[
+ {
+  "id": "6062b4c643",
+  "type": "hero",
+  "html": "\n<section class=\"rv-hero\"><div class=\"rv-wrap rv-hero-grid\"><div class=\"rv-hero-copy rv-reveal\"><nav class=\"rv-crumbs\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span>&gt;</span><a href=\"/renovation/\">Renovation</a><span>&gt;</span><span>Office Renovation</span></nav><h1>Office Renovation in Lahore</h1><p class=\"rv-copy\">Modernize an occupied office without losing sight of people, productivity or the working day. Woodex plans the upgrade around what can stay, what must change and when each zone can be released.</p><div class=\"rv-hero-actions\"><a class=\"rv-btn rv-btn-light\" href=\"#renovation-sector-contact\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div><div class=\"rv-proof\"><span><strong>Itemized BOQ</strong>Trade-by-trade clarity</span><span><strong>Phased delivery</strong>Lower disruption</span><span><strong>Existing spaces</strong>Upgrade, not first build</span></div></div><figure class=\"rv-hero-media rv-reveal\"><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Contemporary office interior representing a phased Woodex office renovation\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption>Reconfigured work zones, refreshed finishes and coordinated services</figcaption></figure></div></section>",
+  "fields": {
+   "heading": "Office Renovation in Lahore",
+   "copy": "Modernize an occupied office without losing sight of people, productivity or the working day. Woodex plans the upgrade around what can stay, what must change and when each zone can be released.",
+   "cta_text": "Get a Free Consultation",
+   "cta_href": "#renovation-sector-contact",
+   "img_src": "/assets/img/img-1d6ad6c77d0f.webp",
+   "img_alt": "Contemporary office interior representing a phased Woodex office renovation"
+  }
+ },
+ {
+  "id": "d0e597b25a",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-scope\"><div class=\"rv-wrap rv-intro-grid\"><div class=\"rv-intro-aside rv-reveal\"><h2>What the scope can include</h2><p class=\"rv-copy\">A condition survey decides what should be retained, repaired or replaced.</p><div class=\"rv-intro-note\"><strong>Built around an operating workplace</strong><span>Department-by-department phasing keeps teams moving while the new office takes shape.</span></div></div><div class=\"rv-service-list rv-reveal\"><div class=\"rv-service\"><b>01</b><strong>Workspace reconfiguration</strong><span>Rebalance desks, meeting rooms, circulation and support areas around the current team.</span></div><div class=\"rv-service\"><b>02</b><strong>Office modernization</strong><span>Refresh dated interiors with new ceilings, lighting, flooring and finishes.</span></div><div class=\"rv-service\"><b>03</b><strong>Expansion planning</strong><span>Connect added space to the existing office with consistent services and circulation.</span></div><div class=\"rv-service\"><b>04</b><strong>Department upgrades</strong><span>Renovate one team zone at a time while the rest of the workplace stays active.</span></div><div class=\"rv-service\"><b>05</b><strong>Executive areas</strong><span>Upgrade private offices, meeting rooms and client-facing spaces.</span></div><div class=\"rv-service\"><b>06</b><strong>Furniture and joinery</strong><span>Coordinate workstations, storage, counters and custom-built elements.</span></div></div></div></section>"
+ },
+ {
+  "id": "868f245c2b",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-process\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>A process shaped for office renovation</h2><p class=\"rv-copy\">Survey, scope, BOQ and phasing are agreed before disruptive work starts.</p></header><div class=\"rv-steps rv-reveal\"><article class=\"rv-step\"><b>01</b><h3>Workplace audit</h3><p>Measure the office, map services and identify what can be retained.</p></article><article class=\"rv-step\"><b>02</b><h3>Occupancy plan</h3><p>Agree working hours, temporary moves and the order of each zone.</p></article><article class=\"rv-step\"><b>03</b><h3>Design and BOQ</h3><p>Resolve layouts, finishes and an itemized trade-by-trade cost plan.</p></article><article class=\"rv-step\"><b>04</b><h3>Phased execution</h3><p>Complete noisy work and shutdowns outside agreed operating windows.</p></article><article class=\"rv-step\"><b>05</b><h3>Handover by zone</h3><p>Snag, clean and return each completed area to the team.</p></article></div></div></section>"
+ },
+ {
+  "id": "a82d906d94",
+  "type": "raw",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-pricing\"><div class=\"rv-wrap rv-pricing-grid\"><div class=\"rv-reveal\"><h2>Indicative renovation pricing</h2><p class=\"rv-copy\">These planning ranges come from comparable Woodex renovation scopes. The exact quote follows a site survey.</p><p class=\"rv-price-note\">Price varies with condition, materials, services, size and the number of delivery phases.</p><a class=\"rv-btn\" href=\"#renovation-sector-contact\">Request a survey + BOQ</a></div><div class=\"rv-price-panel rv-reveal\"><div class=\"rv-price-row\"><strong>1,000 sq. ft. office</strong><span>PKR 1.5M–3.5M</span></div><div class=\"rv-price-row\"><strong>Focused room or department</strong><span>PKR 400K–1.5M</span></div></div></div></section>"
+ },
+ {
+  "id": "945824946e",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Choose the right starting point</h2><p class=\"rv-copy\">Renovation improves an existing space. Fit-out creates a finished space from a shell, while interior design resolves the plan and 3D direction.</p></header><div class=\"rv-choice-grid rv-reveal\"><article class=\"rv-choice is-current\"><small>This page</small><h3>Renovation</h3><p>Survey, repair, upgrade and phased delivery for a space that already exists.</p></article><article class=\"rv-choice\"><small>Design + build</small><h3>Fit-Out</h3><p>Complete a shell or unfinished space for first occupation.</p><a href=\"/fit-out/\" data-page-route=\"fitout-hub\">Explore Fit-Out</a></article><article class=\"rv-choice\"><small>Design + 3D</small><h3>Interior Design</h3><p>Resolve layouts, materials, lighting and visualization before build.</p><a href=\"/interior-design/\" data-page-route=\"interior\">Explore Interior Design</a></article></div></div></section>"
+ },
+ {
+  "id": "32b28ac544",
+  "type": "faq",
+  "html": "<section class=\"rv-section\" id=\"renovation-sector-faq\"><div class=\"rv-wrap rv-faq-grid\"><div class=\"rv-faq-intro rv-reveal\"><h2>Office Renovation FAQs</h2><p class=\"rv-copy\">Six practical answers before survey, costing and site work.</p></div><div class=\"rv-faq-list rv-reveal\"><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"true\"><span>Can the office stay open during renovation?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Often, yes. We phase work by department, floor or operating hours and agree temporary access before site work begins.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Can you reconfigure an existing office?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. We can change workstations, meeting rooms, partitions, lighting, power and circulation around the existing shell.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Do you provide an itemized BOQ?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Yes. The BOQ separates rooms, trades, quantities and materials before execution.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>How long does office renovation take?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>A focused upgrade may take one to three weeks. Larger occupied offices depend on the number of phases and allowed working hours.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Is office furniture included?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>It can be. Woodex can coordinate new workstations, storage, counters and joinery within the renovation scope.</p></div></div></div><div class=\"rv-faq-item\"><button class=\"rv-faq-q\" type=\"button\" aria-expanded=\"false\"><span>Should I choose renovation or fit-out?</span><span class=\"plus\" aria-hidden=\"true\">+</span></button><div class=\"rv-faq-a\"><div><p>Choose renovation for an existing workplace. Choose fit-out when a shell or unfinished office needs design and construction for first use.</p></div></div></div></div></div></section>",
+  "fields": {
+   "heading": "Office Renovation FAQs",
+   "copy": "Six practical answers before survey, costing and site work.",
+   "items": [
+    {
+     "q": "Can the office stay open during renovation?",
+     "a": "<p>Often, yes. We phase work by department, floor or operating hours and agree temporary access before site work begins.</p>"
+    },
+    {
+     "q": "Can you reconfigure an existing office?",
+     "a": "<p>Yes. We can change workstations, meeting rooms, partitions, lighting, power and circulation around the existing shell.</p>"
+    },
+    {
+     "q": "Do you provide an itemized BOQ?",
+     "a": "<p>Yes. The BOQ separates rooms, trades, quantities and materials before execution.</p>"
+    },
+    {
+     "q": "How long does office renovation take?",
+     "a": "<p>A focused upgrade may take one to three weeks. Larger occupied offices depend on the number of phases and allowed working hours.</p>"
+    },
+    {
+     "q": "Is office furniture included?",
+     "a": "<p>It can be. Woodex can coordinate new workstations, storage, counters and joinery within the renovation scope.</p>"
+    },
+    {
+     "q": "Should I choose renovation or fit-out?",
+     "a": "<p>Choose renovation for an existing workplace. Choose fit-out when a shell or unfinished office needs design and construction for first use.</p>"
+    }
+   ]
+  }
+ },
+ {
+  "id": "3b66d20107",
+  "type": "raw",
+  "html": "<section class=\"rv-section rv-soft\"><div class=\"rv-wrap\"><header class=\"rv-process-head rv-reveal\"><h2>Explore related renovation sectors</h2><p class=\"rv-copy\">Every sector follows the same standard: condition-led scope, itemized pricing and a practical delivery plan.</p></header><nav class=\"rv-related-grid rv-reveal\" aria-label=\"Related renovation sectors\"><a class=\"rv-related-link\" href=\"/renovation/\" data-page-route=\"renovation\"><small>Renovation hub</small><strong>All Renovation Services</strong></a><a class=\"rv-related-link\" href=\"/commercial-renovation/\" data-renovation-sector=\"commercial\"><small>Related sector</small><strong>Commercial Renovation</strong></a><a class=\"rv-related-link\" href=\"/retail-showroom-renovation/\" data-renovation-sector=\"retail\"><small>Related sector</small><strong>Retail &amp; Showroom Renovation</strong></a><a class=\"rv-related-link\" href=\"/healthcare-renovation/\" data-renovation-sector=\"healthcare\"><small>Related sector</small><strong>Healthcare Renovation</strong></a><a class=\"rv-related-link\" href=\"/restaurant-cafe-renovation/\" data-renovation-sector=\"restaurant\"><small>Related sector</small><strong>Restaurant &amp; Café Renovation</strong></a><a class=\"rv-related-link\" href=\"/residential-renovation/\" data-renovation-sector=\"residential\"><small>Related sector</small><strong>Residential Renovation</strong></a><a class=\"rv-related-link\" href=\"/specialized-renovation-services/\" data-renovation-sector=\"specialized\"><small>Related sector</small><strong>Specialized Services</strong></a></nav></div></section>"
+ },
+ {
+  "id": "dd94907496",
+  "type": "cta",
+  "html": "<section class=\"rv-section rv-dark\" id=\"renovation-sector-contact\"><div class=\"rv-wrap rv-contact-grid\"><div class=\"rv-reveal\"><h2>Talk to Woodex</h2><p class=\"rv-copy\">Tell us the office area, team size, current condition and whether the workplace must remain operational.</p><div class=\"rv-contact-actions\"><a class=\"rv-btn rv-btn-light\" href=\"mailto:info@woodex.com.pk?subject=Office%20Renovation%20Consultation\">Get a Free Consultation</a><a class=\"rv-btn rv-btn-outline\" href=\"https://wa.me/923224000768\">WhatsApp Woodex</a></div></div><div class=\"rv-contact-list rv-reveal\"><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923224000768\">+92 322 4000768</a></div><div class=\"rv-contact-item\"><small>Call</small><a href=\"tel:+923214686884\">+92 321 4686884</a></div><div class=\"rv-contact-item\"><small>Email</small><a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a></div><div class=\"rv-contact-item\"><small>Studio</small><address>M-71, Zainab Tower, Model Town Link Road, Lahore</address></div><div class=\"rv-contact-item\"><small>Hours</small><span>Mon–Sat 9:30–6:30</span></div><div class=\"rv-contact-item\"><small>WhatsApp</small><a href=\"https://wa.me/923224000768\">+92 322 4000768</a></div></div></div></section>\n",
+  "fields": {
+   "heading": "Talk to Woodex",
+   "copy": "Tell us the office area, team size, current condition and whether the workplace must remain operational.",
+   "actions": [
+    {
+     "text": "Get a Free Consultation",
+     "href": "mailto:info@woodex.com.pk?subject=Office%20Renovation%20Consultation"
+    },
+    {
+     "text": "WhatsApp Woodex",
+     "href": "https://wa.me/923224000768"
+    }
+   ]
+  }
+ }
+]

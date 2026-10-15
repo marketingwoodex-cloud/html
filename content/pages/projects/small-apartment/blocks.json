@@ -1,0 +1,49 @@
+[
+ {
+  "id": "d3eb23583c",
+  "type": "hero",
+  "html": "\n\n    <section class=\"dx-hero dx-hero--image\" aria-labelledby=\"dx-title\">\n      <img class=\"dx-hero-bg\" src=\"/assets/img/img-1f4b4ef86cb5.webp\" alt=\"\" aria-hidden=\"true\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\">\n      <div class=\"dx-wrap dx-hero-inner\" data-st-reveal>\n        <p class=\"dx-kicker\">Illustrative design study</p>\n        <h1 id=\"dx-title\">Sixty square metres, fully used</h1>\n        <p class=\"dx-dek\">Sixty square metres with a real kitchen, a place to work, and room to host.</p>\n        <dl class=\"dx-meta\">\n        <div class=\"dx-meta-item\"><dt>Project type</dt><dd>Residential interior</dd></div>\n        <div class=\"dx-meta-item\"><dt>Setting</dt><dd>Lahore apartment</dd></div>\n        <div class=\"dx-meta-item\"><dt>Year</dt><dd>2026</dd></div>\n        <div class=\"dx-meta-item\"><dt>Size</dt><dd>60 sq m</dd></div>\n        </dl>\n      </div>\n    </section>",
+  "fields": {
+   "heading": "Sixty square metres, fully used",
+   "img_src": "/assets/img/img-1f4b4ef86cb5.webp",
+   "img_alt": ""
+  }
+ },
+ {
+  "id": "c05e021a6e",
+  "type": "raw",
+  "html": "\n    \n    <section class=\"dx-body\">\n      <div class=\"dx-wrap dx-body-grid\">\n        <aside class=\"dx-side\">\n          <div class=\"dx-facts\" data-st-reveal>\n            <h2>Study facts</h2>\n            <ul class=\"dx-arrow-list\">\n              <li><strong>Scope</strong> Interior of a one-bedroom apartment</li>\n              <li><strong>Key move</strong> A full-height storage wall on one side</li>\n              <li><strong>Layout</strong> Open plan with zones, glazed bedroom screen</li>\n            </ul>\n            <p class=\"dx-note\">Illustrative design study. Not built work, not a client project.</p>\n          </div>\n        </aside>\n        <div class=\"dx-main\">\n        <div data-st-reveal>\n          <h2>The brief</h2>\n          <p>A compact apartment with one bedroom and a long living space. The owner works from home and hosts family most weekends.</p>\n          <p>Instead of splitting the plan into smaller rooms, we keep it open and give everything a home. Storage becomes architecture, and sightlines make it feel twice the size.</p>\n        </div>\n        <div data-st-reveal>\n          <h2>The moves</h2>\n          <ul class=\"dx-arrow-list\">\n            <li><strong>The storage wall.</strong> A full-height wall of joinery runs one side of the flat. It holds the kitchen, wardrobe, desk and laundry in one line.</li>\n            <li><strong>Sightlines that lie.</strong> Clear views from entry to window make the flat feel open. Furniture stays low so light travels the full length.</li>\n            <li><strong>One room, three jobs.</strong> Living, work and dining share one space with a table that extends and lighting that changes the mood.</li>\n            <li><strong>Bedroom with a borrowed view.</strong> A glazed screen, not a wall, separates the bedroom. Daylight reaches the corridor and privacy stays intact.</li>\n          </ul>\n        </div>\n        <div data-st-reveal>\n          <h2>Takeaways</h2>\n          <p>Storage is the plan in a small home. Solve it first.</p>\n          <p>Open plans need zones, not just fewer walls.</p>\n          <p>Lighting does more for size than paint colour.</p>\n        </div>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "9be8399f8a",
+  "type": "pullquote",
+  "html": "\n    <section class=\"dx-quote\" data-st-reveal><div class=\"dx-wrap\"><blockquote>Storage is the plan in a small home. Solve it first.</blockquote></div></section>",
+  "fields": {
+   "text": "Storage is the plan in a small home. Solve it first."
+  }
+ },
+ {
+  "id": "018d9f8a84",
+  "type": "raw",
+  "html": "\n    <section class=\"dx-related\">\n      <div class=\"dx-wrap\">\n        <header data-st-reveal><p class=\"dx-kicker\">Keep looking</p><h2>Related studies.</h2></header>\n        <div class=\"dx-cards\">\n          <a class=\"dx-card\" href=\"/projects/courtyard-house/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-dce06249b137.webp\" alt=\"Contemporary house exterior\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Residential renovation study</figcaption></figure>\n            <h3>A house around a courtyard</h3><p>An existing house re-planned so light and a small court reach every room.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/office-floor/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-1d6ad6c77d0f.webp\" alt=\"Open-plan office floor\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Workplace study</figcaption></figure>\n            <h3>One floor, three ways of working</h3><p>Focus rows, meeting rooms and a social edge balanced for daylight and quiet.</p><span class=\"dx-more\">View the study</span>\n          </a>\n          <a class=\"dx-card\" href=\"/projects/cafe-corner/\" data-st-reveal>\n            <figure><img src=\"/assets/img/img-c7d3a3ebd62b.jpg\" alt=\"Corner café interior\" width=\"1920\" height=\"1080\" loading=\"lazy\" decoding=\"async\"><figcaption class=\"dx-tag\">Hospitality study</figcaption></figure>\n            <h3>A café that holds a crowd</h3><p>Counter flow, mixed seating and lighting built to survive daily service.</p><span class=\"dx-more\">View the study</span>\n          </a>\n        </div>\n      </div>\n    </section>"
+ },
+ {
+  "id": "8dce28dd2e",
+  "type": "cta",
+  "html": "\n\n<section class=\"st-section\" id=\"cta\" aria-labelledby=\"cta-title\">\n      <div class=\"st-wrap st-cta-grid\">\n        <div class=\"st-cta-copy\" data-st-reveal=\"\">\n          <p class=\"st-label\">Start your project</p>\n          <h2 id=\"cta-title\">Working with a compact flat?</h2>\n          <p>Woodex Interior designs and builds across Lahore, Islamabad, Karachi and nationwide. Tell us about your space and we will take it from there.</p>\n          <address class=\"st-cta-meta\">M-71, Zainab Tower, Model Town Link Road, Lahore<br><a href=\"tel:+923224000768\">+92 322 4000768</a> &middot; <a href=\"mailto:info@woodex.com.pk\">info@woodex.com.pk</a><br><strong>Mon&ndash;Sat 9:30&ndash;6:30</strong> &middot; Sunday closed</address>\n          <div class=\"actions\"><a class=\"btn\" href=\"mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project\">Email the studio</a><a class=\"btn btn-light\" href=\"tel:+923224000768\">Call +92 322 4000768</a></div>\n        </div>\n        <figure class=\"st-image st-cta-media\" data-st-reveal=\"\"><img src=\"/assets/img/img-fcc680fef653.webp\" alt=\"Compact apartment interior used as project photography placeholder\" width=\"1920\" height=\"1280\" loading=\"lazy\" decoding=\"async\"></figure>\n      </div>\n    </section>\n\n",
+  "fields": {
+   "heading": "Working with a compact flat?",
+   "label": "Start your project",
+   "actions": [
+    {
+     "text": "Email the studio",
+     "href": "mailto:info@woodex.com.pk?subject=Start%20a%20Woodex%20project"
+    },
+    {
+     "text": "Call +92 322 4000768",
+     "href": "tel:+923224000768"
+    }
+   ]
+  }
+ }
+]
