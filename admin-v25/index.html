@@ -21,6 +21,67 @@
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      Boot guard. This page has exactly one failure mode that shows nothing at all: the module graph
+      never runs (an asset 404, a wrong base path, a MIME type the browser refuses, a syntax error in
+      the entry chunk). React never mounts, so React cannot report it, and the tab is a white screen
+      with an empty console — the state this console is designed never to be in.
+
+      The check is deliberately narrow, so that it can never paper over a real result: it paints only
+      when #root is still empty after the page has finished loading. Any screen — a list, a sign-in
+      form, a data-state message, a crash report — fills #root, and is then left alone.
+    -->
+    <script>
+      (function () {
+        function report(why) {
+          var root = document.getElementById("root");
+          if (!root || root.childElementCount > 0) return;
+          root.innerHTML =
+            '<div style="min-height:100vh;display:grid;place-items:center;padding:24px;' +
+            'font:14px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif">' +
+            '<div style="max-width:640px">' +
+            '<div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.65">' +
+            "Woodex Admin v2.5 · did not start</div>" +
+            '<h1 style="font-size:20px;margin:8px 0 6px">The console did not start.</h1>' +
+            '<p style="margin:0 0 12px;opacity:.85">The page loaded, but its JavaScript never ran, so ' +
+            "there is no screen to show. Nothing is wrong with your data — nothing has been read or " +
+            "written yet.</p>" +
+            '<pre style="margin:0 0 12px;padding:12px;overflow:auto;background:#f6f7f9;' +
+            'border:1px solid #e4e7ec;border-radius:8px;font-size:12px"></pre>' +
+            '<p style="margin:0;opacity:.85">Take the line above to whoever deployed this folder. ' +
+            'It usually means an asset is missing from <code>' +
+            window.location.pathname.replace(/[^/]*$/, "") +
+            "assets/</code>, or that the API base is wrong.</p>" +
+            "</div></div>";
+          root.querySelector("pre").textContent = why;
+          /* One console line too, so a person with devtools open sees it immediately. */
+          console.error("[wx] console did not start:", why);
+        }
+
+        /* A failed <script>/<link> fires a resource error event that does not bubble. */
+        window.addEventListener(
+          "error",
+          function (ev) {
+            var t = ev.target;
+            if (t && (t.tagName === "SCRIPT" || t.tagName === "LINK")) {
+              report("Failed to load " + (t.src || t.href) + (t.tagName === "LINK" ? " (stylesheet)" : ""));
+            }
+          },
+          true
+        );
+
+        /* Network-level failure of the entry chunk reaches window.onerror with a message only. */
+        window.addEventListener("error", function (ev) {
+          if (ev.target === window && ev.message) report(ev.message);
+        });
+
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            report("The entry module did not execute. Check the browser network tab for the JS chunk.");
+          }, 4000);
+        });
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

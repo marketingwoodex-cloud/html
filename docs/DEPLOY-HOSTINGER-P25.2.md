@@ -94,17 +94,34 @@ php db/owner.php --email you@example.com --reset   # new password, printed once
 
 ```bash
 curl -s https://woodex.com.pk/api/v2/health     # expect ok:true, php 8.x, db reachable + migrated
-curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/admin-next/    # 200
-curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/admin/         # 200 — the rollback path
-curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/wx-install.php # 403 or 404, never 200
+curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/admin-next/          # 200
+curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/admin-next/leads     # 200 (the SPA fallback)
+curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/admin/               # 200 — the rollback path
+curl -s -o /dev/null -w '%{http_code}\n' https://woodex.com.pk/wx-install.php       # 403 or 404, never 200
 ```
+
+Two of those are the check that a console on this host *stays* on this host. The bundle's own asset URLs say
+which build is deployed:
+
+```bash
+curl -s https://woodex.com.pk/admin-next/ | grep -o 'src="[^"]*assets[^"]*"'
+```
+
+It must print `/admin-next/assets/index-….js`. If it prints `/assets/index-….js`, the deployed bundle was built
+without `--base=/admin-next/`: it will load, and then every link inside it will point at the domain root, where
+the site's 404 answers — on 15 Oct that was the "white screen" report, and it is a rebuild, not a server fix.
+The same defect appears the second way round as a blank *page*: `/admin-next/dashboard` answering 404 means the
+`.htaccess` block this pack appends is missing (or LiteSpeed cached the response before it landed).
 
 Then the gate this project has never passed. As an editor, in the console:
 
 1. **Publish an article** — the page goes live and the sitemap follows its status.
 2. **Change the header** — the change lands across the 150 pages as one batch.
 3. **Roll that batch back** from page history — the pages return to what they were.
-4. Check `/api/v2/health` and that `/admin/` still works.
+4. **Click through the sidebar, then refresh on a screen** — the address bar must stay inside
+   `/admin-next/…` (e.g. `…/admin-next/leads`), and the refresh must render that screen again rather than a
+   blank page. This is the one step that proves the console's base path and the host's rewrite agree.
+5. Check `/api/v2/health` and that `/admin/` still works.
 
 Record the four results in §5 below. That table is the evidence; a screenshot without it is not.
 
@@ -173,7 +190,9 @@ reason written down); a probe finds all 44 tables.
 
 | Symptom | What to do |
 |---|---|
-| `/admin-next/` is blank | check `curl /api/v2/health`; if the API is down the console says so by design. Nothing is broken in the site |
+| `/admin-next/` is blank | read what the page says before assuming the worst: a bundle that never ran prints its own reason (the boot guard in `admin-next/index.html`), a crash prints the error (the console's error boundary), and a missing API is a sentence, not a blank page. If the page is *truly* empty, check `curl /api/v2/health`, then check the served HTML's script tag against the build (`grep -o 'src="[^"]*assets[^"]*"'` — it must say `/admin-next/…`) |
+| `/admin-next/` loads but a link or a refresh goes blank | the bundle predates the base-path fix: rebuild with `npm run build -- --base=/admin-next/` (or `node tools/make-release.mjs`) and re-upload `admin-next/`. The host also needs the `# --- v2.5 console (admin-next) ---` block in `.htaccess` — the pack appends it, a hand-copied folder does not |
+| `/admin/` shows a blank page or a 403 from `wx-install.php` | that is the v2.1 console failing to reach **MySQL**, then asking for its own installer. On this host MySQL exists, so it means `_private/db.json` is wrong or missing — and the file that would "fix" it is deliberately not shipped. Do not upload an installer to a live host; use the v2.5 console at `/admin-next/` and repair `db.json` from the backup |
 | Migrations stop halfway | they are re-runnable; fix the reported statement's cause and run `php db/migrate.php` again |
 | The public site misbehaves | the pack did not replace a single page — purge LiteSpeed cache and re-check. If it persists, restore the previous release zip over `public_html` |
 | One file needs to go back | `git show <sha>:<path>` using the SHA in the manifest (`d936ac0…` for this pack) |

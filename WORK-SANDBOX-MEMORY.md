@@ -16,10 +16,10 @@ cd tools/phpwasm && npm ci && cd ../..          # php-wasm (the only PHP this sa
 cd tools/phplint && npm ci && cd ../..
 
 # the gate, in the order that fails fastest
-node tools/phpwasm/run-php.cjs tests/run.php            # 1283 passed · 0 failed · 14 skipped
+node tools/phpwasm/run-php.cjs tests/run.php            # 1290 passed · 0 failed · 14 skipped
 node tests/conformance.mjs                              # 86 passed · 0 failed
-node tools/phplint/php-lint.mjs                         # 163 PHP files parse clean
-cd admin-v25 && npm run typecheck && npm run smoke && cd ..   # tsc clean · 154 checks · 65 routes
+node tools/phplint/php-lint.mjs                         # 164 PHP files parse clean
+cd admin-v25 && npm run typecheck && npm run smoke && cd ..   # tsc clean · 156 checks · 65 routes
 node tools/gen-aliases.mjs --check && node tools/gen-caps.mjs --check
 
 # the console (the API cannot run here — see §3; there is no sample data and no flag that turns any on)
@@ -257,6 +257,30 @@ run there.
   one template literal.
 - `App.tsx` must import every primitive a screen renders, and a screen is not real until its id is in
   `BUILT_IDS` *and* it has a `<Route>` — otherwise the link opens the build-plan card (§8f).
+- **The white screen, and the two ways it happens.** Diagnosed on 15 Oct, both real:
+  1. *The console escapes its mount point.* `main.tsx` builds with `--base=/admin-next/` but
+     `BrowserRouter` had no `basename`, so every `<Link to="/leads">` produced `https://host/leads`. The
+     browser left `/admin-next/`, the host answered the site's 404 — or, on the local server, a **9-byte
+     empty body: the literal white page**. Refresh anywhere, or click anything, was blank. Fixed by
+     deriving the basename from `import.meta.env.BASE_URL` (empty in dev, `/admin-next` when built), by
+     converting the three raw `<a href="/…">` links in screens to `<Link>`, and by giving `serve.cjs` the
+     same `/admin-next/*` → `index.html` fallback the payload's `.htaccess` writes. Asserted in `smoke.tsx`
+     by rendering the app with `basename="/admin-next"` and failing on any `href` outside the mount point
+     (`/api/…` and `/assets/…` excepted, both being genuinely at the domain root).
+  2. *The v2.1 console has no database here.* `/admin/` boots, calls `/api/admin.php`, gets
+     `{"dbError":true,"driver":"mysql"}` (there is no MySQL; P25.1 is SQLite behind `/api/v2`), and its own
+     code does `location.replace("/wx-install.php")`. That file is **deliberately not in the pack** and
+     `.htaccess` blocks `wx-*.php` → a 403 with a 9-byte body → blank. `serve.cjs` now answers
+     `/wx-install.php|wx-demo.php|wx-check.php` with the same 403 **and a page explaining which console does
+     work here**. `/admin/` cannot run in this sandbox at all; on the host, where MySQL exists, it still does.
+- `MemoryRouter` with a `basename` **renders nothing at all** for an `initialEntry` that does not start with
+  that basename (react-router prints "won't render anything"). Any smoke assertion that mounts under
+  `/admin-next` must therefore use `initialEntries={[MOUNT + path]}` — otherwise the audit passes because
+  there is no markup to audit, which is how the first version of the link audit silently proved nothing.
+- `renderToString` does **not** route a throw to an error boundary (it rethrows: "SSR boundary threw"), so
+  `ErrorBoundary` can only be exercised in a browser or in the jsdom harness — do not expect a smoke
+  assertion to cover it. The boot guard in `index.html` covers the other half (the entry module never
+  executing) and *is* checkable, because it ships inside the built HTML.
 
 **The API**
 - Never call a helper without checking it exists; the v2.1 names are close enough to invent plausibly.

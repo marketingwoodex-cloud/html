@@ -121,8 +121,12 @@ function Frame() {
     return [{ label: route.section }, { label: route.label }];
   }, [route]);
 
-  // `/` and `/index` land on the dashboard, like the v2.1 default route
-  if (loc.pathname === "/" || loc.pathname === "/index") {
+  /* `/`, `/index` and the empty path land on the dashboard, like the v2.1 default route.
+     The empty string is not a curiosity: the router strips its `basename` before this runs, so the
+     console's own address — `/admin-next` with or without the trailing slash — arrives here as `""`.
+     Without that case the deployed console opened on its own URL and said "no route matches" — a
+     correct answer to the wrong question, and the first thing anyone sees after a deploy. */
+  if (loc.pathname === "/" || loc.pathname === "" || loc.pathname === "/index") {
     return <Navigate to="/dashboard" replace />;
   }
 
@@ -249,7 +253,13 @@ function Frame() {
           ))}
           <Route
             path="*"
-            element={<NotFound onHome={() => navigate("/dashboard")} path={loc.pathname} />}
+            element={
+              <NotFound
+                onHome={() => navigate("/dashboard")}
+                onIntegrations={() => navigate("/integrations")}
+                path={loc.pathname}
+              />
+            }
           />
         </Routes>
       </Shell>
@@ -259,7 +269,15 @@ function Frame() {
   );
 }
 
-function NotFound({ path, onHome }: { path: string; onHome: () => void }) {
+function NotFound({
+  path,
+  onHome,
+  onIntegrations,
+}: {
+  path: string;
+  onHome: () => void;
+  onIntegrations: () => void;
+}) {
   return (
     <>
       <PageHead title="Screen not found" sub={`No registered route matches “${path}”.`} />
@@ -271,7 +289,10 @@ function NotFound({ path, onHome }: { path: string; onHome: () => void }) {
         </p>
         <div className="row" style={{ marginTop: "var(--s-4)" }}>
           <Btn className="primary" onClick={onHome}>Go to the dashboard</Btn>
-          <Btn onClick={() => window.location.assign("/#/integrations")}>Open Integrations</Btn>
+          {/* Through the router, not `window.location`: v2.1's alias was a hash on the *website's*
+              homepage, so this button used to leave the console for the public site. On the console's own
+              mount point that is a 404 the browser renders as a blank page. */}
+          <Btn onClick={onIntegrations}>Open Integrations</Btn>
         </div>
       </Card>
     </>

@@ -10,7 +10,7 @@
  */
 import { renderToString } from "react-dom/server";
 import type { ReactElement } from "react";
-import { MemoryRouter } from "react-router-dom";
+import { Link, MemoryRouter } from "react-router-dom";
 import App from "./App";
 import { Shell } from "./components/Shell";
 import { SignIn } from "./screens/SignIn";
@@ -1345,7 +1345,71 @@ for (const [name, ok] of [
   else failures.push(`assertion failed: ${name}`);
 }
 
+/* ------------------------------------------------------------- the mount point (the white screen)
+ *
+ * The console is built with `--base=/admin-next/` and served from that directory, so every internal link has
+ * to stay inside it. One `<a href="/leads">` — or a router without a basename — sends the browser to the
+ * domain root, where the host answers with the site's 404, or with an empty body that renders as a white
+ * page. That is exactly what shipped: every sidebar item escaped the console, and a refresh on any screen
+ * the console had written was blank. It is a one-character class of bug with a two-hour diagnosis, which is
+ * why it is asserted here rather than left to be noticed.
+ *
+ * How it is detected: rendered with `basename="/admin-next"`, a router link writes
+ * `href="/admin-next/leads"` while a raw anchor writes `href="/leads"` verbatim. The difference is visible
+ * in the markup, so the check is on the markup — `renderToString` cannot run a click.
+ *
+ * Two hrefs are legitimately outside the mount point and are allowed by name: `/api/…` (the API lives at
+ * the domain root and is same-origin by design) and `/assets/…` (the website's own files, referenced by a
+ * preview of a page). Everything else is a link that leaves the console.
+ */
+const MOUNT = "/admin-next";
+
+function outsideMount(html: string): string[] {
+  const found = new Set<string>();
+  for (const m of html.matchAll(/href="(\/[^"]*)"/g)) {
+    const href = m[1];
+    if (href === MOUNT || href.startsWith(MOUNT + "/")) continue;
+    if (href.startsWith("/api/") || href.startsWith("/assets/")) continue;
+    found.add(href);
+  }
+  return [...found];
+}
+
+/* The audit's own two fixtures. A check that cannot fail proves nothing, and a check that flags the correct
+   code is worse than none — so both directions are asserted before the screens are looked at. */
+const fixtureEscaping = renderToString(
+  <MemoryRouter basename={MOUNT} initialEntries={[MOUNT + "/dashboard"]}>
+    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+    <a href="/leads">a raw anchor, the shape of the bug</a>
+  </MemoryRouter>,
+);
+const fixtureInside = renderToString(
+  <MemoryRouter basename={MOUNT} initialEntries={[MOUNT + "/dashboard"]}>
+    <Link to="/leads">a router link, the shape that is correct</Link>
+  </MemoryRouter>,
+);
+
+const strays = ROUTES.map((path) => {
+  try {
+    /* The entries carry the mount point: a MemoryRouter whose entry does not start with its `basename`
+       renders nothing at all (react-router says so and returns an empty tree), which would make this audit
+       pass by rendering nothing to inspect. `MOUNT + path` is the address the browser actually holds. */
+    const html = renderToString(
+      <MemoryRouter basename={MOUNT} initialEntries={[MOUNT + path]}>
+        <App />
+      </MemoryRouter>,
+    );
+    if (html.length < 200) return [path, [`(rendered ${html.length} chars — nothing to inspect)`]] as const;
+    return [path, outsideMount(html)] as const;
+  } catch {
+    /* already reported by the route loop above; a crash is not a broken link */
+    return [path, []] as const;
+  }
+}).filter(([, found]) => found.length > 0);
+
 const assertions: [string, boolean][] = [
+  ["the mount-point audit catches an anchor that leaves the console", outsideMount(fixtureEscaping).includes("/leads")],
+  ["and does not flag a router link that stays inside it", outsideMount(fixtureInside).length === 0],
   ["dashboard renders an H1 (U1.1 fix)", /<h1[^>]*>/.test(htmlDashboard)],
   ["dashboard renders a breadcrumb", htmlDashboard.includes("crumbs")],
   /* The dashboard renders as a *sentence* when there is nothing to read from: a KPI row is a claim about the
@@ -1370,6 +1434,12 @@ const assertions: [string, boolean][] = [
 for (const [name, ok] of assertions) {
   if (ok) pass++;
   else failures.push(`assertion failed: ${name}`);
+}
+
+/* The strays named one by one, with the offending href: the fix is a file, and a report that does not say
+   which file is a report somebody has to reproduce first. */
+for (const [path, found] of strays) {
+  failures.push(`mount point: ${path} → ${found.map((href) => `“${href}”`).join(", ")} leaves ${MOUNT}/`);
 }
 void checks;
 

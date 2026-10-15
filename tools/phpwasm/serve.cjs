@@ -96,8 +96,74 @@ function readBody(req) {
   });
 }
 
+/**
+ * The v2.5 console's routing, answered the way the host answers it.
+ *
+ * `tools/make-release.mjs` writes this rule into the payload's `.htaccess`: everything under
+ * `/admin-next/` that is not a real file is answered with `admin-next/index.html`, because the console is a
+ * single-page app and `/admin-next/leads` is a route, not a file. Apache does that on Hostinger; this server
+ * did not, so a refresh (or a deep link, or any in-app navigation that happened to be a full page load)
+ * asked for a file that has never existed and got a 404 with an empty body — a white page, indistinguishable
+ * from a console that failed to start. A development server that disagrees with the host about routing is
+ * worse than no development server: it hides the one defect the host would show.
+ */
+function consoleRoute(url) {
+  const q = url.indexOf("?");
+  const pathname = q === -1 ? url : url.slice(0, q);
+  const query = q === -1 ? "" : url.slice(q);
+  if (pathname !== "/admin-next" && !pathname.startsWith("/admin-next/")) return url;
+  let decoded;
+  try {
+    decoded = decodeURIComponent(pathname);
+  } catch {
+    return url; /* a bad escape is not a route; let the file lookup answer it */
+  }
+  /* A real file (the index itself, the JS/CSS bundles, an image) is left exactly as asked for. */
+  if (fs.existsSync(path.join(ROOT, decoded))) return url;
+  return "/admin-next/index.html" + query;
+}
+
+/**
+ * The one page this server answers itself.
+ *
+ * The v2.1 console (`/admin/`) opens by asking `/api/admin.php` for its status. On a host with MySQL that
+ * status is fine. Here it answers `{"dbError":true,"driver":"mysql"}` — there is no MySQL in the sandbox, and
+ * P25.1's database is SQLite behind api/v2 — and admin.js reacts by doing `location.replace("/wx-install.php")`.
+ * That file is **deliberately not in the pack** (it creates a database and demo logins; the release refuses to
+ * ship it) and the payload's `.htaccess` blocks `wx-*.php` with a `403`. A refusal with a nine-byte body is a
+ * white page, which reads as "the dashboard is broken" rather than "this is the old console and it wants a
+ * database that is not here".
+ *
+ * So the refusal keeps its status — 403, exactly what the host would return — and gains a sentence saying
+ * which console does work on this machine. It is served only by this development server: nothing here is in
+ * the release payload, and `tools/make-release.mjs` never sees it.
+ */
+function refusedInstaller(pathname) {
+  if (!/^\/wx-(install|demo|check)\.php$/.test(pathname)) return null;
+  const which = pathname.slice(1);
+  return (
+    "<!doctype html><meta charset=\"utf-8\"><title>403 — not shipped</title>" +
+    "<div style=\"font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:44rem;margin:12vh auto;padding:0 24px\">" +
+    "<p style=\"font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.6\">Woodex · local rehearsal · 403</p>" +
+    "<h1 style=\"font-size:22px;margin:8px 0 12px\">" + which + " is not part of this release.</h1>" +
+    "<p>The v2.1 console asked for it because <code>/api/admin.php</code> reported <code>dbError</code>, and " +
+    "that is true here: this machine runs the P25.1 stack — <b>SQLite behind <code>/api/v2</code></b> — with no " +
+    "MySQL, so the old console cannot load its data. The installer is not the answer: releases after P25.1 " +
+    "refuse to ship it (it creates a database and demo logins), which is why the server answers 403.</p>" +
+    "<p><a href=\"/admin-next/\">Open the v2.5 console at /admin-next/</a> — it is the one that runs on this " +
+    "stack, and it is the one that will replace this screen on the host.</p>" +
+    "</div>"
+  );
+}
+
 const server = http.createServer(async (req, res) => {
   try {
+    const refused = refusedInstaller(new URL(req.url || "/", "http://localhost").pathname);
+    if (refused) {
+      res.writeHead(403, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+      res.end(refused);
+      return;
+    }
     const body = await readBody(req);
     const headers = {};
     for (const [k, v] of Object.entries(req.headers)) {
@@ -105,7 +171,7 @@ const server = http.createServer(async (req, res) => {
       headers[k] = Array.isArray(v) ? v.join(", ") : v;
     }
     const response = await enqueue(() =>
-      handler.request({ url: req.url || "/", method: req.method || "GET", headers, body }),
+      handler.request({ url: consoleRoute(req.url || "/"), method: req.method || "GET", headers, body }),
     );
     const out = {};
     for (const [k, v] of Object.entries(response.headers || {})) {

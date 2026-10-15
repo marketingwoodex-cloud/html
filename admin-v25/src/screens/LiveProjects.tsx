@@ -18,7 +18,7 @@
  * update, or write the details. Nothing here invents an invoice; `POST /projects/{id}/bill` does, once.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { AlertTriangle, CalendarClock, FileText, Plus, RefreshCw, Save, Search, Trash2, Wallet } from "lucide-react";
 import { Bar, Btn, Card, Empty, Note, PageHead, Pill, Seg, Switch } from "../components/primitives";
 import { api, ApiFailure } from "../lib/api";
@@ -109,9 +109,12 @@ export function ProjectsBody() {
         sub="Every project, its stage and its money — one page of a filtered query, over totals read from all of them."
         actions={
           <>
-            <a className="btn" href="/timeline">
+            {/* A router link, so it stays inside whatever path the console is mounted at. An `<a href>`
+                here reloads the page and asks the host for `/timeline` at the domain root — a screen the
+                console owns, requested from a server that has never heard of it. */}
+            <Link className="btn" to="/timeline">
               <CalendarClock size={15} /> Timeline
-            </a>
+            </Link>
             <Btn icon={<RefreshCw size={15} />} onClick={live.reload}>
               Refresh
             </Btn>

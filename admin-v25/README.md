@@ -54,6 +54,16 @@ npm run dev:api        # php -S 127.0.0.1:8080 api/v2/index.php — needs PHP (s
 npm run verify         # typecheck + 65-route render smoke + production build
 ```
 
+**The address you open is not the address the release serves.** `npm run dev` answers at the root
+(`http://localhost:5173/`), while the shipped console lives at **`/admin-next/`** — built with
+`--base=/admin-next/`, served by the payload's `.htaccess` (and by `tools/phpwasm/serve.cjs`), both of which
+answer `/admin-next/<anything>` with the console's `index.html`. The router's `basename` is derived from
+`import.meta.env.BASE_URL`, so one source tree works at both addresses — and that only holds while every
+internal link goes through the router. A raw `<a href="/leads">` (or a router without a basename) sends the
+browser to the domain root, where the host answers 404 or an empty body: a white screen, which is what the
+owner saw on 15 Oct. `npm run smoke` renders every screen with `basename="/admin-next"` and fails on any
+`href` outside that mount point, so the defect cannot come back unnoticed.
+
 `/api` is **proxied, not called cross-origin** — api/v2 is same-origin by design (no CORS, a
 SameSite session cookie, a CSRF token tied to it), and a dev server that had to weaken all three to
 work would be the one place the prototype behaved differently from production. Point it somewhere

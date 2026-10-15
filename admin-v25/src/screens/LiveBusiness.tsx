@@ -26,6 +26,7 @@
  * Offline it says so and shows nothing: these are claims about a database and about files on disk.
  */
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Building2, CheckCircle2, Globe, Plus, RefreshCw, Save, Trash2, Undo2, Wand2 } from "lucide-react";
 import { Btn, Card, Empty, Input, Note, PageHead, Pill, Seg } from "../components/primitives";
 import { api, ApiFailure } from "../lib/api";
@@ -471,7 +472,7 @@ export function LiveBusiness() {
         {/* The link a person needs after applying: the history where this change is one row. */}
         {tab === "website" && (
           <p className="muted" style={{ fontSize: "var(--fs-12)" }}>
-            <Globe size={13} /> Pages changed from here are one row in <a href="/pages">Pages → History</a>, where the whole batch rolls back together.
+            <Globe size={13} /> Pages changed from here are one row in <Link to="/pages">Pages → History</Link>, where the whole batch rolls back together.
             {read ? <span> · Last read from {read.rel}.</span> : null}
           </p>
         )}

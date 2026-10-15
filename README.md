@@ -62,7 +62,7 @@ node tools/phpwasm/run-php.cjs tests/run.php    # 1290 passed · 0 failed · 14 
 node tests/conformance.mjs                      # 86 passed · 0 failed
 node tools/phplint/php-lint.mjs                 # 164 PHP files parse clean
 python3 tools/apply-entity.py --check           # every page carries tools/entity.json (NAP, Google listing, sameAs)
-cd admin-v25 && npm run typecheck && npm run smoke && cd ..   # tsc clean · 154 checks · 65 routes
+cd admin-v25 && npm run typecheck && npm run smoke && cd ..   # tsc clean · 156 checks · 65 routes
 
 # The database gates on SQLite in WebAssembly (no MySQL needed). This writes _private/db.json and
 # _private/woodex.sqlite, both git-ignored; delete them to start again. MySQL in CI stays the real gate.
@@ -73,6 +73,15 @@ node tools/phpwasm/run-php.cjs tests/money-path.php           # Phase 2 gate: 89
 
 cd admin-v25 && npm exec vite -- --host 0.0.0.0 --port 5173   # the console, against api/v2
 ```
+
+**Two addresses, one console, and the difference is the bug that cost a day.** `vite dev` serves the console
+at the root (`http://localhost:5173/`), while the *release* serves the built bundle from `/admin-next/`
+(`npm run build -- --base=/admin-next/`), reached through the payload's `.htaccess` and `serve.cjs`, which both
+answer `/admin-next/<anything>` with the console's `index.html`. The router takes its `basename` from
+`import.meta.env.BASE_URL`, so the same source works at either address and no internal link may be written as a
+raw `href="/…"` — one of those leaves the mount point and the host answers 404, or a white page. `npm run
+smoke` asserts exactly that: every screen is rendered with `basename="/admin-next"` and any `href` outside it
+fails the build (the API and the website's own `/assets/…` are the two allowed exceptions).
 
 There is no PHP and no MySQL in a build sandbox — `api/v2` cannot answer there, and every screen says so
 rather than inventing data. The console has no sample data and no flag to turn any on: the four generators
