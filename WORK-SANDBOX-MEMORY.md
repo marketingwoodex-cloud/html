@@ -302,8 +302,15 @@ carries no `DemoBanner`, no fixture and no flag, and it does carry the sentence 
 appending a marked block that serves the console's deep links its own `index.html`.
 
 **What the zip is not.** It is not the v26 marketing site (§2) and it does not replace any live page. It
-is not an install: on a host that has never run v2.1 there is no database, and `wx-install.php` (included)
-is the way to make one.
+is not an install: on a host that has never run v2.1 there is no database, and `wx-install.php` — which the
+pack stopped carrying in P25.2 — is uploaded from the repository for the one run, then deleted.
+
+**What the pack refuses, and why (P25.2).** `wx-install.php`, `wx-check.php` and `wx-demo.php` are refused by
+`tools/make-release.mjs` with their reasons printed in the build summary and recorded in
+`MANIFEST.json`'s `payload.excluded`. Denying them over HTTP is not the same as not shipping them: the deny
+rule lives in `.htaccess`, which v2.1's `publish_rules()` rewrites whenever the owner publishes, so a
+rewrite could re-expose a file that is still on disk. A fourth `wx-*.php` at the site root fails the build
+until somebody decides it in `REFUSE_ROOT_PHP`.
 
 **How it is built.** `node tools/make-release.mjs` — repeatable, refuses to ship a credential
 (`_private/db.json`, `.env`, `*.pem` except the CA bundle, anything named like a secret), refuses to build

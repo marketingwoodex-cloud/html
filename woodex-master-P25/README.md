@@ -17,11 +17,19 @@ new console is at **`/admin-next/`** while the remaining Phase 3 screens are fin
 | `api/v2/` | **new** — the v2.5 API: one front controller, one file per resource, 150 of v2.1's actions bridged to it |
 | `db/` | **new** — migrations `000…014`, `migrate.php`, `owner.php`; denied over HTTP by `db/.htaccess` |
 | `admin-next/` | **new** — the built v2.5 console (React), serving at `/admin-next/` |
-| `_private/`, `_database/`, `_templates/`, `wx-install.php` | as before |
+| `_private/`, `_database/`, `_templates/` | as before |
 
 Not in the zip, on purpose: any database credential (`_private/db.json` stays yours), sourcemaps, the
 repository's tools and tests, and the newer v26 marketing pages that live at the repository root — see
 `MEMORY-PLAN.md` §2 before mixing the two.
+
+**Also not in the zip, since P25.2: `wx-install.php`, `wx-check.php` and `wx-demo.php`.** They are setup and
+diagnostic scripts whose own header tells the owner to delete them after use, and one of them
+(`wx-demo.php`) creates demo logins in the live database. They are refused by `tools/make-release.mjs`
+rather than left standing behind a deny rule, because the deny rule lives in `.htaccess` — a file the
+product itself rewrites when the owner publishes. `MANIFEST.json` records what was left out and why
+(`payload.excluded`). An existing install needs none of them: `db/migrate.php` and `db/owner.php` ship as
+before. A **fresh** install uploads `wx-install.php` from the repository — see below.
 
 ## Upgrade a live site (File Manager, not "Import website")
 
@@ -47,8 +55,14 @@ repository's tools and tests, and the newer v26 marketing pages that live at the
 
 ## Fresh install (a host that has never run v2.1)
 
-Same upload, then `https://woodex.com.pk/wx-install.php` (database details + your owner name/email/password),
-then step 3 above, then sign in at `/admin-next/`. Delete `wx-install.php` when you are done.
+Same upload — then **upload `wx-install.php` on its own**, because the pack no longer carries it (see above;
+it is in the repository at `frontend-v1/wx-install.php`). Open
+`https://woodex.com.pk/wx-install.php`, enter the database details and your owner name/email/password,
+then **delete `wx-install.php`** and continue with step 3 above, then sign in at `/admin-next/`.
+
+The v2.1 admin redirects to `/wx-install.php` while the database is unconfigured (`frontend-v1/admin/admin.js`
+line 479), so on a genuinely fresh host keep the file uploaded only until setup finishes. On an installed
+site nothing needs it: `php db/migrate.php` and `php db/owner.php` cover migration and account recovery.
 
 ## The proof this release is judged by (plan §11)
 

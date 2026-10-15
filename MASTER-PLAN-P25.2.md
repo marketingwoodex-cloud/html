@@ -77,7 +77,18 @@ Nothing in Phases 1–4 is worth doing while an installer and a demo endpoint an
 **Development, in parallel**
 
 8. **Fold PR #8** (`arena/9e181806-marketingwoodex` — 258 files, unmerged) into this line. It already contains the `.htaccess` wall that answers 403 for `wx-*.php`, the P22.2 hotfix, the Netlify/Vercel/Supabase/MCP removal (decision D-4), the SQLite database gates, and the G4 identity work. Rebuilding any of that here would duplicate it and create a merge conflict later. **Owner action: review and merge PR #8; agent action: port it onto this repository's line.**
-9. **Make the payload safe by construction:** exclude `wx-install.php`, `wx-check.php`, `wx-demo.php` and any `*.example`/`_private` path from `tools/make-release.mjs`'s assembly, and fail the build if a `wx-*.php` file would land in `public_html` without a deny rule. A fresh install keeps its documented path (upload the installer explicitly, delete it after) — the *default* pack stops carrying it.
+9. **Make the payload safe by construction** — **done, and the plan's first wording was wrong.** Reading the
+   three files and their callers changed the task: `wx-demo.php` *creates demo logins in the live database*;
+   `wx-check.php` and `wx-install.php` are scripts whose own headers tell the owner to delete them; and PR #8
+   already denies all three over HTTP (`RewriteRule ^wx-[a-z0-9-]+\.php$ - [F,L,NC]`, master plan S-02).
+   **Denial is not absence**: that rule lives in `.htaccess`, which v2.1's `publish_rules()` *rewrites* when
+   the owner publishes — a rewrite that drops the rule re-exposes a file that is still on disk.
+   `tools/make-release.mjs` now refuses all three, prints the reason for each, records them in
+   `MANIFEST.json` (`payload.excluded`), and **fails the build on any fourth `wx-*.php`** at the site root
+   until somebody decides it. Cost, accepted deliberately: a fresh install uploads `wx-install.php` from the
+   repository for one run (the pack README says so; the v2.1 admin redirects there while the database is
+   unconfigured, `frontend-v1/admin/admin.js:479`). An existing install needs none of the three —
+   `db/migrate.php` and `db/owner.php` ship as before.
 10. **Repository disposition (owner, one setting):** make `arena/89662743-html`'s line the default branch of `html` and delete `main`, or leave both. Until that happens the old README and the two archives are still what a visitor to the repo sees first.
 
 **Exit gate for Phase 0:** all five files 404/403 on the host; every key rotated; repo private; CI green; the new pack builds without the installer and the demo script.

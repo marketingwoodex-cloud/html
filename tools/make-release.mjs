@@ -83,7 +83,36 @@ const SECRET_OK = /(^|\/)api\/cacert\.pem$/;
 /** Build output that is not needed on the host: sourcemaps, editor droppings, caches. */
 const SKIP_FILE_RE = /(^|\/)(\.DS_Store|Thumbs\.db|.*\.log|.*\.map|\.phpunit\.result\.cache)$/i;
 
+/**
+ * Setup and diagnostic scripts that never belong in a release — refused, not merely denied.
+ *
+ * `wx-demo.php` creates four demo logins in the **live** database: sample data on a production site, which
+ * is the one thing P25.1 removed everywhere else. `wx-install.php` (the setup wizard) and `wx-check.php`
+ * (the diagnostics page) are both files whose own header tells the owner to delete them after use.
+ *
+ * They are refused here rather than left standing behind a deny rule, because that rule lives in
+ * `frontend-v1/.htaccess` — a file the *product itself rewrites*: v2.1's `publish_rules()` regenerates
+ * `.htaccess` when the owner publishes. A rewrite that drops the rule re-exposes a file that is still on
+ * disk; a file that was never shipped cannot be re-exposed. The web-layer wall (P22.2 / master plan S-02,
+ * `RewriteRule ^wx-[a-z0-9-]+\.php$ - [F,L,NC]`) still belongs in the tree — this is the second lock, and
+ * the only one that survives a rewritten `.htaccess`.
+ *
+ * Consequence, and it is deliberate: a **fresh** install uploads `wx-install.php` from the repository,
+ * runs it, and deletes it — `woodex-master-P25/README.md` says so in the fresh-install step. An **existing**
+ * install never needs it: `db/migrate.php` and `db/owner.php` are CLI and ship as before.
+ *
+ * Any *other* `wx-*.php` at the site root is a decision rather than a default: the build fails and asks.
+ */
+const REFUSE_ROOT_PHP = new Map([
+  ["wx-install.php", "the setup wizard — upload it deliberately for a fresh install, then delete it"],
+  ["wx-check.php", "the diagnostics page — run the repository copy, not a released one"],
+  ["wx-demo.php", "it creates demo logins in the live database"],
+]);
+const WX_PHP_RE = /^wx-[a-z0-9-]+\.php$/i;
+
 const files = { copied: 0, bytes: 0, byArea: new Map() };
+const copiedPaths = new Set();
+const refused = [];
 const problems = [];
 
 function area(rel) {
@@ -92,6 +121,7 @@ function area(rel) {
 
 function note(rel, bytes) {
   files.copied += 1;
+  copiedPaths.add(rel);
   files.bytes += bytes;
   const a = area(rel);
   const cur = files.byArea.get(a) ?? { n: 0, b: 0 };
@@ -129,6 +159,11 @@ function copyInto(src, dest, relBase = "") {
 function copyFile(abs, dest, rel) {
   const relUnix = rel.split(path.sep).join("/");
   if (SKIP_FILE_RE.test(relUnix)) return;
+  /* Site-root setup/diagnostic scripts: refused with a reason, listed in the summary and the manifest. */
+  if (!relUnix.includes("/") && REFUSE_ROOT_PHP.has(relUnix)) {
+    refused.push(relUnix);
+    return;
+  }
   if (SECRET_RE.test(relUnix) && !SECRET_OK.test(relUnix)) {
     problems.push(`refused to ship ${relUnix} — it is named like a credential (${abs})`);
     return;
@@ -138,6 +173,22 @@ function copyFile(abs, dest, rel) {
   if (DRY) return;
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(abs, dest);
+}
+
+/**
+ * The site root of a payload may not carry an un-decided `wx-*.php`. The three known ones are refused above;
+ * a fourth is somebody's new idea, and the honest place to decide it is here rather than on the host. This
+ * exists because "the file is there but .htaccess denies it" has already been the state of this project's
+ * public host twice (installer, demo) and both times depended on a person remembering.
+ */
+function guardWxPhp() {
+  for (const rel of copiedPaths) {
+    if (rel.includes("/") || !WX_PHP_RE.test(rel)) continue;
+    problems.push(
+      `${rel} is a wx-*.php at the payload's site root and this build has no decision about it — ` +
+        `add it to REFUSE_ROOT_PHP with a reason, or ship it deliberately`,
+    );
+  }
 }
 
 /* ------------------------------------------------------------------ 1. the console build */
@@ -246,6 +297,7 @@ function main() {
   copyInto(path.join(ROOT, BASE), STAGE);
   for (const [from] of OVERLAYS) console.log(`· add:       ${from}/`);
   for (const [from, to] of OVERLAYS) copyInto(path.join(ROOT, from), path.join(STAGE, to), to);
+  guardWxPhp();
 
   const consoleInfo = buildConsole();
   if (!DRY) fs.writeFileSync(path.join(STAGE, "db", ".htaccess"), DB_HT);
@@ -312,6 +364,9 @@ function main() {
       zipSha256: zipSha,
       files: files.copied,
       bytes: files.bytes,
+      /* What a reader of the manifest cannot see: what this build left out, and why. A pack whose contents
+         are only checkable against a source checkout is a pack nobody can audit where it lands. */
+      excluded: refused.map((rel) => ({ path: rel, why: REFUSE_ROOT_PHP.get(rel) })),
       byArea: Object.fromEntries([...files.byArea.entries()].sort((a, b) => b[1].n - a[1].n).map(([k, v]) => [k, v.n])),
     },
     files: {
@@ -345,6 +400,10 @@ function main() {
     console.log(`  ${String(v.n).padStart(5)}  ${a}`);
   }
   console.log(`  ${String(files.copied).padStart(5)}  files · ${(files.bytes / 1024 / 1024).toFixed(1)} MB uncompressed`);
+  if (refused.length) {
+    console.log(`\n  refused from the payload (${refused.length}):`);
+    for (const rel of refused) console.log(`    · ${rel} — ${REFUSE_ROOT_PHP.get(rel)}`);
+  }
   if (!DRY) console.log(`\n  ${path.relative(ROOT, ZIP)} · ${(zipBytes / 1024 / 1024).toFixed(1)} MB · sha256 ${zipSha.slice(0, 16)}…`);
   console.log(`  manifest: ${path.relative(ROOT, path.join(OUT, "MANIFEST.json"))}`);
 }
