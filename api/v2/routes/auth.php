@@ -11,9 +11,12 @@ declare(strict_types=1);
 
 function wx_route_login(array $ctx): array
 {
-    $email = wx_v_email($ctx['body']['email'] ?? '', 'email');
+    /* The field is called `email` on the wire, but what arrives may be a sign-in name — v2.1's first-run
+       account is `admin`. The form says "Email or sign-in name", so this accepts either and leaves the
+       resolution (email first, then an unambiguous name) to wx_login(). */
+    $ident = wx_v_string($ctx['body']['email'] ?? '', 'email', 1, 190);
     $password = wx_v_string($ctx['body']['password'] ?? '', 'password', 1, 200, false);
-    $result = wx_login($email, $password);
+    $result = wx_login($ident, $password);
     return ['data' => $result, 'meta' => ['signedIn' => empty($result['need2fa'])]];
 }
 

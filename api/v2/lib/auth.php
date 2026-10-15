@@ -313,8 +313,26 @@ function wx_throttle(bool $failed = false): void
 }
 
 /**
+ * Which account a typed identifier is: the email, or an unambiguous sign-in name.
+ *
+ * The sign-in field says "Email or sign-in name" and v2.1's first-run account is `admin` — a bare name,
+ * not an address — so the server must resolve both. A name matches only when exactly one account carries
+ * it: two people with the same name must never be one sign-in. Email wins when both could match.
+ *
+ * @param array|null $byEmail the row found by address, if any
+ * @param array[] $byName the rows found by name (the query asks for at most two)
+ */
+function wx_login_pick_user(?array $byEmail, array $byName): ?array
+{
+    if ($byEmail !== null) {
+        return $byEmail;
+    }
+    return count($byName) === 1 ? $byName[0] : null;
+}
+
+/**
  * Step 1 of sign-in. Returns either a session (cookie set) or a 2FA ticket. Never reveals whether
- * an address exists: wrong email and wrong password are the same answer.
+ * an account exists: wrong identifier and wrong password are the same answer.
  */
 function wx_login(string $email, string $password): array
 {
@@ -323,7 +341,11 @@ function wx_login(string $email, string $password): array
     if ($wait > 0) {
         throw ApiError::rateLimit('Too many attempts on this account — try again in ' . (int) ceil($wait / 60) . ' minute(s)');
     }
-    $u = wx_one('SELECT * FROM wx_users WHERE email = ?', [strtolower($email)]);
+    $ident = strtolower(trim($email));
+    $u = wx_login_pick_user(
+        wx_one('SELECT * FROM wx_users WHERE email = ?', [$ident]),
+        wx_all('SELECT * FROM wx_users WHERE LOWER(name) = ? LIMIT 2', [$ident])
+    );
     $ok = $u !== null && (int) $u['active'] === 1 && password_verify($password, (string) $u['pass_hash']);
     if (!$ok) {
         wx_throttle(true);

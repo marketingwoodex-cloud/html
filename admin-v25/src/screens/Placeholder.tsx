@@ -1,8 +1,9 @@
 /* Placeholder for registered-but-not-yet-built screens.
-   Deliberately NOT a "coming soon" stub: it states the route id, the phase that
-   builds it, which API actions it will call and what module from v2.1 it
-   replaces — so the registry doubles as a build checklist. */
-import { Construction } from "lucide-react";
+   Two audiences, one page: the owner reads one sentence — what this will be, and
+   which phase builds it — and the build checklist underneath keeps the route id,
+   the API actions and the v2.1 module it replaces, so the registry doubles as the
+   plan. The engineering "why" (the AD-3/AD-4/AD-12 navigation fixes) lived here
+   once and read as noise on every un-built page; it is in the commit history. */
 import { Card, Note, PageHead, Pill } from "../components/primitives";
 import type { NavRoute } from "../lib/nav";
 
@@ -85,6 +86,14 @@ export function Placeholder({ route }: { route: NavRoute }) {
         </Pill>}
       />
 
+      <Note tone="info" title={`${route.label} is planned — not built yet`}>
+        It is on the roadmap for phase <b>{meta.phase}</b>. Until then this page says so instead of
+        drawing numbers nobody sent.{" "}
+        {meta.replaces !== "—" ? (
+          <>When it is built it replaces the old <span className="mono">{meta.replaces}</span>.</>
+        ) : null}
+      </Note>
+
       <div className="grid c2">
         <Card title="Build plan for this screen">
           <table className="data">
@@ -102,33 +111,17 @@ export function Placeholder({ route }: { route: NavRoute }) {
           </table>
         </Card>
 
-        <Card title="Why this is registered now">
-          <p style={{ fontSize: "var(--fs-13)" }}>
-            All {58} screens in the registry are typed before any of them is written. That is what
-            removes the three defects the v2.1 audit found in navigation:
-          </p>
-          <ul style={{ margin: "var(--s-3) 0 0", paddingLeft: 18, fontSize: "var(--fs-12)" }}>
-            <li><b>AD-3</b> — no route can render an undefined phase; status is a closed union.</li>
-            <li><b>AD-4</b> — aliases are declared, so <span className="mono">#/integrations</span> resolves instead of falling through.</li>
-            <li><b>AD-12</b> — a route appears once, so two modules can never fight over one view key.</li>
-          </ul>
-          <div className="note" style={{ marginTop: "var(--s-4)" }}>
-            <Construction size={15} />
-            <div>
-              This screen is registered in the route list but not built yet. It is planned for phases P2–P6
-              in the master plan.
-            </div>
+        <Card title="What it will do">
+          <p style={{ fontSize: "var(--fs-13)" }}>{route.hint || "Details arrive with the build."}</p>
+          <div style={{ marginTop: "var(--s-4)" }}>
+            <Note>
+              <b>Acceptance gate for {route.label}.</b> A screen is done when: it renders for every
+              permitted role, its empty and error states are designed, its API calls use the{" "}
+              <span className="mono">/api/v2</span> envelope, it has no literal colour, and it appears in
+              the command palette.
+            </Note>
           </div>
         </Card>
-      </div>
-
-      <div style={{ marginTop: "var(--s-4)" }}>
-        <Note>
-          <b>Acceptance gate for {route.label}.</b> A screen is done when: it renders for every
-          permitted role, its empty and error states are designed, its API calls use the{" "}
-          <span className="mono">/api/v2</span> envelope, it has no literal colour, and it appears in
-          the command palette.
-        </Note>
       </div>
     </>
   );

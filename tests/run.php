@@ -3865,6 +3865,21 @@ ok(wx_payment_entry_error(50000, 100000, false, 'cheque', 'CHQ-441') === null, '
 $err = wx_payment_entry_error(50000, 100000, false, 'online', '');
 ok($err !== null && $err['field'] === 'ref', 'an online transfer without its reference is refused too — no gateway fills this in, and none is claimed');
 
+group('Sign-in resolves an email or an unambiguous sign-in name');
+
+require_once dirname(__DIR__) . '/api/v2/lib/auth.php';
+
+/* The sign-in field says "Email or sign-in name" — v2.1's first-run account is `admin`, a bare name —
+   and the server is what resolves that promise. A name finds its account only when exactly one account
+   carries it: two people with the same name must never be one sign-in. */
+$admin = ['id' => 1, 'name' => 'admin', 'email' => 'a@b.c'];
+$owner = ['id' => 2, 'name' => 'Woodex Owner', 'email' => 'owner@woodex.local'];
+eq(wx_login_pick_user($owner, []), $owner, 'an address finds its account');
+eq(wx_login_pick_user(null, [$admin]), $admin, 'and a sign-in name finds the one account that carries it');
+eq(wx_login_pick_user(null, []), null, 'nothing matches nothing');
+eq(wx_login_pick_user(null, [$admin, $owner]), null, 'a name two people share is not a sign-in');
+eq(wx_login_pick_user($owner, [$admin]), $owner, 'and the address wins when both could match');
+
 /* ============================================================== report */
 echo "\n";
 if ($failures) {
