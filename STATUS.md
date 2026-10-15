@@ -4,7 +4,7 @@ The one tracker for the project (decision of 15 October 2026: no Linear). The pl
 `MASTER-PLAN-2026-10-15.md`; this file says where each part of it stands. Every PR ticks what it finished and
 adds what it found. `WORK-SANDBOX-MEMORY.md` stays as the v2.5 engineering log.
 
-**Last updated:** 15 Oct 2026 (night, later: P25.2 §5.1 intake hardened and §5.2 the Pipeline board built),
+**Last updated:** 15 Oct 2026 (night, later: §5.3 the quotation builder, draft to invoice — and two request-isolation defects found on the way),
 by the session on `arena/89662743-html`. The plan for this repository is `MASTER-PLAN-P25.2.md`.
 **Owner:** O = business owner (hPanel, GitHub admin, Google, Meta) · D = developer or agent session.
 
@@ -73,6 +73,13 @@ by the session on `arena/89662743-html`. The plan for this repository is `MASTER
       server's `GROUP BY`, a move is `PATCH /leads/{id}` (drag is a convenience, the card's stage menu is the
       same write), a change lands in the lead's activity; proved live — form → board → move → `Stage: new →
       contacted` → a second session sees it
+- [x] D · P25.2 §5.3 the quotation builder: draft from a template → a Manager's save waits for the Master and
+      the Master's approval applies it → deliberate status moves (an illegal one refused by name) → revise
+      as a new version (the original untouched) → convert to an invoice idempotently (a double click is
+      refused as a duplicate, with the message naming the real reason) → every step in the audit trail
+- [x] D · Two request-isolation defects the walk exposed: the API's per-request caches now reset per request
+      (`api/v2/index.php`), and the local engine's cookie jar is per-request (`tools/phpwasm/serve.cjs`) —
+      a second user's login no longer answers the first user's requests
 - [ ] Phase 3: v2.5 beside v2.0 on production, host gate twice, fix A-02 (target 13 Nov)
 - [ ] Phase 4: pipeline and quotation builder first, then daily operations, website control, automation,
       operations, cut-over (target 22 Jan 2027)

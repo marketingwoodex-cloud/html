@@ -18,6 +18,29 @@
 
 declare(strict_types=1);
 
+/**
+ * Which status moves are legal, from each status. Deliberately a constant rather than a table inside the
+ * handler: the screen must not invent its own flow, so `GET /quotations/{id}` reports the moves this
+ * document may make next, and this map is the one place either side reads.
+ *
+ *   draft ──send──▶ sent ──viewed──▶ viewed ──approve──▶ approved ──invoice──▶ invoiced
+ *     └────────────────────────────▶ rejected            (or rejected from any open state)
+ */
+const WX_QUOTE_MOVES = [
+    'draft' => ['sent', 'rejected'],
+    'sent' => ['viewed', 'approved', 'rejected', 'draft'],
+    'viewed' => ['approved', 'rejected', 'sent'],
+    'approved' => ['invoiced', 'rejected', 'sent'],
+    'rejected' => ['draft', 'sent'],
+    'invoiced' => [],
+];
+
+/** The moves a quotation in `$status` may make next — the server's answer, printed by the screen. */
+function wx_quote_moves(string $status): array
+{
+    return array_values(WX_QUOTE_MOVES[$status] ?? []);
+}
+
 /** A list row: enough for the table, no sections, totals straight from the indexed columns. */
 function wx_quote_row(array $x): array
 {
@@ -39,6 +62,7 @@ function wx_quote_row(array $x): array
         'totalDisplay' => wx_pkr_out((int) $x['total']),
         'version' => (int) ($x['version'] ?? 1),
         'option' => (string) ($x['option'] ?? ''),
+        'invoiced_id' => isset($x['invoiced_id']) ? (int) $x['invoiced_id'] : null,
         'created_by' => (string) ($x['created_by'] ?? ''),
         'created_at' => (string) ($x['created_at'] ?? ''),
     ];
@@ -83,6 +107,9 @@ function wx_route_quotes_get(array $ctx): array
     $x['statuses'] = WX_QUOTE_STATUSES;
     $x['company'] = wx_company();
     $x['viewUrl'] = '/api/quote-view.php?id=' . $x['id'] . '&t=' . wx_quote_view_token($x);
+    /* What this document may do next: the flow is the server's to decide, and the screen prints these
+       rather than keeping a copy that could disagree the day the policy changes. */
+    $x['moves'] = wx_quote_moves((string) $x['status']);
     return ['data' => ['quote' => $x]];
 }
 
@@ -227,14 +254,7 @@ function wx_route_quotes_status_do(array $ctx): array
             if ($from === 'invoiced') {
                 throw ApiError::conflict('That quotation has been invoiced; its status cannot change');
             }
-            $allowed = [
-                'draft' => ['sent', 'rejected'],
-                'sent' => ['viewed', 'approved', 'rejected', 'draft'],
-                'viewed' => ['approved', 'rejected', 'sent'],
-                'approved' => ['invoiced', 'rejected', 'sent'],
-                'rejected' => ['draft', 'sent'],
-            ];
-            if (!in_array($to, $allowed[$from] ?? [], true)) {
+            if (!in_array($to, WX_QUOTE_MOVES[$from] ?? [], true)) {
                 throw ApiError::conflict('A quotation cannot move from ' . $from . ' to ' . $to, ['from' => $from, 'to' => $to]);
             }
             $x['status'] = $to;
@@ -355,11 +375,14 @@ function wx_route_quotes_invoice_do(array $ctx): array
             if ($x === null) {
                 throw ApiError::notFound('That quotation does not exist');
             }
-            if ((string) $x['status'] !== 'approved') {
-                throw ApiError::conflict('Approve the quotation before converting it to an invoice', ['status' => $x['status']]);
-            }
+            /* The duplicate check comes first on purpose: a double click happens *after* the first
+               conversion moved the status to invoiced, and "approve it first" would be a lie about why
+               the second click did nothing. The message names the real reason. */
             if (wx_val('SELECT id FROM wx_invoices WHERE quote_id = ?', [$id]) !== null) {
                 throw ApiError::conflict('This quotation already has an invoice');
+            }
+            if ((string) $x['status'] !== 'approved') {
+                throw ApiError::conflict('Approve the quotation before converting it to an invoice', ['status' => $x['status']]);
             }
 
             // Find or create the client (wx_client_for — the same rule project billing uses).

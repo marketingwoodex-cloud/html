@@ -3733,6 +3733,74 @@ $boardNote = $find('POST', 'leads/{id}/notes');
 ok($boardNote !== null && $boardNote['handler'] === 'wx_route_lead_note_add', 'and a note is POST /leads/{id}/notes');
 eq($boardNote['action'] ?? null, 'add_lead_note', 'the name v2.1’s note action already answers to');
 
+group('The quotation builder — the money and the moves are the server’s (plan §5.3)');
+
+/* The handler file loads lazily on the host (a route match pulls it in); this group is about the rules
+   inside it, so it says what it needs. */
+require_once dirname(__DIR__) . '/api/v2/routes/quotations.php';
+
+/* The status flow is one map, kept as a constant because two copies of a flow always disagree one day.
+   Pinned here to the documented diagram, so changing it is a decision a test notices. */
+eq(WX_QUOTE_MOVES, [
+    'draft' => ['sent', 'rejected'],
+    'sent' => ['viewed', 'approved', 'rejected', 'draft'],
+    'viewed' => ['approved', 'rejected', 'sent'],
+    'approved' => ['invoiced', 'rejected', 'sent'],
+    'rejected' => ['draft', 'sent'],
+    'invoiced' => [],
+], 'the status flow is one map, and it is the documented one');
+ok(wx_quote_moves('sent') === ['viewed', 'approved', 'rejected', 'draft'], 'a sent quotation knows what it may do next');
+ok(wx_quote_moves('invoiced') === [], 'an invoiced quotation may do nothing — its status is the end of the flow');
+ok(wx_quote_moves('nonsense') === [], 'and an unknown status has no moves rather than all of them');
+
+/* Totals are computed here and never accepted: whatever the browser sends, doc_totals wins — and every
+   figure it leaves behind is a whole rupee. */
+$doc = wx_doc_totals([
+    'sections' => [
+        ['name' => 'A', 'items' => [
+            ['desc' => 'desk', 'qty' => 2, 'rate' => 10000.5, 'unit' => 'nos', 'kind' => '', 'amount' => 999999],
+            ['desc' => 'heading', 'qty' => 0, 'rate' => 0, 'unit' => 'job', 'kind' => 'head', 'amount' => 5],
+        ]],
+    ],
+    'discount' => 1500, 'taxPct' => 20, 'rent' => 2000,
+    'subtotal' => 123456789, 'total' => -1, 'tax' => 7, 'advance' => 99999999,
+]);
+eq($doc['sections'][0]['items'][0]['amount'], 20001.0, 'a line amount is qty × rate, computed here');
+eq($doc['sections'][0]['items'][1]['amount'], 0.0, 'and a heading carries no amount');
+eq($doc['subtotal'], 20001, 'the subtotal is the sum of the lines — the number the browser sent is overwritten');
+eq($doc['discount'], 1500, 'the discount is kept');
+eq($doc['tax'], 4100, 'tax is the percentage of the discounted total plus rent');
+eq($doc['total'], 24601, 'and the total is subtotal − discount + rent + tax');
+ok(is_int($doc['total']) && is_int($doc['subtotal']) && is_int($doc['tax']) && is_int($doc['discount']), 'every money figure is a whole rupee');
+eq($doc['advance'], $doc['total'], 'and the advance can never exceed the total');
+
+$greedy = wx_doc_totals([
+    'sections' => [['name' => 'A', 'items' => [['desc' => 'one', 'qty' => 1, 'rate' => 1000, 'unit' => 'job', 'kind' => '']]]],
+    'discount' => 5000, 'taxPct' => 99,
+]);
+eq($greedy['discount'], 1000, 'a discount larger than the subtotal is capped at the subtotal');
+eq($greedy['taxPct'], 50, 'and a tax percentage above 50 is refused by being capped');
+eq($greedy['total'], 0, 'so a document can come to zero, never to a negative');
+
+/* The routes the builder uses, each through the action name the permission groups already carry. */
+$invRoute = $find('POST', 'quotations/{id}/invoice');
+ok($invRoute !== null && $invRoute['handler'] === 'wx_route_quotes_invoice', 'converting is POST /quotations/{id}/invoice');
+eq($invRoute['action'] ?? null, 'quote_invoice', 'through quote_invoice');
+$revRoute = $find('POST', 'quotations/{id}/revise');
+ok($revRoute !== null && $revRoute['handler'] === 'wx_route_quotes_revise', 'a revision is POST /quotations/{id}/revise — a new document, not an edit');
+eq($revRoute['action'] ?? null, 'create_quote_draft', 'through create_quote_draft');
+$tplRoute = $find('GET', 'quotations/templates');
+ok($tplRoute !== null && $tplRoute['handler'] === 'wx_route_tpl_list', 'and the templates the builder starts from are GET /quotations/templates');
+
+/* A double click happens *after* the first conversion, so the duplicate refusal must come before the
+   status refusal — "approve it first" would be a lie about why the second click did nothing. Pinned by
+   position in the source, because the behaviour needs a database and the order is the rule. */
+$invSrc = (string) file_get_contents(dirname(__DIR__) . '/api/v2/routes/quotations.php');
+$dupAt = strpos($invSrc, "This quotation already has an invoice");
+$statusAt = strpos($invSrc, 'Approve the quotation before converting');
+ok($dupAt !== false && $statusAt !== false && $dupAt < $statusAt,
+    'the second conversion is refused as a duplicate before it is refused as a status — the message names the real reason');
+
 /* ============================================================== report */
 echo "\n";
 if ($failures) {

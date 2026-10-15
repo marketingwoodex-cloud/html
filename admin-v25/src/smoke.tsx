@@ -32,6 +32,7 @@ import { LivePlacements } from "./screens/LivePlacements";
 import { LiveHeroes } from "./screens/LiveHeroes";
 import { FormCard, IntakeCard, LiveForms } from "./screens/LiveForms";
 import { Board, LeadCard, LivePipeline } from "./screens/LivePipeline";
+import { LiveQuotes, SectionsEditor } from "./screens/LiveQuotes";
 import { LiveEstimator } from "./screens/LiveEstimator";
 import { LiveTemplates } from "./screens/LiveTemplates";
 import { LiveBusiness } from "./screens/LiveBusiness";
@@ -519,6 +520,48 @@ try {
   );
 } catch (err) {
   failures.push(`the pipeline board → ${(err as Error).message}`);
+}
+
+/* The quotation builder (P25.2 §5.3). The rule worth failing here is the money's: a line amount appears
+   on screen only when the server sent it for those very values — anything typed since shows "—" rather
+   than a number the screen worked out for itself. */
+let htmlQuotesOffline = "";
+let htmlLines = "";
+try {
+  htmlQuotesOffline = renderToString(
+    <MemoryRouter initialEntries={["/quotes"]}>
+      <SessionCtx.Provider value={session("offline", null)}>
+        <LiveQuotes />
+      </SessionCtx.Provider>
+    </MemoryRouter>,
+  );
+  htmlLines = renderToString(
+    <SectionsEditor
+      sections={[
+        {
+          name: "A",
+          items: [
+            { desc: "desk", qty: 2, unit: "nos", rate: 10000, amount: 20000, kind: "", code: "" },
+            { desc: "chair", qty: 4, unit: "nos", rate: 5000, amount: 20000, kind: "", code: "" },
+          ],
+        },
+      ]}
+      units={["nos", "job"]}
+      itemKinds={["", "head", "spec"]}
+      serverSections={[
+        {
+          name: "A",
+          items: [
+            { desc: "desk", qty: 2, unit: "nos", rate: 10000, amount: 20000, kind: "", code: "" },
+            { desc: "chair", qty: 3, unit: "nos", rate: 5000, amount: 15000, kind: "", code: "" },
+          ],
+        },
+      ]}
+      onChange={() => {}}
+    />,
+  );
+} catch (err) {
+  failures.push(`the quotation builder → ${(err as Error).message}`);
 }
 
 try {
@@ -1203,11 +1246,18 @@ for (const [name, ok] of [
     /* The board and the quotation builder were prototype screens with no API behind them at all. They are
        deleted, and the routes they held are registered as `planned` — the registry is what decides that, and
        it is what the navigation reads, so this asserts the registry rather than a render. */
-    "the quotations route is registered as planned, so the nav says SOON and the route says what it will do",
-    ["quotes"].every((id) => {
+    "the client portal is still registered as planned — the registry says what is built and what is not",
+    ["portal"].every((id) => {
       const r = NAV_ROUTES.find((x) => x.id === id);
       return r !== undefined && r.status === "planned" && r.hint !== "" && ROUTES.includes("/" + id);
     }),
+  ],
+  [
+    "and the quotations route is built — its hint says what it does",
+    (() => {
+      const r = NAV_ROUTES.find((x) => x.id === "quotes");
+      return r !== undefined && r.status !== "planned" && (r.hint ?? "").includes("invoice");
+    })(),
   ],
   [
     "and the pipeline route is built — registered as more than planned, with a hint that says what it does",
@@ -1308,6 +1358,15 @@ for (const [name, ok] of [
   [
     "and every card carries the same write the drag performs, so a phone can move a lead too",
     htmlBoardCard.includes("Move Ayesha Khan to another stage") && htmlBoardCard.includes("New (now)"),
+  ],
+  /* The quotation builder. */
+  [
+    "the quotations screen with no API says so, and shows no document list it cannot read",
+    htmlQuotesOffline.includes("Not reading your quotations") && !htmlQuotesOffline.includes("No quotations yet"),
+  ],
+  [
+    "a line amount is printed only when the server sent it for those values — an edited line shows an em dash",
+    htmlLines.includes("20,000") && htmlLines.includes("—") && !htmlLines.includes("15,000"),
   ],
   /* The Estimator. The rate book is a file: the offline state must not draw an empty table as though the
      figures had been read and found to be zero. */

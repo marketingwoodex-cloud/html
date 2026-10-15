@@ -197,6 +197,141 @@ export interface LeadsData {
   stages?: string[];
 }
 
+/* ---- quotations (P25.2 §5.3) ----
+   The shapes below are the API's, key for key. A quotation's money fields always come from the server's
+   `wx_doc_totals()`; the client never computes a figure that appears on screen. */
+
+export type QuoteStatus = "draft" | "sent" | "viewed" | "approved" | "rejected" | "invoiced";
+
+/** A list row: enough for the table — no sections, totals straight from the server. */
+export interface QuoteRow {
+  id: number;
+  no: string;
+  label: string;
+  status: QuoteStatus;
+  client: string;
+  client_id: number | null;
+  project: string;
+  issue_date: string;
+  valid_until: string;
+  subtotal: number;
+  discount: number;
+  tax: number;
+  total: number;
+  totalDisplay: string;
+  version: number;
+  option: string;
+  invoiced_id: number | null;
+  created_by: string;
+  created_at: string;
+}
+
+export interface QuotesData {
+  quotes: QuoteRow[];
+  total: number;
+  limit: number;
+  offset: number;
+  summary: { open: number; openValue: number; approved: number; total: number };
+  byStatus: Record<string, { count: number; value: number }>;
+  statuses: QuoteStatus[];
+}
+
+/** A BOQ line, a heading or a specification — the server sets `amount`, the screen prints it. */
+export interface QuoteItem {
+  desc: string;
+  qty: number;
+  unit: string;
+  rate: number;
+  amount: number;
+  kind: string;
+  code: string;
+}
+
+export interface QuoteSection {
+  name: string;
+  note?: string;
+  area?: number;
+  items: QuoteItem[];
+  subtotal?: number;
+}
+
+export interface QuoteHistEntry {
+  t: string;
+  user: string;
+  text: string;
+}
+
+/** `GET /quotations/{id}` — the whole document, with the moves this one may make next. */
+export interface QuoteDoc {
+  id: number;
+  no: string;
+  label: string;
+  status: QuoteStatus;
+  version: number;
+  option: string;
+  client: { name: string; company?: string; phone?: string; email?: string; address?: string };
+  client_id: number | null;
+  project: string;
+  site: string;
+  sections: QuoteSection[];
+  subtotal: number;
+  discount: number;
+  taxPct: number;
+  rent: number;
+  tax: number;
+  total: number;
+  advance: number;
+  currency?: string;
+  issue_date: string;
+  valid_until: string;
+  terms: string;
+  notes: string;
+  history: QuoteHistEntry[];
+  created_by: string;
+  created_at: string;
+  invoiced_id?: number | null;
+  /** The status moves the server allows for this document — printed, never guessed. */
+  moves: QuoteStatus[];
+  units: string[];
+  statuses: QuoteStatus[];
+  company: DocCompanyLike;
+  viewUrl: string;
+}
+
+/** The company block the read carries, in the shape DocPreview wants. */
+export interface DocCompanyLike {
+  name: string;
+  tagline?: string;
+  address?: string;
+  phones?: string;
+  email?: string;
+  web?: string;
+  ntn?: string;
+  signName?: string;
+  signTitle?: string;
+}
+
+export interface QuoteDetailData {
+  quote: QuoteDoc;
+}
+
+export interface QuoteSaveResult {
+  quote: QuoteRow;
+  created: boolean;
+}
+
+export interface QuoteStatusResult {
+  quote: QuoteRow;
+  changed: boolean;
+}
+
+export interface QuoteInvoiceResult {
+  invoice: { id: number; no: string; total: number; totalDisplay?: string; due_date?: string };
+  quote: QuoteRow;
+  client_id: number;
+  project_id: number | null;
+}
+
 /** One row of a lead's activity — the notes table, which records stage moves as `sys` entries. */
 export interface LeadNote {
   id: number;
