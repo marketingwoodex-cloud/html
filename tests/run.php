@@ -3933,8 +3933,8 @@ eq(wx_appr_redact(['empty' => '', 'token' => ''])['token'], '', 'an already-empt
    cannot run; the live queue proves it end to end. */
 $apprSrc = (string) file_get_contents(dirname(__DIR__) . '/api/v2/lib/approvals.php');
 $decisionAt = strpos($apprSrc, 'function wx_appr_set_decision');
-$dropAt = strpos($apprSrc, "\$patch['payload_json'] = null");
-$expireAt = strpos($apprSrc, "SET status = 'expired', payload_json = NULL");
+$dropAt = strpos($apprSrc, "\$patch['payload_json'] = ''");
+$expireAt = strpos($apprSrc, "SET status = 'expired', payload_json = ''");
 ok($decisionAt !== false && $dropAt !== false && $dropAt > $decisionAt, 'a final decision drops the stored body');
 ok($expireAt !== false, 'and expiring one drops it too');
 $apprRoute = (string) file_get_contents(dirname(__DIR__) . '/api/v2/routes/approvals.php');

@@ -264,7 +264,9 @@ function wx_appr_set_decision(int $id, array $patch, array $master): void
        queued secret lives only as long as the request is actionable (A-02). A replay that fails puts the
        item back to `pending` — a non-terminal status — and the body is still there for the next attempt. */
     if (in_array((string) ($patch['status'] ?? ''), ['approved', 'rejected', 'cancelled', 'expired'], true)) {
-        $patch['payload_json'] = null;
+        /* Empty, not NULL: the column is NOT NULL since migration 006, and an empty string decodes to
+           no body on every reader without a migration on a host we cannot migrate yet. */
+        $patch['payload_json'] = '';
     }
     wx_update('wx_approvals', $patch, ['id' => $id]);
 }
@@ -279,7 +281,7 @@ function wx_appr_list(string $status = 'pending', int $limit = 100): array
 {
     $days = wx_appr_cfg()['expire_days'];
     wx_q(
-        "UPDATE wx_approvals SET status = 'expired', payload_json = NULL
+        "UPDATE wx_approvals SET status = 'expired', payload_json = ''
          WHERE status = 'pending' AND requested_at < DATE_SUB(NOW(), INTERVAL ? DAY)",
         [$days]
     );
