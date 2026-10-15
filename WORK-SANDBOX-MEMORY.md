@@ -219,6 +219,19 @@ run there.
 **The sandbox**
 - No PHP, no MySQL, no PHP extensions. `node tools/phpwasm/run-php.cjs <script>` mounts a *filtered* tree
   (plus `MOUNT_FILES`), excludes dot-directories, and does not mount `/tmp`.
+- **`tools/phpwasm/serve.cjs` keeps one PHP process for every request, so session state survives between
+  them** — measured on 15 Oct: `GET /api/v2/leads` answers with no cookie at all, and `/api/v2/me` reports
+  the owner, because the last sign-in is still in the interpreter. Every request on the host gets its own
+  process, so nothing of this touches production; it means a dev preview is never a test of the sign-in
+  gate, and the dev server must not be left reachable from anywhere but your own machine. Restarting the
+  server clears it.
+- `run-php.cjs` resolves a script path **relative to the repository root** and mounts the repository at
+  `/wx`, so a probe must live inside the tree (a dot-named file at the root is skipped by the page walk; use
+  one, then delete it) and an absolute path outside the repository is rejected.
+- `--sqlite-init` reads the v2.1 dump from `<root>/frontend-v1/_database/woodex-v20.sql`, so the database is
+  created **in the repository** even when the preview serves an unpacked payload elsewhere. Copy
+  `_private/db.json` and `_private/woodex.sqlite` into the payload's `_private/` afterwards — which is what
+  `/home/user/host-rehearsal` (the local stand-in for `public_html`) does.
 - `npx tsc --noEmit` works only from inside `admin-v25/`.
 - The API through the 5173 proxy answers `502 UPSTREAM` — by design. The console's answer to a missing
   API is a sentence, never data.

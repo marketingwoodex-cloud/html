@@ -160,6 +160,7 @@ Run here on 15 October, on this repository's tree, with the real pack:
 | Migrations against **MySQL** | SQLite is not MySQL: foreign keys are dropped by design (`004_fk`), and the shim translates the rest. `tests/run.php --db` shows **4 failures (N13)** that depend on seeded redirect rules and the real page tree — they must be settled on MySQL, not here |
 | The publish → header → rollback gate | It needs a real page tree and a web server; it is the one release claim that has never been executed |
 | Anything about the **live** database | Unknown data, unknown row counts, unknown encoding — which is exactly why §4 exists |
+| **The console's sign-in gate** | The WebAssembly dev server keeps one PHP process for *every* request, so session state survives between requests: a caller with no cookie at all is answered as the signed-in owner. On the host, PHP-FPM gives each request its own process and normal session rules apply — this is a property of `tools/phpwasm/serve.cjs`, not of the product. Do not read a preview as an authentication test, and do not leave a dev server reachable from the internet |
 
 **One fix came out of this run** (folded into the line): `api/v2/lib/sqlite.php` translated
 `SHOW TABLES LIKE ?` but not the literal `SHOW TABLES LIKE 'wx\_%'` that `connectors.php` runs, so the query
