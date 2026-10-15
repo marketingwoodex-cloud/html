@@ -10,10 +10,10 @@ where the proof is written down.*
 
 | # | Step | Evidence |
 |---|---|---|
-| A1 | Every document committed **before** `node tools/make-release.mjs` — the console's build stamp carries the minute, so a doc written after the build makes both the pack and its manifest stale | ✅ 15 Oct: built at `44ff72d`, tree clean (the untracked analysis scratch is excluded from the stamp by design) |
-| A2 | `MANIFEST.json` reads `gitDirty:false`, the `gitSha` is the commit built, ~726 files, `consoleBase /admin-next/` | ✅ 15 Oct: `gitDirty:false` · `gitSha 44ff72dd…` · **726 files · 45,130,375 B · zip 29,216,939 B** · `consoleBase /admin-next/` |
-| A3 | The payload contains no `wx-install.php`, no `wx-demo.php`, no `wx-check.php`, no credential — and `sha256sum woodex-master-P25.zip` matches `payload.zipSha256` | ✅ 15 Oct: the three scripts are the manifest's `refused` list and **0 payload entries** name them; no `woodex-dev-p25`, no private key, and every secret-shaped key (`tsSecret`, `waToken`, `smtpPass`…) carries an empty default; `sha256sum` = `payload.zipSha256` = **`c886870dc0ea1c5d…`** |
-| A4 | The five gate commands on this tree: suite · conformance · php-lint · `--check` · console smoke | ✅ 15 Oct: suite **1436/0/14** · conformance **86/0** · php-lint **166 clean** · `gen-aliases --check` 365 actions/11 families · `gen-caps --check` 5 roles/27 rows · identity `--check` **146/0** and **87/0** · console smoke **169/0/65** · live API **45/45** |
+| A1 | Every document committed **before** `node tools/make-release.mjs` — the console's build stamp carries the minute, so a doc written after the build makes both the pack and its manifest stale | ✅ 15 Oct: built at `822efbd4`, tree clean (the untracked analysis scratch is excluded from the stamp by design) |
+| A2 | `MANIFEST.json` reads `gitDirty:false`, the `gitSha` is the commit built, ~726 files, `consoleBase /admin-next/` | ✅ 15 Oct: `gitDirty:false` · `gitSha 822efbd473…` · **726 files · 45,133,265 B · zip 29,218,032 B** · `consoleBase /admin-next/` |
+| A3 | The payload contains no `wx-install.php`, no `wx-demo.php`, no `wx-check.php`, no credential — and `sha256sum woodex-master-P25.zip` matches `payload.zipSha256` | ✅ 15 Oct: the three scripts are the manifest's `refused` list and **0 payload entries** name them; no `woodex-dev-p25`, no private key, and every secret-shaped key (`tsSecret`, `waToken`, `smtpPass`…) carries an empty default; `sha256sum` = `payload.zipSha256` = **`c3d2c686ba59d5eb…`** |
+| A4 | The five gate commands on this tree: suite · conformance · php-lint · `--check` · console smoke | ✅ 15 Oct: suite **1458/0/14** (and **1509/0/7 with `--db`** — N13 resolved) · conformance **86/0** · php-lint **166 clean** · `gen-aliases --check` 365 actions/11 families · `gen-caps --check` 5 roles/27 rows · identity `--check` **146/0** and **87/0** · console smoke **169/0/65** · live API **45/45** |
 
 ## B. The owner's queue (O) — the items only you can do
 
@@ -41,7 +41,7 @@ Upload the pack to a **staging subdomain** with a copy of the database, then:
 |---|---|---|
 | C1 | `php db/migrate.php --status` → `--dry-run` → apply → re-apply is a no-op | |
 | C2 | The 24 tables' row counts **before and after** the migrations | |
-| C3 | The four `tests/run.php --db` failures on SQLite (finding N13) resolved or explained line by line on MySQL | |
+| C3 | The four `tests/run.php --db` failures on SQLite (finding N13) resolved or explained line by line on MySQL | 🟡 *resolved here* ✅ 15 Oct: `--db` **1509/0/7** on a fresh database — one real defect (coming-soon.html never loaded the site script) and three fixture/needle bugs, each named in the fix. *Confirm the same numbers on staging MySQL.* |
 | C4 | Publish an article → the header changes across 150 pages as one batch → roll that batch back from page history | |
 | C5 | `/api/v2/health` answers; `/admin/` (v2.1) still works; `frontend-v1/api/forms.php` still writes a lead | |
 | C6 | The console at `/admin-next/`: sign in, one quotation draft→invoice, one payment recorded, one lead moved on the board | |
@@ -64,10 +64,10 @@ Upload the pack to a **staging subdomain** with a copy of the database, then:
 
 | Field | Value |
 |---|---|
-| Pack bytes / SHA-256 | 29,216,939 bytes · `c886870dc0ea1c5ddcee7b521b67c9b2639fe7465faade8961251851de1d6ce3` |
-| `MANIFEST.json` `gitSha` | `44ff72dd326fa18fa6a78e5340cebb09ccd5ce5b` (`gitDirty:false`) |
-| Gates (suite · conformance · php-lint · `--check` · smoke · live) | 1436/0/14 · 86/0 · 166 clean · 146/0 + 87/0 + generators current · 169/0/65 · 45/45 |
-| What changed since P25.1 | identity (NAP, hours, 2016) · intake (one enquiry one lead) · the Pipeline board · the quotation builder · the payment rules · request-isolation fixes · one plan family |
+| Pack bytes / SHA-256 | 29,218,032 bytes · `c3d2c686ba59d5eb…` (full value in `MANIFEST.json`) |
+| `MANIFEST.json` `gitSha` | `822efbd473…` (`gitDirty:false`) |
+| Gates (suite · conformance · php-lint · `--check` · smoke · live) | 1458/0/14 · 1509/0/7 `--db` · 86/0 · 166 clean · 146/0 + 87/0 + generators current · 169/0/65 · 45/45 |
+| What changed since P25.1 | identity (NAP, hours, 2016) · intake (one enquiry one lead) · the Pipeline board · the quotation builder · the payment rules · request-isolation fixes · the approval queue shows shape not keys (A-02) · N13 resolved (`--db` green) · one plan family |
 | What is still open | Every table B, C and D — all owner/host work. Nothing is open on the dev side; this record is the last commit before the pack that ships |
 
 **Exit gate (plan §6):** the record above is complete, C and D each have their evidence or an explicit dated
