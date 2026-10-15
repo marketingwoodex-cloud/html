@@ -730,17 +730,19 @@ check("the legacy door returns the v2.1 shape, not the v2 envelope", () => {
 
 /* ============================================================== 9. documentation */
 
-check("the shipped plan and report name the same action count", () => {
-  const plan = read("ADMIN-V2.5-MASTER-PLAN-2026-10-13.md");
+check("the shipped plan names the same action count", () => {
+  /* The plan that stands is MASTER-PLAN-P25.2.md (15 Oct clean-up: the superseded master plans are in
+     git history, and one plan family is the point). The guard is unchanged: documentation must carry
+     the real action count, and no stale one. */
+  const plan = read("MASTER-PLAN-P25.2.md");
   assert(/365/.test(plan), "the plan must state the action count");
   assert(!/\b364\b/.test(plan.replace(/364[-–]/g, "three-sixty-four-")), "no stale 364 may remain in the plan");
 });
 
-check("the plan records Phase 1 as done with its evidence", () => {
-  const plan = read("ADMIN-V2.5-MASTER-PLAN-2026-10-13.md");
-  const phase1 = plan.slice(plan.indexOf("### Phase 1"), plan.indexOf("### Phase 2"));
-  assert(/conformance\.mjs/.test(phase1), "Phase 1 must name the conformance suite");
-  assert(/roundtrip\.php/.test(phase1), "Phase 1 must name the round-trip test");
+check("the plan records its local-engine evidence by name", () => {
+  const plan = read("MASTER-PLAN-P25.2.md");
+  assert(/conformance\.mjs/.test(plan), "the plan must name the conformance suite");
+  assert(/roundtrip/.test(plan), "the plan must name the round-trip test");
 });
 
 /* ============================================================== 10. the money rule */

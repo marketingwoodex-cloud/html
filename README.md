@@ -16,8 +16,9 @@ keeps working while v2.5 takes over one screen at a time.
 
 **Read these two first:**
 
-- **`ADMIN-V2.5-MASTER-PLAN-2026-10-13.md`** — the design authority: the audit, the API specification,
-  the phases, the gates, the schedule. (PDF beside it.)
+- **`MASTER-PLAN-P25.2.md`** — the plan: what ships, in what order, with what evidence. (The superseded
+  master plans — the v2.5 design authority among them — were removed on 15 October at the owner's
+  direction so the project keeps one plan family; they are in git history.)
 - **`WORK-SANDBOX-MEMORY.md`** — the working memory: what is built and proved, how to run the gate, the
   traps, and exactly what is next.
 

@@ -1,6 +1,6 @@
 # Woodex hotfix P22.2: security fixes for the live admin (v2.0)
 
-**Upload this after Phase 0** (Appendix A of `MASTER-PLAN-2026-10-15.md`). Phase 0 covers the backup, deleting
+**Upload this after Phase 0** (Appendix A of the P25.1 plan — removed in the 15 Oct clean-up, in git history). Phase 0 covers the backup, deleting
 the five risky files, and changing every password. This hotfix is the second wall: it does not replace those steps.
 
 ## What it changes

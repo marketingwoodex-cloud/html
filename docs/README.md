@@ -3,21 +3,25 @@
 Everything here is history unless it says otherwise. The two documents a working session needs are at the
 repository root, not in this folder:
 
-- **`../ADMIN-V2.5-MASTER-PLAN-2026-10-13.md`** — the design authority for admin v2.5 (also as PDF beside it).
+- **`../MASTER-PLAN-P25.2.md`** — the plan that stands: what ships, in what order, with what evidence.
 - **`../WORK-SANDBOX-MEMORY.md`** — the working memory: state, traps, the next slice, the pending tasks.
 - **`../woodex-master-P25/`** — the release pack (payload zip + manifest + install notes).
 
-## The plans, in order
+## What is here
+
+*On 15 October the superseded master plans (the v2.5 design authority, the v2.0/v2.1 plan family, the
+older `MASTER-PLAN-P16`…`P19` phase plans and the hosting/backend plans) were removed at the owner's
+direction — one plan family, no competing roadmaps. They remain in git history. The `P*` names in old
+commit messages and in `frontend-v1/api/*.php` comments refer to them.*
 
 | File | What it is |
 |---|---|
-| `PROJECT-ANALYSIS-REPORT-2026-10-13.md` / `.pdf` | The measurement the v2.5 plan is based on: 26 pages, 13 branches, 365 API actions, the eight Critical findings. |
-| `ADMIN-DEEP-AUDIT-AND-PLAN.md` | The admin's deep audit — what v2.1's admin actually does, screen by screen. |
-| `WOODEX-ADMIN-V2-MASTER-PLAN.md` | The v2.0 admin plan (the generation before this one). |
-| `MASTER-PLAN.md`, `MASTER-PLAN-P16.md` … `MASTER-PLAN-P19.md` | The phase plans of the v2.1 line, one per phase. The `P*` names in commit messages and in `frontend-v1/api/*.php` refer to these. |
-| `LIVE-AUDIT-AND-MASTER-PLAN.md`, `GO-LIVE-AUDIT-REPORT.md`, `AUDIT-REPORT-2026-09-28.md`, `P22-AUDIT-VERIFICATION-REPORT.md` | The audits that produced those plans, and the verification of the P22 release. |
-| `HOSTINGER-MASTER-PLAN.md`, `BACKEND-MASTER-PLAN.md`, `CMS-SETUP.md` | Hosting, backend and CMS setup as they were understood then. |
+| `PROJECT-ANALYSIS-REPORT-2026-10-13.md` / `.pdf` | The measurement the v2.5 work is based on: 26 pages, 13 branches, 365 API actions, the eight Critical findings. |
+| `DEPLOY-HOSTINGER-P25.2.md` | The deployment runbook — the owner's instructions for hPanel. |
+| `INTAKE-RULES-P25.2.md`, `PAYMENT-RULES-P25.2.md` | The decision records: how an enquiry becomes a lead, and how money lands on an invoice. |
+| `GO-LIVE-AUDIT-REPORT.md`, `AUDIT-REPORT-2026-09-28.md`, `P22-AUDIT-VERIFICATION-REPORT.md` | The audits of the v2.1 line, and the verification of the P22 release. |
 | `FRONTEND-MASTER-AUDIT-2026-09-29.md`, `FRONTEND-V1-BUILDER*.md` | The front end and builder audits, and the builder's to-do list. |
+| `CMS-SETUP.md` | CMS setup as it is understood now. |
 | `MASTER-COMPONENTS.md`, `REDIRECT-PLAN.md`, `P15-TODO.md`, `MASTER-REVIEW-20-articles.md`, `FEATURES.md` | Component inventory, the redirect plan, a phase to-do, an article review, and the feature list (`tools/features-build.mjs` renders `FEATURES.md` into `admin/features.html`). |
 
 ## Why these are flat, and not sorted into `plans/` and `audits/`

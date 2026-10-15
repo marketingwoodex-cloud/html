@@ -1,6 +1,6 @@
 # Woodex Admin v2.5 Pro
 
-The admin dashboard described in [`../ADMIN-V2.5-MASTER-PLAN-2026-10-13.md`](../ADMIN-V2.5-MASTER-PLAN-2026-10-13.md),
+The admin dashboard described in [`../MASTER-PLAN-P25.2.md`](../MASTER-PLAN-P25.2.md) (its design history is in git),
 over the PHP API in `../api/v2`.
 
 **It is not a prototype, and there is no sample data left in it.** The app asks `GET /health` and `GET /me`

@@ -1,7 +1,8 @@
 # Woodex — status
 
 The one tracker for the project (decision of 15 October 2026: no Linear). The plan is
-`MASTER-PLAN-2026-10-15.md`; this file says where each part of it stands. Every PR ticks what it finished and
+`MASTER-PLAN-P25.2.md` (the superseded master plans were removed on 15 October — one plan family — and
+are in git history); this file says where each part of it stands. Every PR ticks what it finished and
 adds what it found. `WORK-SANDBOX-MEMORY.md` stays as the v2.5 engineering log.
 
 **Last updated:** 15 Oct 2026 (night, later: §5.4 payments and reconciliation — the allocation rule written down first, then proved),
