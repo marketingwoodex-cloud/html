@@ -164,11 +164,14 @@ Run here on 15 October, on this repository's tree, with the real pack:
 
 | Proved | Detail |
 |---|---|
-| The pack builds and is deploy-shaped | 725 files · 42.8 MB uncompressed · zip 29,190,871 B · `gitDirty:false` · manifest SHA recorded |
+| The pack builds and is deploy-shaped | **725 files · 45,067,434 B uncompressed (43.0 MB) · zip 29,198,565 B · sha256 `4bdf8625…`** · `gitDirty:false` · manifest `gitSha 8a3fdd8`, console base `/admin-next/` |
 | The payload contains no setup or demo scripts | `/wx-install.php`, `/wx-check.php`, `/wx-demo.php` all answer **404** from the payload — absent, not merely denied |
 | The whole product runs on PHP 8.2 + SQLite | `/api/v2/health` → `{"ok":true,…,"php":"8.2.33","db":{"reachable":true,"migrated":true}}`; the 150-page site serves at `/`; the console at `/admin-next/`; the v2.1 admin at `/admin/` |
 | Migrations | v2.1 schema loaded from the dump + 15 migrations applied; a second run reports **0 applied, 15 already applied** |
-| The gates | roundtrip **47/0** · money-path **89/0** · full suite **1336 passed · 4 failed · 7 skipped** |
+| The gates | suite **1319/0/14** · conformance **86/0** · php-lint **164** files · console smoke **156/0/65** · roundtrip **47/0** · money-path **89/0** · `verify-admin-live` **45/45** endpoints (`tests/run.php --db`, the SQLite variant, keeps the **1336/4/7** of N13) |
+| **One identity, both generations** | `python3 tools/apply-entity.py --check` → **146 pages, 0 out of date** for `frontend-v1/` and **87 pages, 0 out of date** for `--root .`; a deliberate drift planted in one page fails `--check` naming that page; no `09:30-18:30`, `9:30–6:30`, "since 2015" or "267" string survives on any of the 233 pages |
+| **The console cannot disagree with the site (N17)** | one Business info save over HTTP rewrote the footer's social row on **145 pages** *and* the schema's `sameAs` on **102 pages (103 nodes)**; the old URL then left every `sameAs`; `POST /pages/rollback` restored all 147 files **byte for byte**; re-applying the original record reported 0 pages, 0 schema |
+| **One console address** | the dev server serves `/admin-next/` (same address as the release) and `/` 302s there; `/admin-next/`, `/admin-next/dashboard`, `/admin-next/leads` all answer 200; every link in the rendered shell points inside `/admin-next/…`; the page that used to go blank when the guard fires now says why |
 | The write path, over HTTP | seeded through the API — 31 calls: 6 clients, 13 leads, 3 quotations (1 invoiced), 1 payment, 3 bookings |
 | The read path, over HTTP | 13 leads across 7 stages (open value 7,375,000 PKR) · quotations draft 402,000 / sent 1,065,000 / invoiced 774,100 · invoices 774,100 invoiced, 300,000 received, **474,100 receivable** · payments 300,000 · 0 approvals pending |
 
@@ -195,7 +198,7 @@ reason written down); a probe finds all 44 tables.
 | `/admin/` shows a blank page, a 403 from `wx-install.php`, or a "the dashboard is at /admin-next/" page | that is the v2.1 console failing to reach **MySQL**, then asking for its own installer. On this host MySQL exists, so it means `_private/db.json` is wrong or missing — and the file that would "fix" it is deliberately not shipped. Do not upload an installer to a live host; use the v2.5 console at `/admin-next/` and repair `db.json` from the backup |
 | Migrations stop halfway | they are re-runnable; fix the reported statement's cause and run `php db/migrate.php` again |
 | The public site misbehaves | the pack did not replace a single page — purge LiteSpeed cache and re-check. If it persists, restore the previous release zip over `public_html` |
-| One file needs to go back | `git show <sha>:<path>` using the SHA in the manifest (`d936ac0…` for this pack) |
+| One file needs to go back | `git show <sha>:<path>` using the SHA in the manifest (`8a3fdd8…` for this pack; the release commit is `3d974fa`) |
 | The whole release must go back | restore the pre-deploy backup (§0.1). `/admin/` is untouched and keeps working throughout |
 | An installer page answers 200 | the pack does not contain one — if this happens, the host still has an old file: delete it and rotate the credentials that file could read |
 
