@@ -66,7 +66,6 @@ const PHASES: Record<string, { phase: string; replaces: string; actions: string 
   procurement: { phase: "P6", replaces: "new in v2.5", actions: "po_list · po_save · po_receive" },
   portal: { phase: "P6", replaces: "new in v2.5", actions: "portal_token · portal_approve" },
   gmail: { phase: "P6", replaces: "new in v2.5", actions: "mail_list · mail_send" },
-  pipeline: { phase: "P2", replaces: "admin-p19f.js (stage board)", actions: "leads_list · lead_save" },
   quotes: { phase: "P2", replaces: "admin-sales.js + admin-print*.js", actions: "quotes_list · quote_get · quote_save · quote_pdf" },
 };
 

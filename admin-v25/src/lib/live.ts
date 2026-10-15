@@ -178,6 +178,7 @@ export interface LeadRow {
   company: string | null;
   location: string | null;
   source: string;
+  page?: string | null;
   service: string | null;
   stage: string;
   value: number;
@@ -194,6 +195,29 @@ export interface LeadsData {
   offset: number;
   board?: Record<string, { count: number; value: number }>;
   stages?: string[];
+}
+
+/** One row of a lead's activity — the notes table, which records stage moves as `sys` entries. */
+export interface LeadNote {
+  id: number;
+  t: string;
+  user_name: string | null;
+  text: string;
+  sys: boolean | number;
+  kind?: string | null;
+  outcome?: string | null;
+}
+
+/** `GET /leads/{id}` — one lead and its activity. */
+export interface LeadDetailData {
+  lead: LeadRow;
+  notes: LeadNote[];
+}
+
+/** `PATCH /leads/{id}` — the saved row, so the screen shows what the server kept. */
+export interface LeadSaveResult {
+  lead: LeadRow;
+  created: boolean;
 }
 
 export interface RedirectRule {

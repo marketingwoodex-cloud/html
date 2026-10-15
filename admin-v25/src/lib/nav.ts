@@ -79,7 +79,7 @@ export const ROUTES: NavRoute[] = [
   /* The board and the quotation builder were prototype screens with no API behind them. They are deleted and
      registered here as planned, so the nav says SOON and the route says what it will do; `admin-p19f.js` in
      the v2.1 tree names what they will replace. */
-  { id: "pipeline", label: "Pipeline", icon: Kanban, section: "sales", roles: SALES, status: "planned", hint: "Drag-and-drop stage board" },
+  { id: "pipeline", label: "Pipeline", icon: Kanban, section: "sales", roles: SALES, status: "beta", hint: "Stage board — move a lead, the change is in its activity" },
   { id: "bookings", label: "Bookings", icon: Clock, section: "sales", roles: SALES, hint: "Site visits, office meetings, calls" },
   { id: "clients", label: "Clients", icon: Contact, section: "sales", roles: SALES, hint: "Client master records" },
   { id: "quotes", label: "Quotations", icon: FileText, section: "sales", group: "Quotes & invoices", roles: SALES, status: "planned", hint: "BOQ quotations and templates" },

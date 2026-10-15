@@ -4,7 +4,7 @@ The one tracker for the project (decision of 15 October 2026: no Linear). The pl
 `MASTER-PLAN-2026-10-15.md`; this file says where each part of it stands. Every PR ticks what it finished and
 adds what it found. `WORK-SANDBOX-MEMORY.md` stays as the v2.5 engineering log.
 
-**Last updated:** 15 Oct 2026 (night, later: P25.2 §5.1 intake hardened — one enquiry one lead, delivery failures on a screen),
+**Last updated:** 15 Oct 2026 (night, later: P25.2 §5.1 intake hardened and §5.2 the Pipeline board built),
 by the session on `arena/89662743-html`. The plan for this repository is `MASTER-PLAN-P25.2.md`.
 **Owner:** O = business owner (hPanel, GitHub admin, Google, Meta) · D = developer or agent session.
 
@@ -69,6 +69,10 @@ by the session on `arena/89662743-html`. The plan for this repository is `MASTER
 - [x] D · P25.2 §5.1 intake hardened: a double-tap makes one lead (5-minute dedupe, phone/email + form + page);
       Turnstile's failure mode written down and enforced (`docs/INTAKE-RULES-P25.2.md`); per-form attribution
       counted on the server; alert/reply/Sheets outcomes recorded and shown on the Forms screen ("no silent loss")
+- [x] D · P25.2 §5.2 the Pipeline board: columns are the server's `WX_LEAD_STAGES`, per-column counts are the
+      server's `GROUP BY`, a move is `PATCH /leads/{id}` (drag is a convenience, the card's stage menu is the
+      same write), a change lands in the lead's activity; proved live — form → board → move → `Stage: new →
+      contacted` → a second session sees it
 - [ ] Phase 3: v2.5 beside v2.0 on production, host gate twice, fix A-02 (target 13 Nov)
 - [ ] Phase 4: pipeline and quotation builder first, then daily operations, website control, automation,
       operations, cut-over (target 22 Jan 2027)

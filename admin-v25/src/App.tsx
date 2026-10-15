@@ -20,6 +20,7 @@ import { LiveSiteTheme } from "./screens/LiveSiteTheme";
 import { LivePlacements } from "./screens/LivePlacements";
 import { LiveHeroes } from "./screens/LiveHeroes";
 import { LiveForms } from "./screens/LiveForms";
+import { LivePipeline } from "./screens/LivePipeline";
 import { LiveEstimator } from "./screens/LiveEstimator";
 import { LiveProjects } from "./screens/LiveProjects";
 import { LiveTimeline } from "./screens/LiveTimeline";
@@ -33,7 +34,7 @@ import { Btn, Card, PageHead } from "./components/primitives";
 
 /** Route ids implemented by a real screen in this prototype (Phase 0). */
 const BUILT_IDS = new Set([
-  "dashboard", "leads", "enquiries", "theme", "redirects", "media", "blog", "portfolio", "cities", "global", "pages", "library", "site-theme",
+  "dashboard", "leads", "enquiries", "pipeline", "theme", "redirects", "media", "blog", "portfolio", "cities", "global", "pages", "library", "site-theme",
   "testimonials", "team", "heroes",
   "forms", "estimator", "projects", "timeline", "notifications", "templates",
   "business", "approvals", "seo",
@@ -182,6 +183,9 @@ function Frame() {
           <Route path="/approvals" element={<LiveApprovals />} />
           <Route path="/leads" element={<Leads />} />
           <Route path="/enquiries" element={<Leads />} />
+          {/* The stage board (P25.2 §5.2): the columns are the server's stages, the counts are the server's
+              counts, and a move is a PATCH — drag is only how it feels. */}
+          <Route path="/pipeline" element={<LivePipeline />} />
           {/* Phase 3 — delivery. Every screen here reads the site's own files, so offline they say so in
               words rather than showing an empty table that looks like data. */}
           <Route path="/redirects" element={<LiveRedirects />} />

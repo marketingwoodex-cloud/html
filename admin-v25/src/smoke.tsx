@@ -31,6 +31,7 @@ import { LiveSiteTheme } from "./screens/LiveSiteTheme";
 import { LivePlacements } from "./screens/LivePlacements";
 import { LiveHeroes } from "./screens/LiveHeroes";
 import { FormCard, IntakeCard, LiveForms } from "./screens/LiveForms";
+import { Board, LeadCard, LivePipeline } from "./screens/LivePipeline";
 import { LiveEstimator } from "./screens/LiveEstimator";
 import { LiveTemplates } from "./screens/LiveTemplates";
 import { LiveBusiness } from "./screens/LiveBusiness";
@@ -454,6 +455,70 @@ try {
   );
 } catch (err) {
   failures.push(`the intake card → ${(err as Error).message}`);
+}
+
+/* The pipeline board (P25.2 §5.2). The three rules worth failing here are the three the plan names: the
+   columns are the server's stages (a stage the screen has no label for is shown by its name, never
+   dropped), the counts are the server's GROUP BY rather than the length of the array in the browser, and
+   every card carries the same write the drag performs — so a phone can move a lead too. */
+let htmlPipelineOffline = "";
+let htmlPipelineLoading = "";
+let htmlBoard = "";
+let htmlBoardCard = "";
+try {
+  htmlPipelineOffline = renderToString(
+    <MemoryRouter initialEntries={["/pipeline"]}>
+      <SessionCtx.Provider value={session("offline", null)}>
+        <LivePipeline />
+      </SessionCtx.Provider>
+    </MemoryRouter>,
+  );
+  htmlPipelineLoading = renderToString(
+    <MemoryRouter initialEntries={["/pipeline"]}>
+      <SessionCtx.Provider value={session("live", asUser)}>
+        <LivePipeline />
+      </SessionCtx.Provider>
+    </MemoryRouter>,
+  );
+  htmlBoard = renderToString(
+    <MemoryRouter initialEntries={["/pipeline"]}>
+      <Board
+      live={{
+        data: {
+          leads: [
+            { id: 1, created_at: "2026-10-14T09:00:00Z", name: "Ayesha Khan", phone: "+92 322 4000768", email: null, company: null, location: null, source: "contact", service: "office fit-out", stage: "new", value: 0, is_read: false, last_contact: null, next_at: null },
+            { id: 2, created_at: "2026-10-13T09:00:00Z", name: "Bilal Ahmed", phone: null, email: "bilal@example.com", company: null, location: null, source: "contact", service: null, stage: "quote", value: 250000, valueDisplay: "PKR 250,000", is_read: true, last_contact: null, next_at: null },
+            { id: 7, created_at: "2026-09-01T09:00:00Z", name: "Old Import Row", phone: null, email: null, company: null, location: null, source: "import", service: null, stage: "imported", value: 0, is_read: true, last_contact: null, next_at: null },
+          ],
+          total: 7,
+          limit: 200,
+          offset: 0,
+          board: {
+            new: { count: 5, value: 0 },
+            quote: { count: 2, value: 250000 },
+            won: { count: 0, value: 0 },
+            imported: { count: 1, value: 0 },
+          },
+          stages: ["new", "quote", "won"],
+        },
+        loading: false,
+        reload: () => {},
+      }}
+      />
+    </MemoryRouter>,
+  );
+  htmlBoardCard = renderToString(
+    <LeadCard
+      lead={{ id: 1, created_at: "2026-10-14T09:00:00Z", name: "Ayesha Khan", phone: "+92 322 4000768", email: null, company: null, location: null, source: "contact", service: "office fit-out", stage: "new", value: 0, is_read: false, last_contact: null, next_at: null }}
+      stages={["new", "quote", "won"]}
+      busy={false}
+      selected={false}
+      onOpen={() => {}}
+      onMove={() => {}}
+    />,
+  );
+} catch (err) {
+  failures.push(`the pipeline board → ${(err as Error).message}`);
 }
 
 try {
@@ -1138,11 +1203,18 @@ for (const [name, ok] of [
     /* The board and the quotation builder were prototype screens with no API behind them at all. They are
        deleted, and the routes they held are registered as `planned` — the registry is what decides that, and
        it is what the navigation reads, so this asserts the registry rather than a render. */
-    "the pipeline and quotations routes are registered as planned, so the nav says SOON and the route says what it will do",
-    ["pipeline", "quotes"].every((id) => {
+    "the quotations route is registered as planned, so the nav says SOON and the route says what it will do",
+    ["quotes"].every((id) => {
       const r = NAV_ROUTES.find((x) => x.id === id);
       return r !== undefined && r.status === "planned" && r.hint !== "" && ROUTES.includes("/" + id);
     }),
+  ],
+  [
+    "and the pipeline route is built — registered as more than planned, with a hint that says what it does",
+    (() => {
+      const r = NAV_ROUTES.find((x) => x.id === "pipeline");
+      return r !== undefined && r.status !== "planned" && (r.hint ?? "").includes("activity");
+    })(),
   ],
   ["the section library renders its loading state", htmlLibrary.includes("Loading…")],
   [
@@ -1211,6 +1283,31 @@ for (const [name, ok] of [
   [
     "and a form card says where its enquiries actually arrived from",
     htmlFormCard.includes("Enquiries arrived from") && htmlFormCard.includes("/contact/ · 4") && htmlFormCard.includes("/fit-out/ · 2"),
+  ],
+  /* The pipeline board. */
+  [
+    "the board with no API says so instead of drawing seven empty columns that look like a quiet week",
+    htmlPipelineOffline.includes("Not reading your leads") && !htmlPipelineOffline.includes("nothing in this stage"),
+  ],
+  [
+    "and while it reads the server it says that, rather than showing zeros",
+    htmlPipelineLoading.includes("Loading…") && !htmlPipelineLoading.includes("nothing in this stage"),
+  ],
+  [
+    "the board's columns are the server's stages — including one the screen has no label for, shown by its name",
+    htmlBoard.includes("New") && htmlBoard.includes("Quoted") && htmlBoard.includes("Won") && htmlBoard.includes("imported"),
+  ],
+  [
+    "a column's count is the server's, and a fuller column says how much of it is on the board",
+    htmlBoard.includes("showing 1 of 5") && htmlBoard.includes("showing 1 of 2"),
+  ],
+  [
+    "an empty column says 'nothing in this stage', not zero",
+    htmlBoard.includes("nothing in this stage") && !htmlBoard.includes(">0<"),
+  ],
+  [
+    "and every card carries the same write the drag performs, so a phone can move a lead too",
+    htmlBoardCard.includes("Move Ayesha Khan to another stage") && htmlBoardCard.includes("New (now)"),
   ],
   /* The Estimator. The rate book is a file: the offline state must not draw an empty table as though the
      figures had been read and found to be zero. */

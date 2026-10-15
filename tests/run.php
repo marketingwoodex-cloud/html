@@ -3710,6 +3710,29 @@ ok($read['today']['date'] === '2026-10-16', 'with today\'s date beside today\'s 
 @unlink($round);
 ok(wx_intake_log()['counts']['total'] === 0 && wx_intake_log()['empty'] === true, 'a site that has recorded nothing yet reports an empty log, not an error');
 
+group('The pipeline board reads the server’s stages and counts (plan §5.2)');
+
+/* One list, in two files: the board's columns come from WX_LEAD_STAGES here, and v2.1 moves leads through
+   CRM_STAGES in crm-lib.php. If the two ever drift, a lead the old admin moved would fall off the board —
+   so the lists are compared here rather than trusted. */
+$crmSrc = (string) file_get_contents(dirname(__DIR__) . '/frontend-v1/api/crm-lib.php');
+preg_match('~const CRM_STAGES = \[([^\]]*)\]~', $crmSrc, $crmList);
+preg_match_all("~'([a-z]+)'~", (string) ($crmList[1] ?? ''), $crmStages);
+eq(WX_LEAD_STAGES, $crmStages[1], 'the board’s columns and v2.1’s stage list are the same list');
+eq(WX_LEAD_STAGES, ['new', 'contacted', 'visit', 'quote', 'hold', 'won', 'lost'], 'and they are the seven stages the plan names');
+
+/* The board's write is one PATCH through the route the table already uses — not a second endpoint that
+   could disagree with it — and the note it leaves is the lead's activity. */
+$boardRead = $find('GET', 'leads');
+ok($boardRead !== null && $boardRead['handler'] === 'wx_route_leads_list', 'the board reads GET /leads, the same route the enquiries table uses');
+eq($boardRead['action'] ?? null, 'list_leads', 'through v2.1’s own action name');
+$boardMove = $find('PATCH', 'leads/{id}');
+ok($boardMove !== null && $boardMove['handler'] === 'wx_route_leads_save', 'a move is PATCH /leads/{id} with the stage');
+eq($boardMove['action'] ?? null, 'lead_save', 'through lead_save — the permission name the groups already carry');
+$boardNote = $find('POST', 'leads/{id}/notes');
+ok($boardNote !== null && $boardNote['handler'] === 'wx_route_lead_note_add', 'and a note is POST /leads/{id}/notes');
+eq($boardNote['action'] ?? null, 'add_lead_note', 'the name v2.1’s note action already answers to');
+
 /* ============================================================== report */
 echo "\n";
 if ($failures) {
