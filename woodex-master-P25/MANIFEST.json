@@ -1,18 +1,18 @@
 {
   "release": "woodex-master-P25",
-  "builtAt": "2026-10-15T16:37Z",
-  "gitSha": "e65dbd40f926f09b400ac46669a02396df42c189",
+  "builtAt": "2026-10-15T16:52Z",
+  "gitSha": "8a3fdd8599ddc2f0571ed768f2432ee15fbf88f3",
   "gitDirty": false,
   "branch": "arena/89662743-html",
   "apiVersion": "2.5.0-p1",
-  "console": "e65dbd4 · built 2026-10-15 16:36Z",
+  "console": "8a3fdd8 · built 2026-10-15 16:51Z",
   "consoleBase": "/admin-next/",
   "payload": {
     "zip": "woodex-master-P25.zip",
-    "zipBytes": 29193506,
-    "zipSha256": "aebf38ee247f036c7ab5ee640e3ba36d910445a597129eaa8d488871860bffe9",
+    "zipBytes": 29198565,
+    "zipSha256": "4bdf8625071c8df537d0e5411d5458ebac250c8d16e38f6aeebb14df71d15535",
     "files": 725,
-    "bytes": 45055692,
+    "bytes": 45067434,
     "excluded": [
       {
         "path": "wx-check.php",
@@ -129,7 +129,7 @@
   },
   "files": {
     "api/v2/index.php": "87a1f801943f6ccc805473e118db9309780bfe6bcdda0d2d7aa1c3f484404e7c",
-    "admin-next/index.html": "ceb53e122a9cf0be2972827a3691fd6de9d4f28f59f02ea9160eadabe2b64390"
+    "admin-next/index.html": "78c5abf9e609995135d43a90458c5d235f71c087c57d3102f1eaaab35583c343"
   },
   "migrations": [
     "000_platform.sql",
