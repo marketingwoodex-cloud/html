@@ -18,7 +18,12 @@ Run it after changing tools/entity.json. It is idempotent: a second run changes 
   4. Reviews. The home page's score panel shows the Google listing's real rating and count
      (google.rating in entity.json), and no review card claims to be "Verified": Google itself says
      its reviews are not verified.
-  5. llms.txt. The address line, and an "Official profiles" section.
+  5. Hours and the founding year. Every "Mon–Sat 10:00–7:30" the chrome, a footer or an answer prints is
+     rewritten to entity.json's hours, in the shape each one already used; every JSON-LD
+     openingHoursSpecification is written from them, as is the legacy `openingHours` shorthand the older
+     pages carry beside it, and foundingDate from foundingYear. A variant of the hours the rewriter does
+     not know stops the run with exit 1 rather than leaving a page half-corrected.
+  6. llms.txt. The address line, an Hours line, and an "Official profiles" section.
 
 Pages are what the live admin treats as pages (admin.php all_pages(): every .html file outside
 _private/, builder/, admin/, api/ and assets/). Schema blocks are re-serialised compactly with UTF-8,
@@ -43,7 +48,13 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 ENTITY_FILE = REPO / "tools" / "entity.json"
-RESERVED = re.compile(r"^(_private|builder|admin|api|assets)/")
+# Directories that are never a page of the generation being written. The first five are what the live admin
+# itself skips (admin.php all_pages()); the rest exist only in the repository, and a run rooted at the repo
+# root — the older v26 generation, plan §4 task 2.2 — must not rewrite the console, the release folder, the
+# documentation or a test fixture while it is there.
+RESERVED = re.compile(
+    r"^(_private|builder|admin|api|assets|frontend-v1|admin-v25|woodex-master-P25|docs|tools|tests|ci|deploy|db|node_modules)/"
+)
 LD_RX = re.compile(r'(<script[^>]*type=["\']application/ld\+json["\'][^>]*>)(.*?)(</script>)', re.S | re.I)
 ROW_RX = re.compile(r'(<div class="footer-social"[^>]*>)(.*?)(</div>)', re.S)
 SOC_ANCHOR_RX = re.compile(r'<a data-soc="[^"]*"[\s\S]*?</a>')
@@ -61,6 +72,48 @@ PLACE_LINK_RX = re.compile(
 # The home page's review score: stars, their label and the count.
 SCORE_RX = re.compile(r'(<div class="st big" aria-label=")[^"]*(">).*?(</div><p>)Based on <b>[^<]*</b>(</p>)', re.S)
 VERIFIED_TICK = '<i title="Verified" aria-hidden="true">✓</i>'
+# Opening hours and the founding year. Both facts had drifted: the chrome printed "Mon–Sat 9:30–6:30" (and,
+# on seven project pages, "10:00–7:30"), the JSON-LD said 09:30–18:30 on 102 pages, and the founding year was
+# hand-written on 331 of them. These two rewriters are what makes entity.json the only place either fact is
+# written down. The hours rewriter keeps each occurrence's *shape* — the day range, the separator, whether the
+# times carry a meridiem, 12- or 24-hour — and changes only the times, so a page's prose stays its own and the
+# diff shows exactly what moved.
+HOURS_RX = re.compile(
+    r"(?P<day>(?i:Mon|Monday)\s*(?:–|—|-|to|&ndash;|&mdash;)\s*(?i:Sat|Saturday))"
+    r"(?P<mid>[^<>{}\"0-9]{0,16})"
+    r"(?P<o>\d{1,2}:\d{2})(?P<oa>\s*(?i:am|pm|a\.m\.|p\.m\.)?)"
+    r"(?P<c1>\s*(?:–|—|-|to|&ndash;|&mdash;)\s*)"
+    r"(?P<c>\d{1,2}:\d{2})(?P<ca>\s*(?i:am|pm|a\.m\.|p\.m\.)?)",
+)
+# The same pattern, looking for the *old* times: anything this run did not manage to rewrite is a variant the
+# rewriter does not know, and the run must say so rather than leave a page half-corrected.
+LEFTOVER_RX = re.compile(
+    r"(?is)(?i:Mon|Monday)[^<>{}\"]{0,14}?(?:–|—|-|to|&ndash;|&mdash;)\s?(?i:Sat|Saturday)"
+    r"[^<>{}\"]{0,70}?(?:9:30|09:30)[^<>{}\"]{0,40}"
+)
+# The legacy schema.org shorthand — `"openingHours": "Mo-Sa 09:30-18:30"` — which the older generation carries
+# *beside* openingHoursSpecification. A consumer may read either, so the two must not disagree; the times are
+# rewritten from entity.json and the day expression is left as the page wrote it.
+LEGACY_OH_RX = re.compile(r'("openingHours"\s*:\s*")([^"]*)(")')
+LEGACY_OH_TIME_RX = re.compile(r"\d{1,2}:\d{2}\s*(?:–|—|-|to)\s*\d{1,2}:\d{2}")
+# The old times, for the net below: `19:30` must not be read as `9:30`, hence the leading-digit guard.
+LEGACY_OH_OLD_RX = re.compile(r"(?<!\d)0?9:30|(?<!\d)6:30|18:30")
+
+# Every number a page links. Two are published (entity.json telephone + telephoneAlt); anything else is a
+# number somebody typed by hand, and the run names the page instead of leaving a third number to be found by a
+# visitor. This is the check that would have caught the sweep that dropped the second number from the old pages.
+PHONE_RX = re.compile(r"(?:tel:|wa\.me/|api\.whatsapp\.com/send\?phone=)(\+?[\d][\d\s().-]{5,18})")
+
+
+YEAR_RX = re.compile(r"(?P<pre>(?i:since|established|founded|est\.)\s+(?:in\s+)?)(?P<year>(?:19|20)\d{2})")
+
+
+def t12(hhmm: str) -> str:
+    """'19:30' → '7:30'. The chrome writes 12-hour times and never carried a meridiem; keep that."""
+    h, m = hhmm.split(":")
+    return f"{int(h) % 12 or 12}:{m}"
+
+
 # The contact page's embedded map, before and after this tool.
 EMBED_RX = re.compile(r'(src=")https://maps\.google\.com/maps\?q=[^"&]*(&amp;t=m&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed")')
 
@@ -102,8 +155,10 @@ def put(d: dict, key: str, value, after: str | None = None) -> dict:
 class Run:
     def __init__(self, root: Path, ent: dict, soc: list[list[str]]):
         self.root, self.ent, self.soc = root, ent, soc
-        self.n = {k: 0 for k in ("pages", "pages_changed", "full", "stub", "org", "links", "embed", "rows", "no_row", "score", "ticks")}
+        self.n = {k: 0 for k in ("pages", "pages_changed", "full", "stub", "org", "links", "embed", "rows", "no_row", "score", "ticks", "hours", "years")}
         self.skipped: list[str] = []
+        self.leftovers: list[str] = []
+        self.unknown_phones: list[str] = []
         g = ent["google"]
         self.place_link = esc(g["placeLink"])
         self.embed_q = urllib.parse.quote(g["embedQuery"], safe="")
@@ -113,13 +168,21 @@ class Run:
         e = self.ent
         n = put(n, "@id", e["id"], after="@type")
         n = put(n, "url", e["url"], after="name")
-        n = put(n, "telephone", e["telephone"], after="url")
+        phones = self.published_phones()
+        n = put(n, "telephone", phones[0] if len(phones) == 1 else phones, after="url")
         n = put(n, "email", e["email"], after="telephone")
         n = put(n, "address", {"@type": "PostalAddress", **e["address"]}, after="email")
         n = put(n, "geo", {"@type": "GeoCoordinates", **e["geo"]}, after="address")
-        n = put(n, "hasMap", e["google"]["mapsUrl"], after="geo")
+        n = put(n, "openingHoursSpecification", self.hours_block(), after="geo")
+        n = put(n, "hasMap", e["google"]["mapsUrl"], after="openingHoursSpecification")
         n = put(n, "sameAs", list(e["sameAs"]), after="hasMap")
+        n = put(n, "foundingDate", str(e["foundingYear"]), after="sameAs")
         return n
+
+    def hours_block(self) -> list[dict]:
+        """The JSON-LD the site already carried (day list, opens, closes) — now written from entity.json."""
+        h = self.ent["hours"]
+        return [{"@type": "OpeningHoursSpecification", "dayOfWeek": list(h["days"]), "opens": h["opens"], "closes": h["closes"]}]
 
     def changed(self, kind: str, old: dict, new: dict) -> dict:
         """Count a node only when it actually changes, so a second run reports nothing."""
@@ -203,6 +266,71 @@ class Run:
         self.n["rows"] += 1
         return s[: m.start(2)] + inner + s[m.end(2):]
 
+    # ---------------------------------------------------------------- the published numbers
+    def published_phones(self) -> list[str]:
+        """Both published numbers, canonical first. A list of one stays a string in JSON-LD."""
+        e = self.ent
+        out = [e["telephone"]]
+        alt = e.get("telephoneAlt")
+        if alt and alt not in out:
+            out.append(alt)
+        return out
+
+    def phones(self, s: str, rel: str) -> str:
+        allowed = {re.sub(r"\D", "", p) for p in self.published_phones()}
+        for m in PHONE_RX.finditer(s):
+            digits = re.sub(r"\D", "", m.group(1))
+            if digits and digits not in allowed:
+                self.unknown_phones.append(f"{rel}: {m.group(0)[:60]!r}")
+        return s
+
+    # ---------------------------------------------------------------- hours and the founding year
+    def legacy_hours(self, s: str, rel: str) -> str:
+        h = self.ent["hours"]
+        want = f'{h["opens"]}-{h["closes"]}'
+
+        def cb(m: re.Match) -> str:
+            value = m.group(2)
+            new = LEGACY_OH_TIME_RX.sub(want, value)
+            if new != value:
+                self.n["hours"] += 1
+            elif LEGACY_OH_OLD_RX.search(value):
+                # Not an HH:MM-HH:MM range the rewriter can move (a hand-written "9:30am-6:30pm", say), so say
+                # so instead of leaving the node stating two different sets of hours.
+                self.leftovers.append(f"{rel}: openingHours {value!r} is not an HH:MM-HH:MM range")
+            return m.group(1) + new + m.group(3)
+
+        return LEGACY_OH_RX.sub(cb, s)
+
+    def hours(self, s: str, rel: str) -> str:
+        h = self.ent["hours"]
+
+        def rewrite(m: re.Match) -> str:
+            o, c = m.group("o"), m.group("c")
+            four = bool(re.match(r"0\d:", o)) or int(c.split(":")[0]) > 12
+            new_o, new_c = (h["opens"], h["closes"]) if four else (t12(h["opens"]), t12(h["closes"]))
+            out = m.group("day") + m.group("mid") + new_o + m.group("oa") + m.group("c1") + new_c + m.group("ca")
+            if out != m.group(0):
+                self.n["hours"] += 1
+            return out
+
+        s = self.legacy_hours(s, rel)
+        s = HOURS_RX.sub(rewrite, s)
+        for m in LEFTOVER_RX.finditer(s):
+            self.leftovers.append(f"{rel}: {m.group(0).strip()[:80]!r}")
+        return s
+
+    def years(self, s: str) -> str:
+        y = str(self.ent["foundingYear"])
+
+        def cb(m: re.Match) -> str:
+            out = m.group("pre") + y
+            if out != m.group(0):
+                self.n["years"] += 1
+            return out
+
+        return YEAR_RX.sub(cb, s)
+
     # ---------------------------------------------------------------- reviews
     def reviews(self, s: str) -> str:
         if 'class="hm-rv-' not in s:
@@ -229,6 +357,12 @@ class Run:
         e, a = self.ent, self.ent["address"]
         addr = f"- Address: {a['streetAddress']}, {a['addressLocality']} {a['postalCode']}, {a['addressRegion']}, Pakistan"
         s = re.sub(r"(?m)^- Address: .*$", lambda m: addr, s, count=1)
+        line = self.ent["hours"]["llms"]
+        if re.search(r"(?m)^- Hours: ", s):
+            s = re.sub(r"(?m)^- Hours: .*$", lambda m: line, s, count=1)
+        else:
+            # No line yet: put one under the address, where a reader looks for it.
+            s = re.sub(r"(?m)^(- Address: .*)$", lambda m: m.group(1) + "\n" + line, s, count=1)
         label = {"maps.google.com": "Google Business Profile (Google Maps)", "www.facebook.com": "Facebook",
                  "www.linkedin.com": "LinkedIn", "x.com": "X", "www.instagram.com": "Instagram",
                  "www.youtube.com": "YouTube", "www.pinterest.com": "Pinterest", "www.tiktok.com": "TikTok"}
@@ -278,7 +412,7 @@ def main() -> int:
     for p, rel in run.pages():
         run.n["pages"] += 1
         old = read(p)
-        new = run.reviews(run.footer(run.links(run.schema(old, rel))))
+        new = run.phones(run.years(run.hours(run.reviews(run.footer(run.links(run.schema(old, rel)))), rel)), rel)
         if new != old:
             run.n["pages_changed"] += 1
             stale.append(rel)
@@ -300,8 +434,21 @@ def main() -> int:
     print(f"  links:  {n['links']} map links, {n['embed']} embedded map(s)")
     print(f"  footer: {n['rows']} social rows updated, {n['no_row']} pages without a social row")
     print(f"  reviews: {n['score']} score panel(s) set from the Google listing, {n['ticks']} 'Verified' tick(s) removed")
+    print(f"  hours:  {n['hours']} time pair(s) and legacy openingHours value(s) set from entity.json")
+    print(f"  year:   {n['years']} statement(s) of the founding year corrected")
+    print(f"  phones: {len(run.published_phones())} published number(s), all page links checked")
     for s in run.skipped:
         print("  skipped " + s)
+    if run.unknown_phones:
+        print(f"  {len(run.unknown_phones)} link(s) to a number that is not in entity.json (telephone/telephoneAlt):")
+        for line in run.unknown_phones[:20]:
+            print("    " + line)
+        return 1
+    if run.leftovers:
+        print(f"  {len(run.leftovers)} opening-hours variant(s) this rewrite does not know — the pattern needs extending:")
+        for line in run.leftovers[:20]:
+            print("    " + line)
+        return 1
     if args.check and stale:
         for rel in stale[:20]:
             print("  out of date: " + rel)

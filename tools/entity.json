@@ -1,11 +1,13 @@
 {
-  "_about": "Woodex Interior's official identity: one NAP, its Google Business Profile and the social profiles that were checked. tools/apply-entity.py writes it into every frontend-v1 page (schema, footer, map links) and into llms.txt. Change it here, run `python3 tools/apply-entity.py`, commit. Add a profile only after checking that it is the studio's own.",
+  "_about": "Woodex Interior's official identity: one NAP, opening hours, the founding year, its Google Business Profile and the social profiles that were checked. tools/apply-entity.py writes it into every page — schema, footer, map links, the hours the chrome prints, llms.txt — for frontend-v1 by default and for the older v26 pages at the repository root with `--root .`; after a change here run the tool, and `--check` (CI) fails while any page disagrees. The admin console's Business info screen writes the same facts into the pages it edits — the footer's social row and the schema's sameAs in one save — so after a save there, run the tool and commit what it rewrites. Add a profile only after checking that it is the studio's own.",
   "checked": "2026-10-15",
 
   "name": "Woodex Interior",
   "id": "https://woodex.com.pk/#org",
   "url": "https://woodex.com.pk/",
   "telephone": "+923224000768",
+  "telephoneAlt": "+923214686884",
+  "_telephone_about": "Two numbers are published and both are the studio's: the first is the one D-6 fixes as canonical and the one WhatsApp uses (wa.me/923224000768); the second is the other published line, shown as the second \"Call\" entry and carried by the admin's Business info screen as phone2. tools/apply-entity.py writes both into JSON-LD telephone and refuses a page that links a number that is not one of these two.",
   "email": "info@woodex.com.pk",
   "address": {
     "streetAddress": "M-71, Zainab Tower, Model Town Link Road",
@@ -16,6 +18,19 @@
   },
   "geo": { "latitude": 31.4663355, "longitude": 74.3164285 },
 
+
+  "hours": {
+    "_about": "The studio's opening hours, confirmed by the owner on 15 October 2026: Monday-Saturday 10:00-19:30, Sunday closed. Every page's chrome and every page's JSON-LD openingHoursSpecification is written from here by tools/apply-entity.py. The Google Business Profile still shows the older 09:30-18:30 (entity.json/google._evidence recorded it that day) and correcting that listing is the owner's task, because only the owner can change it.",
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "10:00",
+    "closes": "19:30",
+    "closedDays": ["Sunday"],
+    "prose": "Monday to Saturday, 10:00 am to 7:30 pm. Closed on Sunday.",
+    "llms": "- Hours: Monday-Saturday 10:00-19:30, Sunday closed"
+  },
+
+  "foundingYear": 2016,
+  "_foundingYear_about": "Confirmed by the owner on 15 October 2026 (the site's 'since 2016' is right; the Facebook page's 'since 2015' is the outlier). tools/apply-entity.py writes it as JSON-LD foundingDate and corrects any other year a page states.",
   "google": {
     "_evidence": "Google Maps listing 'Woodex Interior', category Interior designer, M-71 Zainab Tower, Model Town Link Rd, Lahore 54700, +92 322 4000768, website woodex.com.pk, Mon-Sat 09:30-18:30. The geo point is the listing's own pin. The place ID was derived from the listing's feature ID 0x391907cc17c680b7:0x430344ffa555c00 and opens the same listing.",
     "cid": "301798693140782080",
