@@ -76,7 +76,7 @@ function wx_page_exists(string $rel): bool
 }
 
 /** Every content page on disk, relative to the site root, sorted. */
-function wx_page_walk(string $dir, bool $top = true): array
+function wx_page_walk(string $dir, bool $top = true): array  /* $top: kept for the callers; the skip list applies at every depth */
 {
     $out = [];
     if (!is_dir($dir)) {
@@ -88,7 +88,12 @@ function wx_page_walk(string $dir, bool $top = true): array
         }
         $abs = $dir . '/' . $f;
         if (is_dir($abs)) {
-            if ($top && in_array($f, WX_PAGE_SKIP, true)) {
+            /* Skipped wherever they appear, not only at the top: on the host `admin/` and `builder/`
+               are top-level, but in the development tree they live under `frontend-v1/`, and counting
+               their screens as content pages was finding N13 — the announcement bar's coverage claim
+               failed on the real tree while passing on the mounted one. None of these names is a
+               content folder on this site (checked, and refused as a page path by wx_page_path). */
+            if (in_array($f, WX_PAGE_SKIP, true)) {
                 continue;
             }
             $out = array_merge($out, wx_page_walk($abs, false));

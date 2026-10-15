@@ -740,12 +740,24 @@ eq($merged['added'] + 1, count($plan), 'only the already-decided address was ski
 $pageRule = array_values(array_filter($merged['list'], static fn($r) => $r['from'] === '/page/'))[0] ?? null;
 eq($pageRule['to'] ?? '', '/blog/', 'the existing decision wins over the shipped plan');
 
-/* The .htaccess lines read the two switches and the saved rules, so this part needs the tables. */
+/* The .htaccess lines read the two switches and the saved rules, so this part needs the tables — and its
+   own fixture: a fresh database has no redirect rows, and a test that expects one silently tests nothing
+   (finding N13). The fixture row is removed afterwards, so running the gate on staging changes no rule. */
 if ($WITH_DB && is_file(WX_DB_FILE) && wx_table_exists('wx_redirects')) {
+    $fixtureRule = wx_insert('wx_redirects', [
+        'from_path' => '/design-planning/', 'to_path' => '/interior-design/', 'code' => 301,
+        'match_kind' => 'exact', 'source' => 'test-fixture', 'on_off' => 1,
+        'created_at' => wx_now(), 'updated_at' => wx_now(), 'updated_by' => 0, 'hits' => 0,
+    ]);
     $lines = implode("\n", wx_rd_lines());
     ok(str_contains($lines, 'RewriteRule ^design-planning/?$ /interior-design/ [R=301,L]'), 'an exact rule becomes one RewriteRule with the right status');
     ok(str_contains($lines, '[G,L]'), 'the spam cleanup answers 410, so Google drops the URL');
-    ok(str_contains($lines, '^www\\\\.'), 'the published block forces one official hostname');
+    ok(str_contains($lines, '^www\\.'), 'the published block forces one official hostname');
+    wx_setting_set('redirect.www', '0');
+    $linesOff = implode("\n", wx_rd_lines());
+    ok(!str_contains($linesOff, '^www\\.'), 'and the switch turns that block off without touching the rules');
+    wx_setting_set('redirect.www', '1');
+    wx_q('DELETE FROM wx_redirects WHERE id = ?', [$fixtureRule]);
 } else {
     skip('the .htaccess lines need the redirect tables — run with --db after db/migrate.php');
 }
@@ -999,9 +1011,11 @@ if (count(wx_page_walk(WX_SITE_ROOT)) > 10 && wx_table_exists('wx_page_versions'
     ok($cov['pages'] > 50, 'the coverage count walks the site (' . $cov['pages'] . ' pages)');
     ok($cov['regions']['footer'] > 0, 'and reports how many pages have a footer');
     ok($cov['regions']['footer'] <= $cov['pages'], 'the region count can never exceed the page count');
-    $diff = wx_chrome_diff(['regions' => ['cta'], 'cta' => 'Get a quote'], ['limit' => 3]);
+    /* A value no page carries, so the preview is limited by the limit — not by how many pages happen to
+       already say "Get a quote" (finding N13: on the real tree every page did, and the count was zero). */
+    $diff = wx_chrome_diff(['regions' => ['cta'], 'cta' => 'Ask Woodex today'], ['limit' => 3]);
     eq(count($diff['changed']), 3, 'the preview stops at the limit it was given');
-    ok($diff['scanned'] > 3, 'and reports how many pages it read to find them');
+    ok($diff['scanned'] >= count($diff['changed']), 'and reports how many pages it read to find them');
     /* The survey is the same walk, read for the three facts instead of the regions. It is the only place in
        the API that says what the *site* says, as opposed to what a setting says. */
     $survey = wx_chrome_identity();

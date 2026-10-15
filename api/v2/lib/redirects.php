@@ -312,7 +312,9 @@ function wx_rd_lines(): array
         $lines[] = 'RewriteRule ^$ /? [R=301,L]';
     }
     foreach (wx_rd_list(true) as $r) {
-        $path = preg_quote(trim((string) $r['from'], '/'), '');
+        /* preg_quote escapes the hyphen too; `design\-planning` is the same rule as `design-planning`
+           and the readable one is what v2.1 wrote into the block, so the escapes go back out. */
+        $path = str_replace('\\-', '-', preg_quote(trim((string) $r['from'], '/'), ''));
         $pattern = '^' . $path . ($r['match'] === 'prefix' ? '(/.*)?$' : '/?$');
         $lines[] = $r['type'] === 410
             ? 'RewriteRule ' . $pattern . ' - [G,L]'
