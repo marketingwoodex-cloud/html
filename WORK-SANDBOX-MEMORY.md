@@ -593,3 +593,13 @@ These were all learned the hard way in this project; they are the difference bet
    re-derive money, counts or totals.
 7. **Write the reasoning in the commit message.** `git log` is the project's other document — the plans say
    what should be true, the commits say why it is.
+
+## g. How the project runs in the sandbox (SQLite + PHP in WebAssembly)
+
+- No `php` binary here. The API runs on PHP 8.2.33 in WebAssembly: `node tools/phpwasm/serve.cjs --port 8080` (what `npm run dev:api` in admin-v25 now does). It serves `api/v2/index.php` for `/api/v2/...` and the repo for static files, with the repo mounted from the host, so writes persist.
+- Database: SQLite, one file `_private/woodex.sqlite`, selected by `_private/db.json` (`{"driver":"sqlite"}`). `npm run db:init` creates it (writes db.json, loads the v2.1 schema from `frontend-v1/_database/woodex-v20.sql`, then applies `db/migrations` 000–014). Refuses to overwrite a MySQL db.json.
+- Owner account: `npm run db:owner -- --email owner@woodex.local --reset` (password written to `_private/dev-owner.txt`, git-ignored).
+- The SQL translation lives in `api/v2/lib/sqlite.php` (query rewrites, DDL planning, MySQL functions registered). Foreign keys are not carried to SQLite (004_fk), by design.
+- Bugs fixed on the way, present in MySQL too: `001_roles.sql` tuples had 3 values for 4 columns (generator fixed, file regenerated); `wx_login_attempts` and `wx_sessions` columns did not match the code (migration 000 corrected); `wx_chat_cfg()` was not loaded on the public chat route; GLOB_BRACE is not in this PHP build; `wx_invoice_payments.t` does not exist; `wx_migrations.version` does not exist; the estimator rate book is a JS object literal, now parsed by `wx_js_to_json`.
+- Verified: `tests/run.php` 1133/0/14; `tests/conformance.mjs` 85/0; sign-in works; 61 of 79 GET routes return ok on a fresh database (the rest are placeholder-id 404s and validation 422s from the sweep). Console at the preview shows "live · api/v2 2.5.0-p1 · PHP 8.2.33".
+- Not yet verified: POST/write routes end to end; demo mode removal (still pending, approved earlier).

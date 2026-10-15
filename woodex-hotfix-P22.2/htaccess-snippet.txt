@@ -1,0 +1,10 @@
+# --- Woodex hotfix P22.2 ---------------------------------------------------------------
+# Paste these lines directly BELOW the first line that says:  RewriteEngine On
+# (do not replace the file: the block between "BEGIN WOODEX-ADMIN" and "END WOODEX-ADMIN"
+#  holds your saved redirects and must stay as it is)
+#
+# installers and diagnostics never answer from the web
+RewriteRule ^wx-[a-z0-9-]+\.php$ - [F,L,NC]
+# retired internal pages are gone for good, so search engines drop them
+RewriteRule ^(downloads|blocks)\.html$ - [G,L,NC]
+# --- end of hotfix P22.2 ----------------------------------------------------------------

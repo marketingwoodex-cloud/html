@@ -50,6 +50,7 @@ $STATUS = $has('--status');
 $VERIFY = $has('--verify');
 $CHECKSUM = $has('--checksum');
 $BASELINE = $has('--baseline');
+$INIT = $has('--sqlite-init');
 $ONLY = null;
 foreach ($argvFlags as $i => $a) {
     if ($a === '--only' && isset($argvFlags[$i + 1])) {
@@ -165,6 +166,41 @@ function split_sql(string $sql): array
     return $out;
 }
 
+/** Create the SQLite database: config, then the v2.1 schema from the dump, once. */
+function sqlite_init(string $dumpPath): void
+{
+    if (!is_dir(WX_PRIVATE_DIR)) {
+        mkdir(WX_PRIVATE_DIR, 0775, true);
+    }
+    $cfg = is_file(WX_DB_FILE) ? json_decode((string) file_get_contents(WX_DB_FILE), true) : null;
+    if (is_array($cfg) && ($cfg['driver'] ?? '') !== 'sqlite' && !empty($cfg['name'])) {
+        bad('_private/db.json points at MySQL (' . $cfg['name'] . '). Refusing to change it; move it aside to use SQLite.');
+        exit(1);
+    }
+    if (!is_array($cfg) || ($cfg['driver'] ?? '') !== 'sqlite') {
+        file_put_contents(WX_DB_FILE, json_encode(['driver' => 'sqlite', 'file' => 'woodex.sqlite'], JSON_PRETTY_PRINT) . "\n");
+        say('  ✓ wrote _private/db.json (driver sqlite, file _private/woodex.sqlite)');
+    }
+    wx_db();
+    if (wx_table_exists('wx_users')) {
+        say('  · the v2.1 schema is already present; the dump is not loaded again');
+        return;
+    }
+    if (!is_file($dumpPath)) {
+        bad('the v2.1 schema dump is missing: ' . $dumpPath);
+        exit(1);
+    }
+    $notCarried = [];
+    $stmts = statements_for_driver(split_sql((string) file_get_contents($dumpPath)), $notCarried);
+    foreach ($stmts as $s) {
+        wx_migrate_run($s);
+    }
+    say('  ✓ loaded the v2.1 schema: ' . count($stmts) . ' statement(s) from ' . basename($dumpPath));
+    foreach ($notCarried as $why) {
+        say('  · ' . $why);
+    }
+}
+
 /** Applied migrations, from the database. */
 function applied(): array
 {
@@ -180,14 +216,35 @@ function applied(): array
 
 function ensure_bookkeeping(): void
 {
-    wx_q(
-        'CREATE TABLE IF NOT EXISTS wx_migrations (
+    $sql = 'CREATE TABLE IF NOT EXISTS wx_migrations (
            file VARCHAR(80) NOT NULL PRIMARY KEY,
            sha256 CHAR(64) NOT NULL,
            applied_at DATETIME NOT NULL,
            ms INT NOT NULL DEFAULT 0
-         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
-    );
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4';
+    foreach (statements_for_driver([$sql]) as $s) {
+        wx_migrate_run($s);
+    }
+}
+
+/**
+ * The statements a file runs on this driver. MySQL: as written. SQLite: the planned translation, with the
+ * constructs SQLite cannot carry (foreign keys, MySQL session variables) reported in $skipped.
+ */
+function statements_for_driver(array $stmts, array &$skipped = []): array
+{
+    if (wx_driver() !== 'sqlite') {
+        return $stmts;
+    }
+    return wx_sqlite_plan($stmts, $skipped);
+}
+
+/* ------------------------------------------------------------------ sqlite init
+   --sqlite-init: a development database in one file, with no MySQL server. It writes _private/db.json for
+   SQLite (and refuses to overwrite a MySQL configuration), then loads the v2.1 schema from the dump, which
+   is what a MySQL host gets from phpMyAdmin. The migrations then run as usual, on top. */
+if ($INIT) {
+    sqlite_init(dirname(__DIR__) . '/frontend-v1/_database/woodex-v20.sql');
 }
 
 /* ------------------------------------------------------------------ can we run? */
@@ -305,8 +362,12 @@ foreach ($files as $n => $f) {
     }
 
     if ($DRY) {
-        $stmts = split_sql($sql);
+        $notCarried = [];
+        $stmts = statements_for_driver(split_sql($sql), $notCarried);
         say('  → ' . $f . '  would run ' . count($stmts) . ' statement(s)');
+        foreach ($notCarried as $why) {
+            say('      · ' . $why);
+        }
         foreach ($stmts as $i => $s) {
             $head = trim((string) preg_replace('~\s+~', ' ', $s));
             say('      ' . ($i + 1) . '. ' . substr($head, 0, 96) . (strlen($head) > 96 ? ' …' : ''));
@@ -315,11 +376,15 @@ foreach ($files as $n => $f) {
         continue;
     }
 
-    $stmts = split_sql($sql);
+    $notCarried = [];
+    $stmts = statements_for_driver(split_sql($sql), $notCarried);
+    foreach ($notCarried as $why) {
+        say('  · ' . $f . ': ' . $why);
+    }
     $t0 = microtime(true);
     try {
         foreach ($stmts as $i => $s) {
-            wx_q($s);
+            wx_migrate_run($s);
         }
     } catch (Throwable $e) {
         bad($f . ' failed at statement ' . ($i + 1) . ': ' . $e->getMessage());

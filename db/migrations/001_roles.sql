@@ -151,13 +151,13 @@ INSERT IGNORE INTO wx_action_roles (action, role) VALUES
 /* The patterns, in the order wx_action_group() evaluates them. Order decides the answer where two
    patterns match the same action, which is why `ord` is part of the table rather than a comment. */
 INSERT IGNORE INTO wx_action_groups (ord, grp, pattern, is_regex) VALUES
-  ('01', 'self', '~^(tg_link_code|tg_unlink|me|me_get|me_save|me_avatar|me_avatars|profile|password|logout|ping|poll|notif_poll|typing|dashboard|dash_data|site_stats|leads_count|mt_get|sec_(get|alerts|2fa_begin|2fa_enable|2fa_disable|recovery_new|revoke)|google_(me|link|unlink))$~'),
-  ('02', 'master', '~^(user_save|sec_2fa_reset|backup_(run|delete|restore)|restore|dbx_row|db_reconnect|google_save|mcp_token_(new|regen|revoke|toggle))$~'),
-  ('03', 'support_view', '~^(client_360|get_lead|projs_list)$~'),
-  ('04', 'updates', '~^(proj_update|notify_proj_send)$~'),
-  ('05', 'conversations', '~^(chat_(list|get|reply|close|file|mode|lead|typing|assign|note|tags|suggest)|wa_stats|whatsapp_stats|crm_wa_status)$~'),
-  ('06', 'ai', '~^(chat_cfg_get|chat_cfg_save|chat_test|ai_test|ai_report|ai_unans_[a-z]+|aic_[a-z]+)$~'),
-  ('07', 'broadcast', '~^(crm_offers|crm_offer_(save|send|delete)|wag_[a-z_]+|wah_[a-z_]+)$~'),
-  ('08', 'sales', '~^(leads?_[a-z0-9_]+|add_lead_note|lead_note|get_lead|list_leads|clients?_[a-z0-9_]+|list_clients|quotes?_[a-z_]+|get_quote|list_quotes|create_quote_draft|invs?_[a-z_]+|pay_(add|delete)|projs?_[a-z_]+|bk_[a-z_]+|est_[a-z_]+|s17_meta|dash_target_save|monthly_report|tpl_(list|save|delete|import)|company_get)$~'),
-  ('09', 'settings', '~^(tg_(get|save|connect|disconnect|test)|set_[a-z_]+|crm_settings|crm_settings_save|crm_test|crm_wa_connect|crm_wa_disconnect|notify_(get|save|test)|company_save|cms_biz_[a-z_]+|cms_ai_[a-z_]+|cms_announce_[a-z_]+|mt_set|sys_check|activity|google_cfg|health_settings|sheets_[a-z_]+|gdata_(save|clear))$~'),
-  ('10', 'website', '~^(cms_[a-z_]+|page_[a-z_]+|pages|pages_list|list_pages|seo_[a-z_]+|blocks_[a-z_]+|global_[a-z_]+|chrome_[a-z_]+|theme|theme_get|media|media_[a-z_]+|fm_[a-z_]+|redirects|redirects_[a-z_]+|r404_[a-z_]+|health_(get|psi|scan|speed)|forms_(get|save)|gdata_(status|report)|backups|backup_(list|get)|users|dbx_(browse|export|tables)|mcp_(tokens|log))$~');
+  ('01', 'self', '~^(tg_link_code|tg_unlink|me|me_get|me_save|me_avatar|me_avatars|profile|password|logout|ping|poll|notif_poll|typing|dashboard|dash_data|site_stats|leads_count|mt_get|sec_(get|alerts|2fa_begin|2fa_enable|2fa_disable|recovery_new|revoke)|google_(me|link|unlink))$~', 1),
+  ('02', 'master', '~^(user_save|sec_2fa_reset|backup_(run|delete|restore)|restore|dbx_row|db_reconnect|google_save|mcp_token_(new|regen|revoke|toggle))$~', 1),
+  ('03', 'support_view', '~^(client_360|get_lead|projs_list)$~', 1),
+  ('04', 'updates', '~^(proj_update|notify_proj_send)$~', 1),
+  ('05', 'conversations', '~^(chat_(list|get|reply|close|file|mode|lead|typing|assign|note|tags|suggest)|wa_stats|whatsapp_stats|crm_wa_status)$~', 1),
+  ('06', 'ai', '~^(chat_cfg_get|chat_cfg_save|chat_test|ai_test|ai_report|ai_unans_[a-z]+|aic_[a-z]+)$~', 1),
+  ('07', 'broadcast', '~^(crm_offers|crm_offer_(save|send|delete)|wag_[a-z_]+|wah_[a-z_]+)$~', 1),
+  ('08', 'sales', '~^(leads?_[a-z0-9_]+|add_lead_note|lead_note|get_lead|list_leads|clients?_[a-z0-9_]+|list_clients|quotes?_[a-z_]+|get_quote|list_quotes|create_quote_draft|invs?_[a-z_]+|pay_(add|delete)|projs?_[a-z_]+|bk_[a-z_]+|est_[a-z_]+|s17_meta|dash_target_save|monthly_report|tpl_(list|save|delete|import)|company_get)$~', 1),
+  ('09', 'settings', '~^(tg_(get|save|connect|disconnect|test)|set_[a-z_]+|crm_settings|crm_settings_save|crm_test|crm_wa_connect|crm_wa_disconnect|notify_(get|save|test)|company_save|cms_biz_[a-z_]+|cms_ai_[a-z_]+|cms_announce_[a-z_]+|mt_set|sys_check|activity|google_cfg|health_settings|sheets_[a-z_]+|gdata_(save|clear))$~', 1),
+  ('10', 'website', '~^(cms_[a-z_]+|page_[a-z_]+|pages|pages_list|list_pages|seo_[a-z_]+|blocks_[a-z_]+|global_[a-z_]+|chrome_[a-z_]+|theme|theme_get|media|media_[a-z_]+|fm_[a-z_]+|redirects|redirects_[a-z_]+|r404_[a-z_]+|health_(get|psi|scan|speed)|forms_(get|save)|gdata_(status|report)|backups|backup_(list|get)|users|dbx_(browse|export|tables)|mcp_(tokens|log))$~', 1);

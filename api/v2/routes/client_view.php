@@ -19,6 +19,10 @@
 declare(strict_types=1);
 
 /** GET /client/project/{id}?t=… — the progress page. */
+/* The invoice rows for the client page are built by the project route's helpers. The router loads only this
+   file for this route, so they are loaded here; require_once keeps it a single definition either way. */
+require_once __DIR__ . '/projects.php';
+
 function wx_route_client_project(array $ctx): array
 {
     $id = (int) ($ctx['params']['id'] ?? 0);

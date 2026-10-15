@@ -29,6 +29,10 @@
 
 declare(strict_types=1);
 
+/* wx_chat_cfg() and the chat settings live in routes/chats.php; the public widget needs them too, and the
+   router only loads a route file when a route in it is called. */
+require_once WX_V2_DIR . '/routes/chats.php';
+
 /** GET /chat/config — what the widget asks before it draws itself. Safe with no token: it is a greeting. */
 function wx_route_chat_cfg(array $ctx): array
 {

@@ -1,21 +1,35 @@
 {
   "release": "woodex-master-P25",
-  "builtAt": "2026-10-15T04:57Z",
-  "gitSha": "15375b38bb84364fbdeb7037c218a65b35f1104a",
-  "gitDirty": false,
-  "branch": "arena/4150341e-marketingwoodex",
+  "builtAt": "2026-10-15T15:12Z",
+  "gitSha": "0e8afc767b0e9c841206ffc543c6f5b2be0ffc41",
+  "gitDirty": true,
+  "branch": "arena/89662743-html",
   "apiVersion": "2.5.0-p1",
-  "console": "15375b3 · built 2026-10-15 04:57Z",
+  "console": "0e8afc7 · built 2026-10-15 15:04Z",
   "consoleBase": "/admin-next/",
   "payload": {
     "zip": "woodex-master-P25.zip",
-    "zipBytes": 29158455,
-    "zipSha256": "bd77f2694d23299c27e1e6460535e5c1a9d7dbca842b1bc15ccfea23e62c6aa2",
-    "files": 727,
-    "bytes": 44926168,
+    "zipBytes": 29190501,
+    "zipSha256": "48d6b1609e40dedf6349d344218370fae8a649aa651841c378a8b7771c2fe63b",
+    "files": 725,
+    "bytes": 45048151,
+    "excluded": [
+      {
+        "path": "wx-check.php",
+        "why": "the diagnostics page — run the repository copy, not a released one"
+      },
+      {
+        "path": "wx-demo.php",
+        "why": "it creates demo logins in the live database"
+      },
+      {
+        "path": "wx-install.php",
+        "why": "the setup wizard — upload it deliberately for a fresh install, then delete it"
+      }
+    ],
     "byArea": {
       "assets": 335,
-      "api": 121,
+      "api": 122,
       "admin": 69,
       "insights": 49,
       "db": 19,
@@ -110,15 +124,12 @@
       "spa-design": 1,
       "specialized-renovation-services": 1,
       "turnkey-design-build": 1,
-      "wardrobe-design": 1,
-      "wx-check.php": 1,
-      "wx-demo.php": 1,
-      "wx-install.php": 1
+      "wardrobe-design": 1
     }
   },
   "files": {
     "api/v2/index.php": "87a1f801943f6ccc805473e118db9309780bfe6bcdda0d2d7aa1c3f484404e7c",
-    "admin-next/index.html": "be1a36bd149d87509bdc342ea6a98307508d39e5ecf359042031644aaf6bcf0b"
+    "admin-next/index.html": "446edae571125fbe3d0e56b91fbe1f80c41d58e0288f5edbacbe2e7d011496ca"
   },
   "migrations": [
     "000_platform.sql",
@@ -139,13 +150,13 @@
   ],
   "docs": {
     "MEMORY-PLAN.md": {
-      "sha256": "6ba98d5adbf77afd1c64778025b90b5a5050c70549a0c843b073bafe68fc49fc",
-      "bytes": 46961,
+      "sha256": "d120fc9a5a09894f8a449b713bc770144bd92700d13b187d066f726e02004704",
+      "bytes": 49443,
       "from": "WORK-SANDBOX-MEMORY.md"
     },
     "README.md": {
-      "sha256": "e965483cdf000a5ef05ce696aaebe01c186f1d1d765f6e393cdf138d8af5b6c1",
-      "bytes": 5679
+      "sha256": "8025bb23db519ec1f601d8744aa9fa262bbb5c9dd27b42d30be7942d521aae28",
+      "bytes": 6859
     },
     "CHANGELOG.md": {
       "sha256": "55d2eaa9119b434e9219d7e8c4c9a400c9c2ae6cfbd0f0c50a4a158dcb1d51b6",

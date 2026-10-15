@@ -20,6 +20,24 @@ see are the ones where that matters most. What is not built yet says so on the s
 documents, not summed here"), and a failed load shows the failure with its request-id rather than a
 stale figure.
 
+## A development database with data in it
+
+The console is only worth checking against data. On an empty SQLite database every screen is correct and
+nearly empty, so there is a seeder and a check for the dashboard:
+
+```bash
+npm run db:init                 # migrations into _private/woodex.sqlite (git-ignored)
+npm run db:owner -- --email owner@woodex.local --name "Woodex Owner"   # prints the password once; copy the sign-in
+                                                                       # into _private/dev-owner.txt (name: and password: lines)
+npm run dev:api                 # api/v2 on 127.0.0.1:8080
+npm run db:seed                 # 5 clients, 12 leads, 3 quotations (one invoiced, one part-paid), 3 bookings
+npm run dashboard:verify        # every /dashboard figure against the SQLite file, plus the stale-lead rule
+```
+
+`db:seed` writes only through the API, so it also exercises the write routes. It refuses to run on a database
+that already has leads, and it refuses any host but 127.0.0.1. `dashboard:verify` reads the database itself and
+never trusts the PHP's own arithmetic; it exits 1 if any figure disagrees.
+
 ```bash
 npm install
 npm run dev            # http://localhost:5173  (binds 0.0.0.0, proxies /api → the API)

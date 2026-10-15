@@ -7,11 +7,12 @@ keeps working while v2.5 takes over one screen at a time.
 > **Where this copy came from — 15 October 2026.** This is the **P25.1** project, imported whole: the same
 > 1,778 files as `marketingwoodex-cloud/-marketingwoodex` at `aa96524` (tag `p25`), verified file for file,
 > so that the gate runs and the release rebuilds from here. One file is deliberately absent —
-> `woodex-master-P25/woodex-master-P25.zip` — because `node tools/make-release.mjs` rebuilds it (proved in a
-> scratch clone of this content: 727 files, 42.8 MB uncompressed, zip 29,158,456 bytes, `gitDirty:false`).
-> The links further down still point at the project's original home. The repository's previous content (two
-> archives and a one-page README) and the 15 October analysis report were removed at the owner's direction
-> before the import; the plan for what happens next is **`MASTER-PLAN-P25.2.md`**.
+> `woodex-master-P25/woodex-master-P25.zip` — because `node tools/make-release.mjs` rebuilds it. The import
+> is commit `79b4636`; the pull request from `arena/9e181806-marketingwoodex` was then folded in on top
+> (`git apply` of its diff, 253 files: the SQLite runtime, the `.htaccess` wall, hotfix P22.2, the G4
+> identity work and the SQLite database gates). The repository's previous content (two archives and a
+> one-page README) and the 15 October analysis report were removed at the owner's direction before the
+> import; the plan for what happens next is **`MASTER-PLAN-P25.2.md`**.
 
 **Read these two first:**
 
@@ -55,12 +56,20 @@ release is additive until that is decided.
 ## Working here
 
 ```bash
-cd admin-v25 && npm ci && cd tools/phpwasm && npm ci && cd ../phplint && npm ci && cd ../..
+cd admin-v25 && npm ci && cd ../tools/phpwasm && npm ci && cd ../phplint && npm ci && cd ../..
 
-node tools/phpwasm/run-php.cjs tests/run.php    # 1283 passed · 0 failed · 14 skipped
+node tools/phpwasm/run-php.cjs tests/run.php    # 1290 passed · 0 failed · 14 skipped
 node tests/conformance.mjs                      # 86 passed · 0 failed
-node tools/phplint/php-lint.mjs                 # 163 PHP files parse clean
+node tools/phplint/php-lint.mjs                 # 164 PHP files parse clean
+python3 tools/apply-entity.py --check           # every page carries tools/entity.json (NAP, Google listing, sameAs)
 cd admin-v25 && npm run typecheck && npm run smoke && cd ..   # tsc clean · 154 checks · 65 routes
+
+# The database gates on SQLite in WebAssembly (no MySQL needed). This writes _private/db.json and
+# _private/woodex.sqlite, both git-ignored; delete them to start again. MySQL in CI stays the real gate.
+export WX_HOST_FS=1
+node tools/phpwasm/run-php.cjs db/migrate.php --sqlite-init   # 15 migrations applied (a second run applies 0)
+node tools/phpwasm/run-php.cjs tests/roundtrip.php            # Phase 1 gate: 47 passed · 0 failed
+node tools/phpwasm/run-php.cjs tests/money-path.php           # Phase 2 gate: 89 passed · 0 failed
 
 cd admin-v25 && npm exec vite -- --host 0.0.0.0 --port 5173   # the console, against api/v2
 ```

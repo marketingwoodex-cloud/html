@@ -60,9 +60,11 @@ jobs:
       - name: Bundle budget
         run: |
           # The plan sets a budget; a regression here is a product decision, not a detail.
+          # Source maps are not counted: vite writes them (sourcemap: true) but make-release.mjs never ships
+          # them. Counting them put the total at about 2,300 kB, so this step failed on every push.
           limit_kb=700
-          total_kb=$(du -sk dist/assets | cut -f1)
-          echo "dist/assets is ${total_kb} kB (budget ${limit_kb} kB)"
+          total_kb=$(find dist/assets -type f ! -name '*.map' -printf '%s\n' | awk '{s+=$1} END {print int(s/1024)}')
+          echo "dist/assets ships ${total_kb} kB, source maps excluded (budget ${limit_kb} kB)"
           if [ "$total_kb" -gt "$limit_kb" ]; then
             echo "::error::bundle grew past the ${limit_kb} kB budget (${total_kb} kB)"
             exit 1
@@ -86,6 +88,8 @@ jobs:
         run: |
           node tools/gen-aliases.mjs --check
           node tools/gen-caps.mjs --check
+      - name: Website identity is current (NAP, Google listing, sameAs, footer profiles)
+        run: python3 tools/apply-entity.py --check
       - name: Structural conformance (routes, envelope, auth, safety, migrations)
         run: node tests/conformance.mjs
 

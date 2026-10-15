@@ -1,7 +1,7 @@
 /**
  * LiveLeads — the enquiries table, fed by `GET /leads`.
  *
- * The prototype's table was the design; this is the same table on real rows, with three rules the v2.1
+ * The table design came first; this is the same table on real rows, with three rules the v2.1
  * admin broke and this one does not:
  *
  *   · **Filtering and paging happen on the server.** v2.1 loaded every lead and filtered in JavaScript,

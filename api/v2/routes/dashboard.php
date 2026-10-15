@@ -74,6 +74,78 @@ function wx_route_dashboard(array $ctx): array
         $attention[] = ['kind' => 'chat_help', 'id' => null, 'title' => $chats['needs'] . ' chat(s) need a person', 'detail' => 'The assistant could not answer'];
     }
 
+    /* Two more rules, both answered by the database rather than by loading every document.
+       · An open quotation whose validity date is within `quote_expiry_days` (or has already passed) needs a
+         decision: sent, or sent and viewed, and not yet answered.
+       · An invoice with a balance that is at least `unpaid_days` past its due date. The candidates are picked
+         by the indexed due date; the balance is worked out exactly as the invoice tracker works it out, from the
+         receipts that have not been reversed, so the two screens cannot disagree about who owes what. */
+    $quoteCut = date('Y-m-d', time() + $rules['quote_expiry_days'] * 86400);
+    if (wx_table_exists('wx_quotes')) {
+        $expiring = wx_all(
+            'SELECT id, ' . wx_doc_payload_sql('wx_quotes') . " FROM wx_quotes
+             WHERE status IN ('sent','viewed') AND valid_until IS NOT NULL AND valid_until <> '' AND valid_until <= ?
+             ORDER BY valid_until ASC LIMIT 8",
+            [$quoteCut]
+        );
+        foreach ($expiring as $r) {
+            $q = json_decode((string) $r['payload'], true);
+            if (!is_array($q)) {
+                continue;
+            }
+            $days = wx_days_from_today((string) $q['valid_until']);
+            $attention[] = [
+                'kind' => 'quote_expiring',
+                'id' => (int) $r['id'],
+                'title' => (string) ($q['no'] ?? 'Quotation') . ' · ' . (string) ($q['client']['name'] ?? 'no client'),
+                'detail' => $days < 0
+                    ? 'Valid until ' . (string) $q['valid_until'] . ' — expired ' . (-$days) . ' day(s) ago'
+                    : 'Valid until ' . (string) $q['valid_until'] . ' — ' . ($days === 0 ? 'expires today' : 'expires in ' . $days . ' day(s)'),
+                'stage' => (string) ($q['status'] ?? ''),
+            ];
+        }
+    }
+
+    if (wx_table_exists('wx_invoices')) {
+        $invoiceCut = date('Y-m-d', time() - $rules['unpaid_days'] * 86400);
+        $pastDue = wx_all(
+            'SELECT id, ' . wx_doc_payload_sql('wx_invoices') . ' FROM wx_invoices
+             WHERE due_at IS NOT NULL AND due_at <> \'\' AND due_at <= ? ORDER BY due_at ASC LIMIT 50',
+            [$invoiceCut]
+        );
+        $overdue = 0;
+        foreach ($pastDue as $r) {
+            $inv = json_decode((string) $r['payload'], true);
+            if (!is_array($inv)) {
+                continue;
+            }
+            $id = (int) $r['id'];
+            /* The JSON payments are only read for an invoice with no receipt rows at all. If every receipt was
+               reversed, the rows exist and the reversed amounts must not come back from the old JSON copy. */
+            $payments = wx_invoice_payments($id);
+            if ($payments === [] && (int) wx_val('SELECT COUNT(*) FROM wx_invoice_payments WHERE invoice_id = ?', [$id]) === 0) {
+                $payments = wx_invoice_payments_legacy($inv);
+            }
+            $public = wx_inv_public($inv + ['id' => $id], $payments);
+            $balance = (int) $public['balance'];
+            if ($balance <= 0) {
+                continue;
+            }
+            $overdue++;
+            if (count(array_filter($attention, static fn($a) => $a['kind'] === 'invoice_overdue')) >= 8) {
+                continue;
+            }
+            $late = -wx_days_from_today((string) $inv['due_date']);
+            $attention[] = [
+                'kind' => 'invoice_overdue',
+                'id' => $id,
+                'title' => (string) ($inv['no'] ?? 'Invoice') . ' · ' . (string) ($inv['client']['name'] ?? 'no client'),
+                'detail' => 'PKR ' . wx_pkr_out($balance) . ' unpaid, ' . $late . ' day(s) past the due date ' . (string) $inv['due_date'],
+                'stage' => 'overdue',
+            ];
+        }
+    }
+
     return [
         'data' => [
             'leads' => ['byStage' => $leadsByStage, 'open' => array_sum(array_column(array_intersect_key($leadsByStage, array_flip($openStages)), 'count')), 'openValue' => $openValue, 'unread' => $unread],
@@ -86,27 +158,51 @@ function wx_route_dashboard(array $ctx): array
     ];
 }
 
-/** Thresholds live in wx_settings so the dashboard is tunable without a deploy. */
+/** Whole days from today to `$date`: 0 is today, a positive number is in the future, a negative one is past. */
+function wx_days_from_today(string $date): int
+{
+    $today = new DateTimeImmutable(date('Y-m-d'));
+    return (int) $today->diff(new DateTimeImmutable($date))->format('%r%a');
+}
+
+/**
+ * Thresholds live in wx_settings so the dashboard is tunable without a deploy.
+ *
+ * The keys are the ones migration 005 seeds (`attention.*`, with v2.1's values). The screen names the rules
+ * differently, so the mapping is here, once: the response keeps the screen's names, the database keeps the
+ * settings' names. The fallbacks are the same seeded values, because a host that has not run the seed must
+ * decide exactly what a migrated host decides.
+ */
+const WX_ATTENTION_RULES = [
+    'stale_lead_days' => ['key' => 'attention.lead_stale_days', 'default' => 3],
+    'quote_expiry_days' => ['key' => 'attention.quote_expiring_days', 'default' => 2],
+    'unpaid_days' => ['key' => 'attention.invoice_overdue_days', 'default' => 1],
+];
+
 function wx_attention_rules(): array
 {
-    $defaults = ['stale_lead_days' => 7, 'quote_expiry_days' => 14, 'unpaid_days' => 30];
     static $rules = null;
     if ($rules !== null) {
         return $rules;
     }
-    $rules = $defaults;
+    $rules = [];
+    foreach (WX_ATTENTION_RULES as $name => $spec) {
+        $rules[$name] = $spec['default'];
+    }
     try {
         if (wx_table_exists('wx_settings')) {
-            $rows = wx_all("SELECT k, v FROM wx_settings WHERE k LIKE 'attention.%'");
-            foreach ($rows as $r) {
-                $key = substr((string) $r['k'], strlen('attention.'));
-                if (array_key_exists($key, $defaults)) {
-                    $rules[$key] = (int) $r['v'];
+            $stored = [];
+            foreach (wx_all("SELECT k, v FROM wx_settings WHERE k LIKE 'attention.%'") as $r) {
+                $stored[(string) $r['k']] = (string) $r['v'];
+            }
+            foreach (WX_ATTENTION_RULES as $name => $spec) {
+                if (isset($stored[$spec['key']]) && is_numeric($stored[$spec['key']])) {
+                    $rules[$name] = (int) $stored[$spec['key']];
                 }
             }
         }
     } catch (Throwable $e) {
-        // Settings are an enhancement: the defaults are always a valid answer.
+        // Settings are an enhancement: the seeded defaults are always a valid answer.
     }
     return $rules;
 }

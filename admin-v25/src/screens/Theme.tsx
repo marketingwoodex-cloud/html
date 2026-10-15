@@ -70,7 +70,7 @@ export function Theme({
             </Row>
 
             <Row icon={<Eye size={15} />} label="Follow the system"
-              hint="prototype note — the shipped build keeps the last explicit choice">
+              hint="not connected yet">
               <Switch checked={false} onChange={() => {}} label="Follow system theme" />
             </Row>
           </div>

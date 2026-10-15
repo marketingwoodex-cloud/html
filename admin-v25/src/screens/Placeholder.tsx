@@ -1,12 +1,12 @@
 /* Placeholder for registered-but-not-yet-built screens.
    Deliberately NOT a "coming soon" stub: it states the route id, the phase that
    builds it, which API actions it will call and what module from v2.1 it
-   replaces — so the prototype doubles as a build checklist. */
+   replaces — so the registry doubles as a build checklist. */
 import { Construction } from "lucide-react";
 import { Card, Note, PageHead, Pill } from "../components/primitives";
 import type { NavRoute } from "../lib/nav";
 
-/** Phase assignment for every registered route. Phase 0 = built in this prototype. */
+/** Phase assignment for every registered route. Phase 0 = built. */
 const PHASES: Record<string, { phase: string; replaces: string; actions: string }> = {
   approvals: { phase: "P2", replaces: "admin-appr.js", actions: "appr_list · appr_get · appr_reject · appr_count" },
   timeline: { phase: "P3", replaces: "new in v2.5", actions: "projects_timeline" },
@@ -81,7 +81,7 @@ export function Placeholder({ route }: { route: NavRoute }) {
     <>
       <PageHead
         title={route.label}
-        sub={route.hint ?? "Screen registered in the route registry, not yet built in this prototype"}
+        sub={route.hint ?? "Screen registered in the route registry, not yet built"}
         actions={<Pill tone={route.status === "planned" ? "warn" : "info"}>
           {route.status === "planned" ? "v2.5 roadmap" : `Deliverable ${meta.phase}`}
         </Pill>}
@@ -117,9 +117,8 @@ export function Placeholder({ route }: { route: NavRoute }) {
           <div className="note" style={{ marginTop: "var(--s-4)" }}>
             <Construction size={15} />
             <div>
-              This prototype ships five working screens — dashboard, leads, pipeline, quotations and
-              theme — plus every route registered and planned. The rest are built in phases P2–P6 in
-              the master plan.
+              This screen is registered in the route list but not built yet. It is planned for phases P2–P6
+              in the master plan.
             </div>
           </div>
         </Card>

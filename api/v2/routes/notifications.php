@@ -91,9 +91,9 @@ function wx_route_notif_poll(array $ctx): array
            v2.1 built this by loading every invoice into PHP; here the rows come from the payments table
            the receipts were migrated into. */
         $rows = wx_all(
-            'SELECT p.id, p.amount, p.t, i.no, i.' . wx_payload_column('wx_invoices') . ' AS payload, i.id AS invoice_id
+            'SELECT p.id, p.amount, p.created_at AS t, i.no, i.' . wx_payload_column('wx_invoices') . ' AS payload, i.id AS invoice_id
                FROM wx_invoice_payments p JOIN wx_invoices i ON i.id = p.invoice_id
-              WHERE p.reversed_at IS NULL AND p.t >= ? ORDER BY p.t DESC LIMIT 8',
+              WHERE p.reversed_at IS NULL AND p.created_at >= ? ORDER BY p.created_at DESC LIMIT 8',
             [gmdate('Y-m-d H:i:s', time() - 172800)]
         );
         foreach ($rows as $r) {

@@ -30,6 +30,37 @@ const WX_DOC_TABLES = [
  * The payload column's name on this install: `payload` after migration 003, `data` before it.
  * Cached per request.
  */
+/**
+ * The indexed columns beside a project's JSON document, taken from that document.
+ *
+ * Migration 003 added `no`, `client_id`, `stage`, `value`, `invoice_id`, `target` and `quote_id` to wx_projects so
+ * the project list can filter and sort without decoding every row. Those columns are only useful if they are
+ * written with the document: a project saved without them is invisible to its own stage and client filters. Any
+ * column the table does not have is left out, so a host that has not run migration 003 still works.
+ *
+ * @param array<string,mixed> $p the project document as it is about to be stored
+ * @return array<string,mixed>
+ */
+function wx_project_columns(array $p): array
+{
+    $values = [
+        'no' => isset($p['no']) && $p['no'] !== '' ? (string) $p['no'] : null,
+        'client_id' => (int) ($p['client_id'] ?? 0) ?: null,
+        'stage' => isset($p['stage']) && $p['stage'] !== '' ? (string) $p['stage'] : null,
+        'value' => isset($p['value']) ? (int) $p['value'] : null,
+        'invoice_id' => (int) ($p['invoice_id'] ?? 0) ?: null,
+        'target' => isset($p['target']) && $p['target'] !== '' ? (string) $p['target'] : null,
+        'quote_id' => (int) ($p['quote_id'] ?? 0) ?: null,
+    ];
+    $out = [];
+    foreach ($values as $col => $v) {
+        if (wx_column_exists('wx_projects', $col)) {
+            $out[$col] = $v;
+        }
+    }
+    return $out;
+}
+
 function wx_payload_column(string $table): string
 {
     $key = 'payload_column:' . $table;

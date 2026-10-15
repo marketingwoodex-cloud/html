@@ -19,7 +19,7 @@ function wx_route_sys_health(array $ctx): array
     $missing = array_values(array_diff($expected, $present));
     $extra = array_values(array_diff($present, $expected));
 
-    $migrations = wx_table_exists('wx_migrations') ? wx_all('SELECT version, applied_at FROM wx_migrations ORDER BY version') : [];
+    $migrations = wx_table_exists('wx_migrations') ? wx_all('SELECT file AS version, applied_at FROM wx_migrations ORDER BY file') : [];
 
     $checks = [];
     $checks[] = wx_check('PHP version', version_compare(PHP_VERSION, '7.4.0', '>='), PHP_VERSION, 'Hostinger → Advanced → PHP Configuration');

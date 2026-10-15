@@ -1,7 +1,7 @@
 /**
  * session.tsx — who is signed in, and which data the screens are allowed to show.
  *
- * This is the piece the prototype could not have: a real session. The SPA starts by asking the API two
+ * This is the piece a mock-data screen cannot have: a real session. The SPA starts by asking the API two
  * questions — "are you there and healthy?" (`GET /health`, no session needed) and "who am I?"
  * (`GET /me`, which answers AUTH if nobody is) — and everything else follows from the answers.
  *

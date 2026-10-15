@@ -419,8 +419,7 @@ function wx_route_quotes_invoice_do(array $ctx): array
             // The project is opened unless the caller explicitly says not to.
             $projectId = null;
             if (($ctx['body']['project'] ?? true) !== false) {
-                $projectId = wx_insert('wx_projects', [
-                    'payload' => json_encode([
+                $proj = [
                         'name' => $x['project'] ?: ($x['client']['name'] ?? 'Unnamed project'),
                         'client_id' => $clientId,
                         'client_name' => (string) ($x['client']['name'] ?? ''),
@@ -439,8 +438,10 @@ function wx_route_quotes_invoice_do(array $ctx): array
                         'line' => (string) ($x['line'] ?? ''),
                         'team' => [],
                         'created_at' => wx_now(),
-                    ], JSON_UNESCAPED_UNICODE),
-                ]);
+                ];
+                $projectId = wx_insert('wx_projects', [
+                    wx_payload_column('wx_projects') => json_encode($proj, JSON_UNESCAPED_UNICODE),
+                ] + wx_project_columns($proj));
             }
 
             wx_audit($u, 'invoice.create', 'invoice:' . $invoice['id'], ['from' => 'quote:' . $id, 'total' => (int) $invoice['total'], 'client' => $clientId]);

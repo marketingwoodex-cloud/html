@@ -34,10 +34,42 @@ if (!file_exists(PRIVATE_DIR . '/.htaccess')) @file_put_contents(PRIVATE_DIR . '
 function out(array $d, int $code = 200): void { http_response_code($code); echo json_encode($d, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); exit; }
 function fail(string $m, int $code = 400): void { out(['ok' => false, 'error' => $m], $code); }
 function jread(string $f): array { clearstatcache(true, $f); $r = is_file($f) ? @file_get_contents($f) : false; return $r ? (json_decode($r, true) ?: []) : []; }
-function jwrite(string $f, array $d): void { file_put_contents($f, json_encode($d, JSON_PRETTY_PRINT), LOCK_EX); @chmod($f, 0600); }
+function jwrite(string $f, array $d): void {
+    /* P22.2 (B-01): write a temp file, then rename it over the target. file_put_contents(..., LOCK_EX)
+       truncates before it locks, so a reader could see an empty file and a crash could leave one. */
+    $dir = dirname($f);
+    if (!is_dir($dir)) @mkdir($dir, 0750, true);
+    $tmp = @tempnam($dir, 'wx_');
+    $json = json_encode($d, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if ($tmp === false) { file_put_contents($f, $json, LOCK_EX); @chmod($f, 0600); return; }
+    file_put_contents($tmp, $json, LOCK_EX);
+    @chmod($tmp, 0600);
+    if (!@rename($tmp, $f)) { @unlink($tmp); file_put_contents($f, $json, LOCK_EX); @chmod($f, 0600); }
+}
+/** P22.2: replace a public file (.htaccess, sitemap.xml) in one step, so a crash cannot leave half of it. */
+function atomic_put(string $f, string $data, int $mode = 0644): void {
+    $tmp = @tempnam(dirname($f), 'wx_');
+    if ($tmp === false) { file_put_contents($f, $data, LOCK_EX); @chmod($f, $mode); return; }
+    file_put_contents($tmp, $data, LOCK_EX);
+    @chmod($tmp, $mode);
+    if (!@rename($tmp, $f)) { @unlink($tmp); file_put_contents($f, $data, LOCK_EX); @chmod($f, $mode); }
+}
 
 // ---------- shared secret (same as builder.php) ----------
-function bsecret(): string { $c = jread(BCONFIG); if (empty($c['secret'])) { $c['secret'] = bin2hex(random_bytes(32)); jwrite(BCONFIG, $c); } return $c['secret']; }
+function bsecret(): string {
+    $c = jread(BCONFIG);
+    if (!empty($c['secret'])) return $c['secret'];
+    /* P22.2 (B-02): mint a secret only when the file is absent or holds no secret. A file that exists, is not
+       empty and still reads as nothing is unreadable, not missing: minting then ended every session and wrote
+       over the builder password kept in the same file. */
+    if (is_file(BCONFIG) && (int) @filesize(BCONFIG) > 0 && $c === []) {
+        error_log('admin.php: ' . BCONFIG . ' exists but could not be read; the session secret was not regenerated');
+        fail('The admin is busy. Please try again in a moment.', 503);
+    }
+    $c['secret'] = bin2hex(random_bytes(32)); jwrite(BCONFIG, $c);
+    error_log('admin.php: a new session secret was created, so every admin session has ended');
+    return $c['secret'];
+}
 /** Builder token = exp.uid.sid.sig — bound to the current admin session (sign-out / revoke / disable ends builder access). */
 function builder_token(int $uid): string { $sid = (string)($GLOBALS['WX_SID'] ?? ''); $exp = (string)(time() + 12 * 3600); return $exp . '.' . $uid . '.' . $sid . '.' . hash_hmac('sha256', 'wx|' . $exp . '|' . $uid . '|' . $sid, bsecret()); }
 
@@ -201,7 +233,7 @@ function publish_rules(): void {
     $lines[] = '</IfModule>'; $lines[] = '# END WOODEX-ADMIN';
     $ht = ROOT_DIR . '/.htaccess'; $cur = is_file($ht) ? (string)file_get_contents($ht) : '';
     $cur = preg_replace('~\n?# BEGIN WOODEX-ADMIN.*?# END WOODEX-ADMIN\n?~s', "\n", $cur);
-    file_put_contents($ht, rtrim($cur) . "\n\n" . implode("\n", $lines) . "\n", LOCK_EX);
+    atomic_put($ht, rtrim($cur) . "\n\n" . implode("\n", $lines) . "\n"); // P22.2: a truncated .htaccess takes the whole site down
     // sitemap
     $sm = ROOT_DIR . '/sitemap.xml'; $base = 'https://woodex.com.pk';
     if (is_file($sm) && preg_match('~<loc>(https?://[^/<]+)~', (string)file_get_contents($sm), $b)) $base = $b[1];
@@ -212,7 +244,7 @@ function publish_rules(): void {
         if (($m = find_meta($head, 'name', 'robots')) && stripos(tag_attr($m, 'content'), 'noindex') !== false) continue;
         $x .= '  <url><loc>' . $base . url_of($rel) . '</loc><lastmod>' . date('Y-m-d', filemtime(ROOT_DIR . '/' . $rel)) . "</lastmod></url>\n";
     }
-    file_put_contents($sm, $x . "</urlset>\n", LOCK_EX);
+    atomic_put($sm, $x . "</urlset>\n");
 }
 function region_spans(string $h, array $scope): array {
     $pats = ['header' => '~<header class="site-header".*?</header>~s', 'mobile' => '~<nav class="mobile-panel".*?</nav>~s', 'footer' => '~<footer class="footer".*?</footer>~s'];
@@ -347,7 +379,7 @@ switch ($action) {
         if ($hasUsers && ($email === '' || $pdo->query('SELECT COUNT(*) FROM wx_users WHERE email=' . $pdo->quote($email))->fetchColumn() > 0)) {
             if (@file_put_contents(DB_FILE, json_encode($c, JSON_PRETTY_PRINT), LOCK_EX) === false) fail('Could not save _private/db.json. In File Manager set the _private folder permission to 755 and try again.');
             @chmod(DB_FILE, 0600);
-            out(['ok' => true, 'reconnected' => true, 'message' => 'Database connected. Your existing accounts are kept. Sign in with your existing login (first install: admin / admin).']);
+            out(['ok' => true, 'reconnected' => true, 'message' => 'Database connected. Your existing accounts are kept. Sign in with your existing login.']);
         }
         if (!$name || !filter_var($email, FILTER_VALIDATE_EMAIL)) fail('Enter your name and a valid email (or leave the owner fields empty to keep the existing accounts)'); valid_pw($pw);
         if (@file_put_contents(DB_FILE, json_encode($c, JSON_PRETTY_PRINT), LOCK_EX) === false) fail('Could not save _private/db.json. In File Manager set the _private folder permission to 755 and try again.');
@@ -589,3 +621,5 @@ switch ($action) {
     default: if (!soc_actions($action, $in) && !sag_actions($action, $in) && !aic_actions($action, $in) && !aia_actions($action, $in) && !wah_actions($action, $in) && !tg_actions($action, $in) && !sheets_actions($action, $in) && !conn_actions($action, $in) && !logos_actions($action, $in) && !p19c_actions($action, $in) && !p18j_actions($action, $in) && !sales17_actions($action, $in) && !booking_actions($action, $in) && !crm_actions($action, $in) && !sales_actions($action, $in) && !content_actions($action, $in) && !media_actions($action, $in) && !security_actions($action, $in) && !gdata_actions($action, $in) && !dash_actions($action, $in) && !p8_actions($action, $in) && !chat_actions($action, $in) && !notify_actions($action, $in) && !seo_actions($action, $in) && !redirects_actions($action, $in) && !p18e_actions($action, $in) && !p18g_actions($action, $in) && !p18h_actions($action, $in)) fail('Unknown action', 404);
 }
 } catch (PDOException $e) { error_log('admin.php: ' . $e->getMessage()); fail('Database error', 500); }
+/* P22.2 (B-03): anything else used to end as a blank 500 with nothing to search for in the log. */
+catch (Throwable $e) { $ref = bin2hex(random_bytes(4)); error_log('admin.php [' . $ref . ']: ' . get_class($e) . ': ' . $e->getMessage() . ' at ' . basename($e->getFile()) . ':' . $e->getLine()); fail('Something went wrong (ref ' . $ref . ')', 500); }

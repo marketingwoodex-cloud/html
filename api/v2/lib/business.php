@@ -587,7 +587,31 @@ function wx_biz_pairs_visible(array $pairs): array
     return $out;
 }
 
-/** The social row's markup, from the links that are set — v2.1's `socHtml()`, same attributes. */
+/**
+ * Each network's icon, as v2.1's `SOC` table draws it (frontend-v1/admin/admin-fields.js). The footer's
+ * stylesheet styles `.footer-social svg` and nothing else, so an anchor without its path shows as an empty
+ * circle. tests/run.php holds this table to v2.1's, path for path.
+ */
+const WX_BIZ_SOCIAL_ICON = [
+    'facebook' => 'M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z',
+    'instagram' => 'M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7 M17 6.8v.01',
+    'linkedin' => 'M4 9h4v11H4z M6 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4 M10 9h4v2a4 4 0 0 1 7 3v6h-4v-6a2 2 0 0 0-3 0v6h-4z',
+    'youtube' => 'M3 7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z M10 9l5 3-5 3z',
+    'tiktok' => 'M14 3v11a3.5 3.5 0 1 1-3.5-3.5 M14 3a5 5 0 0 0 5 5',
+    'pinterest' => 'M12 3a9 9 0 0 0-3.3 17.4 M12 7a5 5 0 0 1 2 9.6c-1.5.6-3-.3-3-1.6 M11 11l-3 10',
+    'x' => 'M4 4l16 16 M20 4L4 20',
+];
+
+/** v2.1's `esc()`: & < > " ' as &amp; &lt; &gt; &quot; &#39;, so a link is written as v2.1 wrote it. */
+function wx_biz_esc(string $s): string
+{
+    return strtr($s, ['&' => '&amp;', '<' => '&lt;', '>' => '&gt;', '"' => '&quot;', "'" => '&#39;']);
+}
+
+/**
+ * The social row's markup, from the links that are set: v2.1's `socHtml()`, byte for byte. A page saved by
+ * either console then carries the same row, and moving from one console to the other rewrites nothing.
+ */
 function wx_biz_social_html(array $biz): string
 {
     $biz = wx_biz_record($biz);
@@ -596,9 +620,9 @@ function wx_biz_social_html(array $biz): string
         if ((string) $biz[$key] === '') {
             continue;
         }
-        $out .= '<a data-soc="' . $key . '" href="' . htmlspecialchars((string) $biz[$key], ENT_QUOTES) . '"'
-            . ' target="_blank" rel="noopener" aria-label="' . htmlspecialchars($label, ENT_QUOTES) . '">'
-            . '<span aria-hidden="true"></span></a>';
+        $out .= '<a data-soc="' . $key . '" href="' . wx_biz_esc((string) $biz[$key]) . '" target="_blank" rel="noopener"'
+            . ' aria-label="' . $label . '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="'
+            . WX_BIZ_SOCIAL_ICON[$key] . '"/></svg></a>';
     }
     return $out;
 }
@@ -606,10 +630,9 @@ function wx_biz_social_html(array $biz): string
 /**
  * Replace the footer's social row with the current links, if the page has one.
  *
- * v2.1 wrapped the row in an SVG path per network. Those paths belong to the footer's markup — the
- * header/footer screen owns it and can change it — so this writes anchors with the same `data-soc`
- * attribute the v2.1 row used and nothing else. A page without the row is left alone and counted as such,
- * which is how the screen can say "the footer of this site has no social row yet" instead of "updated 0".
+ * The row's other anchors (WhatsApp, call, email, map) stay; the `data-soc` anchors are rewritten from the
+ * record, each with its v2.1 icon. A page without the row is left alone and counted as such, which is how
+ * the screen can say "the footer of this site has no social row yet" instead of "updated 0".
  *
  * @param bool|null $touched set to whether the row was found
  */

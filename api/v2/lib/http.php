@@ -380,9 +380,6 @@ function wx_is_legacy_request(): bool
  */
 function wx_set_cookie(string $name, string $value, int $expires, bool $httpOnly = true): void
 {
-    if (headers_sent()) {
-        return;
-    }
     $secure = wx_is_https();
     $opts = [
         'expires' => $expires,
@@ -393,7 +390,9 @@ function wx_set_cookie(string $name, string $value, int $expires, bool $httpOnly
     ];
     // PHP 7.3+ array form; PHP 7.4 is the floor for this tree.
     if (defined('WX_RESPOND_CAPTURE')) {
-        // Record what would have been sent, so a test can assert the flags.
+        // Record what would have been sent, so a test can assert the flags. This is checked before
+        // headers_sent(): a test runner prints its progress first, which counts as output under the CLI,
+        // and capture mode sends no header anyway. Only tests/roundtrip.php and money-path.php define it.
         $GLOBALS['WX_TEST_SET_COOKIE'] = sprintf(
             '%s=%s; Expires=%s; Path=%s%s%s; SameSite=%s',
             $name,
@@ -405,6 +404,9 @@ function wx_set_cookie(string $name, string $value, int $expires, bool $httpOnly
             $opts['samesite']
         );
         $_COOKIE[$name] = $value;
+        return;
+    }
+    if (headers_sent()) {
         return;
     }
     setcookie($name, $value, $opts);

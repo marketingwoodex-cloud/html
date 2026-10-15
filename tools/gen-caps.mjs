@@ -111,7 +111,9 @@ const groupRows = roleGroupsMap.flatMap(([role, list]) =>
 const sharedRows = shared.flatMap(([action, list]) => list.map((grp) => `  (${sqlStr(action)}, ${sqlStr(grp)})`));
 const restrictedRows = restricted.map(([action, role]) => `  (${sqlStr(action)}, ${sqlStr(role)})`);
 const actionRows = groups.map(
-  ([grp, pattern], i) => `  ('${String(i + 1).padStart(2, "0")}', ${sqlStr(grp)}, ${sqlStr(pattern)})`,
+  // is_regex is written out: the column list names four columns, and a tuple with three values is a
+  // column-count error in MySQL too (it is not an IGNORE-able warning). 1 is the column's own default.
+  ([grp, pattern], i) => `  ('${String(i + 1).padStart(2, "0")}', ${sqlStr(grp)}, ${sqlStr(pattern)}, 1)`,
 );
 
 const generated = `-- db/migrations/001_roles.sql

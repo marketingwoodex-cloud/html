@@ -1,7 +1,7 @@
 /**
  * LiveDashboard — the overview, fed by `GET /dashboard`.
  *
- * This is the prototype's dashboard with the mock removed. Two things are deliberately different from
+ * This is the dashboard on live data, not the earlier mock. Two things are deliberately different from
  * the mock version, both of them lessons from the v2.1 audit:
  *
  *   · **Every number is labelled with where it came from.** "Pipeline value" and "quoted value" are

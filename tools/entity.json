@@ -1,0 +1,72 @@
+{
+  "_about": "Woodex Interior's official identity: one NAP, its Google Business Profile and the social profiles that were checked. tools/apply-entity.py writes it into every frontend-v1 page (schema, footer, map links) and into llms.txt. Change it here, run `python3 tools/apply-entity.py`, commit. Add a profile only after checking that it is the studio's own.",
+  "checked": "2026-10-15",
+
+  "name": "Woodex Interior",
+  "id": "https://woodex.com.pk/#org",
+  "url": "https://woodex.com.pk/",
+  "telephone": "+923224000768",
+  "email": "info@woodex.com.pk",
+  "address": {
+    "streetAddress": "M-71, Zainab Tower, Model Town Link Road",
+    "addressLocality": "Lahore",
+    "addressRegion": "Punjab",
+    "postalCode": "54700",
+    "addressCountry": "PK"
+  },
+  "geo": { "latitude": 31.4663355, "longitude": 74.3164285 },
+
+  "google": {
+    "_evidence": "Google Maps listing 'Woodex Interior', category Interior designer, M-71 Zainab Tower, Model Town Link Rd, Lahore 54700, +92 322 4000768, website woodex.com.pk, Mon-Sat 09:30-18:30. The geo point is the listing's own pin. The place ID was derived from the listing's feature ID 0x391907cc17c680b7:0x430344ffa555c00 and opens the same listing.",
+    "cid": "301798693140782080",
+    "placeId": "ChIJt4DGF8wHGTkRAFxV-k80MAQ",
+    "kgmid": "/g/11pxjybmwp",
+    "mapsUrl": "https://maps.google.com/?cid=301798693140782080",
+    "placeLink": "https://www.google.com/maps/search/?api=1&query=Woodex%20Interior%20Lahore&query_place_id=ChIJt4DGF8wHGTkRAFxV-k80MAQ",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=Woodex%20Interior%20Lahore&destination_place_id=ChIJt4DGF8wHGTkRAFxV-k80MAQ",
+    "writeReview": "https://search.google.com/local/writereview?placeid=ChIJt4DGF8wHGTkRAFxV-k80MAQ",
+    "embedQuery": "Woodex Interior, M-71 Zainab Tower, Model Town Link Road, Lahore",
+    "rating": { "value": "5.0", "count": 12, "seen": "2026-10-15" }
+  },
+
+  "sameAs": [
+    "https://maps.google.com/?cid=301798693140782080",
+    "https://www.facebook.com/woodexinterior",
+    "https://www.linkedin.com/company/woodexinterior",
+    "https://x.com/woodexinterior"
+  ],
+
+  "footerSocial": {
+    "_about": "The profiles shown as icons in the footer's social row, in the markup the admin's Business info screen writes. Keys are the admin's network keys. X is left out of the footer while the account is dormant; it stays in sameAs.",
+    "facebook": "https://www.facebook.com/woodexinterior",
+    "linkedin": "https://www.linkedin.com/company/woodexinterior"
+  },
+
+  "evidence": {
+    "facebook": "Page 'Woodex interior', Lahore, Pakistan: 'An interior designing firm based in Pakistan proudly serving since 2015'. Linked from the studio's previous website (archived 27 Dec 2024) and listed in that site's schema sameAs.",
+    "linkedin": "Company page 'woodexinterior' (Architecture and Planning), shown by LinkedIn itself; the founder's profile lists woodexinterior, Lahore; ZoomInfo cites the same page with the M-71 Zainab Tower address.",
+    "x": "Profile @woodexinterior: 'Woodex Interior believes in the power of design...'. Linked from the previous website and in its schema sameAs. Dormant: 4 followers, no recent posts."
+  },
+
+  "toConfirm": {
+    "_about": "Linked from the previous website or found by name, but not verifiable from outside. The owner confirms each one is the studio's and still active before it goes on the site.",
+    "instagram": "https://www.instagram.com/woodexinterior/",
+    "pinterest": "https://www.pinterest.com/woodex_interior/",
+    "tiktok": "https://www.tiktok.com/@woodexinterior"
+  },
+
+  "notOurs": {
+    "_about": "Look-alike accounts found while searching. Never link them.",
+    "linktr.ee/woodex": "Woodex furniture showroom in Shuwaikh, Kuwait (instagram be.woodex, view.woodex, woodex.grp)",
+    "linkedin.com/company/woodexme": "Woodex, Kuwait City (woodex.me)",
+    "instagram.com/woodexofficial": "Woodex, UK wood art",
+    "instagram.com/woodx_interior": "WOOD X Interior, unrelated",
+    "archiipedia.com Woodex Interior": "Kochi and Cuddalore, India, unrelated"
+  },
+
+  "sisterBrand": {
+    "name": "Woodex Furniture",
+    "url": "https://woodexfurniture.pk/",
+    "note": "Office and custom furniture. Its own Google listing (LG 89, Zainab Tower, 4.7 from 15 reviews, Office furniture store) shares the phone number. It is a separate listing: never put its links in Woodex Interior's sameAs."
+  }
+}

@@ -46,6 +46,8 @@ define('WX_RESPOND_CAPTURE', true);
 
 require_once dirname(__DIR__) . '/api/v2/lib/bootstrap.php';
 require_once __DIR__ . '/harness.php';
+$passed = 0;
+$failed = 0;
 
 $KEEP = in_array('--keep', $argv, true);
 $created = ['users' => [], 'lead' => null, 'quote' => null, 'invoice' => null, 'client' => null, 'project' => null, 'approval' => null];
@@ -168,11 +170,13 @@ eq($quote['discount'], 5000, 'the discount is kept');
 $expectedTax = (int) round(($subtotal - 5000) * 17 / 100);
 eq($quote['tax'], $expectedTax, 'tax is 17% of subtotal - discount');
 eq($quote['total'], $subtotal - 5000 + $expectedTax, 'the total is computed by the server, not taken from the browser');
-eq($quote['advance'], 20000, 'the advance is recorded');
-
-$stored = wx_one('SELECT payload, total FROM wx_quotes WHERE id = ?', [$created['quote']]);
+/* The document column is `data` on the v2.1 schema production runs and `payload` after a conversion, so the
+   test asks the same helper the API uses rather than naming one. */
+$stored = wx_one('SELECT ' . wx_payload_column('wx_quotes') . ' AS payload, total FROM wx_quotes WHERE id = ?', [$created['quote']]);
 $payload = json_decode((string) $stored['payload'], true);
 eq((int) $stored['total'], $quote['total'], 'the indexed total column agrees with the document');
+/* The save answers with the list row (wx_quote_row), which carries no advance; the document is where it lives. */
+eq((int) ($payload['advance'] ?? -1), 20000, 'the advance is recorded in the document');
 
 /* ------------------------------------------------------------------ 4. an illegal move */
 step('4', 'An illegal status move is refused');
@@ -189,7 +193,7 @@ eq($r['body']['data']['quote']['status'], 'sent', 'the status is sent');
 $r = request('POST', ['quotations', (string) $created['quote'], 'status'], ['cookie' => $cookie, 'csrf' => $csrf, 'body' => ['status' => 'approved']]);
 eq($r['status'], 200, 'sent → approved is allowed');
 eq($r['body']['data']['quote']['status'], 'approved', 'the quotation is approved');
-$approved = json_decode((string) wx_val('SELECT payload FROM wx_quotes WHERE id = ?', [$created['quote']]), true);
+$approved = json_decode((string) wx_val('SELECT ' . wx_payload_column('wx_quotes') . ' FROM wx_quotes WHERE id = ?', [$created['quote']]), true);
 ok(!empty($approved['approved_at']), 'the approval is stamped with a time');
 ok(($approved['approved_by'] ?? '') === 'Money Path Owner', 'and with who approved it');
 
@@ -211,7 +215,7 @@ eq($invoice['payStatus'], 'unpaid', 'and it reads as unpaid');
 eq($invoice['no'], $quote['no'], 'a converted quotation keeps its number, as v2.1 does');
 eq((string) wx_val('SELECT status FROM wx_quotes WHERE id = ?', [$created['quote']]), 'invoiced', 'the quotation is marked invoiced');
 eq((int) wx_val('SELECT COUNT(*) FROM wx_clients WHERE id = ?', [$created['client']]), 1, 'the client exists once');
-$project = json_decode((string) wx_val('SELECT payload FROM wx_projects WHERE id = ?', [$created['project']]), true);
+$project = json_decode((string) wx_val('SELECT ' . wx_payload_column('wx_projects') . ' FROM wx_projects WHERE id = ?', [$created['project']]), true);
 eq((int) ($project['invoice_id'] ?? 0), $created['invoice'], 'the project points at its invoice');
 eq((int) ($project['value'] ?? 0), $invoice['total'], 'and carries the contract value');
 
@@ -279,14 +283,17 @@ eq($r['status'], 409, 'reversing it twice is refused');
 /* ------------------------------------------------------------------ 12. the reissue test */
 step('12', 'A new receipt continues past the reversed one');
 $r = request('POST', ['invoices', (string) $created['invoice'], 'payments'], ['cookie' => $cookie, 'csrf' => $csrf, 'body' => [
-    'amount' => $invoice['total'] - 40000,
+    /* PKR 150 is left open on purpose: step 14's Manager pays 100 (approved in step 15) and step 16's Manager
+       files 50 (rejected). Settling the invoice here made both an overpayment, which the server rightly refuses,
+       when the request is filed and again when it is replayed. */
+    'amount' => $invoice['total'] - 40000 - 150,
     'method' => 'cheque',
     'ref' => 'cheque 4471',
 ]]);
 eq($r['status'], 200, 'the replacement payment is accepted');
 eq($r['body']['data']['payment']['rcpt'], $invoice['no'] . '-R3', 'the receipt is R3 — a number is never reissued');
 eq((int) wx_val('SELECT COUNT(*) FROM wx_invoice_payments WHERE rcpt = ?', [$invoice['no'] . '-R2']), 1, 'R2 still refers to exactly one receipt');
-eq($r['body']['data']['invoice']['payStatus'], 'paid', 'and the invoice is settled');
+eq($r['body']['data']['invoice']['payStatus'], 'partial', 'and PKR 150 is still open for the Manager in steps 14 and 16');
 
 /* ------------------------------------------------------------------ 13. the ledger */
 step('13', 'The ledger agrees with the document');
@@ -297,7 +304,7 @@ $sum = 0;
 foreach ($rows as $p) {
     $sum += (int) $p['amount'];
 }
-eq($sum, $invoice['total'], 'the active receipts sum to the invoice total');
+eq($sum, $invoice['total'] - 150, 'the active receipts sum to the invoice total, less the PKR 150 left open');
 eq($r['body']['data']['total'], array_sum(array_map(static fn($p) => (int) $p['amount'], $r['body']['data']['payments'] ?? [])), 'the day total is the sum of its rows');
 $r = request('GET', ['quotations', (string) $created['quote']], ['cookie' => $cookie]);
 eq($r['status'], 200, 'the quotation reads back');

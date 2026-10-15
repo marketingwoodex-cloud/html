@@ -120,44 +120,42 @@ function wx_is_master(array $u): bool
 
 function wx_current_user(): ?array
 {
-    static $resolved = false;
-    static $user = null;
-    if ($resolved) {
-        return $user;
-    }
-    $resolved = true;
+    /* Cached per request with wx_once(), not in a function static. tests/roundtrip.php and money-path.php run
+       many requests in one process; a static kept the first request's answer and skipped setting WX_SESSION,
+       so every later write failed its CSRF check with a valid token. A request is a process in production,
+       so nothing changes there. */
+    return wx_once('current_user', static function (): ?array {
+        $sid = wx_cookie(WX_SESSION_COOKIE);
+        if ($sid === '' || !preg_match('~^[a-f0-9]{64}$~', $sid) || !wx_sessions_ready()) {
+            return null;
+        }
+        $row = wx_one(
+            'SELECT * FROM wx_sessions WHERE id = ? AND revoked_at IS NULL AND expires_at > ? LIMIT 1',
+            [hash('sha256', $sid), wx_now()]
+        );
+        if ($row === null) {
+            return null;
+        }
+        $u = wx_one('SELECT * FROM wx_users WHERE id = ? AND active = 1', [(int) $row['user_id']]);
+        if ($u === null) {
+            return null;
+        }
+        // A password change bumps pw_ver, which must end every session minted under the old one.
+        if ((int) $u['pw_ver'] !== (int) $row['pw_ver']) {
+            wx_audit(null, 'session.stale_credential', 'user:' . $u['id']);
+            return null;
+        }
+        if (wx_demo_expired((string) $u['email'])) {
+            return null;
+        }
 
-    $sid = wx_cookie(WX_SESSION_COOKIE);
-    if ($sid === '' || !preg_match('~^[a-f0-9]{64}$~', $sid) || !wx_sessions_ready()) {
-        return null;
-    }
-    $row = wx_one(
-        'SELECT * FROM wx_sessions WHERE id = ? AND revoked_at IS NULL AND expires_at > ? LIMIT 1',
-        [hash('sha256', $sid), wx_now()]
-    );
-    if ($row === null) {
-        return null;
-    }
-    $u = wx_one('SELECT * FROM wx_users WHERE id = ? AND active = 1', [(int) $row['user_id']]);
-    if ($u === null) {
-        return null;
-    }
-    // A password change bumps pw_ver, which must end every session minted under the old one.
-    if ((int) $u['pw_ver'] !== (int) $row['pw_ver']) {
-        wx_audit(null, 'session.stale_credential', 'user:' . $u['id']);
-        return null;
-    }
-    if (wx_demo_expired((string) $u['email'])) {
-        return null;
-    }
-
-    // Touch "last seen" at most once a minute, so a polling UI does not write on every request.
-    if (strtotime((string) $row['seen_at'] . ' UTC') < time() - 60) {
-        wx_q('UPDATE wx_sessions SET seen_at = ? WHERE id = ?', [gmdate('Y-m-d H:i:s'), (string) $row['id']]);
-    }
-    $GLOBALS['WX_SESSION'] = $row;
-    $user = $u;
-    return $user;
+        // Touch "last seen" at most once a minute, so a polling UI does not write on every request.
+        if (strtotime((string) $row['seen_at'] . ' UTC') < time() - 60) {
+            wx_q('UPDATE wx_sessions SET seen_at = ? WHERE id = ?', [gmdate('Y-m-d H:i:s'), (string) $row['id']]);
+        }
+        $GLOBALS['WX_SESSION'] = $row;
+        return $u;
+    });
 }
 
 /** The session row for the current request, if any. */

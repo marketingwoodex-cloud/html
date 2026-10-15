@@ -2444,6 +2444,10 @@ try {
 }
 ok(wx_cv_token_ok(str_repeat('a', 32)) && !wx_cv_token_ok('short') && !wx_cv_token_ok(str_repeat('z', 32)),
    'the token shape is checked before any query, so a fuzzed token costs nothing');
+/* The router loads only the route file a request matches, so the page must load the project helpers it calls.
+   A valid link returned 500 for want of wx_proj_invoices() until this was added. */
+ok(str_contains((string) file_get_contents(dirname(__DIR__) . '/api/v2/routes/client_view.php'), "require_once __DIR__ . '/projects.php'"),
+   'the client page loads the project helpers it calls (a valid link was a 500 without them)');
 
 group('Opening the page is recorded once, and is not an update the client sees');
 $p_view = wx_cv_mark_viewed($p_client, '2026-10-10 09:00');
@@ -2748,6 +2752,29 @@ $row = wx_biz_social_block('<div class="footer-social"><a data-soc="facebook" hr
 ok($touched === true, 'a page that carries the social row says so');
 ok(str_contains($row, 'data-soc="instagram"'), 'and the row gains the profile that was added');
 ok(!str_contains($row, 'https://old'), 'while the link that is no longer set is dropped');
+
+group('The social row is v2.1\'s, byte for byte, icons included');
+$soc_js = dirname(__DIR__) . '/frontend-v1/admin/admin-fields.js';
+if (is_file($soc_js) && preg_match('~var SOC = (\[\[.*?\]\]);~s', (string) file_get_contents($soc_js), $soc_m)) {
+    $soc = json_decode($soc_m[1], true);
+    eq(array_column($soc, 0), array_keys(WX_BIZ_SOCIAL), 'the networks and their order are v2.1\'s');
+    eq(array_combine(array_column($soc, 0), array_column($soc, 1)), WX_BIZ_SOCIAL, 'and so are their labels');
+    eq(array_combine(array_column($soc, 0), array_column($soc, 2)), WX_BIZ_SOCIAL_ICON, 'and so is every icon path');
+} else {
+    ok(false, 'v2.1\'s SOC table is readable from frontend-v1/admin/admin-fields.js');
+}
+$row = wx_biz_social_html(['facebook' => 'https://www.facebook.com/woodexinterior', 'linkedin' => 'https://www.linkedin.com/company/woodexinterior']);
+ok(str_contains($row, '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="') && !str_contains($row, '<span'),
+   'each profile is drawn with its icon, not an empty span the stylesheet does not style');
+$home = dirname(__DIR__) . '/frontend-v1/index.html';
+if (is_file($home) && preg_match('~<div class="footer-social"[^>]*>(.*?)</div>~s', (string) file_get_contents($home), $home_m)
+    && preg_match_all('~<a data-soc="[^"]*".*?</a>~s', $home_m[1], $home_a)) {
+    eq($row, implode('', $home_a[0]), 'and the row equals the one on the website, which v2.1\'s own socHtml() writes');
+} else {
+    ok(false, 'the home page carries a social row to compare with');
+}
+ok(str_contains(wx_biz_social_html(['facebook' => "https://facebook.com/a?b=1&c='x'"]), 'href="https://facebook.com/a?b=1&amp;c=&#39;x&#39;"'),
+   'a link is escaped as v2.1 escapes it: &#39; for an apostrophe, as its esc() writes');
 
 group('The live site says what the console reads from it');
 if (is_file(WX_SITE_ROOT . '/' . WX_BIZ_SAMPLE)) {

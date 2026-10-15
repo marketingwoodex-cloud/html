@@ -1,0 +1,93 @@
+{
+  "name": "woodex-hotfix-P22.2",
+  "kind": "overlay for public_html (frontend-v1); upload over the existing files",
+  "commit": "1593092fd82486d280f8a3a77b7871528b19d1d9",
+  "base": {
+    "ref": "origin/main",
+    "commit": "aa9652410926ebbc8e3952363fb7bc4b937f0861"
+  },
+  "built_at": "2026-10-15T05:58:45Z",
+  "zip": {
+    "file": "woodex-hotfix-P22.2.zip",
+    "bytes": 147974,
+    "sha256": "10f961b494172e5d00ced8555038e9d4feaf9dfdbf52dc014a722ecdc80b66c3"
+  },
+  "files": [
+    {
+      "path": "api/admin.php",
+      "bytes": 54567,
+      "sha256": "1e7d7715e53b376e416a5752aff200236a1da8b7df2ff02cad26a805310850c9",
+      "base_sha256": "195e761ddb5ae5028299482c4f403cc76b88d62612f30fbe664c9820fffcd3da"
+    },
+    {
+      "path": "api/forms.php",
+      "bytes": 9568,
+      "sha256": "3429a0d4e78677473f47d805bf9f6642625bb3263122846b63f89643d407c90e",
+      "base_sha256": "1dffb2f02e638b48db9908ac5a898ea940d59cd0393cb36d684a3b67a99976a3"
+    },
+    {
+      "path": "admin/index.html",
+      "bytes": 12341,
+      "sha256": "f81ff1f63c44b5e95eecc602b02122e0b33c72b31ad505f0885e46fa173b2a53",
+      "base_sha256": "fbef72985b5d1ba58274dc4086847ed9067b7221e5c03c72f8d528e3d84ba051"
+    },
+    {
+      "path": "projects/cafe-corner/index.html",
+      "bytes": 78390,
+      "sha256": "8cf25fd95ff5d194a59bb5481f322c7b9f5f39c1fbfb9215855aaa6c12f45e68",
+      "base_sha256": "085bb3e16126c3cd9787f63a74c929aa92cbc364c10fe0eb54d805ea06d6929a"
+    },
+    {
+      "path": "projects/clinic-fit-out/index.html",
+      "bytes": 78267,
+      "sha256": "bcf12e8a9e78de546fec20162c8f715e6ccb6af6c337ae891e34571a4a24e919",
+      "base_sha256": "fc89c03977a1666b612f9c3b5038605ac031b6f7abd1618a0104303e5d037e41"
+    },
+    {
+      "path": "projects/courtyard-house/index.html",
+      "bytes": 78508,
+      "sha256": "da0803a443deae27f05d1757679af672fcad5e872fbe66d0ddadde8ddcc9eaa8",
+      "base_sha256": "c411257797137beba7550c17890d30ac402473bb12fbd63d64d6ac9a7dcb818a"
+    },
+    {
+      "path": "projects/index.html",
+      "bytes": 73854,
+      "sha256": "ce85d579f155e47946ddab0b06c46fe2ba72b39a6181187ee6d7743dffc9b3d4",
+      "base_sha256": "212b23ffc99d228953de4fb54fc1333706665d32e7157d75c90af5c131826950"
+    },
+    {
+      "path": "projects/office-floor/index.html",
+      "bytes": 78549,
+      "sha256": "8d62ee03f7ef5e0e88481937a35f91ab85c30ba5f07d8e9b48fed5998d43da1e",
+      "base_sha256": "80408ae12b6e1a8a6b177f52a78aa2074025da8fe4924068a47d7e3179876ed6"
+    },
+    {
+      "path": "projects/retail-corner/index.html",
+      "bytes": 78298,
+      "sha256": "29b1288b76e3da9d5b6349b07763f9d9834fa72db650eda546b7932d13e37d3f",
+      "base_sha256": "f1cfafa983ee71a3e47a4ad7032720365a6f61d2c21ed838e85d20b483f3f924"
+    },
+    {
+      "path": "projects/small-apartment/index.html",
+      "bytes": 78585,
+      "sha256": "c8e5e6a07b44c3cc2ed86654dee66e9cba372a05668c35bc97b47894e8908fc6",
+      "base_sha256": "10ea37d6365ff8b78ec6d52262ad3bcbf8c6da50b464991513a856ad40900f1e"
+    },
+    {
+      "path": "llms.txt",
+      "bytes": 33528,
+      "sha256": "a45d48815ff9f033ecabc06a1155c4c8da484ee9305b16b71499173725aacd98",
+      "base_sha256": "b937d3d8c2d0329291ebe2faa4473b3d1757b95f880067ba378ae0d8d4dc84f9"
+    }
+  ],
+  "never_shipped": [
+    "wx-install.php",
+    "wx-check.php",
+    "wx-demo.php",
+    "downloads.html",
+    "blocks.html",
+    "_private/",
+    ".htaccess (snippet instead)"
+  ],
+  "htaccess_snippet": "htaccess-snippet.txt"
+}

@@ -23,6 +23,11 @@ function wx_db(): PDO
     $store = new JsonStore(WX_DB_FILE, true);
     $cfg = $store->read();
 
+    if (($cfg['driver'] ?? '') === 'sqlite') {
+        $pdo = wx_sqlite_open($cfg);
+        return $pdo;
+    }
+
     if (empty($cfg['name']) || empty($cfg['user'])) {
         throw new ApiError('UPSTREAM', 'The database is not configured yet', 503, null, ['missing' => 'db.json']);
     }
@@ -46,7 +51,7 @@ function wx_db(): PDO
 function wx_q(string $sql, array $params = []): PDOStatement
 {
     try {
-        $st = wx_db()->prepare($sql);
+        $st = wx_db()->prepare(wx_driver() === 'sqlite' ? wx_sql_sqlite($sql) : $sql);
         $st->execute($params);
         return $st;
     } catch (PDOException $e) {

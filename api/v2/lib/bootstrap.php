@@ -83,6 +83,7 @@ require_once WX_V2_DIR . '/lib/http.php';
 require_once WX_V2_DIR . '/lib/store.php';
 require_once WX_V2_DIR . '/lib/settings.php';
 require_once WX_V2_DIR . '/lib/db.php';
+require_once WX_V2_DIR . '/lib/sqlite.php';
 /* docs.php was written but never included, which meant wx_doc_get()/wx_doc_put()/wx_payload_column()
    — the whole document layer the money path is built on — were undefined at runtime. Nothing caught it:
    a lint sees a valid file, and the tests that call into the document layer need a database. The check

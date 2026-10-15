@@ -224,7 +224,7 @@ function wx_invoice_payments(int $invoiceId): array
     }
     $rows = wx_all(
         'SELECT id, rcpt, paid_on, amount, method, ref, note, created_by, created_at
-         FROM wx_invoice_payments WHERE invoice_id = ? ORDER BY id ASC',
+         FROM wx_invoice_payments WHERE invoice_id = ? AND reversed_at IS NULL ORDER BY id ASC',
         [$invoiceId]
     );
     $out = [];

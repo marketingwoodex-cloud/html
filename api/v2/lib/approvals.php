@@ -343,8 +343,10 @@ function wx_appr_replay(array $item, array $master): array
         wx_appr_set_decision((int) $item['id'], ['status' => 'pending', 'result' => mb_substr(get_class($e) . ': ' . $e->getMessage(), 0, 500)], $master);
         throw ApiError::internal('The approved change failed and was returned to the queue: ' . $e->getMessage());
     } finally {
+        /* All three are cleared. WX_APPR_USER outliving the replay made the next write in the same process
+           act as the Master (wx_appr_actor() reads it first), so a Manager's later payment skipped the queue. */
         $GLOBALS['WX_APPR_REPLAY'] = false;
-        unset($GLOBALS['WX_APPR_REQUESTER']);
+        unset($GLOBALS['WX_APPR_REQUESTER'], $GLOBALS['WX_APPR_USER']);
     }
 }
 
@@ -392,7 +394,10 @@ function wx_appr_gate(string $action, array $payload, callable $run)
     return [
         'data' => [
             'pending' => true,
-            'approval' => wx_appr_public($item),
+            /* wx_appr_queue() already returns the public shape (via wx_appr_get), so it is not mapped again: a second
+               wx_appr_public() found no requested_at and answered with an empty `at` and a nonsense ageHours. The
+               queued body is left out, as before, because it can carry a key (master plan A-02). */
+            'approval' => array_diff_key($item, ['payload' => true]),
             'message' => 'Sent to the Master for approval: ' . $item['summary'],
         ],
         'meta' => ['pending' => true],

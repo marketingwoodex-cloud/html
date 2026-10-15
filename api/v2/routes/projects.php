@@ -630,7 +630,7 @@ function wx_route_projects_save_do(array $ctx): array
             if ($json === false) {
                 throw ApiError::internal('Could not encode the project', ['json_error' => json_last_error_msg()]);
             }
-            wx_update('wx_projects', ['payload' => $json], ['id' => $id]);
+            wx_update('wx_projects', [wx_payload_column('wx_projects') => $json] + wx_project_columns($p), ['id' => $id]);
             $p['id'] = $id;
             /* A stage change is a thing the client is told about — "work has started" the first time the
                project reaches production, "ready for handover" at handover, a progress update for the
@@ -788,7 +788,7 @@ function wx_route_projects_bill_do(array $ctx): array
             if ($json === false) {
                 throw ApiError::internal('Could not encode the project', ['json_error' => json_last_error_msg()]);
             }
-            wx_update('wx_projects', ['payload' => $json], ['id' => (int) $p['id']]);
+            wx_update('wx_projects', [wx_payload_column('wx_projects') => $json] + wx_project_columns($p), ['id' => (int) $p['id']]);
 
             wx_audit($u, 'project.bill', 'project:' . (int) $p['id'], ['milestone' => $k + 1, 'amount' => $amount, 'invoice' => $no]);
             return ['data' => ['invoice' => wx_inv_public($invoice, []), 'project_id' => (int) $p['id'], 'milestone' => $k + 1, 'amount' => $amount, 'amountDisplay' => wx_pkr_out($amount)]];
@@ -830,7 +830,7 @@ function wx_route_projects_update_do(array $ctx): array
             $p = $posted['project'];
 
             $json = json_encode($p, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-            wx_update('wx_projects', ['payload' => $json], ['id' => $id]);
+            wx_update('wx_projects', [wx_payload_column('wx_projects') => $json] + wx_project_columns($p), ['id' => $id]);
             wx_audit($u, 'project.update', 'project:' . $id, ['photo' => (bool) $photo, 'to_client' => $toClient, 'result' => $posted['result']]);
             $p['id'] = $id;
             $last = $p['updates'] ? $p['updates'][count($p['updates']) - 1] : null;

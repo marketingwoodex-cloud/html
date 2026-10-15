@@ -498,8 +498,120 @@ function wx_est_parse(string $js): ?array
     if ($end !== false) {
         $json = substr($json, 0, $end);
     }
-    $rates = json_decode(trim($json), true);
+    $rates = json_decode(wx_js_to_json(trim($json)), true);
     return is_array($rates) ? $rates : null;
+}
+
+/**
+ * A JavaScript object literal, as the rate book is written, turned into JSON: comments removed, object keys
+ * quoted, trailing commas dropped, single-quoted strings re-encoded. String contents are copied through
+ * untouched, so a comma or a colon inside a description cannot be mistaken for syntax.
+ */
+function wx_js_to_json(string $js): string
+{
+    $out = '';
+    $n = strlen($js);
+    $i = 0;
+    $prev = '';   // the last significant character emitted outside a string
+    while ($i < $n) {
+        $c = $js[$i];
+        if ($c === ' ' || $c === "\t" || $c === "\r" || $c === "\n") {
+            $out .= $c;
+            $i++;
+            continue;
+        }
+        if ($c === '/' && ($js[$i + 1] ?? '') === '*') {
+            $end = strpos($js, '*/', $i + 2);
+            $i = $end === false ? $n : $end + 2;
+            continue;
+        }
+        if ($c === '/' && ($js[$i + 1] ?? '') === '/') {
+            $end = strpos($js, "\n", $i + 2);
+            $i = $end === false ? $n : $end;
+            continue;
+        }
+        if ($c === '"') {
+            // A double-quoted JSON string copies through; its escapes are JSON's escapes.
+            $j = $i + 1;
+            while ($j < $n && $js[$j] !== '"') {
+                $j += $js[$j] === '\\' ? 2 : 1;
+            }
+            $out .= substr($js, $i, $j - $i + 1);
+            $i = $j + 1;
+            $prev = '"';
+            continue;
+        }
+        if ($c === "'") {
+            // A single-quoted JS string: decode it, then encode it as JSON.
+            $j = $i + 1;
+            $buf = '';
+            while ($j < $n && $js[$j] !== "'") {
+                if ($js[$j] === '\\' && $j + 1 < $n) {
+                    $buf .= $js[$j + 1] === "'" ? "'" : '\\' . $js[$j + 1];
+                    $j += 2;
+                    continue;
+                }
+                $buf .= $js[$j];
+                $j++;
+            }
+            $out .= json_encode(stripcslashes(str_replace("\\'", "'", $buf)), JSON_UNESCAPED_UNICODE);
+            $i = $j + 1;
+            $prev = '"';
+            continue;
+        }
+        if (ctype_alpha($c) || $c === '_' || $c === '$') {
+            $j = $i;
+            while ($j < $n && (ctype_alnum($js[$j]) || $js[$j] === '_' || $js[$j] === '$')) {
+                $j++;
+            }
+            $word = substr($js, $i, $j - $i);
+            $k = $j;
+            while ($k < $n && ctype_space($js[$k])) {
+                $k++;
+            }
+            // An identifier that is an object key: directly after '{' or ',' and before ':'.
+            if (($js[$k] ?? '') === ':' && ($prev === '{' || $prev === ',')) {
+                $out .= '"' . $word . '"';
+            } else {
+                $out .= $word;
+            }
+            $prev = 'a';
+            $i = $j;
+            continue;
+        }
+        if ($c === ',') {
+            // A comma before a closing bracket is a trailing comma: JSON has none.
+            $k = wx_js_next_significant($js, $i + 1);
+            if (($js[$k] ?? '') === '}' || ($js[$k] ?? '') === ']') {
+                $i++;
+                continue;
+            }
+        }
+        $out .= $c;
+        $prev = $c;
+        $i++;
+    }
+    return $out;
+}
+
+/** The index of the next character that is not whitespace or a comment. */
+function wx_js_next_significant(string $js, int $i): int
+{
+    $n = strlen($js);
+    while ($i < $n) {
+        if (ctype_space($js[$i])) {
+            $i++;
+        } elseif ($js[$i] === '/' && ($js[$i + 1] ?? '') === '*') {
+            $end = strpos($js, '*/', $i + 2);
+            $i = $end === false ? $n : $end + 2;
+        } elseif ($js[$i] === '/' && ($js[$i + 1] ?? '') === '/') {
+            $end = strpos($js, "\n", $i + 2);
+            $i = $end === false ? $n : $end;
+        } else {
+            break;
+        }
+    }
+    return $i;
 }
 
 /**

@@ -143,7 +143,7 @@ function wx_media_haystack(): string
         $h .= (string) file_get_contents(WX_SITE_ROOT . '/' . $rel);
     }
     foreach (['assets/css', 'assets/js'] as $d) {
-        foreach (glob(WX_SITE_ROOT . '/' . $d . '/*.{css,js}', GLOB_BRACE) ?: [] as $f) {
+        foreach (wx_glob_exts(WX_SITE_ROOT . '/' . $d, ['css', 'js']) as $f) {
             $h .= (string) file_get_contents($f);
         }
     }
@@ -785,4 +785,21 @@ function wx_media_import_legacy(): array
         $trash++;
     }
     return ['alt' => $alt, 'trash' => $trash];
+}
+
+/**
+ * The files in $dir with one of the extensions, sorted. Stands in for glob('*.{css,js}', GLOB_BRACE):
+ * brace expansion is a GNU libc feature, and the PHP builds that run this API (the WebAssembly one in
+ * tools/phpwasm, some shared hosts) do not define GLOB_BRACE.
+ */
+function wx_glob_exts(string $dir, array $exts): array
+{
+    $out = [];
+    foreach ($exts as $ext) {
+        foreach (glob(rtrim($dir, '/') . '/*.' . $ext) ?: [] as $f) {
+            $out[] = $f;
+        }
+    }
+    sort($out);
+    return $out;
 }

@@ -8,6 +8,10 @@ frontend-v1/_private/*
 # Live install state — never commit a database credential
 api/v2/_private/
 _private/db.json
+# The SQLite development database and its locks; the owner password note stays on this machine
+_private/woodex.sqlite*
+_private/db.json.lock
+_private/dev-owner.txt
 _private/security.json
 _private/demo.json
 
@@ -26,3 +30,21 @@ admin-v25/.smoke/
 # TypeScript build info (incremental cache)
 admin-v25/tsconfig.tsbuildinfo
 admin-v25/.smoke/
+
+# Python bytecode from tools/*.py
+__pycache__/
+
+# Salvaged from PR #4 (bd53b01): logs, OS files, and every runtime file in the root _private/ (the v2.5 dev
+# tools write connectors and settings there, which can hold real keys); only its .htaccess is tracked.
+*.log
+.DS_Store
+Thumbs.db
+_private/*
+!_private/.htaccess
+
+# Built release payload — reproducible with `node tools/make-release.mjs`, never committed (P25.2 decision).
+# The P22.2 hotfix pack (woodex-hotfix-P22.2/*.zip, 144 KB) stays tracked: it is the file the owner uploads first.
+woodex-master-P25/woodex-master-P25.zip
+
+# The announcement bar writes a lock beside its JSON
+assets/announce.json.lock

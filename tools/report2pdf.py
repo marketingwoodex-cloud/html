@@ -156,8 +156,10 @@ def ensure(mm_needed):
         pdf.add_page()
 
 
-def heading(level, text):
+def heading(level, text, keep=0.0):
     text = san(strip_md(text))
+    if level > 1 and keep:
+        ensure(keep + (13.5 if level == 2 else 10.0))   # the heading, plus what must follow it
     if level == 1:
         H1_COUNT[0] += 1
         if H1_COUNT[0] > 1:
@@ -283,11 +285,13 @@ def wrap(text, width, family, style, size):
     return out
 
 
-def render_table(rows):
-    """Draw a pipe table. Column widths come from real Helvetica metrics, so
-    wide tables (6-8 columns) neither overflow their cells nor collide."""
-    if not rows:
-        return
+KEEP_TOGETHER_MM = 200.0   # a table up to this height moves whole to a fresh page instead of splitting
+
+
+def table_layout(rows):
+    """Measure a pipe table once: font size, line height and column widths from real Helvetica
+    metrics (in mm, the document unit), and the height of every row with those widths. The drawing
+    code, the keep-together rule and a heading's look-ahead all use the same numbers."""
     ncol = max(len(r) for r in rows)
     rows = [r + [""] * (ncol - len(r)) for r in rows]
 
@@ -303,7 +307,7 @@ def render_table(rows):
         wmax = pdf.get_string_width(san(strip_md(rows[0][c])))
         for r in rows[1:61]:
             wmax = max(wmax, pdf.get_string_width(san(strip_md(r[c]))))
-        raw.append(wmax / 2.83465 + pad)  # points -> mm
+        raw.append(wmax + pad)  # get_string_width() already answers in mm (the document unit)
         # a column must at least fit its longest header word, and any short
         # body word (<= 18 mm), so labels like "Postgres" never split
         words = list(rows[0][c].split(" "))
@@ -311,7 +315,7 @@ def render_table(rows):
             words.extend(str(r[c]).split(" "))
         hw = 0.0
         for w in words:
-            ww = pdf.get_string_width(san(w)) / 2.83465 + pad
+            ww = pdf.get_string_width(san(w)) + pad
             if ww <= 18.0:
                 hw = max(hw, ww)
         floor_.append(min(max(hw, 13.0), 30.0))
@@ -326,41 +330,57 @@ def render_table(rows):
         widths = [floor_[i] * (EPW / need) for i in range(ncol)]
     else:
         total = sum(widths)
-        if total > EPW:                   # take the excess only from slack columns
-            excess = total - EPW
-            order = sorted(range(ncol), key=lambda i: -(widths[i] - floor_[i]))
-            for i in order:
-                if excess <= 1e-6:
-                    break
-                take = min(widths[i] - floor_[i], excess)
-                widths[i] -= take
-                excess -= take
-            if excess > 1e-6:             # still too wide: scale the slack away
-                grown = [widths[i] - floor_[i] for i in range(ncol)]
-                gt = sum(grown)
-                if gt > 0:
-                    for i in range(ncol):
-                        widths[i] -= grown[i] * (excess / gt)
-        elif total < EPW:                 # spread spare width over the long columns
+        if total > EPW:                   # every column keeps its floor; the room left is shared in
+            spare = EPW - need            # proportion to how much more each column wants (need <= EPW here)
+            want = [max(0.0, widths[i] - floor_[i]) for i in range(ncol)]
+            wt = sum(want)
+            widths = [floor_[i] + (spare * want[i] / wt if wt > 0 else spare / ncol) for i in range(ncol)]
+        elif total < EPW:                 # spare width goes first to the columns that would wrap
             spare = EPW - total
-            order = sorted(range(ncol), key=lambda i: -raw[i])
-            weights = [3, 2, 2, 1, 1, 1, 1, 1][:ncol]
-            wt = sum(weights[:min(len(order), 4)])
-            for n, i in enumerate(order):
-                if n >= 4:
-                    break
-                widths[i] += spare * weights[n] / wt
+            short = [max(0.0, raw[i] - widths[i]) for i in range(ncol)]
+            st = sum(short)
+            if st >= spare:               # not enough to unwrap everything: share by shortfall
+                widths = [widths[i] + spare * short[i] / st for i in range(ncol)]
+            else:                         # every column fits on one line; the rest goes by natural width
+                widths = [widths[i] + short[i] for i in range(ncol)]
+                rest, rt = spare - st, sum(raw)
+                widths = [widths[i] + (rest * raw[i] / rt if rt > 0 else rest / ncol) for i in range(ncol)]
 
-    def draw_row(cells, header=False, alt=False):
-        cell_lines = []
-        for i, c in enumerate(cells):
-            txt = san(strip_md(c))
-            cell_lines.append(wrap(txt, widths[i] - pad, "Helvetica",
-                                   "B" if header else "", fs))
-        rowh = max(len(cl) for cl in cell_lines) * lh + 2.6
+    lines_of = []
+    for k, r in enumerate(rows):
+        style = "B" if k == 0 else ""
+        lines_of.append([wrap(san(strip_md(c)), widths[i] - pad, "Helvetica", style, fs)
+                         for i, c in enumerate(r)])
+    heights = [max(len(cl) for cl in cls) * lh + 2.6 for cls in lines_of]
+    return {"rows": rows, "ncol": ncol, "fs": fs, "lh": lh, "pad": pad, "widths": widths,
+            "lines": lines_of, "heights": heights}
+
+
+def table_needs(rows):
+    """Room a table must find on the current page before it starts (header + first row, or all of it
+    when it is short enough to be kept together). Used by a heading to stay with its table."""
+    L = table_layout(rows)
+    total = sum(L["heights"])
+    if total <= KEEP_TOGETHER_MM:
+        return 2 + total
+    return 2 + sum(L["heights"][:2])
+
+
+def render_table(rows):
+    """Draw a pipe table. Column widths come from real Helvetica metrics, so wide tables (6-8
+    columns) neither overflow their cells nor collide. A short table is kept together, and a
+    header is never left at the foot of a page without its first row."""
+    if not rows:
+        return
+    L = table_layout(rows)
+    rows, widths, fs, lh, pad = L["rows"], L["widths"], L["fs"], L["lh"], L["pad"]
+
+    def draw_row(k, cells, header=False, alt=False):
+        cell_lines = L["lines"][k]
+        rowh = L["heights"][k]
         if pdf.get_y() + rowh > pdf.h - 16:
             pdf.add_page()
-            draw_row(rows[0], header=True)
+            draw_row(0, rows[0], header=True)
         y0 = pdf.get_y()
         x = 18.0
         for i, cl in enumerate(cell_lines):
@@ -383,16 +403,17 @@ def render_table(rows):
             x += widths[i]
         pdf.set_y(y0 + rowh)
 
-    # keep a table together when it fits on a fresh page
     pdf.ln(2)
-    probe = 0.0
-    for r in rows:
-        probe += max(len(wrap(san(strip_md(c)), 20, "Helvetica", "", fs)) for c in r) * lh
-    if pdf.get_y() + min(probe, 220) > pdf.h - 16 and probe < 200:
+    total = sum(L["heights"])
+    room = pdf.h - 16 - pdf.get_y()
+    if total <= KEEP_TOGETHER_MM:
+        if total > room:                  # short enough to keep together: move it whole
+            pdf.add_page()
+    elif sum(L["heights"][:2]) > room:    # long table: never strand the header
         pdf.add_page()
-    draw_row(rows[0], header=True)
-    for i, r in enumerate(rows[1:], 1):
-        draw_row(r, alt=(i % 2 == 0))
+    draw_row(0, rows[0], header=True)
+    for k, r in enumerate(rows[1:], 1):
+        draw_row(k, r, alt=(k % 2 == 0))
     pdf.ln(3.5)
 
 
@@ -401,6 +422,54 @@ lines = open(SRC, encoding="utf-8").read().split("\n")
 i = 0
 skip_first_hr = True
 para_buf, bullet_buf = [], []
+
+
+def _table_rows_at(j):
+    """The pipe-table rows starting at line j (separator rows dropped), and the line after them."""
+    look = []
+    while j < len(lines) and lines[j].lstrip().startswith("|"):
+        cells = [c.strip() for c in lines[j].strip().strip("|").split("|")]
+        if not all(re.fullmatch(r":?-{2,}:?", c or "-") for c in cells):
+            look.append(cells)
+        j += 1
+    return look, j
+
+
+def keep_after_heading(j):
+    """How much must fit below a heading so it is not left alone at the foot of a page. It looks
+    through sub-headings and one short paragraph to the block they introduce: for a table, its
+    opening rows (or all of it when it is kept together); otherwise a few lines."""
+    need = 0.0
+    while True:
+        while j < len(lines) and not lines[j].strip():
+            j += 1
+        if j >= len(lines):
+            return need
+        t = lines[j]
+        mh = re.match(r"^(#{1,3})\s+", t)
+        if mh and len(mh.group(1)) > 1:            # a sub-heading: it comes along, keep looking
+            need += 13.5 if len(mh.group(1)) == 2 else 10.0
+            j += 1
+            continue
+        if t.lstrip().startswith("|"):
+            look, _ = _table_rows_at(j)
+            return min(need + (table_needs(look) if look else 0.0), KEEP_TOGETHER_MM)
+        if re.match(r"^\s*([-*]\s|>\s|```)", t):     # bullets, a callout or code: a few lines
+            return need + 14.0
+        para = []
+        while j < len(lines) and lines[j].strip() and not re.match(r"^\s*(\||#|[-*]\s|>\s|```)", lines[j]):
+            para.append(lines[j].strip())
+            j += 1
+        h = len(wrap(san(strip_md(" ".join(para))), EPW, "Helvetica", "", 9.6)) * 5.0 + 2.0
+        need += min(h, 20.0)
+        k = j
+        while k < len(lines) and not lines[k].strip():
+            k += 1
+        if h <= 16.0 and k < len(lines) and lines[k].lstrip().startswith("|"):   # a one- or two-line lead-in
+            look, _ = _table_rows_at(k)
+            if look:
+                need += table_needs(look)
+        return min(need, KEEP_TOGETHER_MM)
 
 
 def flush_para():
@@ -447,7 +516,7 @@ while i < len(lines):
     m = re.match(r"^(#{1,3})\s+(.*)$", ln)
     if m:
         flush_para(); flush_bullets()
-        heading(len(m.group(1)), m.group(2))
+        heading(len(m.group(1)), m.group(2), keep_after_heading(i + 1))
         i += 1
         continue
 

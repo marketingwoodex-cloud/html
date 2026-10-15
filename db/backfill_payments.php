@@ -33,7 +33,7 @@ require_once dirname(__DIR__) . '/api/v2/lib/bootstrap.php';
 $dry = in_array('--dry-run', $argv, true);
 $verify = in_array('--verify', $argv, true);
 
-function say(string $m): void { fwrite(STDOUT, $m . "\n"); }
+function say(string $m): void { echo $m . "\n"; }
 
 try {
     if (!wx_table_exists('wx_invoices')) {
@@ -45,7 +45,9 @@ try {
         exit(1);
     }
 
-    $invoices = wx_all('SELECT id, no, payload FROM wx_invoices');
+    /* The document column is `data` on the v2.1 schema production runs and `payload` after a conversion;
+       naming one made this script fail on the live database it exists for. */
+    $invoices = wx_all('SELECT id, no, ' . wx_payload_column('wx_invoices') . ' AS payload FROM wx_invoices');
     $copied = 0;
     $skipped = 0;
     $rounded = [];
@@ -139,9 +141,9 @@ try {
         say('  Nothing was written. Run without --dry-run to copy.');
     }
 } catch (ApiError $e) {
-    fwrite(STDERR, '✗ ' . $e->code . ': ' . $e->getMessage() . "\n");
+    fwrite(defined('STDERR') ? STDERR : fopen('php://stderr', 'w'), '✗ ' . $e->code . ': ' . $e->getMessage() . "\n");
     exit(1);
 } catch (Throwable $e) {
-    fwrite(STDERR, '✗ ' . get_class($e) . ': ' . $e->getMessage() . "\n");
+    fwrite(defined('STDERR') ? STDERR : fopen('php://stderr', 'w'), '✗ ' . get_class($e) . ': ' . $e->getMessage() . "\n");
     exit(1);
 }

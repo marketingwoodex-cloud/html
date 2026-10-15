@@ -19,10 +19,14 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Block private data and dotfiles
 RewriteRule ^_private(/|$) - [F,L]
 RewriteRule (^|/)\.(?!well-known) - [F,L]
+# P22.2: installers and diagnostics never answer from the web (master plan S-02)
+RewriteRule ^wx-[a-z0-9-]+\.php$ - [F,L,NC]
+# P22.2: retired internal pages are gone for good, so search engines drop them (S-01, W-01)
+RewriteRule ^(downloads|blocks)\.html$ - [G,L,NC]
 </IfModule>
 
 # Block internal PHP libraries, logs and dev files from direct web access
-<FilesMatch "(-lib\.php|^router\.php|^error_log|\.log|\.sql|\.bak|\.md|^chat-rules\.json|^redirect-plan\.json)$">
+<FilesMatch "(-lib\.php|^router\.php|^wx-.*\.php|^error_log|\.log|\.sql|\.bak|\.md|^chat-rules\.json|^redirect-plan\.json)$">
 Require all denied
 </FilesMatch>
 

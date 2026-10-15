@@ -35,28 +35,26 @@ CREATE TABLE IF NOT EXISTS wx_sessions (
   ip VARCHAR(64) NULL,
   ua VARCHAR(255) NULL,
   created_at DATETIME NOT NULL,
-  last_seen DATETIME NOT NULL,
+  seen_at DATETIME NOT NULL,
   expires_at DATETIME NOT NULL,
   revoked_at DATETIME NULL,
   revoked_reason VARCHAR(60) NULL,
-  INDEX wx_sessions_user (user_id, last_seen),
+  INDEX wx_sessions_user (user_id, seen_at),
   INDEX wx_sessions_expiry (expires_at),
   INDEX wx_sessions_live (revoked_at, expires_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /* ------------------------------------------------------- login attempts
-   Kept small on purpose: the throttle asks "how many failures for this account in the last N minutes",
-   which one composite index answers. Rows older than the window are swept on write, not by a cron. */
+   One row per account, keyed by the SHA-256 of the lower-cased address (not the address itself), so the
+   table holds no email addresses. `n` counts failures since `first_at`; `locked_until` is set when the
+   lockout trips. This is the shape api/v2/lib/auth.php reads and writes; the per-IP limit stays in
+   wx_throttle (v2.1). A row is removed on a successful sign-in. */
 CREATE TABLE IF NOT EXISTS wx_login_attempts (
-  id BIGINT AUTO_INCREMENT PRIMARY KEY,
-  email VARCHAR(190) NULL,
-  ip VARCHAR(64) NULL,
-  ok TINYINT(1) NOT NULL DEFAULT 0,
-  reason VARCHAR(40) NULL,
-  at DATETIME NOT NULL,
-  INDEX wx_login_email (email, at),
-  INDEX wx_login_ip (ip, at),
-  INDEX wx_login_at (at)
+  email_hash CHAR(64) NOT NULL PRIMARY KEY,
+  n INT NOT NULL DEFAULT 0,
+  first_at DATETIME NOT NULL,
+  last_at DATETIME NOT NULL,
+  locked_until DATETIME NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /* ------------------------------------------------------------- secrets

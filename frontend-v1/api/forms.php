@@ -20,8 +20,19 @@ header('X-Content-Type-Options: nosniff');
 
 function out(array $d, int $code = 200): void { http_response_code($code); echo json_encode($d, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); exit; }
 function fail(string $m, int $code = 400): void { out(['ok' => false, 'error' => $m], $code); }
-function jread(string $f): array { $r = is_file($f) ? @file_get_contents($f) : false; return $r ? (json_decode($r, true) ?: []) : []; }
-function jwrite(string $f, array $d): void { file_put_contents($f, json_encode($d, JSON_PRETTY_PRINT), LOCK_EX); @chmod($f, 0600); }
+function jread(string $f): array { clearstatcache(true, $f); $r = is_file($f) ? @file_get_contents($f) : false; return $r ? (json_decode($r, true) ?: []) : []; }
+function jwrite(string $f, array $d): void {
+    /* P22.2 (B-01): write a temp file, then rename it over the target. file_put_contents(..., LOCK_EX)
+       truncates before it locks, so a reader could see an empty file and a crash could leave one. */
+    $dir = dirname($f);
+    if (!is_dir($dir)) @mkdir($dir, 0750, true);
+    $tmp = @tempnam($dir, 'wx_');
+    $json = json_encode($d, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if ($tmp === false) { file_put_contents($f, $json, LOCK_EX); @chmod($f, 0600); return; }
+    file_put_contents($tmp, $json, LOCK_EX);
+    @chmod($tmp, 0600);
+    if (!@rename($tmp, $f)) { @unlink($tmp); file_put_contents($f, $json, LOCK_EX); @chmod($f, 0600); }
+}
 function now(): string { return date('Y-m-d H:i:s'); }
 function ip(): string { return substr((string)($_SERVER['REMOTE_ADDR'] ?? ''), 0, 64); }
 function db(): PDO {

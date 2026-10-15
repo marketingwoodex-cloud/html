@@ -3,7 +3,7 @@
  *
  * This screen is where the phase's SEO work happens, and it is built around one honest fact: **the rules
  * are checked against the site on disk, and the check has four answers.** ok, warn (it hides a page, or it
- * chains), bad (the target does not exist) and off. The prototype showed a two-state switch; a two-state
+ * chains), bad (the target does not exist) and off. An earlier design showed a two-state switch; a two-state
  * switch cannot express "this rule sends Google to a page that is not there", which is the mistake that
  * costs a client their rankings.
  *
