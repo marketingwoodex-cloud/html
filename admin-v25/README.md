@@ -54,15 +54,20 @@ npm run dev:api        # php -S 127.0.0.1:8080 api/v2/index.php — needs PHP (s
 npm run verify         # typecheck + 65-route render smoke + production build
 ```
 
-**The address you open is not the address the release serves.** `npm run dev` answers at the root
-(`http://localhost:5173/`), while the shipped console lives at **`/admin-next/`** — built with
-`--base=/admin-next/`, served by the payload's `.htaccess` (and by `tools/phpwasm/serve.cjs`), both of which
-answer `/admin-next/<anything>` with the console's `index.html`. The router's `basename` is derived from
-`import.meta.env.BASE_URL`, so one source tree works at both addresses — and that only holds while every
-internal link goes through the router. A raw `<a href="/leads">` (or a router without a basename) sends the
-browser to the domain root, where the host answers 404 or an empty body: a white screen, which is what the
-owner saw on 15 Oct. `npm run smoke` renders every screen with `basename="/admin-next"` and fails on any
-`href` outside that mount point, so the defect cannot come back unnoticed.
+**One address, here and on the host: `/admin-next/`.** `base` is set in `vite.config.ts`, so `npm run dev`
+serves the console at `http://localhost:5173/admin-next/` — exactly where the release serves it (the pack's
+`.htaccess`, and `tools/phpwasm/serve.cjs`, answer `/admin-next/<anything>` with the console's `index.html`).
+`http://localhost:5173/` 302s there, because the root is not the console and answering it with the app's HTML
+would leave its router unable to match anything.
+
+That sameness is not tidiness; it is the fix for a defect. The dev server used to answer at the root while the
+release answered under `/admin-next/`, the router took no `basename`, and every link written in between pointed
+at the domain root: clicking any sidebar item, or refreshing on any screen, left the console and got a 404 —
+an empty body, i.e. the white screen the owner reported on 15 Oct. The `basename` now comes from
+`import.meta.env.BASE_URL` (so dev and release cannot disagree), internal navigation goes through `<Link>`
+rather than raw `href`s, and `npm run smoke` renders every screen with `basename="/admin-next"` and fails the
+build on any `href` outside that mount point. The boot guard in `index.html` covers the remaining case — the
+page opened at an address that is not its mount point — by saying so instead of rendering nothing.
 
 `/api` is **proxied, not called cross-origin** — api/v2 is same-origin by design (no CORS, a
 SameSite session cookie, a CSRF token tied to it), and a dev server that had to weaken all three to

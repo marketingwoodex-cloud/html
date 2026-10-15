@@ -120,8 +120,58 @@ function buildStampPlugin(): Plugin {
   };
 }
 
+/**
+ * Where the console lives — one constant, used by the dev server, the build and the router.
+ *
+ * The release serves the built console from `/admin-next/` (see `tools/make-release.mjs`, which appends the
+ * `.htaccess` block that makes the single-page app's routes resolve there). The dev server used to answer at
+ * the *root* instead, and that difference is not a detail: it is where the white screen came from. A console
+ * developed at `/` and deployed at `/admin-next/` has two sets of link targets, and only one of them was ever
+ * looked at. Setting `base` here means `npm run dev` and the release share one address, one router basename
+ * (derived from this value in `src/main.tsx`) and one set of expectations.
+ *
+ * `tools/make-release.mjs` still passes `--base=/admin-next/` explicitly on the command line. That is the same
+ * value on purpose: the pack must not silently follow a config it does not own.
+ */
+const CONSOLE_BASE = "/admin-next/";
+
+/**
+ * `npm run dev` at the root, redirected to the console's real address.
+ *
+ * A person who opens `localhost:5173` wants the console, and with a `base` configured Vite would answer that
+ * request with a 404 (or with the app at a path its own router cannot match — which renders nothing, the exact
+ * failure this whole change is about). So the root is a 302 to the base: the same thing Apache does with
+ * `/admin-next` and a missing trailing slash. Development only — `apply: "serve"` keeps it out of every build.
+ */
+function devBaseRedirect(base: string): Plugin {
+  return {
+    name: "wx-dev-base-redirect",
+    apply: "serve",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        /* connect's `IncomingMessage` here is typed without @types/node present, so the two members this
+           middleware uses are read structurally rather than by pulling Node typings into a browser app
+           (the same trade as the `process` declaration at the top of this file). */
+        const { url = "/" } = req as unknown as { url?: string };
+        const out = res as unknown as {
+          writeHead: (code: number, headers: Record<string, string>) => void;
+          end: () => void;
+        };
+        const path = url.split("?")[0];
+        if (path === "/" || path === "/index.html") {
+          out.writeHead(302, { Location: base, "Cache-Control": "no-store" });
+          out.end();
+          return;
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig(({ isSsrBuild }) => ({
-  plugins: [react(), buildStampPlugin()],
+  base: CONSOLE_BASE,
+  plugins: [react(), buildStampPlugin(), devBaseRedirect(CONSOLE_BASE)],
   server: {
     host: "0.0.0.0",
     port: 5173,

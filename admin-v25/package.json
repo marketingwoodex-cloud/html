@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.5.0",
   "type": "module",
-  "description": "Woodex Admin v2.5 Pro — the admin dashboard (React 18 + TypeScript) over api/v2. See ../ADMIN-V2.5-MASTER-PLAN-2026-10-13.md",
+  "description": "Woodex Admin v2.5 Pro \u2014 the admin dashboard (React 18 + TypeScript) over api/v2. See ../ADMIN-V2.5-MASTER-PLAN-2026-10-13.md",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
     "dev:api": "node ../tools/phpwasm/serve.cjs --port 8080",

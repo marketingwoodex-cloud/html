@@ -156,9 +156,62 @@ function refusedInstaller(pathname) {
   );
 }
 
+/**
+ * `/admin/` — the v2.1 console, which cannot run on this machine, answered with the way forward.
+ *
+ * The site's own admin link points here (and so do people's bookmarks). The v2.1 console is a MySQL
+ * application: its page loads, asks `/api/admin.php` for its status, gets `dbError` — this stack is SQLite
+ * behind `/api/v2`, with no MySQL anywhere in the sandbox — and then does `location.replace("/wx-install.php")`
+ * itself. That installer is deliberately not in the pack, so the browser lands on a 403 with a page that
+ * explains the refusal. Explaining a refusal is not the same as answering the question the visitor asked,
+ * which was "where is the dashboard?", so this intercepts the request *before* the redirect and says it once:
+ * the old console needs MySQL, this machine has SQLite, and the console that runs here is /admin-next/.
+ *
+ * It is a development-server behaviour only, decided per request by asking the API's own status endpoint — the
+ * payload is untouched, and on the host, where MySQL answers, nothing here is reached.
+ */
+async function v21WithoutMysql() {
+  try {
+    const status = await handler.request({ url: "/api/admin.php", method: "GET", headers: {}, body: undefined });
+    const text = Buffer.from(status.bytes || new Uint8Array()).toString("utf8");
+    const json = JSON.parse(text);
+    return json && json.dbError === true;
+  } catch {
+    /* If even the status cannot be read, say nothing rather than guessing. */
+    return false;
+  }
+}
+
+function pointerPage() {
+  return (
+    "<!doctype html><meta charset=\"utf-8\"><title>Dashboard moved to /admin-next/</title>" +
+    "<div style=\"font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:44rem;margin:11vh auto;padding:0 24px\">" +
+    "<p style=\"font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.6\">Woodex · local rehearsal</p>" +
+    "<h1 style=\"font-size:22px;margin:8px 0 12px\">The dashboard is at <code>/admin-next/</code>.</h1>" +
+    "<p>You asked for <code>/admin/</code>, which is the <b>old v2.1 console</b>. It is a MySQL application: " +
+    "it needs the account in <code>_private/db.json</code> and a MySQL server to answer, and this machine runs " +
+    "the P25.1 stack — <b>SQLite behind <code>/api/v2</code></b> — with no MySQL. Left alone it asks for its own " +
+    "installer, which every release after P25.1 refuses to ship, and that refusal is what you were looking at.</p>" +
+    "<p style=\"font-size:19px;margin:20px 0\"><a href=\"/admin-next/\">Open the v2.5 console → /admin-next/</a></p>" +
+    "<p style=\"opacity:.8\">Sign in with <b>owner@woodex.local</b> and the password in " +
+    "<code>_private/dev-owner.txt</code>. On the live host, where MySQL exists, <code>/admin/</code> still works " +
+    "exactly as before — this page is only ever shown by the local development server.</p>" +
+    "</div>"
+  );
+}
+
 const server = http.createServer(async (req, res) => {
   try {
-    const refused = refusedInstaller(new URL(req.url || "/", "http://localhost").pathname);
+    const url = new URL(req.url || "/", "http://localhost");
+    /* The old console, before its own JavaScript can send the browser to an installer that is not there. */
+    if (url.pathname === "/admin" || url.pathname === "/admin/") {
+      if (await v21WithoutMysql()) {
+        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+        res.end(pointerPage());
+        return;
+      }
+    }
+    const refused = refusedInstaller(url.pathname);
     if (refused) {
       res.writeHead(403, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
       res.end(refused);

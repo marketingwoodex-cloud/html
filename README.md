@@ -74,14 +74,17 @@ node tools/phpwasm/run-php.cjs tests/money-path.php           # Phase 2 gate: 89
 cd admin-v25 && npm exec vite -- --host 0.0.0.0 --port 5173   # the console, against api/v2
 ```
 
-**Two addresses, one console, and the difference is the bug that cost a day.** `vite dev` serves the console
-at the root (`http://localhost:5173/`), while the *release* serves the built bundle from `/admin-next/`
-(`npm run build -- --base=/admin-next/`), reached through the payload's `.htaccess` and `serve.cjs`, which both
-answer `/admin-next/<anything>` with the console's `index.html`. The router takes its `basename` from
-`import.meta.env.BASE_URL`, so the same source works at either address and no internal link may be written as a
-raw `href="/…"` — one of those leaves the mount point and the host answers 404, or a white page. `npm run
-smoke` asserts exactly that: every screen is rendered with `basename="/admin-next"` and any `href` outside it
-fails the build (the API and the website's own `/assets/…` are the two allowed exceptions).
+**One console address, in development and in production alike: `/admin-next/`.** `vite.config.ts` sets the
+console's `base`, so `npm run dev` serves it at `localhost:5173/admin-next/` and the release serves it at
+`woodex.com.pk/admin-next/` — the same path, reached through the same SPA rules (the pack's `.htaccess`, and
+`tools/phpwasm/serve.cjs` locally). The dev root 302s to the console, because the root is the website.
+
+That used to differ (dev at the root, release under `/admin-next/`), and the difference was a white screen: the
+router had no basename, so every link in the console pointed at the domain root, and clicking a sidebar item or
+refreshing on a screen left the app and got a 404 with an empty body. The router's basename is now derived from
+`import.meta.env.BASE_URL`, no internal link may be a raw `href="/…"`, and `npm run smoke` renders every screen
+with `basename="/admin-next"` and fails the build on any link that leaves the mount point (the API and the
+website's own `/assets/…` are the two allowed exceptions).
 
 There is no PHP and no MySQL in a build sandbox — `api/v2` cannot answer there, and every screen says so
 rather than inventing data. The console has no sample data and no flag to turn any on: the four generators
